@@ -1,0 +1,41 @@
+{
+  "schema": "pressure_requirement_allowlist_v1",
+  "file_count": 273,
+  "chunks": [
+    {
+      "path": "research/pressure_requirement/package_manifest/records_000.json",
+      "sha256": "daed3e91c416ba696b3b107d11f3fc493524a7bda998bbd1c2a2095c7b443dac",
+      "bytes": 18706,
+      "file_count": 80
+    },
+    {
+      "path": "research/pressure_requirement/package_manifest/records_001.json",
+      "sha256": "1192ffacc6ac607bf9e9b7f88b6eea45bd1e2e579935aa6b318ee1376e9d806e",
+      "bytes": 19760,
+      "file_count": 80
+    },
+    {
+      "path": "research/pressure_requirement/package_manifest/records_002.json",
+      "sha256": "cb9b66ea3a74abe2e2c519d737591596b88b227d0c7e09f5c49fce0ffdf6bdd7",
+      "bytes": 19792,
+      "file_count": 80
+    },
+    {
+      "path": "research/pressure_requirement/package_manifest/records_003.json",
+      "sha256": "47685165c67ea3365631be1c7677cacfeb2b3423dd7910330c32c53ff52178bf",
+      "bytes": 8072,
+      "file_count": 33
+    }
+  ],
+  "consolidation_policy": {
+    "new_appendix": "Copy only the allowlisted new appendix paths; do not replace existing different files",
+    "existing_repository_dependency_compare_only": "Compare bytes/hashes with repository dependencies; never overwrite mismatches"
+  },
+  "scientific_scope": "Two geometries, K0/1/2, six reviewed main roots; immutable evidence and optional six-case replay; no main UI",
+  "original_inventory_entries": 251,
+  "distributed_non_log_scientific_artifacts": 248,
+  "original_manifest_support_files": 5,
+  "preserved_exhausted_phase_files": 192,
+  "consumed_scientific_dependencies": 13,
+  "no_publication_performed": true
+}

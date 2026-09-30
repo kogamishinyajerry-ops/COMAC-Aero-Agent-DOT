@@ -31,6 +31,9 @@ jobs:
       - run: python -S research/axial_fin/audit_package.py --expected-manifest-sha256 5e3b72cbd10966772815fa9b4bfa61f69e338e4483411a3536b7cadef43a073c
       - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
         run: python research/axial_fin/test_package.py --output output/axial-package-contract.json
+      - run: python -I -S -B research/pressure_requirement/audit_package.py --expected-manifest-sha256 384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a
+      - if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.12'
+        run: python -I -S -B research/pressure_requirement/test_package.py --expected-manifest-sha256 384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a --report output/pressure-requirement-package-contract.json
   browser-smoke:
     runs-on: ubuntu-latest
     steps:

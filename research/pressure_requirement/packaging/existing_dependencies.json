@@ -1,0 +1,86 @@
+[
+  {
+    "path": "research/pressure_fin/original_freeze/study/pressure_fin.py",
+    "sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "bytes": 8538,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py",
+    "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "bytes": 10060,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/presweep_plan.json",
+    "sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+    "bytes": 8460,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/verification.json",
+    "sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+    "bytes": 3048,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/review/final_review_gate.json",
+    "sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+    "bytes": 2913,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/RESULTS.md",
+    "sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+    "bytes": 6026,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "examples/pressure_fin_tradeoff/catalog.json",
+    "sha256": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+    "bytes": 6493,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "examples/pressure_fin_tradeoff/candidates/n16_t600.json",
+    "sha256": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+    "bytes": 36552,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "examples/pressure_fin_tradeoff/candidates/n16_t860.json",
+    "sha256": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8",
+    "bytes": 36695,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_nominal.json",
+    "sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+    "bytes": 19562,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_combined_fault.json",
+    "sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+    "bytes": 19464,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_nominal.json",
+    "sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+    "bytes": 1640,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_combined_fault.json",
+    "sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+    "bytes": 1654,
+    "role": "existing_repository_dependency_compare_only"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "dcd04746c1578693459dd450e590da7edb99737d89bb9f961b19da9769920b90",
+    "bytes": 187,
+    "role": "existing_repository_dependency_compare_only"
+  }
+]

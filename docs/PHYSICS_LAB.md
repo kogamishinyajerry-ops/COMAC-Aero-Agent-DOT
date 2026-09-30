@@ -58,3 +58,16 @@ The fourth tab at `/physics#tradeoff` links the verified pressure-driven fin stu
 `GET /api/physics/tradeoff` is an integrity-checked saved replay, separate from the live calculations. It rejects unrecognized selections and stale evidence. The reader consumes one verified byte snapshot and binds its native export to the selected geometry, case and load. Optional scientific reruns write to a new ignored directory and leave accepted evidence untouched.
 
 The source study and scope are preserved under `research/pressure_fin/` and `examples/pressure_fin_tradeoff/`. See [the concise demonstration route](ENGINEERING_DEMO_RUNBOOK.md) for the intended user journey. Actual browser acceptance still belongs to the exact published commit.
+
+## Conditional pressure-requirement appendix
+
+The [offline pressure appendix](../research/pressure_requirement/README.md) asks a narrower follow-up: with the same two 16-fin geometries, what nominal mechanical pressure-loss budget P makes the combined condition at 0.6P reject 60 W at an 85°C uniform base and 25°C inlet? The original 25/15 Pa screen remains a failure. The added aggregate end-loss coefficients K=0,1,2 are illustrative model scenarios, not measured uncertainty bounds.
+
+| Geometry | Required nominal P, K=0 | K=1 | K=2 |
+|---|---:|---:|---:|
+| 16 fins × 0.86 mm | 41.77 Pa | 57.07 Pa | 72.36 Pa |
+| 16 fins × 0.60 mm | 33.18 Pa | 49.05 Pa | 64.88 Pa |
+
+These are zero-headroom roots of the declared component equations, not installed pressure specifications or engineering margins. The combined pressure is 0.6 times each table value. Eighteen mesh-root brackets and six separately computed hydraulic/accepted-thermal reproductions passed; maximum spatial and axial root shifts were 0.0882% and 0.0430%. Those shifts and the narrow numerical brackets are not physical uncertainty. The initial 180-solve incomplete phase, separate 11-solve continuation and documented procedural exceptions remain preserved.
+
+The pressure source's electrical power, total installation mass, structural limits, actual entry flow and real loss coefficients remain unresolved. The [measurement and validation plan](VALIDATION_PLAN.md) separates a proposed component bench test from the full-load X-57 gap, and keeps hydraulic calibration, same-pressure fault checks and heated holdouts distinct. This appendix adds no main application page and changes none of the original screen's requirements or outcomes.

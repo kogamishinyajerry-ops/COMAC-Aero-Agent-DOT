@@ -1,0 +1,231 @@
+{
+  "status": "passed",
+  "checks": {
+    "source_inventory251": true,
+    "distributed248_nonlogs": true,
+    "omissions_exactly3_runtime_logs": true,
+    "all_original_inventory_dispositions_exact": true,
+    "original_manifest_support_byte_identical": true,
+    "all192_phase_one_files_preserved": true,
+    "all13_consumed_inputs_preserved": true,
+    "forbidden_distribution_entries_absent": true,
+    "all_JSON_strictly_below100KB": true,
+    "all_contract_cases_pass": true,
+    "original_package_unchanged": true
+  },
+  "contract_cases": [
+    {
+      "name": "stdlib_no_site_packages_read_only_relocated",
+      "passed": true,
+      "return_code": 0,
+      "timed_out": false,
+      "elapsed_s": 0.3021458290022565,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "",
+      "audit_summary": {
+        "status": "passed_pinned_read_only_audit",
+        "all_passed": true,
+        "package_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+        "allowlisted_file_count": 273,
+        "verified_snapshot_file_count": 278,
+        "verified_bytes": 7099018,
+        "original_inventory_entries": 251,
+        "distributed_original_non_log_artifacts": 248,
+        "omitted_runtime_logs": 3,
+        "preserved_phase_one_files": 192,
+        "consumed_scientific_dependencies": 13,
+        "completed_mesh_roots": 18,
+        "accepted_primary_thermal_evaluations": 185,
+        "accepted_independent_reproductions": 6,
+        "original_whole_checkout_gates": {
+          "tracked_tree_unchanged": false,
+          "checkpoint_unchanged": false
+        },
+        "physical_validation_pass": null,
+        "aircraft_transfer_authorized": false,
+        "science_dependencies_imported": false,
+        "writes_performed": false
+      }
+    },
+    {
+      "name": "stdlib_portable_non_dirfd_fallback",
+      "passed": true,
+      "return_code": 0,
+      "timed_out": false,
+      "elapsed_s": 0.27696146800008137,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "",
+      "audit_summary": {
+        "status": "passed_pinned_read_only_audit",
+        "all_passed": true,
+        "package_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+        "allowlisted_file_count": 273,
+        "verified_snapshot_file_count": 278,
+        "verified_bytes": 7099018,
+        "original_inventory_entries": 251,
+        "distributed_original_non_log_artifacts": 248,
+        "omitted_runtime_logs": 3,
+        "preserved_phase_one_files": 192,
+        "consumed_scientific_dependencies": 13,
+        "completed_mesh_roots": 18,
+        "accepted_primary_thermal_evaluations": 185,
+        "accepted_independent_reproductions": 6,
+        "original_whole_checkout_gates": {
+          "tracked_tree_unchanged": false,
+          "checkpoint_unchanged": false
+        },
+        "physical_validation_pass": null,
+        "aircraft_transfer_authorized": false,
+        "science_dependencies_imported": false,
+        "writes_performed": false
+      }
+    },
+    {
+      "name": "wrong_external_pin_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.055124108999734744,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/relocation/deeper/offline/research/pressure_requirement/audit_package.py\", line 184, in main\n    print(json.dumps(audit(args.root,args.expected_manifest_sha256),indent=2,allow_nan=False))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/relocation/deeper/offline/research/pressure_requirement/audit_package.py\", line 93, in audit\n    if digest(raw)!=expected_manifest_sha256:raise ValueError('manifest pin mismatch')\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: manifest pin mismatch\n"
+    },
+    {
+      "name": "payload_bytes_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.08221737399435369,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "_v3/payload_bytes/deeper/offline/research/pressure_requirement/audit_package.py\", line 184, in main\n    print(json.dumps(audit(args.root,args.expected_manifest_sha256),indent=2,allow_nan=False))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/payload_bytes/deeper/offline/research/pressure_requirement/audit_package.py\", line 118, in audit\n    if len(b)!=row['bytes'] or digest(b)!=row['sha256']:raise ValueError('payload hash/size mismatch: '+key)\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: payload hash/size mismatch: research/pressure_requirement/study/plan.json\n"
+    },
+    {
+      "name": "oversized_json_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.08447813699604012,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "/deeper/offline/research/pressure_requirement/audit_package.py\", line 117, in audit\n    b=bounded_read(root,key,MAX_JSON if key.endswith('.json') else MAX_FILE)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/oversized_json/deeper/offline/research/pressure_requirement/audit_package.py\", line 68, in bounded_read\n    if not stat.S_ISREG(info.st_mode) or info.st_size>=limit:raise ValueError('nonregular or oversized file: '+name)\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: nonregular or oversized file: research/pressure_requirement/study/plan.json\n"
+    },
+    {
+      "name": "missing_payload_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.08271204900665907,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "t-package-review/fixtures_v3/missing_payload/deeper/offline/research/pressure_requirement/audit_package.py\", line 117, in audit\n    b=bounded_read(root,key,MAX_JSON if key.endswith('.json') else MAX_FILE)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/missing_payload/deeper/offline/research/pressure_requirement/audit_package.py\", line 78, in bounded_read\n    except OSError as e:raise ValueError('unreadable/symlinked package path: '+name) from e\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unreadable/symlinked package path: research/pressure_requirement/study/plan.json\n"
+    },
+    {
+      "name": "leaf_symlink_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.0829717150045326,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "irement-package-review/fixtures_v3/leaf_symlink/deeper/offline/research/pressure_requirement/audit_package.py\", line 117, in audit\n    b=bounded_read(root,key,MAX_JSON if key.endswith('.json') else MAX_FILE)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/leaf_symlink/deeper/offline/research/pressure_requirement/audit_package.py\", line 78, in bounded_read\n    except OSError as e:raise ValueError('unreadable/symlinked package path: '+name) from e\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unreadable/symlinked package path: research/pressure_requirement/study/plan.json\n"
+    },
+    {
+      "name": "input_fifo_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.08211714500066591,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "fifo/deeper/offline/research/pressure_requirement/audit_package.py\", line 117, in audit\n    b=bounded_read(root,key,MAX_JSON if key.endswith('.json') else MAX_FILE)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/input_fifo/deeper/offline/research/pressure_requirement/audit_package.py\", line 68, in bounded_read\n    if not stat.S_ISREG(info.st_mode) or info.st_size>=limit:raise ValueError('nonregular or oversized file: '+name)\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: nonregular or oversized file: research/pressure_requirement/study/plan.json\n"
+    },
+    {
+      "name": "manifest_bytes_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.0531612380000297,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "a7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/manifest_bytes/deeper/offline/research/pressure_requirement/audit_package.py\", line 184, in main\n    print(json.dumps(audit(args.root,args.expected_manifest_sha256),indent=2,allow_nan=False))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/manifest_bytes/deeper/offline/research/pressure_requirement/audit_package.py\", line 93, in audit\n    if digest(raw)!=expected_manifest_sha256:raise ValueError('manifest pin mismatch')\n                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: manifest pin mismatch\n"
+    },
+    {
+      "name": "protected_tree_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.07381569300196134,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "_v3/output_protected_tree/deeper/offline/research/pressure_requirement/replay_roots.py\", line 62, in run\n    output_name(root,requested)\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_protected_tree/deeper/offline/research/pressure_requirement/replay_roots.py\", line 18, in output_name\n    if target.parent!=output or not re.fullmatch('[A-Za-z0-9][A-Za-z0-9_.-]{0,95}',target.name):raise ValueError('output must be a new direct child of verified-root/output')\n                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: output must be a new direct child of verified-root/output\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "outside_root_output_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.06311856699903728,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "_outside_root_output/deeper/offline/research/pressure_requirement/replay_roots.py\", line 62, in run\n    output_name(root,requested)\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_outside_root_output/deeper/offline/research/pressure_requirement/replay_roots.py\", line 18, in output_name\n    if target.parent!=output or not re.fullmatch('[A-Za-z0-9][A-Za-z0-9_.-]{0,95}',target.name):raise ValueError('output must be a new direct child of verified-root/output')\n                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: output must be a new direct child of verified-root/output\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "parent_traversal_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.06300364700291539,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_parent_traversal/deeper/offline/research/pressure_requirement/replay_roots.py\", line 62, in run\n    output_name(root,requested)\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_parent_traversal/deeper/offline/research/pressure_requirement/replay_roots.py\", line 14, in output_name\n    if '..' in pathlib.PurePath(raw).parts:raise ValueError('parent traversal in output rejected')\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: parent traversal in output rejected\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "existing_directory_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.2902192580004339,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_existing_directory/deeper/offline/research/pressure_requirement/replay_roots.py\", line 64, in run\n    dest,fd=output_directory(root,requested)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_existing_directory/deeper/offline/research/pressure_requirement/replay_roots.py\", line 30, in output_directory\n    os.mkdir(name,0o700,dir_fd=outfd)  # O_EXCL equivalent for directories; existing/symlinks always fail.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'candidate'\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "existing_file_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.32149312099500094,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_existing_file/deeper/offline/research/pressure_requirement/replay_roots.py\", line 64, in run\n    dest,fd=output_directory(root,requested)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_existing_file/deeper/offline/research/pressure_requirement/replay_roots.py\", line 30, in output_directory\n    os.mkdir(name,0o700,dir_fd=outfd)  # O_EXCL equivalent for directories; existing/symlinks always fail.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'candidate'\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "symlink_leaf_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.3075856970026507,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_symlink_leaf/deeper/offline/research/pressure_requirement/replay_roots.py\", line 64, in run\n    dest,fd=output_directory(root,requested)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_symlink_leaf/deeper/offline/research/pressure_requirement/replay_roots.py\", line 30, in output_directory\n    os.mkdir(name,0o700,dir_fd=outfd)  # O_EXCL equivalent for directories; existing/symlinks always fail.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'candidate'\n",
+      "outside_unchanged": true
+    },
+    {
+      "name": "symlink_output_ancestor_output_rejected",
+      "passed": true,
+      "return_code": 1,
+      "timed_out": false,
+      "elapsed_s": 0.3226152299976093,
+      "fixture_unchanged_by_command": true,
+      "stderr_tail": "/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_symlink_output_ancestor/deeper/offline/research/pressure_requirement/replay_roots.py\", line 64, in run\n    dest,fd=output_directory(root,requested)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/output_symlink_output_ancestor/deeper/offline/research/pressure_requirement/replay_roots.py\", line 28, in output_directory\n    outfd=os.open('output',os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW,dir_fd=rootfd)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNotADirectoryError: [Errno 20] Not a directory: 'output'\n",
+      "outside_unchanged": true
+    }
+  ],
+  "package_root": "/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package",
+  "relocated_root": "/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/relocation/deeper/offline",
+  "package_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "wrapper_hashes": {
+    "audit_package.py": "546b65b3e124487907d1159f62c58573c197d9b576049f70182ba68c56370069",
+    "replay_roots.py": "f8f69b168aec501d5c201b7994e8963afb9d26a47ac29e9c7791421ff0e27889",
+    "_replay_worker.py": "32e0e25455e174e1733ed22e160b22162b305e60474d5f2fe6a26a370679ef72"
+  },
+  "original_inventory_count": 251,
+  "distributed_original_nonlog_count": 248,
+  "preserved_phase_one_count": 192,
+  "consumed_scientific_dependencies": 13,
+  "numerical_replay_evaluations_performed": 0,
+  "physical_validation_pass": null
+}

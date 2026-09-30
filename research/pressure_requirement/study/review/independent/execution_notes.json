@@ -1,0 +1,37 @@
+{
+  "recorded_utc": "2026-09-30T20:30:14.845859+00:00",
+  "resource_exceptions": [
+    {
+      "time_utc": "2026-09-30T20:28:37Z",
+      "description": "A brief independent non-marching matrix/hydraulic audit overlapped two active study workers, momentarily making three numerical processes. It performed zero thermal marches. This reviewer process completed calculations but failed while serializing NumPy booleans to JSON; no numerical acceptance was reported from that failed serialization.",
+      "remediation": "Serializer fixed; all subsequent numerical reviewer execution waits for a free worker slot. No model inputs, tolerances, roots, or original accepted artifacts changed."
+    }
+  ],
+  "review_thermal_march_count": 0,
+  "non_marching_probes": [
+    {
+      "script": "hydraulic_review.py",
+      "accepted_model_assemblies": 4,
+      "distinct_channel_Poisson_solves": 8,
+      "timing": "completed before primary workers started",
+      "status": "completed"
+    },
+    {
+      "script": "implementation_review.py",
+      "accepted_model_assemblies": 4,
+      "candidate_model_assemblies": 12,
+      "distinct_channel_Poisson_solves": 32,
+      "timing": "20:28:37\u201320:28:44 UTC recorded interval",
+      "status": "calculations completed; JSON serialization failed; acceptance not recorded; rerun deferred"
+    },
+    {
+      "script": "implementation_review.py",
+      "accepted_model_assemblies": 4,
+      "candidate_model_assemblies": 12,
+      "distinct_channel_Poisson_solves": 32,
+      "timing": "21:13:07\u201321:13:11 UTC recorded interval after baseline worker stopped; one slot reserved",
+      "status": "passed and acceptance artifact recorded"
+    }
+  ],
+  "freeze_chronology_clarification": "The original plan was frozen before all new review/study numerics. The 20:26 pre_numerics_clarification was frozen before all new thermal solutions/root searches but after independent reviewer raw-Poisson/scalar-hydraulic checks around20:25. Its no_new_solutions_run wording is interpreted as no new thermal/root solutions by the implementation worker, not no numerical computations anywhere. No new thermal requirement outcomes informed the clarification; frozen bytes remain unchanged."
+}

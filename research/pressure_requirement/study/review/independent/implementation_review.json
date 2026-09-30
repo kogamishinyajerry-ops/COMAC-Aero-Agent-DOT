@@ -1,0 +1,1034 @@
+{
+  "status": "passed",
+  "checks": {
+    "all_operators_and_boundaries_identical": true,
+    "all_hydraulic_invariants": true,
+    "both_conditions_in_scope_at_each_upper": true
+  },
+  "rows": [
+    {
+      "thickness_mm": 0.86,
+      "K": 0,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 6.361577931102147e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 6.350475700855895e-14
+        },
+        {
+          "pressure_Pa": 70.28312804990958,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 6.372680161348399e-14
+        }
+      ],
+      "domain_upper_Pa": 70.28312804990958,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.86,
+      "K": 1,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 6.350475700855895e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 6.661338147750939e-16,
+          "max_force_error": 6.361577931102147e-14
+        },
+        {
+          "pressure_Pa": 142.61125602482062,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 6.339373470609644e-14
+        }
+      ],
+      "domain_upper_Pa": 142.61125602482062,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.86,
+      "K": 2,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.3988810110276972e-14,
+          "max_force_error": 6.372680161348399e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 6.405986852087153e-14
+        },
+        {
+          "pressure_Pa": 200,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 6.350475700855895e-14
+        }
+      ],
+      "domain_upper_Pa": 200,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.86,
+      "K": 0,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 70.3177137298257,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 1.1179945857975326e-13
+        }
+      ],
+      "domain_upper_Pa": 70.3177137298257,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.86,
+      "K": 1,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 1.1168843627729075e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 8.881784197001252e-16,
+          "max_force_error": 1.1191048088221578e-13
+        },
+        {
+          "pressure_Pa": 142.64584170473674,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 1.1157741397482823e-13
+        }
+      ],
+      "domain_upper_Pa": 142.64584170473674,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.86,
+      "K": 2,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.3988810110276972e-14,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 200,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 1.1179945857975326e-13
+        }
+      ],
+      "domain_upper_Pa": 200,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 0,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 6.361577931102147e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 6.350475700855895e-14
+        },
+        {
+          "pressure_Pa": 48.06862917246187,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 6.361577931102147e-14
+        }
+      ],
+      "domain_upper_Pa": 48.06862917246187,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 1,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.3322676295501878e-15,
+          "max_force_error": 6.350475700855895e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 6.661338147750939e-16,
+          "max_force_error": 6.361577931102147e-14
+        },
+        {
+          "pressure_Pa": 105.12928279492503,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 4.440892098500626e-16,
+          "max_force_error": 6.361577931102147e-14
+        }
+      ],
+      "domain_upper_Pa": 105.12928279492503,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 2,
+      "mesh": [
+        48,
+        144
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.3988810110276972e-14,
+          "max_force_error": 6.372680161348399e-14
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 6.439293542825908e-15,
+          "max_force_error": 6.405986852087153e-14
+        },
+        {
+          "pressure_Pa": 162.18993641738817,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 4.440892098500626e-15,
+          "max_force_error": 6.350475700855895e-14
+        }
+      ],
+      "domain_upper_Pa": 162.18993641738817,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 0,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 0.0,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 48.09162621003305,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-16,
+          "max_force_error": 1.1168843627729075e-13
+        }
+      ],
+      "domain_upper_Pa": 48.09162621003305,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 1,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.1102230246251565e-15,
+          "max_force_error": 1.1168843627729075e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 8.881784197001252e-16,
+          "max_force_error": 1.1191048088221578e-13
+        },
+        {
+          "pressure_Pa": 105.1522798324962,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 2.220446049250313e-16,
+          "max_force_error": 1.1179945857975326e-13
+        }
+      ],
+      "domain_upper_Pa": 105.1522798324962,
+      "both_conditions_in_scope_at_upper": true
+    },
+    {
+      "thickness_mm": 0.6,
+      "K": 2,
+      "mesh": [
+        64,
+        192
+      ],
+      "operator_checks": {
+        "matrix_exact_identity": true,
+        "floor_exact_identity": true,
+        "root_exact_identity": true,
+        "boundary_exact_identity": true,
+        "symmetric_matrix": true,
+        "positive_diagonal": true,
+        "nonpositive_offdiagonal": true,
+        "nonnegative_boundary_weights": true,
+        "row_sum_matches_ground": true,
+        "single_grounded_connected_array": true,
+        "full_array": true,
+        "side_floors_adiabatic": true,
+        "interior_floors_grounded": true,
+        "sealed_fluid_diffusion_retained": true
+      },
+      "hydraulic_checks": [
+        {
+          "pressure_Pa": 15.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 1.3988810110276972e-14,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 25.0,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 6.439293542825908e-15,
+          "max_force_error": 1.1179945857975326e-13
+        },
+        {
+          "pressure_Pa": 162.21293345495937,
+          "checks": {
+            "scalar_root": true,
+            "pressure_law": true,
+            "straight_friction_wall_force": true,
+            "dissipation_counted_once": true,
+            "exact_K0_original_arithmetic": true,
+            "positive_K_reduces_flow": true,
+            "open_flow_unchanged_under_closure": true,
+            "sealed_flow_zero": true,
+            "mass_fraction_closure": true,
+            "equal_interior_flow": true,
+            "double_pressure_behavior": true,
+            "peak_guard_conservative": true
+          },
+          "max_scalar_root_relative_error": 4.440892098500626e-15,
+          "max_force_error": 1.1191048088221578e-13
+        }
+      ],
+      "domain_upper_Pa": 162.21293345495937,
+      "both_conditions_in_scope_at_upper": true
+    }
+  ],
+  "candidate_code_sha256": "8bef70a9dbe2c9e917975fb92ff044a60bb05660db97c56a80477c95c22e92c2",
+  "review_code_sha256": "9c3c3c8be6680a4f26404883e56dcdd461f1e9fcea46083d743779d5992f0835",
+  "new_thermal_marches": 0,
+  "physical_validation": false
+}

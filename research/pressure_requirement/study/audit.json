@@ -1,0 +1,314 @@
+{
+  "status": "failed_or_incomplete",
+  "gates": {
+    "six_scenarios_retained": true,
+    "all_scenarios_complete": false,
+    "18_mesh_roots": false,
+    "every_root_checked": true,
+    "all_saved_thermal_runs_pass": true,
+    "original_K0_reproduced": true,
+    "original_failures_preserved": true,
+    "all_input_hashes_unchanged": true,
+    "tracked_tree_unchanged": false,
+    "checkpoint_unchanged": false,
+    "plan_hash_unchanged": true,
+    "clarification_hash_unchanged": true,
+    "K_requires_more_pressure": true,
+    "all_JSON_below_100KB": true,
+    "all_binary_below_250KB": true,
+    "primary_thermal_solve_count_within_budget": true
+  },
+  "input_checks": {
+    "research/pressure_fin/original_freeze/study/pressure_fin.py": true,
+    "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py": true,
+    "research/pressure_fin/original_freeze/study/presweep_plan.json": true,
+    "research/pressure_fin/original_freeze/study/verification.json": true,
+    "research/pressure_fin/original_freeze/study/review/final_review_gate.json": true,
+    "research/pressure_fin/original_freeze/study/RESULTS.md": true,
+    "examples/pressure_fin_tradeoff/catalog.json": true,
+    "examples/pressure_fin_tradeoff/candidates/n16_t600.json": true,
+    "examples/pressure_fin_tradeoff/candidates/n16_t860.json": true
+  },
+  "thermal_run_count": 180,
+  "root_count": 16,
+  "root_checks": [
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "mesh": "axial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "mesh": "axial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "mesh": "axial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "mesh": "axial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "mesh": "main",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "mesh": "spatial",
+      "root_bracketed": true,
+      "all_declared_root_gates": true,
+      "signs": true,
+      "root_inside_bracket": true,
+      "bracket_width": true,
+      "residual": true,
+      "all_root_domain": true
+    }
+  ],
+  "K_monotonicity": [
+    {
+      "design_id": "n16_t860",
+      "roots": [
+        [
+          0,
+          41.77125684927908
+        ],
+        [
+          1,
+          57.065136149020915
+        ],
+        [
+          2,
+          72.35901517992757
+        ]
+      ],
+      "K_increases_required_budget": true
+    },
+    {
+      "design_id": "n16_t600",
+      "roots": [
+        [
+          0,
+          33.17743236883015
+        ],
+        [
+          1,
+          49.045834589664125
+        ],
+        [
+          2,
+          64.87573079352079
+        ]
+      ],
+      "K_increases_required_budget": true
+    }
+  ],
+  "maximum_numerical_residuals": {
+    "energy_relative_balance_max": 2.6514861895728297e-12,
+    "componentwise_thermal_equation_residual_relative": 1.7061010150862017e-15,
+    "mass_transport_closure_relative": 5.018259973606654e-16,
+    "pressure_closure_relative": 3.91900444049505e-16,
+    "max_poisson_relative_residual": 9.241795978915746e-13,
+    "max_poisson_force_balance_relative": 1.1199230166041087e-13,
+    "max_hydraulic_flow_exact_relative_error": 0.0011263680973909729,
+    "dissipation_split_relative_error": 3.431164865555785e-16
+  },
+  "maximum_omitted_heating_fraction_all_search_records": 0.005127581457872793,
+  "max_JSON_bytes": 57553,
+  "max_binary_bytes": 26278,
+  "plan_sha256": "8955dabaa45f3894b8cfb310c340eb4c126ff734dda6ac33773c28a19945e5c6",
+  "model_sha256": "8bef70a9dbe2c9e917975fb92ff044a60bb05660db97c56a80477c95c22e92c2",
+  "physical_validation": false,
+  "aircraft_transfer": false,
+  "chronology_clarification": "Pre-numerics clarification preceded primary thermal solves and inverse roots; independent raw Poisson/scalar hydraulic checks had already run after original plan freeze. Frozen bytes retained; see PROVENANCE_NOTES.md.",
+  "independent_execution_resource_ledger": {
+    "recorded_utc": "2026-09-30T20:30:14.845859+00:00",
+    "resource_exceptions": [
+      {
+        "time_utc": "2026-09-30T20:28:37Z",
+        "description": "A brief independent non-marching matrix/hydraulic audit overlapped two active study workers, momentarily making three numerical processes. It performed zero thermal marches. This reviewer process completed calculations but failed while serializing NumPy booleans to JSON; no numerical acceptance was reported from that failed serialization.",
+        "remediation": "Serializer fixed; all subsequent numerical reviewer execution waits for a free worker slot. No model inputs, tolerances, roots, or original accepted artifacts changed."
+      }
+    ],
+    "review_thermal_march_count": 0,
+    "non_marching_probes": [
+      {
+        "script": "hydraulic_review.py",
+        "accepted_model_assemblies": 4,
+        "distinct_channel_Poisson_solves": 8,
+        "timing": "completed before primary workers started",
+        "status": "completed"
+      },
+      {
+        "script": "implementation_review.py",
+        "accepted_model_assemblies": 4,
+        "candidate_model_assemblies": 12,
+        "distinct_channel_Poisson_solves": 32,
+        "timing": "20:28:37\u201320:28:44 UTC recorded interval",
+        "status": "calculations completed; JSON serialization failed; acceptance not recorded; rerun deferred"
+      }
+    ],
+    "freeze_chronology_clarification": "The original plan was frozen before all new review/study numerics. The 20:26 pre_numerics_clarification was frozen before all new thermal solutions/root searches but after independent reviewer raw-Poisson/scalar-hydraulic checks around20:25. Its no_new_solutions_run wording is interpreted as no new thermal/root solutions by the implementation worker, not no numerical computations anywhere. No new thermal requirement outcomes informed the clarification; frozen bytes remain unchanged."
+  },
+  "parallel_resource_cap_observed": false
+}

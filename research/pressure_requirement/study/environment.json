@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "platform_system": "Linux",
+  "platform_machine": "x86_64",
+  "worker_BLAS_threads": 1,
+  "worker_environment_explicit": [
+    "OPENBLAS_NUM_THREADS=1",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1"
+  ],
+  "installed_or_changed_software": false,
+  "note": "Package metadata read only; no additional numerical model evaluation."
+}

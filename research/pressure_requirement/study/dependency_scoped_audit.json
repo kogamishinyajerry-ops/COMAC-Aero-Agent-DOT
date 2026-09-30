@@ -1,0 +1,140 @@
+{
+  "status": "passed_dependency_scoped_audit",
+  "created_utc": "2026-09-30T21:24:52.892723+00:00",
+  "checks": {
+    "all_consumed_accepted_inputs_identical": true,
+    "immutable_phase_one_snapshot_intact": true,
+    "original_whole_checkout_gate_results_preserved": true,
+    "continuation_runner_unchanged": true
+  },
+  "accepted_input_rows": [
+    {
+      "path": "research/pressure_fin/original_freeze/study/pressure_fin.py",
+      "original_checkpoint_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "current_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py",
+      "original_checkpoint_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "current_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/presweep_plan.json",
+      "original_checkpoint_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+      "current_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification.json",
+      "original_checkpoint_sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+      "current_sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/review/final_review_gate.json",
+      "original_checkpoint_sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+      "current_sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/RESULTS.md",
+      "original_checkpoint_sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+      "current_sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/catalog.json",
+      "original_checkpoint_sha256": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+      "current_sha256": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n16_t600.json",
+      "original_checkpoint_sha256": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+      "current_sha256": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n16_t860.json",
+      "original_checkpoint_sha256": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8",
+      "current_sha256": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8",
+      "matches_original_declared_input": true,
+      "role": "frozen declared input"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_nominal.json",
+      "original_checkpoint_sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+      "current_sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": null,
+      "matches_original_declared_input": true,
+      "role": "accepted K0 reproduction target; supplemental dependency inventory"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_combined_fault.json",
+      "original_checkpoint_sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+      "current_sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": null,
+      "matches_original_declared_input": true,
+      "role": "accepted K0 reproduction target; supplemental dependency inventory"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_nominal.json",
+      "original_checkpoint_sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+      "current_sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": null,
+      "matches_original_declared_input": true,
+      "role": "accepted K0 reproduction target; supplemental dependency inventory"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_combined_fault.json",
+      "original_checkpoint_sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+      "current_sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+      "identical_to_original_checkpoint": true,
+      "original_declared_input_sha256": null,
+      "matches_original_declared_input": true,
+      "role": "accepted K0 reproduction target; supplemental dependency inventory"
+    }
+  ],
+  "immutable_phase_one_file_count": 192,
+  "immutable_phase_one_failures": [],
+  "original_whole_checkout_gates": {
+    "tracked_tree_unchanged": false,
+    "checkpoint_unchanged": false
+  },
+  "disposition": "Whole-checkout failures remain false in immutable phase-one evidence. Authorized concurrent repository integration/guide work is outside the scientific dependencies. This narrower audit establishes input identity only; independent review must assess the disposition.",
+  "original_checkpoint": "1e95e2ac579e8f0d84293d3ac570aaf7cddb21d1",
+  "current_HEAD": "d3221a3b7f8f34d09f348419adfad1bf3a301c7e",
+  "current_status_porcelain": " M README.md\n M docs/EXPERIMENTAL_COMPARISONS.md\n?? START_HERE.md\n?? docs/VALIDATION_PLAN.md\n",
+  "dependency_inventory_note": "The frozen plan names9 accepted inputs; the audit additionally inventories the4 accepted saved run records actually consumed for exact K0 reproduction, comparing their bytes against the original declared starting commit. No input, model or result is modified."
+}

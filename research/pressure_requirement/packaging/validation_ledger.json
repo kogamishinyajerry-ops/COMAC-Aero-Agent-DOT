@@ -1,0 +1,50 @@
+{
+  "status": "accepted_inner_package_ready_for_outer_delivery_verification",
+  "created_utc": "2026-09-30T21:55:11.718287+00:00",
+  "inner_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "inner_manifest_path": "research/pressure_requirement/package_manifest.json",
+  "inner_payload_files": 273,
+  "inner_snapshot_with_manifest_chain_files": 278,
+  "inner_audit_covers_later_outer_receipts": false,
+  "scientific_phase_thermal_solve_total_unchanged": 191,
+  "packaging_thermal_attempts": [
+    {
+      "attempt": 1,
+      "pin": "55a2be4d14c7564ff78a8849d68d1e2c261c8b3a85c99012203abbaaf3909781",
+      "thermal_solves": 1,
+      "accepted_case_records": 0,
+      "status": "failed_numpy_scalar_serialization_retained"
+    },
+    {
+      "attempt": 2,
+      "pin": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+      "thermal_solves": 6,
+      "accepted_case_records": 6,
+      "status": "passed_independent_relocated_six_case_replay"
+    }
+  ],
+  "packaging_thermal_solve_total": 7,
+  "successful_replay_max_reported_scalar_absolute_difference": 0.0,
+  "successful_worker_elapsed_s": 113.05245142600324,
+  "tests": {
+    "owner_stdlib_negative_checks": 30,
+    "strict_serializer_checks": 8,
+    "independent_contract_checks": 16,
+    "all_passed": true
+  },
+  "distribution_counts": {
+    "original_scientific_inventory": 251,
+    "physically_distributed_non_log_inventory_artifacts": 248,
+    "omitted_logs": 3,
+    "original_manifest_support_files": 5,
+    "preserved_exhausted_phase_files": 192,
+    "omitted_logs_overlap_with_exhausted_phase_files": 0,
+    "consumed_scientific_dependencies": 13,
+    "additional_existing_gitignore_dependency": 1
+  },
+  "scientific_source_and_original_evidence_rewritten": false,
+  "tracked_integration_performed": false,
+  "publication_performed": false,
+  "actual_native_Windows_execution": false,
+  "numerical_replay_platform": "Linux"
+}

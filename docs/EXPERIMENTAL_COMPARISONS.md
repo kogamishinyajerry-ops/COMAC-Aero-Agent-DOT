@@ -52,13 +52,15 @@ No source PDF or full-resolution NPZ is distributed. Source identities and optio
 
 ```sh
 python -m unittest discover -s tests -v
-python -S research/rectangular_duct/audit_package.py
+python -B -c "from aerolab.experimental_evidence import read_experimental_evidence; read_experimental_evidence(); print('Pinned rectangular evidence passed')"
 python -S research/plate_fin/audit_package.py
 node --check web/experiments.js
 node --check web/fin_experiment.js
 python tests/ui_experiments_smoke.py
 ```
 
-The final command requires an authorized Chromium environment. Browser screenshots, export identity, error/cancellation, navigation, mobile overflow and transformed font size belong to the exact published commit's CI result. This document does not substitute for those results.
+The rectangular check above uses the pinned read-only application reader. The preserved `research/rectangular_duct/audit_package.py` also writes a replay index and package manifest; it belongs to an isolated research replay with its output directory set, and must not be used as a read-only check of accepted files.
+
+The Node syntax commands require Node.js for source acceptance only. The final command requires Playwright and an authorized Chromium environment. These verification tools are not dependencies of the standard-library application. Browser screenshots, export identity, error/cancellation, navigation, mobile overflow and transformed font size belong to the exact published commit's CI result. This document does not substitute for those results.
 
 Aircraft-level full-load credibility remains open. Neither package changes the X-57 nacelle's geometry, losses, flow coefficients, convection, contact properties or thermal margins.

@@ -1,0 +1,15 @@
+{
+  "status": "passed_six_reviewed_main_roots",
+  "all_passed": true,
+  "output_directory": "/workspace/scratch/2e71d53fcaa7/cad-thermal-integration/output/physics-campaign/pressure-requirement-package-review/fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay",
+  "package_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "thermal_evaluations": 6,
+  "root_searches": 0,
+  "source_package_unchanged": true,
+  "snapshot_unchanged": true,
+  "verified_snapshot_files": 278,
+  "default_scope": "two geometries timesK=0,1,2 at reviewed main-root pressures; no191-solve campaign rerun",
+  "numerical_report": "results/numerical_replay.json",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

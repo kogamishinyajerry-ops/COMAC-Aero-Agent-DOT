@@ -1,0 +1,1727 @@
+{
+  "design_id": "n16_t860",
+  "scope": "Conditional inverse boundary design in an existing constant-property synthetic model; no empirical fitting, physical validation, installed pressure specification or guaranteed engineering margin",
+  "plan_sha256": "8955dabaa45f3894b8cfb310c340eb4c126ff734dda6ac33773c28a19945e5c6",
+  "status": "continuation_complete_pending_independent_review",
+  "cases": [
+    {
+      "K": 0,
+      "status": "numerically_verified_conditional_root",
+      "roots": {
+        "main": {
+          "status": "root_bracketed",
+          "K": 0,
+          "mesh": [
+            48,
+            144,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 70.28312804990958,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.35348153144102
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.35348153144102
+              }
+            ]
+          },
+          "initial_bracket": [
+            25.0,
+            70.28312804990958,
+            -15.253267079427111,
+            15.979812241783236
+          ],
+          "coarse_tolerance_check": {
+            "root_Pa": 41.7713701256252,
+            "bracket": [
+              41.769370125625194,
+              41.7733701256252,
+              -0.001365990438145559,
+              0.001530014889048914
+            ],
+            "coarse_to_fine_relative": 2.7118251799684856e-06
+          },
+          "root_Pa": 41.77125684927908,
+          "root_combined_pressure_Pa": 25.062754109567447,
+          "fine_bracket": [
+            {
+              "P_Pa": 41.77115684927907,
+              "capacity_W": 59.99992763252302,
+              "file": "runs/n16_t860/K0_48_144_800_combined_013.json"
+            },
+            {
+              "P_Pa": 41.77135684927908,
+              "capacity_W": 60.00007243316339,
+              "file": "runs/n16_t860/K0_48_144_800_combined_014.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.7240032018289174,
+          "root_heat_residual_W": 3.292579719982314e-08,
+          "root_record": "runs/n16_t860/K0_48_144_800_combined_011.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1365.5882930314742,
+              "max_peak_Mach": 0.031476028670017774,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.3529758188845,
+              "max_peak_Mach": 0.018885617202010662,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "spatial": {
+          "status": "root_bracketed",
+          "K": 0,
+          "mesh": [
+            64,
+            192,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 70.3177137298257,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.38810183165735
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.45775491906628
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.38810183165735
+              }
+            ]
+          },
+          "initial_bracket": [
+            41.35354428078629,
+            42.188969417771865,
+            -0.3270472378418887,
+            0.2775462368194894
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 41.803478703622865,
+          "root_combined_pressure_Pa": 25.08208722217372,
+          "fine_bracket": [
+            {
+              "P_Pa": 41.80337870362286,
+              "capacity_W": 59.9999276646474,
+              "file": "runs/n16_t860/K0_64_192_800_combined_022.json"
+            },
+            {
+              "P_Pa": 41.80357870362287,
+              "capacity_W": 60.000072292979766,
+              "file": "runs/n16_t860/K0_64_192_800_combined_023.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.7231416617985181,
+          "root_heat_residual_W": -2.110387953280224e-08,
+          "root_record": "runs/n16_t860/K0_64_192_800_combined_020.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1365.9695107034354,
+              "max_peak_Mach": 0.03147883955095883,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.5817064220614,
+              "max_peak_Mach": 0.0188873037305753,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "axial": {
+          "status": "root_bracketed",
+          "K": 0,
+          "mesh": [
+            48,
+            144,
+            1600
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 70.28312804990958,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.35348153144102
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.4230977124265
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 70.35348153144102
+              }
+            ]
+          },
+          "initial_bracket": [
+            41.35354428078629,
+            42.188969417771865,
+            -0.2948781043346713,
+            0.3100042543323198
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 41.758831108271266,
+          "root_combined_pressure_Pa": 25.05529866496276,
+          "fine_bracket": [
+            {
+              "P_Pa": 41.75873110827126,
+              "capacity_W": 59.999934251602824,
+              "file": "runs/n16_t860/K0_48_144_1600_combined_030.json"
+            },
+            {
+              "P_Pa": 41.75893110827127,
+              "capacity_W": 60.0000790965153,
+              "file": "runs/n16_t860/K0_48_144_1600_combined_031.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.7242245623588163,
+          "root_heat_residual_W": 6.6741416375748486e-06,
+          "root_record": "runs/n16_t860/K0_48_144_1600_combined_028.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1365.182070003191,
+              "max_peak_Mach": 0.03146666546168485,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.1092420019144,
+              "max_peak_Mach": 0.018879999277010905,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        }
+      },
+      "nominal_at_main_root_record": "runs/n16_t860/K0_48_144_800_nominal_015.json",
+      "spatial_sensitivity": {
+        "G_relative_at_main_pressure": 0.0003884930783517593,
+        "record_at_main_pressure": "runs/n16_t860/K0_64_192_800_combined_016.json",
+        "root_P_relative": 0.0007713881930833111,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      },
+      "axial_sensitivity": {
+        "G_relative_at_main_pressure": 0.0001500732028227869,
+        "record_at_main_pressure": "runs/n16_t860/K0_48_144_1600_combined_024.json",
+        "root_P_relative": 0.00029747108287037083,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      }
+    },
+    {
+      "K": 1,
+      "status": "numerically_verified_conditional_root",
+      "roots": {
+        "main": {
+          "status": "root_bracketed",
+          "K": 1,
+          "mesh": [
+            48,
+            144,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 142.61125602482062,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.75401003485547
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.75401003485547
+              }
+            ]
+          },
+          "initial_bracket": [
+            25.0,
+            142.61125602482062,
+            -20.079671015574128,
+            21.139906149125423
+          ],
+          "coarse_tolerance_check": {
+            "root_Pa": 57.0652851251749,
+            "bracket": [
+              57.0632851251749,
+              57.067285125174905,
+              -0.0007736325637921482,
+              0.0008981612717278153
+            ],
+            "coarse_to_fine_relative": 2.610633462740708e-06
+          },
+          "root_Pa": 57.065136149020915,
+          "root_combined_pressure_Pa": 34.23908168941255,
+          "fine_bracket": [
+            {
+              "P_Pa": 57.06503614902091,
+              "capacity_W": 59.99995822079889,
+              "file": "runs/n16_t860/K1_48_144_800_combined_044.json"
+            },
+            {
+              "P_Pa": 57.06523614902092,
+              "capacity_W": 60.00004181072731,
+              "file": "runs/n16_t860/K1_48_144_800_combined_045.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.41794964209918345,
+          "root_heat_residual_W": 1.5802797292963078e-08,
+          "root_record": "runs/n16_t860/K1_48_144_800_combined_042.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1210.2350388920893,
+              "max_peak_Mach": 0.02789522506601446,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.1299436340889,
+              "max_peak_Mach": 0.018880476437785617,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "spatial": {
+          "status": "root_bracketed",
+          "K": 1,
+          "mesh": [
+            64,
+            192,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 142.64584170473674,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.78863033507182
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.90314610389964
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.78863033507182
+              }
+            ]
+          },
+          "initial_bracket": [
+            56.49448478753071,
+            57.63578751051112,
+            -0.25675234284211257,
+            0.22011703106436187
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 57.10589708577547,
+          "root_combined_pressure_Pa": 34.26353825146528,
+          "fine_bracket": [
+            {
+              "P_Pa": 57.105797085775464,
+              "capacity_W": 59.99995822315921,
+              "file": "runs/n16_t860/K1_64_192_800_combined_053.json"
+            },
+            {
+              "P_Pa": 57.10599708577547,
+              "capacity_W": 60.000041721132256,
+              "file": "runs/n16_t860/K1_64_192_800_combined_054.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.4174898652070843,
+          "root_heat_residual_W": -2.7814245129320625e-08,
+          "root_record": "runs/n16_t860/K1_64_192_800_combined_051.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1210.5887516520886,
+              "max_peak_Mach": 0.027898081748418485,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.3586281846415,
+              "max_peak_Mach": 0.01888216288080667,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "axial": {
+          "status": "root_bracketed",
+          "K": 1,
+          "mesh": [
+            48,
+            144,
+            1600
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 142.61125602482062,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.75401003485547
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.86848889725985
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 142.75401003485547
+              }
+            ]
+          },
+          "initial_bracket": [
+            56.49448478753071,
+            57.63578751051112,
+            -0.23080729589845106,
+            0.24622802383450448
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 57.04358796537199,
+          "root_combined_pressure_Pa": 34.22615277922319,
+          "fine_bracket": [
+            {
+              "P_Pa": 57.04348796537199,
+              "capacity_W": 59.99995449552786,
+              "file": "runs/n16_t860/K1_48_144_1600_combined_061.json"
+            },
+            {
+              "P_Pa": 57.043687965371994,
+              "capacity_W": 60.00003812156849,
+              "file": "runs/n16_t860/K1_48_144_1600_combined_062.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.41813020312308774,
+          "root_heat_residual_W": -3.6914121750442064e-06,
+          "root_record": "runs/n16_t860/K1_48_144_1600_combined_060.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1209.8968219041285,
+              "max_peak_Mach": 0.02788742935799319,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 818.8860334509544,
+              "max_peak_Mach": 0.018874854447646694,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        }
+      },
+      "nominal_at_main_root_record": "runs/n16_t860/K1_48_144_800_nominal_046.json",
+      "spatial_sensitivity": {
+        "G_relative_at_main_pressure": 0.00028373192833508476,
+        "record_at_main_pressure": "runs/n16_t860/K1_64_192_800_combined_047.json",
+        "root_P_relative": 0.0007142879086121656,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      },
+      "axial_sensitivity": {
+        "G_relative_at_main_pressure": 0.00015007321960358588,
+        "record_at_main_pressure": "runs/n16_t860/K1_48_144_1600_combined_055.json",
+        "root_P_relative": 0.0003776068034369029,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      }
+    },
+    {
+      "K": 2,
+      "status": "numerically_verified_conditional_root",
+      "roots": {
+        "main": {
+          "status": "root_bracketed",
+          "K": 2,
+          "mesh": [
+            48,
+            144,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 200,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.15453853826995
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.15453853826995
+              }
+            ]
+          },
+          "initial_bracket": [
+            25.0,
+            200,
+            -23.248890328416053,
+            20.8852444280282
+          ],
+          "coarse_tolerance_check": {
+            "root_Pa": 72.35882449510792,
+            "bracket": [
+              72.35682449510793,
+              72.36082449510792,
+              -0.0006435531693398389,
+              0.0005315189607415505
+            ],
+            "coarse_to_fine_relative": 2.635260017980201e-06
+          },
+          "root_Pa": 72.35901517992757,
+          "root_combined_pressure_Pa": 43.41540910795654,
+          "fine_bracket": [
+            {
+              "P_Pa": 72.35891517992756,
+              "capacity_W": 59.999970632008214,
+              "file": "runs/n16_t860/K2_48_144_800_combined_075.json"
+            },
+            {
+              "P_Pa": 72.35911517992757,
+              "capacity_W": 60.000029385446396,
+              "file": "runs/n16_t860/K2_48_144_800_combined_076.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.2937671909011465,
+          "root_heat_residual_W": 8.749402979901788e-09,
+          "root_record": "runs/n16_t860/K2_48_144_800_combined_073.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1160.465629720462,
+              "max_peak_Mach": 0.026748068666117078,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.0394965124677,
+              "max_peak_Mach": 0.018878391683392365,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "spatial": {
+          "status": "root_bracketed",
+          "K": 2,
+          "mesh": [
+            64,
+            192,
+            800
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 200,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.18915883848626
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.691171679796497,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.34853728873298
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.690313841911887,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.18915883848626
+              }
+            ]
+          },
+          "initial_bracket": [
+            71.6354250281283,
+            73.08260533172684,
+            -0.22813490216534404,
+            0.1968778487770635
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 72.40831522027477,
+          "root_combined_pressure_Pa": 43.444989132164864,
+          "fine_bracket": [
+            {
+              "P_Pa": 72.40821522027477,
+              "capacity_W": 59.99997063013019,
+              "file": "runs/n16_t860/K2_64_192_800_combined_084.json"
+            },
+            {
+              "P_Pa": 72.40841522027478,
+              "capacity_W": 60.00002932107762,
+              "file": "runs/n16_t860/K2_64_192_800_combined_085.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.2934547371227508,
+          "root_heat_residual_W": -2.4373996154736233e-08,
+          "root_record": "runs/n16_t860/K2_64_192_800_combined_082.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1160.8037585144393,
+              "max_peak_Mach": 0.026750783950959887,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 819.2681511107787,
+              "max_peak_Mach": 0.018880077831858764,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        },
+        "axial": {
+          "status": "root_bracketed",
+          "K": 2,
+          "mesh": [
+            48,
+            144,
+            1600
+          ],
+          "domain": {
+            "lower_Pa": 25.0,
+            "upper_Pa": 200,
+            "branches": [
+              {
+                "channel": 0,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.15453853826995
+              },
+              {
+                "channel": 1,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 2,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 3,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 4,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 5,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 6,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 7,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 8,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 9,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 10,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 11,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 12,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 13,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 14,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 15,
+                "Re_speed_limit_m_s": 10.970012824520994,
+                "Mach_speed_limit_m_s": 20.687244396668557,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.3138800820932
+              },
+              {
+                "channel": 16,
+                "Re_speed_limit_m_s": 10.966615642190877,
+                "Mach_speed_limit_m_s": 20.68638672160567,
+                "limiting_guard": "Re",
+                "nominal_pressure_limit_Pa": 215.15453853826995
+              }
+            ]
+          },
+          "initial_bracket": [
+            71.6354250281283,
+            73.08260533172684,
+            -0.20473143705408603,
+            0.22042814028515068
+          ],
+          "coarse_tolerance_check": null,
+          "root_Pa": 72.32836692696854,
+          "root_combined_pressure_Pa": 43.39702015618112,
+          "fine_bracket": [
+            {
+              "P_Pa": 72.32826692696854,
+              "capacity_W": 59.99996928662329,
+              "file": "continuation/runs/n16_t860/K2_48_144_1600_combined_002.json"
+            },
+            {
+              "P_Pa": 72.32846692696855,
+              "capacity_W": 60.00002806843955,
+              "file": "continuation/runs/n16_t860/K2_48_144_1600_combined_003.json"
+            }
+          ],
+          "local_capacity_slope_W_Pa": 0.2939090812761468,
+          "root_heat_residual_W": -1.3224464225913835e-06,
+          "root_record": "continuation/runs/n16_t860/K2_48_144_1600_combined_001.json",
+          "root_domain_state": {
+            "nominal": {
+              "max_Re_Dh": 1160.139963773866,
+              "max_peak_Mach": 0.02674056225241669,
+              "within_domain": true
+            },
+            "combined": {
+              "max_Re_Dh": 818.7956767837712,
+              "max_peak_Mach": 0.018872771778176475,
+              "within_domain": true
+            }
+          },
+          "gates": {
+            "heat_residual": true,
+            "bracket_width": true,
+            "bracket_sign": true,
+            "local_monotonic_slope": true,
+            "tolerance_sensitivity": true
+          }
+        }
+      },
+      "nominal_at_main_root_record": "runs/n16_t860/K2_48_144_800_nominal_077.json",
+      "spatial_sensitivity": {
+        "G_relative_at_main_pressure": 0.0002412120604603496,
+        "record_at_main_pressure": "runs/n16_t860/K2_64_192_800_combined_078.json",
+        "root_P_relative": 0.0006813254744362229,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      },
+      "phase_one_status": "failed_or_resource_limited",
+      "phase_one_error": "predeclared thermal-solve resource cap reached",
+      "axial_sensitivity": {
+        "G_relative_at_main_pressure": 0.000150073226463876,
+        "record_at_main_pressure": "runs/n16_t860/K2_48_144_1600_combined_086.json",
+        "root_P_relative": 0.0004235581825265955,
+        "G_gate_pass": true,
+        "root_gate_pass": true
+      }
+    }
+  ],
+  "K0_reproduction": [
+    {
+      "condition": "nominal",
+      "record": "runs/n16_t860/K0_48_144_800_nominal_001.json",
+      "relative_differences": {
+        "G_W_K": 0.0,
+        "volume_flow_m3_s": 0.0,
+        "mass_flow_kg_s": 0.0,
+        "max_Re_Dh": 0.0,
+        "pressure_dissipation_W": 0.0
+      },
+      "pass": true
+    },
+    {
+      "condition": "combined",
+      "record": "runs/n16_t860/K0_48_144_800_combined_002.json",
+      "relative_differences": {
+        "G_W_K": 0.0,
+        "volume_flow_m3_s": 0.0,
+        "mass_flow_kg_s": 0.0,
+        "max_Re_Dh": 0.0,
+        "pressure_dissipation_W": 0.0
+      },
+      "pass": true
+    }
+  ],
+  "new_thermal_solve_count": 90,
+  "elapsed_s": 2758.5322499910035,
+  "phase_one_result_source": "results/n16_t860.json",
+  "phase_one_status": "complete_pending_independent_review",
+  "phase_one_thermal_solve_count": 90,
+  "artifact_reference_base": "original pressure-requirement-study directory",
+  "continuation_plan_sha256": "c54ac979adafeb18dd3ff36e6c1ba1a7adca63ea982219ec7a7da4a173bb804c",
+  "additional_primary_thermal_solve_count": 3
+}

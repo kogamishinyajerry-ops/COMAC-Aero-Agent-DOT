@@ -1,0 +1,59 @@
+{
+  "artifact_records": [
+    {
+      "path": "runs/n16_t860/K2_48_144_800_nominal_077.json",
+      "bytes": 32342,
+      "sha256": "4adb6e0b68b5f308541e0d42269fd65dd8775f11de19618adb65f4937375eed7"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_078.json",
+      "bytes": 32009,
+      "sha256": "eff25b4a56a69874b056affd9c13164def855ec03bc3d6064c57ea89ab8cb48e"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_079.json",
+      "bytes": 31979,
+      "sha256": "86b8847e51b59583ac519f2d1fbd8275a7be8abf98557b1d1f6738c98ed21692"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_080.json",
+      "bytes": 32273,
+      "sha256": "b357cfe7d1707906848cc2ce2f6812840905ca45b338e7e860ffa5bc74dc0dba"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_081.json",
+      "bytes": 32228,
+      "sha256": "d339b5ac29500ce1033e88611dcc74bf0190106c2fd434662bc93d28781860d4"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_082.json",
+      "bytes": 31981,
+      "sha256": "07d949dbf8d5ac455560e51ff7b31a89ac8fa1c88c0891665f826256f19848f8"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_083.json",
+      "bytes": 32070,
+      "sha256": "f1b004d112fc349da2ed77b85483e07f6de1609350e756beef155cfbab9bc044"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_084.json",
+      "bytes": 31922,
+      "sha256": "d5a45959ff39940463d2b5b6a51386d2541c619609f7a4cfc1bfca2ecd70d37f"
+    },
+    {
+      "path": "runs/n16_t860/K2_64_192_800_combined_085.json",
+      "bytes": 31943,
+      "sha256": "3fc53a9f61a50bf907fba70ae3567702bdf4ddd0f18cf1dde88601c25a55290a"
+    },
+    {
+      "path": "summarize.py",
+      "bytes": 13473,
+      "sha256": "bae6872cf94405e5dddc20f0bdc3c193671514ec34139b7014e4e5dae77ef29d"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 30470,
+      "sha256": "3215b881baac78d4d0caa900757ba61c175194fb707a4914565292ab76d8b559"
+    }
+  ]
+}

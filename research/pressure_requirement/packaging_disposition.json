@@ -1,0 +1,31 @@
+{
+  "source_inventory_count": 251,
+  "distributed_non_log_inventory_count": 248,
+  "original_manifest_support_files_copied": 5,
+  "omitted_log_count": 3,
+  "omitted_logs": [
+    {
+      "path": "continuation/primary.log",
+      "bytes": 1009,
+      "sha256": "ace8cae3bad36ad7e02c091e0ef9422cfbc04ba427e0455f9146a8ed0826f695"
+    },
+    {
+      "path": "n16_t600.log",
+      "bytes": 17314,
+      "sha256": "5689064c19abc65e678d79c4d142410bb2817b6c3406f6ab3bfb13be1611677c"
+    },
+    {
+      "path": "n16_t860.log",
+      "bytes": 17286,
+      "sha256": "ed009fa30b6353fed121b4b2691a99f7a7d882abff6a775348fec552cf75d484"
+    }
+  ],
+  "omitted_logs_overlap_with192_phase_one_files": [],
+  "phase_one_files_preserved": 192,
+  "source_manifest_index_sha256": "38829dc506a45d1282beff09a21f730dc3aed0fe293bf0cf964ff4632f1b1bf3",
+  "phase_one_manifest_sha256": "3c6b7504248d9c54160b78a70d30f7c387db10b926e5c53127ebae0db2010910",
+  "scientific_dependency_count": 13,
+  "repository_ignore_dependency_count": 1,
+  "source_evidence_not_modified": true,
+  "created_utc": "2026-09-30T21:31:01.695829+00:00"
+}

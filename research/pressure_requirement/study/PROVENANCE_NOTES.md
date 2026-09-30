@@ -1,0 +1,9 @@
+# Execution chronology and retained deviations
+
+The original `plan.json` was frozen and hashed before the new study numerical work. The later `pre_numerics_clarification.json` has been kept byte-for-byte as frozen; its conservative Mach envelope and monotonicity clarification preceded the primary thermal solves and all pressure-root searches.
+
+The clarification's status wording `no_new_solutions_run` refers to the primary thermal/root study. The independent reviewer had already performed raw Poisson and scalar hydraulic checks after the original plan freeze and before the clarification (approximately 20:25 UTC on 2026-09-30). No new thermal solution, inverse thermal root, or requirement outcome was available when the clarification was made. This chronology is more precisely described as pre-thermal/root, rather than absence of all numerical calculation.
+
+A separate resource deviation is retained in `review/independent/execution_notes.json`: at approximately 20:28:37–20:28:44 UTC, a non-marching reviewer matrix/hydraulic audit briefly overlapped the two study workers, resulting in three numerical processes instead of the predeclared maximum of two. It ran zero thermal marches and failed to serialize NumPy booleans, so no numerical acceptance artifact was issued from that attempt. The serializer was corrected and subsequent numerical reviewer work deferred until a worker slot became free. This procedural deviation does not change the equations, thresholds, numerical results or immutable accepted inputs, but it must not be presented as perfect compliance with every resource rule.
+
+The primary thermal/root phase retains its original 180 full-solve budget. Any later verification continuation, if required and explicitly authorized, must have a separate frozen bounded plan and preserve the original budget-limited result instead of rewriting it as a complete original phase.

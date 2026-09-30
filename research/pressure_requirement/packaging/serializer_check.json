@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": {
+    "true_stays_bool": true,
+    "false_stays_bool": true,
+    "integer_stays_int": true,
+    "float_stays_number": true,
+    "nan_rejected": true,
+    "infinity_rejected": true,
+    "array_rejected": true,
+    "unknown_rejected": true
+  },
+  "worker_sha256": "32e0e25455e174e1733ed22e160b22162b305e60474d5f2fe6a26a370679ef72",
+  "actual_thermal_solves": 0,
+  "scope": "Typed JSON serialization only; no model or numerical threshold change"
+}

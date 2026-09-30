@@ -1,0 +1,53 @@
+{
+  "schema": "conditional_pressure_scientific_evidence_manifest_v1",
+  "created_utc": "2026-09-30T21:24:53.090693+00:00",
+  "artifact_count": 251,
+  "chunks": [
+    {
+      "path": "manifest/artifacts_000.json",
+      "count": 80,
+      "bytes": 13474,
+      "sha256": "d2e35bda608bdb8044079de0bdb6e14dff2bf4fde048191775b148931b1b51ae"
+    },
+    {
+      "path": "manifest/artifacts_001.json",
+      "count": 80,
+      "bytes": 14522,
+      "sha256": "41b8490ae990bbc7e5f863630190717b3c86f608b911a29f927d289ec322b31e"
+    },
+    {
+      "path": "manifest/artifacts_002.json",
+      "count": 80,
+      "bytes": 14528,
+      "sha256": "d5bdf3d983aa51ecfccf04ba29f7b3744b0468838cf1524c012876d4bdea3ab5"
+    },
+    {
+      "path": "manifest/artifacts_003.json",
+      "count": 11,
+      "bytes": 1955,
+      "sha256": "f4564a5c0c5dda724fd635f30b604f3b3357433a92e4fe9ff526bb4adb45301f"
+    }
+  ],
+  "external_immutable_inputs": {
+    "research/pressure_fin/original_freeze/study/pressure_fin.py": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "research/pressure_fin/original_freeze/study/presweep_plan.json": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+    "research/pressure_fin/original_freeze/study/verification.json": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+    "research/pressure_fin/original_freeze/study/review/final_review_gate.json": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+    "research/pressure_fin/original_freeze/study/RESULTS.md": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+    "examples/pressure_fin_tradeoff/catalog.json": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+    "examples/pressure_fin_tradeoff/candidates/n16_t600.json": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+    "examples/pressure_fin_tradeoff/candidates/n16_t860.json": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8"
+  },
+  "excluded": [
+    "__pycache__ and bytecode",
+    "temporary incomplete writes",
+    "manifest self-hashes (index hashes each chunk)"
+  ],
+  "limits": {
+    "JSON_bytes_strict_max": 100000,
+    "binary_bytes_strict_max": 250000
+  },
+  "publication_performed": false,
+  "scope": "Scientific evidence only; subsequent repository integration/publication is a separate parent task."
+}

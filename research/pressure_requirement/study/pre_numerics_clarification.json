@@ -1,0 +1,9 @@
+{
+  "status": "pre_numerics_clarification_no_new_solutions_run",
+  "created_utc": "2026-09-30T20:26:00.611594+00:00",
+  "original_plan_sha256": "8955dabaa45f3894b8cfb310c340eb4c126ff734dda6ac33773c28a19945e5c6",
+  "reason": "Independent reviewer identified discrete-sampled peak underestimation and requested thermal monotonicity rationale before minimum-pressure interpretation",
+  "conservative_peak_guard": "shape_upper=(min(g,H)^2/8)*(1+1/n_min^2)/min(raw_Poisson_mean,exact_Poisson_mean); n_min is number of cells across min(g,H). The parallel-plate supersolution bounds continuous rectangular raw maximum; the positive cell-size term also covers the cell-centered finite-volume boundary correction. Retain the sampled peak separately. Use upper envelope for Mach, not sampled peak.",
+  "monotonicity_rationale": "Eliminate fixed massless fin and sealed-fluid states. Effective thermal K is a grounded M-matrix with K*1>=0; inverse of K+M/dz is nonnegative. BE deficits decrease downstream from theta_0=1. For diagonal M2>=M1, w_n=theta2_n-theta1_n satisfies (K+M2/dz)w_n=(M2/dz)w_(n-1)+(M2-M1)/dz*(theta1_(n-1)-theta1_n)>=0. Reconstruction of massless states is nonnegative. Nonnegative base boundary weights give integrated base heat G2>=G1. All active hydraulic U(P) strictly increase for K>=0. Retain numerical finite-bracket positive slopes as local evidence, not independent proof of continuous physical-model monotonicity.",
+  "unchanged": "No change to geometry, thermal equations, original failures, search bounds, Re/Mach numerical thresholds, mesh/root tolerances, retained scenarios, budgets or interpretation limits."
+}

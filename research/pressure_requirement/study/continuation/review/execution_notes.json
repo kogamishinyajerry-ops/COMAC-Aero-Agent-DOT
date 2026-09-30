@@ -1,0 +1,6 @@
+{
+  "phase": "separate_bounded_verification_continuation",
+  "original_phase_reviewer_thermal_count": 0,
+  "continuation_plan_sha256": "c54ac979adafeb18dd3ff36e6c1ba1a7adca63ea982219ec7a7da4a173bb804c",
+  "review_thermal_march_count": 6
+}
