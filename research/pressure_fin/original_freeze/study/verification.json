@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "gates": {
+    "energy": true,
+    "componentwise_residual": true,
+    "maximum_principle": true,
+    "capacity_upper_bound": true,
+    "mass": true,
+    "pressure": true,
+    "momentum": true,
+    "hydraulic_exact": true,
+    "geometry": true,
+    "spatial_convergence": true,
+    "axial_convergence": true,
+    "analytic_isothermal_plug": true,
+    "analytic_uniform_bath_fin": true,
+    "low_flow_capacity": true,
+    "adiabatic_limit": true,
+    "pressure_doubling": true,
+    "blocked_network": true,
+    "equal_interior_network": true,
+    "reflection_symmetry": true
+  },
+  "grid_comparisons": [
+    {
+      "probe": "baseline_nominal",
+      "spatial_G_relative": 0.0003887672948985621,
+      "axial_G_relative": 0.00015051603724258733
+    },
+    {
+      "probe": "baseline_combined",
+      "spatial_G_relative": 0.00039385250142243144,
+      "axial_G_relative": 0.00016890367739375023
+    },
+    {
+      "probe": "wide_nominal",
+      "spatial_G_relative": 0.0006890041654814549,
+      "axial_G_relative": 7.79905677543713e-05
+    },
+    {
+      "probe": "dense_combined",
+      "spatial_G_relative": 0.0005058787578069435,
+      "axial_G_relative": 3.169072995279354e-05
+    }
+  ],
+  "analytic_plug_rows": [
+    {
+      "N": 12,
+      "t_mm": 0.6,
+      "numerical_W_K": 1.7058007419034897,
+      "analytic_W_K": 1.7083058196643752,
+      "relative_error": -0.001466410599349044
+    },
+    {
+      "N": 16,
+      "t_mm": 0.86,
+      "numerical_W_K": 1.2828159265234005,
+      "analytic_W_K": 1.2832720489889038,
+      "relative_error": -0.00035543707654406287
+    },
+    {
+      "N": 20,
+      "t_mm": 1.2,
+      "numerical_W_K": 0.32837878803805454,
+      "analytic_W_K": 0.3284017084719805,
+      "relative_error": -6.979389368166888e-05
+    }
+  ],
+  "analytic_uniform_bath_fin": {
+    "analytic_W_m_K": 18.838085170674216,
+    "assembled_W_m_K": 18.837845829865945,
+    "relative_error": -1.2705155863934614e-05
+  },
+  "low_flow_effectiveness": 1.0000000000000007,
+  "adiabatic_G_W_K": -5.686798133642652e-12,
+  "network_limits": {
+    "doubled_pressure_flow_relative": 0.0,
+    "unchanged_unblocked_flow_relative": 0.0,
+    "blocked_mass_flow_kg_s": 0.0,
+    "blocked_enthalpy_W_K": 0.0,
+    "closed_branch_total_flow_difference_m3_s": 8.138149441730739e-05,
+    "original_closed_branch_flow_m3_s": 8.138149441730744e-05,
+    "equal_interior_flow_max_relative": 0.0,
+    "left_right_reflection_G_relative": 1.1102230246251565e-16
+  },
+  "plan_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+  "code_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "original_model_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "verification_code_sha256": "61348dd5ab91b091d8c3fc08d9d528c86c4a242230ad2f7a09a6b8aa290f8b6f",
+  "elapsed_s": 237.26526138500049,
+  "selected_mesh": {
+    "nx": 48,
+    "ny": 144,
+    "nz": 800
+  },
+  "scope": "Numerical verification of declared synthetic model; no aircraft or experimental validation"
+}

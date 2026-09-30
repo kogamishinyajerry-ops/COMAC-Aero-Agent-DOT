@@ -1,0 +1,833 @@
+{
+  "schema": "pressure_fin_display_v1",
+  "design_id": "n12_t860",
+  "geometry": {
+    "N_fins": 12,
+    "N_channels": 13,
+    "fin_thickness_m": 0.00086,
+    "fin_height_m": 0.0113,
+    "length_m": 0.09,
+    "base_width_m": 0.0415,
+    "duct_width_m": 0.0452,
+    "duct_height_m": 0.0113,
+    "interior_gap_m": 0.0028345454545454546,
+    "side_gap_m": 0.0018499999999999975
+  },
+  "fin_only_aluminum_mass_g": 28.337688,
+  "nominal_reference_design": false,
+  "fixed_60W_combined_criterion": {
+    "heat_load_W": 60,
+    "case_id": "combined_fault",
+    "synthetic_base_limit_C": 85,
+    "synthetic_fin_only_budget_g": 40.0,
+    "raw_mass_temperature_pass": false,
+    "Reynolds_qualified_conditional_pass": false,
+    "status_is_unchanged_by_display_load_selection": true
+  },
+  "all_cases_within_declared_Re_scope": false,
+  "pareto_within_Re_scope": false,
+  "dominated_by_within_Re_scope": null,
+  "dominated_by_all_extrapolations": [
+    "n12_t600",
+    "n16_t600"
+  ],
+  "cases": {
+    "nominal": {
+      "case_id": "nominal",
+      "supply_pressure_drop_Pa": 25.0,
+      "blocked_channel_indices": [],
+      "G_W_K": 1.0183527200006521,
+      "Rth_K_W": 0.9819780321295353,
+      "mass_flow_kg_s": 0.0038391287154150105,
+      "volume_flow_m3_s": 0.003188645112470939,
+      "hydraulic_dissipation_W": 0.07971612781177348,
+      "max_channel_Re_Dh": 2567.3434197829524,
+      "within_declared_Re_scope": false,
+      "all_numerical_gates_pass": true,
+      "raw_mass_temperature_criterion_pass_at_60W": true,
+      "Reynolds_qualified_conditional_pass_at_60W": false,
+      "side_channel_flow_fraction": 0.05109766076888699,
+      "heat_load_records": [
+        {
+          "heat_load_W": 40,
+          "required_uniform_base_temperature_C": 64.27912128518142,
+          "thermal_criterion_pass": true,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        },
+        {
+          "heat_load_W": 60,
+          "required_uniform_base_temperature_C": 83.91868192777211,
+          "thermal_criterion_pass": true,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        },
+        {
+          "heat_load_W": 80,
+          "required_uniform_base_temperature_C": 103.55824257036282,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit",
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "index": 0,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 8.146615313470478e-05,
+          "mass_flow_kg_s": 9.808524837418455e-05,
+          "total_flow_fraction": 0.025548830384443496,
+          "mean_speed_m_s": 3.8969697744417555,
+          "Re_Dh": 817.3014149172308
+        },
+        {
+          "index": 1,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 2,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 3,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 4,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 5,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 6,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 7,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 8,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 9,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 10,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 11,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 12,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 8.146615313470478e-05,
+          "mass_flow_kg_s": 9.808524837418455e-05,
+          "total_flow_fraction": 0.025548830384443496,
+          "mean_speed_m_s": 3.8969697744417555,
+          "Re_Dh": 817.3014149172308
+        }
+      ],
+      "source_record": {
+        "file": "runs/n12_t860_nominal.json",
+        "sha256": "224d8315790eb316bce775b9a0f2c7cfc4c833b752a342d3dda1ba17984d1836"
+      }
+    },
+    "pressure_loss": {
+      "case_id": "pressure_loss",
+      "supply_pressure_drop_Pa": 15.0,
+      "blocked_channel_indices": [],
+      "G_W_K": 0.8408722631564371,
+      "Rth_K_W": 1.1892412722073085,
+      "mass_flow_kg_s": 0.002303477229249007,
+      "volume_flow_m3_s": 0.0019131870674825638,
+      "hydraulic_dissipation_W": 0.028697806012238456,
+      "max_channel_Re_Dh": 1540.4060518697718,
+      "within_declared_Re_scope": true,
+      "all_numerical_gates_pass": true,
+      "raw_mass_temperature_criterion_pass_at_60W": false,
+      "Reynolds_qualified_conditional_pass_at_60W": false,
+      "side_channel_flow_fraction": 0.05109766076888699,
+      "heat_load_records": [
+        {
+          "heat_load_W": 40,
+          "required_uniform_base_temperature_C": 72.56965088829233,
+          "thermal_criterion_pass": true,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": true,
+          "screen_failure_reasons": []
+        },
+        {
+          "heat_load_W": 60,
+          "required_uniform_base_temperature_C": 96.35447633243851,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit"
+          ]
+        },
+        {
+          "heat_load_W": 80,
+          "required_uniform_base_temperature_C": 120.13930177658467,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "index": 0,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 4.887969188082287e-05,
+          "mass_flow_kg_s": 5.885114902451073e-05,
+          "total_flow_fraction": 0.025548830384443492,
+          "mean_speed_m_s": 2.3381818646650534,
+          "Re_Dh": 490.3808489503385
+        },
+        {
+          "index": 1,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 2,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 3,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 4,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 5,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 6,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 7,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 8,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 9,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 10,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 11,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.08626384902101028,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 12,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 4.887969188082287e-05,
+          "mass_flow_kg_s": 5.885114902451073e-05,
+          "total_flow_fraction": 0.025548830384443492,
+          "mean_speed_m_s": 2.3381818646650534,
+          "Re_Dh": 490.3808489503385
+        }
+      ],
+      "source_record": {
+        "file": "runs/n12_t860_pressure_loss.json",
+        "sha256": "35fda9153929446ec10a017548cbefe4eb25005b5d1d89cfc01087148568ee97"
+      }
+    },
+    "asymmetric_blockage": {
+      "case_id": "asymmetric_blockage",
+      "supply_pressure_drop_Pa": 25.0,
+      "blocked_channel_indices": [
+        1
+      ],
+      "G_W_K": 0.9327347860166288,
+      "Rth_K_W": 1.072116120243179,
+      "mass_flow_kg_s": 0.003507950695536225,
+      "volume_flow_m3_s": 0.002913580311907164,
+      "hydraulic_dissipation_W": 0.0728395077976791,
+      "max_channel_Re_Dh": 2567.3434197829524,
+      "within_declared_Re_scope": false,
+      "all_numerical_gates_pass": true,
+      "raw_mass_temperature_criterion_pass_at_60W": false,
+      "Reynolds_qualified_conditional_pass_at_60W": false,
+      "side_channel_flow_fraction": 0.05592168014162539,
+      "heat_load_records": [
+        {
+          "heat_load_W": 40,
+          "required_uniform_base_temperature_C": 67.88464480972716,
+          "thermal_criterion_pass": true,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        },
+        {
+          "heat_load_W": 60,
+          "required_uniform_base_temperature_C": 89.32696721459075,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit",
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        },
+        {
+          "heat_load_W": 80,
+          "required_uniform_base_temperature_C": 110.76928961945433,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit",
+            "outside_declared_channel_Reynolds_scope"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "index": 0,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 8.146615313470478e-05,
+          "mass_flow_kg_s": 9.808524837418455e-05,
+          "total_flow_fraction": 0.027960840070812697,
+          "mean_speed_m_s": 3.8969697744417555,
+          "Re_Dh": 817.3014149172308
+        },
+        {
+          "index": 1,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": true,
+          "volume_flow_m3_s": 0.0,
+          "mass_flow_kg_s": 0.0,
+          "total_flow_fraction": 0.0,
+          "mean_speed_m_s": 0.0,
+          "Re_Dh": 0.0
+        },
+        {
+          "index": 2,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 3,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 4,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 5,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 6,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 7,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 8,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 9,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 10,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 11,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.0002750648005637754,
+          "mass_flow_kg_s": 0.0003311780198787856,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 8.58762653107997,
+          "Re_Dh": 2567.343419782953
+        },
+        {
+          "index": 12,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 8.146615313470478e-05,
+          "mass_flow_kg_s": 9.808524837418455e-05,
+          "total_flow_fraction": 0.027960840070812697,
+          "mean_speed_m_s": 3.8969697744417555,
+          "Re_Dh": 817.3014149172308
+        }
+      ],
+      "source_record": {
+        "file": "runs/n12_t860_asymmetric_blockage.json",
+        "sha256": "15619e4f0f0a2dcf3102f824f26d5fc582b85023121848b07dc12cd5d77e9d3e"
+      }
+    },
+    "combined_fault": {
+      "case_id": "combined_fault",
+      "supply_pressure_drop_Pa": 15.0,
+      "blocked_channel_indices": [
+        1
+      ],
+      "G_W_K": 0.770045414505221,
+      "Rth_K_W": 1.2986247059759874,
+      "mass_flow_kg_s": 0.0021047704173217355,
+      "volume_flow_m3_s": 0.0017481481871442987,
+      "hydraulic_dissipation_W": 0.02622222280716448,
+      "max_channel_Re_Dh": 1540.4060518697718,
+      "within_declared_Re_scope": true,
+      "all_numerical_gates_pass": true,
+      "raw_mass_temperature_criterion_pass_at_60W": false,
+      "Reynolds_qualified_conditional_pass_at_60W": false,
+      "side_channel_flow_fraction": 0.055921680141625386,
+      "heat_load_records": [
+        {
+          "heat_load_W": 40,
+          "required_uniform_base_temperature_C": 76.9449882390395,
+          "thermal_criterion_pass": true,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": true,
+          "screen_failure_reasons": []
+        },
+        {
+          "heat_load_W": 60,
+          "required_uniform_base_temperature_C": 102.91748235855924,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit"
+          ]
+        },
+        {
+          "heat_load_W": 80,
+          "required_uniform_base_temperature_C": 128.889976478079,
+          "thermal_criterion_pass": false,
+          "fin_only_mass_criterion_pass": true,
+          "selected_scenario_condition_pass": false,
+          "screen_failure_reasons": [
+            "uniform_base_above_synthetic_limit"
+          ]
+        }
+      ],
+      "branches": [
+        {
+          "index": 0,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 4.887969188082287e-05,
+          "mass_flow_kg_s": 5.885114902451073e-05,
+          "total_flow_fraction": 0.02796084007081269,
+          "mean_speed_m_s": 2.3381818646650534,
+          "Re_Dh": 490.3808489503385
+        },
+        {
+          "index": 1,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": true,
+          "volume_flow_m3_s": 0.0,
+          "mass_flow_kg_s": 0.0,
+          "total_flow_fraction": 0.0,
+          "mean_speed_m_s": 0.0,
+          "Re_Dh": 0.0
+        },
+        {
+          "index": 2,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 3,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 4,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 5,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 6,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 7,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 8,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 9,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 10,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 11,
+          "role": "heated_floor_interior_channel",
+          "gap_m": 0.0028345454545454546,
+          "blocked": false,
+          "volume_flow_m3_s": 0.00016503888033826529,
+          "mass_flow_kg_s": 0.0001987068119272714,
+          "total_flow_fraction": 0.09440783198583745,
+          "mean_speed_m_s": 5.152575918647983,
+          "Re_Dh": 1540.4060518697722
+        },
+        {
+          "index": 12,
+          "role": "adiabatic_floor_side_channel",
+          "gap_m": 0.0018499999999999975,
+          "blocked": false,
+          "volume_flow_m3_s": 4.887969188082287e-05,
+          "mass_flow_kg_s": 5.885114902451073e-05,
+          "total_flow_fraction": 0.02796084007081269,
+          "mean_speed_m_s": 2.3381818646650534,
+          "Re_Dh": 490.3808489503385
+        }
+      ],
+      "source_record": {
+        "file": "runs/n12_t860_combined_fault.json",
+        "sha256": "5009622345fadb4975c4d19d986f957b8ab5002dd1077ac0bb6b86eaef99aafc"
+      }
+    }
+  },
+  "provenance": {
+    "presweep_plan_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+    "model_code_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "source_design_results_sha256": "396f160b7b1ac9e15bbef520aa45506d0145cb3c3847cc8b9211203f9ba79328",
+    "branch_expansion": "exact uniform-interior and invariant-side hydraulic symmetry classes; saved total flow minus two saved side flows gives remaining active interior flow; no fitted parameters"
+  }
+}

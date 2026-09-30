@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "checks": {
+    "verified_snapshot_api": true,
+    "posix_snapshot_key_contract_for_windows_paths": true,
+    "deep_relocation_audit": true,
+    "stdlib_only_default_reproduction": true,
+    "fixed_60W_failure_survives_40W_selection": true,
+    "baseline_and_selected_flow_bars_present": true,
+    "default_did_not_modify_pins": true,
+    "pinned_path_overwrite_rejected": true,
+    "existing_output_overwrite_rejected": true,
+    "artifact_tamper_rejected": true,
+    "snapshot_remains_exact_after_file_change": true,
+    "snapshot_export_ignores_post_audit_source_mutation": true,
+    "replaced_manifest_rejected": true,
+    "oversize_preflight_rejected": true,
+    "tampered_semantics_rejected_even_with_local_rehash": true
+  },
+  "standard_library_only": true,
+  "numpy_or_scipy_imported_by_default": false,
+  "scientific_model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "test_script_sha256": "96bf177d3bec8338e7d2adc78f9fbcd1fca6425eef17faa95cbe2f52a13b66d4",
+  "scope": "Packaging integrity, immutable snapshots, display arithmetic and fresh-output safety; no PDE rerun or aircraft validation"
+}

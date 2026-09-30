@@ -1,0 +1,61 @@
+{
+  "scope": "Early coarse operator review only; not acceptance of the geometry sweep or synthetic requirements",
+  "model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "inherited_solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "presweep_plan_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+  "review_script_sha256": "3855588349261864496f9a4ab37a8f86bc7b8e1ff8770c4443e1fdd6f63dbd3c",
+  "experimental_arrays_read": false,
+  "hydraulic_checks": {
+    "unblocked_absolute_flows_unchanged": true,
+    "closed_branch_flow_zero": true,
+    "total_flow_reduction_equals_closed_flow_relative_error": -5.551115123125783e-16,
+    "pressure_doubling_maximum_relative_error": 0.0
+  },
+  "rows": [
+    {
+      "blocked_channels": [],
+      "coarse_grid": {
+        "nx": 4,
+        "ny": 12,
+        "nz": 200
+      },
+      "algebraic_unknown_count": 192,
+      "active_unknown_count": 816,
+      "minimum_eigenvalue_per_m": 3.1539317351841665,
+      "implementation_G_W_K": 1.1777966751237452,
+      "independent_spectral_BE_G_W_K": 1.1777966751237472,
+      "relative_propagation_difference": -1.6653345369377348e-15,
+      "global_energy_relative_imbalance": 5.715674408427441e-15,
+      "closed_branch_enthalpy_transport_W_K": null,
+      "maximum_mirrored_fin_temperature_asymmetry": 1.1102230246251565e-16,
+      "fin_only_mass_kg": 0.037783583999999995
+    },
+    {
+      "blocked_channels": [
+        1
+      ],
+      "coarse_grid": {
+        "nx": 4,
+        "ny": 12,
+        "nz": 200
+      },
+      "algebraic_unknown_count": 240,
+      "active_unknown_count": 768,
+      "minimum_eigenvalue_per_m": 3.1539317351840883,
+      "implementation_G_W_K": 1.1049053740592014,
+      "independent_spectral_BE_G_W_K": 1.1049053740592032,
+      "relative_propagation_difference": -1.5543122344752192e-15,
+      "global_energy_relative_imbalance": 6.17250471745366e-15,
+      "closed_branch_enthalpy_transport_W_K": 0.0,
+      "maximum_mirrored_fin_temperature_asymmetry": 0.006435977024981998,
+      "fin_only_mass_kg": 0.037783583999999995
+    }
+  ],
+  "checks": {
+    "hydraulic_invariants": true,
+    "independent_coupled_propagation": true,
+    "zero_closed_branch_enthalpy": true,
+    "genuine_asymmetric_fin_coupling": true
+  },
+  "all_early_checks_passed": true
+}

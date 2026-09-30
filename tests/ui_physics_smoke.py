@@ -18,7 +18,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from aerolab.server import Handler
 from aerolab.physics_lab import physics_evidence
-from tests.ui_nacelle_smoke import wait_for_held_route
+sys.path.insert(0, str(ROOT / "tests"))
+from ui_nacelle_smoke import wait_for_held_route
 
 
 def main():
@@ -84,7 +85,8 @@ def main():
             expect(page.locator("#tab-flow")).to_be_focused()
             expect(page.locator("#panel-flow")).to_be_visible()
             page.keyboard.press("End")
-            expect(page.locator("#panel-coupling")).to_be_visible()
+            expect(page.locator("#panel-tradeoff")).to_be_visible()
+            page.locator("#tab-coupling").click()
             results["flows"].append("Tab keyboard navigation and browser Back/Forward preserve the selected panel")
 
             for case, phrase in (("equal", "分布恢复对称"), ("one_wall", "绝热壁"), ("balanced", "总热流为零"), ("reversed", "仍向流体加热"), ("zero_flow", "不给出稳态温度"), ("asymmetric", "仍向流体加热")):

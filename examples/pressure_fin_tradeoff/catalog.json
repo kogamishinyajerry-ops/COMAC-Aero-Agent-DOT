@@ -1,0 +1,202 @@
+{
+  "schema": "pressure_fin_catalog_v1",
+  "default_selection": {
+    "design_id": "n16_t860",
+    "case_id": "combined_fault",
+    "heat_load_W": 60
+  },
+  "count": 9,
+  "candidates": [
+    {
+      "design_id": "n12_t600",
+      "file": "candidates/n12_t600.json",
+      "N_fins": 12,
+      "thickness_mm": 0.6,
+      "fin_only_aluminum_mass_g": 19.770479999999996,
+      "all_cases_within_declared_Re_scope": false,
+      "out_of_scope_case_ids": [
+        "nominal",
+        "asymmetric_blockage"
+      ],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": null,
+      "nominal_Tb_at_60W_C": 81.96160637585481,
+      "combined_Tb_at_60W_C": 100.02210875246593
+    },
+    {
+      "design_id": "n12_t860",
+      "file": "candidates/n12_t860.json",
+      "N_fins": 12,
+      "thickness_mm": 0.86,
+      "fin_only_aluminum_mass_g": 28.337688,
+      "all_cases_within_declared_Re_scope": false,
+      "out_of_scope_case_ids": [
+        "nominal",
+        "asymmetric_blockage"
+      ],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": null,
+      "nominal_Tb_at_60W_C": 83.91868192777211,
+      "combined_Tb_at_60W_C": 102.91748235855924
+    },
+    {
+      "design_id": "n12_t1200",
+      "file": "candidates/n12_t1200.json",
+      "N_fins": 12,
+      "thickness_mm": 1.2,
+      "fin_only_aluminum_mass_g": 39.54095999999999,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n16_t600",
+        "n16_t860"
+      ],
+      "nominal_Tb_at_60W_C": 87.45798502227566,
+      "combined_Tb_at_60W_C": 108.45925292432514
+    },
+    {
+      "design_id": "n16_t600",
+      "file": "candidates/n16_t600.json",
+      "N_fins": 16,
+      "thickness_mm": 0.6,
+      "fin_only_aluminum_mass_g": 26.360639999999993,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": true,
+      "dominated_by_within_Re_scope": [],
+      "nominal_Tb_at_60W_C": 76.04571659538144,
+      "combined_Tb_at_60W_C": 93.55992337793536
+    },
+    {
+      "design_id": "n16_t860",
+      "file": "candidates/n16_t860.json",
+      "N_fins": 16,
+      "thickness_mm": 0.86,
+      "fin_only_aluminum_mass_g": 37.783584,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n16_t600"
+      ],
+      "nominal_Tb_at_60W_C": 81.36010672935438,
+      "combined_Tb_at_60W_C": 105.45280102102949
+    },
+    {
+      "design_id": "n16_t1200",
+      "file": "candidates/n16_t1200.json",
+      "N_fins": 16,
+      "thickness_mm": 1.2,
+      "fin_only_aluminum_mass_g": 52.721279999999986,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n12_t1200",
+        "n16_t600",
+        "n16_t860",
+        "n20_t600"
+      ],
+      "nominal_Tb_at_60W_C": 101.08433897421708,
+      "combined_Tb_at_60W_C": 147.54106608066206
+    },
+    {
+      "design_id": "n20_t600",
+      "file": "candidates/n20_t600.json",
+      "N_fins": 20,
+      "thickness_mm": 0.6,
+      "fin_only_aluminum_mass_g": 32.950799999999994,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n16_t600"
+      ],
+      "nominal_Tb_at_60W_C": 81.93229141471187,
+      "combined_Tb_at_60W_C": 113.71534184645397
+    },
+    {
+      "design_id": "n20_t860",
+      "file": "candidates/n20_t860.json",
+      "N_fins": 20,
+      "thickness_mm": 0.86,
+      "fin_only_aluminum_mass_g": 47.22947999999999,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n12_t1200",
+        "n16_t600",
+        "n16_t860",
+        "n20_t600"
+      ],
+      "nominal_Tb_at_60W_C": 110.35654573038717,
+      "combined_Tb_at_60W_C": 167.1604366444527
+    },
+    {
+      "design_id": "n20_t1200",
+      "file": "candidates/n20_t1200.json",
+      "N_fins": 20,
+      "thickness_mm": 1.2,
+      "fin_only_aluminum_mass_g": 65.90159999999999,
+      "all_cases_within_declared_Re_scope": true,
+      "out_of_scope_case_ids": [],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": [
+        "n12_t1200",
+        "n16_t600",
+        "n16_t860",
+        "n16_t1200",
+        "n20_t600",
+        "n20_t860"
+      ],
+      "nominal_Tb_at_60W_C": 215.30170467319155,
+      "combined_Tb_at_60W_C": 329.8280152757895
+    }
+  ],
+  "summary": {
+    "scope": "declared synthetic component-scale screening exercise; not aircraft validation",
+    "numerical_verification_passed": true,
+    "all_design_gates_passed": true,
+    "all_sensitivity_gates_passed": true,
+    "design_count": 9,
+    "design_scenario_count": 36,
+    "sensitivity_run_count": 18,
+    "maximum_omitted_viscous_dissipation_fraction_of_60W": 0.001714636984256054,
+    "within_declared_Re_scope_design_ids": [
+      "n12_t1200",
+      "n16_t600",
+      "n16_t860",
+      "n16_t1200",
+      "n20_t600",
+      "n20_t860",
+      "n20_t1200"
+    ],
+    "nominal_conditional_screen_pass_design_ids": [
+      "n16_t600",
+      "n16_t860",
+      "n20_t600"
+    ],
+    "combined_conditional_screen_pass_design_ids": [],
+    "pareto_within_Re_scope_design_ids": [
+      "n16_t600"
+    ],
+    "baseline": {
+      "fin_only_mass_g": 37.783584,
+      "nominal_G_W_K": 1.064582795914931,
+      "combined_G_W_K": 0.7457788820095481,
+      "nominal_Tb_at_60W_C": 81.36010672935438,
+      "combined_Tb_at_60W_C": 105.45280102102949,
+      "nominal_flow_kg_s": 0.0016659202859249415,
+      "combined_flow_kg_s": 0.0009407621799879019,
+      "nominal_pressure_dissipation_W": 0.03459136806322553,
+      "combined_pressure_dissipation_W": 0.011720459053005422,
+      "nominal_side_flow_fraction": 0.11775503210194274,
+      "combined_side_flow_fraction": 0.12511376472482677
+    },
+    "grid_max_spatial_relative": 0.0006890041654814549,
+    "grid_max_axial_relative": 0.00016890367739375023,
+    "caveat": "Conditional screen = numerical gates plus declared Reynolds, mass and temperature conditions. Model-form uncertainty and omitted physics remain; the screened set is not a robust or validated design recommendation."
+  }
+}

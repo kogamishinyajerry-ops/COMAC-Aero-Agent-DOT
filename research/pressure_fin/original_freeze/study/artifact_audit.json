@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "gates": {
+    "nineteen_verification_gates": true,
+    "all_36_design_cases_numerically_passed": true,
+    "all_18_sensitivities_numerically_passed": true,
+    "same_frozen_plan_and_model": true,
+    "original_model_unchanged": true,
+    "mass_recomputed_from_fins_only": true,
+    "every_case_and_dominance_flag_retained": true,
+    "pass_flags_include_applicability": true,
+    "fault_G_ordering": true,
+    "baseline_material_monotonicity": true,
+    "manifest_entries_match": true,
+    "file_limits": true
+  },
+  "manifest_or_pass_issues": [],
+  "file_limit_failures": [],
+  "maximum_mass_recomputation_difference_g": 7.105427357601002e-15,
+  "audit_code_sha256": "b82f715ab2e920aecedc395be984a1f7a1b692780c39d89fb7a68e4618fe679c",
+  "scope": "Artifact and internal-consistency audit only; numerical verification and screening are not aircraft validation"
+}

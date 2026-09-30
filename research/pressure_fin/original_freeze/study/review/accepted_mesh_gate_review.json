@@ -1,0 +1,32 @@
+{
+  "status": "accepted_for_declared_synthetic_sweep",
+  "checks": {
+    "current_model_identity": true,
+    "current_plan_identity": true,
+    "current_verifier_identity": true,
+    "inherited_solver_identity": true,
+    "all19_declared_gates_pass": true,
+    "early_independent_operator_checks_pass": true,
+    "baseline_nominal_convergence_and_local_gates": true,
+    "baseline_combined_convergence_and_local_gates": true,
+    "wide_nominal_convergence_and_local_gates": true,
+    "dense_combined_convergence_and_local_gates": true
+  },
+  "selected_mesh": {
+    "nx": 48,
+    "ny": 144,
+    "nz": 800
+  },
+  "presweep_plan_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+  "model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "verification_sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+  "verifier_sha256": "61348dd5ab91b091d8c3fc08d9d528c86c4a242230ad2f7a09a6b8aa290f8b6f",
+  "independent_operator_review_sha256": "9d53c2733d3b39ea90e5938f37359cc1137541de9e1a813c94bf8b9913ffc8b3",
+  "independent_operator_review_script_sha256": "3855588349261864496f9a4ab37a8f86bc7b8e1ff8770c4443e1fdd6f63dbd3c",
+  "maximum_spatial_refinement_relative_G_difference": 0.0006890041654814549,
+  "maximum_axial_refinement_relative_G_difference": 0.00016890367739375023,
+  "maximum_analytic_isothermal_plug_relative_difference": 0.001466410599349044,
+  "scope": "Acceptance of declared equations and numerical probes for a synthetic component-scale screen only. No physical or aircraft validation; no experimental targets or requirement outcomes used in this review. Every sweep and sensitivity case must retain its own numerical and Reynolds applicability flags. Fixed-pressure closure leaves unblocked absolute flows unchanged. Fin-only mass excludes the rest of the cooling system.",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

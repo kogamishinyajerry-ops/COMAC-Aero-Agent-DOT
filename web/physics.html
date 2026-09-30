@@ -7,7 +7,9 @@
   <meta name="description" content="从公开流量证据、历史散热通道和有限体积子问题，诊断飞机热模型的物理差距。">
   <title>物理证据 · 航空电热实验室</title>
   <link rel="stylesheet" href="/physics.css">
+  <link rel="stylesheet" href="/tradeoff.css">
   <script src="/physics.js" defer></script>
+  <script src="/tradeoff.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -20,12 +22,13 @@
       <div><p class="eyebrow">ENGINEERING EVIDENCE / 05</p><h1>先把物理<span>说清楚。</span></h1><p class="lead">温度不对时，先找错在哪里，再讨论怎样改。</p></div>
       <aside class="scope"><strong>整机满负荷仍未验证</strong><p>流量对照、历史部件假设、数值子问题各有证据边界。局部通过不能替代飞机验证。</p></aside>
     </section>
-    <div class="toolbar"><span id="run-state" role="status" aria-live="polite">正在计算并检查证据版本…</span><div><button id="refresh" disabled>重新计算</button><button id="cancel" hidden>取消等待</button><button id="export" disabled>导出本次证据 ↗</button></div></div>
+    <div id="live-toolbar" class="toolbar"><span id="run-state" role="status" aria-live="polite">正在计算并检查证据版本…</span><div><button id="refresh" disabled>重新计算</button><button id="cancel" hidden>取消等待</button><button id="export" disabled>导出本次证据 ↗</button></div></div>
     <div id="error" class="error" role="alert" hidden></div>
     <nav class="tabs" role="tablist" aria-label="物理诊断步骤">
       <button id="tab-flow" role="tab" aria-selected="true" aria-controls="panel-flow" data-tab="flow"><span>01</span>气流分到哪里</button>
       <button id="tab-channel" role="tab" aria-selected="false" aria-controls="panel-channel" data-tab="channel" tabindex="-1"><span>02</span>通道到底是什么</button>
       <button id="tab-coupling" role="tab" aria-selected="false" aria-controls="panel-coupling" data-tab="coupling" tabindex="-1"><span>03</span>热量怎样耦合</button>
+      <button id="tab-tradeoff" role="tab" aria-selected="false" aria-controls="panel-tradeoff" data-tab="tradeoff" tabindex="-1"><span>04</span>设计取舍</button>
     </nav>
 
     <section id="panel-flow" class="panel" role="tabpanel" aria-labelledby="tab-flow">
@@ -60,6 +63,25 @@
       </div>
       <article class="card verification-card"><div class="card-heading"><h3>数值可信度，单独验收</h3><span class="badge teal">解析解 / 网格收敛 / 守恒</span></div><div id="verification-grid" class="verification-grid"></div><p class="footnote">此处是代码与方程验证。它没有验证飞机、旋转环隙或湍流冷却；也没有将任何系数转移到短舱模型。</p></article>
       <details><summary>查看计算输入、版本和模型限制</summary><div id="duct-details" class="details-content"></div></details>
+    </section>
+    <section id="panel-tradeoff" class="panel" role="tabpanel" aria-labelledby="tab-tradeoff" hidden>
+      <div class="section-heading"><div class="tradeoff-intro"><p class="eyebrow">SAVED COMPONENT SCREEN / 9 GEOMETRIES × 4 STATES</p><h2>更轻、更凉，<span class="mobile-newline">故障时仍可能不够。</span></h2><p>在同一个理想压力源下，比较鳍片质量、分流与所需基座温度。每个点来自已冻结研究记录，不是实时 CFD，也不是整机热设计。</p></div><span class="badge amber">保存研究回放 · 未经物理验证</span></div>
+      <div class="tradeoff-toolbar"><span id="tradeoff-state" role="status" aria-live="polite">打开此步后核对已保存研究包</span><div><button id="tradeoff-refresh">重新核对回放</button><button id="tradeoff-cancel" hidden>取消等待</button><button id="tradeoff-export" disabled>导出当前回放 ↗</button></div></div>
+      <div id="tradeoff-error" class="error" role="alert" hidden></div>
+      <div class="tradeoff-controls">
+        <label>已探索的九种候选<select id="tradeoff-design" disabled aria-label="选择鳍片几何"><option>等待已核对数据</option></select></label><button id="tradeoff-thin" disabled>比较 16 片 × 0.60 mm</button>
+        <fieldset><legend>四种保存故障状态</legend><div><button data-tradeoff-case="nominal" aria-pressed="false" disabled>正常 · 25 Pa</button><button data-tradeoff-case="pressure_loss" aria-pressed="false" disabled>供压下降 · 15 Pa</button><button data-tradeoff-case="asymmetric_blockage" aria-pressed="false" disabled>封闭一支路 · 25 Pa</button><button data-tradeoff-case="combined_fault" aria-pressed="true" disabled>组合故障 · 15 Pa + 封闭</button></div></fieldset>
+        <fieldset><legend>合成热负荷 · 固定物性下的保存预设</legend><div><button data-tradeoff-load="40" aria-pressed="false" disabled>40 W</button><button data-tradeoff-load="60" aria-pressed="true" disabled>60 W 声明值</button><button data-tradeoff-load="80" aria-pressed="false" disabled>80 W</button></div></fieldset>
+      </div>
+      <p class="small">85 °C 均匀基座上限、40 g 鳍片预算和热负荷都是合成设计选择，不是航空认证限值。入口 25 °C；温度按 T基座 = T入口 + Q/G 解释。</p>
+      <div id="tradeoff-requirement" class="tradeoff-requirement" role="status" aria-live="polite"><strong>等待证据核对；不能据此声称设计通过</strong></div>
+      <div class="tradeoff-grid">
+        <article class="card"><div class="card-heading"><h3>与基线放在同一条件下</h3><span>仅鳍片质量 / 均匀基座温度</span></div><div id="tradeoff-comparison"></div><p id="tradeoff-delta"></p><p id="tradeoff-scope"></p></article>
+        <article class="card"><div class="card-heading"><h3>九个点，一个也不隐藏</h3><span>组合故障 / 固定声明 60 W</span></div><div id="tradeoff-scatter" class="tradeoff-scatter"></div><div class="tradeoff-legend"><span class="pareto">范围内 Pareto</span><span>范围内被支配</span><span class="out-of-scope">正常工况超范围</span></div><p class="footnote">此图固定为声明的 60 W；圆环表示当前选择，点可点击或用键盘选择。两种薄 12 片设计在正常工况超 Reynolds 范围，始终保留并标记。Pareto 仅比较有限九点，不是全局最优或可行性证明。</p></article>
+      </div>
+      <article class="card tradeoff-flow-card"><div class="card-heading"><h3>封一条通道，其他通道会变快吗？</h3><span>理想共同压力边界 · 绝对流量</span></div><div id="tradeoff-fault-summary" class="tradeoff-fault-summary"></div><div id="tradeoff-channels" class="tradeoff-channels" aria-label="各通道绝对质量流量"></div><p id="tradeoff-channel-note" class="footnote"></p><p class="footnote">同一供压下，开放通道绝对流量不增加。25 Pa 降为 15 Pa 时，流量按压力下降。被动压降耗散不是风扇电功率；热方程忽略粘性发热。</p></article>
+      <div class="tradeoff-limits"><strong>此处能回答部件筛选问题，不能回答飞机热点问题</strong><p>均匀基座、固定物性、充分发展层流；省略基座扩散、接触热阻、轴向固体导热、入口/出口损失、风扇曲线、湍流和温变物性。高失败温度只是线性外推，不是已验证的高温预测。质量不含基座、风道、风扇或飞机。</p></div>
+      <details><summary>数值核查、模型形式敏感性与回放身份</summary><div id="tradeoff-evidence" class="details-content"></div></details>
     </section>
     <div class="takeaway"><span>继续看实测</span><p>32 条历史流道记录与 12 个现代板翅实测图点，保留模型不吻合的地方。<a href="/experiments">打开已冻结的实验对照回放 →</a></p></div>
     <section class="next-evidence"><div><p class="eyebrow">WHAT WOULD CLOSE THE GAP?</p><h2>下一步需要哪些证据？</h2></div><ol><li><strong>定版散热通道</strong><span>尺寸、散热面、槽数与流场平均定义</span></li><li><strong>真实固体路径</strong><span>绕组方向性、浸渍空隙、接触与器件节点</span></li><li><strong>成套试验边界</strong><span>同一转速、热负荷下的压差、流量和温度</span></li></ol></section>

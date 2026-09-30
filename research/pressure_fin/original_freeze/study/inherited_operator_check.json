@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scope": "thermal-operator equivalence at inherited geometry; hydraulic mass matrix is deliberately different; no experimental targets read",
+  "maximum_thermal_matrix_difference": 0.0,
+  "maximum_base_boundary_difference": 0.0,
+  "new_code_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "original_code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "check_code_sha256": "2f30ccef65ca2881b1c032518fa6afb67954f53166f4338f3c3f5c62131a7fda"
+}

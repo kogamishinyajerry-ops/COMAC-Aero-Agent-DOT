@@ -1,0 +1,162 @@
+{
+  "status": "predeclared_before_new_numerics",
+  "created_utc": "2026-09-30T18:30:00Z",
+  "purpose": "Synthetic, component-scale pressure-driven fin-count/thickness, thermal, fin-only mass and combined-fault tradeoff. Not aircraft validation or a new experimental comparison.",
+  "source_scope": "public source geometry plus explicitly synthetic design and operating scenarios; original experimental benchmark and freeze unchanged",
+  "inherited_files": [
+    "../fin-study/conjugate_fin.py",
+    "../fin-study/precomparison_plan.json",
+    "../fin-study/verification.json",
+    "../fin-study/review/final_review_gate.json"
+  ],
+  "geometry": {
+    "base_width_m": 0.0415,
+    "duct_width_m": 0.0452,
+    "length_m": 0.09,
+    "fin_height_and_duct_height_m": 0.0113,
+    "fin_counts": [
+      12,
+      16,
+      20
+    ],
+    "fin_thicknesses_m": [
+      0.0006,
+      0.00086,
+      0.0012
+    ],
+    "interior_gap_equation": "(base_width - N*t)/(N-1)",
+    "side_gap_equation": "(duct_width-base_width)/2",
+    "height_axis": "held fixed; changing height would require explicitly resolving the over-tip bypass and three-dimensional fin-tip boundary",
+    "boundary_ownership": "N-1 interior floors and N fin roots at uniform fixed base temperature; two side-channel floors and duct walls adiabatic; fin tips adiabatic; every fin sees both adjacent channels; full domain used for asymmetry"
+  },
+  "requirements_synthetic_not_aircraft": {
+    "inlet_temperature_C": 25,
+    "maximum_base_temperature_C": 85,
+    "fin_only_mass_budget_kg": 0.04,
+    "nominal_heat_load_W": 60,
+    "heat_load_sensitivity_W": [
+      40,
+      60,
+      80
+    ],
+    "combined_fault_heat_load_W": 60,
+    "interpretation": "Tb=Tin+Q/G is a required isothermal-base temperature under the linear property model, not a local hot-spot prediction. Nominal and combined-fault pass are reported separately and neither substitutes for applicability."
+  },
+  "primary_parameters": {
+    "supply_pressure_drop_Pa": 25,
+    "pressure_boundary": "Ideal reservoirs impose the same deltaP across every parallel channel; fixed pressure rather than fixed flow or speed. Unblocked absolute flows stay fixed when another branch closes, while their fractions of total flow increase. No finite fan curve or common feeder coupling is asserted.",
+    "air_rho_kg_m3": 1.204,
+    "air_cp_J_kg_K": 1007,
+    "air_k_W_m_K": 0.02514,
+    "air_nu_m2_s": 1.516e-05,
+    "aluminum_k_W_m_K": 205,
+    "aluminum_density_kg_m3": 2700
+  },
+  "equations": {
+    "hydraulics": "-laplacian(w)=1, w=0 at all channel walls; u_i=deltaP*w_i/(mu*L); Qv_i=Ai*mean(w_i)*deltaP/(mu*L). The raw conservative Poisson solution sets conductance; independent analytic rectangular mean is a strict discretization gate, not a rescaling.",
+    "exact_mean": "wbar=a^2/12*[1-192*a/(pi^5*b)*sum_{n odd>=1} tanh(n*pi*b/(2*a))/n^5], a=min(g,H), b=max(g,H)",
+    "mass_network": "m_i=rho*Qv_i, m_total=sum(m_i), channel_fraction_i=Qv_i/sum(Qv_i); ideal common pressure supplies each parallel branch",
+    "momentum": "deltaP*A=L*integral_wall(mu*du/dn_outward_negative ds); each active channel checked using discrete wall-face forces with the raw Poisson solution.",
+    "fluid": "rho*cp*u_i*dT/dz=k_air*laplacian_xy(T); transverse diffusion, axial march, no axial fluid conduction",
+    "fin": "k_s*t*d2T_s/dy2 plus conjugate heat from the adjacent fluid faces = 0 at every axial slice",
+    "thermal_output": "G=sum_i integral_A rho*cp*u_i*(Tout-Tin)/(Tb-Tin) dA; Q=G*(Tb-Tin); required_Tb=Tin+Qload/G",
+    "mass": "m_fins=rho_Al*N*t*H*L; excludes base, duct, cooler plumbing, motor/fan and aircraft",
+    "pressure_dissipation": "P_dissipation=deltaP*sum(Qv_i), units W; passive hydraulic dissipation, NOT electrical fan power"
+  },
+  "cases": [
+    {
+      "id": "nominal",
+      "pressure_Pa": 25,
+      "blocked_channels": []
+    },
+    {
+      "id": "pressure_loss",
+      "pressure_Pa": 15,
+      "blocked_channels": []
+    },
+    {
+      "id": "asymmetric_blockage",
+      "pressure_Pa": 25,
+      "blocked_channel_rule": "interior channel 1 counted from the left duct side; zero throughflow"
+    },
+    {
+      "id": "combined_fault",
+      "pressure_Pa": 15,
+      "blocked_channel_rule": "interior channel 1 counted from the left duct side; zero throughflow"
+    }
+  ],
+  "blockage_semantics": "Ideal sealed entrance with zero branch conductance; channel fluid still conducts transversely but has no axial advection. No recirculation, plug thermal resistance, moving obstruction, or cross-channel mixing is resolved. This is a limiting synthetic branch-closure fault, not a resolved blockage experiment.",
+  "sensitivity_predeclared": {
+    "design": "16 fins, 0.86 mm baseline",
+    "cases": "nominal and combined_fault",
+    "aluminum_k_W_m_K": [
+      167,
+      205,
+      237
+    ],
+    "air_property_one_at_a_time_multipliers": {
+      "k_air": [
+        0.95,
+        1.05
+      ],
+      "rho_cp": [
+        0.95,
+        1.05
+      ],
+      "mu": [
+        0.95,
+        1.05
+      ]
+    },
+    "flow_profile": [
+      "fully_developed_Poisson",
+      "uniform_plug_at_same_pressure_derived_mean_flow"
+    ],
+    "interpretation": "Illustrative sensitivity cases, not confidence intervals. Plug is only a thermal-advection shape sensitivity: its fixed hydraulic conductance is the Poisson value, not a second physical momentum solution."
+  },
+  "applicability": {
+    "Re_Dh_max": 2300,
+    "Re_definition": "channel_mean_speed*2*g*H/((g+H)*nu)",
+    "hydrodynamic_entrance": "Fully developed Poisson is an imposed inlet condition. No developing inlet pressure loss or velocity evolution is resolved. Developing thermal behavior is solved by marching from uniform Tin.",
+    "entrance_losses": "Omitted: reported pressure is the fully developed straight-channel friction drop only. It is not a complete installed cooler pressure requirement.",
+    "omitted": [
+      "contact resistance",
+      "base spreading/conduction",
+      "axial solid conduction",
+      "axial fluid conduction",
+      "inlet and exit minor losses",
+      "hydrodynamic development",
+      "turbulence",
+      "fan/pump efficiency and curve",
+      "temperature-dependent properties",
+      "radiation and external wall loss"
+    ],
+    "retain": "All nine geometries and all scenarios retained, including nonlaminar extrapolations, mass/temperature failures and dominated points; no Pareto endorsement for out-of-scope results."
+  },
+  "acceptance_gates": {
+    "geometry_width_closure_absolute_m": 1e-14,
+    "poisson_relative_residual": 1e-09,
+    "poisson_force_balance_relative": 1e-09,
+    "poisson_raw_mean_relative_to_exact": 0.002,
+    "parallel_mass_closure_relative": 1e-12,
+    "shared_pressure_branch_closure_relative": 1e-12,
+    "thermal_energy_balance_relative": 1e-08,
+    "temperature_maximum_principle_absolute": 1e-09,
+    "componentwise_thermal_equation_residual_relative": 1e-08,
+    "cross_section_finest_pair_G_relative": 0.005,
+    "axial_finest_pair_G_relative": 0.002,
+    "analytic_isothermal_plug_G_relative": 0.005,
+    "analytic_uniform_bath_fin_heat_relative": 0.002,
+    "adiabatic_heat_absolute_W_K": 1e-09,
+    "low_flow_effectiveness_absolute": 1e-08,
+    "network_limits": "Doubling pressure doubles every Qv; closing a branch leaves other Qv unchanged and decreases total; equal widths yield equal active Qv; zero-throughflow branch has zero enthalpy transport.",
+    "grid_policy": "Begin 48x144 cells/channel, 800 axial steps, compare 64x192 spatial and 1600 axial on declared probes: baseline nominal+combined fault, 12x0.6 nominal, 20x1.2 combined fault. If strict unchanged gates fail, retain failed evidence and refine; use no thermal/mass requirement outcome in mesh selection.",
+    "hydraulic_flow_relative_to_exact": 0.002
+  },
+  "reporting": {
+    "pareto": "Minimize fin-only mass and required combined-fault base temperature, separately for laminar-applicable points and all extrapolations. Every dominated point remains in data.",
+    "file_limits": "each JSON <100KB, each binary <250KB",
+    "comparison_policy": "No experimental residuals or measured markers read, changed, fitted, or recalculated for this tradeoff."
+  },
+  "pre_numerics_clarification": "Before executing any new numerical model, removed exact-mean rescaling because it would disturb the strict discrete momentum balance. Raw conservative Poisson is retained and its mean checked against the analytic series."
+}

@@ -1,0 +1,570 @@
+{
+  "scope": "exact scientific source/result bytes copied read-only; original study and experiment files unchanged",
+  "exclusions": "No __pycache__, pyc, logs, NPZ, or PDF files. Frozen study/manifest.json is the upstream historical inventory and may name excluded transient artifacts; examples/pressure_fin_tradeoff/package_manifest.json is the portable inclusion authority.",
+  "copied": [
+    {
+      "source": "fin-study/conjugate_fin.py",
+      "archive": "original_freeze/fin-study/conjugate_fin.py",
+      "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "bytes": 10060
+    },
+    {
+      "source": "fin-study/precomparison_plan.json",
+      "archive": "original_freeze/fin-study/precomparison_plan.json",
+      "sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+      "bytes": 5700
+    },
+    {
+      "source": "fin-study/review/final_review_gate.json",
+      "archive": "original_freeze/fin-study/review/final_review_gate.json",
+      "sha256": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2",
+      "bytes": 1528
+    },
+    {
+      "source": "fin-study/verification.json",
+      "archive": "original_freeze/fin-study/verification.json",
+      "sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7",
+      "bytes": 12069
+    },
+    {
+      "source": "tradeoff-study/README.md",
+      "archive": "original_freeze/study/README.md",
+      "sha256": "a10555ad208ae302502b141fee4837cbc664ca427eb5fb0c9fc954e71e3ebe55",
+      "bytes": 7028
+    },
+    {
+      "source": "tradeoff-study/RESULTS.md",
+      "archive": "original_freeze/study/RESULTS.md",
+      "sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+      "bytes": 6026
+    },
+    {
+      "source": "tradeoff-study/artifact_audit.json",
+      "archive": "original_freeze/study/artifact_audit.json",
+      "sha256": "9d9d8e99df8be4418de9f9a1be304db1119f5eb7999e1a99137ef943046d503c",
+      "bytes": 889
+    },
+    {
+      "source": "tradeoff-study/audit_study.py",
+      "archive": "original_freeze/study/audit_study.py",
+      "sha256": "b82f715ab2e920aecedc395be984a1f7a1b692780c39d89fb7a68e4618fe679c",
+      "bytes": 3587
+    },
+    {
+      "source": "tradeoff-study/check_inherited_operator.py",
+      "archive": "original_freeze/study/check_inherited_operator.py",
+      "sha256": "2f30ccef65ca2881b1c032518fa6afb67954f53166f4338f3c3f5c62131a7fda",
+      "bytes": 831
+    },
+    {
+      "source": "tradeoff-study/check_screen_point.py",
+      "archive": "original_freeze/study/check_screen_point.py",
+      "sha256": "3bd7e480b858812827aebfbd3f4796338c7d82b9c173ae3ecabb39509ab3dbc1",
+      "bytes": 1333
+    },
+    {
+      "source": "tradeoff-study/design_results.json",
+      "archive": "original_freeze/study/design_results.json",
+      "sha256": "396f160b7b1ac9e15bbef520aa45506d0145cb3c3847cc8b9211203f9ba79328",
+      "bytes": 41374
+    },
+    {
+      "source": "tradeoff-study/first_probe.json",
+      "archive": "original_freeze/study/first_probe.json",
+      "sha256": "57eddc732eb113a8a7fc1da335129f5d1bd4cb683c5d2199d2c59bfed1e2e384",
+      "bytes": 19259
+    },
+    {
+      "source": "tradeoff-study/inherited_operator_check.json",
+      "archive": "original_freeze/study/inherited_operator_check.json",
+      "sha256": "50f59ec5ce214d36c775c1ba4c69329947ac8dc7cfafdc769f35dbd3424c4577",
+      "bytes": 530
+    },
+    {
+      "source": "tradeoff-study/manifest.json",
+      "archive": "original_freeze/study/manifest.json",
+      "sha256": "e3d7608547c798537b79bc20abfc2e6b0ecd695a2da10e1966061e876bf3ec43",
+      "bytes": 16712
+    },
+    {
+      "source": "tradeoff-study/postscreen_point_check.json",
+      "archive": "original_freeze/study/postscreen_point_check.json",
+      "sha256": "6fd609715a90b5db485320fa427ccbdacc0aebd23b677e05100c65999c7febe0",
+      "bytes": 1639
+    },
+    {
+      "source": "tradeoff-study/pressure_fin.py",
+      "archive": "original_freeze/study/pressure_fin.py",
+      "sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "bytes": 8538
+    },
+    {
+      "source": "tradeoff-study/presweep_plan.json",
+      "archive": "original_freeze/study/presweep_plan.json",
+      "sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+      "bytes": 8460
+    },
+    {
+      "source": "tradeoff-study/reproduce.sh",
+      "archive": "original_freeze/study/reproduce.sh",
+      "sha256": "22db24b561c40edf429d71b66fa57a599819e003d6bab522251c3e09b3d31ef4",
+      "bytes": 365
+    },
+    {
+      "source": "tradeoff-study/review/accepted_mesh_gate_review.json",
+      "archive": "original_freeze/study/review/accepted_mesh_gate_review.json",
+      "sha256": "80290575003b98c7133b72ffa67e8429880aa2006af89837567da9ad636792b7",
+      "bytes": 1941
+    },
+    {
+      "source": "tradeoff-study/review/final_review_gate.json",
+      "archive": "original_freeze/study/review/final_review_gate.json",
+      "sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+      "bytes": 2913
+    },
+    {
+      "source": "tradeoff-study/review/independent_operator_review.json",
+      "archive": "original_freeze/study/review/independent_operator_review.json",
+      "sha256": "9d53c2733d3b39ea90e5938f37359cc1137541de9e1a813c94bf8b9913ffc8b3",
+      "bytes": 2362
+    },
+    {
+      "source": "tradeoff-study/review/independent_operator_review.py",
+      "archive": "original_freeze/study/review/independent_operator_review.py",
+      "sha256": "3855588349261864496f9a4ab37a8f86bc7b8e1ff8770c4443e1fdd6f63dbd3c",
+      "bytes": 4918
+    },
+    {
+      "source": "tradeoff-study/run_sweep.py",
+      "archive": "original_freeze/study/run_sweep.py",
+      "sha256": "0a8c4c9cf4ba1f7806364900ae718d8b15f3353423b6c71cfd16e36033815e9d",
+      "bytes": 5855
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t1200_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n12_t1200_asymmetric_blockage.json",
+      "sha256": "e893f9ec18eab1bd0dfd7adbbaa6658e2b28c80f03f071c657dea96ff801b079",
+      "bytes": 1697
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t1200_combined_fault.json",
+      "archive": "original_freeze/study/runs/n12_t1200_combined_fault.json",
+      "sha256": "0004374a1a9d8bbe4582c6c9020dab26fa5a91f7aa45b4c6c25167f982137a48",
+      "bytes": 1694
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t1200_nominal.json",
+      "archive": "original_freeze/study/runs/n12_t1200_nominal.json",
+      "sha256": "ea3971c6f7c453b187d9d1f3968c3a12121ba6569f6f4e90309630bd8bf49bf3",
+      "bytes": 1659
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t1200_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n12_t1200_pressure_loss.json",
+      "sha256": "843a31e893d03de65332a842b6ac71f558337b64d6e6f83a1902bde78c7f3e1d",
+      "bytes": 1685
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t600_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n12_t600_asymmetric_blockage.json",
+      "sha256": "71a30041f6bec1ffb4238ebdc59c6a8a40f2490b0dd1886b8d32b537878890e8",
+      "bytes": 1684
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t600_combined_fault.json",
+      "archive": "original_freeze/study/runs/n12_t600_combined_fault.json",
+      "sha256": "4a99a313e9a3783b25f2d0058533bdf3f15c563c11596e36baed731919979982",
+      "bytes": 1672
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t600_nominal.json",
+      "archive": "original_freeze/study/runs/n12_t600_nominal.json",
+      "sha256": "d1ec857e5d44cb909558bd52bdf17d56db2049008f6977691faf27f3ddde34bc",
+      "bytes": 1642
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t600_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n12_t600_pressure_loss.json",
+      "sha256": "029d5259c2abb689b2e9cfa5cd14e0074040dd14a1e68055d58cb67f9c437f71",
+      "bytes": 1663
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t860_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n12_t860_asymmetric_blockage.json",
+      "sha256": "15619e4f0f0a2dcf3102f824f26d5fc582b85023121848b07dc12cd5d77e9d3e",
+      "bytes": 1689
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t860_combined_fault.json",
+      "archive": "original_freeze/study/runs/n12_t860_combined_fault.json",
+      "sha256": "5009622345fadb4975c4d19d986f957b8ab5002dd1077ac0bb6b86eaef99aafc",
+      "bytes": 1687
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t860_nominal.json",
+      "archive": "original_freeze/study/runs/n12_t860_nominal.json",
+      "sha256": "224d8315790eb316bce775b9a0f2c7cfc4c833b752a342d3dda1ba17984d1836",
+      "bytes": 1671
+    },
+    {
+      "source": "tradeoff-study/runs/n12_t860_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n12_t860_pressure_loss.json",
+      "sha256": "35fda9153929446ec10a017548cbefe4eb25005b5d1d89cfc01087148568ee97",
+      "bytes": 1676
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t1200_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n16_t1200_asymmetric_blockage.json",
+      "sha256": "211be35c9dffdb8730834722431d379fc29a5e053e27b8fc8c51dfe2cbdfce51",
+      "bytes": 1663
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t1200_combined_fault.json",
+      "archive": "original_freeze/study/runs/n16_t1200_combined_fault.json",
+      "sha256": "56e58a699a1e317b0ecc1dae2ac0c14239a41631dc695ba0e47abf60928b929b",
+      "bytes": 1677
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t1200_nominal.json",
+      "archive": "original_freeze/study/runs/n16_t1200_nominal.json",
+      "sha256": "c1e5a7815c1bff7c0048866f786d6c30e71867cf7c3482e664d1790e7edfe4ba",
+      "bytes": 1641
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t1200_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n16_t1200_pressure_loss.json",
+      "sha256": "13859e5c8883ce02c303e45ed598e038ea9948d6a02d698904645f381f179394",
+      "bytes": 1665
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t600_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n16_t600_asymmetric_blockage.json",
+      "sha256": "9853a35feb55c5e9c8301cc59498d708b267d7cc63859252e3ff4b947eaedc15",
+      "bytes": 1662
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t600_combined_fault.json",
+      "archive": "original_freeze/study/runs/n16_t600_combined_fault.json",
+      "sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+      "bytes": 1654
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t600_nominal.json",
+      "archive": "original_freeze/study/runs/n16_t600_nominal.json",
+      "sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+      "bytes": 1640
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t600_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n16_t600_pressure_loss.json",
+      "sha256": "45a37617c9d44d7d072d32a55ca966cbc3f0db9e4f17ae436577ae457fe9f5c5",
+      "bytes": 1663
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t860_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n16_t860_asymmetric_blockage.json",
+      "sha256": "185ecb50ed237bbf85525183f70d9ea8d0c4ad311eac6d3967af2863b5a26363",
+      "bytes": 1680
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t860_combined_fault.json",
+      "archive": "original_freeze/study/runs/n16_t860_combined_fault.json",
+      "sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+      "bytes": 19464
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t860_nominal.json",
+      "archive": "original_freeze/study/runs/n16_t860_nominal.json",
+      "sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+      "bytes": 19562
+    },
+    {
+      "source": "tradeoff-study/runs/n16_t860_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n16_t860_pressure_loss.json",
+      "sha256": "bbce886d7b8c8894cac1e0f15800ad664ce442d04012fee365222d18f455d2e5",
+      "bytes": 1666
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t1200_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n20_t1200_asymmetric_blockage.json",
+      "sha256": "b924b84e66c79fa7e0d5c348dd560592fa7aadf0bee3fc8ba58c09fe1826d50b",
+      "bytes": 1682
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t1200_combined_fault.json",
+      "archive": "original_freeze/study/runs/n20_t1200_combined_fault.json",
+      "sha256": "44c8f5870b598246f8a38c2b023a155c268b40c6dd037f92cd218c5d3b6b3bcf",
+      "bytes": 1657
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t1200_nominal.json",
+      "archive": "original_freeze/study/runs/n20_t1200_nominal.json",
+      "sha256": "5f132cff39dc1bcd6b2e2d9b93d0449e97281e8ad44beb408a5f91af7ea282d1",
+      "bytes": 1662
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t1200_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n20_t1200_pressure_loss.json",
+      "sha256": "cff677e11ba91f13c6c8a03ca0e4ca56223a4a1cb9b5d4078bff1c8a064ad28b",
+      "bytes": 1671
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t600_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n20_t600_asymmetric_blockage.json",
+      "sha256": "ec94b89d2b2c9a594ed7c2a22a57b41cd2ecea2e37d52aaebf9645833c98d34d",
+      "bytes": 1677
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t600_combined_fault.json",
+      "archive": "original_freeze/study/runs/n20_t600_combined_fault.json",
+      "sha256": "377b3f7aaaf0df051189c8a0e70df53e109df19db47b666594dced39b3ebb7b4",
+      "bytes": 1677
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t600_nominal.json",
+      "archive": "original_freeze/study/runs/n20_t600_nominal.json",
+      "sha256": "b9eebd25d26634e778245bcea75ce1326a8ddda64943f42337194061b2c94f87",
+      "bytes": 1676
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t600_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n20_t600_pressure_loss.json",
+      "sha256": "623a4bbcf326be03acca8a9788a95fb1d939fbe4400ef50a1dffcf67d6c0091e",
+      "bytes": 1665
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t860_asymmetric_blockage.json",
+      "archive": "original_freeze/study/runs/n20_t860_asymmetric_blockage.json",
+      "sha256": "57a883d48b7cb1e724ce13cc7f47912a1fb05d553251c2c740331a47b1ff38ec",
+      "bytes": 1679
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t860_combined_fault.json",
+      "archive": "original_freeze/study/runs/n20_t860_combined_fault.json",
+      "sha256": "f2ffd37090414e7d27dab1394282a603ad193237ff1e0c18edd34e6e3cc1599a",
+      "bytes": 1677
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t860_nominal.json",
+      "archive": "original_freeze/study/runs/n20_t860_nominal.json",
+      "sha256": "fb8c283cb78ea2d7332565002daa6dca54fc0e4e74dbf4f9d2a1b3e2d222b2f5",
+      "bytes": 1656
+    },
+    {
+      "source": "tradeoff-study/runs/n20_t860_pressure_loss.json",
+      "archive": "original_freeze/study/runs/n20_t860_pressure_loss.json",
+      "sha256": "e56f429e194ee803687dda13010cd990d94be8650962bfaf1e8e9db97ac764e9",
+      "bytes": 1672
+    },
+    {
+      "source": "tradeoff-study/sensitivity_results.json",
+      "archive": "original_freeze/study/sensitivity_results.json",
+      "sha256": "a7e48209c039ba131e96b124eb7fa67418c7ae8da40e72a1fe4562baa9eedd14",
+      "bytes": 13502
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_heatcap_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_0.95.json",
+      "sha256": "42fb4d2878b072cece5ec15f9bdbedd49c0f863038df54277e101a3806f38990",
+      "bytes": 1699
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_heatcap_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_1.05.json",
+      "sha256": "ef0234ab71036ff0e567f5018f41440e3ea6a19f0349768ffc298daaeba71770",
+      "bytes": 1710
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_ka_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_0.95.json",
+      "sha256": "3b6d2d72aeaa3001400fe7abde7eaacf4555bb23c6af37ba633b405498787080",
+      "bytes": 1737
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_ka_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_1.05.json",
+      "sha256": "1a3b85eb20b862dac7a77c8774ef3ffd52fc1593856db2ff8990c5674e4882fb",
+      "bytes": 1727
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_ks_167.0.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_ks_167.0.json",
+      "sha256": "a45bb3dc5a75d05099abceefd6fb174cd03d6fd8f259a3e6b62aea6368649abe",
+      "bytes": 1714
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_ks_237.0.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_ks_237.0.json",
+      "sha256": "51e279ed1c9d718224beb4a0105e4d19bc0f6f1cc4b742ce311917c2bb59721e",
+      "bytes": 1714
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_mu_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_0.95.json",
+      "sha256": "970e65e94c8af557eebacbedee561a90f86ab01c1dbc9f765426e224fac26178",
+      "bytes": 1733
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_mu_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_1.05.json",
+      "sha256": "921aad75b7d35717330bb0d0205766fa39b7bc9de4582bc9acfc866a6eef57fa",
+      "bytes": 1725
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/combined_fault_profile_plug.json",
+      "archive": "original_freeze/study/sensitivity_runs/combined_fault_profile_plug.json",
+      "sha256": "1aa4d79432ba792225788b130094672e23ab59b6ece4786e11aea7b03bd7677a",
+      "bytes": 1720
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_heatcap_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_0.95.json",
+      "sha256": "12e7c717704dc8efdac5d1d21045aab2ffc433a63be37577612c0d323028f028",
+      "bytes": 1681
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_heatcap_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_1.05.json",
+      "sha256": "736a81080d0711ec671df2c0b806e6d9342c1f2278059da2c2559372fefa96c2",
+      "bytes": 1693
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_ka_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_ka_multiplier_0.95.json",
+      "sha256": "dfa1dcf266d7eb30344b95ae4dd4047ab836c7d2b6cfdb43d0e5e05e241fb64c",
+      "bytes": 1699
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_ka_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_ka_multiplier_1.05.json",
+      "sha256": "d833f355fd9a5e9953d0e27618e313dd44e01e03af9efabaddd9a99bdde556eb",
+      "bytes": 1692
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_ks_167.0.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_ks_167.0.json",
+      "sha256": "508ae1bed5d0602edc17d6b81e4b9170315326eaa63eea174e5bd7fe616af02d",
+      "bytes": 1674
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_ks_237.0.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_ks_237.0.json",
+      "sha256": "8c33b4dac634a2b30b9cdd9957c7fb7206cb88ed11cccc53769b0868ed9097b4",
+      "bytes": 1674
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_mu_multiplier_0.95.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_mu_multiplier_0.95.json",
+      "sha256": "68c7f4904cb9f59dc724dc7a6d11c575a76460687b459adc0e988a8a21c00064",
+      "bytes": 1719
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_mu_multiplier_1.05.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_mu_multiplier_1.05.json",
+      "sha256": "587c623ce50b6233c378957269891a4c630839df12b79b25105bb7c232dee9de",
+      "bytes": 1705
+    },
+    {
+      "source": "tradeoff-study/sensitivity_runs/nominal_profile_plug.json",
+      "archive": "original_freeze/study/sensitivity_runs/nominal_profile_plug.json",
+      "sha256": "68823e53d3cd7b77a48dfb8f881b48cfc985ae93c3d19ab7a6cb8864c6060d2b",
+      "bytes": 1706
+    },
+    {
+      "source": "tradeoff-study/summarize_results.py",
+      "archive": "original_freeze/study/summarize_results.py",
+      "sha256": "a5599e22da6ad700ad694cd1522afaeefc2c36564b65f73085e5dd4b0c8a2450",
+      "bytes": 9346
+    },
+    {
+      "source": "tradeoff-study/summary.json",
+      "archive": "original_freeze/study/summary.json",
+      "sha256": "22c1dbc3f03923181e94405bfb9dee20d89c57585cea14705c2cd57461d745ad",
+      "bytes": 1646
+    },
+    {
+      "source": "tradeoff-study/verification.json",
+      "archive": "original_freeze/study/verification.json",
+      "sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+      "bytes": 3048
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_combined_48_1600.json",
+      "archive": "original_freeze/study/verification_runs/baseline_combined_48_1600.json",
+      "sha256": "74e7de9c286526315777eaca51d124dbc86fe407407bf8b8cc9096b11795f1fb",
+      "bytes": 1650
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_combined_48_800.json",
+      "archive": "original_freeze/study/verification_runs/baseline_combined_48_800.json",
+      "sha256": "206884b06ba79aa7384cb16100247f96d705ce1a5b4feab1d5fc92a68e014561",
+      "bytes": 1651
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_combined_64_800.json",
+      "archive": "original_freeze/study/verification_runs/baseline_combined_64_800.json",
+      "sha256": "be169cc0a8439f8cc53427fc3996cb54cfecb9003b53db101ba9ec572fa1495d",
+      "bytes": 1656
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_nominal_48_1600.json",
+      "archive": "original_freeze/study/verification_runs/baseline_nominal_48_1600.json",
+      "sha256": "862510f4a03c297482352fcf80f3a51f2a90c923e79405e4f5abd2b871449d43",
+      "bytes": 1622
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_nominal_48_800.json",
+      "archive": "original_freeze/study/verification_runs/baseline_nominal_48_800.json",
+      "sha256": "832ff7ff366e869b9743405257a35e5a0a0e47724b48a2d3b3cccb5df9eb7c06",
+      "bytes": 1619
+    },
+    {
+      "source": "tradeoff-study/verification_runs/baseline_nominal_64_800.json",
+      "archive": "original_freeze/study/verification_runs/baseline_nominal_64_800.json",
+      "sha256": "ee996e66435693b044f893bf98b7ca2cebfe2a8fc678d9396c3e2e7f0ec0f924",
+      "bytes": 1644
+    },
+    {
+      "source": "tradeoff-study/verification_runs/dense_combined_48_1600.json",
+      "archive": "original_freeze/study/verification_runs/dense_combined_48_1600.json",
+      "sha256": "d524400cc5903d278ccf2bb48b681d61c8e1a4ea19a43aea5bb50b63934a6006",
+      "bytes": 1628
+    },
+    {
+      "source": "tradeoff-study/verification_runs/dense_combined_48_800.json",
+      "archive": "original_freeze/study/verification_runs/dense_combined_48_800.json",
+      "sha256": "89c95d69b410370752195f403cb488e182b819d0bec0ee821787f470f0c1936f",
+      "bytes": 1625
+    },
+    {
+      "source": "tradeoff-study/verification_runs/dense_combined_64_800.json",
+      "archive": "original_freeze/study/verification_runs/dense_combined_64_800.json",
+      "sha256": "3f46f222cfcfd52f29dcb5fab14fee275e3919d2227c186ebbef7eebb1bdfc62",
+      "bytes": 1654
+    },
+    {
+      "source": "tradeoff-study/verification_runs/wide_nominal_48_1600.json",
+      "archive": "original_freeze/study/verification_runs/wide_nominal_48_1600.json",
+      "sha256": "15c84ec858a867a97afb3e2fb3fb47af0443502063e08a8bb2ad5f6700a1a40c",
+      "bytes": 1616
+    },
+    {
+      "source": "tradeoff-study/verification_runs/wide_nominal_48_800.json",
+      "archive": "original_freeze/study/verification_runs/wide_nominal_48_800.json",
+      "sha256": "ecff71ae57f6568e6d8aafcfc146e636f2ef610076b3e9dc9656605964761765",
+      "bytes": 1618
+    },
+    {
+      "source": "tradeoff-study/verification_runs/wide_nominal_64_800.json",
+      "archive": "original_freeze/study/verification_runs/wide_nominal_64_800.json",
+      "sha256": "8b60962a36f767651a3df89e0e032de72defb675ac27247146e99486442e651b",
+      "bytes": 1619
+    },
+    {
+      "source": "tradeoff-study/verify_tradeoff.py",
+      "archive": "original_freeze/study/verify_tradeoff.py",
+      "sha256": "61348dd5ab91b091d8c3fc08d9d528c86c4a242230ad2f7a09a6b8aa290f8b6f",
+      "bytes": 4937
+    }
+  ]
+}

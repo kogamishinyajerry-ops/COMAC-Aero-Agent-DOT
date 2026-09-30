@@ -1,0 +1,51 @@
+{
+  "independent_review_status": "accepted_for_declared_synthetic_screen_reporting",
+  "checks": {
+    "current_frozen_code_and_plan": true,
+    "verification_identity": true,
+    "nine_designs_36_scenarios_18_sensitivities": true,
+    "all36_raw_results_mass_geometry_temperature_and_conditional_flags": true,
+    "qualified_and_unqualified_dominance_recomputed": true,
+    "all18_sensitivities_reproduce_and_hydraulic_invariants_preserved": true,
+    "working_manifest_consistent_before_review_addition": true,
+    "inherited_inputs_unchanged": true,
+    "headline_counts_and_Pareto_match_summary": true
+  },
+  "physics_model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "presweep_plan_sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+  "verification_sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+  "design_results_sha256": "396f160b7b1ac9e15bbef520aa45506d0145cb3c3847cc8b9211203f9ba79328",
+  "sensitivity_results_sha256": "a7e48209c039ba131e96b124eb7fa67418c7ae8da40e72a1fe4562baa9eedd14",
+  "summary_sha256": "22c1dbc3f03923181e94405bfb9dee20d89c57585cea14705c2cd57461d745ad",
+  "results_readout_sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+  "prior_mesh_gate_review_sha256": "80290575003b98c7133b72ffa67e8429880aa2006af89837567da9ad636792b7",
+  "nominal_conditional_pass_designs": [
+    "n16_t600",
+    "n16_t860",
+    "n20_t600"
+  ],
+  "combined_conditional_pass_designs": [],
+  "within_scope_Pareto_designs": [
+    "n16_t600"
+  ],
+  "selected_point_is_not_combined_fault_feasible": {
+    "design_id": "n16_t600",
+    "fin_only_mass_g": 26.360639999999993,
+    "nominal_required_base_C": 76.04571659538144,
+    "combined_required_base_C": 93.55992337793536,
+    "synthetic_base_ceiling_C": 85,
+    "combined_requirement_pass": false
+  },
+  "scope_boundaries": [
+    "Finite nine-geometry synthetic comparison, not a continuous or global design optimum",
+    "Every numerical and Reynolds flag retained; no endorsement of the two out-of-scope 12-fin geometries",
+    "Required isothermal-base temperature is not a local hot spot or validated high-temperature prediction",
+    "Fixed pressure leaves unblocked absolute flows unchanged; sealed fluid conducts without an advected inlet state",
+    "Fin-only mass excludes base, duct, fan and other aircraft/cooling-system mass",
+    "Hydraulic dissipation is not electrical fan power; viscous heating omitted and separately quantified",
+    "Sensitivity scenarios are not confidence bounds; no experimental comparison or aircraft validation is established"
+  ],
+  "packaging_condition": "Exclude working __pycache__, bytecode and logs from the portable publication manifest; preserve immutable scientific model, plan, numerical evidence and review bytes.",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

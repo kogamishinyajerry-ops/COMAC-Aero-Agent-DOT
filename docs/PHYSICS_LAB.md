@@ -1,4 +1,4 @@
-# Physics evidence: an explanation with three distinct levels
+# Physics evidence: an explanation with separate source, numerical and design evidence
 
 Run `python -m aerolab serve`, then open `http://127.0.0.1:8765/physics`. The nacelle navigation also links to this page. No API key, network request or third-party runtime package is required. The page is served only by the existing local-loopback application.
 
@@ -50,3 +50,11 @@ Details: [source audit](NACELLE_SOURCE_AUDIT.md), [historical unit-cell benchmar
 ## Public component experiments
 
 The linked `/experiments` page consolidates two untuned component comparisons: all 32 historical rectangular-duct records and all 12 recoverable modern plate-fin graph markers. These are separately labeled, integrity-checked saved research replays. They retain discrepancies, missing data, numerical failures and physical applicability limits. See [experimental comparisons](EXPERIMENTAL_COMPARISONS.md) for equations, uncertainty distinctions, reproducibility and browser-acceptance requirements.
+
+## Synthetic component design tradeoff
+
+The fourth tab at `/physics#tradeoff` links the verified pressure-driven fin study to an explicit synthetic design screen. It selects one of nine saved geometries, four fault states and three heat-load presets. The declared60W combined-fault criterion stays fixed when the preview load changes; all nine points remain in the fixed60W scatter. Fin-only mass, required uniform-base temperature, channel flow and heat-rejection shortfall are shown together. The lighter scoped Pareto point remains a combined-fault failure.
+
+`GET /api/physics/tradeoff` is an integrity-checked saved replay, separate from the live calculations. It rejects unrecognized selections and stale evidence. The reader consumes one verified byte snapshot and binds its native export to the selected geometry, case and load. Optional scientific reruns write to a new ignored directory and leave accepted evidence untouched.
+
+The source study and scope are preserved under `research/pressure_fin/` and `examples/pressure_fin_tradeoff/`. See [the concise demonstration route](ENGINEERING_DEMO_RUNBOOK.md) for the intended user journey. Actual browser acceptance still belongs to the exact published commit.

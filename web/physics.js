@@ -2,7 +2,7 @@
 (() => {
   const $ = id => document.getElementById(id);
   const svgNS = "http://www.w3.org/2000/svg";
-  const tabs = ["flow", "channel", "coupling"];
+  const tabs = ["flow", "channel", "coupling", "tradeoff"];
   const names = {main_inlet:"主进气口",motor_internal:"转子–定子间隙",motor_slots:"定子冷却槽",motor_bypass_inlet:"电机旁通入口"};
   const state = {report:null, requestedCase:"asymmetric", controller:null, generation:0};
   const fmt = (value, digits=2) => Number.isFinite(value) ? value.toLocaleString("zh-CN", {minimumFractionDigits:digits,maximumFractionDigits:digits}) : "—";
@@ -20,6 +20,10 @@
   function chooseTab(name, writeHistory=true) {
     name=tabs.includes(name)?name:"flow";
     tabs.forEach(item=>{const active=item===name;$("tab-"+item).setAttribute("aria-selected",String(active));$("tab-"+item).tabIndex=active?0:-1;$("panel-"+item).hidden=!active;});
+    $("live-toolbar").hidden=name==="tradeoff";
+    if(name!=="tradeoff"&&!state.report&&!state.controller)calculate();
+    $("error").hidden=name==="tradeoff" || !$("error").textContent;
+    document.dispatchEvent(new CustomEvent("physics-panel-change",{detail:{tab:name}}));
     // Rebuild SVG coordinates after the formerly hidden container is laid out.
     // Fonts stay in CSS pixels instead of shrinking with a fixed desktop viewBox.
     if(state.report && name==="channel")renderHistorical(state.report);
@@ -174,7 +178,7 @@
   }
   async function calculate(chosen=state.requestedCase) {
     const generation=++state.generation;state.controller?.abort();state.controller=new AbortController();state.requestedCase=chosen;
-    busy(true);$("error").hidden=true;$("run-state").classList.remove("calculation-stale");$("run-state").textContent=state.report?"正在重新求解；下方保留上次结果…":"正在计算并检查证据版本…";
+    busy(true);$("error").hidden=true;$("error").textContent="";$("run-state").classList.remove("calculation-stale");$("run-state").textContent=state.report?"正在重新求解；下方保留上次结果…":"正在计算并检查证据版本…";
     try {
       const response=await fetch("/api/physics/evaluate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({case:chosen}),signal:state.controller.signal});
       const report=await response.json();if(!response.ok)throw new Error(report.error||`HTTP ${response.status}`);
@@ -186,7 +190,7 @@
     } catch(error) {
       if(generation!==state.generation)return;
       if(error.name==="AbortError"){$("run-state").textContent=state.report?"已取消等待，保留上次计算结果":"已取消等待，可以重新计算";}
-      else{$("error").textContent=`本次计算未完成：${error.message}。${state.report?"下方仍为上次结果。":"请稍后重新计算。"}`;$("error").hidden=false;$("run-state").textContent=state.report?"显示上次计算，当前请求未完成":"尚无有效计算结果";}
+      else{$("error").textContent=`本次计算未完成：${error.message}。${state.report?"下方仍为上次结果。":"请稍后重新计算。"}`;$("error").hidden=!$("panel-tradeoff").hidden;$("run-state").textContent=state.report?"显示上次计算，当前请求未完成":"尚无有效计算结果";}
       $("run-state").classList.add("calculation-stale");
     } finally {if(generation===state.generation){busy(false);state.controller=null;}}
   }
@@ -200,7 +204,7 @@
     state.controller?.abort();state.generation++;state.controller=null;busy(false);
     if(state.report){$("run-state").textContent="恢复上次计算结果；可重新计算";$("run-state").classList.add("calculation-stale");}
   });
-  window.addEventListener("pageshow",event=>{if(event.persisted&&!state.report&&!state.controller)calculate();});
+  window.addEventListener("pageshow",event=>{if(event.persisted&&$("panel-tradeoff").hidden&&!state.report&&!state.controller)calculate();});
   let resizeFrame;
   window.addEventListener("resize",()=>{
     cancelAnimationFrame(resizeFrame);
@@ -210,5 +214,4 @@
       if(!$("panel-coupling").hidden)renderDuct(state.report);
     });
   });
-  calculate();
 })();

@@ -1,0 +1,342 @@
+{
+  "status": "verified_precomparison",
+  "gates": {
+    "geometry": true,
+    "velocity_positive": true,
+    "velocity_residual": true,
+    "velocity_force_balance": true,
+    "velocity_selected_mesh_exact_mean": true,
+    "fin_analytic_limit": true,
+    "half_full_symmetry": true,
+    "adiabatic_limit": true,
+    "isothermal_limit": true,
+    "material_monotonicity": true,
+    "linear_scaling": true,
+    "energy_balance": true,
+    "temperature_maximum_principle": true,
+    "cross_section_convergence": true,
+    "axial_convergence": true,
+    "refined_energy_balance": true,
+    "refined_maximum_principle": true
+  },
+  "reused_mathematical_evidence_file": "verification_selected_mesh_rejected.json",
+  "reused_mathematical_evidence_sha256": "f5fe9dd9290b9d160698397b92572f0e0e8826a183473025e23c8be925397a5f",
+  "refinement_plan_sha256": "4a7f08a846bbcec023bd5da01a85f8d9680e491f14fa17744db625d1728be495",
+  "new_runs": [
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0791193978017664,
+      "Rth_K_W": 0.926681516463389,
+      "capacity_rate_W_K": 1.7228938126698667,
+      "effectiveness": 0.6263412114351486,
+      "energy_relative_balance_max": 6.613263426904192e-13,
+      "integrated_base_heat_W_K": 1.079119397802461,
+      "min_normalized_temperature": -7.771561172376096e-15,
+      "max_normalized_temperature": 0.9999197333593683,
+      "outlet_heat_per_length_W_m_K": 6.012850141728278,
+      "outlet_floor_fraction_of_local_heat": 0.018738877694387715,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5926166889807312,
+      "Rth_K_W": 0.6278974764731345,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.36975388204865567,
+      "energy_relative_balance_max": 4.1847273777239637e-13,
+      "integrated_base_heat_W_K": 1.592616688981213,
+      "min_normalized_temperature": -8.881784197001252e-15,
+      "max_normalized_temperature": 0.9998516988575957,
+      "outlet_heat_per_length_W_m_K": 11.013721014244346,
+      "outlet_floor_fraction_of_local_heat": 0.02838645544531477,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.051259214977411,
+      "Rth_K_W": 0.48750542725094465,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.23811789210603712,
+      "energy_relative_balance_max": 5.467611457078208e-13,
+      "integrated_base_heat_W_K": 2.051259214978116,
+      "min_normalized_temperature": -2.7533531010703882e-14,
+      "max_normalized_temperature": 0.9998035843169327,
+      "outlet_heat_per_length_W_m_K": 14.67213592018641,
+      "outlet_floor_fraction_of_local_heat": 0.035722950509410746,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0788032510220062,
+      "Rth_K_W": 0.9269530834771291,
+      "capacity_rate_W_K": 1.7228938126698665,
+      "effectiveness": 0.626157713893144,
+      "energy_relative_balance_max": 1.8594643644652005e-12,
+      "integrated_base_heat_W_K": 1.0788032510200016,
+      "min_normalized_temperature": -2.6645352591003757e-15,
+      "max_normalized_temperature": 0.9999397707962663,
+      "outlet_heat_per_length_W_m_K": 6.015654754894694,
+      "outlet_floor_fraction_of_local_heat": 0.01874534749038414,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5919659303648794,
+      "Rth_K_W": 0.6281541463458326,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.36960279702854215,
+      "energy_relative_balance_max": 1.5863854523201027e-12,
+      "integrated_base_heat_W_K": 1.5919659303623546,
+      "min_normalized_temperature": -3.9968028886505635e-15,
+      "max_normalized_temperature": 0.9998887537708318,
+      "outlet_heat_per_length_W_m_K": 11.015720600840023,
+      "outlet_floor_fraction_of_local_heat": 0.028387376840324437,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.050091537688243,
+      "Rth_K_W": 0.4877830972989801,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.23798234373032398,
+      "energy_relative_balance_max": 1.4481771205920972e-12,
+      "integrated_base_heat_W_K": 2.050091537685276,
+      "min_normalized_temperature": -1.0880185641326534e-14,
+      "max_normalized_temperature": 0.9998526722899327,
+      "outlet_heat_per_length_W_m_K": 14.67364443419353,
+      "outlet_floor_fraction_of_local_heat": 0.035717964812151455,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "fd"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2886959324774567,
+      "Rth_K_W": 0.7759782387747182,
+      "capacity_rate_W_K": 1.722893812669867,
+      "effectiveness": 0.7479833771533724,
+      "energy_relative_balance_max": 6.650086539259499e-13,
+      "integrated_base_heat_W_K": 1.2886959324783047,
+      "min_normalized_temperature": -5.551115123125783e-15,
+      "max_normalized_temperature": 0.999932113816356,
+      "outlet_heat_per_length_W_m_K": 5.167926027239763,
+      "outlet_floor_fraction_of_local_heat": 0.02392346203474993,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.158018310818655,
+      "Rth_K_W": 0.4633880977685704,
+      "capacity_rate_W_K": 4.307234531674667,
+      "effectiveness": 0.5010217797403315,
+      "energy_relative_balance_max": 4.1363116158007226e-13,
+      "integrated_base_heat_W_K": 2.158018310819545,
+      "min_normalized_temperature": -7.549516567451064e-15,
+      "max_normalized_temperature": 0.9998448194173867,
+      "outlet_heat_per_length_W_m_K": 11.636384006541661,
+      "outlet_floor_fraction_of_local_heat": 0.03739820189858211,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0600480087065236,
+      "Rth_K_W": 0.326792258538028,
+      "capacity_rate_W_K": 8.614469063349334,
+      "effectiveness": 0.3552218930967716,
+      "energy_relative_balance_max": 6.91914439993362e-13,
+      "integrated_base_heat_W_K": 3.0600480087082214,
+      "min_normalized_temperature": -1.199040866595169e-14,
+      "max_normalized_temperature": 0.9997735330350609,
+      "outlet_heat_per_length_W_m_K": 17.12777203721388,
+      "outlet_floor_fraction_of_local_heat": 0.047553563368947595,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2886367856982268,
+      "Rth_K_W": 0.7760138551827591,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7479490472493502,
+      "energy_relative_balance_max": 1.5768450445423462e-12,
+      "integrated_base_heat_W_K": 1.2886367856961964,
+      "min_normalized_temperature": -5.329070518200751e-15,
+      "max_normalized_temperature": 0.9999490676728673,
+      "outlet_heat_per_length_W_m_K": 5.169640889320327,
+      "outlet_floor_fraction_of_local_heat": 0.02392704562520516,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "plug"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.158349747477309,
+      "Rth_K_W": 0.46331693979106287,
+      "capacity_rate_W_K": 4.307234531674665,
+      "effectiveness": 0.501098728570542,
+      "energy_relative_balance_max": 8.520457606793222e-13,
+      "integrated_base_heat_W_K": 2.1583497474755715,
+      "min_normalized_temperature": -5.773159728050814e-15,
+      "max_normalized_temperature": 0.999883616112269,
+      "outlet_heat_per_length_W_m_K": 11.635971448197196,
+      "outlet_floor_fraction_of_local_heat": 0.03737497114270383,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "plug"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0613374877645607,
+      "Rth_K_W": 0.3266546089729612,
+      "capacity_rate_W_K": 8.61446906334933,
+      "effectiveness": 0.3553715806803657,
+      "energy_relative_balance_max": 2.1991786700210702e-12,
+      "integrated_base_heat_W_K": 3.061337487757831,
+      "min_normalized_temperature": -5.329070518200751e-15,
+      "max_normalized_temperature": 0.9998301918381257,
+      "outlet_heat_per_length_W_m_K": 17.122371080243184,
+      "outlet_floor_fraction_of_local_heat": 0.04748619556284558,
+      "mesh": {
+        "gap_cells": 64,
+        "height_cells": 192,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 105984
+      },
+      "method": "be",
+      "profile": "plug"
+    }
+  ],
+  "refinement_comparisons": [
+    {
+      "profile": "fd",
+      "speed": 4.0,
+      "relative_48_to_64_spatial": 0.0001442416291974613,
+      "relative_800_to_1600_axial": 0.00014876800618734976
+    },
+    {
+      "profile": "fd",
+      "speed": 10.0,
+      "relative_48_to_64_spatial": 0.0003183161544653146,
+      "relative_800_to_1600_axial": 9.042360528721538e-05
+    },
+    {
+      "profile": "fd",
+      "speed": 20.0,
+      "relative_48_to_64_spatial": 0.0004921408040887698,
+      "relative_800_to_1600_axial": 7.738836232662472e-05
+    },
+    {
+      "profile": "plug",
+      "speed": 4.0,
+      "relative_48_to_64_spatial": 9.839578426651396e-05,
+      "relative_800_to_1600_axial": 0.00014428788180920193
+    },
+    {
+      "profile": "plug",
+      "speed": 10.0,
+      "relative_48_to_64_spatial": 0.00024733563065693076,
+      "relative_800_to_1600_axial": 9.378981461938274e-05
+    },
+    {
+      "profile": "plug",
+      "speed": 20.0,
+      "relative_48_to_64_spatial": 0.0005045542017216853,
+      "relative_800_to_1600_axial": 8.337504299826826e-05
+    }
+  ],
+  "selected_velocity_check": {
+    "mean_m2": 2.5589406210035224e-07,
+    "exact_mean_m2": 2.5560615548132136e-07,
+    "mean_relative_error": 0.0011263680973907508,
+    "relative_residual": 5.187388419789576e-13,
+    "force_balance_relative": 3.275050666658836e-14,
+    "min_raw_m2": 2.1958489670076445e-09
+  },
+  "code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "refinement_code_sha256": "5a6bae9f0d6acc014bf99db7c63a073e1ac47dcaf2ec807fb2aa49ee457c6429",
+  "experimental_data_read": false,
+  "elapsed_s": 253.72443073199975
+}

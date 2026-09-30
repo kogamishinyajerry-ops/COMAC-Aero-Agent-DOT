@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 from pathlib import Path
 import threading
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 from .model import catalog, compare, simulate, sweep
 from .evidence import read_reference
 
@@ -43,6 +43,22 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        if path == "/api/physics/tradeoff":
+            try:
+                from .pressure_fin_replay import read_pressure_fin_replay
+                query = parse_qs(parsed.query, keep_blank_values=True, strict_parsing=True, max_num_fields=3)
+                if set(query) - {"design_id", "case_id", "heat_load_W"} or any(len(values) != 1 for values in query.values()):
+                    raise ValueError("Only one design_id, case_id and heat_load_W are accepted")
+                arguments = {key: values[0] for key, values in query.items()}
+                if "heat_load_W" in arguments:
+                    if arguments["heat_load_W"] not in ("40", "60", "80"):
+                        raise ValueError("heat_load_W must select a saved preset: 40, 60 or 80")
+                    arguments["heat_load_W"] = int(arguments["heat_load_W"])
+                return self.send_json(200, read_pressure_fin_replay(**arguments))
+            except ValueError as exc:
+                return self.send_json(400, {"error": str(exc)})
+            except RuntimeError as exc:
+                return self.send_json(503, {"error": str(exc)})
         if path == "/api/physics/fin-experiment":
             if parsed.query:
                 return self.send_json(400, {"error": "The saved experiment replay accepts no query parameters"})
@@ -89,6 +105,8 @@ class Handler(BaseHTTPRequestHandler):
                   "/physics.html": ("physics.html", "text/html; charset=utf-8"),
                   "/physics.js": ("physics.js", "text/javascript; charset=utf-8"),
                   "/physics.css": ("physics.css", "text/css; charset=utf-8"),
+                  "/tradeoff.js": ("tradeoff.js", "text/javascript; charset=utf-8"),
+                  "/tradeoff.css": ("tradeoff.css", "text/css; charset=utf-8"),
                   "/experiments": ("experiments.html", "text/html; charset=utf-8"),
                   "/experiments.html": ("experiments.html", "text/html; charset=utf-8"),
                   "/experiments.js": ("experiments.js", "text/javascript; charset=utf-8"),

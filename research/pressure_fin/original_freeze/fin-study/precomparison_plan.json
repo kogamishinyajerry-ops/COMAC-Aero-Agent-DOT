@@ -1,0 +1,120 @@
+{
+  "status": "precomparison_model_and_acceptance_plan",
+  "created_utc": "2026-09-30T17:48:00Z",
+  "source": {
+    "doi": "10.17533/udea.redin.20230417",
+    "pdf_sha256": "c14571f635c5767ae3fc57f90fb18514595a54dc53918bc7454da084839c5a01",
+    "geometry_pages_printed": [
+      88,
+      91,
+      92
+    ],
+    "target": "Figure 8 black-square plate-fin resistance markers only; no fitted correlations or Figure 7 derived coefficients"
+  },
+  "geometry_m": {
+    "fins": 16,
+    "interior_channels": 15,
+    "side_channels": 2,
+    "length": 0.09,
+    "height": 0.0113,
+    "fin_thickness": 0.00086,
+    "base_width": 0.0415,
+    "duct_width": 0.0452,
+    "interior_gap": 0.0018493333333333335,
+    "side_gap": 0.0018499999999999975,
+    "upstream_plain_duct_length_unresolved": 0.01
+  },
+  "boundary_ownership": {
+    "interior_channel_floor": "isothermal sink base",
+    "side_channel_floor": "adiabatic duct surface outside sink width",
+    "fin_root": "isothermal base, perfect contact",
+    "fin_tip": "adiabatic",
+    "duct_top_and_sides": "adiabatic",
+    "fin_faces": "conjugate conduction into both adjacent channels; outer fin sees a side channel",
+    "inlet_fluid": "uniform normalized temperature0 at heated section",
+    "axial_solid_ends": "axial solid conduction omitted; no physical inlet/outlet end condition is solved"
+  },
+  "equations": {
+    "fluid": "rho*cp*u(x,y)*dT/dz = k_air*(d2T/dx2+d2T/dy2); no axial fluid conduction or cross-flow",
+    "fin": "k_s*t*d2T_s/dy2 + q_left_to_fin_per_height + q_right_to_fin_per_height = 0 at each axial slice",
+    "normalization": "deficit theta=(Tbase-T)/(Tbase-Tin), so inlet fluid theta=1 and base theta=0",
+    "discrete": "M*dtheta_fluid/dz + K_ff*theta_fluid + K_fs*theta_solid = 0; K_sf*theta_fluid+K_ss*theta_solid=0, with symmetric conservative face conductances",
+    "fluid_solid_face": "G_per_axial_length=dy/(dx/(2*k_air)+t/(2*k_s)); uniform-through-thickness fin nodes with optional half-thickness resistance",
+    "fin_vertical_face": "G_per_axial_length=k_s*t/dy; root G=2*k_s*t/dy",
+    "velocity_fd": "solve -laplacian(w)=1, zero wall velocity, then normalize to equal per-channel mass flow",
+    "output": "G_total=Qconv/(Tbase-Tin)=sum rho*cp*u*dA*(1-theta_out); Rth=1/G_total"
+  },
+  "fixed_scenarios": {
+    "aluminum_k_W_m_K": [
+      167.0,
+      205.0,
+      237.0
+    ],
+    "primary_aluminum_k": 205.0,
+    "material_interpretation": "Independently declared representative aluminum conductivities; no claim to identify the tested alloy and no fitted k",
+    "air_nominal": {
+      "rho_kg_m3": 1.204,
+      "cp_J_kg_K": 1007.0,
+      "k_W_m_K": 0.02514,
+      "nu_m2_s": 1.516e-05
+    },
+    "air_sensitivity": "one-at-a-time k_air and rho*cp multipliers0.95 and1.05; illustrative perturbations, not measured bounds; viscosity only changes Reynolds flags at prescribed speed",
+    "velocity_cases": [
+      "fully_developed_rectangular_laminar",
+      "plug_flow_profile"
+    ],
+    "velocity_interpretation": "Model-form sensitivity cases only; neither resolves10mm upstream duct or hydrodynamic entrance through fins; not confidence bounds",
+    "primary_speed_mapping": "Figure8 reported V assigned to arithmetic interior gap area; every channel has equal mass flow, side speed=V*g_interior/g_side",
+    "speed_mapping_sensitivity": "V multiplied by printed gap1.86mm/arithmetic gap1.849333mm to preserve inferred per-channel flow if author used printed area"
+  },
+  "applicability": {
+    "laminar_Re_Dh_max": 2300.0,
+    "cutoff_source": "source numerical section3.1, printed p91; cutoff fixed before residual evaluation",
+    "Re_definition": "V_interior*2*g_interior*H/(g_interior+H)/nu",
+    "boundary_flags": "nominal and conservative author+graphical speed envelope reported; all12 recovered points retained",
+    "limitations": [
+      "no axial solid conduction",
+      "no axial fluid conduction",
+      "no inlet hydrodynamic development",
+      "no turbulence",
+      "no wall heat loss",
+      "no base spreading or contact resistance",
+      "no experimental run inlet properties or tested alloy recovered",
+      "uniform side-channel mass flow is source reduction assumption, not measured split"
+    ]
+  },
+  "precomparison_acceptance_gates": {
+    "geometry_closure_absolute_m": 1e-14,
+    "positive_velocity_and_temperature_maximum_principle": 1e-10,
+    "poisson_relative_residual": 1e-09,
+    "poisson_integrated_force_balance_relative": 1e-09,
+    "velocity_exact_mean_finest_relative": 0.002,
+    "energy_balance_relative": 1e-08,
+    "isothermal_fin_limit_relative": 1e-05,
+    "adiabatic_allwalls_limit_absolute": 1e-10,
+    "uniform_bath_1d_fin_exact_relative": 0.002,
+    "axial_finest_pair_conductance_relative": 0.002,
+    "cross_section_finest_pair_conductance_relative": 0.005,
+    "low_k_and_high_k_monotonicity": "G(k_low)<G(k_nominal)<G(k_high)<G(isothermal_fins)",
+    "linear_scaling": "normalized output invariant and dimensional Q scales with delta T",
+    "declared_probe_speeds_m_s": [
+      4.0,
+      10.0,
+      20.0
+    ],
+    "mesh_policy": "Choose only using analytic checks and numerical convergence on declared probe speeds; no experimental residuals read/computed until frozen choices saved"
+  },
+  "uncertainty_policy": {
+    "author_Rth_relative": 0.012,
+    "author_V_relative_range": [
+      0.037,
+      0.046
+    ],
+    "author_Re_relative_range": [
+      0.046,
+      0.052
+    ],
+    "graphical_readout": "retain per-marker half-symbol widths/heights from extractor separately; never merge as a confidence interval",
+    "target_status": "loss-corrected whole-sink Rth, approximate graphic readout; not raw temperatures or aircraft validation"
+  }
+}
