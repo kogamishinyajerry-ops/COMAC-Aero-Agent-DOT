@@ -149,6 +149,14 @@ class PressureFinReplayApiTests(unittest.TestCase):
         self.assertEqual(headers['Cache-Control'], 'no-store')
         self.assertEqual(self.request('POST', '/api/physics/tradeoff', '{}')[0], 404)
 
+    def test_default_get_accepts_empty_query_on_supported_python_versions(self):
+        for path in ('/api/physics/tradeoff', '/api/physics/tradeoff?'):
+            with self.subTest(path=path):
+                status, data, _ = self.request('GET', path)
+                self.assertEqual(status, 200)
+                self.assertEqual(json.loads(data)['selection'],
+                                 {'design_id': 'n16_t860', 'case_id': 'combined_fault', 'heat_load_W': 60})
+
     def test_unknown_duplicate_blank_and_nonpreset_queries_are_rejected(self):
         for query in ['bogus=x', 'design_id=n16_t600&design_id=n16_t860', 'heat_load_W=60.0', 'heat_load_W=61', 'heat_load_W=', 'case_id=', 'design_id=..%2F..%2F', 'heat_load_W=60&case_id=nominal&design_id=n16_t600&extra=1', 'heat_load_W', 'heat_load_W=NaN']:
             with self.subTest(query=query):

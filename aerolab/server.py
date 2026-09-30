@@ -46,7 +46,8 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/physics/tradeoff":
             try:
                 from .pressure_fin_replay import read_pressure_fin_replay
-                query = parse_qs(parsed.query, keep_blank_values=True, strict_parsing=True, max_num_fields=3)
+                query = (parse_qs(parsed.query, keep_blank_values=True, strict_parsing=True, max_num_fields=3)
+                         if parsed.query else {})
                 if set(query) - {"design_id", "case_id", "heat_load_W"} or any(len(values) != 1 for values in query.values()):
                     raise ValueError("Only one design_id, case_id and heat_load_W are accepted")
                 arguments = {key: values[0] for key, values in query.items()}
