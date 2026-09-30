@@ -23,6 +23,7 @@ def main():
     parser.add_argument("--demand-scale", type=float, default=1)
     parser.add_argument("--event-offset", type=float, default=0)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--cad-preset", choices=("reference", "light", "dense"), help="Opt in to CAD-linked separated controller/motor mission")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     if args.command == "serve":
@@ -30,6 +31,10 @@ def main():
         return
     kwargs = dict(scenario_id=args.scenario, design_id=args.design, ambient_c=args.ambient,
                   dt_s=args.dt, demand_scale=args.demand_scale, event_time_offset_s=args.event_offset)
+    if args.cad_preset:
+        from .geometry import GEOMETRY_PRESETS, parse_geometry
+        from dataclasses import asdict
+        kwargs["cad_geometry"] = asdict(parse_geometry(GEOMETRY_PRESETS[args.cad_preset]))
     if args.command == "benchmark":
         result = []
         for scenario in SCENARIOS:

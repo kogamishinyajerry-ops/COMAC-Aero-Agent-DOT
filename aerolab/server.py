@@ -13,7 +13,7 @@ from .evidence import read_reference
 ROOT = Path(__file__).resolve().parent.parent
 COMPUTE_LOCK = threading.Lock()
 MAX_BODY = 4096
-ALLOWED_ARGS = {"scenario_id", "policy", "design_id", "ambient_c", "dt_s", "demand_scale", "event_time_offset_s"}
+ALLOWED_ARGS = {"scenario_id", "policy", "design_id", "ambient_c", "dt_s", "demand_scale", "event_time_offset_s", "cad_geometry"}
 
 
 @lru_cache(maxsize=1)
@@ -42,6 +42,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
+        if path == "/api/cad/catalog":
+            from .cad_thermal import cad_catalog
+            return self.send_json(200, cad_catalog())
         if path == "/api/catalog":
             return self.send_json(200, catalog())
         if path == "/api/replay":
@@ -52,6 +55,7 @@ class Handler(BaseHTTPRequestHandler):
         routes = {"/": ("index.html", "text/html; charset=utf-8"),
                   "/index.html": ("index.html", "text/html; charset=utf-8"),
                   "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+                  "/cad.js": ("cad.js", "text/javascript; charset=utf-8"),
                   "/styles.css": ("styles.css", "text/css; charset=utf-8")}
         if path not in routes:
             return self.send_json(404, {"error": "Not found"})
@@ -68,24 +72,37 @@ class Handler(BaseHTTPRequestHandler):
         if origin and origin not in (f"http://{host}", f"https://{host}"):
             return self.send_json(403, {"error": "Cross-origin requests are disabled"})
         path = urlparse(self.path).path
-        if path not in ("/api/run", "/api/compare", "/api/sweep"):
+        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step"):
             return self.send_json(404, {"error": "Unknown operation"})
         try:
             size = int(self.headers.get("Content-Length", "0"))
             if not 0 < size <= MAX_BODY:
                 raise ValueError("Request body must contain 1–4096 bytes")
             body = json.loads(self.rfile.read(size))
-            if not isinstance(body, dict) or set(body) - ALLOWED_ARGS:
+            allowed = {"geometry", "boundary"} if path.startswith("/api/cad/") else ALLOWED_ARGS
+            if path == "/api/cad/step":
+                allowed = {"geometry"}
+            if not isinstance(body, dict) or set(body) - allowed:
                 raise ValueError("Invalid or unknown request fields")
             if not COMPUTE_LOCK.acquire(blocking=False):
                 return self.send_json(429, {"error": "A calculation is in progress; try again when it completes"})
             try:
+                if path == "/api/cad/step":
+                    from .geometry import generate_step, parse_geometry
+                    data = generate_step(parse_geometry(body.get("geometry")))
+                    return self.send_bytes(200, data, "model/step")
+                if path.startswith("/api/cad/"):
+                    from .cad_thermal import evaluate, compare_geometry
+                    result = {"/api/cad/evaluate": evaluate, "/api/cad/compare": compare_geometry}[path](**body)
+                    return self.send_json(200, result)
                 function = {"/api/run": simulate, "/api/compare": compare, "/api/sweep": sweep}[path]
                 result = function(**body)
             finally:
                 COMPUTE_LOCK.release()
             return self.send_json(200, result)
-        except (ValueError, TypeError) as exc:
+        except RuntimeError as exc:
+            return self.send_json(503, {"error": str(exc)})
+        except (ValueError, TypeError, OverflowError) as exc:
             return self.send_json(400, {"error": str(exc)})
 
 

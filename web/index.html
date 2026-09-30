@@ -8,11 +8,12 @@
   <title>航空电热实验室 · Power / Thermal Lab</title>
   <link rel="stylesheet" href="/styles.css">
   <script src="/app.js" defer></script>
+  <script src="/cad.js" defer></script>
 </head>
 <body class="mode-guided">
   <header class="app-header">
     <a class="brand" href="#" aria-label="航空电热实验室首页"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 23 15 5l13 22-12-5-12 1Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m15 5 1 17 12 5M4 23l12-1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span>航空电热实验室<small>POWER / THERMAL LAB</small></span></a>
-    <nav class="top-nav" aria-label="工作空间"><button class="nav-tab active" data-view="control" aria-current="page">在线控制 <span>01</span></button><button class="nav-tab" data-view="design">离线选型 <span>02</span></button></nav>
+    <nav class="top-nav" aria-label="工作空间"><button class="nav-tab active" data-view="control" aria-current="page">在线控制 <span>01</span></button><button class="nav-tab" data-view="design">离线选型 <span>02</span></button><button class="nav-tab" data-view="cad">CAD 热设计 <span>03</span></button></nav>
     <div class="mode-switch" role="group" aria-label="展示模式"><button id="guided-mode-button" class="active" aria-pressed="true">讲解模式</button><button id="expert-mode-button" aria-pressed="false">专家工作台</button></div>
     <div class="header-meta"><span class="status-dot"></span> 研究示范 <span class="version">SYNTHETIC MODEL</span></div>
   </header>
@@ -29,7 +30,56 @@
     <div id="guide-error" class="error-banner" role="alert" hidden></div>
     <div class="guide-navigation"><button id="guide-previous" class="button secondary" disabled>← 上一步</button><span id="guide-navigation-hint">每次只回答一个问题</span><button id="guide-next" class="button primary">看看冷却故障 →</button></div>
     <details id="guide-evidence" class="guide-evidence"><summary>查看这一步的计算依据 <span>输入 · 版本 · 校验</span></summary><pre id="guide-evidence-json">尚未加载</pre></details>
-    <footer class="guide-footer"><span>无 CAD 几何 · 热参数为合成假设 · 确定性求解</span><span>不是 LLM 智能体或 X-57 复现，不用于飞行或适航判断</span></footer>
+    <footer class="guide-footer"><span>任务热参数为合成假设 · CAD 几何设计可独立探索</span><span>不是 LLM 智能体或 X-57 复现，不用于飞行或适航判断</span></footer>
+  </section>
+
+
+  <section id="cad-view" class="cad-workspace" aria-label="CAD 几何与热模型联动" hidden>
+    <div class="cad-heading"><div><div class="eyebrow">几何 → 流动 → 散热 → 任务</div><h1 tabindex="-1" id="cad-title">改一个尺寸，看见整个取舍。</h1><p>从公开尺寸重建散热器，用同一组几何参数生成预览、质量与热模型。</p></div><span class="cad-header-tag">参数化设计实验 <span>01 / CONTROLLER HEATSINK</span></span></div>
+    <div id="cad-loading" class="cad-loading" role="status">正在读取几何目录…</div>
+    <div id="cad-error" class="error-banner" role="alert" hidden></div>
+    <div id="cad-content" hidden>
+      <div class="cad-layout">
+        <aside class="cad-editor panel" aria-label="散热器参数">
+          <div class="cad-panel-label"><span>01 / 修改几何</span><span class="cad-kind assumption">设计输入</span></div>
+          <label class="cad-select-label" for="cad-preset">从一个方案开始</label><select id="cad-preset" aria-describedby="cad-preset-note"></select><p id="cad-preset-note" class="cad-field-note"></p>
+          <form id="cad-form"><fieldset class="cad-fields"><legend class="sr-only">散热器几何尺寸</legend><div id="cad-geometry-fields" class="cad-field-grid"></div></fieldset>
+            <details class="cad-boundary"><summary>稳态边界条件 <span>可修改</span></summary><p>质量流量是外部给定条件；几何本身不会确定空气流量。</p><div id="cad-boundary-fields" class="cad-field-grid"></div></details>
+            <button id="cad-evaluate" class="button primary" type="submit">计算几何与热性能 <span>↗</span></button>
+          </form>
+          <p class="cad-editor-note">只改变候选方案。右侧始终与公开尺寸基准在相同边界下比较。</p>
+        </aside>
+        <div class="cad-design-stage">
+          <section class="cad-preview-card panel" aria-label="参数化几何预览">
+            <div class="cad-panel-label"><span>02 / 同一份几何</span><span id="cad-preview-state" class="cad-kind assumption">参数草图</span></div>
+            <div class="cad-preview-topline"><h2>纵向平直翅片散热器</h2><span id="cad-geometry-id" class="mono">等待计算</span></div>
+            <div id="cad-preview" class="cad-preview"></div>
+            <div class="cad-preview-caption"><span id="cad-preview-dimensions"></span><span>等间距翅片 · 理想平底板</span></div>
+          </section>
+          <div id="cad-dirty" class="cad-dirty" role="status" hidden>输入已更改。当前为几何草图；重新计算后才能比较、用于任务或导出。</div>
+          <section id="cad-results" class="cad-results" aria-label="同边界几何热性能对比" hidden>
+            <div class="cad-results-heading"><div><span class="cad-panel-label">03 / 同边界，比较代价</span><h2 id="cad-conclusion">计算后比较质量与散热</h2></div><span class="cad-kind calculated">计算结果</span></div>
+            <div id="cad-applicability-warning" class="cad-dirty" role="alert" hidden></div>
+            <div id="cad-metrics" class="cad-metrics"></div>
+            <p id="cad-boundary-caption" class="cad-boundary-caption"></p>
+            <details class="cad-more-metrics"><summary>查看流动、功耗与热模型细节</summary><dl id="cad-flow-facts" class="cad-flow-facts"></dl><p id="cad-flow-note"></p><ul id="cad-warnings" class="cad-warnings"></ul><div id="cad-server-preview" class="cad-server-preview"></div></details>
+          </section>
+        </div>
+      </div>
+      <section class="cad-mission panel" aria-labelledby="cad-mission-title">
+        <div class="cad-mission-intro"><div><div class="cad-panel-label">04 / 固定硬件，带入任务</div><h2 id="cad-mission-title">这个散热器，能改变任务结果吗？</h2><p>同一几何贯穿整段任务。控制器与电机分开记热，质量不随在线控制改变。</p></div><span id="cad-fixed-hardware" class="cad-fixed-hardware">先完成几何计算</span></div>
+        <div class="cad-mission-controls"><div><label for="cad-mission-scenario">任务场景</label><select id="cad-mission-scenario" disabled><option>正在读取任务…</option></select></div><div class="cad-mission-ambient"><label for="cad-mission-ambient">环境温度 / °C</label><input id="cad-mission-ambient" type="number" min="15" max="50" step="1" value="30" disabled></div><button id="cad-apply" class="button primary" disabled>用此几何计算完整任务 <span>→</span></button></div>
+        <p id="cad-mission-status" class="cad-mission-status" role="status">单点稳态比较与整段任务是两次独立计算。</p>
+        <div id="cad-mission-result" hidden></div>
+      </section>
+      <section id="cad-evidence" class="cad-evidence panel" aria-labelledby="cad-evidence-title">
+        <div class="cad-evidence-header"><div><div class="cad-panel-label">可追溯的设计证据</div><h2 id="cad-evidence-title">每个数字，都有自己的出处。</h2></div><div class="cad-export-actions"><button id="cad-export-json" class="button secondary" disabled>↓ JSON 证据</button><button id="cad-export-step" class="button secondary" disabled>↓ STEP 几何</button></div></div>
+        <div class="cad-source-grid"><article><span class="cad-kind source">来源事实</span><h3>NASA 报告中的旧版参考尺寸</h3><p>388.6 × 179.5 mm，43 片翅片；翅高 41 mm，底厚 6 mm，翅厚 1.11 mm。</p><p id="cad-source-link">NASA/TM-20230011420 · Table 2</p></article><article><span class="cad-kind assumption">建模假设</span><h3>理想化重建与解析热模型</h3><p>平底板、等间距平直翅片；材料和空气物性、接触热阻及流动关联式为显式假设。未做 CFD，未拟合 NASA 温度结果。</p></article><article><span class="cad-kind calculated">计算结果</span><h3>几何、热性能与任务分别校验</h3><p>体积与质量来自同一几何；换热与流阻依赖给定边界。导出包含输入、计算值、来源和指纹。</p></article></div>
+        <details class="cad-full-evidence"><summary>查看输入、版本、来源与完整计算证据</summary><pre id="cad-evidence-json">尚未计算</pre></details>
+        <p class="cad-reference-note">公开参考点：1080 W、63 °C 入口、0.085 kg/s；报告 CFD 热阻 0.0194 K/W 仅作为背景参照，不是本模型的校准或验收标准。这里不是官方 CAD、最终 Mod II 设计或可制造图纸。</p>
+      </section>
+      <footer class="cad-footer"><span>公开尺寸 + 显式假设 + 可复现计算</span><span>教育研究演示，不用于飞行、制造或适航判断</span></footer>
+    </div>
   </section>
 
   <main class="app-layout">

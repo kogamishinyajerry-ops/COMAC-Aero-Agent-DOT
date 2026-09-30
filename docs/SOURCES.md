@@ -107,3 +107,12 @@ NASA X-57 可作为系统架构和工程问题的公开参考，但本项目是 
 ## 复制分发边界
 
 本文件提供引用与原创概述，不附 NASA 原图、原 PDF 或第三方商标。NTRS 的公开使用标注应随引用保留；其中单独署名的第三方材料仍需按各自权利核实。本仓库自身许可证不能替代来源许可证，也不能暗示 NASA 或其他机构认可本项目。
+
+
+## S7 — 旧版散热器尺寸与单点热对照（新增 CAD 路径）
+
+- [Thermal Management System Modeling in the Heat Transport System Simulation (HeaTSSPy) Package](https://ntrs.nasa.gov/citations/20230011420)，NASA/TM-20230011420，2023年8月
+- Table 2 / 正文第13页：旧版 X-57 散热器尺寸与1080W、63°C、0.085kg/s边界；不是最终Mod II散热器
+- 使用公开事实重建原创等厚直鳍、平底板理想化几何；不分发NASA原文或宣称拥有官方CAD
+- 报告 CFD 热阻0.0194K/W只作未校准单点对照；未运行CFD。报告关联式偏差表明模型形式误差不可忽略
+- [CAD 实体说明](CAD.md) 与 [方程/假设/适用范围](CAD_THERMAL.md) 将来源事实、材料/边界假设及计算结果分开
