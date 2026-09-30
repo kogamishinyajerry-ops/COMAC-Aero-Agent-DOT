@@ -2195,3 +2195,7 @@ h1 {
 #cad-applicability-warning { margin: 0 0 13px; }
 
 .cad-server-preview img { display: block; width: 100%; max-height: 530px; object-fit: contain; margin-top: 16px; border-radius: 8px; }
+
+/* A real link preserves browser history for the separate Mod II assembly view. */
+.nacelle-nav-link { display: inline-flex; align-items: center; text-decoration: none; white-space: nowrap; }
+@media (max-width: 600px) { .app-header .top-nav { gap: 15px; } }

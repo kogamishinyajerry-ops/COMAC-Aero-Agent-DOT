@@ -42,6 +42,13 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
+        if path == "/api/nacelle/catalog":
+            from .nacelle_geometry import nacelle_catalog
+            from .nacelle_thermal import nacelle_boundary_catalog
+            return self.send_json(200, {"geometry": nacelle_catalog(), "boundary": nacelle_boundary_catalog()})
+        if path == "/api/nacelle/geometry":
+            from .nacelle_geometry import assembly_geometry
+            return self.send_json(200, assembly_geometry())
         if path == "/api/cad/catalog":
             from .cad_thermal import cad_catalog
             return self.send_json(200, cad_catalog())
@@ -56,6 +63,10 @@ class Handler(BaseHTTPRequestHandler):
                   "/index.html": ("index.html", "text/html; charset=utf-8"),
                   "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                   "/cad.js": ("cad.js", "text/javascript; charset=utf-8"),
+                  "/nacelle": ("nacelle.html", "text/html; charset=utf-8"),
+                  "/nacelle.html": ("nacelle.html", "text/html; charset=utf-8"),
+                  "/nacelle.js": ("nacelle.js", "text/javascript; charset=utf-8"),
+                  "/nacelle.css": ("nacelle.css", "text/css; charset=utf-8"),
                   "/styles.css": ("styles.css", "text/css; charset=utf-8")}
         if path not in routes:
             return self.send_json(404, {"error": "Not found"})
@@ -72,21 +83,31 @@ class Handler(BaseHTTPRequestHandler):
         if origin and origin not in (f"http://{host}", f"https://{host}"):
             return self.send_json(403, {"error": "Cross-origin requests are disabled"})
         path = urlparse(self.path).path
-        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step"):
+        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step", "/api/nacelle/geometry", "/api/nacelle/evaluate", "/api/nacelle/compare", "/api/nacelle/step"):
             return self.send_json(404, {"error": "Unknown operation"})
         try:
             size = int(self.headers.get("Content-Length", "0"))
             if not 0 < size <= MAX_BODY:
                 raise ValueError("Request body must contain 1–4096 bytes")
             body = json.loads(self.rfile.read(size))
-            allowed = {"geometry", "boundary"} if path.startswith("/api/cad/") else ALLOWED_ARGS
-            if path == "/api/cad/step":
+            allowed = {"geometry", "boundary"} if path.startswith(("/api/cad/", "/api/nacelle/")) else ALLOWED_ARGS
+            if path in ("/api/cad/step", "/api/nacelle/step", "/api/nacelle/geometry"):
                 allowed = {"geometry"}
             if not isinstance(body, dict) or set(body) - allowed:
                 raise ValueError("Invalid or unknown request fields")
             if not COMPUTE_LOCK.acquire(blocking=False):
                 return self.send_json(429, {"error": "A calculation is in progress; try again when it completes"})
             try:
+                if path == "/api/nacelle/geometry":
+                    from .nacelle_geometry import assembly_geometry
+                    return self.send_json(200, assembly_geometry(body.get("geometry")))
+                if path == "/api/nacelle/step":
+                    from .nacelle_geometry import generate_nacelle_step
+                    return self.send_bytes(200, generate_nacelle_step(body.get("geometry")), "model/step")
+                if path in ("/api/nacelle/evaluate", "/api/nacelle/compare"):
+                    from .nacelle_thermal import evaluate_nacelle, compare_nacelle
+                    function = evaluate_nacelle if path.endswith("/evaluate") else compare_nacelle
+                    return self.send_json(200, function(**body))
                 if path == "/api/cad/step":
                     from .geometry import generate_step, parse_geometry
                     data = generate_step(parse_geometry(body.get("geometry")))

@@ -25,12 +25,18 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 ```bash
 git clone https://github.com/kogamishinyajerry-ops/COMAC-Aero-Agent-DOT.git
 cd COMAC-Aero-Agent-DOT
-git checkout feat/cad-thermal-linked-design
+git checkout feat/x57-modii-nacelle-demonstrator
 python3 -m unittest discover -s tests -v
 python3 -m aerolab serve
 ```
 
 打开 http://127.0.0.1:8765 。Windows 可将 `python3` 换为 `py -3`。默认进入**讲解模式**，每步只回答一个问题、展示一个主要图形；可切换到**专家工作台**查看参数、全量曲线、对比表和动作日志。初次显示的是带模型指纹的真实求解结果**回放**；需要新的工况时显式点击计算，完成后显示**本次计算**。服务只监听本机回环地址，不是云端公开部署。停止使用 Ctrl+C。
+
+### 新增：Mod II 短舱装配实验
+
+运行服务后打开 http://127.0.0.1:8765/nacelle ，或从首页点击「短舱装配」。以局部机翼、完整短舱、巡航电机和并排双控制器说明安装关系；可去壳、剖切、爆炸、选择部件并查看同一组参数驱动的气路和热节点。原有六步讲解、任务模型与旧版散热器基准保持独立。
+
+这是公开图文约束下的参数化重建，未公开尺寸明确推定。气流箭头为守恒网络示意，温度是降阶节点值，未进行 CFD 或原机校准。见 [构型与来源边界](docs/NACELLE_SOURCES.md)、[网络方程](docs/NACELLE_MODEL.md) 与 [展示及复现说明](docs/NACELLE_DEMO.md)、[分层验收记录](docs/NACELLE_VERIFICATION.md)。
 
 ### 可以直接试的内容
 

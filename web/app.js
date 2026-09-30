@@ -264,7 +264,7 @@ function switchView(view) {
   if (view === 'cad') { window.cadWorkspace?.open(); return; }
   if (state.guide.mode !== 'expert') setMode('expert');
   state.view = view; $('control-view').hidden = view !== 'control'; $('design-view').hidden = view !== 'design';
-  document.querySelectorAll('.nav-tab').forEach((button) => { const active = button.dataset.view === view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
+  document.querySelectorAll('.nav-tab[data-view]').forEach((button) => { const active = button.dataset.view === view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
   $('workspace-title').textContent = view === 'design' ? '更好的控制，不能替代合理的设计。' : '供得上电，也要散得了热。';
   $('workspace-subtitle').textContent = view === 'design' ? '固定硬件逐项计算。让质量、储能和冷却能力的取舍变得可见。' : '同一任务、同一模型。看清控制动作如何改变系统结果。';
   if (view !== 'control') stopPlayback();
@@ -327,7 +327,7 @@ function bindEvents() {
     state.timer = setInterval(() => { state.index = Math.min(state.index + Math.max(1, Math.round(state.run.trace.length / 180)), state.run.trace.length - 1); renderFrame(); if (state.index >= state.run.trace.length - 1) stopPlayback(); }, 150);
   });
   document.querySelectorAll('[data-chart]').forEach((button) => button.addEventListener('click', () => { state.chart = button.dataset.chart; document.querySelectorAll('[data-chart]').forEach((item) => item.classList.toggle('active', item === button)); renderChart(); }));
-  document.querySelectorAll('.nav-tab').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
+  document.querySelectorAll('.nav-tab[data-view]').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
   $('model-details-link').addEventListener('click', () => { $('model-evidence').querySelector('details').open = true; $('model-evidence').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' }); });
   window.addEventListener('pagehide', stopPlayback);
 }
@@ -361,7 +361,7 @@ const GUIDE_STEPS = [
 function setMode(mode) {
   document.body.classList.remove('mode-cad');
   if ($('cad-view')) $('cad-view').hidden = true;
-  document.querySelectorAll('.nav-tab').forEach((button) => { const active = mode === 'expert' && button.dataset.view === state.view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
+  document.querySelectorAll('.nav-tab[data-view]').forEach((button) => { const active = mode === 'expert' && button.dataset.view === state.view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
   state.guide.mode = mode;
   document.body.classList.toggle('mode-guided', mode === 'guided');
   document.body.classList.toggle('mode-expert', mode === 'expert');
