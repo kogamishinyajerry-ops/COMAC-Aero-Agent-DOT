@@ -201,7 +201,7 @@
     if (reveal && state.mode === 'assembled') changeMode('open');
     updateInspector(); renderer.requestDraw();
   }
-  const modes = {assembled:['完整装配','机翼与短舱，先建立空间关系'],open:['移除外壳','外壳与随壳入口移除，保留内部电机、CMC 与风道'],cutaway:['纵向剖视','外壳与电机外罩半剖，热部件保留完整'],exploded:['分解结构','沿推定装配方向展开，不改变热网络几何']};
+  const modes = {assembled:['完整装配','机翼与短舱，先建立空间关系'],open:['移除外壳','外壳与随壳入口移除，保留内部电机、CMC 与风道'],cutaway:['纵向剖视','外壳与转子半剖，显露绕组、气隙与控制器'],exploded:['分解结构','沿推定装配方向展开，不改变热网络几何']};
   function changeMode(mode) {
     state.mode = mode; $$('.view-modes button').forEach(button => {button.classList.toggle('active', button.dataset.mode === mode);button.setAttribute('aria-pressed', String(button.dataset.mode === mode));});
     $('view-title').textContent = modes[mode][0]; $('view-caption').textContent = modes[mode][1];
@@ -252,7 +252,7 @@
       canvas.parentElement.addEventListener('wheel',event=>{event.preventDefault();this.zoom=clamp(this.zoom*Math.exp(-event.deltaY*.001),.5,3.5);this.requestDraw();},{passive:false});
       canvas.parentElement.addEventListener('keydown',event=>{const keys=['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','0'];if(!keys.includes(event.key))return;event.preventDefault();if(event.key==='ArrowLeft')this.yaw-=.12;if(event.key==='ArrowRight')this.yaw+=.12;if(event.key==='ArrowUp')this.pitch=clamp(this.pitch+.1,-.5,1.25);if(event.key==='ArrowDown')this.pitch=clamp(this.pitch-.1,-.5,1.25);if(['+','='].includes(event.key))this.zoom=clamp(this.zoom*1.15,.5,3.5);if(event.key==='-')this.zoom=clamp(this.zoom/1.15,.5,3.5);if(event.key==='0')this.reset(state.mode);this.requestDraw();});
     }
-    reset(mode) {this.yaw=mode==='cutaway'?-Math.PI/2:-2.02;this.pitch=mode==='cutaway'?.15:.38;this.zoom=mode==='assembled'?1:mode==='exploded'?.95:1.28;this.target=[510,0,10];this.requestDraw();}
+    reset(mode) {this.yaw=mode==='cutaway'?-Math.PI/2:-2.02;this.pitch=mode==='cutaway'?.15:.38;this.zoom=mode==='assembled'?1:mode==='exploded'?.95:1.10;this.target=[510,0,10];this.requestDraw();}
     setGeometry(geometry) {
       const gl=this.gl;this.meshes.forEach(m=>gl.deleteBuffer(m.buffer));
       this.meshes=geometry.components.map(component=>{
@@ -273,7 +273,11 @@
           array.push(vertices[index],vertices[index+1],vertices[index+2],...sum.map(n=>n/length));
         }
         const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(array),gl.STATIC_DRAW);
-        return {...component,buffer,count:array.length/6,min,max,center:min.map((v,i)=>(v+max[i])/2)};
+        const vertexData=new Float32Array(array);
+        const triangleCenters=Array.from({length:array.length/18},(_,i)=>{
+          const start=i*18;return [0,1,2].map(axis=>(array[start+axis]+array[start+6+axis]+array[start+12+axis])/3);
+        });
+        return {...component,buffer,vertexData,triangleCenters,sortKey:null,count:array.length/6,min,max,center:min.map((v,i)=>(v+max[i])/2)};
       });
       $('mesh-count').textContent=`${this.meshes.length} 具名部件`; $('render-status').textContent='WebGL · PARAMETRIC MESH';
       this.canvas.dataset.geometryFingerprint=geometry.fingerprint; this.canvas.dataset.componentCount=this.meshes.length;this.requestDraw();
@@ -285,17 +289,33 @@
       const onCowling=['main_inlet_lip','motor_upper_exhaust','lv_inlet_left','lv_inlet_right'];
       return !(state.mode==='open'&&(mesh.group==='shell'||onCowling.includes(mesh.id)));
     }
-    clipped(mesh) {return state.mode==='cutaway'&&(mesh.group==='shell'||['motor_rotor','motor_stator','motor_bypass_shroud'].includes(mesh.id));}
+    clipped(mesh) {return state.mode==='cutaway'&&(mesh.group==='shell'||['motor_rotor','motor_magnet','motor_stator','motor_bypass_shroud'].includes(mesh.id));}
     appearance(mesh) {
       let color=mesh.color||[.5,.6,.6],opacity=mesh.opacity??1;
       if(mesh.group==='shell')opacity=state.mode==='assembled'?.88:state.mode==='exploded'?.23:.8;
-      if(mesh.group==='wing')opacity=.83;
+      if(mesh.group==='wing')opacity=1;
       if(mesh.id==='motor_rotor'&&state.mode!=='assembled')opacity=.26;
       if(mesh.id==='motor_bypass_shroud')opacity=.13;
       const thermal=thermalNodes()[mesh.thermal_node];
       const quantity=this.colorUsesHeat?thermal?.heat_w:thermal?.temperature_c;
       if($('show-thermal').checked&&finite(quantity)){color=this.temperatureColor(quantity);opacity=1;}
       return [...color,opacity];
+    }
+    prepareTriangles(mesh,opacity) {
+      // Object-level ordering alone is insufficient for a hollow translucent
+      // cowling: front/rear wall triangles must also blend back-to-front.
+      // Sorting changes draw order only; supplied vertices stay unchanged.
+      const key=opacity<.99?this.eye.join(','):'opaque';
+      if(mesh.sortKey===key)return;
+      let data=mesh.vertexData;
+      if(opacity<.99){
+        const order=mesh.triangleCenters.map((center,index)=>({index,depth:dot(center,this.eye)})).sort((a,b)=>a.depth-b.depth);
+        data=new Float32Array(mesh.vertexData.length);
+        order.forEach(({index},i)=>data.set(mesh.vertexData.subarray(index*18,index*18+18),i*18));
+      }
+      this.gl.bindBuffer(this.gl.ARRAY_BUFFER,mesh.buffer);
+      this.gl.bufferData(this.gl.ARRAY_BUFFER,data,this.gl.DYNAMIC_DRAW);
+      mesh.sortKey=key;
     }
     temperatureColor(value) {
       const t=clamp((value-this.tempRange[0])/(this.tempRange[1]-this.tempRange[0]),0,1),stops=[[.25,.49,.62],[.38,.68,.62],[.85,.7,.42],[.78,.39,.25]],pos=t*3,i=Math.min(2,Math.floor(pos)),f=pos-i;
@@ -318,11 +338,11 @@
       this.basis();const gl=this.gl;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.program);gl.uniformMatrix4fv(this.locations.uMatrix,false,this.matrix());
       const ordered=this.meshes.filter(m=>this.visible(m)).map(m=>({mesh:m,color:this.appearance(m),depth:this.project(m.center.map((v,i)=>v+this.offset(m)[i]))[2]}));
       ordered.sort((a,b)=>(a.color[3]<.99)-(b.color[3]<.99)||(a.color[3]<.99?a.depth-b.depth:0));
-      for(const {mesh,color} of ordered){gl.depthMask(color[3]>.97);gl.bindBuffer(gl.ARRAY_BUFFER,mesh.buffer);gl.enableVertexAttribArray(this.position);gl.vertexAttribPointer(this.position,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(this.normal);gl.vertexAttribPointer(this.normal,3,gl.FLOAT,false,24,12);gl.uniform3fv(this.locations.uOffset,this.offset(mesh));gl.uniform4fv(this.locations.uColor,color);gl.uniform1f(this.locations.uClip,this.clipped(mesh)?1:0);gl.uniform1f(this.locations.uSelected,mesh.id===state.selected||mesh.thermal_node===state.selected?1:0);gl.drawArrays(gl.TRIANGLES,0,mesh.count);}
+      for(const {mesh,color} of ordered){this.prepareTriangles(mesh,color[3]);gl.depthMask(color[3]>=.99);gl.bindBuffer(gl.ARRAY_BUFFER,mesh.buffer);gl.enableVertexAttribArray(this.position);gl.vertexAttribPointer(this.position,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(this.normal);gl.vertexAttribPointer(this.normal,3,gl.FLOAT,false,24,12);gl.uniform3fv(this.locations.uOffset,this.offset(mesh));gl.uniform4fv(this.locations.uColor,color);gl.uniform1f(this.locations.uClip,this.clipped(mesh)?1:0);gl.uniform1f(this.locations.uSelected,mesh.id===state.selected||mesh.thermal_node===state.selected?1:0);gl.drawArrays(gl.TRIANGLES,0,mesh.count);}
       gl.depthMask(true);this.ctx.setTransform(ratio,0,0,ratio,0,0);this.ctx.clearRect(0,0,this.width,this.height);this.drawGround();
       if($('show-flow').checked&&state.result)this.drawFlows();
       if($('show-labels').checked)this.drawLabels();
-      this.canvas.dataset.mode=state.mode;this.canvas.dataset.rendered=String(this.meshes.length>0);this.canvas.dataset.camera=`${this.yaw.toFixed(3)},${this.pitch.toFixed(3)},${this.zoom.toFixed(3)}`;
+      this.canvas.dataset.clippedComponents=this.meshes.filter(m=>this.clipped(m)).map(m=>m.id).join(',');this.canvas.dataset.mode=state.mode;this.canvas.dataset.rendered=String(this.meshes.length>0);this.canvas.dataset.camera=`${this.yaw.toFixed(3)},${this.pitch.toFixed(3)},${this.zoom.toFixed(3)}`;
     }
     drawGround() {
       // A small physical scale mark, rather than decorative simulation contours.

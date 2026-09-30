@@ -9,3 +9,12 @@
 @media(max-width:600px){.geometry-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px}.metric-primary strong.invalid-domain{font-size:24px}}
 
 .boundary-preset{grid-column:1/-1;max-width:560px}.boundary-preset small{font-size:11px;color:var(--muted);line-height:1.6}.thermal-legend small{max-width:200px;line-height:1.5}
+
+/* Let the real 3D view use the inspector's height instead of leaving an empty
+   panel below it; preserve an explicit minimum for narrow and mobile views. */
+.stage-wrap{display:flex;flex-direction:column}
+.stage-topline,.stage-footer{flex-shrink:0}
+.scene{flex:1;min-height:490px}
+@media(min-width:1600px){.scene{min-height:570px}}
+@media(max-width:900px){.scene{min-height:475px}}
+@media(max-width:680px){.scene{flex:none;min-height:430px}}

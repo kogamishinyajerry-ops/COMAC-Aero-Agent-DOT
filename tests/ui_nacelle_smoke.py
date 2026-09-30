@@ -11,13 +11,41 @@ import argparse
 from http.server import ThreadingHTTPServer
 import json
 import os
+import re
 from pathlib import Path
 import sys
 import threading
+import time
+import traceback
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from aerolab.server import Handler  # noqa: E402
+
+
+def wait_for_held_route(page, held, label, *, timeout_ms=10000):
+    """Wait for the route callback, not merely the earlier request event.
+
+    A synchronous Playwright API call must pump its dispatcher while waiting;
+    time.sleep or threading.Event.wait would prevent the callback from running.
+    The short wait below is condition-based, bounded, and never substitutes for
+    any of the UI state assertions after releasing the real server response.
+    """
+    started = time.monotonic()
+    deadline = started + timeout_ms / 1000
+    while not held:
+        remaining_ms = (deadline - time.monotonic()) * 1000
+        if remaining_ms <= 0:
+            raise AssertionError(
+                f'{label}: request event fired, but route callback did not '
+                f'capture a request within {timeout_ms} ms; page={page.url!r}'
+            )
+        page.wait_for_timeout(min(25, remaining_ms))
+    assert len(held) == 1, (
+        f'{label}: expected exactly one intercepted request, got {len(held)}; '
+        f'urls={[route.request.url for route in held]}'
+    )
+    return held[0]
 
 
 def main():
@@ -72,6 +100,9 @@ def main():
             for mode in ('open', 'cutaway', 'exploded', 'assembled'):
                 page.locator(f'button[data-mode="{mode}"]').click()
                 expect(canvas).to_have_attribute('data-mode', mode)
+                if mode == 'cutaway':
+                    for component in ('motor_magnet', 'motor_rotor'):
+                        expect(canvas).to_have_attribute('data-clipped-components', re.compile(rf'\b{component}\b'))
                 expect(page.locator(f'button[data-mode="{mode}"]')).to_have_attribute('aria-pressed', 'true')
                 results['mesh_pixel_coverage'][mode] = mesh_pixel_coverage()
                 if mode != 'assembled':
@@ -126,11 +157,11 @@ def main():
             page.locator('#geom-hv_fin_count').fill('28')
             with page.expect_request('**/api/nacelle/evaluate'):
                 page.locator('#evaluate-button').click()
-            assert len(held) == 1
+            delayed_route = wait_for_held_route(page, held, 'edit-away-and-back evaluation')
             page.locator('#geom-hv_fin_count').fill('29')
             page.locator('#geom-hv_fin_count').fill('28')
-            response = held[0].fetch()
-            held[0].fulfill(response=response)
+            response = delayed_route.fetch()
+            delayed_route.fulfill(response=response)
             expect(page.locator('#evaluate-button')).to_be_enabled(timeout=120000)
             expect(page.locator('#thermal-results')).to_be_hidden()
             expect(page.locator('#export-json')).to_be_disabled()
@@ -144,13 +175,13 @@ def main():
             page.route('**/api/nacelle/evaluate', lambda route: held.append(route))
             with page.expect_request('**/api/nacelle/evaluate'):
                 page.locator('#evaluate-button').click()
+            cancelled_route = wait_for_held_route(page, held, 'cancelled evaluation')
             expect(page.locator('#evaluate-button')).to_be_disabled()
             page.locator('#cancel-button').click()
             expect(page.locator('#evaluate-button')).to_be_enabled()
             expect(page.locator('#thermal-results')).to_be_hidden()
             expect(page.locator('#export-json')).to_be_disabled()
-            if held:
-                held[0].abort()
+            cancelled_route.abort()
             page.unroute('**/api/nacelle/evaluate')
             page.locator('#evaluate-button').click()
             expect(page.locator('#thermal-results')).to_be_visible(timeout=120000)
@@ -179,13 +210,13 @@ def main():
             page.route('**/api/nacelle/evaluate', lambda route: held.append(route))
             with page.expect_request('**/api/nacelle/evaluate'):
                 page.locator('#evaluate-button').click()
+            navigation_route = wait_for_held_route(page, held, 'navigate-away evaluation')
             page.locator('.navigation a[href="/"]').click()
             expect(page.locator('#guided-view')).to_be_visible()
-            if held:
-                try:
-                    held[0].abort()
-                except Exception:
-                    pass  # Navigation can already have cancelled this request.
+            try:
+                navigation_route.abort()
+            except Exception:
+                pass  # Navigation can already have cancelled this request.
             page.unroute('**/api/nacelle/evaluate')
             page.go_back(wait_until='networkidle')
             expect(page.locator('#evaluate-button')).to_be_enabled(timeout=120000)
@@ -255,9 +286,10 @@ def main():
             page.on('download', lambda download: stale_downloads.append(download))
             with page.expect_request('**/api/nacelle/step'):
                 page.locator('#export-step').click()
+            stale_step_route = wait_for_held_route(page, held_step, 'stale STEP download')
             page.locator('#geom-upper_inlet_height_mm').fill('34')
-            response = held_step[0].fetch()
-            held_step[0].fulfill(response=response)
+            response = stale_step_route.fetch()
+            stale_step_route.fulfill(response=response)
             expect(page.locator('#step-status')).to_contain_text('丢弃旧版本 STEP')
             assert not stale_downloads
             expect(page.locator('#export-step')).to_be_disabled()
@@ -304,6 +336,7 @@ def main():
     except Exception as exc:
         results['status'] = 'failed'
         results['failure'] = str(exc)
+        results['failure_traceback'] = traceback.format_exc()
         raise
     finally:
         server.shutdown()
