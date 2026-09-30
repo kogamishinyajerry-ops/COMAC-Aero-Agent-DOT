@@ -1,6 +1,6 @@
 # 可复现结果（合成模型）
 
-模型源码 SHA-256：`cfbf445ea7b19ed031be3552389cbcfa0d207630d5df339a6487e677eb39d217`
+模型源码 SHA-256：`db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182`
 
 生成命令：`python scripts/generate_evidence.py`；默认 2 s 时间步，无随机数。下列均为求解器输出，不是飞行测量。
 

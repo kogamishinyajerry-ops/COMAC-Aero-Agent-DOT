@@ -1,0 +1,1478 @@
+[
+  {
+    "preset": "reference",
+    "benchmark": {
+      "geometry": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 41.0,
+        "base_thickness_mm": 6.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 43
+      },
+      "metrics": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 41.0,
+          "base_thickness_mm": 6.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 43
+        },
+        "fingerprint": "800b3c261839c77c7306e6ae2fb70915b47004f6099ddcd4e69f1a915bb7fc24",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 1178985.198,
+        "volume_m3": 0.001178985198,
+        "mass_kg": 3.1832600346000004,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 3.137380952380952,
+        "gap_m": 0.0031373809523809523,
+        "total_height_mm": 47.0,
+        "channel_count": 42,
+        "flow_area_m2": 0.00540257,
+        "channel_heated_area_m2": 1.389544222,
+        "channel_base_area_m2": 0.05120582199999999,
+        "channel_fin_area_m2": 1.3383384,
+        "all_solid_surface_area_m2": 1.5204420600000002,
+        "hydraulic_diameter_m": 0.005828738192979712,
+        "wetted_perimeter_m": 3.70754,
+        "heated_perimeter_m": 3.57577,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 47.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.041,
+        "base_thickness_m": 0.006,
+        "fin_thickness_m": 0.00111
+      },
+      "thermal": {
+        "mass_flow_kg_s": 0.085,
+        "velocity_m_s": 14.984050359806714,
+        "mach_approx": 0.04082847509484118,
+        "within_flow_limits": true,
+        "reynolds": 4473.4152170060315,
+        "prandtl": 0.7118448275862068,
+        "regime": "turbulent_gnielinski_hydraulic_diameter_approximation",
+        "nusselt": 15.110312001722795,
+        "darcy_friction_factor": 0.03998933226283478,
+        "h_w_m2_k": 75.17905823557828,
+        "fin_efficiency": 0.7052644283907004,
+        "effective_area_m2": 0.9950882886693245,
+        "ua_w_k": 74.80980040341308,
+        "air_capacity_w_k": 85.59500000000001,
+        "convective_conductance_w_k": 49.87790046845964,
+        "interface_conductance_w_k": 46.37351919210956,
+        "base_resistance_k_w": 0.0005150715117990136,
+        "contact_resistance_k_w": 0.001,
+        "convective_resistance_k_w": 0.020048959370941272,
+        "interface_resistance_k_w": 0.02156403088274029,
+        "base_to_inlet_resistance_k_w": 0.020564030882740288,
+        "pressure_drop_pa": 491.07164635770823,
+        "pressure_drop_fraction": 0.0048465003341496005,
+        "fluid_power_w": 39.753418990862095,
+        "blower_electrical_w": 79.50683798172419,
+        "thermal_capacitance_j_k": 3404.9340311400006,
+        "sink_capacitance_j_k": 2864.9340311400006,
+        "thermal_entrance_length_m": 0.05828738192979712,
+        "warnings": [
+          "Covered no-bypass duct assumed; bare-fin solid is not a CFD fluid domain.",
+          "Correlation boundary-condition mismatch: adiabatic roof / three heated walls approximated by standard duct correlations."
+        ],
+        "boundary": {
+          "heat_w": 1080.0,
+          "inlet_c": 63.0,
+          "mass_flow_kg_s": 0.085
+        },
+        "base_temperature_c": 85.20915335335951,
+        "interface_temperature_c": 86.28915335335951,
+        "air_outlet_c": 75.617559436883,
+        "steady_state_exists": true,
+        "nasa_reference": {
+          "applicable_geometry_and_boundary": true,
+          "cfd_rth_k_w": 0.0194,
+          "cfd_base_average_c": 83.952,
+          "not_validation": true,
+          "note": "Published older-X57 CFD comparison only; no calibration or CFD performed here.",
+          "base_rth_difference_percent": 6.000159189382925
+        },
+        "within_model_limits": true,
+        "uncertainty_note": "Numerical limits do not establish physical validation; transition, entrance and boundary-condition warnings still apply."
+      },
+      "cad": {
+        "verification": "verified_brep",
+        "geometry_fingerprint": "800b3c261839c77c7306e6ae2fb70915b47004f6099ddcd4e69f1a915bb7fc24",
+        "step_available": true,
+        "stl_available": true,
+        "preset_id": "reference",
+        "kernel_installed": true,
+        "detail": "Matching generated BRep and STEP roundtrip measured independently; STL is closed and oriented",
+        "validation": {
+          "brep": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 1178985.1980000052,
+            "mass_kg": 3.183260034600014,
+            "surface_area_m2": 1.5204420600000002,
+            "bbox_mm": {
+              "x": 179.50000000000003,
+              "y": 388.6,
+              "z": 47.0
+            },
+            "vertices": 344,
+            "edges": 516,
+            "faces": 174,
+            "euler_characteristic": 2,
+            "relative_volume_error": 4.344646708944629e-15,
+            "relative_surface_area_error": 0.0,
+            "max_bbox_error_mm": 2.842170943040401e-14
+          },
+          "step_roundtrip": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 1178985.1980000038,
+            "mass_kg": 3.1832600346000106,
+            "surface_area_m2": 1.5204420600000004,
+            "bbox_mm": {
+              "x": 179.50000000000003,
+              "y": 388.6,
+              "z": 47.0
+            },
+            "vertices": 344,
+            "edges": 516,
+            "faces": 174,
+            "euler_characteristic": 2,
+            "relative_volume_error": 3.159743061050639e-15,
+            "relative_surface_area_error": 1.460395044090212e-16,
+            "max_bbox_error_mm": 2.842170943040401e-14
+          },
+          "stl": {
+            "passed": true,
+            "method": "independent_binary_STL_edge_and_signed_volume_check",
+            "triangles": 684,
+            "vertices": 344,
+            "edges": 1026,
+            "euler_characteristic": 2,
+            "watertight": true,
+            "consistent_orientation": true,
+            "connected": true,
+            "degenerate_triangles": 0,
+            "volume_mm3": 1178985.4960206854,
+            "bbox_mm": {
+              "x": 179.5,
+              "y": 388.6000061035156,
+              "z": 47.0
+            },
+            "relative_volume_error": 2.52777291716639e-07,
+            "max_bbox_error_mm": 6.1035156022626325e-06
+          }
+        }
+      },
+      "input_hash": "286652e77929b5912b2b031d9095a2a6b52c0209a34fcc0a0828c99aeb91204d",
+      "model_sha256": "d995315803c9ae76cc4fc37103f64a5f85c815b9da1cf82fefaec974fce363ab",
+      "execution": "computed",
+      "provenance": {
+        "source_facts": {
+          "source": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "NASA/TM-20230011420 Table 2, printed p.13",
+          "scope": "Older X-57 heat sink, not final Mod II"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and flat base reconstruct published average dimensions; not original NASA CAD or final Mod II hardware.",
+          "Ideal adiabatic lid closes each channel; no bypass or external-face cooling. Lid is not included in exported bare-fin STEP.",
+          "Fully developed constant-wall-temperature rectangular-duct laminar correlation and smooth-duct Gnielinski turbulent correlation are approximations to three heated walls with an adiabatic roof.",
+          "No developing-flow enhancement, spreading resistance, radiation, detailed contact map, altitude correction, or CFD. Fixed air/material properties are illustrative assumptions.",
+          "Prescribed mass flow, not a fan operating point. Pressure-drop work / 50% efficiency is charged as electrical demand; no free cooling.",
+          "Adiabatic-tip rectangular-fin efficiency is applied once. Inner fin sides plus exposed channel base exchange heat; fin tips and outer sides do not.",
+          "Interface temperature adds a synthetic 0.001 K/W contact resistance; NASA comparison uses base-average proxy excluding contact."
+        ],
+        "material": {
+          "density_kg_m3": 2700.0,
+          "conductivity_w_m_k": 167.0,
+          "specific_heat_j_kg_k": 900.0
+        },
+        "air": {
+          "reference_pressure_pa": 101325.0,
+          "density_kg_m3": 1.05,
+          "viscosity_pa_s": 2.05e-05,
+          "conductivity_w_m_k": 0.029,
+          "specific_heat_j_kg_k": 1007.0
+        },
+        "correlation_reference": {
+          "turbulent_gnielinski": "https://ansyshelp.ansys.com/public/Views/Secured/MotorCAD/v252/en/Motor-CAD_UG/MotorCAD/topics/enclosedchannelconvectioncorrelation.html",
+          "laminar_darcy": "https://ntrs.nasa.gov/citations/20230011420 (Eq. 27)",
+          "laminar_constant_temperature": "https://eng-web77-v02.ocio.monash.edu/intranet/proceedings/fedsm_icnmm2010/data/pdfs/trk-2/FEDSM-ICNMM2010-30031.pdf"
+        },
+        "computed": "Analytic geometry + optional independently verified BRep; reduced-order heat/pressure model, not CFD."
+      }
+    },
+    "missions": {
+      "nominal": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "d3e5b403d802e176",
+          "input_hash": "d3e5b403d802e1761760453f118baf0a2e10d9d247623e9c043f18d92c87be92",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "nominal",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 25.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 43
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 320.5665200692,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 8.566520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 43
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 0.0,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.334701467184058,
+          "served_propulsion_kwh": 28.334701467184058,
+          "fan_energy_kwh": 0.05169667351677728,
+          "chemical_energy_kwh": 32.29473147413841,
+          "feasible": true,
+          "solver_valid": true,
+          "energy_used_kwh": 32.294731474138395,
+          "min_thermal_margin_c": 16.753110132975337,
+          "max_temperature_c": 78.24688986702466,
+          "min_voltage_v": 374.1752040720922,
+          "max_current_a": 239.1701252391791,
+          "remaining_energy_kwh": 13.305268525861601,
+          "accessible_traction_energy_kwh": 13.305268525861601,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 0,
+          "first_propulsion_shortfall_s": null,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 65.0203185743404,
+          "max_controller_temperature_c": 78.24688986702466,
+          "controller_blower_energy_kwh": 0.005659340183444926
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 5.417888360170764e-14,
+          "stored_energy_balance_max_error_kwh": 5.523359547510154e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 9.769962616701378e-15
+        }
+      },
+      "cooling_fault": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "366cff2adfac5833",
+          "input_hash": "366cff2adfac58330a060d137ca043a96364d6263237e9871dccdc8d9e5b57f7",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "cooling_fault",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 35.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 43
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 320.5665200692,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 8.566520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 43
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 0.004242070369378901,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.334701467184058,
+          "served_propulsion_kwh": 28.330459396814675,
+          "fan_energy_kwh": 0.42005355911604886,
+          "chemical_energy_kwh": 32.678596585901616,
+          "feasible": false,
+          "solver_valid": true,
+          "energy_used_kwh": 32.6785965859016,
+          "min_thermal_margin_c": 0.0,
+          "max_temperature_c": 95.0,
+          "min_voltage_v": 373.35988990805765,
+          "max_current_a": 239.1701252391791,
+          "remaining_energy_kwh": 12.92140341409839,
+          "accessible_traction_energy_kwh": 12.92140341409839,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 1002.0,
+          "first_propulsion_shortfall_s": 228.0,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 95.0,
+          "max_controller_temperature_c": 95.0,
+          "controller_blower_energy_kwh": 0.03137657994938641
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 4.263256414560601e-14,
+          "stored_energy_balance_max_error_kwh": 5.523359547510154e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 1.1546319456101628e-14
+        }
+      },
+      "bus_cooling": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "cfaabd009ee2e190",
+          "input_hash": "cfaabd009ee2e190317ba806ec77d8eac72dfb0334986dcedb6d7e573b6071d4",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "bus_cooling",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 40.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 43
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 320.5665200692,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 8.566520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 43
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 5.633827913730027,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.18249999999999947,
+          "requested_propulsion_kwh": 28.334701467184058,
+          "served_propulsion_kwh": 22.70087355345404,
+          "fan_energy_kwh": 0.33491584962217397,
+          "chemical_energy_kwh": 26.69402450353478,
+          "feasible": false,
+          "solver_valid": true,
+          "energy_used_kwh": 26.694024503534685,
+          "min_thermal_margin_c": -1.4210854715202004e-14,
+          "max_temperature_c": 95.00000000000001,
+          "min_voltage_v": 340.2917948795764,
+          "max_current_a": 260.0000000000001,
+          "remaining_energy_kwh": 18.958840993541337,
+          "accessible_traction_energy_kwh": 0,
+          "backup_remaining_kwh": 0.1871345029239756,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 938.0,
+          "first_propulsion_shortfall_s": 208.0,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 95.0,
+          "max_controller_temperature_c": 95.00000000000001,
+          "controller_blower_energy_kwh": 0.02784998156662042
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 4.263256414560601e-14,
+          "stored_energy_balance_max_error_kwh": 9.943434964299058e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 9.769962616701378e-15
+        }
+      }
+    }
+  },
+  {
+    "preset": "light",
+    "benchmark": {
+      "geometry": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 32.0,
+        "base_thickness_mm": 5.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 31
+      },
+      "metrics": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 32.0,
+          "base_thickness_mm": 5.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 31
+        },
+        "fingerprint": "648ccae0fff693fe20104694f24a46c459f79f1210a9b08819e9ff794ec090d8",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 776663.7320000001,
+        "volume_m3": 0.0007766637320000001,
+        "mass_kg": 2.0969920764000003,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 4.836333333333333,
+        "gap_m": 0.004836333333333333,
+        "total_height_mm": 37.0,
+        "channel_count": 30,
+        "flow_area_m2": 0.00464288,
+        "channel_heated_area_m2": 0.802493974,
+        "channel_base_area_m2": 0.056381974,
+        "channel_fin_area_m2": 0.746112,
+        "all_solid_surface_area_m2": 0.9183730400000001,
+        "hydraulic_diameter_m": 0.008402718330633703,
+        "wetted_perimeter_m": 2.2101800000000003,
+        "heated_perimeter_m": 2.0650899999999996,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 37.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.032,
+        "base_thickness_m": 0.005,
+        "fin_thickness_m": 0.00111
+      },
+      "thermal": {
+        "mass_flow_kg_s": 0.085,
+        "velocity_m_s": 17.43581159805572,
+        "mach_approx": 0.04750902342794475,
+        "within_flow_limits": true,
+        "reynolds": 7504.079239545437,
+        "prandtl": 0.7118448275862068,
+        "regime": "turbulent_gnielinski_hydraulic_diameter_approximation",
+        "nusselt": 23.780960371793487,
+        "darcy_friction_factor": 0.03417536075531347,
+        "h_w_m2_k": 82.07437446376956,
+        "fin_efficiency": 0.7779484049626408,
+        "effective_area_m2": 0.6368186143234859,
+        "ua_w_k": 52.26648941748462,
+        "air_capacity_w_k": 85.59500000000001,
+        "convective_conductance_w_k": 39.115963954415186,
+        "interface_conductance_w_k": 37.04494542900313,
+        "base_resistance_k_w": 0.0004292262598325114,
+        "contact_resistance_k_w": 0.001,
+        "convective_resistance_k_w": 0.025565009753188653,
+        "interface_resistance_k_w": 0.026994236013021165,
+        "base_to_inlet_resistance_k_w": 0.025994236013021164,
+        "pressure_drop_pa": 491.66089986526043,
+        "pressure_drop_fraction": 0.004852315814115573,
+        "fluid_power_w": 39.801120465282985,
+        "blower_electrical_w": 79.60224093056597,
+        "thermal_capacitance_j_k": 2427.29286876,
+        "sink_capacitance_j_k": 1887.2928687600004,
+        "thermal_entrance_length_m": 0.08402718330633703,
+        "warnings": [
+          "Covered no-bypass duct assumed; bare-fin solid is not a CFD fluid domain.",
+          "Correlation boundary-condition mismatch: adiabatic roof / three heated walls approximated by standard duct correlations."
+        ],
+        "boundary": {
+          "heat_w": 1080.0,
+          "inlet_c": 63.0,
+          "mass_flow_kg_s": 0.085
+        },
+        "base_temperature_c": 91.07377489406286,
+        "interface_temperature_c": 92.15377489406286,
+        "air_outlet_c": 75.617559436883,
+        "steady_state_exists": true,
+        "nasa_reference": {
+          "applicable_geometry_and_boundary": false,
+          "cfd_rth_k_w": 0.0194,
+          "cfd_base_average_c": 83.952,
+          "not_validation": true,
+          "note": "Published older-X57 CFD comparison only; no calibration or CFD performed here.",
+          "base_rth_difference_percent": null
+        },
+        "within_model_limits": true,
+        "uncertainty_note": "Numerical limits do not establish physical validation; transition, entrance and boundary-condition warnings still apply."
+      },
+      "cad": {
+        "verification": "verified_brep",
+        "geometry_fingerprint": "648ccae0fff693fe20104694f24a46c459f79f1210a9b08819e9ff794ec090d8",
+        "step_available": true,
+        "stl_available": true,
+        "preset_id": "light",
+        "kernel_installed": true,
+        "detail": "Matching generated BRep and STEP roundtrip measured independently; STL is closed and oriented",
+        "validation": {
+          "brep": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 776663.7320000007,
+            "mass_kg": 2.0969920764000016,
+            "surface_area_m2": 0.9183730399999992,
+            "bbox_mm": {
+              "x": 179.50000000000003,
+              "y": 388.6,
+              "z": 37.0
+            },
+            "vertices": 248,
+            "edges": 372,
+            "faces": 126,
+            "euler_characteristic": 2,
+            "relative_volume_error": 7.494576934032424e-16,
+            "relative_surface_area_error": 9.671216172679951e-16,
+            "max_bbox_error_mm": 2.842170943040401e-14
+          },
+          "step_roundtrip": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 776663.7320000004,
+            "mass_kg": 2.096992076400001,
+            "surface_area_m2": 0.9183730399999993,
+            "bbox_mm": {
+              "x": 179.50000000000003,
+              "y": 388.6,
+              "z": 37.0
+            },
+            "vertices": 248,
+            "edges": 372,
+            "faces": 126,
+            "euler_characteristic": 2,
+            "relative_volume_error": 4.496746160419455e-16,
+            "relative_surface_area_error": 8.462314151094958e-16,
+            "max_bbox_error_mm": 2.842170943040401e-14
+          },
+          "stl": {
+            "passed": true,
+            "method": "independent_binary_STL_edge_and_signed_volume_check",
+            "triangles": 492,
+            "vertices": 248,
+            "edges": 738,
+            "euler_characteristic": 2,
+            "watertight": true,
+            "consistent_orientation": true,
+            "connected": true,
+            "degenerate_triangles": 0,
+            "volume_mm3": 776663.693382232,
+            "bbox_mm": {
+              "x": 179.5,
+              "y": 388.6000061035156,
+              "z": 37.0
+            },
+            "relative_volume_error": 4.972263606623638e-08,
+            "max_bbox_error_mm": 6.1035156022626325e-06
+          }
+        }
+      },
+      "input_hash": "ef92241bf2a4d79a74eece5d86137afffc0fccc8032b66d39f3731e09c256d8f",
+      "model_sha256": "d995315803c9ae76cc4fc37103f64a5f85c815b9da1cf82fefaec974fce363ab",
+      "execution": "computed",
+      "provenance": {
+        "source_facts": {
+          "source": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "NASA/TM-20230011420 Table 2, printed p.13",
+          "scope": "Older X-57 heat sink, not final Mod II"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and flat base reconstruct published average dimensions; not original NASA CAD or final Mod II hardware.",
+          "Ideal adiabatic lid closes each channel; no bypass or external-face cooling. Lid is not included in exported bare-fin STEP.",
+          "Fully developed constant-wall-temperature rectangular-duct laminar correlation and smooth-duct Gnielinski turbulent correlation are approximations to three heated walls with an adiabatic roof.",
+          "No developing-flow enhancement, spreading resistance, radiation, detailed contact map, altitude correction, or CFD. Fixed air/material properties are illustrative assumptions.",
+          "Prescribed mass flow, not a fan operating point. Pressure-drop work / 50% efficiency is charged as electrical demand; no free cooling.",
+          "Adiabatic-tip rectangular-fin efficiency is applied once. Inner fin sides plus exposed channel base exchange heat; fin tips and outer sides do not.",
+          "Interface temperature adds a synthetic 0.001 K/W contact resistance; NASA comparison uses base-average proxy excluding contact."
+        ],
+        "material": {
+          "density_kg_m3": 2700.0,
+          "conductivity_w_m_k": 167.0,
+          "specific_heat_j_kg_k": 900.0
+        },
+        "air": {
+          "reference_pressure_pa": 101325.0,
+          "density_kg_m3": 1.05,
+          "viscosity_pa_s": 2.05e-05,
+          "conductivity_w_m_k": 0.029,
+          "specific_heat_j_kg_k": 1007.0
+        },
+        "correlation_reference": {
+          "turbulent_gnielinski": "https://ansyshelp.ansys.com/public/Views/Secured/MotorCAD/v252/en/Motor-CAD_UG/MotorCAD/topics/enclosedchannelconvectioncorrelation.html",
+          "laminar_darcy": "https://ntrs.nasa.gov/citations/20230011420 (Eq. 27)",
+          "laminar_constant_temperature": "https://eng-web77-v02.ocio.monash.edu/intranet/proceedings/fedsm_icnmm2010/data/pdfs/trk-2/FEDSM-ICNMM2010-30031.pdf"
+        },
+        "computed": "Analytic geometry + optional independently verified BRep; reduced-order heat/pressure model, not CFD."
+      }
+    },
+    "missions": {
+      "nominal": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "beaf4a59e05e3473",
+          "input_hash": "beaf4a59e05e3473e82b7dc81dc123a509172f8214ee0efc70fb81efb1b41079",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "nominal",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 25.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 32.0,
+              "base_thickness_mm": 5.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 31
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 318.3939841528,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 6.393984 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 32.0,
+            "base_thickness_mm": 5.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 31
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 0.0,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.31322051831081,
+          "served_propulsion_kwh": 28.31322051831081,
+          "fan_energy_kwh": 0.09893643931016209,
+          "chemical_energy_kwh": 32.320481810352085,
+          "feasible": true,
+          "solver_valid": true,
+          "energy_used_kwh": 32.32048181035213,
+          "min_thermal_margin_c": 14.607151688987798,
+          "max_temperature_c": 80.3928483110122,
+          "min_voltage_v": 374.09440388837294,
+          "max_current_a": 238.98187143898213,
+          "remaining_energy_kwh": 13.27951818964787,
+          "accessible_traction_energy_kwh": 13.27951818964787,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 0,
+          "first_propulsion_shortfall_s": null,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 64.1021398258232,
+          "max_controller_temperature_c": 80.3928483110122,
+          "controller_blower_energy_kwh": 0.011250807365718126
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 3.9968028886505635e-14,
+          "stored_energy_balance_max_error_kwh": 5.523359547510154e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 1.199040866595169e-14
+        }
+      },
+      "cooling_fault": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "33429f7590854b5d",
+          "input_hash": "33429f7590854b5decc0bbf4bf6a383b83425a77f86f0489494522148c7b1615",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "cooling_fault",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 35.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 32.0,
+              "base_thickness_mm": 5.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 31
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 318.3939841528,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 6.393984 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 32.0,
+            "base_thickness_mm": 5.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 31
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 0.47362725559171526,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.31322051831081,
+          "served_propulsion_kwh": 27.83959326271912,
+          "fan_energy_kwh": 0.4235299585360887,
+          "chemical_energy_kwh": 32.10765163210611,
+          "feasible": false,
+          "solver_valid": true,
+          "energy_used_kwh": 32.10765163210617,
+          "min_thermal_margin_c": 0.0,
+          "max_temperature_c": 95.0,
+          "min_voltage_v": 374.3389494533181,
+          "max_current_a": 238.98187143898213,
+          "remaining_energy_kwh": 13.492348367893825,
+          "accessible_traction_energy_kwh": 13.492348367893825,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 974.0,
+          "first_propulsion_shortfall_s": 178.0,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 88.7407525408368,
+          "max_controller_temperature_c": 95.0,
+          "controller_blower_energy_kwh": 0.031709687702755944
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 5.062616992290714e-14,
+          "stored_energy_balance_max_error_kwh": 5.551115123125783e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 1.2878587085651816e-14
+        }
+      },
+      "bus_cooling": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "effd65a608aa0e0f",
+          "input_hash": "effd65a608aa0e0f8301e8474e4d3f3f80d13293b9ea7b9a15be176cc9c2372f",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "bus_cooling",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 40.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 32.0,
+              "base_thickness_mm": 5.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 31
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 318.3939841528,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 6.393984 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 32.0,
+            "base_thickness_mm": 5.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 31
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 5.7978579887984045,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.17416666666666644,
+          "requested_propulsion_kwh": 28.31322051831081,
+          "served_propulsion_kwh": 22.51536252951243,
+          "fan_energy_kwh": 0.3506041493317811,
+          "chemical_energy_kwh": 26.490237357683174,
+          "feasible": false,
+          "solver_valid": true,
+          "energy_used_kwh": 26.490237357683068,
+          "min_thermal_margin_c": 0.0,
+          "max_temperature_c": 95.0,
+          "min_voltage_v": 341.02515332844797,
+          "max_current_a": 260.00000000000006,
+          "remaining_energy_kwh": 19.157949776819855,
+          "accessible_traction_energy_kwh": 0,
+          "backup_remaining_kwh": 0.1918128654970751,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 836.0,
+          "first_propulsion_shortfall_s": 172.0,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 87.38936528337102,
+          "max_controller_temperature_c": 95.0,
+          "controller_blower_energy_kwh": 0.02898171183178165
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 3.907985046680551e-14,
+          "stored_energy_balance_max_error_kwh": 8.36136715420821e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 8.881784197001252e-15
+        }
+      }
+    }
+  },
+  {
+    "preset": "dense",
+    "benchmark": {
+      "geometry": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 41.0,
+        "base_thickness_mm": 6.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 57
+      },
+      "metrics": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 41.0,
+          "base_thickness_mm": 6.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 57
+        },
+        "fingerprint": "896d7e4d79e03dedad7c6ca262e9cb4b5929e6b89f4089ddb9a84f676fa28a0b",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 1426577.8020000001,
+        "volume_m3": 0.0014265778020000003,
+        "mass_kg": 3.851760065400001,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 2.075535714285714,
+        "gap_m": 0.0020755357142857142,
+        "total_height_mm": 47.0,
+        "channel_count": 56,
+        "flow_area_m2": 0.004765429999999999,
+        "channel_heated_area_m2": 1.829618178,
+        "channel_base_area_m2": 0.045166977999999997,
+        "channel_fin_area_m2": 1.7844512000000001,
+        "all_solid_surface_area_m2": 1.9678291400000003,
+        "hydraulic_diameter_m": 0.0039510577349589375,
+        "wetted_perimeter_m": 4.82446,
+        "heated_perimeter_m": 4.70823,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 47.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.041,
+        "base_thickness_m": 0.006,
+        "fin_thickness_m": 0.00111
+      },
+      "thermal": {
+        "mass_flow_kg_s": 0.085,
+        "velocity_m_s": 16.987424209857444,
+        "mach_approx": 0.04628725942740448,
+        "within_flow_limits": true,
+        "reynolds": 3437.766268900257,
+        "prandtl": 0.7118448275862068,
+        "regime": "turbulent_gnielinski_hydraulic_diameter_approximation",
+        "nusselt": 11.658214351628738,
+        "darcy_friction_factor": 0.04353625929489739,
+        "h_w_m2_k": 85.56903970443932,
+        "fin_efficiency": 0.6799759888910707,
+        "effective_area_m2": 1.2585509473478578,
+        "ua_w_k": 107.69299598366857,
+        "air_capacity_w_k": 85.59500000000001,
+        "convective_conductance_w_k": 61.27114316329034,
+        "interface_conductance_w_k": 56.06648243213029,
+        "base_resistance_k_w": 0.0005150715117990136,
+        "contact_resistance_k_w": 0.001,
+        "convective_resistance_k_w": 0.016320896728415125,
+        "interface_resistance_k_w": 0.01783596824021414,
+        "base_to_inlet_resistance_k_w": 0.01683596824021414,
+        "pressure_drop_pa": 875.9673402330304,
+        "pressure_drop_fraction": 0.008645125489593194,
+        "fluid_power_w": 70.91164182838818,
+        "blower_electrical_w": 141.82328365677637,
+        "thermal_capacitance_j_k": 4006.584058860001,
+        "sink_capacitance_j_k": 3466.584058860001,
+        "thermal_entrance_length_m": 0.039510577349589376,
+        "warnings": [
+          "Covered no-bypass duct assumed; bare-fin solid is not a CFD fluid domain.",
+          "Correlation boundary-condition mismatch: adiabatic roof / three heated walls approximated by standard duct correlations."
+        ],
+        "boundary": {
+          "heat_w": 1080.0,
+          "inlet_c": 63.0,
+          "mass_flow_kg_s": 0.085
+        },
+        "base_temperature_c": 81.18284569943127,
+        "interface_temperature_c": 82.26284569943127,
+        "air_outlet_c": 75.617559436883,
+        "steady_state_exists": true,
+        "nasa_reference": {
+          "applicable_geometry_and_boundary": false,
+          "cfd_rth_k_w": 0.0194,
+          "cfd_base_average_c": 83.952,
+          "not_validation": true,
+          "note": "Published older-X57 CFD comparison only; no calibration or CFD performed here.",
+          "base_rth_difference_percent": null
+        },
+        "within_model_limits": true,
+        "uncertainty_note": "Numerical limits do not establish physical validation; transition, entrance and boundary-condition warnings still apply."
+      },
+      "cad": {
+        "verification": "verified_brep",
+        "geometry_fingerprint": "896d7e4d79e03dedad7c6ca262e9cb4b5929e6b89f4089ddb9a84f676fa28a0b",
+        "step_available": true,
+        "stl_available": true,
+        "preset_id": "dense",
+        "kernel_installed": true,
+        "detail": "Matching generated BRep and STEP roundtrip measured independently; STL is closed and oriented",
+        "validation": {
+          "brep": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 1426577.8020000046,
+            "mass_kg": 3.8517600654000126,
+            "surface_area_m2": 1.9678291400000016,
+            "bbox_mm": {
+              "x": 179.5,
+              "y": 388.6,
+              "z": 47.0
+            },
+            "vertices": 456,
+            "edges": 684,
+            "faces": 230,
+            "euler_characteristic": 2,
+            "relative_volume_error": 3.1009750910336415e-15,
+            "relative_surface_area_error": 6.770240375392488e-16,
+            "max_bbox_error_mm": 0.0
+          },
+          "step_roundtrip": {
+            "passed": true,
+            "method": "independent_OpenCascade_BRep_measurement",
+            "is_valid": true,
+            "solid_count": 1,
+            "shell_count": 1,
+            "closed_shells": true,
+            "volume_mm3": 1426577.801999998,
+            "mass_kg": 3.851760065399995,
+            "surface_area_m2": 1.9678291400000016,
+            "bbox_mm": {
+              "x": 179.5,
+              "y": 388.6,
+              "z": 47.0
+            },
+            "vertices": 456,
+            "edges": 684,
+            "faces": 230,
+            "euler_characteristic": 2,
+            "relative_volume_error": 1.4688829378580409e-15,
+            "relative_surface_area_error": 6.770240375392488e-16,
+            "max_bbox_error_mm": 0.0
+          },
+          "stl": {
+            "passed": true,
+            "method": "independent_binary_STL_edge_and_signed_volume_check",
+            "triangles": 908,
+            "vertices": 456,
+            "edges": 1362,
+            "euler_characteristic": 2,
+            "watertight": true,
+            "consistent_orientation": true,
+            "connected": true,
+            "degenerate_triangles": 0,
+            "volume_mm3": 1426578.0463222805,
+            "bbox_mm": {
+              "x": 179.5,
+              "y": 388.6000061035156,
+              "z": 47.0
+            },
+            "relative_volume_error": 1.712646026434535e-07,
+            "max_bbox_error_mm": 6.1035156022626325e-06
+          }
+        }
+      },
+      "input_hash": "bc7e18721ca69e47f2fced97b8a7323471a56d21a21fc8f47f96f847f8d10830",
+      "model_sha256": "d995315803c9ae76cc4fc37103f64a5f85c815b9da1cf82fefaec974fce363ab",
+      "execution": "computed",
+      "provenance": {
+        "source_facts": {
+          "source": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "NASA/TM-20230011420 Table 2, printed p.13",
+          "scope": "Older X-57 heat sink, not final Mod II"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and flat base reconstruct published average dimensions; not original NASA CAD or final Mod II hardware.",
+          "Ideal adiabatic lid closes each channel; no bypass or external-face cooling. Lid is not included in exported bare-fin STEP.",
+          "Fully developed constant-wall-temperature rectangular-duct laminar correlation and smooth-duct Gnielinski turbulent correlation are approximations to three heated walls with an adiabatic roof.",
+          "No developing-flow enhancement, spreading resistance, radiation, detailed contact map, altitude correction, or CFD. Fixed air/material properties are illustrative assumptions.",
+          "Prescribed mass flow, not a fan operating point. Pressure-drop work / 50% efficiency is charged as electrical demand; no free cooling.",
+          "Adiabatic-tip rectangular-fin efficiency is applied once. Inner fin sides plus exposed channel base exchange heat; fin tips and outer sides do not.",
+          "Interface temperature adds a synthetic 0.001 K/W contact resistance; NASA comparison uses base-average proxy excluding contact."
+        ],
+        "material": {
+          "density_kg_m3": 2700.0,
+          "conductivity_w_m_k": 167.0,
+          "specific_heat_j_kg_k": 900.0
+        },
+        "air": {
+          "reference_pressure_pa": 101325.0,
+          "density_kg_m3": 1.05,
+          "viscosity_pa_s": 2.05e-05,
+          "conductivity_w_m_k": 0.029,
+          "specific_heat_j_kg_k": 1007.0
+        },
+        "correlation_reference": {
+          "turbulent_gnielinski": "https://ansyshelp.ansys.com/public/Views/Secured/MotorCAD/v252/en/Motor-CAD_UG/MotorCAD/topics/enclosedchannelconvectioncorrelation.html",
+          "laminar_darcy": "https://ntrs.nasa.gov/citations/20230011420 (Eq. 27)",
+          "laminar_constant_temperature": "https://eng-web77-v02.ocio.monash.edu/intranet/proceedings/fedsm_icnmm2010/data/pdfs/trk-2/FEDSM-ICNMM2010-30031.pdf"
+        },
+        "computed": "Analytic geometry + optional independently verified BRep; reduced-order heat/pressure model, not CFD."
+      }
+    },
+    "missions": {
+      "nominal": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "8323e699668ee58a",
+          "input_hash": "8323e699668ee58a1d344a435a4b2fb69cd1d410dbed87a98bdb7aa0144a3f66",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "nominal",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 25.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 57
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 321.9035201308,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 9.903520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 57
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 0.0,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.347921055293398,
+          "served_propulsion_kwh": 28.347921055293398,
+          "fan_energy_kwh": 0.053776425463756106,
+          "chemical_energy_kwh": 32.31223292832615,
+          "feasible": true,
+          "solver_valid": true,
+          "energy_used_kwh": 32.31223292832613,
+          "min_thermal_margin_c": 28.4190418746891,
+          "max_temperature_c": 66.5809581253109,
+          "min_voltage_v": 374.14099118986206,
+          "max_current_a": 239.30964197819117,
+          "remaining_energy_kwh": 13.28776707167386,
+          "accessible_traction_energy_kwh": 13.28776707167386,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 0,
+          "first_propulsion_shortfall_s": null,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 65.0386638511696,
+          "max_controller_temperature_c": 66.5809581253109,
+          "controller_blower_energy_kwh": 0.009706335185978928
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 5.240252676230739e-14,
+          "stored_energy_balance_max_error_kwh": 5.509481759702339e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 9.325873406851315e-15
+        }
+      },
+      "cooling_fault": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "ac41a92de63c4d17",
+          "input_hash": "ac41a92de63c4d179781f4154f164fa784e03fc6ebebdb69ad9209076af26fb1",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "cooling_fault",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 35.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 57
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 321.9035201308,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 9.903520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 57
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 1.2631870857957337e-16,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.0,
+          "requested_propulsion_kwh": 28.347921055293398,
+          "served_propulsion_kwh": 28.347921055293398,
+          "fan_energy_kwh": 0.4446789331806427,
+          "chemical_energy_kwh": 32.72488192908128,
+          "feasible": true,
+          "solver_valid": true,
+          "energy_used_kwh": 32.724881929081306,
+          "min_thermal_margin_c": -1.4210854715202004e-14,
+          "max_temperature_c": 95.00000000000001,
+          "min_voltage_v": 373.27133197906795,
+          "max_current_a": 239.30964197819117,
+          "remaining_energy_kwh": 12.875118070918687,
+          "accessible_traction_energy_kwh": 12.875118070918687,
+          "backup_remaining_kwh": 0.24,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 964.0,
+          "first_propulsion_shortfall_s": null,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 95.00000000000001,
+          "max_controller_temperature_c": 94.48234571896508,
+          "controller_blower_energy_kwh": 0.05600195401397619
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 5.240252676230739e-14,
+          "stored_energy_balance_max_error_kwh": 5.551115123125783e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 1.0658141036401503e-14
+        }
+      },
+      "bus_cooling": {
+        "meta": {
+          "model_version": "0.2.0",
+          "run_id": "b10d741ab6e880bf",
+          "input_hash": "b10d741ab6e880bfc22b99d135a5e421b1985c23c4ad191625053e53d797a948",
+          "execution": "computed",
+          "model_kind": "cad_controller_motor_split",
+          "dt_s": 2.0,
+          "inputs": {
+            "scenario_id": "bus_cooling",
+            "policy": "baseline",
+            "design_id": "reference",
+            "ambient_c": 40.0,
+            "dt_s": 2.0,
+            "demand_scale": 1.0,
+            "event_time_offset_s": 0.0,
+            "model_version": "0.2.0",
+            "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+            "cad_geometry": {
+              "length_mm": 388.6,
+              "width_mm": 179.5,
+              "fin_height_mm": 41.0,
+              "base_thickness_mm": 6.0,
+              "fin_thickness_mm": 1.11,
+              "fin_count": 57
+            },
+            "coupling_version": "controller-motor-split-v1",
+            "cad_model_sha256": "74d34b74e9d1423661e36c5592e4d920c82d3f9262795252a7b5e1821894b147"
+          },
+          "model_sha256": "db8666efe68126ecac765e8f0f6c49c63ab5b95e92c124a56eacaf6f0437a182",
+          "disclaimer": "Synthetic educational model inspired by public architecture. Not an X-57 reconstruction, flight prediction or certification evidence."
+        },
+        "design": {
+          "id": "reference",
+          "name": "基准硬件 · 312 kg · CAD 控制器扩展",
+          "mass_kg": 321.9035201308,
+          "traction_kwh": 48,
+          "backup_kwh": 0.24,
+          "cooling_scale": 1.0,
+          "description": "300 kg traction + 10 kg cooling + 2 kg essential battery; add two CAD sinks + 1.2 kg controller plates + 1.0 kg assumed duct: 9.903520 kg. Original synthetic motor-cooling hardware retained.",
+          "cad_geometry": {
+            "length_mm": 388.6,
+            "width_mm": 179.5,
+            "fin_height_mm": 41.0,
+            "base_thickness_mm": 6.0,
+            "fin_thickness_mm": 1.11,
+            "fin_count": 57
+          }
+        },
+        "summary": {
+          "unmet_propulsion_kwh": 5.664423641897976,
+          "unserved_essential_kwh": 0.0,
+          "flex_shed_kwh": 0.18333333333333288,
+          "requested_propulsion_kwh": 28.347921055293398,
+          "served_propulsion_kwh": 22.683497413395383,
+          "fan_energy_kwh": 0.3559212021389127,
+          "chemical_energy_kwh": 26.698391754422005,
+          "feasible": false,
+          "solver_valid": true,
+          "energy_used_kwh": 26.69839175442185,
+          "min_thermal_margin_c": 0.0,
+          "max_temperature_c": 95.0,
+          "min_voltage_v": 340.1507072479065,
+          "max_current_a": 260.0000000000001,
+          "remaining_energy_kwh": 18.954941578911484,
+          "accessible_traction_energy_kwh": 0,
+          "backup_remaining_kwh": 0.18666666666666565,
+          "violation_count": 0,
+          "duration_s": 1200.0,
+          "thermal_target_exposure_s": 894.0,
+          "first_propulsion_shortfall_s": 210.0,
+          "first_essential_shortfall_s": null,
+          "max_motor_temperature_c": 95.0,
+          "max_controller_temperature_c": 90.60685362577301,
+          "controller_blower_energy_kwh": 0.04957755630557922
+        },
+        "validation": {
+          "energy_balance_max_error_kw": 2.842170943040401e-14,
+          "battery_balance_max_error_kw": 5.240252676230739e-14,
+          "stored_energy_balance_max_error_kwh": 9.901801600875615e-15,
+          "finite_values": true,
+          "fixed_hardware": true,
+          "controller_finite": true,
+          "drivetrain_balance_max_error_kw": 8.43769498715119e-15
+        }
+      }
+    }
+  }
+]

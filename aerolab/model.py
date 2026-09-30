@@ -40,6 +40,7 @@ class Design:
     backup_kwh: float
     cooling_scale: float
     description: str
+    cad_geometry: Any = None
 
 
 # Hardware accounting is an explicitly synthetic equal-mass-budget example.
@@ -109,9 +110,11 @@ class State:
     energy: list[float]
     temperatures: list[float]
     backup: float
+    controllers: list[float] | None = None
 
     def copy(self) -> State:
-        return State(self.energy.copy(), self.temperatures.copy(), self.backup)
+        return State(self.energy.copy(), self.temperatures.copy(), self.backup,
+                     self.controllers.copy() if self.controllers is not None else None)
 
 
 def fault_state(events: list[dict], t: float) -> dict:
@@ -164,6 +167,9 @@ def allocate(total: float, caps: list[float], share: float) -> list[float]:
 
 def transition(state: State, phase: dict, faults: dict, design: Design, ambient: float,
                dt: float, cooling: float, share: float) -> tuple[State, dict]:
+    if design.cad_geometry is not None:
+        from .cad_mission import transition as cad_transition
+        return cad_transition(state, phase, faults, design, ambient, dt, cooling, share)
     if not (0 <= cooling <= 1 and 0 <= share <= 1):
         raise ValueError("Policy action outside admissible fan/share bounds")
     state = state.copy()
@@ -242,7 +248,7 @@ def transition(state: State, phase: dict, faults: dict, design: Design, ambient:
 
 
 def baseline_action(state: State, phase: dict, faults: dict) -> tuple[float, float, str]:
-    maximum = max(state.temperatures)
+    maximum = max(state.temperatures + (state.controllers or []))
     fan = 1.0 if maximum >= 80 else .65 if maximum >= 65 else .3
     if phase["id"] in ("takeoff", "initial_climb", "climb"):
         fan = max(fan, .65)  # A credible phase-aware thermal baseline.
@@ -277,14 +283,14 @@ def planner_action(state: State, phase: dict, faults: dict, design: Design, ambi
 
 
 def _finite_number(value: Any, name: str, low: float, high: float) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or not low <= value <= high:
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not low <= value <= high or not math.isfinite(value):
         raise ValueError(f"{name} must be a finite number in [{low}, {high}]")
     return float(value)
 
 
 def simulate(scenario_id: str = "cooling_fault", policy: str = "baseline", design_id: str = "reference",
              ambient_c: float | None = None, dt_s: float = 2, demand_scale: float = 1.0,
-             event_time_offset_s: float = 0) -> dict:
+             event_time_offset_s: float = 0, cad_geometry: dict | None = None) -> dict:
     if scenario_id not in SCENARIOS or policy not in POLICIES or design_id not in DESIGNS:
         raise ValueError("Unknown scenario, policy or design")
     dt = _finite_number(dt_s, "dt_s", .25, 10)
@@ -292,15 +298,24 @@ def simulate(scenario_id: str = "cooling_fault", policy: str = "baseline", desig
     demand_scale = _finite_number(demand_scale, "demand_scale", .5, 1.5)
     offset = _finite_number(event_time_offset_s, "event_time_offset_s", -120, 120)
     design = DESIGNS[design_id]
+    if cad_geometry is not None:
+        from .cad_mission import linked_design
+        design = linked_design(design, cad_geometry)
     scenario = dict(SCENARIOS[scenario_id], ambient_c=ambient)
     scenario["events"] = [dict(e, t_s=e["t_s"] + offset) for e in scenario["events"]]
     inputs = {"scenario_id": scenario_id, "policy": policy, "design_id": design_id,
               "ambient_c": ambient, "dt_s": dt, "demand_scale": demand_scale,
               "event_time_offset_s": offset, "model_version": __version__, "model_sha256": MODEL_SHA256}
+    if design.cad_geometry is not None:
+        inputs["cad_geometry"] = asdict(design.cad_geometry)
+        inputs["coupling_version"] = "controller-motor-split-v1"
+        inputs["cad_model_sha256"] = hashlib.sha256(b"".join(Path(__file__).with_name(p).read_bytes() for p in ("geometry.py", "cad_thermal.py", "cad_mission.py"))).hexdigest()
     encoded = json.dumps(inputs, sort_keys=True, separators=(",", ":"))
     input_hash = hashlib.sha256(encoded.encode()).hexdigest()
     state = State([design.traction_kwh * .95 / 2] * 2, [ambient + 5] * 2,
                   design.backup_kwh * scenario.get("backup_factor", 1))
+    if design.cad_geometry is not None:
+        state.controllers = [ambient + 5] * 2
     initial_energy = sum(state.energy) + state.backup
     trace, actions = [], []
     previous_action = previous_faults = None
@@ -345,7 +360,13 @@ def simulate(scenario_id: str = "cooling_fault", policy: str = "baseline", desig
                   "stored_energy_balance_max_error_kwh": max(abs(r["stored_energy_balance_error_kwh"]) for r in trace),
                   "finite_values": all(math.isfinite(v) for r in trace for v in r["temperature_c"] + r["pack_soc"] + r["pack_current_a"]),
                   "fixed_hardware": all(a["details"].get("mass_kg", design.mass_kg) == design.mass_kg for a in actions)}
+    if design.cad_geometry is not None:
+        validation["controller_finite"] = all(math.isfinite(v) for r in trace for v in r["controller_temperature_c"] + r["motor_temperature_c"])
+        validation["drivetrain_balance_max_error_kw"] = max(abs(r["drivetrain_balance_error_kw"]) for r in trace)
+        validation["finite_values"] = validation["finite_values"] and validation["controller_finite"]
     solver_valid = validation["finite_values"] and validation["energy_balance_max_error_kw"] < 1e-8 and validation["battery_balance_max_error_kw"] < 1e-8 and validation["stored_energy_balance_max_error_kwh"] < 1e-8
+    if design.cad_geometry is not None:
+        solver_valid = solver_valid and validation["drivetrain_balance_max_error_kw"] < 1e-8
     violation_count = sum(len(r["violations"]) for r in trace)
     summary = {**totals, "feasible": solver_valid and violation_count == 0 and totals["unmet_propulsion_kwh"] < 1e-6 and totals["unserved_essential_kwh"] < 1e-6,
                "solver_valid": solver_valid, "energy_used_kwh": initial_energy - sum(state.energy) - state.backup,
@@ -358,10 +379,14 @@ def simulate(scenario_id: str = "cooling_fault", policy: str = "baseline", desig
                "thermal_target_exposure_s": sum(r["dt_s"] for r in trace if max(r["temperature_c"]) > PROTECTION_C),
                "first_propulsion_shortfall_s": next((r["t_s"] - r["dt_s"] for r in trace if r["unmet_propulsion_kw"] > 1e-6), None),
                "first_essential_shortfall_s": next((r["t_s"] - r["dt_s"] for r in trace if r["served_essential_kw"] < ESSENTIAL_KW - 1e-6), None)}
+    if design.cad_geometry is not None:
+        summary["max_motor_temperature_c"] = max(max(r["motor_temperature_c"]) for r in trace)
+        summary["max_controller_temperature_c"] = max(max(r["controller_temperature_c"]) for r in trace)
+        summary["controller_blower_energy_kwh"] = sum(r["controller_blower_kw"]*r["dt_s"]/3600 for r in trace)
     return {"meta": {"model_version": __version__, "run_id": input_hash[:16], "input_hash": input_hash,
-                     "execution": "computed", "model_kind": "synthetic", "dt_s": dt, "inputs": inputs, "model_sha256": MODEL_SHA256,
+                     "execution": "computed", "model_kind": "cad_controller_motor_split" if design.cad_geometry is not None else "synthetic", "dt_s": dt, "inputs": inputs, "model_sha256": MODEL_SHA256,
                      "disclaimer": MODEL_DISCLAIMER},
-            "scenario": scenario, "design": asdict(design), "policy": POLICIES[policy],
+            "scenario": scenario, "design": {k: v for k, v in asdict(design).items() if k != "cad_geometry" or v is not None}, "policy": POLICIES[policy],
             "summary": summary, "trace": trace, "actions": actions, "validation": validation}
 
 

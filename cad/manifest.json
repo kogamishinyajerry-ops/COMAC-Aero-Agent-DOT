@@ -1,0 +1,521 @@
+{
+  "schema": "aerolab-rectangular-fin-v1",
+  "title": "Source-derived idealized heat sink CAD with independent kernel checks",
+  "source": {
+    "url": "https://ntrs.nasa.gov/citations/20230011420",
+    "report": "NASA/TM-20230011420 (August 2023)",
+    "location": "Table 2 and Figure 9, printed p. 13",
+    "scope": "Older X-57 heat sink benchmark, not final Mod II as-built hardware",
+    "license_note": "NTRS marks the report Work of the US Government, public use permitted. Geometry here is newly generated from dimensions."
+  },
+  "source_reference_dimensions": {
+    "length_mm": 388.6,
+    "width_mm": 179.5,
+    "fin_height_mm": 41.0,
+    "base_thickness_mm": 6.0,
+    "fin_thickness_mm": 1.11,
+    "fin_count": 43
+  },
+  "assumptions": [
+    "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+    "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+    "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+    "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+    "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+    "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+  ],
+  "software_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  },
+  "generator_sha256": "54b6d8ea77bb2464a036674acf7067aaa83904a1a2283f841c76a7a639670f59",
+  "geometry_module_sha256": "fa7cbddd588f23de942c492843e43147f80ca0d3ab88b624dcf395d549d97ee6",
+  "presets": {
+    "reference": {
+      "classification": "published reference dimensions with explicit idealizations",
+      "parameters": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 41.0,
+        "base_thickness_mm": 6.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 43
+      },
+      "fingerprint": "800b3c261839c77c7306e6ae2fb70915b47004f6099ddcd4e69f1a915bb7fc24",
+      "analytic": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 41.0,
+          "base_thickness_mm": 6.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 43
+        },
+        "fingerprint": "800b3c261839c77c7306e6ae2fb70915b47004f6099ddcd4e69f1a915bb7fc24",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 1178985.198,
+        "volume_m3": 0.001178985198,
+        "mass_kg": 3.1832600346000004,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 3.137380952380952,
+        "gap_m": 0.0031373809523809523,
+        "total_height_mm": 47.0,
+        "channel_count": 42,
+        "flow_area_m2": 0.00540257,
+        "channel_heated_area_m2": 1.389544222,
+        "channel_base_area_m2": 0.05120582199999999,
+        "channel_fin_area_m2": 1.3383384,
+        "all_solid_surface_area_m2": 1.5204420600000002,
+        "hydraulic_diameter_m": 0.005828738192979712,
+        "wetted_perimeter_m": 3.70754,
+        "heated_perimeter_m": 3.57577,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 47.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.041,
+        "base_thickness_m": 0.006,
+        "fin_thickness_m": 0.00111
+      },
+      "validation": {
+        "brep": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 1178985.1980000052,
+          "mass_kg": 3.183260034600014,
+          "surface_area_m2": 1.5204420600000002,
+          "bbox_mm": {
+            "x": 179.50000000000003,
+            "y": 388.6,
+            "z": 47.0
+          },
+          "vertices": 344,
+          "edges": 516,
+          "faces": 174,
+          "euler_characteristic": 2,
+          "relative_volume_error": 4.344646708944629e-15,
+          "relative_surface_area_error": 0.0,
+          "max_bbox_error_mm": 2.842170943040401e-14
+        },
+        "step_roundtrip": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 1178985.1980000038,
+          "mass_kg": 3.1832600346000106,
+          "surface_area_m2": 1.5204420600000004,
+          "bbox_mm": {
+            "x": 179.50000000000003,
+            "y": 388.6,
+            "z": 47.0
+          },
+          "vertices": 344,
+          "edges": 516,
+          "faces": 174,
+          "euler_characteristic": 2,
+          "relative_volume_error": 3.159743061050639e-15,
+          "relative_surface_area_error": 1.460395044090212e-16,
+          "max_bbox_error_mm": 2.842170943040401e-14
+        },
+        "stl": {
+          "passed": true,
+          "method": "independent_binary_STL_edge_and_signed_volume_check",
+          "triangles": 684,
+          "vertices": 344,
+          "edges": 1026,
+          "euler_characteristic": 2,
+          "watertight": true,
+          "consistent_orientation": true,
+          "connected": true,
+          "degenerate_triangles": 0,
+          "volume_mm3": 1178985.4960206854,
+          "bbox_mm": {
+            "x": 179.5,
+            "y": 388.6000061035156,
+            "z": 47.0
+          },
+          "relative_volume_error": 2.52777291716639e-07,
+          "max_bbox_error_mm": 6.1035156022626325e-06
+        }
+      },
+      "artifacts": {
+        "step": {
+          "file": "reference.step.gz",
+          "sha256": "0dfe6a7cf23f1e2676ecb3fa8d6e662137b4d19d12d79271d9996c56ea0f9b6a",
+          "compressed_sha256": "9321b689949a5983a62968bab5b241520e7339ad2206ddeac8c9980b40bcd535",
+          "uncompressed_bytes": 626029,
+          "compressed_bytes": 101556,
+          "coordinate_unit": "mm"
+        },
+        "stl": {
+          "file": "reference.stl.gz",
+          "sha256": "86c4145dd32ad01c1a187b3e0183a44be427d0d554213189ffd86ea378074c0b",
+          "compressed_sha256": "ea55ca26f93fbffbc61e9a6e8f4c7fa98e97e7143cfb6742d92601f2efdac3e3",
+          "uncompressed_bytes": 34284,
+          "compressed_bytes": 4952,
+          "coordinate_unit": "mm"
+        }
+      },
+      "preview": "reference.svg"
+    },
+    "light": {
+      "classification": "synthetic design alternative, not source-reported hardware",
+      "parameters": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 32.0,
+        "base_thickness_mm": 5.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 31
+      },
+      "fingerprint": "648ccae0fff693fe20104694f24a46c459f79f1210a9b08819e9ff794ec090d8",
+      "analytic": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 32.0,
+          "base_thickness_mm": 5.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 31
+        },
+        "fingerprint": "648ccae0fff693fe20104694f24a46c459f79f1210a9b08819e9ff794ec090d8",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 776663.7320000001,
+        "volume_m3": 0.0007766637320000001,
+        "mass_kg": 2.0969920764000003,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 4.836333333333333,
+        "gap_m": 0.004836333333333333,
+        "total_height_mm": 37.0,
+        "channel_count": 30,
+        "flow_area_m2": 0.00464288,
+        "channel_heated_area_m2": 0.802493974,
+        "channel_base_area_m2": 0.056381974,
+        "channel_fin_area_m2": 0.746112,
+        "all_solid_surface_area_m2": 0.9183730400000001,
+        "hydraulic_diameter_m": 0.008402718330633703,
+        "wetted_perimeter_m": 2.2101800000000003,
+        "heated_perimeter_m": 2.0650899999999996,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 37.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.032,
+        "base_thickness_m": 0.005,
+        "fin_thickness_m": 0.00111
+      },
+      "validation": {
+        "brep": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 776663.7320000007,
+          "mass_kg": 2.0969920764000016,
+          "surface_area_m2": 0.9183730399999992,
+          "bbox_mm": {
+            "x": 179.50000000000003,
+            "y": 388.6,
+            "z": 37.0
+          },
+          "vertices": 248,
+          "edges": 372,
+          "faces": 126,
+          "euler_characteristic": 2,
+          "relative_volume_error": 7.494576934032424e-16,
+          "relative_surface_area_error": 9.671216172679951e-16,
+          "max_bbox_error_mm": 2.842170943040401e-14
+        },
+        "step_roundtrip": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 776663.7320000004,
+          "mass_kg": 2.096992076400001,
+          "surface_area_m2": 0.9183730399999993,
+          "bbox_mm": {
+            "x": 179.50000000000003,
+            "y": 388.6,
+            "z": 37.0
+          },
+          "vertices": 248,
+          "edges": 372,
+          "faces": 126,
+          "euler_characteristic": 2,
+          "relative_volume_error": 4.496746160419455e-16,
+          "relative_surface_area_error": 8.462314151094958e-16,
+          "max_bbox_error_mm": 2.842170943040401e-14
+        },
+        "stl": {
+          "passed": true,
+          "method": "independent_binary_STL_edge_and_signed_volume_check",
+          "triangles": 492,
+          "vertices": 248,
+          "edges": 738,
+          "euler_characteristic": 2,
+          "watertight": true,
+          "consistent_orientation": true,
+          "connected": true,
+          "degenerate_triangles": 0,
+          "volume_mm3": 776663.693382232,
+          "bbox_mm": {
+            "x": 179.5,
+            "y": 388.6000061035156,
+            "z": 37.0
+          },
+          "relative_volume_error": 4.972263606623638e-08,
+          "max_bbox_error_mm": 6.1035156022626325e-06
+        }
+      },
+      "artifacts": {
+        "step": {
+          "file": "light.step.gz",
+          "sha256": "3766369e7eeb32ffe8667d8c42b52bcf94ae8c15b6fd7777033e68405adbc38b",
+          "compressed_sha256": "fb47a5fe48d7f5c86f6d6d9865d82db2874473c36b1d11d4c526399632c7b667",
+          "uncompressed_bytes": 443887,
+          "compressed_bytes": 73146,
+          "coordinate_unit": "mm"
+        },
+        "stl": {
+          "file": "light.stl.gz",
+          "sha256": "313bcfae4aa503ffb8b15aa78d4f22e69c570cbc835ee018affddb3fc043cef3",
+          "compressed_sha256": "5e660d89a65b40b1e0abf98ca0b6a7faa3787e2711a4fe8db9a4e4f17271c971",
+          "uncompressed_bytes": 24684,
+          "compressed_bytes": 3585,
+          "coordinate_unit": "mm"
+        }
+      },
+      "preview": "light.svg"
+    },
+    "dense": {
+      "classification": "synthetic design alternative, not source-reported hardware",
+      "parameters": {
+        "length_mm": 388.6,
+        "width_mm": 179.5,
+        "fin_height_mm": 41.0,
+        "base_thickness_mm": 6.0,
+        "fin_thickness_mm": 1.11,
+        "fin_count": 57
+      },
+      "fingerprint": "896d7e4d79e03dedad7c6ca262e9cb4b5929e6b89f4089ddb9a84f676fa28a0b",
+      "analytic": {
+        "parameters": {
+          "length_mm": 388.6,
+          "width_mm": 179.5,
+          "fin_height_mm": 41.0,
+          "base_thickness_mm": 6.0,
+          "fin_thickness_mm": 1.11,
+          "fin_count": 57
+        },
+        "fingerprint": "896d7e4d79e03dedad7c6ca262e9cb4b5929e6b89f4089ddb9a84f676fa28a0b",
+        "method": "analytic_rectangular_fin_geometry",
+        "volume_mm3": 1426577.8020000001,
+        "volume_m3": 0.0014265778020000003,
+        "mass_kg": 3.851760065400001,
+        "density_kg_m3": 2700.0,
+        "gap_mm": 2.075535714285714,
+        "gap_m": 0.0020755357142857142,
+        "total_height_mm": 47.0,
+        "channel_count": 56,
+        "flow_area_m2": 0.004765429999999999,
+        "channel_heated_area_m2": 1.829618178,
+        "channel_base_area_m2": 0.045166977999999997,
+        "channel_fin_area_m2": 1.7844512000000001,
+        "all_solid_surface_area_m2": 1.9678291400000003,
+        "hydraulic_diameter_m": 0.0039510577349589375,
+        "wetted_perimeter_m": 4.82446,
+        "heated_perimeter_m": 4.70823,
+        "base_footprint_area_m2": 0.06975369999999999,
+        "bbox_mm": {
+          "x": 179.5,
+          "y": 388.6,
+          "z": 47.0
+        },
+        "source": {
+          "url": "https://ntrs.nasa.gov/citations/20230011420",
+          "location": "Table 2, printed p. 13",
+          "classification": "source dimensions apply to reference preset only"
+        },
+        "assumptions": [
+          "Uniform rectangular fins and a flat base replace unprovided contours, taper, holes and radii.",
+          "Gap is derived from width; NASA's reported 3.14 mm reference gap is rounded.",
+          "Density is an illustrative aluminum assumption, not a verified alloy specification.",
+          "Heated area includes channel-facing fin sides and exposed base only; external sides, fin tips and ends are excluded.",
+          "Hydraulic diameter assumes a separate adiabatic lid/duct closing each channel; that lid is not part of the exported solid or mass.",
+          "No manufacturing tolerances, CFD mesh, experimental calibration or flight qualification are represented."
+        ],
+        "length_m": 0.38860000000000006,
+        "width_m": 0.1795,
+        "fin_height_m": 0.041,
+        "base_thickness_m": 0.006,
+        "fin_thickness_m": 0.00111
+      },
+      "validation": {
+        "brep": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 1426577.8020000046,
+          "mass_kg": 3.8517600654000126,
+          "surface_area_m2": 1.9678291400000016,
+          "bbox_mm": {
+            "x": 179.5,
+            "y": 388.6,
+            "z": 47.0
+          },
+          "vertices": 456,
+          "edges": 684,
+          "faces": 230,
+          "euler_characteristic": 2,
+          "relative_volume_error": 3.1009750910336415e-15,
+          "relative_surface_area_error": 6.770240375392488e-16,
+          "max_bbox_error_mm": 0.0
+        },
+        "step_roundtrip": {
+          "passed": true,
+          "method": "independent_OpenCascade_BRep_measurement",
+          "is_valid": true,
+          "solid_count": 1,
+          "shell_count": 1,
+          "closed_shells": true,
+          "volume_mm3": 1426577.801999998,
+          "mass_kg": 3.851760065399995,
+          "surface_area_m2": 1.9678291400000016,
+          "bbox_mm": {
+            "x": 179.5,
+            "y": 388.6,
+            "z": 47.0
+          },
+          "vertices": 456,
+          "edges": 684,
+          "faces": 230,
+          "euler_characteristic": 2,
+          "relative_volume_error": 1.4688829378580409e-15,
+          "relative_surface_area_error": 6.770240375392488e-16,
+          "max_bbox_error_mm": 0.0
+        },
+        "stl": {
+          "passed": true,
+          "method": "independent_binary_STL_edge_and_signed_volume_check",
+          "triangles": 908,
+          "vertices": 456,
+          "edges": 1362,
+          "euler_characteristic": 2,
+          "watertight": true,
+          "consistent_orientation": true,
+          "connected": true,
+          "degenerate_triangles": 0,
+          "volume_mm3": 1426578.0463222805,
+          "bbox_mm": {
+            "x": 179.5,
+            "y": 388.6000061035156,
+            "z": 47.0
+          },
+          "relative_volume_error": 1.712646026434535e-07,
+          "max_bbox_error_mm": 6.1035156022626325e-06
+        }
+      },
+      "artifacts": {
+        "step": {
+          "file": "dense.step.gz",
+          "sha256": "bf3da4fb461bf5e8f629c56db5cd1f4bb43cd821eb984842a67b029e58665808",
+          "compressed_sha256": "1e23611d666f41f15c0d0d5ef9917a38ecc8d8827c4e98a9f028522b8cca695e",
+          "uncompressed_bytes": 835697,
+          "compressed_bytes": 133349,
+          "coordinate_unit": "mm"
+        },
+        "stl": {
+          "file": "dense.stl.gz",
+          "sha256": "8b5259a20c4b04e871250d6647d7d924532905d0e97a3d3435b39b1bd1e68460",
+          "compressed_sha256": "db32cae2b7c07e62ca0b4e0c919572cdbc064b74525600eb1fec61da2cb38345",
+          "uncompressed_bytes": 45484,
+          "compressed_bytes": 6635,
+          "coordinate_unit": "mm"
+        }
+      },
+      "preview": "dense.svg"
+    }
+  },
+  "limits": {
+    "physics_experimentally_validated": false,
+    "CFD_solved": false,
+    "manufacturing_validated": false,
+    "original_NASA_CAD": false
+  },
+  "prior_proof_comparison": {
+    "file_name": "reference_heatsink.step",
+    "sha256": "77476fd91b94d37f42a66941044242d5c160c18510531dfff99583602a57ffa4",
+    "validation": {
+      "passed": true,
+      "method": "independent_OpenCascade_BRep_measurement",
+      "is_valid": true,
+      "solid_count": 1,
+      "shell_count": 1,
+      "closed_shells": true,
+      "volume_mm3": 1178985.1980000038,
+      "mass_kg": 3.1832600346000106,
+      "surface_area_m2": 1.5204420600000004,
+      "bbox_mm": {
+        "x": 179.50000000000003,
+        "y": 388.6,
+        "z": 47.0
+      },
+      "vertices": 344,
+      "edges": 516,
+      "faces": 174,
+      "euler_characteristic": 2,
+      "relative_volume_error": 3.159743061050639e-15,
+      "relative_surface_area_error": 1.460395044090212e-16,
+      "max_bbox_error_mm": 2.842170943040401e-14
+    }
+  }
+}

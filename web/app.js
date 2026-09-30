@@ -261,6 +261,8 @@ async function compute(compare = false) {
   finally { setBusy(false); }
 }
 function switchView(view) {
+  if (view === 'cad') { window.cadWorkspace?.open(); return; }
+  if (state.guide.mode !== 'expert') setMode('expert');
   state.view = view; $('control-view').hidden = view !== 'control'; $('design-view').hidden = view !== 'design';
   document.querySelectorAll('.nav-tab').forEach((button) => { const active = button.dataset.view === view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
   $('workspace-title').textContent = view === 'design' ? '更好的控制，不能替代合理的设计。' : '供得上电，也要散得了热。';
@@ -357,6 +359,9 @@ const GUIDE_STEPS = [
   { kicker: '06 / 现在才讨论硬件', question: '同样增加 20 kg，应该放在哪里？', intro: '沿用指令供电失效工况。把质量预算分给推进储能、散热或指令后备，再从初态分别计算完整任务。', next: '进入专家工作台 ↗' }
 ];
 function setMode(mode) {
+  document.body.classList.remove('mode-cad');
+  if ($('cad-view')) $('cad-view').hidden = true;
+  document.querySelectorAll('.nav-tab').forEach((button) => { const active = mode === 'expert' && button.dataset.view === state.view; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
   state.guide.mode = mode;
   document.body.classList.toggle('mode-guided', mode === 'guided');
   document.body.classList.toggle('mode-expert', mode === 'expert');
@@ -499,6 +504,9 @@ function renderGuide() {
       const passed = sweep.results.filter((item) => item.summary.feasible && item.summary.solver_valid);
       guideTakeaway('设计结论来自这次计算', `${sweep.results.length} 个方案中，${passed.length} 个满足任务条件。${passed.length ? '先检查哪些瓶颈被改变，再比较质量与任务收益。' : '当前枚举方案全部不可行，不能宣布可行赢家。'} 组合方案同时改变多项硬件，名称本身不能证明因果。`);
     }
+  }
+  if (step === 5) {
+    const link = document.createElement('button'); link.id = 'guide-open-cad'; link.className = 'cad-guide-link'; link.innerHTML = '<span><strong>从散热倍率，走到真实几何</strong><small>改翅片、算质量与流阻，再带入完整任务</small></span><span aria-hidden="true">打开 CAD 热设计 ↗</span>'; link.addEventListener('click', () => window.cadWorkspace?.open()); $('guide-visual').appendChild(link);
   }
   $('guide-evidence-json').textContent = evidence ? JSON.stringify(evidence, null, 2) : '这一步尚无计算结果；不会用其他工况的结果代替。';
   const lvButton = $('guide-compute-lv'); if (lvButton) lvButton.addEventListener('click', () => computeGuide('lv'));

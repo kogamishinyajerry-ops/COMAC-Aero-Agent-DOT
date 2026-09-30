@@ -25,7 +25,7 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 ```bash
 git clone https://github.com/kogamishinyajerry-ops/COMAC-Aero-Agent-DOT.git
 cd COMAC-Aero-Agent-DOT
-git checkout feat/thermal-mission-demonstrator
+git checkout feat/cad-thermal-linked-design
 python3 -m unittest discover -s tests -v
 python3 -m aerolab serve
 ```
@@ -38,7 +38,8 @@ python3 -m aerolab serve
 2. 单侧冷却衰减：保护器避免热越界，但不能凭空保证任务功率；查看规划器失败反例
 3. 电源隔离 + 冷却衰减：有储能但失去连接、功率不足、热约束可能同时出现
 4. 主低压失效 + 后备衰减：牵引电池还有电，也可能失去推进指令
-5. 离线硬件取舍：同样增重 20 kg，分配给牵引电量、散热或低压后备会带来不同后果；在线控制不会改质量
+5. CAD 联动设计：修改鳍片几何，比较真实重量、流道、温度和压降，导出对应 STEP，再以固定硬件运行分节点任务
+6. 离线硬件取舍：同样增重 20 kg，分配给牵引电量、散热或低压后备会带来不同后果；在线控制不会改质量
 
 ### 命令行与证据
 
@@ -49,6 +50,8 @@ python3 -m aerolab sweep --scenario command_loss --output output/sweep.json
 python3 scripts/generate_evidence.py
 ```
 
+- [CAD 实体生成与验证](docs/CAD.md)
+- [CAD 联动方程、边界与真实取舍](docs/CAD_THERMAL.md)
 - [模型、全部假设与方程](docs/MODEL.md)
 - [已核查公开来源与许可边界](docs/SOURCES.md)
 - [求解器生成的结果与反例](docs/RESULTS.md)
@@ -56,9 +59,13 @@ python3 scripts/generate_evidence.py
 - `examples/reference_compare.json.gz.b64`：无损 gzip + Base64 保存的完整双策略轨迹，应用自动解码，包含输入与模型 SHA-256；用 `python3 -m aerolab export-demo --output output/reference_compare.json` 可导出普通 JSON
 - `tests/`：部件、守恒、限值、故障、公平输入、确定性、时步、API 与参考结果检查
 
+### 可选 CAD 内核
+
+三组已验证预设 STEP 随仓库提供，日常计算仍无需第三方依赖。任意自定义几何的 STEP 生成可安装 `python -m pip install cadquery==2.7.0`，然后重启服务；没有安装时仍可解析计算，自定义 STEP 按钮会明确提示限制。完整再生成命令见 [CAD.md](docs/CAD.md)。
+
 ### 当前限制
 
-当前没有 CAD 几何模型或原始图纸，质量、面积、流阻与热导尚未形成几何推导链。没有气动/飞行动力学或瞬态电磁模型；热容/热导与风扇为合成参数；热节点不是器件热点。NASA 参考热分析为被动空气冷却，本演示的可控强制风冷是明确的替代设计。两路馈电以可达的汇总功率抽象，未实现真实开关/绕组/接触器保护。不得拿展示结果做真实飞机设计或运行决策。
+现已新增 [CAD 几何—热模型联动](docs/CAD_THERMAL.md)：来源尺寸重建的散热器驱动质量、流道、热阻、压降和控制器任务节点，含三组经过实体与 STEP 回读检查的参数化方案。它是旧版 X-57 散热器的尺寸理想化，不是原始图纸或最终 Mod II。旧版合成热节点保留作独立基线。没有气动/飞行动力学或瞬态电磁模型；新路径从几何计算控制器散热器质量/热容，电机热模型、损耗拆分、材料与风机效率仍有明确合成假设；热节点不是器件热点。NASA 参考热分析为被动空气冷却，本演示的可控强制风冷是明确的替代设计。两路馈电以可达的汇总功率抽象，未实现真实开关/绕组/接触器保护。不得拿展示结果做真实飞机设计或运行决策。
 
 ## 候选系统与旗舰复杂度
 
