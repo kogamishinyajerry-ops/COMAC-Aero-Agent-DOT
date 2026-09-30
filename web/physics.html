@@ -32,7 +32,7 @@
       <div class="section-heading"><div><p class="eyebrow">SOURCE → GEOMETRY HYPOTHESIS</p><h2>总流量接近，分流也可能是错的</h2><p>把公开质量流量、静压、温度和轴向速度放在一起，得到可核查的等效流通面积。</p></div><span class="badge amber">CFD 来源对照 · 非实测</span></div>
       <div class="two-column">
         <article class="card"><div class="card-heading"><h3>四个关键截面</h3><span>mm²</span></div><div class="legend"><span><i class="swatch blue"></i>当前重建</span><span><i class="swatch ochre"></i>初始爬升推定</span></div><div id="area-chart" class="area-chart" aria-label="当前重建与来源等效流通面积对比">等待本次计算</div><p class="footnote">等效面积 = 质量流量 ÷（理想气体密度代理 × 轴向速度）。来源是截面平均值，未说明各变量的加权方式；这不是恢复出的原始 CAD 尺寸。</p></article>
-        <article class="card insight"><p class="eyebrow">A FALSIFIABLE CHECK</p><h3>只拟合一个工况，能否预测另外两个？</h3><p>用初始爬升固定等效参数 A/√K，再做跨工况对照。面积与阻力系数不能分别识别。</p><div id="pressure-check" class="pressure-check">等待本次计算</div><p class="footnote">这是回顾性条件对照：输入了来源下游压力，不能称为独立网络预测。区间只覆盖表格舍入，不是统计置信区间。</p></article>
+        <article class="card insight"><p class="eyebrow">A FALSIFIABLE CHECK</p><h3>拟合一次，能跨工况预测吗？</h3><p>用初始爬升固定等效参数 A/√K，再做跨工况对照。面积与阻力系数不能分别识别。</p><div id="pressure-check" class="pressure-check">等待本次计算</div><p class="footnote">这是回顾性条件对照：输入了来源下游压力，不能称为独立网络预测。区间只覆盖表格舍入，不是统计置信区间。</p></article>
       </div>
       <div class="takeaway"><span>本步结论</span><p>先核对间隙、散热槽和旁通截面，不能用总流量相近来证明局部冷却正确。</p></div>
       <details><summary>查看来源、推定和适用范围</summary><div id="source-details" class="details-content"></div></details>
@@ -49,11 +49,11 @@
     </section>
 
     <section id="panel-coupling" class="panel" role="tabpanel" aria-labelledby="tab-coupling" hidden>
-      <div class="section-heading"><div><p class="eyebrow">FINITE VOLUME → ANALYTICAL VERIFICATION</p><h2>两面都加热，一面仍能比平均空气更冷</h2><p>用可独立核查的层流平板子问题，看见原降阶模型遗漏的壁面耦合。</p></div><span class="badge teal">二维数值子问题 · 非电机 CFD</span></div>
+      <div class="section-heading"><div><p class="eyebrow">FINITE VOLUME → ANALYTICAL VERIFICATION</p><h2>两面都加热，<span class="mobile-newline">一面仍比平均空气更冷</span></h2><p>用可独立核查的层流平板子问题，看见原降阶模型遗漏的壁面耦合。</p></div><span class="badge teal">二维数值子问题 · 非电机 CFD</span></div>
       <div class="case-controls" role="group" aria-label="选择热边界子算例">
         <button data-case="asymmetric" aria-pressed="true">不均匀加热 20 / 200</button><button data-case="equal" aria-pressed="false">两面相同 200 / 200</button><button data-case="one_wall" aria-pressed="false">一面绝热 0 / 200</button><button data-case="balanced" aria-pressed="false">一冷一热 −200 / 200</button><button data-case="reversed" aria-pressed="false">反向气流</button><button data-case="zero_flow" aria-pressed="false">零流量</button>
       </div>
-      <p class="small">壁面热流单位 W/m²，均为明确选定的合成边界，不是 X-57 热负荷。</p>
+      <p class="small">数值按图中下壁 / 上壁排列，热流单位 W/m²。均为合成边界，不是 X-57 热负荷。</p>
       <div class="two-column thermal-columns">
         <article class="card"><div class="card-heading"><h3>实际求解的温度截面</h3><span id="grid-label">等待计算</span></div><div id="heat-map" class="heat-map" role="img" aria-label="沿流向与平板间隙的计算温度场"></div><div id="heat-scale" class="heat-scale"></div><p class="footnote">有限体积流体单元的采样显示；横轴为实际物理位置。无限宽平行板，无旋转、湍流或三维结构。固体温升为局部一维厚度导热。</p></article>
         <article class="card"><div class="card-heading"><h3>出口处，谁比谁更热？</h3><span>°C</span></div><div id="wall-comparison" class="wall-comparison"></div><div id="coupling-answer" class="coupling-answer"></div><div id="balance-metrics" class="metric-grid"></div></article>

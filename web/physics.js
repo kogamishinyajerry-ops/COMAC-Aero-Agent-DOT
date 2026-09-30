@@ -20,6 +20,10 @@
   function chooseTab(name, writeHistory=true) {
     name=tabs.includes(name)?name:"flow";
     tabs.forEach(item=>{const active=item===name;$("tab-"+item).setAttribute("aria-selected",String(active));$("tab-"+item).tabIndex=active?0:-1;$("panel-"+item).hidden=!active;});
+    // Rebuild SVG coordinates after the formerly hidden container is laid out.
+    // Fonts stay in CSS pixels instead of shrinking with a fixed desktop viewBox.
+    if(state.report && name==="channel")renderHistorical(state.report);
+    if(state.report && name==="coupling")renderDuct(state.report);
     if(writeHistory && location.hash!=="#"+name) history.pushState({tab:name},"","#"+name);
   }
   document.querySelectorAll("[data-tab]").forEach(button=>{
@@ -52,7 +56,7 @@
     Object.entries(labels).forEach(([key,label])=>{
       const d=cases[key],box=node("div",undefined,"pressure-value");
       box.append(node("span",label),node("strong",`${signed(d.relative_error_percent)}%`),node("small",`舍入范围 ${signed(d.error_printed_rounding_percent[0],1)}% 至 ${signed(d.error_printed_rounding_percent[1],1)}%`));pressure.append(box);
-    });replace("pressure-check",paragraph("主进气口 1_c → 电机后混合区 4；用冷却槽 2a_s 流量做对照"),pressure);
+    });replace("pressure-check",paragraph("主进气口 1_c → 电机后混合区 4；用冷却槽 2a_s 流量做对照"),paragraph("流量相对偏差 =（预测 − 来源）/ 来源。负号表示低估。"),pressure);
     replace("source-details",paragraph("仅以初始爬升做推定；另两组数据是同一 CFD 构型的回顾性对照，不是盲测或试验验证。"),
       link("NASA 2023 · 表 7–9 与第 9 页平均定义",audit.source_url),
       bulletList(keys.map(key=>`${names[key]}：三组等效面积的全跨度为初始推定的 ${fmt(areas[key].three_case_span_percent_of_inferred,3)}%。重复性提示几何差异，但不能约束未知平均误差。`)),
@@ -62,14 +66,16 @@
   function renderHistorical(report) {
     const h=report.historical_motor,compare=h.matched_condition_comparison;
     const matched=compare.rows.find(r=>r.velocity_m_s===24) || compare.rows[0];
-    const picture=svg("svg",{viewBox:"0 0 540 165",role:"img","aria-label":"宽绕组间隙代理与历史窄散热通道示意，非同比例"});
+    const width=$("channel-sketch").clientWidth||540,half=(width-26)/2,right=half+26;
+    const picture=svg("svg",{viewBox:`0 0 ${width} 160`,role:"img","aria-label":"宽绕组间隙代理与历史窄散热通道示意，非同比例"});
     text(picture,5,17,"当前宽通道代理",{"font-size":12,fill:"#467c9d"});
-    text(picture,290,17,"历史散热器单元",{"font-size":12,fill:"#9b662b"});
-    for(let i=0;i<4;i++)picture.append(svg("rect",{x:6+i*58,y:39,width:18,height:75,fill:"#c0d3dd",rx:2}));
-    for(let i=0;i<12;i++)picture.append(svg("rect",{x:290+i*19,y:39,width:6,height:75,fill:"#dec497",rx:1}));
-    text(picture,5,139,`水力直径 ${fmt(compare.current_rom_native_hydraulic_diameter_m*1000,3)} mm`,{"font-size":11,fill:"#697a82"});
-    text(picture,290,139,`2 × 17 mm；Dh ${fmt(h.geometry.hydraulic_diameter_m*1000,3)} mm`,{"font-size":11,fill:"#697a82"});
-    text(picture,270,163,"截面示意 · 非同比例 / 非实际槽数",{"font-size":9,fill:"#87949b","text-anchor":"middle"});
+    text(picture,right,17,"历史散热器单元",{"font-size":12,fill:"#9b662b"});
+    for(let i=0;i<4;i++)picture.append(svg("rect",{x:6+i*(half-6)/4,y:36,width:Math.max(8,half*.09),height:60,fill:"#c0d3dd",rx:2}));
+    for(let i=0;i<12;i++)picture.append(svg("rect",{x:right+i*(half-5)/12,y:36,width:Math.max(3,half*.023),height:60,fill:"#dec497",rx:1}));
+    text(picture,5,116,`Dh ${fmt(compare.current_rom_native_hydraulic_diameter_m*1000,3)} mm`,{"font-size":11,fill:"#697a82"});
+    text(picture,right,116,"2 × 17 mm",{"font-size":11,fill:"#697a82"});
+    text(picture,right,132,`Dh ${fmt(h.geometry.hydraulic_diameter_m*1000,3)} mm`,{"font-size":11,fill:"#697a82"});
+    text(picture,width/2,154,"截面示意 · 非同比例 / 非实际槽数",{"font-size":10,fill:"#697a82","text-anchor":"middle"});
     replace("channel-sketch",picture);
     replace("channel-comparison",
       metric("换热能力 UA 比值",fmt(matched.narrow_to_broad_ua_ratio,2),"×"),
@@ -97,8 +103,9 @@
     const ordered=[...samples].sort((a,b)=>a.x_physical_m-b.x_physical_m),eta=duct.thermal.sample_eta;
     const all=ordered.flatMap(s=>s.fluid_c).concat(Object.values(duct.thermal.outlet_wall_c));
     const min=Math.min(...all),max=Math.max(...all),L=duct.provenance.case.length_m;
-    const p=svg("svg",{viewBox:"0 0 620 244",preserveAspectRatio:"none"});
-    const x0=47,y0=37,w=546,h=156;
+    const width=$("heat-map").clientWidth||620,height=$("heat-map").clientHeight||244;
+    const p=svg("svg",{viewBox:`0 0 ${width} ${height}`});
+    const x0=45,y0=34,w=width-65,h=height-82;
     ordered.forEach((s,i)=>{
       const left=i?(.5*(s.x_physical_m+ordered[i-1].x_physical_m)):0;
       const right=i+1<ordered.length?.5*(s.x_physical_m+ordered[i+1].x_physical_m):L;
@@ -109,13 +116,14 @@
     });
     p.append(svg("rect",{x:x0,y:y0,width:w,height:h,fill:"none",stroke:"#cad8d9","stroke-width":1}));
     const reverse=duct.hydraulics.flow_direction<0;
-    text(p,x0,20,`右壁热流 ${fmt(duct.thermal.wall_flux_w_m2.right,0)} W/m²`,{"font-size":10,fill:"#697a82"});
-    text(p,x0+w,20,reverse?"← 气流方向":"气流方向 →",{"font-size":10,fill:"#087d78","text-anchor":"end"});
-    text(p,x0-9,y0+5,"+b",{"font-size":9,fill:"#697a82","text-anchor":"end"});
-    text(p,x0-9,y0+h,"−b",{"font-size":9,fill:"#697a82","text-anchor":"end"});
+    text(p,x0,20,`上壁 ${fmt(duct.thermal.wall_flux_w_m2.right,0)} W/m²`,{"font-size":11,fill:"#697a82"});
+    text(p,x0+w,20,reverse?"← 气流方向":"气流方向 →",{"font-size":11,fill:"#087d78","text-anchor":"end"});
+    const halfGap=fmt(duct.provenance.case.gap_m*500,0);
+    text(p,x0-7,y0+5,`+${halfGap}mm`,{"font-size":10,fill:"#697a82","text-anchor":"end"});
+    text(p,x0-7,y0+h,`−${halfGap}mm`,{"font-size":10,fill:"#697a82","text-anchor":"end"});
     text(p,x0,y0+h+19,"0",{"font-size":10,fill:"#697a82"});
     text(p,x0+w,y0+h+19,`${fmt(L*1000,0)} mm`,{"font-size":10,fill:"#697a82","text-anchor":"end"});
-    text(p,x0+w/2,234,`左壁热流 ${fmt(duct.thermal.wall_flux_w_m2.left,0)} W/m² · 沿实际物理坐标 x`,{"font-size":10,fill:"#697a82","text-anchor":"middle"});
+    text(p,x0+w/2,height-10,`下壁 ${fmt(duct.thermal.wall_flux_w_m2.left,0)} W/m² · 实际位置 x`,{"font-size":10,fill:"#697a82","text-anchor":"middle"});
     replace("heat-map",p);
     const gradient=node("div",undefined,"heat-scale-gradient");replace("heat-scale",node("span",`${fmt(min,1)} °C`),gradient,node("span",`${fmt(max,1)} °C`));
   }
@@ -123,11 +131,11 @@
     const d=report.duct,t=d.thermal;
     $("grid-label").textContent=`${d.provenance.grid.transverse_full_gap_cells} × ${d.provenance.grid.axial_cells} 单元`;
     renderHeatMap(d);
-    const values=[["左壁",t.outlet_wall_c.left,"#467c9d"],["流量加权平均空气",t.outlet_bulk_c,"#087d78"],["右壁",t.outlet_wall_c.right,"#c58a3b"]];
+    const values=[["下壁",t.outlet_wall_c.left,"#467c9d"],["流量加权平均空气",t.outlet_bulk_c,"#087d78"],["上壁",t.outlet_wall_c.right,"#c58a3b"]];
     replace("wall-comparison",...values.map(([label,value,color])=>{const row=node("div",undefined,"wall-row"),name=node("span"),dot=node("i",undefined,"wall-dot");dot.style.background=color;name.append(dot,document.createTextNode(label));row.append(name,node("strong",fmt(value,2)));return row;}));
     let answer;
     if(d.status!=="solved")answer="有热负荷却没有气流，当前对流模型不给出稳态温度。自然对流等机制不在这个子问题内。";
-    else if(t.wall_flux_w_m2.left>0 && t.outlet_wall_c.left<t.outlet_bulk_c)answer=`左壁仍向流体加热，却比平均空气低 ${fmt(t.outlet_bulk_c-t.outlet_wall_c.left,2)} °C。右壁把另一侧流体加热得更多；一个独立的正换热系数不能描述这种耦合。`;
+    else if(t.wall_flux_w_m2.left>0 && t.outlet_wall_c.left<t.outlet_bulk_c)answer=`下壁仍向流体加热，却比平均空气低 ${fmt(t.outlet_bulk_c-t.outlet_wall_c.left,2)} °C。上壁把另一侧流体加热得更多；一个独立的正换热系数不能描述这种耦合。`;
     else if(t.wall_flux_w_m2.left===t.wall_flux_w_m2.right)answer="两面均匀加热，温度分布恢复对称。充分发展极限可与解析 Nu = 140/17 单独对照。";
     else if(t.wall_flux_w_m2.left<0)answer="一侧吸热、一侧放热，总热流为零。平均空气温度可以不变，横向温度梯度仍真实存在。";
     else answer="绝热壁不直接给空气加热，但仍受另一壁的热量影响。壁温不能由它自身的热流单独决定。";
@@ -144,6 +152,7 @@
     replace("verification-grid",...cards.map(([label,value,note])=>{const n=node("div",undefined,"verification-item");n.append(node("p",label),node("strong",value),node("small",note));return n;}));
     replace("duct-details",paragraph(`本次求解：间隙 ${fmt(d.provenance.case.gap_m*1000,1)} mm，长度 ${fmt(d.provenance.case.length_m*1000,0)} mm，入口 ${fmt(d.provenance.case.inlet_c,1)} °C，平均速度 ${fmt(d.provenance.case.mean_velocity_m_s,1)} m/s。`),
       paragraph("范围：层流、充分发展的速度场、固定物性、两壁指定热流。省略轴向导热、浮力、辐射、旋转和湍流；不用于电机工况预测。"),
+      paragraph("图中下壁对应求解器横坐标 η = −1，上壁对应 η = +1；流向坐标 x 独立，反向气流不交换两壁。"),
       paragraph("温度场为本次计算；网格收敛和独立高精度入口段比较为已复现的保存记录，已检查与当前模型及参考程序指纹一致。"),
       paragraph(`本次输入 ${d.provenance.input_sha256}`),paragraph(`数值模型 ${d.provenance.source_sha256}`),paragraph(`验证记录 ${v.artifact_sha256}`),
       ...v.sources.map(s=>link(s.title,s.url)));
@@ -192,5 +201,14 @@
     if(state.report){$("run-state").textContent="恢复上次计算结果；可重新计算";$("run-state").classList.add("calculation-stale");}
   });
   window.addEventListener("pageshow",event=>{if(event.persisted&&!state.report&&!state.controller)calculate();});
+  let resizeFrame;
+  window.addEventListener("resize",()=>{
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame=requestAnimationFrame(()=>{
+      if(!state.report)return;
+      if(!$("panel-channel").hidden)renderHistorical(state.report);
+      if(!$("panel-coupling").hidden)renderDuct(state.report);
+    });
+  });
   calculate();
 })();

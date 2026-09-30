@@ -46,6 +46,7 @@ def main():
             expect(page.locator(".scope")).to_contain_text("仍未验证")
             expect(page.locator("#area-chart .area-row")).to_have_count(4)
             expect(page.locator("#pressure-check")).to_contain_text("−19.20%".replace("−", "-"))
+            expect(page.locator("#pressure-check")).to_contain_text("负号表示低估")
             assert not page.evaluate("document.documentElement.scrollWidth > innerWidth")
             expected = physics_evidence()
             def screenshot(name):
@@ -176,8 +177,16 @@ def main():
                 page.locator(f"#tab-{panel}").click()
                 expect(page.locator(f"#panel-{panel}")).to_be_visible()
                 assert not page.evaluate("document.documentElement.scrollWidth > innerWidth"), panel
+                if panel in ("channel", "coupling"):
+                    chart = "#channel-sketch" if panel == "channel" else "#heat-map"
+                    sizes = page.locator(chart + " svg text").evaluate_all("""nodes => nodes.map(n => {
+                      const m=n.getScreenCTM(),size=parseFloat(getComputedStyle(n).fontSize);
+                      return {text:n.textContent,px:size*Math.min(Math.hypot(m.a,m.b),Math.hypot(m.c,m.d))};
+                    })""")
+                    assert sizes and min(row["px"] for row in sizes) >= 9.5, sizes
+                    results.setdefault("mobile_svg_rendered_font_sizes", {})[panel] = sizes
                 screenshot(f"ui-physics-{panel}-mobile.png")
-            results["flows"].append("All three panels render on390px mobile without horizontal overflow")
+            results["flows"].append("All three panels render on390px mobile without horizontal overflow; SVG labels remain at least9.5px after screen transformation")
             assert not results["page_errors"], results["page_errors"]
             results["status"] = "passed"
             browser.close()
