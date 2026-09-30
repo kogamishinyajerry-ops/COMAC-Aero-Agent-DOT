@@ -1,0 +1,15 @@
+{
+  "status": "numerics_frozen_before_experimental_comparison",
+  "selected": {
+    "gap_cells": 48,
+    "height_cells": 144,
+    "axial_steps": 1600,
+    "method": "backward_euler",
+    "half_array_symmetry": true
+  },
+  "selection_basis": "Initial36x108 mesh rejected by unchanged0.2% exact Poisson mean gate;48x144 passes and is checked against64x192 at800 steps and against800-vs1600 axial steps, at4/10/20m/s in both model forms; all gates pass",
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "verification_sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7",
+  "experimental_data_read": false
+}

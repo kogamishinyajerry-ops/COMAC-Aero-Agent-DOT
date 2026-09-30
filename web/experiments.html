@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>实测对照 · 航空电热实验室</title>
+  <link rel="stylesheet" href="/physics.css">
+  <link rel="stylesheet" href="/experiments.css">
+  <script src="/experiments.js" defer></script>
+  <script src="/fin_experiment.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">航空电热实验室<span>POWER / THERMAL LAB</span></a><nav aria-label="工作空间"><a href="/">系统与控制</a><a href="/nacelle">飞机装配</a><a href="/physics" aria-current="location">物理证据</a></nav><span class="research-tag">PUBLIC-SOURCE RESEARCH</span></header>
+  <main>
+    <section class="hero"><div><p class="eyebrow">EXPERIMENTAL COMPARISON / 05B</p><h1>方程通过，<span>实验呢？</span></h1><p class="lead">先冻结数值方法，再对照实测，保留不吻合的地方。</p></div><aside class="scope"><strong>有条件的公开实测对照</strong><p>没有完整测量不确定度，不能判为物理验证通过。结果没有转移到飞机模型。</p></aside></section>
+    <div class="tabs experiment-tabs" role="tablist" aria-label="选择公开实验基准"><button id="experiment-tab-rectangular" role="tab" aria-controls="benchmark-rectangular" aria-selected="true" tabindex="0"><span>01 / 1966</span>矩形流道 · 32 条记录</button><button id="experiment-tab-fin" role="tab" aria-controls="benchmark-fin" aria-selected="false" tabindex="-1"><span>02 / 2024</span>板翅散热器 · 12 个图点</button></div>
+    <section id="benchmark-rectangular" role="tabpanel" aria-labelledby="experiment-tab-rectangular">
+    <div class="toolbar"><span id="experiment-status" role="status" aria-live="polite">正在核对研究记录与代码指纹…</span><div><button id="verify-record" disabled>核对研究记录</button><button id="cancel-record" hidden>取消等待</button><button id="export-record" disabled>导出完整对照 ↗</button></div></div>
+    <div id="experiment-error" class="error" role="alert" hidden></div>
+    <div class="replay-note"><strong>研究结果回放</strong><span>此页核对并展示已计算的记录，不在浏览器中重新运行可选的 NumPy / SciPy 研究求解器。</span><a href="/physics">返回实时物理子问题 →</a></div>
+    <section class="experiment-summary" aria-label="实测对照摘要"><div><span>完整记录</span><strong id="run-count">—</strong><small>全部保留，未挑选有利结果</small></div><div><span>用于拟合的实测记录</span><strong id="fitted-count">—</strong><small>无换热系数或物性调整</small></div><div><span>平均绝对差异</span><strong id="mean-residual">—</strong><small>出口衰减的百分点</small></div><div><span>最大绝对差异</span><strong id="max-residual">—</strong><small>数值误差与物理差异分开</small></div></section>
+
+    <div class="section-heading"><div><p class="eyebrow">FROZEN MODEL → ALL REPORTED MEASUREMENTS</p><h2>理想模型普遍低估了吸热</h2><p>同一个 1 × 2 英寸矩形空气流道，三种加热长度。壁温、入口温度和来源流动参数作为条件；出口温度用于对照。</p></div><span class="badge amber">无调参 · 非盲测 · 非飞机验证</span></div>
+    <div class="experiment-columns">
+      <article class="card"><div class="card-heading"><h3>每一个实测点，都留下来</h3><label class="length-filter">查看长度<select id="length-filter" disabled><option value="all">全部记录</option><option value="24">24 英寸</option><option value="13">13 英寸</option><option value="7.5">7.5 英寸</option></select></label></div><div id="comparison-chart" class="comparison-chart" role="img" aria-label="模型与实测出口衰减对照散点图">等待核对研究记录</div><div id="comparison-legend" class="legend"></div><p class="footnote">出口衰减 θ =（壁温 − 出口温度）/（壁温 − 入口温度）。θ 越高，表示空气吸热越少；一致线仅作参照。未绘制实验置信区间，因为来源未提供完整不确定度预算。</p></article>
+      <article class="card"><div class="card-heading"><h3>长度不同，差异也不同</h3><span>平均绝对差异 / 百分点</span></div><div id="length-comparison" class="length-comparison"></div><div id="residual-meaning" class="residual-meaning"></div><p class="footnote">分组是预先声明的对照方式。短通道偏差更大值得研究入口条件等机制，但这些残差本身不能唯一确定原因。</p></article>
+    </div>
+    <div class="takeaway"><span>本步结论</span><p>正确实现方程，不等于已经匹配试验。下一步应核查模型条件与测量定义，而不是把系数调到“通过”。</p></div>
+
+    <section class="experiment-method"><article class="card"><div class="card-heading"><h3>先验收计算，再接触残差</h3><span class="badge teal">数值验证独立完成</span></div><div id="numerical-summary" class="metric-grid"></div><p class="footnote">独立连续参考的差异只描述已检查的数学位置，不是全域误差界、统计置信区间或实验不确定度。</p><div class="method-order"><span>原始数值计划</span><span>不通过则加密</span><span>冻结响应</span><span>32 条实测对照</span></div><p class="small">原始冻结记录保留。后续打包仅增加输入守卫与可迁移性，并单独记录再现检查；没有重写“先冻结、后对照”的历史。</p></article>
+      <article class="card"><div class="card-heading"><h3>还有哪些条件没对齐？</h3><span>不能藏进“误差棒”</span></div><ul class="scope-list"><li><strong>真实入口流动</strong><span>理想模型使用充分发展的速度场；实验入口、转捩和混合对流需要额外审查</span></li><li><strong>物性与测量约定</strong><span>报告的 Graetz 数作为条件输入；打印 Nu 列不参与拟合或验收</span></li><li><strong>完整测量不确定度</strong><span>电路精度与表格舍入不能替代完整误差预算。缺失的 Reynolds 数保留为空</span></li></ul></article></section>
+    <details class="source-table"><summary>展开全部原始记录与残差</summary><div class="table-scroll" role="region" aria-label="可横向滚动的全部32条实测对照记录" tabindex="0"><table><thead><tr><th>记录</th><th>长度 / in</th><th>Gz</th><th>Re</th><th>实测 θ / %</th><th>模型 θ / %</th><th>差异 / 百分点</th></tr></thead><tbody id="source-rows"></tbody></table></div><p class="footnote">记录表始终保留全部来源行。上方长度筛选只改变图形显示，不重新选择或拟合数据。</p></details>
+    <details><summary>查看来源、可重复运行方法和证据指纹</summary><div id="experiment-provenance" class="details-content"></div></details>
+    </section>
+    <section id="benchmark-fin" role="tabpanel" aria-labelledby="experiment-tab-fin" hidden>
+      <div class="toolbar"><span id="fin-status" role="status" aria-live="polite">选择此页后核对板翅试验研究记录</span><div><button id="verify-fin">核对板翅记录</button><button id="cancel-fin" hidden>取消等待</button><button id="export-fin" disabled>导出完整对照 ↗</button></div></div>
+      <div id="fin-error" class="error" role="alert" hidden></div>
+      <div class="replay-note"><strong>共轭传热研究回放</strong><span>16 片有限导热翅片与 17 条空气通道联立求解。已保存的数值结果，不是在本页运行 CFD。</span><a href="https://doi.org/10.17533/udea.redin.20230417" target="_blank" rel="noopener noreferrer">2024 年公开试验 →</a></div>
+      <section class="experiment-summary" aria-label="板翅实测对照摘要"><div><span>可恢复的实测图点</span><strong id="fin-point-count">—</strong><small>原文称 13 次；未虚构缺失点</small></div><div><span>稳健处于声明层流范围</span><strong id="fin-scope-count">—</strong><small>另外 1 个边界不确定，8 个超域</small></div><div><span>范围内热阻差异</span><strong id="fin-discrepancy-range">—</strong><small>主模型相对图中实测 / %</small></div><div><span>数学验收关卡</span><strong id="fin-gates-count">—</strong><small>先验收数值方法，再查看残差</small></div></section>
+      <div class="section-heading"><div><p class="eyebrow">FINITE FIN CONDUCTION / REAL SIDE CHANNELS</p><h2>对得较近，也要问适用在哪里</h2><p>真实边界包括两条仅受单侧翅片加热的侧通道。热阻使用原文损失修正后的定义；图点不是完整原始试验表。</p></div><span class="badge amber">无换热系数拟合 · 无验证通过判定</span></div>
+      <div class="experiment-columns"><article class="card"><div class="card-heading"><h3>全部 12 个图点与两种速度假设</h3><label class="length-filter">显示分量<select id="fin-allowance" disabled><option value="none">不画范围</option><option value="graphical">图形读取范围</option><option value="author">作者热阻不确定度</option></select></label></div><div id="fin-comparison-chart" class="comparison-chart" role="img" aria-label="12个实测热阻图点和充分发展及均匀速度场模型对照">等待核对研究记录</div><div class="legend fin-legend"><span><i class="swatch ink"></i>图中实测</span><span><i class="swatch blue"></i>充分发展主模型</span><span><i class="swatch ochre"></i>均匀速度敏感性</span></div><p id="fin-allowance-explanation" class="footnote">作者不确定度和图形读取范围保持分开，均未作为“验证通过”的自动阈值。</p><p class="footnote">灰色区域为名义 Re ≥ 2300，超出预先声明的层流范围。第四点虽名义未超域，保守范围检查可跨过边界。均匀速度场不满足黏性壁面无滑移，仅为模型形式敏感性，不是真实入口发展解。</p></article>
+      <article class="card"><div class="card-heading"><h3>边界不能简化成 17 个相同通道</h3><span>实际模型的横截面结构</span></div><div id="fin-channel-diagram" class="fin-channel-diagram" role="img" aria-label="16片翅片、15条内部加热底面通道、2条绝热底面侧通道"></div><div id="fin-topology-metrics" class="metric-grid"></div><p class="footnote">本试验子模型规定各通道等质量流量。侧通道只从一侧翅片受热，没有加热底面。这里的范围取自 4 个名义层流点，含 1 个边界不确定点。把全部通道替换成中心通道副本，会人为增加受热面积并掩盖差异。</p><div class="residual-meaning">材料导热率场景对热阻影响不足 0.5%，速度场假设的影响大得多。接近实测不能反过来证明遗漏的入口发展或轴向导热不重要。</div></article></div>
+      <div class="takeaway"><span>本步结论</span><p>主模型在 3 个稳健处于声明范围的图点上接近实测，但入口发展、完整试验条件与不确定度仍未闭合。超域点全部保留，不用较好的个别点扩大适用范围。</p></div>
+      <section class="experiment-method"><article class="card"><div class="card-heading"><h3>每个结果保留自己的证据范围</h3><span class="badge teal">未向飞机模型转移</span></div><ul class="scope-list"><li><strong>3 个稳健范围内点</strong><span>根据名义 Re、作者分量和图形读取分量，保守筛查均未越过预先声明的 Re 2300</span></li><li><strong>1 个边界不确定点</strong><span>名义 Re 约 2164，联合极端角点约 2331；这里只筛查适用性，不声明联合置信区间</span></li><li><strong>8 个名义超域点</strong><span>保留模型与图点的差异供诊断；不能用来验收该层流模型</span></li></ul></article><article class="card"><div class="card-heading"><h3>下一步可证伪的问题</h3><span>先补模型条件，再扩大声明</span></div><ul class="scope-list"><li><strong>入口发展</strong><span>原文散热器位于入口后 10 mm；目前没有求解实际的同时发展流动</span></li><li><strong>轴向固体导热与基底</strong><span>当前只保留翅片高度方向导热；基底扩散、接触热阻和壁面散热仍省略</span></li><li><strong>逐次试验记录</strong><span>需要原始流量、电功率、热损失修正、入口与基底温度、材料及第 13 次试验记录</span></li></ul></article></section>
+      <details class="fin-source-table"><summary>展开全部 12 个图点、两种模型与适用性</summary><div class="table-scroll" role="region" aria-label="可横向滚动的12个板翅实测图点记录" tabindex="0"><table><thead><tr><th>图点</th><th>速度 / m/s</th><th>名义 Re</th><th>实测热阻 / K/W</th><th>主模型 / K/W</th><th>差异 / %</th><th>均匀速度 / K/W</th><th>适用性</th></tr></thead><tbody id="fin-source-rows"></tbody></table></div><p class="footnote">图形读取保留计算所需位数，不代表试验精度。没有补造第 13 个图点，也没有将图中拟合曲线当作测量值。</p></details>
+      <details><summary>查看板翅来源、独立验收与原始冻结指纹</summary><div id="fin-provenance" class="details-content"></div></details>
+    </section>
+  </main>
+  <footer><span>公开实测 / 冻结计算 / 保留差异</span><a href="/physics">返回物理证据 →</a></footer>
+</body>
+</html>

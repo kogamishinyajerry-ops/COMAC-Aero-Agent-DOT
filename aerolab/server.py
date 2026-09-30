@@ -41,7 +41,24 @@ class Handler(BaseHTTPRequestHandler):
         self.send_bytes(code, json.dumps(result, ensure_ascii=False, allow_nan=False).encode())
 
     def do_GET(self):
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
+        if path == "/api/physics/fin-experiment":
+            if parsed.query:
+                return self.send_json(400, {"error": "The saved experiment replay accepts no query parameters"})
+            try:
+                from .fin_experimental_evidence import read_fin_experimental_evidence
+                return self.send_json(200, read_fin_experimental_evidence())
+            except RuntimeError as exc:
+                return self.send_json(503, {"error": str(exc)})
+        if path == "/api/physics/experiment":
+            if parsed.query:
+                return self.send_json(400, {"error": "Experimental replay has no query parameters"})
+            try:
+                from .experimental_evidence import read_experimental_evidence
+                return self.send_json(200, read_experimental_evidence())
+            except RuntimeError as exc:
+                return self.send_json(503, {"error": str(exc)})
         if path == "/api/nacelle/catalog":
             from .nacelle_geometry import nacelle_catalog
             from .nacelle_thermal import nacelle_boundary_catalog
@@ -72,6 +89,11 @@ class Handler(BaseHTTPRequestHandler):
                   "/physics.html": ("physics.html", "text/html; charset=utf-8"),
                   "/physics.js": ("physics.js", "text/javascript; charset=utf-8"),
                   "/physics.css": ("physics.css", "text/css; charset=utf-8"),
+                  "/experiments": ("experiments.html", "text/html; charset=utf-8"),
+                  "/experiments.html": ("experiments.html", "text/html; charset=utf-8"),
+                  "/experiments.js": ("experiments.js", "text/javascript; charset=utf-8"),
+                  "/fin_experiment.js": ("fin_experiment.js", "text/javascript; charset=utf-8"),
+                  "/experiments.css": ("experiments.css", "text/css; charset=utf-8"),
                   "/styles.css": ("styles.css", "text/css; charset=utf-8")}
         if path not in routes:
             return self.send_json(404, {"error": "Not found"})

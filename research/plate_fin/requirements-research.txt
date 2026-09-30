@@ -1,0 +1,7 @@
+# Optional research dependencies only; never imported by the application/audit.
+# Numerical replay was checked with these existing versions; no automatic install.
+numpy==2.3.5
+scipy==1.17.0
+# Only for optional plot regeneration:
+matplotlib==3.10.8
+# Optional source-PDF vector audit additionally uses PyMuPDF; no PDF is bundled.

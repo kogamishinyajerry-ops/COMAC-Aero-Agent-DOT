@@ -1,0 +1,103 @@
+{
+  "phase": "postcomparison_packaging_tests",
+  "original_solver_sha256": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c",
+  "packaged_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "one_cell_guard_tests": [
+    {
+      "target": "dirichlet_1d",
+      "short_side_cells": -1,
+      "correctly_rejected": true
+    },
+    {
+      "target": "Model",
+      "short_side_cells": -1,
+      "correctly_rejected": true
+    },
+    {
+      "target": "dirichlet_1d",
+      "short_side_cells": 0,
+      "correctly_rejected": true
+    },
+    {
+      "target": "Model",
+      "short_side_cells": 0,
+      "correctly_rejected": true
+    },
+    {
+      "target": "dirichlet_1d",
+      "short_side_cells": 1,
+      "correctly_rejected": true
+    },
+    {
+      "target": "Model",
+      "short_side_cells": 1,
+      "correctly_rejected": true
+    }
+  ],
+  "supported_grid_identity_tests": [
+    {
+      "aspect": 1.0,
+      "ny": 2,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 1.0,
+      "ny": 4,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 1.0,
+      "ny": 16,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 1.0,
+      "ny": 32,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 2.0,
+      "ny": 2,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 2.0,
+      "ny": 4,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 2.0,
+      "ny": 16,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 2.0,
+      "ny": 32,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 4.0,
+      "ny": 2,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 4.0,
+      "ny": 4,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 4.0,
+      "ny": 16,
+      "operators_and_velocity_bitwise_equal": true
+    },
+    {
+      "aspect": 4.0,
+      "ny": 32,
+      "operators_and_velocity_bitwise_equal": true
+    }
+  ],
+  "supported_grid_short_marches_bitwise_identical": true,
+  "march_method_ast_identical": true,
+  "optional_source_audit_none_match_mismatch_tests_pass": true,
+  "scope": "Only the unsupported one-cell case is newly rejected; accepted equations, meshes and tolerances are unchanged."
+}

@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "purpose": "One-time relocation/offline smoke test during package preparation; not a new numerical or experimental validation",
+  "tested_audit_code_sha256": "dde03ff8ebab91aa50e9cef19be2928be9beb500df4b8c62a617f302e0b5425c",
+  "tested_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "copied_code_and_evidence_to_new_root": true,
+  "working_directory_outside_package": true,
+  "network_and_pdf_open_events_forbidden": true,
+  "guard_tests_and_complete_package_audit_passed": true,
+  "relocated_manifest_byte_identical_before_adding_this_report": true,
+  "pdf_and_full_resolution_npz_absent": true,
+  "commands": [
+    "python test_packaging.py",
+    "python audit_package.py"
+  ]
+}

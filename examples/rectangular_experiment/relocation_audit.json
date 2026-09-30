@@ -1,0 +1,30 @@
+{
+  "all_passed": true,
+  "purpose": "Post-comparison isolated full numerical replay plus standard-library relocated offline audit, not new physical validation",
+  "tested_audit_code_sha256": "bbffe2c110687b129bcb39d4c73762aed9215a7b967028540a2a69b62d5bedae",
+  "tested_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "tested_reproduce_script_sha256": "65f82d80128d5e96878ebd63bee0d6f1e304a7e0745f4baf0a88f029612f34d6",
+  "tested_prepare_output_sha256": "d773f94a0b3cc9af11fe7839088f30915db9743296a0f2c0b7ebf614a5042a99",
+  "copied_code_and_evidence_to_new_root": true,
+  "working_directory_outside_package": true,
+  "network_and_pdf_open_events_forbidden_for_relocated_audit": true,
+  "scientific_dependencies_not_loaded_for_relocated_audit": true,
+  "relocated_manifest_byte_identical_before_adding_this_report": true,
+  "full_numeric_replay_wrote_separate_fresh_output": true,
+  "fresh_output_readme_present": true,
+  "accepted_original_numerical_artifact_sha256": {
+    "verification.json": "9c56d9fbd3a667a7059c32cc96bd59074af1e7db6cfd0d244438ffe43417284a",
+    "frozen_response.json": "38306ba919f6151bc5a3d37607678d0745cc9f1a040ddd29ea841dfea1691c2f",
+    "experimental_comparison.json": "a217b0284e679459983d78437cbed4795a01dd015b4f8ce2268561a2ba0458f8"
+  },
+  "fresh_replay_numerical_equivalence_checks": {
+    "verification.json_numerical_payload_exact": true,
+    "frozen_response.json_numerical_payload_exact": true,
+    "all_32_rows_exact": true,
+    "all_group_statistics_exact": true,
+    "interpolation_results_exact": true
+  },
+  "full_replay_guard_tests_and_package_audit_passed": true,
+  "source_pdf_redistributed": false,
+  "application_evidence_automatically_promoted": false
+}

@@ -1,0 +1,1447 @@
+{
+  "status": "verification_failed_do_not_compare",
+  "gates": {
+    "geometry": true,
+    "velocity_positive": true,
+    "velocity_residual": true,
+    "velocity_force_balance": true,
+    "velocity_selected_mesh_exact_mean": false,
+    "fin_analytic_limit": true,
+    "half_full_symmetry": true,
+    "adiabatic_limit": true,
+    "isothermal_limit": true,
+    "material_monotonicity": true,
+    "linear_scaling": true,
+    "energy_balance": true,
+    "temperature_maximum_principle": true,
+    "cross_section_convergence": true,
+    "axial_convergence": true
+  },
+  "checks": {
+    "geometry_closure_error_m": 0.0,
+    "velocity_convergence": [
+      {
+        "mean_m2": 2.601526113124041e-07,
+        "exact_mean_m2": 2.5560615548132136e-07,
+        "mean_relative_error": 0.017786957526596092,
+        "relative_residual": 1.751017188114625e-14,
+        "force_balance_relative": 1.9455746534606947e-15,
+        "min_raw_m2": 2.4419135406782847e-08,
+        "nx": 12,
+        "ny": 36
+      },
+      {
+        "mean_m2": 2.567541228033715e-07,
+        "exact_mean_m2": 2.5560615548132136e-07,
+        "mean_relative_error": 0.004491156795064066,
+        "relative_residual": 8.973963089087452e-14,
+        "force_balance_relative": 7.782298613842779e-15,
+        "min_raw_m2": 7.447280710923476e-09,
+        "nx": 24,
+        "ny": 72
+      },
+      {
+        "mean_m2": 2.561175318072326e-07,
+        "exact_mean_m2": 2.5560615548132136e-07,
+        "mean_relative_error": 0.0020006416705744545,
+        "relative_residual": 2.6424285749936814e-13,
+        "force_balance_relative": 2.3022633399284884e-14,
+        "min_raw_m2": 3.657409651691858e-09,
+        "nx": 36,
+        "ny": 108
+      },
+      {
+        "mean_m2": 2.5589406210035224e-07,
+        "exact_mean_m2": 2.5560615548132136e-07,
+        "mean_relative_error": 0.0011263680973907508,
+        "relative_residual": 5.187388419789576e-13,
+        "force_balance_relative": 3.275050666658836e-14,
+        "min_raw_m2": 2.1958489670076445e-09,
+        "nx": 48,
+        "ny": 144
+      }
+    ],
+    "analytic_fin_bath": [
+      {
+        "ny": 36,
+        "ks": 167.0,
+        "h": 50.0,
+        "Q_per_length": 1.0976484639060835,
+        "exact_Q_per_length": 1.0976608354986725,
+        "relative_Q_error": 1.1270870007296097e-05,
+        "profile_max_abs": 8.55831788337813e-06
+      },
+      {
+        "ny": 36,
+        "ks": 167.0,
+        "h": 200.0,
+        "Q_per_length": 4.050636091402444,
+        "exact_Q_per_length": 4.050811947537794,
+        "relative_Q_error": 4.3412564598943604e-05,
+        "profile_max_abs": 3.4058426671035313e-05
+      },
+      {
+        "ny": 36,
+        "ks": 167.0,
+        "h": 1000.0,
+        "Q_per_length": 14.743696024836229,
+        "exact_Q_per_length": 14.746538267611148,
+        "relative_Q_error": 0.0001927396602063869,
+        "profile_max_abs": 0.00016748277761924335
+      },
+      {
+        "ny": 36,
+        "ks": 237.0,
+        "h": 50.0,
+        "Q_per_length": 1.1069703186421678,
+        "exact_Q_per_length": 1.1069791466190781,
+        "relative_Q_error": 7.974835783741696e-06,
+        "profile_max_abs": 6.033969884300383e-06
+      },
+      {
+        "ny": 36,
+        "ks": 237.0,
+        "h": 200.0,
+        "Q_per_length": 4.1766702304167875,
+        "exact_Q_per_length": 4.176799801958273,
+        "relative_Q_error": 3.10217265918622e-05,
+        "profile_max_abs": 2.4044326833005947e-05
+      },
+      {
+        "ny": 36,
+        "ks": 237.0,
+        "h": 1000.0,
+        "Q_per_length": 16.29811575065215,
+        "exact_Q_per_length": 16.300402222739404,
+        "relative_Q_error": 0.0001402708998224922,
+        "profile_max_abs": 0.00011858576025491896
+      },
+      {
+        "ny": 72,
+        "ks": 167.0,
+        "h": 50.0,
+        "Q_per_length": 1.097657742575383,
+        "exact_Q_per_length": 1.0976608354986725,
+        "relative_Q_error": 2.817740407112801e-06,
+        "profile_max_abs": 2.141695664703569e-06
+      },
+      {
+        "ny": 72,
+        "ks": 167.0,
+        "h": 200.0,
+        "Q_per_length": 4.0507679817319575,
+        "exact_Q_per_length": 4.050811947537794,
+        "relative_Q_error": 1.0853578592651125e-05,
+        "profile_max_abs": 8.544916961117366e-06
+      },
+      {
+        "ny": 72,
+        "ks": 167.0,
+        "h": 1000.0,
+        "Q_per_length": 14.745827569699697,
+        "exact_Q_per_length": 14.746538267611148,
+        "relative_Q_error": 4.819422013180308e-05,
+        "profile_max_abs": 4.2373101482806597e-05
+      },
+      {
+        "ny": 72,
+        "ks": 237.0,
+        "h": 50.0,
+        "Q_per_length": 1.1069769396002378,
+        "exact_Q_per_length": 1.1069791466190781,
+        "relative_Q_error": 1.9937311801498936e-06,
+        "profile_max_abs": 1.5095556362698659e-06
+      },
+      {
+        "ny": 72,
+        "ks": 237.0,
+        "h": 200.0,
+        "Q_per_length": 4.176767408144516,
+        "exact_Q_per_length": 4.176799801958273,
+        "relative_Q_error": 7.755653919860883e-06,
+        "profile_max_abs": 6.026773579415057e-06
+      },
+      {
+        "ny": 72,
+        "ks": 237.0,
+        "h": 1000.0,
+        "Q_per_length": 16.299830526299356,
+        "exact_Q_per_length": 16.300402222739404,
+        "relative_Q_error": 3.5072535771507596e-05,
+        "profile_max_abs": 2.9929234090619872e-05
+      },
+      {
+        "ny": 144,
+        "ks": 167.0,
+        "h": 50.0,
+        "Q_per_length": 1.0976600622555346,
+        "exact_Q_per_length": 1.0976608354986725,
+        "relative_Q_error": 7.044463216088204e-07,
+        "profile_max_abs": 5.35688584046845e-07
+      },
+      {
+        "ny": 144,
+        "ks": 167.0,
+        "h": 200.0,
+        "Q_per_length": 4.050800955999138,
+        "exact_Q_per_length": 4.050811947537794,
+        "relative_Q_error": 2.7134161739716944e-06,
+        "profile_max_abs": 2.1400205396648886e-06
+      },
+      {
+        "ny": 144,
+        "ks": 167.0,
+        "h": 1000.0,
+        "Q_per_length": 14.746360584553964,
+        "exact_Q_per_length": 14.746538267611148,
+        "relative_Q_error": 1.2049136818403916e-05,
+        "profile_max_abs": 1.065614978157381e-05
+      },
+      {
+        "ny": 144,
+        "ks": 237.0,
+        "h": 50.0,
+        "Q_per_length": 1.1069785948555793,
+        "exact_Q_per_length": 1.1069791466190781,
+        "relative_Q_error": 4.984407344643671e-07,
+        "profile_max_abs": 3.775218767598787e-07
+      },
+      {
+        "ny": 144,
+        "ks": 237.0,
+        "h": 200.0,
+        "Q_per_length": 4.176791703418147,
+        "exact_Q_per_length": 4.176799801958273,
+        "relative_Q_error": 1.938934234280154e-06,
+        "profile_max_abs": 1.508656091164795e-06
+      },
+      {
+        "ny": 144,
+        "ks": 237.0,
+        "h": 1000.0,
+        "Q_per_length": 16.300259293760096,
+        "exact_Q_per_length": 16.300402222739404,
+        "relative_Q_error": 8.76843266528482e-06,
+        "profile_max_abs": 7.517692786396246e-06
+      }
+    ],
+    "half_full_symmetry_relative_G": 4.551914400963142e-15,
+    "all_adiabatic": {
+      "G_W_K": -5.503471834332819e-12,
+      "temperature_min": -4.986011603591578e-12,
+      "temperature_max": 2.653433028854124e-14
+    },
+    "material_monotonicity": [
+      {
+        "ks": 0.001,
+        "G_W_K": 0.10409768013760312
+      },
+      {
+        "ks": 167.0,
+        "G_W_K": 1.6009448620927014
+      },
+      {
+        "ks": 205.0,
+        "G_W_K": 1.608478229914995
+      },
+      {
+        "ks": 237.0,
+        "G_W_K": 1.6129832454127415
+      },
+      {
+        "ks": 100000000.0,
+        "G_W_K": 1.6424713424953565
+      }
+    ],
+    "isothermal_fins_G": 1.6424714136899048,
+    "isothermal_limit_relative": 4.334598924238264e-08,
+    "linear_operator_scaling_relative": 5.321893802667416e-16
+  },
+  "spatial_convergence": [
+    {
+      "profile": "fd",
+      "speed": 4.0,
+      "relative_24_to_36": 0.0007181562214080284,
+      "relative_36_to_48": 0.00025486589575618446
+    },
+    {
+      "profile": "fd",
+      "speed": 10.0,
+      "relative_24_to_36": 0.0015840631558576845,
+      "relative_36_to_48": 0.0005623525304396804
+    },
+    {
+      "profile": "fd",
+      "speed": 20.0,
+      "relative_24_to_36": 0.00244164389094359,
+      "relative_36_to_48": 0.0008686303558536057
+    },
+    {
+      "profile": "plug",
+      "speed": 4.0,
+      "relative_24_to_36": 0.0005008492325759839,
+      "relative_36_to_48": 0.00017503604549162777
+    },
+    {
+      "profile": "plug",
+      "speed": 10.0,
+      "relative_24_to_36": 0.0012629404565471791,
+      "relative_36_to_48": 0.00044038919477562555
+    },
+    {
+      "profile": "plug",
+      "speed": 20.0,
+      "relative_24_to_36": 0.002594318966267828,
+      "relative_36_to_48": 0.0009001517160363015
+    }
+  ],
+  "axial_convergence": [
+    {
+      "profile": "fd",
+      "speed": 4.0,
+      "relative_400_to_800": 0.0002972779233916256,
+      "relative_800_to_1600": 0.0001487191921222264
+    },
+    {
+      "profile": "fd",
+      "speed": 10.0,
+      "relative_400_to_800": 0.0001808511011047731,
+      "relative_800_to_1600": 9.042040522355688e-05
+    },
+    {
+      "profile": "fd",
+      "speed": 20.0,
+      "relative_400_to_800": 0.00015471290101110036,
+      "relative_800_to_1600": 7.736255877299758e-05
+    },
+    {
+      "profile": "plug",
+      "speed": 4.0,
+      "relative_400_to_800": 0.0002885135694737917,
+      "relative_800_to_1600": 0.00014434340490043773
+    },
+    {
+      "profile": "plug",
+      "speed": 10.0,
+      "relative_400_to_800": 0.00018792252866384196,
+      "relative_800_to_1600": 9.39489782889602e-05
+    },
+    {
+      "profile": "plug",
+      "speed": 20.0,
+      "relative_400_to_800": 0.00016740496927747373,
+      "relative_800_to_1600": 8.370024063875103e-05
+    }
+  ],
+  "runs": [
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0839653306822215,
+      "Rth_K_W": 0.9225387304321111,
+      "capacity_rate_W_K": 1.7228938126698667,
+      "effectiveness": 0.6291538820970426,
+      "energy_relative_balance_max": 6.627963199644293e-14,
+      "integrated_base_heat_W_K": 1.0839653306822699,
+      "min_normalized_temperature": -1.1102230246251565e-15,
+      "max_normalized_temperature": 0.9996805997458907,
+      "outlet_heat_per_length_W_m_K": 5.984645630649563,
+      "outlet_floor_fraction_of_local_heat": 0.018868231241664778,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0800089076798325,
+      "Rth_K_W": 0.9259182890891943,
+      "capacity_rate_W_K": 1.7228938126698665,
+      "effectiveness": 0.6268574997121886,
+      "energy_relative_balance_max": 2.3342737854352087e-13,
+      "integrated_base_heat_W_K": 1.0800089076795814,
+      "min_normalized_temperature": -3.3306690738754696e-15,
+      "max_normalized_temperature": 0.999839599190651,
+      "outlet_heat_per_length_W_m_K": 6.00846837827568,
+      "outlet_floor_fraction_of_local_heat": 0.018769084232581498,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0792338491766922,
+      "Rth_K_W": 0.9265832430690191,
+      "capacity_rate_W_K": 1.7228938126698663,
+      "effectiveness": 0.6264076411675468,
+      "energy_relative_balance_max": 1.1182722336083677e-13,
+      "integrated_base_heat_W_K": 1.079233849176807,
+      "min_normalized_temperature": -2.4424906541753444e-15,
+      "max_normalized_temperature": 0.9998929758355484,
+      "outlet_heat_per_length_W_m_K": 6.013092416503551,
+      "outlet_floor_fraction_of_local_heat": 0.01875345779906644,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0789588593605173,
+      "Rth_K_W": 0.9268193975372564,
+      "capacity_rate_W_K": 1.7228938126698667,
+      "effectiveness": 0.6262480319019305,
+      "energy_relative_balance_max": 5.829219469407349e-13,
+      "integrated_base_heat_W_K": 1.0789588593611406,
+      "min_normalized_temperature": -7.549516567451064e-15,
+      "max_normalized_temperature": 0.999919707927916,
+      "outlet_heat_per_length_W_m_K": 6.014729360354012,
+      "outlet_floor_fraction_of_local_heat": 0.018748230455172987,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.6087692223223575,
+      "Rth_K_W": 0.6215931944275005,
+      "capacity_rate_W_K": 4.307234531674667,
+      "effectiveness": 0.37350397580901235,
+      "energy_relative_balance_max": 7.374437815363246e-14,
+      "integrated_base_heat_W_K": 1.608769222322456,
+      "min_normalized_temperature": -4.6629367034256575e-15,
+      "max_normalized_temperature": 0.9994077018311479,
+      "outlet_heat_per_length_W_m_K": 11.001272130554403,
+      "outlet_floor_fraction_of_local_heat": 0.028644157414957398,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.595892205753457,
+      "Rth_K_W": 0.6266087373538348,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.3705143506854662,
+      "energy_relative_balance_max": 2.887363163439401e-13,
+      "integrated_base_heat_W_K": 1.5958922057529963,
+      "min_normalized_temperature": -5.551115123125783e-15,
+      "max_normalized_temperature": 0.999703465529334,
+      "outlet_heat_per_length_W_m_K": 11.012072930670648,
+      "outlet_floor_fraction_of_local_heat": 0.028435384025967483,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5933682098784736,
+      "Rth_K_W": 0.6276013251678155,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.36992836079881797,
+      "energy_relative_balance_max": 1.6205833101361054e-13,
+      "integrated_base_heat_W_K": 1.5933682098787127,
+      "min_normalized_temperature": -8.43769498715119e-15,
+      "max_normalized_temperature": 0.9998022581495467,
+      "outlet_heat_per_length_W_m_K": 11.014399438520496,
+      "outlet_floor_fraction_of_local_heat": 0.02840362694634759,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.592472678837873,
+      "Rth_K_W": 0.627954258361131,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.3697204475695719,
+      "energy_relative_balance_max": 4.861908410989687e-13,
+      "integrated_base_heat_W_K": 1.5924726788385888,
+      "min_normalized_temperature": -5.995204332975845e-15,
+      "max_normalized_temperature": 0.9998516796282463,
+      "outlet_heat_per_length_W_m_K": 11.015240799981598,
+      "outlet_floor_fraction_of_local_heat": 0.02839313191924789,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.0832776979218077,
+      "Rth_K_W": 0.48001281874113993,
+      "capacity_rate_W_K": 8.614469063349334,
+      "effectiveness": 0.24183471814707783,
+      "energy_relative_balance_max": 7.256777370096555e-14,
+      "integrated_base_heat_W_K": 2.0832776979219334,
+      "min_normalized_temperature": -1.84297022087776e-14,
+      "max_normalized_temperature": 0.9992129836688574,
+      "outlet_heat_per_length_W_m_K": 14.703120895034905,
+      "outlet_floor_fraction_of_local_heat": 0.03609179905652226,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.0578945266043576,
+      "Rth_K_W": 0.48593355348004963,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.23888814405983155,
+      "energy_relative_balance_max": 2.361984245422967e-13,
+      "integrated_base_heat_W_K": 2.0578945266038726,
+      "min_normalized_temperature": -9.992007221626409e-15,
+      "max_normalized_temperature": 0.9996069979378542,
+      "outlet_heat_per_length_W_m_K": 14.679643831214232,
+      "outlet_floor_fraction_of_local_heat": 0.035796208820725574,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.052882119518408,
+      "Rth_K_W": 0.48712003017230876,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.238306284974949,
+      "energy_relative_balance_max": 9.255087998346227e-14,
+      "integrated_base_heat_W_K": 2.052882119518363,
+      "min_normalized_temperature": -1.7763568394002505e-14,
+      "max_normalized_temperature": 0.9997380545117112,
+      "outlet_heat_per_length_W_m_K": 14.675704828976599,
+      "outlet_floor_fraction_of_local_heat": 0.03574401628093746,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.0511004713860563,
+      "Rth_K_W": 0.48754315741746074,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.23809946455232633,
+      "energy_relative_balance_max": 4.1847273777239637e-13,
+      "integrated_base_heat_W_K": 2.0511004713867123,
+      "min_normalized_temperature": -8.881784197001252e-15,
+      "max_normalized_temperature": 0.9998035551358495,
+      "outlet_heat_per_length_W_m_K": 14.67437819498321,
+      "outlet_floor_fraction_of_local_heat": 0.035727128408114914,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2841327899762547,
+      "Rth_K_W": 0.7787356633253569,
+      "capacity_rate_W_K": 1.722893812669867,
+      "effectiveness": 0.7453348433507401,
+      "energy_relative_balance_max": 7.942698593645247e-14,
+      "integrated_base_heat_W_K": 1.2841327899763324,
+      "min_normalized_temperature": -4.218847493575595e-15,
+      "max_normalized_temperature": 0.9997262019018532,
+      "outlet_heat_per_length_W_m_K": 5.2106881489085906,
+      "outlet_floor_fraction_of_local_heat": 0.02436798494551523,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2876392172980509,
+      "Rth_K_W": 0.776615053786863,
+      "capacity_rate_W_K": 1.7228938126698672,
+      "effectiveness": 0.7473700397720229,
+      "energy_relative_balance_max": 1.7259440021956247e-13,
+      "integrated_base_heat_W_K": 1.2876392172978492,
+      "min_normalized_temperature": -6.217248937900877e-15,
+      "max_normalized_temperature": 0.9998639409758919,
+      "outlet_heat_per_length_W_m_K": 5.178723756047591,
+      "outlet_floor_fraction_of_local_heat": 0.02402156211293105,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.288284453577965,
+      "Rth_K_W": 0.776226086733167,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7477445470545786,
+      "energy_relative_balance_max": 3.715627236399999e-13,
+      "integrated_base_heat_W_K": 1.2882844535784423,
+      "min_normalized_temperature": -5.10702591327572e-15,
+      "max_normalized_temperature": 0.9999093972330767,
+      "outlet_heat_per_length_W_m_K": 5.172848520929035,
+      "outlet_floor_fraction_of_local_heat": 0.023960245499827185,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2885099892710634,
+      "Rth_K_W": 0.7760902191885377,
+      "capacity_rate_W_K": 1.722893812669867,
+      "effectiveness": 0.7478754522162544,
+      "energy_relative_balance_max": 8.186707101220094e-13,
+      "integrated_base_heat_W_K": 1.2885099892720648,
+      "min_normalized_temperature": -3.552713678800501e-15,
+      "max_normalized_temperature": 0.9999320750038754,
+      "outlet_heat_per_length_W_m_K": 5.170795203868973,
+      "outlet_floor_fraction_of_local_heat": 0.023938971051344776,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.139172464715992,
+      "Rth_K_W": 0.46747048987130885,
+      "capacity_rate_W_K": 4.307234531674667,
+      "effectiveness": 0.49664638621019663,
+      "energy_relative_balance_max": 1.2043687502195644e-13,
+      "integrated_base_heat_W_K": 2.139172464716249,
+      "min_normalized_temperature": -3.552713678800501e-15,
+      "max_normalized_temperature": 0.9993743260856097,
+      "outlet_heat_per_length_W_m_K": 11.746544137159304,
+      "outlet_floor_fraction_of_local_heat": 0.03881858208457166,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.1541416390041346,
+      "Rth_K_W": 0.4642220278803499,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.5001217424226485,
+      "energy_relative_balance_max": 2.2665195242463396e-13,
+      "integrated_base_heat_W_K": 2.1541416390036465,
+      "min_normalized_temperature": -8.215650382226158e-15,
+      "max_normalized_temperature": 0.9996891150597256,
+      "outlet_heat_per_length_W_m_K": 11.6591189560392,
+      "outlet_floor_fraction_of_local_heat": 0.03765056255557178,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.1568656318699593,
+      "Rth_K_W": 0.46363574310051947,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.5007541651165587,
+      "energy_relative_balance_max": 2.1203143481848422e-13,
+      "integrated_base_heat_W_K": 2.156865631870416,
+      "min_normalized_temperature": -7.327471962526033e-15,
+      "max_normalized_temperature": 0.9997929718622512,
+      "outlet_heat_per_length_W_m_K": 11.644076194336062,
+      "outlet_floor_fraction_of_local_heat": 0.037470444249778884,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.157815910681338,
+      "Rth_K_W": 0.4634315629289462,
+      "capacity_rate_W_K": 4.307234531674667,
+      "effectiveness": 0.5009747890004894,
+      "energy_relative_balance_max": 1.4922549164773068e-13,
+      "integrated_base_heat_W_K": 2.157815910681544,
+      "min_normalized_temperature": -2.886579864025407e-15,
+      "max_normalized_temperature": 0.9998447882426347,
+      "outlet_heat_per_length_W_m_K": 11.638879519207403,
+      "outlet_floor_fraction_of_local_heat": 0.03740910922329288,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0042247061096083,
+      "Rth_K_W": 0.33286458165606847,
+      "capacity_rate_W_K": 8.614469063349334,
+      "effectiveness": 0.34874171397181336,
+      "energy_relative_balance_max": 7.690845963707338e-14,
+      "integrated_base_heat_W_K": 3.0042247061096736,
+      "min_normalized_temperature": -1.709743457922741e-14,
+      "max_normalized_temperature": 0.9990774314056707,
+      "outlet_heat_per_length_W_m_K": 17.512405069740517,
+      "outlet_floor_fraction_of_local_heat": 0.05142349512671266,
+      "mesh": {
+        "gap_cells": 12,
+        "height_cells": 36,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 3960
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0491076660445273,
+      "Rth_K_W": 0.32796480463323746,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.35395189693316104,
+      "energy_relative_balance_max": 1.9461832771777635e-13,
+      "integrated_base_heat_W_K": 3.049107666043934,
+      "min_normalized_temperature": -1.1102230246251565e-14,
+      "max_normalized_temperature": 0.9995454210972498,
+      "outlet_heat_per_length_W_m_K": 17.199561267035424,
+      "outlet_floor_fraction_of_local_heat": 0.048106567136651644,
+      "mesh": {
+        "gap_cells": 24,
+        "height_cells": 72,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 15264
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0570385992632088,
+      "Rth_K_W": 0.3271139593203091,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.35487254951898595,
+      "energy_relative_balance_max": 2.1411456632004378e-13,
+      "integrated_base_heat_W_K": 3.0570385992625546,
+      "min_normalized_temperature": -6.217248937900877e-15,
+      "max_normalized_temperature": 0.999697709246655,
+      "outlet_heat_per_length_W_m_K": 17.14919064471722,
+      "outlet_floor_fraction_of_local_heat": 0.047694277212697436,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.059792877072221,
+      "Rth_K_W": 0.3268195071284875,
+      "capacity_rate_W_K": 8.614469063349334,
+      "effectiveness": 0.35519227645616075,
+      "energy_relative_balance_max": 4.063055240567545e-13,
+      "integrated_base_heat_W_K": 3.0597928770734613,
+      "min_normalized_temperature": -7.549516567451064e-15,
+      "max_normalized_temperature": 0.9997734789482338,
+      "outlet_heat_per_length_W_m_K": 17.1319715096345,
+      "outlet_floor_fraction_of_local_heat": 0.047559875774665986,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 59904
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "cross_section"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.078272233162673,
+      "Rth_K_W": 0.9274095810358639,
+      "capacity_rate_W_K": 1.7228938126698663,
+      "effectiveness": 0.6258495011319001,
+      "energy_relative_balance_max": 1.1435471474852851e-13,
+      "integrated_base_heat_W_K": 1.0782722331627945,
+      "min_normalized_temperature": -8.881784197001252e-16,
+      "max_normalized_temperature": 0.9998927725892454,
+      "outlet_heat_per_length_W_m_K": 6.024359319887847,
+      "outlet_floor_fraction_of_local_heat": 0.01880964644246324,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.078913016779155,
+      "Rth_K_W": 0.9268587777217374,
+      "capacity_rate_W_K": 1.7228938126698663,
+      "effectiveness": 0.6262214240047839,
+      "energy_relative_balance_max": 1.7410568671509545e-13,
+      "integrated_base_heat_W_K": 1.0789130167793415,
+      "min_normalized_temperature": -1.9984014443252818e-15,
+      "max_normalized_temperature": 0.999892908041856,
+      "outlet_heat_per_length_W_m_K": 6.0168500087012164,
+      "outlet_floor_fraction_of_local_heat": 0.018772181470103476,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0792338491766922,
+      "Rth_K_W": 0.9265832430690191,
+      "capacity_rate_W_K": 1.7228938126698663,
+      "effectiveness": 0.6264076411675468,
+      "energy_relative_balance_max": 1.1182722336083677e-13,
+      "integrated_base_heat_W_K": 1.079233849176807,
+      "min_normalized_temperature": -2.4424906541753444e-15,
+      "max_normalized_temperature": 0.9998929758355484,
+      "outlet_heat_per_length_W_m_K": 6.013092416503551,
+      "outlet_floor_fraction_of_local_heat": 0.01875345779906644,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.0793943758362479,
+      "Rth_K_W": 0.9264454423576758,
+      "capacity_rate_W_K": 1.7228938126698663,
+      "effectiveness": 0.6265008138624484,
+      "energy_relative_balance_max": 1.4741853752987436e-13,
+      "integrated_base_heat_W_K": 1.0793943758364062,
+      "min_normalized_temperature": -5.995204332975845e-15,
+      "max_normalized_temperature": 0.9998930097495125,
+      "outlet_heat_per_length_W_m_K": 6.011212872379916,
+      "outlet_floor_fraction_of_local_heat": 0.018744098195281604,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5925037632520769,
+      "Rth_K_W": 0.6279420011905557,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.3697276643612221,
+      "energy_relative_balance_max": 1.2022307378063733e-13,
+      "integrated_base_heat_W_K": 1.5925037632522654,
+      "min_normalized_temperature": -2.4424906541753444e-15,
+      "max_normalized_temperature": 0.9998021034946746,
+      "outlet_heat_per_length_W_m_K": 11.02356278126902,
+      "outlet_floor_fraction_of_local_heat": 0.028443695501404007,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5930800474832518,
+      "Rth_K_W": 0.6277148480892722,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.3698614588474376,
+      "energy_relative_balance_max": 8.25938895282217e-14,
+      "integrated_base_heat_W_K": 1.5930800474833682,
+      "min_normalized_temperature": -4.218847493575595e-15,
+      "max_normalized_temperature": 0.9998022067127944,
+      "outlet_heat_per_length_W_m_K": 11.017447675326935,
+      "outlet_floor_fraction_of_local_heat": 0.02841698829605416,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5933682098784736,
+      "Rth_K_W": 0.6276013251678155,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.36992836079881797,
+      "energy_relative_balance_max": 1.6205833101361054e-13,
+      "integrated_base_heat_W_K": 1.5933682098787127,
+      "min_normalized_temperature": -8.43769498715119e-15,
+      "max_normalized_temperature": 0.9998022581495467,
+      "outlet_heat_per_length_W_m_K": 11.014399438520496,
+      "outlet_floor_fraction_of_local_heat": 0.02840362694634759,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 1.5935122959059982,
+      "Rth_K_W": 0.627544577201675,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.3699618128958572,
+      "energy_relative_balance_max": 9.255087998346227e-14,
+      "integrated_base_heat_W_K": 1.59351229590593,
+      "min_normalized_temperature": -1.7763568394002505e-14,
+      "max_normalized_temperature": 0.9998022838246555,
+      "outlet_heat_per_length_W_m_K": 11.012877658506603,
+      "outlet_floor_fraction_of_local_heat": 0.0283969443035272,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.051929496197841,
+      "Rth_K_W": 0.48734617921959195,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.2381957008735306,
+      "energy_relative_balance_max": 8.25938895282217e-14,
+      "integrated_base_heat_W_K": 2.051929496197992,
+      "min_normalized_temperature": -4.218847493575595e-15,
+      "max_normalized_temperature": 0.999737820647214,
+      "outlet_heat_per_length_W_m_K": 14.689184440188765,
+      "outlet_floor_fraction_of_local_heat": 0.03576919132160993,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.0525645121702634,
+      "Rth_K_W": 0.48719540558686636,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.23826941591827133,
+      "energy_relative_balance_max": 1.6205833101361054e-13,
+      "integrated_base_heat_W_K": 2.0525645121705764,
+      "min_normalized_temperature": -8.43769498715119e-15,
+      "max_normalized_temperature": 0.9997379766249331,
+      "outlet_heat_per_length_W_m_K": 14.680194061417417,
+      "outlet_floor_fraction_of_local_heat": 0.03575240386627172,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.052882119518408,
+      "Rth_K_W": 0.48712003017230876,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.238306284974949,
+      "energy_relative_balance_max": 9.255087998346227e-14,
+      "integrated_base_heat_W_K": 2.052882119518363,
+      "min_normalized_temperature": -1.7763568394002505e-14,
+      "max_normalized_temperature": 0.9997380545117112,
+      "outlet_heat_per_length_W_m_K": 14.675704828976599,
+      "outlet_floor_fraction_of_local_heat": 0.03574401628093746,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 2.0530409480194125,
+      "Rth_K_W": 0.487082345320345,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.2383247223852916,
+      "energy_relative_balance_max": 2.238424904003618e-13,
+      "integrated_base_heat_W_K": 2.0530409480189533,
+      "min_normalized_temperature": -1.2434497875801753e-14,
+      "max_normalized_temperature": 0.9997380934296716,
+      "outlet_heat_per_length_W_m_K": 14.673461697039654,
+      "outlet_floor_fraction_of_local_heat": 0.03573982402924217,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "fd",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2871704951081862,
+      "Rth_K_W": 0.7768978575879728,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7470979845899699,
+      "energy_relative_balance_max": 1.2323290651750862e-13,
+      "integrated_base_heat_W_K": 1.287170495108339,
+      "min_normalized_temperature": -2.220446049250313e-16,
+      "max_normalized_temperature": 0.999909087220453,
+      "outlet_heat_per_length_W_m_K": 5.190044230443332,
+      "outlet_floor_fraction_of_local_heat": 0.024053555267759655,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.2879127660317655,
+      "Rth_K_W": 0.7764501031239376,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7475288126062533,
+      "energy_relative_balance_max": 8.900922145037706e-14,
+      "integrated_base_heat_W_K": 1.287912766031662,
+      "min_normalized_temperature": -1.5543122344752192e-15,
+      "max_normalized_temperature": 0.9999092938047793,
+      "outlet_heat_per_length_W_m_K": 5.1785844284836395,
+      "outlet_floor_fraction_of_local_heat": 0.023991340769780767,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.288284453577965,
+      "Rth_K_W": 0.776226086733167,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7477445470545786,
+      "energy_relative_balance_max": 3.715627236399999e-13,
+      "integrated_base_heat_W_K": 1.2882844535784423,
+      "min_normalized_temperature": -5.10702591327572e-15,
+      "max_normalized_temperature": 0.9999093972330767,
+      "outlet_heat_per_length_W_m_K": 5.172848520929035,
+      "outlet_floor_fraction_of_local_heat": 0.023960245499827185,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 4.0,
+      "Re_Dh": 838.6498855712795,
+      "G_W_K": 1.28847043578778,
+      "Rth_K_W": 0.7761140436168353,
+      "capacity_rate_W_K": 1.722893812669866,
+      "effectiveness": 0.7478524946300168,
+      "energy_relative_balance_max": 2.0449911789655374e-13,
+      "integrated_base_heat_W_K": 1.2884704357879686,
+      "min_normalized_temperature": -1.0658141036401503e-14,
+      "max_normalized_temperature": 0.9999094489816674,
+      "outlet_heat_per_length_W_m_K": 5.169979044191179,
+      "outlet_floor_fraction_of_local_heat": 0.023944700887023045,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.1556496041322,
+      "Rth_K_W": 0.46389728557140436,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.500471842960935,
+      "energy_relative_balance_max": 9.094845106596394e-14,
+      "integrated_base_heat_W_K": 2.1556496041323827,
+      "min_normalized_temperature": -1.7763568394002505e-15,
+      "max_normalized_temperature": 0.9997927202877422,
+      "outlet_heat_per_length_W_m_K": 11.659175289607568,
+      "outlet_floor_fraction_of_local_heat": 0.03753626855604665,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.15646030822643,
+      "Rth_K_W": 0.4637228870780584,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.500660062127611,
+      "energy_relative_balance_max": 4.8806436331316696e-14,
+      "integrated_base_heat_W_K": 2.156460308226325,
+      "min_normalized_temperature": -3.1086244689504383e-15,
+      "max_normalized_temperature": 0.9997928882471248,
+      "outlet_heat_per_length_W_m_K": 11.649095904318393,
+      "outlet_floor_fraction_of_local_heat": 0.037492397856676817,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.1568656318699593,
+      "Rth_K_W": 0.46363574310051947,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.5007541651165587,
+      "energy_relative_balance_max": 2.1203143481848422e-13,
+      "integrated_base_heat_W_K": 2.156865631870416,
+      "min_normalized_temperature": -7.327471962526033e-15,
+      "max_normalized_temperature": 0.9997929718622512,
+      "outlet_heat_per_length_W_m_K": 11.644076194336062,
+      "outlet_floor_fraction_of_local_heat": 0.037470444249778884,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 10.0,
+      "Re_Dh": 2096.6247139281986,
+      "G_W_K": 2.1570682862315502,
+      "Rth_K_W": 0.4635921849961569,
+      "capacity_rate_W_K": 4.307234531674666,
+      "effectiveness": 0.5008012148790224,
+      "energy_relative_balance_max": 2.600217506421681e-13,
+      "integrated_base_heat_W_K": 2.1570682862309893,
+      "min_normalized_temperature": -6.217248937900877e-15,
+      "max_normalized_temperature": 0.9997930135783224,
+      "outlet_heat_per_length_W_m_K": 11.641571351766508,
+      "outlet_floor_fraction_of_local_heat": 0.037459462802775845,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.055503425641347,
+      "Rth_K_W": 0.32727831086954223,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.3546943407854503,
+      "energy_relative_balance_max": 3.441694174813307e-14,
+      "integrated_base_heat_W_K": 3.055503425641242,
+      "min_normalized_temperature": -3.1086244689504383e-15,
+      "max_normalized_temperature": 0.999697273908112,
+      "outlet_heat_per_length_W_m_K": 17.174562855542057,
+      "outlet_floor_fraction_of_local_heat": 0.04773325853786127,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 200,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.056526835810419,
+      "Rth_K_W": 0.3271687289913345,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.35481314209073633,
+      "energy_relative_balance_max": 1.994860565202493e-13,
+      "integrated_base_heat_W_K": 3.0565268358110287,
+      "min_normalized_temperature": -7.327471962526033e-15,
+      "max_normalized_temperature": 0.9996975643091811,
+      "outlet_heat_per_length_W_m_K": 17.157637640907346,
+      "outlet_floor_fraction_of_local_heat": 0.04770726081985412,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 400,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0570385992632088,
+      "Rth_K_W": 0.3271139593203091,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.35487254951898595,
+      "energy_relative_balance_max": 2.1411456632004378e-13,
+      "integrated_base_heat_W_K": 3.0570385992625546,
+      "min_normalized_temperature": -6.217248937900877e-15,
+      "max_normalized_temperature": 0.999697709246655,
+      "outlet_heat_per_length_W_m_K": 17.14919064471722,
+      "outlet_floor_fraction_of_local_heat": 0.047694277212697436,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 800,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    },
+    {
+      "V_interior_m_s": 20.0,
+      "Re_Dh": 4193.249427856397,
+      "G_W_K": 3.0572944955481898,
+      "Rth_K_W": 0.32708657980319766,
+      "capacity_rate_W_K": 8.614469063349333,
+      "effectiveness": 0.35490225492312627,
+      "energy_relative_balance_max": 2.0858047770484254e-13,
+      "integrated_base_heat_W_K": 3.057294495548206,
+      "min_normalized_temperature": -1.4654943925052066e-14,
+      "max_normalized_temperature": 0.9996977816499265,
+      "outlet_heat_per_length_W_m_K": 17.14497103271586,
+      "outlet_floor_fraction_of_local_heat": 0.0476877892291709,
+      "mesh": {
+        "gap_cells": 36,
+        "height_cells": 108,
+        "axial_steps": 1600,
+        "unknowns_half_or_full": 33912
+      },
+      "method": "be",
+      "profile": "plug",
+      "kind": "axial"
+    }
+  ],
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "verification_code_sha256": "e71a688cc1e8a48626053ce8e4f2737f0208ba35baaa283544466efda6930a7f",
+  "elapsed_s": 238.8040774750043,
+  "experimental_data_read": false
+}

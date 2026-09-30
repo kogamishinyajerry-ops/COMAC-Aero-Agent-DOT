@@ -1,0 +1,87 @@
+{
+  "method": "Independently numerically converged sine-Galerkin continuum thermal model, analytical velocity, Gauss-Legendre quadrature, exact exponential axial propagation. Not an exact analytical thermal solution.",
+  "experimental_data_used": false,
+  "quadrature_order_per_direction": 160,
+  "reference_code_sha256": "5c6bc80da5e84414be37c0cd553a3acbe27fa2e6e72de6353cc2ea06647050a1",
+  "reference_result_sha256": "f0a191f37f48a6be52227ef1ba12ad2c013d2bed68aaee6ba640b42fbafb34af",
+  "fv_verification_sha256": "3ed1aa4b3e27136b3b37302de4ff29e0a6e351405483c568c47e4c4af271a396",
+  "reference_basis_refinement": [
+    {
+      "coarse_odd_modes_per_direction": 16,
+      "fine_odd_modes_per_direction": 24,
+      "maximum_relative_change_tau_ge_0p002": 6.252190642985767e-08
+    },
+    {
+      "coarse_odd_modes_per_direction": 24,
+      "fine_odd_modes_per_direction": 32,
+      "maximum_relative_change_tau_ge_0p002": 8.046706412301319e-09
+    },
+    {
+      "coarse_odd_modes_per_direction": 32,
+      "fine_odd_modes_per_direction": 40,
+      "maximum_relative_change_tau_ge_0p002": 1.1124958732011692e-09
+    }
+  ],
+  "fundamental_eigenvalue": 7.63265514369568,
+  "fully_developed_Nu_Dh": 3.3922911749758575,
+  "maximum_absolute_relative_difference": 0.0006360618305649712,
+  "maximum_absolute_theta_difference": 3.6456341391377656e-05,
+  "interpretation": "Observed total continuum-reference difference, not a confidence interval or rigorous error bound. Spatial and temporal errors can have opposite signs. Not used to tune the solver or change preregistered gates.",
+  "inlet_caveat": "Finite sine basis cannot capture the wall/inlet discontinuity exactly at tau=0; comparisons start at0.002 and retain basis refinement.",
+  "rows": [
+    {
+      "tau": 0.002,
+      "fv_bulk_theta": 0.9379342763759861,
+      "continuum_reference_theta": 0.937969316472471,
+      "relative_difference": -3.735740164356738e-05
+    },
+    {
+      "tau": 0.004,
+      "fv_bulk_theta": 0.903817722453906,
+      "continuum_reference_theta": 0.9038541787952974,
+      "relative_difference": -4.033431746697236e-05
+    },
+    {
+      "tau": 0.008,
+      "fv_bulk_theta": 0.8519981573741837,
+      "continuum_reference_theta": 0.8520334195653338,
+      "relative_difference": -4.138592494196125e-05
+    },
+    {
+      "tau": 0.016,
+      "fv_bulk_theta": 0.774457365248914,
+      "continuum_reference_theta": 0.7744878775874436,
+      "relative_difference": -3.9396792916535084e-05
+    },
+    {
+      "tau": 0.032,
+      "fv_bulk_theta": 0.6610012346779541,
+      "continuum_reference_theta": 0.6610207948828308,
+      "relative_difference": -2.95909070154865e-05
+    },
+    {
+      "tau": 0.064,
+      "fv_bulk_theta": 0.5015669047908902,
+      "continuum_reference_theta": 0.501559835880864,
+      "relative_difference": 1.4093851860685902e-05
+    },
+    {
+      "tau": 0.128,
+      "fv_bulk_theta": 0.3007929218237173,
+      "continuum_reference_theta": 0.3007649672367707,
+      "relative_difference": 9.294495699885275e-05
+    },
+    {
+      "tau": 0.256,
+      "fv_bulk_theta": 0.11204379537430667,
+      "continuum_reference_theta": 0.11201406583973492,
+      "relative_difference": 0.000265408940822498
+    },
+    {
+      "tau": 0.512,
+      "fv_bulk_theta": 0.01585741645022482,
+      "continuum_reference_theta": 0.01584733656432014,
+      "relative_difference": 0.0006360618305649712
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "created_utc": "2026-09-30T17:29:30Z",
+  "status": "Preregistered mathematical acceptance plan; experimental discrepancies not computed",
+  "geometry": {"short_side_H": 1.0, "long_side_W": 2.0, "hydraulic_diameter_over_H": 1.3333333333333333},
+  "equations": ["-laplacian(w)=1; w=0 on all walls; v=w/mean(w)", "diag(v) dtheta/dtau=-K theta; theta=0 on all four walls; theta(tau=0)=1", "tau=alpha*x/(Umean*H^2)=(Dh/H)^2/Gz_Dh", "theta_bulk=sum(v*theta)/sum(v)"],
+  "discretization": "Cell-centered conservative finite volumes, uniform square cells, explicit half-cell wall Dirichlet conductance, backward Euler axial marching, SciPy sparse LU",
+  "candidate_production": {"short_side_cells": 64, "long_side_cells": 128, "steps_per_doubling_interval": 512, "first_interval_end_tau": 0.001, "final_tau": 0.512},
+  "acceptance": {
+    "exact_rectangular_series_mean_velocity_relative_error_max": 0.0005,
+    "fine_grid_bulk_theta_relative_change_max_over_tau_0p002_to_0p512": 0.0015,
+    "fine_time_bulk_theta_relative_change_max_over_tau_0p002_to_0p512": 0.0005,
+    "plug_flow_exact_heat_series_bulk_theta_relative_error_max_over_tau_0p002_to_0p128": 0.002,
+    "normalized_global_energy_closure_abs_max": 1e-10,
+    "velocity_forcing_residual_inf_max": 1e-9,
+    "linear_solve_relative_residual_inf_max": 1e-10,
+    "maximum_principle_absolute_slack": 1e-12,
+    "long_duct_bulk_theta_at_tau_8_max": 1e-8,
+    "spatial_convergence_min_order_in_bulk_theta": 1.7
+  },
+  "selection_rule": "Accept the candidate if all mathematical gates pass; otherwise refine only the failed discretization component and rerun these gates. Experimental residuals are never a selection input. No parameter fitting or correction factor.",
+  "comparison_policy": "Only compare temperatures-derived mixed outlet attenuation after this mathematical freeze. No full measurement-error interval is available; rounding intervals are not physical uncertainty. No aircraft validation claim.",
+  "omissions": ["buoyancy and secondary flow", "temperature-dependent properties", "axial conduction", "hydrodynamic development", "turbulence and transition", "conjugate wall spreading", "nonuniform wall temperature", "viscous heating and radiation"]
+}

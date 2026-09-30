@@ -1,0 +1,9 @@
+{
+  "status": "numerical_refinement_before_target_comparison",
+  "trigger": "36x108 exact Poisson mean relative error0.0020006416705744545 exceeded the predeclared0.002 gate; all other gates passed",
+  "unchanged_tolerances": true,
+  "unchanged_physical_model_and_scenarios": true,
+  "experimental_residuals_evaluated": false,
+  "selected_candidate": {"gap_cells":48,"height_cells":144,"axial_steps":1600},
+  "tests": "Reuse hash-checked initial mathematical evidence; add48x144 at1600 axial steps and64x192 at800 steps, both prescribed velocity forms and all declared4/10/20m/s probes. Check48-to64 spatial and800-to1600 axial conductance differences, with the original0.5% and0.2% thresholds. Repeat independent continuum limits at48x144."
+}

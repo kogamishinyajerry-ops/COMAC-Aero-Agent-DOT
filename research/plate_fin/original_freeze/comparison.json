@@ -1,0 +1,1287 @@
+{
+  "status": "untuned_bounded_model_comparison_not_exact_run_or_aircraft_validation",
+  "source_doi": "10.17533/udea.redin.20230417",
+  "source_pdf_sha256": "c14571f635c5767ae3fc57f90fb18514595a54dc53918bc7454da084839c5a01",
+  "source_readout_sha256": "87bfcb8f105b07cd19fda9c2c9d1a9c2ea574eab655d00f5ee01a0f9d163a6c7",
+  "model_code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "comparison_code_sha256": "0791a86c35b55d2f2b14bc690d1b15644530775af5eec1cdcc4800b85afed739",
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "freeze_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+  "independent_limits_sha256": "ab3bde3abcbf5951fcb5bbb82003b16407a93166d0a9d6ad5233be32ad859503",
+  "independent_review_gate": {
+    "allow_comparison": true,
+    "basis": "Independent scientific reviewer explicitly released the unchanged frozen backward-Euler model for the predeclared conditional Figure8 comparison before inspecting any residuals",
+    "solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+    "freeze_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+    "review_decision_file": "review/final_review_gate.json",
+    "review_decision_sha256": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2",
+    "review_report_sha256": "752664c646f30875f550d6580783be629ffb22267731c4558be4275d323550e3"
+  },
+  "geometry": {
+    "interior_gap_m": 0.0018493333333333335,
+    "side_gap_m": 0.0018499999999999975,
+    "height_m": 0.0113,
+    "length_m": 0.09,
+    "fin_thickness_m": 0.00086,
+    "hydraulic_diameter_m": 0.0031784830663151493
+  },
+  "nominal_properties": {
+    "ks_W_m_K": 205.0,
+    "rho_kg_m3": 1.204,
+    "cp_J_kg_K": 1007.0,
+    "k_air_W_m_K": 0.02514,
+    "nu_m2_s": 1.516e-05,
+    "derived_Pr": 0.7311220556881465,
+    "source_separately_printed_Pr_not_used": 0.7
+  },
+  "numerics": {
+    "gap_cells": 48,
+    "height_cells": 144,
+    "axial_steps": 1600,
+    "method": "backward_euler",
+    "half_array_symmetry": true
+  },
+  "results": [
+    {
+      "marker_index": 0,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.8829677297552696,
+      "observed_approx_G_W_K": 1.1325442213807384,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.010595612757063236,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 4.369970612080595,
+        "Re_Dh": 916.2188384428113,
+        "G_W_K": 1.1268329940081705,
+        "Rth_K_W": 0.8874429532303428,
+        "capacity_rate_W_K": 1.8822488322757016,
+        "effectiveness": 0.5986631388400394,
+        "energy_relative_balance_max": 6.067031777005098e-13,
+        "integrated_base_heat_W_K": 1.1268329940088215,
+        "min_normalized_temperature": -8.215650382226158e-15,
+        "max_normalized_temperature": 0.9999127318643167,
+        "outlet_heat_per_length_W_m_K": 6.5186852475928365,
+        "outlet_floor_fraction_of_local_heat": 0.01957516107886695
+      },
+      "relative_Rth_discrepancy": 0.005068388486081599,
+      "relative_G_discrepancy": -0.005042829467272414,
+      "side_channels_G_fraction": 0.06456457018258434,
+      "naive_17_central_channels_relative_G_bias": 0.06019858497411734,
+      "source_marker_drawing_index": 150
+    },
+    {
+      "marker_index": 1,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.7293341543058922,
+      "observed_approx_G_W_K": 1.3711136302833653,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.008752009851670706,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 6.354788172917206,
+        "Re_Dh": 1332.3605935116836,
+        "G_W_K": 1.3316155668066705,
+        "Rth_K_W": 0.7509674901128459,
+        "capacity_rate_W_K": 2.7371563059866753,
+        "effectiveness": 0.48649598997842286,
+        "energy_relative_balance_max": 6.178309572590347e-13,
+        "integrated_base_heat_W_K": 1.331615566807448,
+        "min_normalized_temperature": -7.327471962526033e-15,
+        "max_normalized_temperature": 0.9998838194262553,
+        "outlet_heat_per_length_W_m_K": 8.625184070317665,
+        "outlet_floor_fraction_of_local_heat": 0.023370454913881917
+      },
+      "relative_Rth_discrepancy": 0.029661761593411384,
+      "relative_G_discrepancy": -0.028807286722495662,
+      "side_channels_G_fraction": 0.06260576309122508,
+      "naive_17_central_channels_relative_G_bias": 0.06239753386725555,
+      "source_marker_drawing_index": 151
+    },
+    {
+      "marker_index": 2,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.6398001625242223,
+      "observed_approx_G_W_K": 1.5629880368499294,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.007677601950290668,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 8.356446402382694,
+        "Re_Dh": 1752.0332047851941,
+        "G_W_K": 1.486690961744288,
+        "Rth_K_W": 0.672634747726408,
+        "capacity_rate_W_K": 3.599317450643128,
+        "effectiveness": 0.4130480242798938,
+        "energy_relative_balance_max": 6.457751296672817e-13,
+        "integrated_base_heat_W_K": 1.4866909617451844,
+        "min_normalized_temperature": -1.021405182655144e-14,
+        "max_normalized_temperature": 0.9998640689765556,
+        "outlet_heat_per_length_W_m_K": 10.08704778958023,
+        "outlet_floor_fraction_of_local_heat": 0.02636988443777499
+      },
+      "relative_Rth_discrepancy": 0.0513200638659459,
+      "relative_G_discrepancy": -0.048814881052712145,
+      "side_channels_G_fraction": 0.06182670653741567,
+      "naive_17_central_channels_relative_G_bias": 0.06327210263014771,
+      "source_marker_drawing_index": 152
+    },
+    {
+      "marker_index": 3,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.5711437003136348,
+      "observed_approx_G_W_K": 1.7508728529280202,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.006853724403763618,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 10.32346329676145,
+        "Re_Dh": 2164.4428281320734,
+        "G_W_K": 1.6118425560768133,
+        "Rth_K_W": 0.6204079897443435,
+        "capacity_rate_W_K": 4.446557759828691,
+        "effectiveness": 0.36249221153463923,
+        "energy_relative_balance_max": 5.14718728852649e-13,
+        "integrated_base_heat_W_K": 1.6118425560774554,
+        "min_normalized_temperature": -1.1102230246251565e-14,
+        "max_normalized_temperature": 0.9998495351104042,
+        "outlet_heat_per_length_W_m_K": 11.176641471801236,
+        "outlet_floor_fraction_of_local_heat": 0.028744169004520054
+      },
+      "relative_Rth_discrepancy": 0.08625550698301665,
+      "relative_G_discrepancy": -0.07940627819930146,
+      "side_channels_G_fraction": 0.061437817199741444,
+      "naive_17_central_channels_relative_G_bias": 0.06370927278859062,
+      "source_marker_drawing_index": 153
+    },
+    {
+      "marker_index": 4,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.5215992717538115,
+      "observed_approx_G_W_K": 1.9171805908348505,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.006259191261045738,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 12.273593727561888,
+        "Re_Dh": 2573.311993792038,
+        "G_W_K": 1.7190570534354968,
+        "Rth_K_W": 0.5817142589895562,
+        "capacity_rate_W_K": 5.286524673110016,
+        "effectiveness": 0.3251771550749598,
+        "energy_relative_balance_max": 3.7985742118482737e-13,
+        "integrated_base_heat_W_K": 1.7190570534358252,
+        "min_normalized_temperature": -9.325873406851315e-15,
+        "max_normalized_temperature": 0.9998378243969506,
+        "outlet_heat_per_length_W_m_K": 12.062059412011404,
+        "outlet_floor_fraction_of_local_heat": 0.030671444258316142
+      },
+      "relative_Rth_discrepancy": 0.11525128674665464,
+      "relative_G_discrepancy": -0.10334109282479187,
+      "side_channels_G_fraction": 0.06119954783704911,
+      "naive_17_central_channels_relative_G_bias": 0.06397759493006472,
+      "source_marker_drawing_index": 154
+    },
+    {
+      "marker_index": 5,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.47068209305486064,
+      "observed_approx_G_W_K": 2.124576258063517,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.005648185116658328,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 13.988185468414489,
+        "Re_Dh": 2932.7975356089114,
+        "G_W_K": 1.8034446708419378,
+        "Rth_K_W": 0.5544944162512899,
+        "capacity_rate_W_K": 6.025039548502466,
+        "effectiveness": 0.29932495153333677,
+        "energy_relative_balance_max": 5.496381277201714e-13,
+        "integrated_base_heat_W_K": 1.8034446708425886,
+        "min_normalized_temperature": -8.881784197001252e-15,
+        "max_normalized_temperature": 0.9998289243703127,
+        "outlet_heat_per_length_W_m_K": 12.738279398766991,
+        "outlet_floor_fraction_of_local_heat": 0.032092616172080694
+      },
+      "relative_Rth_discrepancy": 0.17806567199627987,
+      "relative_G_discrepancy": -0.15115088761948248,
+      "side_channels_G_fraction": 0.06104943759882539,
+      "naive_17_central_channels_relative_G_bias": 0.06414688254629608,
+      "source_marker_drawing_index": 155
+    },
+    {
+      "marker_index": 6,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.46205674378089245,
+      "observed_approx_G_W_K": 2.164236348586226,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0055446809253707095,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 14.510353050791688,
+        "Re_Dh": 3042.276481411329,
+        "G_W_K": 1.8276611839536563,
+        "Rth_K_W": 0.5471473645004417,
+        "capacity_rate_W_K": 6.249949372716081,
+        "effectiveness": 0.29242815820752766,
+        "energy_relative_balance_max": 5.503241909803164e-13,
+        "integrated_base_heat_W_K": 1.8276611839543058,
+        "min_normalized_temperature": -1.3100631690576847e-14,
+        "max_normalized_temperature": 0.9998264064619393,
+        "outlet_heat_per_length_W_m_K": 12.929975259605108,
+        "outlet_floor_fraction_of_local_heat": 0.03248327438506616
+      },
+      "relative_Rth_discrepancy": 0.1841562142850126,
+      "relative_G_discrepancy": -0.15551682460764293,
+      "side_channels_G_fraction": 0.061010740166176324,
+      "naive_17_central_channels_relative_G_bias": 0.06419055521921702,
+      "source_marker_drawing_index": 156
+    },
+    {
+      "marker_index": 7,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.4266013836576352,
+      "observed_approx_G_W_K": 2.344108665157402,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.005119216603891623,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013427583210149488
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 16.21645915712417,
+        "Re_Dh": 3399.982904123378,
+        "G_W_K": 1.9027149542111754,
+        "Rth_K_W": 0.5255647977048556,
+        "capacity_rate_W_K": 6.984809286305709,
+        "effectiveness": 0.2724075742399444,
+        "energy_relative_balance_max": 5.634972803912007e-13,
+        "integrated_base_heat_W_K": 1.9027149542118662,
+        "min_normalized_temperature": -9.103828801926284e-15,
+        "max_normalized_temperature": 0.9998186761020749,
+        "outlet_heat_per_length_W_m_K": 13.5193055482868,
+        "outlet_floor_fraction_of_local_heat": 0.03364405251314207
+      },
+      "relative_Rth_discrepancy": 0.23198099640164904,
+      "relative_G_discrepancy": -0.1882991678274385,
+      "side_channels_G_fraction": 0.06090047181875495,
+      "naive_17_central_channels_relative_G_bias": 0.06431506685390187,
+      "source_marker_drawing_index": 157
+    },
+    {
+      "marker_index": 8,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.3979573372650934,
+      "observed_approx_G_W_K": 2.512832171589953,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0047754880471811215,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 17.321803371186725,
+        "Re_Dh": 3631.732103783487,
+        "G_W_K": 1.9484154887758152,
+        "Rth_K_W": 0.5132375541873246,
+        "capacity_rate_W_K": 7.460906963125412,
+        "effectiveness": 0.2611499511259974,
+        "energy_relative_balance_max": 5.664278164003782e-13,
+        "integrated_base_heat_W_K": 1.948415488776575,
+        "min_normalized_temperature": -1.5765166949677223e-14,
+        "max_normalized_temperature": 0.9998140103375174,
+        "outlet_heat_per_length_W_m_K": 13.875457291584535,
+        "outlet_floor_fraction_of_local_heat": 0.03431396840726603
+      },
+      "relative_Rth_discrepancy": 0.28967983783005113,
+      "relative_G_discrepancy": -0.2246137602007111,
+      "side_channels_G_fraction": 0.06083932800736509,
+      "naive_17_central_channels_relative_G_bias": 0.06438414749188448,
+      "source_marker_drawing_index": 158
+    },
+    {
+      "marker_index": 9,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.3729635059476223,
+      "observed_approx_G_W_K": 2.6812274768256725,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0044755620713714675,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 18.366569347687694,
+        "Re_Dh": 3850.7803204438133,
+        "G_W_K": 1.9897712567914607,
+        "Rth_K_W": 0.5025703314322254,
+        "capacity_rate_W_K": 7.910912172275788,
+        "effectiveness": 0.2515223546236197,
+        "energy_relative_balance_max": 5.745135842321e-13,
+        "integrated_base_heat_W_K": 1.9897712567923098,
+        "min_normalized_temperature": -2.4424906541753444e-14,
+        "max_normalized_temperature": 0.9998098075953931,
+        "outlet_heat_per_length_W_m_K": 14.196482698480198,
+        "outlet_floor_fraction_of_local_heat": 0.03489663635727406
+      },
+      "relative_Rth_discrepancy": 0.3475053816734677,
+      "relative_G_discrepancy": -0.2578879360332502,
+      "side_channels_G_fraction": 0.06078725435162098,
+      "naive_17_central_channels_relative_G_bias": 0.0644430000941929,
+      "source_marker_drawing_index": 159
+    },
+    {
+      "marker_index": 10,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.3620383705972373,
+      "observed_approx_G_W_K": 2.762138163284593,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0043444604471668475,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 19.236770065254976,
+        "Re_Dh": 4033.2287534967754,
+        "G_W_K": 2.022981625801526,
+        "Rth_K_W": 0.49431986294180497,
+        "capacity_rate_W_K": 8.285728030295177,
+        "effectiveness": 0.24415254983085147,
+        "energy_relative_balance_max": 5.081794765880697e-13,
+        "integrated_base_heat_W_K": 2.0229816258021818,
+        "min_normalized_temperature": -1.709743457922741e-14,
+        "max_normalized_temperature": 0.9998064431050722,
+        "outlet_heat_per_length_W_m_K": 14.453597690886692,
+        "outlet_floor_fraction_of_local_heat": 0.03534875936263654
+      },
+      "relative_Rth_discrepancy": 0.3653797583011691,
+      "relative_G_discrepancy": -0.2676030284466655,
+      "side_channels_G_fraction": 0.06074741988494198,
+      "naive_17_central_channels_relative_G_bias": 0.0644880312153937,
+      "source_marker_drawing_index": 160
+    },
+    {
+      "marker_index": 11,
+      "profile": "fd",
+      "observed_approx_Rth_K_W": 0.331137497466095,
+      "observed_approx_G_W_K": 3.0198935718610045,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.00397364996959314,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013425368811292977
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 20.672741941502323,
+        "Re_Dh": 4334.298165921378,
+        "G_W_K": 2.0755688033737494,
+        "Rth_K_W": 0.481795640006991,
+        "capacity_rate_W_K": 8.9042347954838,
+        "effectiveness": 0.23309906477606265,
+        "energy_relative_balance_max": 5.686303362639619e-13,
+        "integrated_base_heat_W_K": 2.075568803374521,
+        "min_normalized_temperature": -1.7985612998927536e-14,
+        "max_normalized_temperature": 0.9998011303715152,
+        "outlet_heat_per_length_W_m_K": 14.859769638570857,
+        "outlet_floor_fraction_of_local_heat": 0.03603691577034288
+      },
+      "relative_Rth_discrepancy": 0.45497155620777074,
+      "relative_G_discrepancy": -0.3127013406321192,
+      "side_channels_G_fraction": 0.06068755633529369,
+      "naive_17_central_channels_relative_G_bias": 0.06455572055122438,
+      "source_marker_drawing_index": 161
+    },
+    {
+      "marker_index": 0,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.8829677297552696,
+      "observed_approx_G_W_K": 1.1325442213807384,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.010595612757063236,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 4.369970612080595,
+        "Re_Dh": 916.2188384428113,
+        "G_W_K": 1.3624809321613696,
+        "Rth_K_W": 0.7339552256438933,
+        "capacity_rate_W_K": 1.8822488322757018,
+        "effectiveness": 0.7238580302446433,
+        "energy_relative_balance_max": 6.276394559580107e-13,
+        "integrated_base_heat_W_K": 1.3624809321621896,
+        "min_normalized_temperature": -4.884981308350689e-15,
+        "max_normalized_temperature": 0.9999239244269336,
+        "outlet_heat_per_length_W_m_K": 5.762337581966667,
+        "outlet_floor_fraction_of_local_heat": 0.02509425687122058
+      },
+      "relative_Rth_discrepancy": -0.16876325044481277,
+      "relative_G_discrepancy": 0.2030266955053679,
+      "side_channels_G_fraction": 0.06376076473079331,
+      "naive_17_central_channels_relative_G_bias": 0.06112395714587282,
+      "source_marker_drawing_index": 150
+    },
+    {
+      "marker_index": 1,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.7293341543058922,
+      "observed_approx_G_W_K": 1.3711136302833653,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.008752009851670706,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 6.354788172917206,
+        "Re_Dh": 1332.3605935116836,
+        "G_W_K": 1.6958335470175143,
+        "Rth_K_W": 0.5896805153776523,
+        "capacity_rate_W_K": 2.7371563059866757,
+        "effectiveness": 0.6195603602572521,
+        "energy_relative_balance_max": 1.9715436670362402e-13,
+        "integrated_base_heat_W_K": 1.6958335470178474,
+        "min_normalized_temperature": -1.199040866595169e-14,
+        "max_normalized_temperature": 0.9998879586118008,
+        "outlet_heat_per_length_W_m_K": 8.39817820060799,
+        "outlet_floor_fraction_of_local_heat": 0.03037237196057061
+      },
+      "relative_Rth_discrepancy": -0.19148100785318134,
+      "relative_G_discrepancy": 0.2368293258575802,
+      "side_channels_G_fraction": 0.06153722390983807,
+      "naive_17_central_channels_relative_G_bias": 0.06361332546025511,
+      "source_marker_drawing_index": 151
+    },
+    {
+      "marker_index": 2,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.6398001625242223,
+      "observed_approx_G_W_K": 1.5629880368499294,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.007677601950290668,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 8.356446402382694,
+        "Re_Dh": 1752.0332047851941,
+        "G_W_K": 1.9655979173346203,
+        "Rth_K_W": 0.5087510478012791,
+        "capacity_rate_W_K": 3.599317450643127,
+        "effectiveness": 0.5461029609887305,
+        "energy_relative_balance_max": 1.549779929687527e-12,
+        "integrated_base_heat_W_K": 1.9655979173376659,
+        "min_normalized_temperature": -7.771561172376096e-15,
+        "max_normalized_temperature": 0.9998617808473119,
+        "outlet_heat_per_length_W_m_K": 10.352100039276388,
+        "outlet_floor_fraction_of_local_heat": 0.03456415496576339
+      },
+      "relative_Rth_discrepancy": -0.20482819855173418,
+      "relative_G_discrepancy": 0.25758986696796304,
+      "side_channels_G_fraction": 0.06068905911504039,
+      "naive_17_central_channels_relative_G_bias": 0.06456217166615219,
+      "source_marker_drawing_index": 152
+    },
+    {
+      "marker_index": 3,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.5711437003136348,
+      "observed_approx_G_W_K": 1.7508728529280202,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.006853724403763618,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": true,
+      "laminar_author_Re_envelope_scope": true,
+      "laminar_graphical_V_envelope_scope": true,
+      "prediction": {
+        "V_interior_m_s": 10.32346329676145,
+        "Re_Dh": 2164.4428281320734,
+        "G_W_K": 2.1936277474501207,
+        "Rth_K_W": 0.4558658601772351,
+        "capacity_rate_W_K": 4.446557759828693,
+        "effectiveness": 0.49333166596145417,
+        "energy_relative_balance_max": 2.5691416233919303e-13,
+        "integrated_base_heat_W_K": 2.193627747450325,
+        "min_normalized_temperature": -7.993605777301127e-15,
+        "max_normalized_temperature": 0.999841806003632,
+        "outlet_heat_per_length_W_m_K": 11.86594950041232,
+        "outlet_floor_fraction_of_local_heat": 0.03790133992451823
+      },
+      "relative_Rth_discrepancy": -0.20183684083899833,
+      "relative_G_discrepancy": 0.2528766687893256,
+      "side_channels_G_fraction": 0.06028050630424097,
+      "naive_17_central_channels_relative_G_bias": 0.06502024048044208,
+      "source_marker_drawing_index": 153
+    },
+    {
+      "marker_index": 4,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.5215992717538115,
+      "observed_approx_G_W_K": 1.9171805908348505,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.006259191261045738,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 12.273593727561888,
+        "Re_Dh": 2573.311993792038,
+        "G_W_K": 2.395934309145355,
+        "Rth_K_W": 0.41737371353754116,
+        "capacity_rate_W_K": 5.286524673110016,
+        "effectiveness": 0.4532153838858087,
+        "energy_relative_balance_max": 8.751657343539911e-13,
+        "integrated_base_heat_W_K": 2.3959343091474516,
+        "min_normalized_temperature": -9.325873406851315e-15,
+        "max_normalized_temperature": 0.9998252260205339,
+        "outlet_heat_per_length_W_m_K": 13.135228180148326,
+        "outlet_floor_fraction_of_local_heat": 0.04060748266210797
+      },
+      "relative_Rth_discrepancy": -0.19981921728116125,
+      "relative_G_discrepancy": 0.24971759082018874,
+      "side_channels_G_fraction": 0.06003420687968101,
+      "naive_17_central_channels_relative_G_bias": 0.06529731826717877,
+      "source_marker_drawing_index": 154
+    },
+    {
+      "marker_index": 5,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.47068209305486064,
+      "observed_approx_G_W_K": 2.124576258063517,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.005648185116658328,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 13.988185468414489,
+        "Re_Dh": 2932.7975356089114,
+        "G_W_K": 2.559468517455769,
+        "Rth_K_W": 0.39070611464056865,
+        "capacity_rate_W_K": 6.025039548502468,
+        "effectiveness": 0.4248052642396229,
+        "energy_relative_balance_max": 2.596661441997891e-13,
+        "integrated_base_heat_W_K": 2.5594685174559593,
+        "min_normalized_temperature": -1.021405182655144e-14,
+        "max_normalized_temperature": 0.9998122820351469,
+        "outlet_heat_per_length_W_m_K": 14.131685117323475,
+        "outlet_floor_fraction_of_local_heat": 0.042590375868757066
+      },
+      "relative_Rth_discrepancy": -0.16991506495440512,
+      "relative_G_discrepancy": 0.20469599890410262,
+      "side_channels_G_fraction": 0.05987905183630735,
+      "naive_17_central_channels_relative_G_bias": 0.0654723354465574,
+      "source_marker_drawing_index": 155
+    },
+    {
+      "marker_index": 6,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.46205674378089245,
+      "observed_approx_G_W_K": 2.164236348586226,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0055446809253707095,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 14.510353050791688,
+        "Re_Dh": 3042.276481411329,
+        "G_W_K": 2.607072384746435,
+        "Rth_K_W": 0.383572011982038,
+        "capacity_rate_W_K": 6.249949372716081,
+        "effectiveness": 0.4171349605050421,
+        "energy_relative_balance_max": 1.1554404843936182e-12,
+        "integrated_base_heat_W_K": 2.6070723847494457,
+        "min_normalized_temperature": -1.7541523789077473e-14,
+        "max_normalized_temperature": 0.9998085605055046,
+        "outlet_heat_per_length_W_m_K": 14.418790491615612,
+        "outlet_floor_fraction_of_local_heat": 0.043132386229471326
+      },
+      "relative_Rth_discrepancy": -0.169859509368122,
+      "relative_G_discrepancy": 0.2046153768970238,
+      "side_channels_G_fraction": 0.05983889468900009,
+      "naive_17_central_channels_relative_G_bias": 0.06551768976655215,
+      "source_marker_drawing_index": 156
+    },
+    {
+      "marker_index": 7,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.4266013836576352,
+      "observed_approx_G_W_K": 2.344108665157402,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.005119216603891623,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013427583210149488
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 16.21645915712417,
+        "Re_Dh": 3399.982904123378,
+        "G_W_K": 2.7564627338905305,
+        "Rth_K_W": 0.3627837908726517,
+        "capacity_rate_W_K": 6.9848092863057065,
+        "effectiveness": 0.3946367926315186,
+        "energy_relative_balance_max": 2.1986569628229287e-13,
+        "integrated_base_heat_W_K": 2.7564627338899266,
+        "min_normalized_temperature": -1.176836406102666e-14,
+        "max_normalized_temperature": 0.9997969609952495,
+        "outlet_heat_per_length_W_m_K": 15.314849552393861,
+        "outlet_floor_fraction_of_local_heat": 0.044732858480324746
+      },
+      "relative_Rth_discrepancy": -0.14959537223676633,
+      "relative_G_discrepancy": 0.1759108162784082,
+      "side_channels_G_fraction": 0.0597238914685616,
+      "naive_17_central_channels_relative_G_bias": 0.06564768320999836,
+      "source_marker_drawing_index": 157
+    },
+    {
+      "marker_index": 8,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.3979573372650934,
+      "observed_approx_G_W_K": 2.512832171589953,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0047754880471811215,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 17.321803371186725,
+        "Re_Dh": 3631.732103783487,
+        "G_W_K": 2.8487654562167313,
+        "Rth_K_W": 0.35102924946585035,
+        "capacity_rate_W_K": 7.46090696312541,
+        "effectiveness": 0.3818256239216485,
+        "energy_relative_balance_max": 4.897950310976631e-13,
+        "integrated_base_heat_W_K": 2.8487654562176563,
+        "min_normalized_temperature": -7.327471962526033e-15,
+        "max_normalized_temperature": 0.9997898295350557,
+        "outlet_heat_per_length_W_m_K": 15.8663889601344,
+        "outlet_floor_fraction_of_local_heat": 0.045648711043954404
+      },
+      "relative_Rth_discrepancy": -0.11792240877313598,
+      "relative_G_discrepancy": 0.13368711544878953,
+      "side_channels_G_fraction": 0.05965969876390018,
+      "naive_17_central_channels_relative_G_bias": 0.06572029840265103,
+      "source_marker_drawing_index": 158
+    },
+    {
+      "marker_index": 9,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.3729635059476223,
+      "observed_approx_G_W_K": 2.6812274768256725,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0044755620713714675,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 18.366569347687694,
+        "Re_Dh": 3850.7803204438133,
+        "G_W_K": 2.9331420602911424,
+        "Rth_K_W": 0.34093132192197345,
+        "capacity_rate_W_K": 7.910912172275788,
+        "effectiveness": 0.3707716627888367,
+        "energy_relative_balance_max": 5.08636930910926e-13,
+        "integrated_base_heat_W_K": 2.9331420602921945,
+        "min_normalized_temperature": -9.547918011776346e-15,
+        "max_normalized_temperature": 0.9997833204060826,
+        "outlet_heat_per_length_W_m_K": 16.370075089227345,
+        "outlet_floor_fraction_of_local_heat": 0.04644009168610954
+      },
+      "relative_Rth_discrepancy": -0.08588557195230606,
+      "relative_G_discrepancy": 0.09395494624861667,
+      "side_channels_G_fraction": 0.05960478160402087,
+      "naive_17_central_channels_relative_G_bias": 0.06578244400839095,
+      "source_marker_drawing_index": 159
+    },
+    {
+      "marker_index": 10,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.3620383705972373,
+      "observed_approx_G_W_K": 2.762138163284593,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.0043444604471668475,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 19.236770065254976,
+        "Re_Dh": 4033.2287534967754,
+        "G_W_K": 3.0014721584583417,
+        "Rth_K_W": 0.3331698404004634,
+        "capacity_rate_W_K": 8.285728030295175,
+        "effectiveness": 0.36224603890980184,
+        "energy_relative_balance_max": 1.1611326656365298e-12,
+        "integrated_base_heat_W_K": 3.001472158461736,
+        "min_normalized_temperature": -6.439293542825908e-15,
+        "max_normalized_temperature": 0.9997780510859139,
+        "outlet_heat_per_length_W_m_K": 16.777963030008046,
+        "outlet_floor_fraction_of_local_heat": 0.04705064917682461
+      },
+      "relative_Rth_discrepancy": -0.07973886897444293,
+      "relative_G_discrepancy": 0.08664808964123094,
+      "side_channels_G_fraction": 0.05956262638203137,
+      "naive_17_central_channels_relative_G_bias": 0.06583015885931087,
+      "source_marker_drawing_index": 160
+    },
+    {
+      "marker_index": 11,
+      "profile": "plug",
+      "observed_approx_Rth_K_W": 0.331137497466095,
+      "observed_approx_G_W_K": 3.0198935718610045,
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "Rth_absolute_K_W": 0.00397364996959314,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "not established here"
+      },
+      "graphical_readout_envelope_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013425368811292977
+      },
+      "laminar_nominal_scope": false,
+      "laminar_author_Re_envelope_scope": false,
+      "laminar_graphical_V_envelope_scope": false,
+      "prediction": {
+        "V_interior_m_s": 20.672741941502323,
+        "Re_Dh": 4334.298165921378,
+        "G_W_K": 3.1106905618120937,
+        "Rth_K_W": 0.3214720269114336,
+        "capacity_rate_W_K": 8.904234795483799,
+        "effectiveness": 0.3493495660502828,
+        "energy_relative_balance_max": 6.412085331193297e-13,
+        "integrated_base_heat_W_K": 3.1106905618133305,
+        "min_normalized_temperature": -1.3100631690576847e-14,
+        "max_normalized_temperature": 0.9997696250938082,
+        "outlet_heat_per_length_W_m_K": 17.430388011963778,
+        "outlet_floor_fraction_of_local_heat": 0.047973822435854956
+      },
+      "relative_Rth_discrepancy": -0.0291886923970337,
+      "relative_G_discrepancy": 0.03006628802985789,
+      "side_channels_G_fraction": 0.05949906456231153,
+      "naive_17_central_channels_relative_G_bias": 0.06590211666227863,
+      "source_marker_drawing_index": 161
+    }
+  ],
+  "summary_discrepancies": [
+    {
+      "profile": "fd",
+      "nominal_laminar_scope": true,
+      "count": 4,
+      "relative_Rth_min": 0.005068388486081599,
+      "relative_Rth_max": 0.08625550698301665,
+      "relative_Rth_mean": 0.04307643023211388,
+      "relative_Rth_mean_absolute": 0.04307643023211388
+    },
+    {
+      "profile": "fd",
+      "nominal_laminar_scope": false,
+      "count": 8,
+      "relative_Rth_min": 0.11525128674665464,
+      "relative_Rth_max": 0.45497155620777074,
+      "relative_Rth_mean": 0.2708738379302569,
+      "relative_Rth_mean_absolute": 0.2708738379302569
+    },
+    {
+      "profile": "plug",
+      "nominal_laminar_scope": true,
+      "count": 4,
+      "relative_Rth_min": -0.20482819855173418,
+      "relative_Rth_max": -0.16876325044481277,
+      "relative_Rth_mean": -0.19172732442218166,
+      "relative_Rth_mean_absolute": 0.19172732442218166
+    },
+    {
+      "profile": "plug",
+      "nominal_laminar_scope": false,
+      "count": 8,
+      "relative_Rth_min": -0.19981921728116125,
+      "relative_Rth_max": -0.0291886923970337,
+      "relative_Rth_mean": -0.12524058824217166,
+      "relative_Rth_mean_absolute": 0.12524058824217166
+    }
+  ],
+  "material_sensitivity_primary_fd_in_scope": [
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 4.369970612080595,
+      "G_W_K": 1.1232005400712306,
+      "Rth_K_W": 0.8903129622218509
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 6.354788172917206,
+      "G_W_K": 1.3264238923132086,
+      "Rth_K_W": 0.7539068059578272
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 8.356446402382694,
+      "G_W_K": 1.4801942013453728,
+      "Rth_K_W": 0.6755870270881237
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 10.32346329676145,
+      "G_W_K": 1.6042144211598415,
+      "Rth_K_W": 0.623358066608704
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 4.369970612080595,
+      "G_W_K": 1.1289981209269093,
+      "Rth_K_W": 0.8857410667601452
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 6.354788172917206,
+      "G_W_K": 1.3347151663738945,
+      "Rth_K_W": 0.7492235236352064
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 8.356446402382694,
+      "G_W_K": 1.490573738866817,
+      "Rth_K_W": 0.670882609779663
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 10.32346329676145,
+      "G_W_K": 1.6164048739325645,
+      "Rth_K_W": 0.6186568823979675
+    }
+  ],
+  "reported_area_mapping_sensitivity_primary_fd_in_scope": [
+    {
+      "reported_V_m_s": 4.369970612080595,
+      "alternative_actual_V_m_s": 4.395175922027707,
+      "G_W_K": 1.1299418284497424,
+      "Rth_K_W": 0.8850013114143938
+    },
+    {
+      "reported_V_m_s": 6.354788172917206,
+      "alternative_actual_V_m_s": 6.391441601456021,
+      "G_W_K": 1.3348123484335963,
+      "Rth_K_W": 0.7491689758290752
+    },
+    {
+      "reported_V_m_s": 8.356446402382694,
+      "alternative_actual_V_m_s": 8.404645083867237,
+      "G_W_K": 1.490023632403747,
+      "Rth_K_W": 0.6711302950187257
+    },
+    {
+      "reported_V_m_s": 10.32346329676145,
+      "alternative_actual_V_m_s": 10.383007425365697,
+      "G_W_K": 1.6153315835043944,
+      "Rth_K_W": 0.6190679425895591
+    }
+  ],
+  "air_property_sensitivities_at_predeclared_10_m_s": [
+    {
+      "property": "k_air",
+      "factor": 0.95,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.5441091072959796,
+      "Rth_K_W": 0.6476226293044698
+    },
+    {
+      "property": "k_air",
+      "factor": 1.05,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.6399334390474607,
+      "Rth_K_W": 0.6097808460938757
+    },
+    {
+      "property": "volumetric_heat_capacity",
+      "factor": 0.95,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.5619364502926396,
+      "Rth_K_W": 0.6402309132440331
+    },
+    {
+      "property": "volumetric_heat_capacity",
+      "factor": 1.05,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.6221429159894827,
+      "Rth_K_W": 0.6164684937085306
+    }
+  ],
+  "temperature_field_files": [
+    "temperature_fields_fd_marker_00.json",
+    "temperature_fields_fd_marker_03.json",
+    "temperature_fields_plug_marker_00.json",
+    "temperature_fields_plug_marker_03.json"
+  ],
+  "limitations": [
+    "Prescribed fully developed and plug profiles are model-form sensitivity cases, not an entrance-flow solution or confidence bounds.",
+    "No axial solid conduction, axial fluid conduction, cross-flow, turbulence, base spreading, contact resistance or duct heat loss.",
+    "Source numerical air properties are assumptions, not recovered per-run experimental conditions.",
+    "Material conductivities are independently declared scenarios; tested alloy remains unidentified.",
+    "Rth target is approximately graph-read, loss-corrected; author uncertainty and graphical allowance are kept separate.",
+    "12 recoverable markers retained; a thirteenth claimed experiment is not invented.",
+    "The high-speed cases exceed the predeclared Re2300 scope and cannot validate this laminar model.",
+    "Nominal source velocity range and stated approximate Re range are not algebraically identical under the recovered physical dimensions."
+  ]
+}

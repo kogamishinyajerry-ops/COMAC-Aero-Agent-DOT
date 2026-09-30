@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "gates": {
+    "isothermal_plug_continuum": true,
+    "actual_assembled_fin_continuum": true,
+    "low_flow_capacity_limit": true
+  },
+  "plug_rows": [
+    {
+      "speed_m_s": 4.0,
+      "G_numerical_W_K": 1.305439761321595,
+      "G_continuum_exact_W_K": 1.3059119604694112,
+      "relative_error": -0.00036158574399347554,
+      "energy_relative_balance": 7.360574692926754e-14
+    },
+    {
+      "speed_m_s": 10.0,
+      "G_numerical_W_K": 2.2097849664303832,
+      "G_continuum_exact_W_K": 2.2112108294906245,
+      "relative_error": -0.0006448336093621831,
+      "energy_relative_balance": 4.186065940229722e-14
+    },
+    {
+      "speed_m_s": 20.0,
+      "G_numerical_W_K": 3.1638277672355786,
+      "G_continuum_exact_W_K": 3.1676141197594694,
+      "relative_error": -0.001195332632302537,
+      "energy_relative_balance": 2.1382047949408657e-13
+    }
+  ],
+  "assembled_fin": {
+    "assembled_fin_index": 1,
+    "bath_fluid_normalized_T": 0,
+    "base_normalized_T": 1,
+    "interface_h_eff_from_half_cell_resistance": 1301.4698199959037,
+    "analytic_Q_per_length": 18.838085170674216,
+    "assembled_Q_per_length": 18.837845829865945,
+    "relative_Q_error": -1.2705155863934614e-05
+  },
+  "low_flow": {
+    "speed_m_s": 0.001,
+    "effectiveness": 0.9999999999999998
+  },
+  "source": "Analytic separation-of-variables heat equation and uniform-bath adiabatic-tip fin ODE, independently evaluated from discretized geometry",
+  "code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "check_code_sha256": "13864ca963c4ac41dff0ab9d585c34e48ba8f90d2be6efba0e17e0e30684b78e",
+  "experimental_data_read": false
+}

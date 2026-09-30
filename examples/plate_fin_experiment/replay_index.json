@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "study_id": "plate_fin_2024",
+  "report_kind": "saved_conditional_experimental_comparison",
+  "live_computation": false,
+  "mathematical_verification_pass": true,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "source_pdf_required": false,
+  "source_pdf_redistributed": false,
+  "chronology": "Saved original comparison with a separate post-comparison packaging replay; original precomparison freeze is preserved byte-for-byte.",
+  "source": {
+    "title": "Pires-Fonseca and Carrasco-Altemani,2024, Figure8 plate-fin series",
+    "doi": "10.17533/udea.redin.20230417",
+    "url": "https://doi.org/10.17533/udea.redin.20230417",
+    "marker_count": 12,
+    "author_claimed_run_count": 13,
+    "missing_point_policy": "No missing or overlapping13th marker is invented"
+  },
+  "source_conditioning": {
+    "response": "Approximate vector-marker Rth=(Tb-Tin)/qcv; qcv is electrical power minus estimated losses, not raw temperatures",
+    "speed": "Nozzle flow divided equally among17 channels; reported V mapped to arithmetic interior-channel area",
+    "properties": "Source numerical air properties, not recovered per-run conditions; aluminum conductivity independently declared"
+  },
+  "scope_counts": {
+    "robustly_in_declared_laminar_scope": 3,
+    "nominally_laminar_boundary_uncertain": 1,
+    "nominally_outside_laminar_scope": 8
+  },
+  "report_path": "examples/plate_fin_experiment/plate_fin_report.json",
+  "stable_report_keys": [
+    "study_id",
+    "source_conditioning",
+    "geometry_ownership",
+    "nominal_properties",
+    "frozen_numerics",
+    "scope_counts",
+    "rows[].id",
+    "rows[].observed",
+    "rows[].scope.scope",
+    "rows[].author_uncertainty_separate",
+    "rows[].graphical_readout_allowance_separate",
+    "rows[].predictions.fd",
+    "rows[].predictions.plug",
+    "verification_summary",
+    "physical_validation_pass",
+    "aircraft_transfer_authorized"
+  ],
+  "report_sha256": "27ee033516af6e201a89fab66eda9a9cdccfc0f6ce3364b4dc468d72689db2b6",
+  "package_manifest_path": "examples/plate_fin_experiment/package_manifest.json",
+  "residual_display": "100 times relative_Rth_discrepancy is percent resistance difference; positive means higher predicted resistance and lower predicted conductance",
+  "field_display_contract": "Match channel_index_from_side to display_fields.channel_domains; channel8 is a half-channel with modeled_width_fraction0.5",
+  "display_warning": "Integrity checks and numerical equivalence are not experimental or aircraft validation."
+}

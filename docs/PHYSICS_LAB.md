@@ -46,3 +46,7 @@ Full-load X-57 temperature validation remains unresolved. The current nacelle CA
 Further work needs final-configuration passage geometry/face exposure, directional winding and potting/contact properties, component-node definitions, and matched test boundaries with pressure, flow and temperature measurements. Useful public subproblems can be verified while those aircraft-level gaps remain open.
 
 Details: [source audit](NACELLE_SOURCE_AUDIT.md), [historical unit-cell benchmark](HISTORICAL_MOTOR_BENCHMARK.md), [finite-volume formulation](DUCT_SUBMODEL.md), [physics research and independent references](research/NACELLE_THERMAL_PHYSICS_AUDIT_2026-09-30.md).
+
+## Public component experiments
+
+The linked `/experiments` page consolidates two untuned component comparisons: all 32 historical rectangular-duct records and all 12 recoverable modern plate-fin graph markers. These are separately labeled, integrity-checked saved research replays. They retain discrepancies, missing data, numerical failures and physical applicability limits. See [experimental comparisons](EXPERIMENTAL_COMPARISONS.md) for equations, uncertainty distinctions, reproducibility and browser-acceptance requirements.

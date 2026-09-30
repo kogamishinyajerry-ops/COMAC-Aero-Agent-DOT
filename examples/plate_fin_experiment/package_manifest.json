@@ -1,0 +1,422 @@
+{
+  "schema_version": 1,
+  "study_id": "plate_fin_2024",
+  "all_audits_passed": true,
+  "package_kind": "Offline research-only conditional plate-fin experimental replay",
+  "chronology": "Original precomparison freeze preserved byte-for-byte; packaging/replay occurs after observed experimental residuals",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "application_dependencies_added": false,
+  "live_computation": false,
+  "source_pdf_required": false,
+  "source_pdf_redistributed": false,
+  "proposed_directories": [
+    "research/plate_fin",
+    "examples/plate_fin_experiment"
+  ],
+  "standard_library_audit_path": "research/plate_fin/audit_package.py",
+  "research_requirements_file": "research/plate_fin/requirements-research.txt",
+  "original_freeze_anchors": {
+    "research/plate_fin/original_freeze/README.md": "ecbd883499619d510fd3349ecba51b608d52f96305ff680465cdf06a4c98867e",
+    "research/plate_fin/original_freeze/RESULTS.md": "0f27b7658ef8b8c8e88250ef4046ef85c1e0a042e7afd940c19433572057ea89",
+    "research/plate_fin/original_freeze/applicability_audit.json": "9a96f88feb3a09025f2fbb45e66fa808a4fbc2722743917de6e7ee674961cce6",
+    "research/plate_fin/original_freeze/audit_applicability.py": "c93f92af50fe141d6dda7694f1ced68a94ce2a2584989121904f5436037ed80b",
+    "research/plate_fin/original_freeze/compare_frozen_model.py": "0791a86c35b55d2f2b14bc690d1b15644530775af5eec1cdcc4800b85afed739",
+    "research/plate_fin/original_freeze/comparison.json": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f",
+    "research/plate_fin/original_freeze/comparison_gate.json": "94b8b47adb48dcc0ee817ef2c2746bd5dcd7b366ca2a26c2337331bc6fb28aae",
+    "research/plate_fin/original_freeze/conjugate_fin.py": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "research/plate_fin/original_freeze/fonseca2024_vector_readout.json": "87bfcb8f105b07cd19fda9c2c9d1a9c2ea574eab655d00f5ee01a0f9d163a6c7",
+    "research/plate_fin/original_freeze/frozen_numerics.json": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+    "research/plate_fin/original_freeze/independent_limits.json": "ab3bde3abcbf5951fcb5bbb82003b16407a93166d0a9d6ad5233be32ad859503",
+    "research/plate_fin/original_freeze/independent_limits_initial_mesh.json": "c14d51d07aa0c8ee191d6f90f8a246335c4a549924d7dc60cd35d631e22b72fa",
+    "research/plate_fin/original_freeze/precomparison_plan.json": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+    "research/plate_fin/original_freeze/read_fonseca_vectors.py": "ccfaa374ca2f4bc7f1a9ee2c2c0270b3c3e335006ca7a177f2872ef7ec0d6fdb",
+    "research/plate_fin/original_freeze/refine_and_freeze.py": "5a6bae9f0d6acc014bf99db7c63a073e1ac47dcaf2ec807fb2aa49ee457c6429",
+    "research/plate_fin/original_freeze/refinement_plan.json": "4a7f08a846bbcec023bd5da01a85f8d9680e491f14fa17744db625d1728be495",
+    "research/plate_fin/original_freeze/render_results.py": "5652dfbd1d1a7d8f123f10ab747ae3dbfb9c289d45e20c22df35f44b5acb4588",
+    "research/plate_fin/original_freeze/review/final_review_gate.json": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2",
+    "research/plate_fin/original_freeze/review/independent_review.json": "752664c646f30875f550d6580783be629ffb22267731c4558be4275d323550e3",
+    "research/plate_fin/original_freeze/review/independent_review.py": "d184eaf4b9d3093abea1a3917fddc0fc6c927cbc0a336cc71da452ed34491e1e",
+    "research/plate_fin/original_freeze/review/observed_spatial_order.json": "18bf8319e9beb0931c9b066185fd8d418eec2b074d6d3b9fbfbae668f3ed9444",
+    "research/plate_fin/original_freeze/temperature_fields_fd_marker_00.json": "37f5105b7544dfc75c65e539ea1fe326b3b14a8ebeaffd492fe0430228ab4072",
+    "research/plate_fin/original_freeze/temperature_fields_fd_marker_03.json": "22f5e3ef1c408de75094945e931499afe3e30d5ecde14a07e02a4234c587642e",
+    "research/plate_fin/original_freeze/temperature_fields_plug_marker_00.json": "87f253f1718e17dca2b6a81b1dddf3ca22244a6c279908434aee5817c972b999",
+    "research/plate_fin/original_freeze/temperature_fields_plug_marker_03.json": "0ea5d737259fd2b39fcc6a4543af4c2c91c49f7f59e4ac2432fd0fb3363bc750",
+    "research/plate_fin/original_freeze/verification.json": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7",
+    "research/plate_fin/original_freeze/verification_selected_mesh_rejected.json": "f5fe9dd9290b9d160698397b92572f0e0e8826a183473025e23c8be925397a5f",
+    "research/plate_fin/original_freeze/verify_and_freeze.py": "e71a688cc1e8a48626053ce8e4f2737f0208ba35baaa283544466efda6930a7f",
+    "research/plate_fin/original_freeze/verify_independent_limits.py": "13864ca963c4ac41dff0ab9d585c34e48ba8f90d2be6efba0e17e0e30684b78e"
+  },
+  "packaged_solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "stable_report_path": "examples/plate_fin_experiment/plate_fin_report.json",
+  "stable_report_keys": [
+    "study_id",
+    "source_conditioning",
+    "geometry_ownership",
+    "nominal_properties",
+    "frozen_numerics",
+    "scope_counts",
+    "rows[].id",
+    "rows[].observed",
+    "rows[].scope.scope",
+    "rows[].author_uncertainty_separate",
+    "rows[].graphical_readout_allowance_separate",
+    "rows[].predictions.fd",
+    "rows[].predictions.plug",
+    "verification_summary",
+    "physical_validation_pass",
+    "aircraft_transfer_authorized"
+  ],
+  "source_conditioning": {
+    "response": "Approximate vector-marker Rth=(Tb-Tin)/qcv; qcv is electrical power minus estimated losses, not raw temperatures",
+    "speed": "Nozzle flow divided equally among17 channels; reported V mapped to arithmetic interior-channel area",
+    "properties": "Source numerical air properties, not recovered per-run conditions; aluminum conductivity independently declared"
+  },
+  "physical_scope": {
+    "source_marker_count": 12,
+    "source_claimed_run_count": 13,
+    "robustly_laminar_count": 3,
+    "nominally_laminar_boundary_uncertain_count": 1,
+    "out_of_laminar_scope_count": 8,
+    "laminar_cutoff_Re": 2300,
+    "interior_channels": 15,
+    "side_channels": 2,
+    "side_floor": "adiabatic duct surface outside heat-sink base",
+    "prescribed_velocity_cases_are_confidence_bounds": false,
+    "unresolved": [
+      "hydrodynamic entrance development",
+      "axial solid conduction",
+      "unknown actual aluminum conductivity and per-run fluid properties"
+    ]
+  },
+  "reproduce_from_repository_root": "bash research/plate_fin/reproduce.sh",
+  "reproduce_output_policy": "Every run creates a fresh output/plate-fin-replays/run_<unique-id> directory; pinned accepted examples are never overwritten; promotion is separate and explicit",
+  "optional_source_audit": "python research/plate_fin/source_audit.py --source-pdf /path/to/paper.pdf --extract-figure8",
+  "packaging_contract_checks": {
+    "count": 18,
+    "all_passed": true
+  },
+  "numeric_payload_equivalence": {
+    "case_count": 40,
+    "maximum_absolute_difference": 0.0,
+    "independent_review_maximum_absolute_difference": 0.0
+  },
+  "publication_exclusions": [
+    "source PDF",
+    "full-resolution arrays",
+    "logs",
+    "caches",
+    "__pycache__",
+    "relocation fixtures"
+  ],
+  "display_field_notice": "Small normalized field samples,7-decimal display rounding; original precise samples retained separately; not measured absolute temperatures",
+  "files": [
+    {
+      "proposed_repository_path": "research/plate_fin/README.md",
+      "bytes": 6574,
+      "sha256": "e5e1d2c4367f506a0c643bb4a09ab56d27b5b97d9dcfb306d8427f82579d5f61"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/audit_package.py",
+      "bytes": 14996,
+      "sha256": "93ce0197c7555580469c979ff26bb6e0cbe5f628841ca76ed5e7e0b2ed78551d"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/build_display_records.py",
+      "bytes": 9724,
+      "sha256": "3e75514140b755883e5de089a53624f7ceea93db40e026dc7469b2c7fec06666"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/conjugate_fin.py",
+      "bytes": 10060,
+      "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/inputs/figure8_markers.json",
+      "bytes": 6563,
+      "sha256": "31432593b0ca422015ac422069f5fecc19a08e3078103f51e93a9c6970d65f6c"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/inputs/source_provenance.json",
+      "bytes": 4087,
+      "sha256": "a6e03b586c47b3dcef24c082c553b0b078693fdb0c59f7e6d1e529d876a7ab86"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/README.md",
+      "bytes": 9873,
+      "sha256": "ecbd883499619d510fd3349ecba51b608d52f96305ff680465cdf06a4c98867e"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/RESULTS.md",
+      "bytes": 8234,
+      "sha256": "0f27b7658ef8b8c8e88250ef4046ef85c1e0a042e7afd940c19433572057ea89"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/applicability_audit.json",
+      "bytes": 7812,
+      "sha256": "9a96f88feb3a09025f2fbb45e66fa808a4fbc2722743917de6e7ee674961cce6"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/audit_applicability.py",
+      "bytes": 1764,
+      "sha256": "c93f92af50fe141d6dda7694f1ced68a94ce2a2584989121904f5436037ed80b"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/compare_frozen_model.py",
+      "bytes": 9006,
+      "sha256": "0791a86c35b55d2f2b14bc690d1b15644530775af5eec1cdcc4800b85afed739"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/comparison.json",
+      "bytes": 47910,
+      "sha256": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/comparison_gate.json",
+      "bytes": 730,
+      "sha256": "94b8b47adb48dcc0ee817ef2c2746bd5dcd7b366ca2a26c2337331bc6fb28aae"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/conjugate_fin.py",
+      "bytes": 10060,
+      "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/fonseca2024_vector_readout.json",
+      "bytes": 8755,
+      "sha256": "87bfcb8f105b07cd19fda9c2c9d1a9c2ea574eab655d00f5ee01a0f9d163a6c7"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/frozen_numerics.json",
+      "bytes": 751,
+      "sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/independent_limits.json",
+      "bytes": 1675,
+      "sha256": "ab3bde3abcbf5951fcb5bbb82003b16407a93166d0a9d6ad5233be32ad859503"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/independent_limits_initial_mesh.json",
+      "bytes": 1668,
+      "sha256": "c14d51d07aa0c8ee191d6f90f8a246335c4a549924d7dc60cd35d631e22b72fa"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/precomparison_plan.json",
+      "bytes": 5700,
+      "sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/read_fonseca_vectors.py",
+      "bytes": 3362,
+      "sha256": "ccfaa374ca2f4bc7f1a9ee2c2c0270b3c3e335006ca7a177f2872ef7ec0d6fdb"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/refine_and_freeze.py",
+      "bytes": 3805,
+      "sha256": "5a6bae9f0d6acc014bf99db7c63a073e1ac47dcaf2ec807fb2aa49ee457c6429"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/refinement_plan.json",
+      "bytes": 744,
+      "sha256": "4a7f08a846bbcec023bd5da01a85f8d9680e491f14fa17744db625d1728be495"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/render_results.py",
+      "bytes": 4179,
+      "sha256": "5652dfbd1d1a7d8f123f10ab747ae3dbfb9c289d45e20c22df35f44b5acb4588"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/review/final_review_gate.json",
+      "bytes": 1528,
+      "sha256": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/review/independent_review.json",
+      "bytes": 11963,
+      "sha256": "752664c646f30875f550d6580783be629ffb22267731c4558be4275d323550e3"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/review/independent_review.py",
+      "bytes": 8359,
+      "sha256": "d184eaf4b9d3093abea1a3917fddc0fc6c927cbc0a336cc71da452ed34491e1e"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/review/observed_spatial_order.json",
+      "bytes": 1642,
+      "sha256": "18bf8319e9beb0931c9b066185fd8d418eec2b074d6d3b9fbfbae668f3ed9444"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/temperature_fields_fd_marker_00.json",
+      "bytes": 33463,
+      "sha256": "37f5105b7544dfc75c65e539ea1fe326b3b14a8ebeaffd492fe0430228ab4072"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/temperature_fields_fd_marker_03.json",
+      "bytes": 33531,
+      "sha256": "22f5e3ef1c408de75094945e931499afe3e30d5ecde14a07e02a4234c587642e"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/temperature_fields_plug_marker_00.json",
+      "bytes": 33411,
+      "sha256": "87f253f1718e17dca2b6a81b1dddf3ca22244a6c279908434aee5817c972b999"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/temperature_fields_plug_marker_03.json",
+      "bytes": 33565,
+      "sha256": "0ea5d737259fd2b39fcc6a4543af4c2c91c49f7f59e4ac2432fd0fb3363bc750"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/verification.json",
+      "bytes": 12069,
+      "sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/verification_selected_mesh_rejected.json",
+      "bytes": 48974,
+      "sha256": "f5fe9dd9290b9d160698397b92572f0e0e8826a183473025e23c8be925397a5f"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/verify_and_freeze.py",
+      "bytes": 6863,
+      "sha256": "e71a688cc1e8a48626053ce8e4f2737f0208ba35baaa283544466efda6930a7f"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/original_freeze/verify_independent_limits.py",
+      "bytes": 2519,
+      "sha256": "13864ca963c4ac41dff0ab9d585c34e48ba8f90d2be6efba0e17e0e30684b78e"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/precomparison_plan.json",
+      "bytes": 5700,
+      "sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/render_saved_results.py",
+      "bytes": 4665,
+      "sha256": "f2bb2fd6bb346eec6c6ea30868f62b294fe19e7d5a6958ef04b18cb4ebc5b251"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/replay_numerics.py",
+      "bytes": 8024,
+      "sha256": "5014ef656ab5532884fcbb62c48807e862e8eed5fc1371e6f1b1b8949edfb27c"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/reproduce.py",
+      "bytes": 2118,
+      "sha256": "73888b8cba0813e7d98e56a420a07cbdef66433598b97bd0024da01e45d8bf29"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/reproduce.sh",
+      "bytes": 188,
+      "sha256": "fd48688947789a0a13de1d6866857898cd93b1757a0c69d6bf5b726635bff9de"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/requirements-research.txt",
+      "bytes": 329,
+      "sha256": "ade1d83e6a21749b8403136335fe0b80e10a38fa0a61cfd0a00f88ff7f673b4f"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/source_audit.py",
+      "bytes": 2472,
+      "sha256": "f3a402b72d6c7ea68de4b27ae78eb54e0f3ef955ff9b2ae25549c9424baefc6b"
+    },
+    {
+      "proposed_repository_path": "research/plate_fin/test_packaging.py",
+      "bytes": 7275,
+      "sha256": "e206b41b4d2f7d2d9453f035e8b777817bd46b3f777cd6ea8621516b71b419a8"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/README.md",
+      "bytes": 1578,
+      "sha256": "f1c589d6000747a58d5914812f0ee47e03a73b7ab3d4ba515725f5891f053989"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/RESULTS.md",
+      "bytes": 8234,
+      "sha256": "0f27b7658ef8b8c8e88250ef4046ef85c1e0a042e7afd940c19433572057ea89"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/applicability_audit.json",
+      "bytes": 7812,
+      "sha256": "9a96f88feb3a09025f2fbb45e66fa808a4fbc2722743917de6e7ee674961cce6"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/comparison.png",
+      "bytes": 219589,
+      "sha256": "2d9fdc198e52002924f92b2b43b2901f1cfbc543f1c460f979f5b9dc9c90b3a8"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/display_fields.json",
+      "bytes": 39461,
+      "sha256": "e543775d275a0132f64ad261243e7d544ba1318dfaddea4297882add0fdd7830"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/experimental_comparison.json",
+      "bytes": 47910,
+      "sha256": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/fin_temperature_profiles.png",
+      "bytes": 129854,
+      "sha256": "c398e8a49913bd2a483b975c8d5f320ecf49b11638019b39b147b9c78b25b5a6"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/frozen_numerics.json",
+      "bytes": 751,
+      "sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/independent_limits.json",
+      "bytes": 1675,
+      "sha256": "ab3bde3abcbf5951fcb5bbb82003b16407a93166d0a9d6ad5233be32ad859503"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/optional_source_audit_record.json",
+      "bytes": 784,
+      "sha256": "eed71486edd358829120ec8f58d48a1e683ae73528ca7ffcf2c69403127c861a"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/packaging_replay.json",
+      "bytes": 12071,
+      "sha256": "5961cb7f4693896846e03fcca46a96570b6e2aa39fb1171dee71a2c4ff60977e"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/packaging_tests.json",
+      "bytes": 1296,
+      "sha256": "09de12c979ba5a8e54ad50422a18266ca79eac05f12be23ce7777c48c03e98a8"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/plate_fin_report.json",
+      "bytes": 33756,
+      "sha256": "27ee033516af6e201a89fab66eda9a9cdccfc0f6ce3364b4dc468d72689db2b6"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/plot_replay.json",
+      "bytes": 823,
+      "sha256": "a9bfb8da0aeff3775580ce1484e397b0b2256890d734b081292e309df300a01d"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/relocation_audit.json",
+      "bytes": 1320,
+      "sha256": "c12afb0cd3220294d166631e4b71f0be681b7cd40483d597eb81abccbffbd586"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/replay_index.json",
+      "bytes": 2562,
+      "sha256": "4f0a4b7a169729c4669e210fad74f9b403e3a1afdc275bca8ce3ac05b7fde973"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/side_channel_counterexample.json",
+      "bytes": 7339,
+      "sha256": "d73aa6c6f5bf7d34aab4aef28886fb1d1977f37c24b8cfbfc287bf210fd5a050"
+    },
+    {
+      "proposed_repository_path": "examples/plate_fin_experiment/verification.json",
+      "bytes": 12069,
+      "sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7"
+    }
+  ],
+  "files_count": 61,
+  "total_listed_bytes": 965574
+}

@@ -1,0 +1,5 @@
+# Research scripts only; do not add these to application/runtime dependencies.
+# Versions used for the preserved/replayed evidence:
+numpy==2.3.5
+scipy==1.17.0
+matplotlib==3.10.8

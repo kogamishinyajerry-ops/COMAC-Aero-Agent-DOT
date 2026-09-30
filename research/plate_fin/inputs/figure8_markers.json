@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "study_id": "plate_fin_2024",
+  "target": "Figure8 plate-fin black-square thermal-resistance series only",
+  "data_kind": "approximate graphical loss-corrected Rth; not raw experimental runs",
+  "source_doi": "10.17533/udea.redin.20230417",
+  "source_pdf_sha256": "c14571f635c5767ae3fc57f90fb18514595a54dc53918bc7454da084839c5a01",
+  "original_vector_readout_sha256": "87bfcb8f105b07cd19fda9c2c9d1a9c2ea574eab655d00f5ee01a0f9d163a6c7",
+  "original_extractor_sha256": "ccfaa374ca2f4bc7f1a9ee2c2c0270b3c3e335006ca7a177f2872ef7ec0d6fdb",
+  "pdf_page_1based": 9,
+  "printed_page": 94,
+  "method": "Direct filled-square centers and axis tick positions from vector paths; linear axis mapping; curve paths explicitly excluded",
+  "excluded_targets": [
+    "fitted curve paths",
+    "Figure7 fin-efficiency-derived h/Nu"
+  ],
+  "count": 12,
+  "source_claimed_run_count": 13,
+  "missing_run_policy": "No missing or overlapping13th marker is invented",
+  "author_uncertainty_separate": {
+    "Rth_relative": 0.012,
+    "V_relative_range": [
+      0.037,
+      0.046
+    ],
+    "Re_relative_range": [
+      0.046,
+      0.052
+    ],
+    "coverage_convention": "unspecified here"
+  },
+  "graphical_envelope_policy": "Conservative half-symbol-width/height envelopes, separate from experimental uncertainty; these are graphical readout allowances, not confidence intervals",
+  "rows": [
+    {
+      "drawing_index": 150,
+      "center_pdf_points": [
+        359.7431182861328,
+        258.230224609375
+      ],
+      "V_channel_inferred_m_s": 4.369970612080595,
+      "Rth_K_W": 0.8829677297552696,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "marker_id": "figure8_plate_fin_01",
+      "marker_index": 0
+    },
+    {
+      "drawing_index": 151,
+      "center_pdf_points": [
+        377.59922790527344,
+        284.69635009765625
+      ],
+      "V_channel_inferred_m_s": 6.354788172917206,
+      "Rth_K_W": 0.7293341543058922,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_02",
+      "marker_index": 1
+    },
+    {
+      "drawing_index": 152,
+      "center_pdf_points": [
+        395.6068420410156,
+        300.12017822265625
+      ],
+      "V_channel_inferred_m_s": 8.356446402382694,
+      "Rth_K_W": 0.6398001625242223,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_03",
+      "marker_index": 2
+    },
+    {
+      "drawing_index": 153,
+      "center_pdf_points": [
+        413.3028106689453,
+        311.9474792480469
+      ],
+      "V_channel_inferred_m_s": 10.32346329676145,
+      "Rth_K_W": 0.5711437003136348,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_04",
+      "marker_index": 3
+    },
+    {
+      "drawing_index": 154,
+      "center_pdf_points": [
+        430.84686279296875,
+        320.4823913574219
+      ],
+      "V_channel_inferred_m_s": 12.273593727561888,
+      "Rth_K_W": 0.5215992717538115,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "marker_id": "figure8_plate_fin_05",
+      "marker_index": 4
+    },
+    {
+      "drawing_index": 155,
+      "center_pdf_points": [
+        446.2719268798828,
+        329.2537841796875
+      ],
+      "V_channel_inferred_m_s": 13.988185468414489,
+      "Rth_K_W": 0.47068209305486064,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_06",
+      "marker_index": 5
+    },
+    {
+      "drawing_index": 156,
+      "center_pdf_points": [
+        450.9695281982422,
+        330.7396545410156
+      ],
+      "V_channel_inferred_m_s": 14.510353050791688,
+      "Rth_K_W": 0.46205674378089245,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "marker_id": "figure8_plate_fin_07",
+      "marker_index": 6
+    },
+    {
+      "drawing_index": 157,
+      "center_pdf_points": [
+        466.31825256347656,
+        336.84747314453125
+      ],
+      "V_channel_inferred_m_s": 16.21645915712417,
+      "Rth_K_W": 0.4266013836576352,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013427583210149488
+      },
+      "marker_id": "figure8_plate_fin_08",
+      "marker_index": 7
+    },
+    {
+      "drawing_index": 158,
+      "center_pdf_points": [
+        476.26231384277344,
+        341.78192138671875
+      ],
+      "V_channel_inferred_m_s": 17.321803371186725,
+      "Rth_K_W": 0.3979573372650934,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_09",
+      "marker_index": 8
+    },
+    {
+      "drawing_index": 159,
+      "center_pdf_points": [
+        485.66139221191406,
+        346.0875549316406
+      ],
+      "V_channel_inferred_m_s": 18.366569347687694,
+      "Rth_K_W": 0.3729635059476223,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "marker_id": "figure8_plate_fin_10",
+      "marker_index": 9
+    },
+    {
+      "drawing_index": 160,
+      "center_pdf_points": [
+        493.4900207519531,
+        347.9696044921875
+      ],
+      "V_channel_inferred_m_s": 19.236770065254976,
+      "Rth_K_W": 0.3620383705972373,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "marker_id": "figure8_plate_fin_11",
+      "marker_index": 10
+    },
+    {
+      "drawing_index": 161,
+      "center_pdf_points": [
+        506.4085235595703,
+        353.29283142089844
+      ],
+      "V_channel_inferred_m_s": 20.672741941502323,
+      "Rth_K_W": 0.331137497466095,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013425368811292977
+      },
+      "marker_id": "figure8_plate_fin_12",
+      "marker_index": 11
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "source": {
+    "title": "Laminar-flow heat transfer in non-circular ducts",
+    "author": "P. Wibulswas",
+    "institution": "University College London",
+    "year": 1966,
+    "url": "https://discovery.ucl.ac.uk/1381757/1/388313.pdf",
+    "pdf_relative_path": "../source-bytes/ucl_388313.pdf",
+    "pdf_sha256": "8fac58915fcb924f0fb0095f01e15c85de9af85b1f8a39405e71837e889c03ba",
+    "table": "Appendix 7.6, printed pp124–125",
+    "transcription": "Independently visually audited against the original page images; blank Reynolds cells preserved as null"
+  },
+  "conditioning": {
+    "cross_section_inches": [1, 2],
+    "wall_boundary": "Approximately uniform-temperature copper walls, water jacket",
+    "velocity_boundary": "Nominally fully developed after divergent inlet and 36-inch straight inlet length",
+    "inlet_thermal_boundary": "Nominally uniform air inlet temperature",
+    "Gz_definition": "Re Pr / (L/Dh)",
+    "property_basis": "Source-reported reduced groups; precise per-run property evaluation not recovered; nominal Pr approximately0.72",
+    "temperature_unit": "degree_Fahrenheit",
+    "target": "(Tw−Tout)/(Tw−Tin), invariant under affine temperature-scale conversion",
+    "selection": "All32 Appendix7.6 rows retained; no residual-based selection",
+    "printed_Nu_usage": "Retained only for source traceability; not a target, correction or calibration input"
+  },
+  "limitations": [
+    "The source describes transition concerns in this facility and supplies no demonstrated uncertainty-backed pure-forced laminar subset.",
+    "Downward heated flow can have opposing buoyancy. The equations omit buoyancy and secondary flow; disagreement cannot be causally assigned to one omitted mechanism.",
+    "Only centreline velocity evidence is available; source worst stated velocity-measurement accuracy approximately14%, not a propagated experimental error bound.",
+    "Thermocouple circuit precision approximately0.05°F is not a complete temperature uncertainty and not a full experimental uncertainty.",
+    "Any±0.05°F bounds shown later are explicitly illustrative display-rounding sensitivity assumptions, not confidence intervals.",
+    "Source temperature-dependent air properties and approximate wall condition are not reproduced by this constant-property ideal model.",
+    "Reported Nu does not exactly reproduce from reported Gz and temperatures. This study uses temperature attenuation and preserves the inconsistency.",
+    "Constant-heat-input flow-inversion percentages from other source runs are not transferred to these isothermal runs.",
+    "This is an untuned qualified historical comparison, not physical or aircraft validation."
+  ],
+  "columns": ["Re", "Gz", "Tin_F", "Tout_F", "Tw_F", "printed_Nu"],
+  "groups": [
+    {"length_inches": 24, "source_L_over_Dh": 18.02, "pages": [124], "rows": [
+      [655,26,70,107.5,143.3,4.5], [735,29,70.5,107.5,145.5,4.7],
+      [820,32.5,69.8,106,145.8,4.9], [900,36,69,104.5,145.8,5.1],
+      [980,39,69,103.5,148,5.25], [1060,42,69,102.5,149.2,5.4],
+      [1140,45,68,101.5,150.5,5.55], [1220,48,69,100.5,149.8,5.7],
+      [1300,51.5,69.5,100,150.8,5.9], [1390,55,69,100,151.3,6.2],
+      [1470,58,69,99.5,151,6.5], [1555,62,69.5,100,148,6.8]
+    ]},
+    {"length_inches": 13, "source_L_over_Dh": 9.76, "pages": [124,125], "rows": [
+      [655,48,70.5,102.5,155,5.3], [735,54,70.5,100.1,151.5,5.6],
+      [820,59,71,99.1,152.5,5.9], [900,65,71,98.5,153,6.3],
+      [980,71,71,97.8,153,6.7], [1060,77,72,101,160,7.2],
+      [1140,82.5,72,101,160,7.7], [null,88,71,99,159,8.1],
+      [null,94,70,98.5,159,8.6], [null,100,69.5,97.5,158.5,9.0],
+      [1560,106,69,97.5,158.5,9.7]
+    ]},
+    {"length_inches": 7.5, "source_L_over_Dh": 5.63, "pages": [125], "rows": [
+      [655,84,66,93.5,150.5,7.9], [null,95,66,93,150.7,8.5],
+      [null,105,66.5,92.8,150.5,9.3], [900,116,67,93,151.5,10.1],
+      [null,128,66.5,92.5,151.5,10.8], [1070,137,66,91,151.5,11.4],
+      [null,148,66,91,151,12], [null,159,66,90.5,153,12.5],
+      [1320,169,65.5,89.5,153,13]
+    ]}
+  ]
+}
