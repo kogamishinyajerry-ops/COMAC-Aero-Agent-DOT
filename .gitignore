@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.coverage
+htmlcov/
+.DS_Store
+output/
+
+# Full plain-text replay is generated locally; lossless compressed fixture is tracked.
+examples/reference_compare.json
