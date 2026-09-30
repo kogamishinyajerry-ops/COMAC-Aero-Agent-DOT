@@ -333,6 +333,11 @@
     }
     requestDraw() {if(this.pending)return;this.pending=true;requestAnimationFrame(()=>{this.pending=false;this.draw();});}
     draw() {
+      // Browsers can restore checkbox values on Back without a change event.
+      // Keep explanatory overlays coupled to the actual rendered state.
+      $('flow-disclaimer').hidden=!$('show-flow').checked;
+      $('flow-disclaimer').textContent=state.result?'箭头仅表示集中参数网络的连接与方向，不代表 CFD 流线或局部速度场。':'当前输入未计算，暂不显示支路箭头；请先重建并计算。';
+      $('thermal-legend').hidden=!$('show-thermal').checked||!state.result;
       if(!this.gl)return;const rect=this.canvas.getBoundingClientRect();this.width=rect.width;this.height=rect.height;if(!this.width||!this.height)return;
       const ratio=Math.min(devicePixelRatio||1,2);for(const canvas of [this.canvas,this.overlay]){if(canvas.width!==Math.round(this.width*ratio)||canvas.height!==Math.round(this.height*ratio)){canvas.width=Math.round(this.width*ratio);canvas.height=Math.round(this.height*ratio);}}
       this.basis();const gl=this.gl;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.program);gl.uniformMatrix4fv(this.locations.uMatrix,false,this.matrix());
@@ -389,7 +394,7 @@
   $$('.view-modes button').forEach(button=>button.addEventListener('click',()=>changeMode(button.dataset.mode)));
   $$('#component-tabs button').forEach(button=>button.addEventListener('click',()=>select(button.dataset.select,true)));
   $('show-labels').addEventListener('change',()=>renderer.requestDraw());
-  $('show-flow').addEventListener('change',()=>{if($('show-flow').checked&&state.mode==='assembled')changeMode('open');$('flow-disclaimer').hidden=!$('show-flow').checked;$('flow-disclaimer').textContent=state.result?'箭头仅表示集中参数网络的连接与方向，不代表 CFD 流线或局部速度场。':'当前输入未计算，暂不显示支路箭头；请先重建并计算。';renderer.requestDraw();});
+  $('show-flow').addEventListener('change',()=>{if($('show-flow').checked&&state.mode==='assembled')changeMode('open');renderer.requestDraw();});
   $('show-thermal').addEventListener('change',()=>{if($('show-thermal').checked&&state.mode==='assembled')changeMode('open');$('thermal-legend').hidden=!$('show-thermal').checked||!state.result;renderer.requestDraw();});
   $('zoom-in').addEventListener('click',()=>{renderer.zoom=clamp(renderer.zoom*1.18,.5,3.5);renderer.requestDraw();});
   $('zoom-out').addEventListener('click',()=>{renderer.zoom=clamp(renderer.zoom/1.18,.5,3.5);renderer.requestDraw();});

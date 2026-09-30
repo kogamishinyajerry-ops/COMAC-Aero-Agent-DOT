@@ -223,7 +223,10 @@ def main():
             if not page.locator('#thermal-results').is_visible():
                 page.locator('#evaluate-button').click()
                 expect(page.locator('#thermal-results')).to_be_visible(timeout=120000)
-            results['flows'].append('Navigate-away during a pending request and browser Back recovers an enabled calculation state')
+            if page.locator('#show-flow').is_checked():
+                expect(page.locator('#flow-disclaimer')).to_be_visible()
+                expect(page.locator('#flow-disclaimer')).to_contain_text('不代表 CFD')
+            results['flows'].append('Navigate-away during a pending request and browser Back recovers an enabled calculation state and any restored flow disclaimer')
 
             # Browser-native invalid input is prevented; server rejection is explicit.
             page.locator('#geom-hv_fin_count').fill('41')
@@ -315,6 +318,8 @@ def main():
             page.locator('#show-flow').check()
             page.locator('#show-thermal').check()
             expect(page.locator('#thermal-legend')).to_be_visible()
+            expect(page.locator('#flow-disclaimer')).to_be_visible()
+            expect(page.locator('#flow-disclaimer')).to_contain_text('不代表 CFD')
             page.screenshot(path=str(args.output_dir / 'ui-nacelle-screening-thermal.png'), full_page=True)
             results['flows'].append('Explicit optional 0.25x heat-load teaching case enables in-domain proxy temperatures; never presented as quarter aircraft power or physical validation')
             page.locator('#boundary-details summary').click()
@@ -322,6 +327,9 @@ def main():
             page.set_viewport_size({'width': 390, 'height': 844})
             expect(page.locator('#part-name')).to_be_visible()
             assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
+            expect(page.locator('#flow-disclaimer')).to_be_visible()
+            for key in ('main_inlet_height_mm', 'motor_bypass_gap_mm'):
+                assert page.locator(f'#geom-{key}').bounding_box()['width'] >= 75
             page.screenshot(path=str(args.output_dir / 'ui-nacelle-mobile.png'), full_page=True)
             page.set_viewport_size({'width': 1440, 'height': 1100})
             page.locator('.navigation a[href="/"]').click()

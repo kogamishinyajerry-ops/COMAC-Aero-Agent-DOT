@@ -18,3 +18,8 @@
 @media(min-width:1600px){.scene{min-height:570px}}
 @media(max-width:900px){.scene{min-height:475px}}
 @media(max-width:680px){.scene{flex:none;min-height:430px}}
+
+/* Flow semantics stay visible after Back restoration, without covering camera
+   hints or the physical scale. Numeric fields retain all four display digits. */
+.flow-disclaimer{position:static;flex-shrink:0;margin:0;border:0;border-top:1px solid #cbdfe6;border-radius:0}
+@media(max-width:680px){.field-value input{width:78px}}
