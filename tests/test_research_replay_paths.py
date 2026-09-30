@@ -27,7 +27,7 @@ class ResearchReplayPathTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory) / 'new' / 'results'
             with patch.dict(os.environ, {'RECTANGULAR_OUTPUT_DIR': str(target)}):
-                self.assertEqual(loaded['prepare_output'](), target)
+                self.assertEqual(loaded['prepare_output'](), target.resolve())
             self.assertTrue((target / 'README.md').is_file())
 
     def test_rectangular_refuses_accepted_or_code_output(self):
