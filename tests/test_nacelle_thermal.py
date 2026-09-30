@@ -10,6 +10,7 @@ from aerolab.nacelle_thermal import (
     AIR, BRANCHES, HEAT_LOADS, DEFAULT_BOUNDARY, evaluate_nacelle,
     compare_nacelle, nacelle_boundary_catalog, parse_nacelle_boundary,
     _pressure_drop, _flow_for_pressure, _run, _validate_metrics,
+    _uniform_flux_solution, _friction_nusselt, _branch_transport, SOURCE_CASES,
 )
 
 
@@ -44,6 +45,59 @@ class NacelleBoundaryTests(unittest.TestCase):
         bad["channels"]["motor_internal"]["hydraulic_diameter_m"] *= 2
         with self.assertRaisesRegex(ValueError, "hydraulic diameter"):
             _validate_metrics(bad)
+
+    def test_contracted_serial_section_is_in_mach_and_reynolds_guards(self):
+        channel = {"area_m2": .1, "wetted_perimeter_m": 1.0, "hydraulic_diameter_m": .4,
+                   "length_m": 1.0, "heated_area_m2": .5}
+        channel["segments"] = [dict(channel, area_m2=.001, wetted_perimeter_m=.2, hydraulic_diameter_m=.02)]
+        result = _branch_transport(channel, 2, 1)
+        self.assertLess(result["velocity_m_s"], 30)
+        self.assertGreater(result["mach_approx"], .3)
+        self.assertGreater(result["max_section_reynolds"], 1e6)
+        self.assertLess(result["reynolds"], 1e6)
+
+
+class AnalyticalThermalBenchmarks(unittest.TestCase):
+    def test_uniform_flux_two_wall_closed_form_and_independent_march(self):
+        # 150 W / 10 W/K = 15 K air rise; each wall has its own Q/(h A).
+        result = _uniform_flux_solution(20, 10, 100, {"a": 1, "b": 2}, {"a": 100, "b": 50})
+        self.assertEqual(result["air_mean_c"], 27.5)
+        self.assertEqual(result["surface_mean_c"], {"a": 28.5, "b": 27.75})
+        self.assertEqual(result["surface_max_c"], {"a": 36, "b": 35.25})
+        for cells in (1, 4, 16, 64):
+            # Independent finite-volume balance uses local heat and local area.
+            air, wall_integral = 20.0, 0.0
+            for _ in range(cells):
+                next_air = air + (100 / cells + 50 / cells) / 10
+                wall_integral += (.5 * (air + next_air) + (100 / cells) / (100 / cells)) / cells
+                air = next_air
+            self.assertAlmostEqual(air, 35)
+            self.assertAlmostEqual(wall_integral, result["surface_mean_c"]["a"])
+            self.assertAlmostEqual(air + 100 / (100 * 1), result["surface_max_c"]["a"])
+        for sample in result["samples"]:
+            self.assertEqual(sample["air_c"], 20 + 15 * sample["flow_fraction"])
+
+    def test_exact_circular_uniform_flux_laminar_limit(self):
+        # Independent Simpson integration of the analytical parabolic-velocity
+        # pipe solution: (Tw-T(r))*k/(q''R) = 3/4-r^2+r^4/4, r in [0,1].
+        n = 200
+        def integrate(fn):
+            return sum((1 if i in (0, n) else 4 if i % 2 else 2) * fn(i / n) for i in range(n + 1)) / (3 * n)
+        bulk_deficit = integrate(lambda r: (.75 - r*r + r**4 / 4) * (1-r*r) * r) / integrate(lambda r: (1-r*r) * r)
+        independent_nu = 2 / bulk_deficit
+        friction, nu, _ = _friction_nusselt(1000, .71, uniform_flux=True)
+        self.assertAlmostEqual(independent_nu, nu, places=7)
+        self.assertEqual(friction, .064)
+        self.assertEqual(_friction_nusselt(1000, .71)[1], 3.66)
+
+    def test_gnielinski_hand_calculated_equation_case(self):
+        # Re=10000, Pr=0.71, smooth f=0.0314798027567467; this checks
+        # equation implementation only, never applicability to an X-57 motor.
+        f, nu, regime = _friction_nusselt(10000, .71)
+        self.assertAlmostEqual(f, .0314798027567467, places=13)
+        expected = (.0314798027567467 / 8) * 9000 * .71 / (1 + 12.7 * math.sqrt(.0314798027567467 / 8) * (.71**(2/3)-1))
+        self.assertAlmostEqual(nu, expected, places=11)
+        self.assertEqual(regime, "turbulent_equivalent_duct")
 
 
 class NacelleNetworkTests(unittest.TestCase):
@@ -153,6 +207,17 @@ class NacelleNetworkTests(unittest.TestCase):
         self.assertTrue(result["diagnostics"]["conservation_pass"])
         self.assertGreater(result["flow"]["branches"]["lv_fresh_left"]["inlet_c"], 35.9)
 
+    def test_motor_axial_coordinate_follows_reversed_flow(self):
+        result = self.run_case(boundary={"ram_recovery": 0, "bypass_propeller_pressure_pa": 1000})
+        for name in ("motor_internal", "motor_slots"):
+            branch = result["flow"]["branches"][name]
+            self.assertLess(branch["mass_flow_kg_s"], 0)
+            self.assertEqual(branch["axial_heat_balance"]["flow_direction"], "reversed")
+            self.assertEqual(branch["actual_from_node"], "motor_mix")
+            self.assertEqual(branch["axial_heat_balance"]["samples"][0]["air_c"], branch["inlet_c"])
+            self.assertEqual(branch["axial_heat_balance"]["samples"][-1]["air_c"], branch["outlet_c"])
+        self.assertTrue(result["diagnostics"]["conservation_pass"])
+
     def test_motor_slots_and_multiwall_energy_are_distinct(self):
         branches = self.base["flow"]["branches"]
         self.assertGreater(branches["motor_slots"]["mass_flow_kg_s"], 0)
@@ -161,12 +226,16 @@ class NacelleNetworkTests(unittest.TestCase):
         q_winding = self.base["thermal"]["components"]["motor_winding"]["heat_by_branch_w"]
         for name in ("motor_internal", "motor_slots"):
             branch = branches[name]
-            ntu = branch["ua_w_k"] / branch["air_capacity_w_k"]
-            mean = branch["inlet_c"] + branch["heat_w"] / branch["air_capacity_w_k"] * (1 / (1 - math.exp(-ntu)) - 1 / ntu)
             surfaces = self.metrics["channels"][name]["heated_surfaces_m2"]
-            wall_heat = {key: branch["h_w_m2_k"] * area * (branch["heated_surface_temperatures_c"][key] - mean) for key, area in surfaces.items()}
+            wall_heat = {key: branch["h_w_m2_k"] * area * (branch["heated_surface_temperatures_c"][key] - branch["outlet_c"]) for key, area in surfaces.items()}
             self.assertAlmostEqual(wall_heat["motor_winding"], q_winding[name], places=7)
             self.assertAlmostEqual(sum(wall_heat.values()), branch["heat_w"], places=7)
+            self.assertEqual(branch["heat_boundary"], "uniform_axial_heat_flux")
+            axial = branch["axial_heat_balance"]
+            for sample in axial["samples"]:
+                expected_air = branch["inlet_c"] + sample["flow_fraction"] * branch["heat_w"] / branch["air_capacity_w_k"]
+                self.assertAlmostEqual(sample["air_c"], expected_air)
+                self.assertAlmostEqual(sum(branch["h_w_m2_k"] * area * (sample["wall_c"][key] - expected_air) for key, area in surfaces.items()), branch["heat_w"], places=7)
         gap_walls = branches["motor_internal"]["heated_surface_temperatures_c"]
         self.assertNotAlmostEqual(gap_walls["motor_winding"], gap_walls["motor_magnet"])
 
@@ -193,6 +262,69 @@ class NacelleNetworkTests(unittest.TestCase):
         boost = self.run_case(boundary={"airspeed_m_s": 0, "main_propeller_pressure_pa": 500, "bypass_propeller_pressure_pa": 500, "lv_propeller_pressure_pa": 500})
         self.assertGreater(boost["flow"]["total_inlet_kg_s"], 0)
         self.assertTrue(boost["diagnostics"]["conservation_pass"])
+
+    def test_three_source_cases_are_unfitted_context_and_boundary_modes(self):
+        for preset in nacelle_boundary_catalog()["presets"]:
+            if not preset["id"].startswith("source_pressure_"):
+                continue
+            result = evaluate_nacelle(boundary=preset["boundary"])
+            source = result["source_flow_diagnostic"]
+            case = SOURCE_CASES[source["reference_case"]]
+            self.assertTrue(source["matched_nominal_flight_inputs"])
+            self.assertFalse(source["matched_geometry_or_thermal_nodes"])
+            self.assertFalse(source["validation"])
+            self.assertEqual(source["boundary_mode"], "source_pressure_sensitivity")
+            self.assertEqual(source["published_kg_s"]["motor_gap"], case["motor_flow_lbm_s"][0] * .45359237)
+            self.assertEqual(result["source_temperature_diagnostic"]["published_analysis_c"]["motor_winding"], case["temperature_c"][0])
+            # Resolve each source static exit independently; source data rounded.
+            psi = 6894.757293168
+            for node, offset in zip(("top_exhaust", "lower_exhaust"), case["exit_static_offsets_psi"]):
+                self.assertAlmostEqual(result["flow"]["nodes"][node]["pressure_pa"], offset * psi)
+        modified = evaluate_nacelle(boundary={"heat_scale": .25})
+        self.assertFalse(modified["source_temperature_diagnostic"]["matched_nominal_flight_inputs"])
+
+    def test_patch_resistance_budget_and_required_ua_are_algebraic_only(self):
+        result = self.base
+        for budget in result["thermal"]["motor_patch_budget"].values():
+            self.assertAlmostEqual(budget["inlet_c"] + sum(budget["rise_c"].values()), budget["temperature_c"])
+            wall = result["flow"]["branches"][budget["branch_id"]]["heated_surface_temperatures_c"][budget["component"]]
+            self.assertAlmostEqual(wall + budget["rise_c"]["solid_conduction"] + budget["rise_c"]["contact"], budget["temperature_c"])
+            for closure in budget["fixed_flow_target_closure"].values():
+                if closure["possible_by_convection_alone_at_fixed_flow"]:
+                    self.assertAlmostEqual(budget["infinite_h_temperature_floor_c"] + budget["heat_w"] / closure["required_patch_ua_w_k"], closure["target_c"])
+                else:
+                    self.assertIsNone(closure["required_patch_ua_w_k"])
+        slot = result["thermal"]["motor_patch_budget"]["motor_winding:motor_slots"]
+        self.assertGreater(slot["rise_c"]["convection"], slot["rise_c"]["solid_conduction"] + slot["rise_c"]["contact"])
+        # An optimistic contact-free model cannot remove its convection deficit.
+        self.assertGreater(slot["temperature_c"] - slot["rise_c"]["solid_conduction"] - slot["rise_c"]["contact"], 200)
+
+    def test_thermal_guard_is_a_fixed_property_heat_scale_not_a_power_limit(self):
+        scale = self.base["diagnostics"]["heat_scale_to_200c_guard_at_fixed_flow"]
+        result = self.run_case(boundary={"heat_scale": scale})
+        self.assertAlmostEqual(result["thermal"]["summary"]["max_temperature_c"], 200, places=8)
+        self.assertFalse(result["diagnostics"]["correlation_applicability"]["actual_geometry_validated"])
+        quarter = self.run_case(boundary={"heat_scale": .25})
+        for name, node in self.base["thermal"]["components"].items():
+            self.assertAlmostEqual(quarter["thermal"]["components"][name]["temperature_c"] - 35.9, .25 * (node["temperature_c"] - 35.9))
+
+    def test_real_lv_transition_speed_exceeds_inlet_and_exchange(self):
+        # Reviewer reproduction: a loft-section throat can be faster than both
+        # the scoop aperture and backplate. It must invalidate the Mach guard.
+        geometry = {"upper_inlet_height_mm": 15, "backplate_gap_mm": 10, "cmc_tilt_deg": 60}
+        boundary = {"density_kg_m3": .3, "airspeed_m_s": 80, "lv_propeller_pressure_pa": 3000, "heat_scale": 0}
+        result = self.run_case(geometry, boundary)
+        branch = result["flow"]["branches"]["lv_fresh_left"]
+        sound = math.sqrt(1.4 * 287.05 * (35.9 + 273.15))
+        metrics = nacelle_metrics(geometry)["channels"]["lv_fresh_left"]
+        speeds = [abs(branch["mass_flow_kg_s"]) / (.3 * section["area_m2"])
+                  for section in metrics["segments"] + metrics["section_stations"]]
+        self.assertGreater(max(speeds) / sound, .3)
+        self.assertLess(max(branch["velocity_m_s"], branch["heat_exchange_velocity_m_s"]) / sound, .3)
+        self.assertAlmostEqual(branch["mach_approx"], max(speeds) / sound)
+        self.assertEqual(len(branch["section_transport"]), 1 + len(metrics["segments"]) + len(metrics["section_stations"]) + 1)
+        self.assertFalse(result["thermal"]["summary"]["within_model_limits"])
+        self.assertEqual(result["thermal"]["summary"]["result_status"], "out_of_domain_diagnostic")
 
     def test_reduced_load_is_optional_heat_fraction_not_power_claim(self):
         catalog = nacelle_boundary_catalog()

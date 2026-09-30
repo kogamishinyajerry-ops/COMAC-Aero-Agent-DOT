@@ -51,6 +51,9 @@ ASSUMPTIONS = [
     "Local wing uses an illustrative NACA 2412 section; the NASA CFD figures omit the full wing and do not specify this section.",
     "Solid-volume mass uses illustrative homogeneous material densities; it is geometric proxy mass, not weighed aircraft hardware. Gross component volumes include the small declared attachment overlaps; installation-context wing is excluded.",
     "Air channels are reduced-order equivalent sections derived from the same dimensions; this is not a solved CFD volume mesh or a validated pressure-loss model.",
+    "Upper ear mouths use source-described half-moon topology with inferred 74 mm width and editable height; serial section areas come from the same polygon rings as CAD.",
+    "Motor-support tubes use an inferred 12 mm outside diameter and 1.2 mm wall; hollowness corrects a construction assumption, not measured NASA hardware.",
+    "Cowling control stations are inferred; monotone cubic interpolation, <=55 mm spacing and <=0.15 mm quarter/midpoint sampled deviation improve contour representation, not source dimensional accuracy.",
     "Named STEP solids are regenerated with CadQuery/OpenCascade. Browser fallback is closed procedural surface tessellation of the same parameterized construction.",
 ]
 DENSITIES = {"aluminum": 2700., "copper_proxy": 6000., "magnet_proxy": 7400., "steel": 7850., "composite": 1550., "electronics_proxy": 1850.}
@@ -131,7 +134,12 @@ def provenance():
             "source_location":"Figures 5–7, printed pages 7–8", "scale_url":SCALE_URL,
             "source_topology":["outrunner rotor/stator and cooling slots","twin tilted aft CMCs","HV fins and LV backplates","upper ear inlets","internal baffles and struts","lower nacelle outlet"],
             "source_scale":{"motor_diameter_mm":355.6,"prop_diameter_mm":1524.},
-            "all_other_dimensions":"inferred editable reconstruction", "assumptions":ASSUMPTIONS}
+            "all_other_dimensions":"inferred editable reconstruction", "assumptions":ASSUMPTIONS,
+            "feature_evidence":[
+                {"feature":"upper_ear_mouth", "source_fact":"Paired half-moon inlets feed cool ambient jets to separate CMC backplates", "location":"2023 paper, p.8, Fig.7 and final paragraph", "construction":"Half-ellipse roof and flat sill; dimensions and transition stations inferred", "dimensional_confidence":"unmeasured"},
+                {"feature":"cowling_contour", "source_fact":"Isolated Mod II nacelle envelope and lower exhaust topology", "location":"2023 paper, pp.7–8, Figs.4,6–7", "construction":"Inferred station envelope with shape-preserving interpolation; no image-derived metrology", "dimensional_confidence":"unmeasured"},
+                {"feature":"motor_support_tubes", "source_fact":"Major structural struts/braces included in source model", "location":"2023 paper, p.6, section III.A; Fig.5", "construction":"Inferred hollow round support sections, 12 mm OD / 1.2 mm wall; strength unanalysed", "dimensional_confidence":"unmeasured"}
+            ]}
 
 
 def nacelle_catalog():
@@ -195,6 +203,104 @@ def _rod(a,b,r,n=16):
     return _loft([[[pt[j]+r*(v[j]*math.cos(i*2*math.pi/n)+w[j]*math.sin(i*2*math.pi/n)) for j in range(3)] for i in range(n)] for pt in (a,b)])
 
 
+
+def _hollow_rod(a,b,r,wall=1.2,n=24):
+    """Two closed half-annuli, with genuinely empty core and inferred wall."""
+    d=[b[i]-a[i] for i in range(3)];length=math.sqrt(sum(v*v for v in d));u=[v/length for v in d]
+    helper=[0.,0.,1.] if abs(u[2])<.9 else [0.,1.,0.]
+    v=[u[1]*helper[2]-u[2]*helper[1],u[2]*helper[0]-u[0]*helper[2],u[0]*helper[1]-u[1]*helper[0]]
+    vl=math.sqrt(sum(t*t for t in v));v=[t/vl for t in v]
+    w=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]]
+    return [_loft([[[a[j]+x*u[j]+y*v[j]+z*w[j] for j in range(3)] for x,y,z in ring] for ring in part['rings']]) for part in _tube(0,length,r,r-wall,n)]
+
+
+def _shape_preserving(xs,ys,x):
+    """Fritsch-Carlson-style monotone cubic; no overshoot between control stations."""
+    h=[b-a for a,b in zip(xs,xs[1:])];d=[(b-a)/hh for a,b,hh in zip(ys,ys[1:],h)]
+    slopes=[d[0]]
+    for i in range(1,len(xs)-1):
+        if d[i-1]*d[i]<=0:slopes.append(0.)
+        else:
+            w1=2*h[i]+h[i-1];w2=h[i]+2*h[i-1]
+            slopes.append((w1+w2)/(w1/d[i-1]+w2/d[i]))
+    slopes.append(d[-1])
+    for i,(a,b) in enumerate(zip(xs,xs[1:])):
+        if a<=x<=b:
+            t=(x-a)/h[i]
+            return (2*t**3-3*t*t+1)*ys[i]+(t**3-2*t*t+t)*h[i]*slopes[i]+(-2*t**3+3*t*t)*ys[i+1]+(t**3-t*t)*h[i]*slopes[i+1]
+    return ys[0] if x<xs[0] else ys[-1]
+
+
+def _cowling_station(p,x):
+    scale=p.nacelle_length_mm/1470.;W=p.nacelle_width_mm/2;H=p.nacelle_height_mm/2;R=p.motor_diameter_mm/2
+    nodes=[(-25,R+p.main_inlet_height_mm,R+p.main_inlet_height_mm,0),(130,W*.92,H*.96,0),(270,W,H,0),(430,W,H,-3),(520,W*.97,H*.99,-4),(680,W*.85,H*.84,0),(920,W*.58,H*.55,28),(1180,W*.31,H*.29,48),(1445,7,8,59)]
+    return (x,*[_shape_preserving([v[0] for v in nodes],[v[j] for v in nodes],x/scale) for j in range(1,4)])
+
+
+@lru_cache(maxsize=32)
+def _cowling_lattice(p):
+    """Shared profile refinement, bounded against its inferred cubic only."""
+    scale=p.nacelle_length_mm/1470.;vent_start=258-p.motor_exhaust_area_mm2/(150*scale)
+    datums=sorted(set([-25,65,130,vent_start,258,270,350,430,520,600,680,800,920,1060,1180,1445]))
+    coordinates=[]
+    def refine(a,b):
+        qa,qb=_cowling_station(p,a*scale),_cowling_station(p,b*scale)
+        deviation=max(abs(_cowling_station(p,(a+(b-a)*f)*scale)[j]-(qa[j]+f*(qb[j]-qa[j]))) for f in (.25,.5,.75) for j in (1,2,3))
+        if (b-a)*scale>55 or deviation>.15:
+            mid=(a+b)/2;refine(a,mid);refine(mid,b)
+        else:coordinates.append(a)
+    for a,b in zip(datums,datums[1:]):refine(a,b)
+    coordinates.append(datums[-1])
+    return tuple(coordinates)
+
+
+def _cowling_stations(p,xs):
+    # One common axial lattice avoids nonmatching seams between adjacent panels.
+    coordinates=sorted(set([x for x in _cowling_lattice(p) if min(xs)<=x<=max(xs)]+list(xs)))
+    return [_cowling_station(p,x*p.nacelle_length_mm/1470.) for x in coordinates]
+
+
+def _profile_integral(stations):
+    """Exact projected half-width integral for the CAD's piecewise ruled stations."""
+    return sum((b[0]-a[0])*(a[1]+b[1])/2 for a,b in zip(stations,stations[1:]))
+
+
+def _lv_duct_sections(p,sy):
+    """D-section floor origins, section heights and normal tilt, shared with metrics."""
+    scale=p.nacelle_length_mm/1470.;tilt=math.radians(p.cmc_tilt_deg)
+    u=-p.cmc_length_mm/2;z=p.cmc_thickness_mm/2+4
+    ex=455*scale+math.cos(tilt)*u+math.sin(tilt)*z
+    ez=16-math.sin(tilt)*u+math.cos(tilt)*z
+    floor=p.nacelle_height_mm/2*.91
+    return [(275*scale,sy,floor,p.upper_inlet_height_mm,0.),
+            (300*scale,sy,floor-1,p.upper_inlet_height_mm,0.),
+            (345*scale,sy,floor-27,p.upper_inlet_height_mm*.8,tilt*.35),
+            (ex,sy,ez,p.backplate_gap_mm,tilt)]
+
+
+def _d_section(section,outer=False,n=24):
+    """Half-ellipse roof endpoints; closing the ring gives the flat inner sill."""
+    x,y,z,h,slant=section;w=37.+(3 if outer else 0);h+=3 if outer else 0
+    return [[x+math.sin(slant)*h*math.sin(i*math.pi/n),y+w*math.cos(i*math.pi/n),z+math.cos(slant)*h*math.sin(i*math.pi/n)] for i in range(n+1)]
+
+
+def _section_area_perimeter(points):
+    # Vector area works for any planar section orientation; use actual CAD chords.
+    normal=[0.,0.,0.];perimeter=0.
+    for a,b in zip(points,points[1:]+points[:1]):
+        normal[0]+=(a[1]-b[1])*(a[2]+b[2]);normal[1]+=(a[2]-b[2])*(a[0]+b[0]);normal[2]+=(a[0]-b[0])*(a[1]+b[1])
+        perimeter+=math.dist(a,b)
+    return math.sqrt(sum(v*v for v in normal))/2,perimeter
+
+
+def _lv_duct_parts(p,sy):
+    sections=_lv_duct_sections(p,sy)
+    roof=_loft([_d_section(v,True)+list(reversed(_d_section(v))) for v in sections])
+    floors=[]
+    for x,y,z,h,slant in sections:
+        floors.append([[x+math.sin(slant)*v,y+w,z+math.cos(slant)*v] for w,v in [(-40.,-3.),(40.,-3.),(40.,0.),(-40.,0.)]])
+    return [roof,_loft(floors)]
+
 def _foil(chord,thickness=.12,n=44):
     # Cosine stations; close trailing edge and maintain finite tip thickness.
     points=[]
@@ -216,18 +322,11 @@ def _construction(p):
     C=[]; add=C.append; L=p.nacelle_length_mm; W=p.nacelle_width_mm/2; H=p.nacelle_height_mm/2; R=p.motor_diameter_mm/2
     scale=L/1470.
     # Crescent-shell lofts leave actual paired upper openings and lower outlet.
-    def station(x):
-        t=x/scale
-        nodes=[(-25,R+p.main_inlet_height_mm,R+p.main_inlet_height_mm,0),(130,W*.92,H*.96,0),(270,W,H,0),(430,W,H,-3),(520,W*.97,H*.99,-4),(680,W*.85,H*.84,0),(920,W*.58,H*.55,28),(1180,W*.31,H*.29,48),(L/scale-25,7,8,59)]
-        for a,b in zip(nodes,nodes[1:]):
-            if a[0] <= t <= b[0]:
-                f=(t-a[0])/(b[0]-a[0]); return (x,*[a[i]+f*(b[i]-a[i]) for i in range(1,4)])
-        return (x,*nodes[-1][1:])
-    def segment(xs,a,b):return _shell([station(x*scale) for x in xs],a,b)
+    station=lambda x:_cowling_station(p,x)
+    def segment(xs,a,b):return _shell(_cowling_stations(p,xs),a,b)
     vent_length=p.motor_exhaust_area_mm2/150.
     vent_end=258.;vent_start=vent_end-vent_length/scale
-    vent_mean_ry=(station(vent_start*scale)[1]+station(vent_end*scale)[1])/2
-    vent_half=math.asin(75/vent_mean_ry)
+    vent_half=math.asin(p.motor_exhaust_area_mm2/(2*_profile_integral(_cowling_stations(p,[vent_start,vent_end]))))
     cuts=sorted(set([-25,65,130,vent_start,vent_end,270,350,430,520,680]));up=[]
     for x0,x1 in zip(cuts,cuts[1:]):
         mid=(x0+x1)/2;blocked=[]
@@ -239,7 +338,7 @@ def _construction(p):
         for a,b in intervals:up.append(segment([x0,x1],a,b))
     add(_component('cowling_upper','Upper removable cowling with twin scoop openings','shell',up,(.79,.85,.89),.18,(0,0,240),material='composite'))
     # Width of physical vent follows the outlet area; length remains 160 mm.
-    opening_angle=2*math.asin(p.outlet_area_mm2/(2*(160*scale)*(.91*W)))
+    opening_angle=2*math.asin(p.outlet_area_mm2/(2*_profile_integral(_cowling_stations(p,[520,600,680]))))
     low=[segment([-25,65,130,270,430,520],math.pi,2*math.pi)]
     low += [segment([520,600,680],math.pi,1.5*math.pi-opening_angle/2),segment([520,600,680],1.5*math.pi+opening_angle/2,2*math.pi)]
     add(_component('cowling_lower','Lower cowling with open nacelle exhaust','shell',low,(.66,.75,.82),.18,(0,0,-220),material='composite'))
@@ -334,27 +433,14 @@ def _construction(p):
         for edge in (-1,1):
             parts=tr([_box(length+14,3,p.hv_fin_height_mm+12,(0,edge*(width/2+4),-thick/2-8-p.hv_fin_height_mm/2))])
             add(_component(f'cmc_{side}_baffle_{edge:+d}',f'{side.title()} HV cooling side baffle','baffle',parts,(.59,.65,.68),.7,(0,sign*210,-35)))
-        # Smooth duct walls: open section at both ends, not a filled airflow box.
-        duct=[]
-        scoop_z=H*.91
-        h=p.upper_inlet_height_mm; w=74.
-        for a0,a1 in [(0,math.pi),(math.pi,2*math.pi)]:
-            rings=[]
-            endpoint_local=(-length/2,0,thick/2+4+p.backplate_gap_mm/2)
-            ex=cmc_x+math.cos(tilt)*endpoint_local[0]+math.sin(tilt)*endpoint_local[2]
-            ez=16-math.sin(tilt)*endpoint_local[0]+math.cos(tilt)*endpoint_local[2]
-            for j,(x,z,rz) in enumerate([(275*scale,scoop_z+h*.5,h*.5+4),(300*scale,scoop_z+h*.48,h*.5+4),(345*scale,scoop_z-8,h*.5+3),(ex,ez,p.backplate_gap_mm/2)]):
-                slant=tilt if j==3 else 0.
-                outer=[[x+math.sin(slant)*rz*math.sin(a0+(a1-a0)*i/16),sy+(w/2+3)*math.cos(a0+(a1-a0)*i/16),z+math.cos(slant)*rz*math.sin(a0+(a1-a0)*i/16)] for i in range(17)]
-                inner=[[x+math.sin(slant)*(rz-3)*math.sin(a0+(a1-a0)*i/16),sy+(w/2)*math.cos(a0+(a1-a0)*i/16),z+math.cos(slant)*(rz-3)*math.sin(a0+(a1-a0)*i/16)] for i in range(16,-1,-1)]
-                rings.append(outer+inner)
-            duct.append(_loft(rings))
-        add(_component(f'lv_inlet_{side}',f'{side.title()} upper ear inlet / LV fresh-air duct','duct',duct,(.20,.58,.74),.9,(0,sign*85,160)))
+        # The paper explicitly describes half-moon "Mickey Ear" mouths. A
+        # half-ellipse roof and flat sill remain open, transitioning to the LV jet.
+        add(_component(f'lv_inlet_{side}',f'{side.title()} half-moon ear inlet / LV fresh-air duct','duct',_lv_duct_parts(p,sy),(.20,.58,.74),.9,(0,sign*85,160),source_note='Half-moon inlet topology from 2023 p.8; 74 mm width, height, wall and transition stations are inferred'))
     # Tubular engine mount is routed outside both CMC envelopes, inside skin.
     for side in (-1,1):
         for z in (-1,1):
             route=[(211,side*142,z*61),(300*scale,side*223,z*65),(560*scale,side*223,z*65),(650*scale,side*185,65)]
-            add(_component(f'mount_strut_{side:+d}_{z:+d}','Motor-to-wing routed mounting tube','structure',[_rod(a,b,6) for a,b in zip(route,route[1:])],(.43,.48,.52),1,(0,side*50,z*60),material='steel'))
+            add(_component(f'mount_strut_{side:+d}_{z:+d}','Hollow motor-to-wing routed mounting tube','structure',[part for a,b in zip(route,route[1:]) for part in _hollow_rod(a,b,6)],(.43,.48,.52),1,(0,side*50,z*60),material='steel',source_note='Structural-strut topology from 2023 p.6 / Fig.5; route, 12 mm OD and 1.2 mm hollow wall are inferred, no stress validation'))
         for z in (-1,1):
             a=(290*scale,side*216,z*70);b=(590*scale,side*216,z*70)
             add(_component(f'cmc_frame_{side:+d}_{z:+d}','CMC cradle longitudinal rail','structure',[_rod(a,b,5)],(.49,.55,.59),1,(0,side*60,z*40)))
@@ -488,12 +574,31 @@ def _metrics(p):
         # Backplate jet/confinement path differs from scoop inlet hydraulic diameter.
         exchanger=_channel((p.cmc_width_mm-14)*p.backplate_gap_mm,2*(p.cmc_width_mm-14+p.backplate_gap_mm),p.cmc_length_mm,p.cmc_width_mm*p.cmc_length_mm)
         exchanger['gap_m']=p.backplate_gap_mm*.001
-        scoop={k:v for k,v in channels[key].items() if k in ('area_m2','wetted_perimeter_m','length_m','heated_area_m2','hydraulic_diameter_m')}
-        scoop.update(length_m=.180,heated_area_m2=0.)
+        sections=_lv_duct_sections(p,0.)
+        opening_metrics=[_section_area_perimeter(_d_section(section)) for section in sections]
+        # Piecewise serial transitions use CAD section midpoints. This replaces
+        # the former constant elliptical 180 mm inlet surrogate without a CFD claim.
+        duct_segments=[]
+        for index,(a,b) in enumerate(zip(sections,sections[1:])):
+            # The midpoint is the linear interpolation of the actual loft rings,
+            # including their oblique normals, rather than a new ideal section.
+            middle=[[sum(v)/2 for v in zip(pa,pb)] for pa,pb in zip(_d_section(a),_d_section(b))]
+            area,perimeter=_section_area_perimeter(middle)
+            def centroid(q):
+                x,y,z,h,slant=q;c=2*h*sum(math.sin(i*math.pi/24) for i in range(1,24))/(3*24)
+                return (x+math.sin(slant)*c,y,z+math.cos(slant)*c)
+            duct_segments.append(_channel(area,perimeter,math.dist(centroid(a),centroid(b)),reference_plane=f'D-section transition {index+1}: exact midpoint polygon, straight centroid path'))
+        inlet_area,inlet_perimeter=opening_metrics[0]
+        channels[key].update(_channel(inlet_area,inlet_perimeter,sum(c['length_m'] for c in duct_segments)*1e3,p.cmc_width_mm*p.cmc_length_mm))
         channels[key]['heat_exchange']=exchanger
-        channels[key]['segments']=[scoop,exchanger]
-        channels[key]['length_m']=scoop['length_m']+exchanger['length_m']
-        channels[key]['heat_exchange_note']='Inferred nominal backplate standoff with open connector end; full-plate jet heat-transfer area, not a sealed CFD duct'
+        channels[key]['segments']=duct_segments+[exchanger]
+        channels[key]['length_m']=sum(segment['length_m'] for segment in channels[key]['segments'])
+        channels[key]['section_profile']='half_ellipse_with_flat_sill'
+        channels[key]['inlet_width_m']=.074
+        channels[key]['inlet_height_m']=p.upper_inlet_height_mm*.001
+        channels[key]['inlet_analytic_area_m2']=math.pi*37*p.upper_inlet_height_mm/2*1e-6
+        channels[key]['section_stations']=[{'floor_origin_mm':list(q[:3]),'height_mm':q[3],'tilt_rad':q[4],'area_m2':a*1e-6,'perimeter_m':perimeter*1e-3} for q,(a,perimeter) in zip(sections,opening_metrics)]
+        channels[key]['heat_exchange_note']='D-shaped scoop transition to inferred backplate standoff with open connector end; full-plate jet area, not a sealed CFD duct'
     comps={};volumes={};mass=0;volume=0
     for c in _meshed(p):
         v=c['volume_m3'];m=c['mass_kg']
@@ -517,7 +622,7 @@ def _metrics(p):
             if c['id'].endswith('_cpu'):area=54*46*1e-6;path=.010
             if c['id'].endswith('_acdc'):area=72*60*1e-6;path=.010
             comps[c['id']].update(conduction_area_m2=area,conduction_length_m=path,conduction_provenance=path_note)
-    return {'parameters':asdict(p),'fingerprint':nacelle_fingerprint(p),'channels':channels,'components':comps,'mass_kg':mass,'solid_volume_m3':volume,'material_volumes_m3':volumes,'component_count':len(comps),'method':'closed procedural loft volume and dimensional equivalent flow sections','assumptions':ASSUMPTIONS,'flow_geometry_role':'network_equivalent_sections_only; no volumetric CFD air mesh or air-solid mass','mass_scope':'nacelle hardware only, host wing installation-context volume excluded','installation_context_volume_m3':sum(c['volume_m3'] for c in _meshed(p) if c['role']=='installation_context')}
+    return {'parameters':asdict(p),'fingerprint':nacelle_fingerprint(p),'channels':channels,'components':comps,'mass_kg':mass,'solid_volume_m3':volume,'material_volumes_m3':volumes,'component_count':len(comps),'method':'closed procedural loft volume and dimensional equivalent flow sections','assumptions':ASSUMPTIONS,'resolution':{'cowling_max_axial_station_spacing_mm':55.,'cowling_sampled_deviation_tolerance_mm':.15,'cowling_station_count':len(_cowling_lattice(p)),'cowling_interpolation':'shape-preserving cubic through inferred stations, sampled into ruled CAD','ear_roof_segments':24,'support_tube_circumferential_segments':24,'support_tube_outer_diameter_mm':12.,'support_tube_wall_mm':1.2,'dimensional_accuracy':'unmeasured; numerical refinement does not increase source dimensional accuracy'},'flow_geometry_role':'network_equivalent_sections_only; no volumetric CFD air mesh or air-solid mass','mass_scope':'nacelle hardware only, host wing installation-context volume excluded','installation_context_volume_m3':sum(c['volume_m3'] for c in _meshed(p) if c['role']=='installation_context')}
 
 
 def nacelle_metrics(params=None):

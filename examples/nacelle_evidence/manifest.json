@@ -1,0 +1,61 @@
+{
+  "schema": "aerolab-nacelle-evidence-index-v1",
+  "storage": "one_complete_case_per_json",
+  "metadata": {
+    "schema": "aerolab-modii-reconstruction-evidence-v1",
+    "scope": "Public-source topology and loads, inferred dimensions and uncalibrated reduced-order network. Software conservation evidence is not physical validation.",
+    "source": "https://ntrs.nasa.gov/citations/20230006888"
+  },
+  "case_file_max_bytes": 200000,
+  "reconstructed_data_sha256": "a4c65decb84364b68718c7c93863b31978ff1f9b1ec5ee04e45adbec26e7bf58",
+  "case_files": [
+    {
+      "name": "source_peak_reference",
+      "file": "source_peak_reference.json",
+      "bytes": 80545,
+      "sha256": "5c64bdf118426765152f98ca1ef77bd9e690d23b10469f44965b599af49135ed"
+    },
+    {
+      "name": "larger_lv_intakes",
+      "file": "larger_lv_intakes.json",
+      "bytes": 80442,
+      "sha256": "1b5932d2b9ba5e7adf11ae54014d7f076026dd9bc81a3d2d25e39586a7f149fe"
+    },
+    {
+      "name": "more_hv_fins",
+      "file": "more_hv_fins.json",
+      "bytes": 80373,
+      "sha256": "2fe64a0ee97ceb6388bcbd70aaccd6cb30310502fbf1b2907d57770d712ffb95"
+    },
+    {
+      "name": "larger_motor_bypass",
+      "file": "larger_motor_bypass.json",
+      "bytes": 80440,
+      "sha256": "9fc199e3ea6a46f91fd5a10a4096fef68694c8ae76455c13452063dbcb42877a"
+    },
+    {
+      "name": "source_mcp",
+      "file": "source_mcp.json",
+      "bytes": 80445,
+      "sha256": "ffd97a185d2c32853df236a442faa814f41f413c1e4df538f948c34d4e7a6154"
+    },
+    {
+      "name": "no_forced_flow",
+      "file": "no_forced_flow.json",
+      "bytes": 73119,
+      "sha256": "8cae6970b74577bfe6a67445fc8f8a05f0402e741956e3eb511edc95110d752f"
+    },
+    {
+      "name": "reduced_heat_screening",
+      "file": "reduced_heat_screening.json",
+      "bytes": 80419,
+      "sha256": "079926bc5e9d686258a18066396c6902e8d0c5394a6d8efe7cddd53cc2c486e7"
+    },
+    {
+      "name": "source_pressure_sensitivity",
+      "file": "source_pressure_sensitivity.json",
+      "bytes": 80545,
+      "sha256": "d8468abbadf12f8c90527fefed87265d8d450832b7eb2518321ba3f95652b1e6"
+    }
+  ]
+}

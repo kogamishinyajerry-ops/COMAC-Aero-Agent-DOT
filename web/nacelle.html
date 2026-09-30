@@ -8,6 +8,7 @@
   <title>X-57 Mod II · 装配与热设计</title>
   <link rel="stylesheet" href="/nacelle.css">
   <script src="/nacelle.js" defer></script>
+  <script src="/nacelle_story.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -19,6 +20,17 @@
     <section class="page-heading">
       <div><div class="eyebrow">X–57 MAXWELL <span>/</span> MOD II · LOCAL ASSEMBLY</div><h1>从飞机，到发热点<span>。</span></h1><p>拆开短舱，看懂气流经过哪里，以及几何怎样改变散热。</p></div>
       <div class="scope-note"><strong>参考拓扑 · 参数化重建</strong><span>推定尺寸 / 非 NASA 原始 CAD<br>集中参数热网络 / 非 CFD</span></div>
+    </section>
+    <div class="experience-bar"><span>从模型可信度，到一次有代价的设计修改</span><div role="group" aria-label="演示模式"><button id="start-story" disabled>六步设计讲解 →</button><button id="open-workbench" hidden>返回工程工作台 ↗</button></div></div>
+    <section id="story-panel" class="story-panel" aria-label="六步设计讲解" hidden>
+      <div class="story-top"><span id="story-kicker" class="eyebrow">ENGINEERING STORY / 01</span><span id="story-execution">准备本次计算</span></div>
+      <h2 id="story-question">一次局部修改，会怎样影响整套冷却？</h2>
+      <p id="story-answer" class="story-answer">先看装配，再检查模型，最后比较设计取舍。</p>
+      <div id="story-visual" class="story-visual" aria-live="polite"></div>
+      <p id="story-boundary" class="story-boundary"></p>
+      <details id="story-evidence"><summary>本页计算依据与限制</summary><div id="story-evidence-content"></div></details>
+      <div class="story-navigation"><button id="story-prev" class="secondary-button" disabled>← 上一步</button><div id="story-dots" aria-label="讲解步骤"></div><button id="story-next" class="primary-button" disabled>下一步 →</button></div>
+      <div id="story-request-status" role="status"></div>
     </section>
     <div id="nacelle-error" class="notice error" role="alert" hidden></div>
     <section class="assembly-workspace" aria-label="三维装配探索">

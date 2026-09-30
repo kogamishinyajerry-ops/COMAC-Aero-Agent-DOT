@@ -25,7 +25,7 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 ```bash
 git clone https://github.com/kogamishinyajerry-ops/COMAC-Aero-Agent-DOT.git
 cd COMAC-Aero-Agent-DOT
-git checkout feat/x57-modii-nacelle-demonstrator
+git checkout feat/x57-refined-engineering-demo
 python3 -m unittest discover -s tests -v
 python3 -m aerolab serve
 ```
@@ -37,6 +37,14 @@ python3 -m aerolab serve
 运行服务后打开 http://127.0.0.1:8765/nacelle ，或从首页点击「短舱装配」。以局部机翼、完整短舱、巡航电机和并排双控制器说明安装关系；可去壳、剖切、爆炸、选择部件并查看同一组参数驱动的气路和热节点。原有六步讲解、任务模型与旧版散热器基准保持独立。
 
 这是公开图文约束下的参数化重建，未公开尺寸明确推定。气流箭头为守恒网络示意，温度是降阶节点值，未进行 CFD 或原机校准。见 [构型与来源边界](docs/NACELLE_SOURCES.md)、[网络方程](docs/NACELLE_MODEL.md) 与 [展示及复现说明](docs/NACELLE_DEMO.md)、[分层验收记录](docs/NACELLE_VERIFICATION.md)。
+
+### 本次细化：模型可信度与完整设计推演
+
+短舱模型新增来源描述的半月形 LV 入口、按实际截面串联的过渡流道、中空电机安装管，以及共享站位的细化外壳。拓扑、未公开尺寸和离散表示误差分别记录；默认硬件几何代理质量由 109.2492 kg 修正为 108.2041 kg，不能理解为真实飞机减重。
+
+热模型改用均匀轴向热流的电机壁面，公开每段空气升温、对流、固体导热和接触温升。三组公开工况均作未拟合对照：总流量接近并不能弥补分流和换热差异，满负荷温度仍未完成物理验证。详见 [可信度诊断](docs/NACELLE_CREDIBILITY.md)。
+
+点击短舱页的「六步设计讲解」，依次看源装配、满负荷可信度、明确的 0.25×损耗教学基线、热天扰动、加鳍片反例，以及减鳍片/扩排气的候选取舍。温度、质量、被动压损功率与失败角点均来自本次求解；可以导出完整证据，返回后保留原工作台状态。见 [完整推演与重现](docs/NACELLE_STORY.md)。新增版本的跨平台/浏览器通过状态只以其对应提交 CI 为准。
 
 ### 可以直接试的内容
 

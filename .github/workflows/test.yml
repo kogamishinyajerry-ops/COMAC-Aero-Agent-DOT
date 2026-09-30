@@ -24,6 +24,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python -m aerolab benchmark --output output/benchmark.json
       - run: python scripts/generate_nacelle_evidence.py --check
+      - run: python scripts/generate_nacelle_credibility.py --check
   browser-smoke:
     runs-on: ubuntu-latest
     steps:
@@ -58,6 +59,9 @@ jobs:
       - run: python scripts/generate_cad.py --out output/cad-regenerated
       - run: python scripts/generate_cad_evidence.py
       - run: python scripts/generate_nacelle.py --out output/nacelle-regenerated
+      - run: python scripts/export_nacelle_step.py --manifest output/nacelle-regenerated/manifest.json --output output/nacelle-baseline.step
+      - run: python scripts/generate_nacelle.py --out output/nacelle-redesign --params '{"hv_fin_count":12,"motor_exhaust_area_mm2":16000}'
+      - run: python scripts/export_nacelle_step.py --manifest output/nacelle-redesign/manifest.json --output output/nacelle-redesign.step
       - run: python -m unittest discover -s tests -p test_nacelle_geometry.py -v
       - uses: actions/upload-artifact@v4
         if: always()
@@ -65,5 +69,8 @@ jobs:
           name: cad-regeneration-evidence
           path: |
             output/cad-regenerated
-            output/nacelle-regenerated
+            output/nacelle-regenerated/manifest.json
+            output/nacelle-redesign/manifest.json
+            output/nacelle-baseline.step
+            output/nacelle-redesign.step
             examples/cad_thermal_evidence.json

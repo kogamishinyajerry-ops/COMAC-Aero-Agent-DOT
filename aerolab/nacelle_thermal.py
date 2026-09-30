@@ -21,9 +21,11 @@ THERMAL_SOURCE_SHA256 = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 MODULE_SOURCE_SHA256 = {"nacelle_geometry.py": GEOMETRY_SOURCE_SHA256, "nacelle_thermal.py": THERMAL_SOURCE_SHA256}
 MODEL_SOURCE_SHA256 = hashlib.sha256(json.dumps(MODULE_SOURCE_SHA256, sort_keys=True).encode()).hexdigest()
 
-MODEL_ID = "x57-mod-ii-nacelle-pressure-thermal-rom-v1"
+MODEL_ID = "x57-mod-ii-nacelle-pressure-thermal-rom-v2"
 SOURCE_URL = "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
 CORRELATION_URL = "https://ansyshelp.ansys.com/public/Views/Secured/MotorCAD/v252/en/Motor-CAD_UG/MotorCAD/topics/enclosedchannelconvectioncorrelation.html"
+CORRELATION_PRIMARY_URL = "https://doi.org/10.1007/BF02559682"
+ROTATION_SCOPE_URL = "https://arxiv.org/abs/2303.16415"
 AIR = {"specific_heat_j_kg_k": 1007.0, "viscosity_pa_s": 1.90e-5,
        "conductivity_w_m_k": .027, "reference_pressure_pa": 101325.0}
 DEFAULT_BOUNDARY = {
@@ -44,6 +46,20 @@ BOUNDARY_LIMITS = {
 # NASA Table 4, per one nacelle: two controllers, one motor.
 HEAT_LOADS = {"peak": {"winding_w": 5237.0, "magnet_w": 582.0, "hv_each_w": 810.0, "lv_each_w": 30.0},
               "mcp": {"winding_w": 4196.0, "magnet_w": 466.0, "hv_each_w": 679.0, "lv_each_w": 30.0}}
+# Three independent published analysis cases. None is used to fit coefficients.
+# Mass-flow tuple: Table 7/8/9 stations 2a_g, 2a_s, 2a_b [lbm/s].
+# Temperature tuple: Table 6 winding, magnet, FET, CPU, AC/DC [C].
+SOURCE_CASES = {
+    "initial_climb": {"airspeed_m_s": 39.1, "ambient_c": 35.9, "density_kg_m3": 1.02, "heat_load": "peak",
+        "table": 7, "motor_flow_lbm_s": (.100, .458, .237), "temperature_c": (109.4, 45.4, 104.9, 75.1, 75.6),
+        "total_pressure_additions_psi": (.13, .08, .005), "exit_static_offsets_psi": (.01, -.02)},
+    "cruise_climb": {"airspeed_m_s": 45.3, "ambient_c": 35.9, "density_kg_m3": 1.02, "heat_load": "mcp",
+        "table": 8, "motor_flow_lbm_s": (.110, .503, .259), "temperature_c": (92.2, 43.1, 91.7, 72.4, 73.1),
+        "total_pressure_additions_psi": (.10, .06, -.025), "exit_static_offsets_psi": (-.01, -.02)},
+    "dash": {"airspeed_m_s": 77.2, "ambient_c": 23.3, "density_kg_m3": .90, "heat_load": "peak",
+        "table": 9, "motor_flow_lbm_s": (.146, .665, .357), "temperature_c": (85.6, 31.9, 85.3, 57.7, 58.7),
+        "total_pressure_additions_psi": (.02, .04, -.14), "exit_static_offsets_psi": (-.04, -.02)},
+}
 # Fixed values below are explicitly inferred, NOT NASA measurements/calibration.
 # Darcy f uses hydraulic geometry; K covers unresolved entrances, exits and bends.
 BRANCHES = {
@@ -80,9 +96,9 @@ ASSUMPTIONS = [
     "One nacelle: internal motor flow and motor bypass mix behind the motor, then divide among top exhaust, left/right HV fins and CMC bypass. Two separate fresh LV inlets rejoin the lower outlet.",
     "Main cooling and outer bypass have separate external intake reservoirs. Ram recovery, exhaust suction and branch minor losses are inferred; optional explicit propeller-pressure additions represent a boundary assumption, not a propeller solution or blower.",
     "Fixed-density incompressible pressure network uses Darcy friction and analytic hydraulic dimensions; smooth equivalent ducts replace complex rotating passages, scoops, baffles and jets.",
-    "Turbulent Gnielinski/hydraulic-diameter convection and circular-equivalent fully developed laminar Nu=3.66 are approximate; the 2300-4000 transition is an unvalidated smooth interpolation.",
+    "Turbulent Gnielinski/hydraulic-diameter convection and circular-equivalent fully developed laminar Nu=3.66 (isothermal) or 48/11 (uniform flux) are approximate; the 2300-4000 transition is an unvalidated smooth interpolation. Actual slot, annulus and jet applicability is not established.",
     "Motor cooling slots and rotor-stator gap are parallel CAD-derived paths. Stator heat is apportioned by exposed winding surface area; half the magnet heat goes to the gap and half to the external motor bypass, following NASA Table 4.",
-    "Each motor path has uniform heated wall patches exchanging with a common axial air stream. Unequal winding and magnet surface temperatures are solved; winding and magnet reports are the maximum modeled patches, not spatial fields.",
+    "Motor paths use axially uniform heat flux on each wall, with exact 1-D air heating and distinct winding/magnet wall temperatures. Five axial samples expose the analytical solution; the maximum downstream patch is an uncalibrated proxy, not a CFD field or a measured hotspot.",
     "Motor magnet temperature reports the hotter inner/outer surface proxy; it is not a single solved isothermal magnet nor a spatial field. Cross-conduction between those two patches is omitted.",
     "Straight-fin efficiency is applied once to HV fin area. L/(k A) uses CAD component dimensions plus declared inferred contact and bulk-material properties.",
     "Each LV backplate rejects 30 W at unit heat scale, split into inferred CPU 8 W, AC/DC 12 W and other boards 10 W. Board-to-backplate resistances are illustrative and explicitly uncalibrated.",
@@ -120,6 +136,22 @@ def parse_nacelle_boundary(value=None):
     return result
 
 
+def _source_pressure_boundary(case_name):
+    """Table 7-9 sensitivity boundaries; source totals are NOT imposed flows."""
+    source = SOURCE_CASES[case_name]
+    boundary = DEFAULT_BOUNDARY | {k: source[k] for k in ("airspeed_m_s", "ambient_c", "density_kg_m3", "heat_load")}
+    dynamic = .5 * boundary["density_kg_m3"] * boundary["airspeed_m_s"] ** 2
+    psi = 6894.757293168
+    for prefix, recovery, addition in zip(("main", "bypass", "lv"),
+            ("ram_recovery", "bypass_ram_recovery", "lv_ram_recovery"), source["total_pressure_additions_psi"]):
+        # A below-freestream total pressure is an intake loss, not propeller work.
+        boundary[recovery] = 1 + min(0, addition * psi) / dynamic
+        boundary[prefix + "_propeller_pressure_pa"] = max(0, addition * psi)
+    boundary["motor_exhaust_suction_coefficient"] = -source["exit_static_offsets_psi"][0] * psi / dynamic
+    boundary["exhaust_suction_coefficient"] = -source["exit_static_offsets_psi"][1] * psi / dynamic
+    return boundary
+
+
 def nacelle_boundary_catalog():
     units = {"airspeed_m_s": "m/s", "ambient_c": "C", "density_kg_m3": "kg/m3",
              "main_propeller_pressure_pa": "Pa", "bypass_propeller_pressure_pa": "Pa", "lv_propeller_pressure_pa": "Pa"}
@@ -127,19 +159,15 @@ def nacelle_boundary_catalog():
                "max": limits[1], "unit": units.get(name, "ratio"), "type": "number"}
               for name, limits in BOUNDARY_LIMITS.items()]
     fields.append({"name": "heat_load", "default": "peak", "type": "enum", "options": list(HEAT_LOADS)})
-    psi = 6894.757293168
-    dynamic = .5 * DEFAULT_BOUNDARY["density_kg_m3"] * DEFAULT_BOUNDARY["airspeed_m_s"] ** 2
-    source_boundary = DEFAULT_BOUNDARY | {
-        "ram_recovery": 1.0, "bypass_ram_recovery": 1.0, "lv_ram_recovery": 1.0,
-        "main_propeller_pressure_pa": .13 * psi,
-        "bypass_propeller_pressure_pa": .08 * psi,
-        "lv_propeller_pressure_pa": .005 * psi,
-        "motor_exhaust_suction_coefficient": -.01 * psi / dynamic,
-        "exhaust_suction_coefficient": .02 * psi / dynamic}
+    source_boundary = _source_pressure_boundary("initial_climb")
     return {"defaults": DEFAULT_BOUNDARY.copy(), "fields": fields,
             "presets": [{"id": "initial_climb", "boundary": DEFAULT_BOUNDARY.copy()},
                         {"id": "source_pressure_initial_climb", "boundary": source_boundary,
                          "note": "Table 7 total-pressure augmentation above freestream total13.53psi: main1_c13.66 (+.13psi), bypass1_b13.61 (+.08psi), LV ME_L/R mean13.535 (+.005psi, symmetric averaging assumption). Recoveries are1; these additions supplement computed freestream dynamic pressure, avoiding double counting. Upper4_e static13.42 and lower7 static13.39 are referenced to freestream static13.41psi. Source pressure rounding and assumed density mean these are approximate boundary conditions. No measurements or calibration."},
+                        {"id": "source_pressure_cruise_climb", "boundary": _source_pressure_boundary("cruise_climb"),
+                         "note": "Table 8 intake total-pressure differences from freestream total; averaged LV total is .025 psi lower, represented by a reduced ram recovery. Inferred density and rounded source pressures; not calibration."},
+                        {"id": "source_pressure_dash", "boundary": _source_pressure_boundary("dash"),
+                         "note": "Table 9 intake total-pressure differences from freestream total; averaged LV total is .14 psi lower, represented by a reduced ram recovery. Inferred density and rounded source pressures; not calibration."},
                         {"id": "cruise_climb", "boundary": DEFAULT_BOUNDARY | {"airspeed_m_s": 45.3, "heat_load": "mcp"}},
                         {"id": "dash", "boundary": DEFAULT_BOUNDARY | {"airspeed_m_s": 77.2, "ambient_c": 23.3, "density_kg_m3": .90}},
                         {"id": "no_ram", "boundary": DEFAULT_BOUNDARY | {"airspeed_m_s": 0}},
@@ -173,13 +201,16 @@ def _validate_metrics(metrics):
             raise ValueError(f"{branch} heated area does not match surface areas")
     for branch in ("lv_fresh_left", "lv_fresh_right"):
         channel = metrics["channels"][branch]
-        if not isinstance(channel.get("segments"), list) or len(channel["segments"]) != 2 or "heat_exchange" not in channel:
+        if not isinstance(channel.get("segments"), list) or len(channel["segments"]) < 2 or "heat_exchange" not in channel:
             raise ValueError(f"{branch} requires separate scoop and backplate geometry")
         for item in channel["segments"] + [channel["heat_exchange"]]:
             for field in ("area_m2", "wetted_perimeter_m", "length_m", "hydraulic_diameter_m"):
                 _finite(item.get(field), f"{branch} section {field}", 1e-9, 100)
             if not math.isclose(4 * item["area_m2"] / item["wetted_perimeter_m"], item["hydraulic_diameter_m"], rel_tol=1e-8):
                 raise ValueError(f"{branch} section hydraulic diameter differs from area/perimeter")
+        for item in channel.get("section_stations", []):
+            _finite(item.get("area_m2"), f"{branch} endpoint area", 1e-9, 100)
+            _finite(item.get("perimeter_m"), f"{branch} endpoint perimeter", 1e-9, 100)
     for name in MATERIAL_K:
         if name not in metrics.get("components", {}):
             raise ValueError(f"CAD metrics missing component {name}")
@@ -195,11 +226,14 @@ def _validate_metrics(metrics):
         raise ValueError("motor_magnet patch areas must sum to aggregate conduction area")
 
 
-def _friction_nusselt(reynolds, prandtl):
+def _friction_nusselt(reynolds, prandtl, uniform_flux=False):
+    # 48/11 is the exact fully developed circular-tube uniform-flux limit.
+    # Neither circular limit establishes applicability to the real motor walls.
+    laminar_nu = 48 / 11 if uniform_flux else 3.66
     if reynolds <= 0:
         return 0.0, 0.0, "no_forced_flow"
     if reynolds < 2300:
-        return 64 / reynolds, 3.66, "laminar_equivalent_duct"
+        return 64 / reynolds, laminar_nu, "laminar_equivalent_duct"
     def turbulent(re):
         f = (.790 * math.log(re) - 1.64) ** -2
         nu = (f / 8) * (re - 1000) * prandtl / (1 + 12.7 * math.sqrt(f / 8) * (prandtl ** (2 / 3) - 1))
@@ -209,7 +243,7 @@ def _friction_nusselt(reynolds, prandtl):
         s = t * t * (3 - 2 * t)
         ft, nt = turbulent(4000)
         return ((1 - s) * 64 / reynolds + s * ft,
-                (1 - s) * 3.66 + s * nt, "transition_unvalidated")
+                (1 - s) * laminar_nu + s * nt, "transition_unvalidated")
     f, nu = turbulent(reynolds)
     return f, nu, "turbulent_equivalent_duct"
 
@@ -346,14 +380,31 @@ def _solve_pressure(metrics, boundary, drive_factor=1.0, loss_factor=1.0):
                                  "mass_residuals_kg_s": dict(zip(INTERNAL_NODES, residual))}
 
 
-def _branch_transport(channel, flow, density, fin=None, h_factor=1.0, ambient_c=35.9):
+def _branch_transport(channel, flow, density, fin=None, h_factor=1.0, ambient_c=35.9, uniform_flux=False):
     aperture_speed = abs(flow) / (density * channel["area_m2"])
+    # Pressure loss already uses every serial section. Domain guards must inspect
+    # the same sections; an internal contraction can outrun both inlet and plate.
+    sound_speed = math.sqrt(1.4 * 287.05 * (ambient_c + 273.15))
+    sections = [("aperture", channel)] + [(f"serial_{i}", item) for i, item in enumerate(channel.get("segments", []))]
+    # Midpoint resistance sections can miss a smaller loft endpoint throat.
+    sections += [(f"endpoint_{i}", {"area_m2": item["area_m2"],
+        "hydraulic_diameter_m": 4 * item["area_m2"] / item["perimeter_m"]})
+        for i, item in enumerate(channel.get("section_stations", []))]
+    if "heat_exchange" in channel:
+        sections.append(("heat_exchange", channel["heat_exchange"]))
+    section_transport = []
+    for name, section in sections:
+        velocity = abs(flow) / (density * section["area_m2"])
+        section_transport.append({"id": name, "area_m2": section["area_m2"],
+            "hydraulic_diameter_m": section["hydraulic_diameter_m"], "velocity_m_s": velocity,
+            "reynolds": density * velocity * section["hydraulic_diameter_m"] / AIR["viscosity_pa_s"],
+            "mach_approx": velocity / sound_speed})
     channel = channel.get("heat_exchange", channel)
     speed = abs(flow) / (density * channel["area_m2"])
     dh = channel["hydraulic_diameter_m"]
     re = density * speed * dh / AIR["viscosity_pa_s"]
     pr = AIR["specific_heat_j_kg_k"] * AIR["viscosity_pa_s"] / AIR["conductivity_w_m_k"]
-    friction, nu, regime = _friction_nusselt(re, pr)
+    friction, nu, regime = _friction_nusselt(re, pr, uniform_flux)
     h = nu * AIR["conductivity_w_m_k"] / dh * h_factor
     eta = 1.0
     area = channel["heated_area_m2"]
@@ -367,11 +418,76 @@ def _branch_transport(channel, flow, density, fin=None, h_factor=1.0, ambient_c=
         area = (area - fin_area) + eta * fin_area
     capacity = abs(flow) * AIR["specific_heat_j_kg_k"]
     ua = h * area
-    conductance = -capacity * math.expm1(-ua / capacity) if capacity and ua else 0.0
+    conductance = (1 / (1 / capacity + 1 / ua) if uniform_flux else -capacity * math.expm1(-ua / capacity)) if capacity and ua else 0.0
     return {"velocity_m_s": aperture_speed, "heat_exchange_velocity_m_s": speed, "heat_exchange_hydraulic_diameter_m": dh, "reynolds": re, "prandtl": pr, "darcy_friction_factor": friction,
             "nusselt": nu, "h_w_m2_k": h, "fin_efficiency": eta, "effective_heated_area_m2": area,
             "ua_w_k": ua, "air_capacity_w_k": capacity, "convective_conductance_w_k": conductance,
-            "regime": regime, "mach_approx": max(speed, aperture_speed) / math.sqrt(1.4 * 287.05 * (ambient_c + 273.15))}
+            "convective_conductance_basis": "downstream_area_weighted_wall" if uniform_flux else "isothermal_wall",
+            "heat_boundary": "uniform_axial_heat_flux" if uniform_flux else "isothermal_exchange_surface",
+            "length_to_hydraulic_diameter": channel["length_m"] / dh,
+            "correlation_numeric_range_satisfied": 0 < re <= 1e6 and .5 <= pr <= 2000,
+            "actual_geometry_correlation_validated": False,
+            "section_transport": section_transport,
+            "max_section_reynolds": max(item["reynolds"] for item in section_transport),
+            "regime": regime, "mach_approx": max(item["mach_approx"] for item in section_transport)}
+
+
+def _uniform_flux_solution(inlet_c, capacity_w_k, h_w_m2_k, areas_m2, heat_w):
+    """Exact constant-property 1-D solution; fractions follow actual flow.
+
+    C dT_air/ds = sum(Q_i), T_wall_i(s) = T_air(s) + Q_i/(h A_i).
+    Each Q_i and A_i covers the full path; no axial/cross-wall conduction.
+    Samples are analytical evaluations, not a CFD mesh or convergence claim.
+    """
+    total = sum(heat_w.values())
+    evaluable = inlet_c is not None and (total == 0 or (capacity_w_k > 1e-11 and h_w_m2_k > 0))
+    rise = total / capacity_w_k if evaluable and capacity_w_k > 1e-11 else 0.0
+    offsets = {name: heat_w[name] / (h_w_m2_k * area) if h_w_m2_k else 0.0 for name, area in areas_m2.items()}
+    samples = []
+    for fraction in (0.0, .25, .5, .75, 1.0):
+        air = inlet_c + fraction * rise if evaluable else None
+        samples.append({"flow_fraction": fraction, "air_c": air,
+                        "wall_c": {name: air + offset if air is not None else None for name, offset in offsets.items()}})
+    return {"boundary_condition": "uniform_axial_heat_flux", "evaluable": evaluable,
+            "air_mean_c": inlet_c + .5 * rise if evaluable else None,
+            "air_rise_c": rise if evaluable else None,
+            "surface_mean_c": {name: inlet_c + .5 * rise + offset if evaluable else None for name, offset in offsets.items()},
+            "surface_max_c": dict(samples[-1]["wall_c"]), "samples": samples}
+
+
+def _source_case_for_boundary(boundary):
+    # Select a labelled context reference, never imply a modified case matches it.
+    return min(SOURCE_CASES, key=lambda name:
+        abs(boundary["airspeed_m_s"] - SOURCE_CASES[name]["airspeed_m_s"])
+        + (100 if boundary["heat_load"] != SOURCE_CASES[name]["heat_load"] else 0))
+
+
+def _motor_patch_budget(branch, component, q, area, conduction_r, contact_r, targets):
+    """Additive downstream rise and inverse-UA diagnostic, not a fitted h."""
+    air_rise = branch["axial_heat_balance"]["air_rise_c"]
+    ua = branch["h_w_m2_k"] * area
+    convection = q / ua if ua else (0.0 if q == 0 else None)
+    solid = q * (conduction_r + contact_r)
+    inlet = branch["inlet_c"]
+    valid = inlet is not None and air_rise is not None and convection is not None
+    floor = inlet + air_rise + solid if valid else None
+    closure = {}
+    for name, target in targets.items():
+        available = target - floor if floor is not None else None
+        possible = available is not None and (available > 0 or (q == 0 and available >= 0))
+        required = q / available if possible and q else (0.0 if possible else None)
+        closure[name] = {"target_c": target, "possible_by_convection_alone_at_fixed_flow": possible,
+            "available_wall_to_air_delta_c": available, "required_patch_ua_w_k": required,
+            "required_h_w_m2_k": required / area if required is not None else None,
+            "required_h_multiplier": required / ua if required is not None and ua else None}
+    return {"component": component, "branch_id": branch["id"], "heat_w": q, "heated_area_m2": area,
+        "inlet_c": inlet, "temperature_c": floor + convection if valid else None,
+        "rise_c": {"air_advection": air_rise, "convection": convection,
+                   "solid_conduction": q * conduction_r, "contact": q * contact_r},
+        "resistance_k_w": {"convection": 1 / ua if ua else None, "solid_conduction": conduction_r, "contact": contact_r},
+        "actual_patch_ua_w_k": ua, "infinite_h_temperature_floor_c": floor,
+        "fixed_flow_target_closure": closure,
+        "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."}
 
 
 def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, contact_factor=1.0):
@@ -396,7 +512,7 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
         signed_flow = flows[name]
         upstream, downstream = (u, v) if signed_flow >= 0 else (v, u)
         fin = metrics["components"].get("cmc_" + name[7:] + "_hv") if name.startswith("cmc_hv_") else None
-        item = _branch_transport(metrics["channels"][name], signed_flow, boundary["density_kg_m3"], fin, h_factor, boundary["ambient_c"])
+        item = _branch_transport(metrics["channels"][name], signed_flow, boundary["density_kg_m3"], fin, h_factor, boundary["ambient_c"], name in ("motor_internal", "motor_slots", "motor_bypass"))
         item.update({"id": name, "from_node": u, "to_node": v, "actual_from_node": upstream,
                      "actual_to_node": downstream, "mass_flow_kg_s": signed_flow,
                      "pressure_drop_pa": pressures[u] - pressures[v], "minor_loss_k": ks[name],
@@ -445,19 +561,18 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
                             "temperature_kind": "uncalibrated_lumped_proxy", **extra}
     def component_temp(name, surface, q):
         return surface + q * sum(resistances(name)) if surface is not None else None
-    def motor_wall_surface(branch_name, component, q):
-        branch = branches[branch_name]
-        if branch["inlet_c"] is None or not branch["air_capacity_w_k"] or not branch["ua_w_k"]:
-            return branch["inlet_c"] if q == 0 else None
-        ntu = branch["ua_w_k"] / branch["air_capacity_w_k"]
-        mean_factor = .5 + ntu / 12 - ntu ** 3 / 720 if ntu < 1e-4 else 1 / (-math.expm1(-ntu)) - 1 / ntu
-        mean_air = branch["inlet_c"] + branch["heat_w"] / branch["air_capacity_w_k"] * mean_factor
-        surface_area = metrics["channels"][branch_name]["heated_surfaces_m2"][component]
-        surface = mean_air + q / (branch["h_w_m2_k"] * surface_area)
-        branch.setdefault("heated_surface_temperatures_c", {})[component] = surface
-        return surface
-    gap_surface = motor_wall_surface("motor_internal", "motor_winding", gap_winding_heat)
-    slot_surface = motor_wall_surface("motor_slots", "motor_winding", slot_winding_heat)
+    motor_sources = {"motor_internal": {"motor_winding": gap_winding_heat, "motor_magnet": .5 * loads["magnet_w"]},
+                     "motor_slots": {"motor_winding": slot_winding_heat}, "motor_bypass": {"motor_magnet": .5 * loads["magnet_w"]}}
+    for name, heat_by_wall in motor_sources.items():
+        branch = branches[name]
+        areas = metrics["channels"][name].get("heated_surfaces_m2", {"motor_magnet": branch["effective_heated_area_m2"]})
+        axial = _uniform_flux_solution(branch["inlet_c"], branch["air_capacity_w_k"], branch["h_w_m2_k"], areas, heat_by_wall)
+        axial["flow_direction"] = "forward" if branch["mass_flow_kg_s"] >= 0 else "reversed"
+        branch["axial_heat_balance"] = axial
+        branch["heated_surface_temperatures_c"] = axial["surface_max_c"]
+        branch["exchange_surface_c"] = max(axial["surface_max_c"].values()) if axial["evaluable"] else None
+    gap_surface = branches["motor_internal"]["heated_surface_temperatures_c"]["motor_winding"]
+    slot_surface = branches["motor_slots"]["heated_surface_temperatures_c"]["motor_winding"]
     gap_winding = component_temp("motor_winding", gap_surface, loads["winding_w"])
     slot_winding = component_temp("motor_winding", slot_surface, loads["winding_w"])
     winding = max(gap_winding, slot_winding) if gap_winding is not None and slot_winding is not None else None
@@ -469,7 +584,7 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
     _, magnet_contact = resistances("motor_magnet")
     magnet_patch_r = {patch: magnet_geometry["conduction_length_m"] / (MATERIAL_K["motor_magnet"] * area)
                       for patch, area in magnet_areas.items()}
-    inner_wall = motor_wall_surface("motor_internal", "motor_magnet", .5 * loads["magnet_w"])
+    inner_wall = branches["motor_internal"]["heated_surface_temperatures_c"]["motor_magnet"]
     outer_wall = branches["motor_bypass"]["exchange_surface_c"]
     magnet_inner = inner_wall + .5 * loads["magnet_w"] * (magnet_patch_r["inner"] + magnet_contact) if inner_wall is not None else None
     magnet_outer = outer_wall + .5 * loads["magnet_w"] * (magnet_patch_r["outer"] + magnet_contact) if outer_wall is not None else None
@@ -479,6 +594,23 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
                   conduction_patch_areas_m2=magnet_areas, patch_conduction_resistance_k_w=magnet_patch_r,
                   patch_contact_resistance_k_w={"inner": magnet_contact, "outer": magnet_contact},
                   resistance_note="Reported aggregate conduction resistance describes parallel area only; temperatures use individual patch L/(k A) and declared per-patch contact resistance.")
+    source_temperatures = SOURCE_CASES[_source_case_for_boundary(boundary)]["temperature_c"]
+    patch_budgets = {}
+    for branch_name, heat_by_wall in motor_sources.items():
+        branch = branches[branch_name]
+        areas = metrics["channels"][branch_name].get("heated_surfaces_m2", {"motor_magnet": branch["effective_heated_area_m2"]})
+        for name, q in heat_by_wall.items():
+            conduction, contact = resistances(name)
+            if name == "motor_winding":
+                # Uniform surface loading means local through-thickness rise
+                # equals total Q times parallel-area aggregate resistance.
+                fraction = areas[name] / total_winding_area
+                conduction, contact = conduction / fraction, contact / fraction
+            else:
+                conduction = magnet_patch_r["outer" if branch_name == "motor_bypass" else "inner"]
+            patch_budgets[name + ":" + branch_name] = _motor_patch_budget(branch, name, q, areas[name], conduction, contact,
+                {"margined_reference": MARGINED_LIMITS[name],
+                 "published_icpt_context": source_temperatures[0 if name == "motor_winding" else 1]})
     for side in ("left", "right"):
         hv, lv = "cmc_" + side + "_hv", "cmc_" + side + "_lv"
         hv_channel, lv_channel = "cmc_hv_" + side, "lv_fresh_" + side
@@ -517,7 +649,7 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
         warnings.append("One or more branches reverse under these pressure boundaries. Signed flow and heat mixing are solved; the intended cooling topology is not maintained.")
     if any(item["regime"] == "transition_unvalidated" for item in branches.values()):
         warnings.append("At least one path uses unvalidated transition interpolation (2300 <= Re < 4000).")
-    flow_valid = all(item["mach_approx"] < .3 and item["reynolds"] <= 1e6 for item in branches.values()) and max(pressures.values()) - min(pressures.values()) < .1 * AIR["reference_pressure_pa"]
+    flow_valid = all(item["mach_approx"] < .3 and item["max_section_reynolds"] <= 1e6 for item in branches.values()) and max(pressures.values()) - min(pressures.values()) < .1 * AIR["reference_pressure_pa"]
     thermal_valid = steady and max(finite_temperatures, default=ambient) <= 200
     if not flow_valid:
         warnings.append("Mach >= 0.3, Re > 1e6 or pressure range >= 10% reference pressure exceeds the declared incompressible/correlation screening envelope.")
@@ -527,6 +659,7 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
         warnings.append("Pressure network did not converge; do not use this result.")
     if limiting and limiting["margin_c"] < 0:
         warnings.append("At least one illustrative component proxy exceeds its NASA margined reference limit; this is not an airworthiness assessment.")
+    warnings.append("Motor rotation, developing noncircular passages and LV impingement jets are unresolved; passing numeric guards does not establish convection-correlation applicability.")
     nodes = {n: {"id": n, "pressure_pa": pressures[n], "temperature_c": node_temperatures[n],
                  "external_reservoir": n not in INTERNAL_NODES} for n in pressures}
     hydraulic_power = sum(abs(item["pressure_drop_pa"] * item["mass_flow_kg_s"]) / boundary["density_kg_m3"] for item in branches.values())
@@ -534,7 +667,7 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
                      "total_outlet_kg_s": external_out, "pressure_drive_pa": max(pressures.values()) - min(pressures.values()),
                      "hydraulic_dissipation_w": hydraulic_power,
                      "power_note": "Passive pressure loss, not blower electrical power or complete aircraft cooling drag."},
-            "thermal": {"components": components, "summary": {
+            "thermal": {"components": components, "motor_patch_budget": patch_budgets, "summary": {
                 "max_temperature_c": max(finite_temperatures) if steady else None,
                 "min_margin_c": limiting["margin_c"] if steady and limiting else None,
                 "limiting_component": limiting["id"] if steady and limiting else None,
@@ -549,6 +682,13 @@ def _run(metrics, boundary, drive_factor=1.0, loss_factor=1.0, h_factor=1.0, con
                             "energy_residual_w": energy_residual,
                             "energy_removed_w": external_out_energy - external_in_energy,
                             "total_heat_w": heat, "steady_energy_balance_evaluable": steady,
+                            "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+                            "heat_scale_to_200c_guard_at_fixed_flow": min((boundary["heat_scale"] * (200 - ambient) / (t - ambient) for t in finite_temperatures if t > ambient), default=None) if steady else None,
+                            "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+                            "correlation_applicability": {"actual_geometry_validated": False,
+                                "motor_rotation_resolved": False, "entrance_development_resolved": False, "lv_jet_resolved": False,
+                                "short_ducts_l_over_d_below_10": [name for name, item in branches.items() if item["length_to_hydraulic_diameter"] < 10],
+                                "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."},
                             "conservation_pass": solver["converged"] and mass_residual < 1e-8 and steady and abs(energy_residual) < 1e-5},
             "warnings": warnings}
 
@@ -598,12 +738,22 @@ def evaluate_nacelle(geometry=None, boundary=None):
                        "minor_loss_k": {n: e[2] for n, e in BRANCHES.items()},
                        "material_conductivity_w_m_k": MATERIAL_K, "contact_resistance_k_w": CONTACT_K_W,
                        "lv_inferred_heat_split_w": {"cpu": 8, "acdc": 12, "other_boards": 10},
-                       "correlation_reference": CORRELATION_URL, "calibrated": False,
+                       "correlation_reference": CORRELATION_URL, "correlation_primary_reference": CORRELATION_PRIMARY_URL,
+                       "rotation_scope_reference": ROTATION_SCOPE_URL, "calibrated": False,
                        "source_validation_limit": "NASA paper reports no experimental nacelle airflow validation; this lower-fidelity reconstruction has no such validation either.",
                        "computed": "CAD hydraulic dimensions -> pressure/mass conservation -> heat advection/mixing -> lumped solid resistance proxies. No CFD heatfield."}})
-    gap_source, slots_source, bypass_source = .100 * .45359237, .458 * .45359237, .237 * .45359237
+    reference_case = _source_case_for_boundary(b)
+    source_case = SOURCE_CASES[reference_case]
+    matched_inputs = (b["heat_load"] == source_case["heat_load"] and b["heat_scale"] == 1
+        and abs(b["airspeed_m_s"] - source_case["airspeed_m_s"]) < .05
+        and abs(b["ambient_c"] - source_case["ambient_c"]) < .05)
+    source_context = {"reference_case": reference_case, "matched_nominal_flight_inputs": matched_inputs,
+        "matched_geometry_or_thermal_nodes": False, "matched_pressure_boundary": False,
+        "boundary_mode": "source_pressure_sensitivity" if all(math.isclose(b[k], v, rel_tol=1e-9, abs_tol=1e-9)
+            for k, v in _source_pressure_boundary(reference_case).items() if isinstance(v, (int, float))) else "user_or_inferred_pressure_boundary"}
+    gap_source, slots_source, bypass_source = (value * .45359237 for value in source_case["motor_flow_lbm_s"])
     result["source_flow_diagnostic"] = {
-        "source": SOURCE_URL, "location": "Table 7, printed p. 15, initial takeoff climb stations 2a_g, 2a_s, 2a_b",
+        "source": SOURCE_URL, "location": f"Table {source_case['table']}, stations 2a_g, 2a_s, 2a_b", **source_context,
         "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
         "published_kg_s": {"motor_gap": gap_source, "motor_slots": slots_source, "motor_internal_total": gap_source + slots_source, "motor_bypass": bypass_source},
         "computed_kg_s": {"motor_gap": result["flow"]["branches"]["motor_internal"]["mass_flow_kg_s"],
@@ -611,15 +761,25 @@ def evaluate_nacelle(geometry=None, boundary=None):
                            "motor_internal_total": result["flow"]["branches"]["motor_internal"]["mass_flow_kg_s"] + result["flow"]["branches"]["motor_slots"]["mass_flow_kg_s"],
                            "motor_bypass": result["flow"]["branches"]["motor_bypass"]["mass_flow_kg_s"]},
         "used_to_fit_coefficients": False, "validation": False}
-    source_temps = {"motor_winding": 109.4, "motor_magnet": 45.4,
-                    "cmc_left_hv": 104.9, "cmc_right_hv": 104.9,
-                    "cmc_left_cpu": 75.1, "cmc_right_cpu": 75.1,
-                    "cmc_left_acdc": 75.6, "cmc_right_acdc": 75.6}
+    flow_diagnostic = result["source_flow_diagnostic"]
+    flow_diagnostic["relative_error_percent"] = {name: 100 * (flow_diagnostic["computed_kg_s"][name] / value - 1)
+                                               for name, value in flow_diagnostic["published_kg_s"].items()}
+    flow_diagnostic["motor_slot_flow_fraction"] = {
+        "published": slots_source / (slots_source + gap_source),
+        "computed": flow_diagnostic["computed_kg_s"]["motor_slots"] / flow_diagnostic["computed_kg_s"]["motor_internal_total"]
+                    if abs(flow_diagnostic["computed_kg_s"]["motor_internal_total"]) > 1e-12 else None}
+    winding, magnet, hv, cpu, acdc = source_case["temperature_c"]
+    source_temps = {"motor_winding": winding, "motor_magnet": magnet,
+                    "cmc_left_hv": hv, "cmc_right_hv": hv,
+                    "cmc_left_cpu": cpu, "cmc_right_cpu": cpu,
+                    "cmc_left_acdc": acdc, "cmc_right_acdc": acdc}
     result["source_temperature_diagnostic"] = {
-        "source": SOURCE_URL, "location": "Table 6, printed p. 12, initial takeoff climb",
+        "source": SOURCE_URL, "location": "Table 6, printed p. 12", **source_context,
         "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
         "published_analysis_c": source_temps,
         "computed_proxy_c": {name: result["thermal"]["components"][name]["temperature_c"] for name in source_temps},
+        "proxy_minus_published_c": {name: result["thermal"]["components"][name]["temperature_c"] - value
+            if result["thermal"]["components"][name]["temperature_c"] is not None else None for name, value in source_temps.items()},
         "used_to_fit_coefficients": False, "validation": False}
     return result
 
