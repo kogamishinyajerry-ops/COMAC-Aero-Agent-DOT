@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Cached STEP fragments are byte-exact binary transport pieces.
+cad/nacelle/*.part-* binary

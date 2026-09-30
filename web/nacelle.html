@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="NASA X-57 Mod II 短舱与机翼局部公开资料重建。探索装配、散热部件、几何和集中参数热网络。">
+  <title>X-57 Mod II · 装配与热设计</title>
+  <link rel="stylesheet" href="/nacelle.css">
+  <script src="/nacelle.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="返回航空电热实验室"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="m4 28 14-23 14 23-14-6-14 6Z M18 5v17 M4 28l14-6"/></svg></span><span>航空电热实验室<small>POWER / THERMAL LAB</small></span></a>
+    <nav class="navigation" aria-label="工作空间"><a href="/">系统与控制 <span>01–03</span></a><a href="/nacelle" aria-current="page">飞机装配 <span>04</span></a></nav>
+    <div class="header-note"><span class="live-dot"></span> 公开资料重建 <span class="version">RESEARCH DEMO</span></div>
+  </header>
+  <main>
+    <section class="page-heading">
+      <div><div class="eyebrow">X–57 MAXWELL <span>/</span> MOD II · LOCAL ASSEMBLY</div><h1>从飞机，到发热点<span>。</span></h1><p>拆开短舱，看懂气流经过哪里，以及几何怎样改变散热。</p></div>
+      <div class="scope-note"><strong>参考拓扑 · 参数化重建</strong><span>推定尺寸 / 非 NASA 原始 CAD<br>集中参数热网络 / 非 CFD</span></div>
+    </section>
+    <div id="nacelle-error" class="notice error" role="alert" hidden></div>
+    <section class="assembly-workspace" aria-label="三维装配探索">
+      <div class="stage-wrap">
+        <div class="stage-topline"><div class="stage-title"><span class="section-index">01</span><span>探索装配</span><small id="mesh-count">正在构建三维场景</small></div><span class="stage-tag">单侧推进短舱 + 机翼局部</span></div>
+        <nav class="view-modes" aria-label="装配显示模式"><button data-mode="assembled" aria-pressed="true" class="active"><span>01</span>完整装配</button><button data-mode="open" aria-pressed="false"><span>02</span>移除外壳</button><button data-mode="cutaway" aria-pressed="false"><span>03</span>纵向剖视</button><button data-mode="exploded" aria-pressed="false"><span>04</span>分解结构</button></nav>
+        <div id="scene" class="scene" tabindex="0" aria-label="交互三维模型，拖动旋转，滚轮缩放，点击部件查看详情。方向键旋转，加减号缩放。">
+          <canvas id="assembly-canvas" aria-label="X-57 Mod II 三维装配"></canvas><canvas id="annotation-canvas" aria-hidden="true"></canvas>
+          <div id="scene-loading" class="scene-loading" role="status"><span class="loading-ring"></span><strong>载入参数化装配</strong><small>同一份几何贯穿模型与计算</small></div>
+          <div id="stale-banner" class="stale-banner" role="status" hidden><span>参数已更改</span> 当前仍显示上次装配，请重建并计算</div>
+          <div class="scene-view-label"><span id="view-title">完整装配</span><small id="view-caption">机翼与短舱，先建立空间关系</small></div>
+          <div class="scene-tools" aria-label="相机工具"><button id="zoom-in" aria-label="放大">＋</button><button id="zoom-out" aria-label="缩小">−</button><button id="reset-camera" aria-label="重置视角"><svg viewBox="0 0 20 20"><path d="M4 8a6 6 0 1 1 0 5M4 3v5h5"/></svg></button></div>
+          <div class="axis-key" aria-hidden="true"><span>X <i>机头 → 机尾</i></span><span>Z <i>上</i></span></div>
+          <div class="scene-hint">拖动旋转 <span>·</span> 滚轮缩放 <span>·</span> 点击部件</div>
+          <div id="thermal-legend" class="thermal-legend" hidden><span id="legend-low">20 °C</span><i></i><span id="legend-high">120 °C</span><small id="color-legend-note">节点代理温度，非 CFD 热场</small></div>
+        </div>
+        <div class="stage-footer"><div class="overlay-toggles"><label><input id="show-labels" type="checkbox" checked><span>部件标注</span></label><label><input id="show-flow" type="checkbox"><span>冷却支路</span></label><label><input id="show-thermal" type="checkbox"><span id="color-mode-label">温度着色</span></label></div><span id="render-status">等待几何</span></div>
+        <div id="flow-disclaimer" class="flow-disclaimer" hidden>箭头仅表示集中参数网络的连接与方向，不代表 CFD 流线或局部速度场。</div>
+      </div>
+      <aside class="inspector" aria-label="部件与热结果">
+        <div class="inspector-heading"><span class="section-index">02</span><span>选择部件，追踪热量</span><span class="inspector-dot"></span></div>
+        <div id="component-tabs" class="component-tabs" role="group" aria-label="主要发热部件"><button data-select="motor_winding" class="active">电机定子</button><button data-select="motor_magnet">永磁转子</button><button data-select="cmc_left_hv">左侧 CMC</button><button data-select="cmc_right_hv">右侧 CMC</button></div>
+        <div class="part-heading"><span id="part-type" class="eyebrow">CRUISE MOTOR / STATOR</span><h2 id="part-name">电机定子与冷却槽</h2><p id="part-description">机头来流分为电机冷却与旁通支路，经过电机后进入下游短舱。</p></div>
+        <div class="selected-state"><span class="tiny-dot"></span><span id="selection-note">单击三维部件可查看对应证据</span></div>
+        <div id="result-loading" class="result-status" role="status">正在读取模型与边界</div>
+        <section id="thermal-results" aria-label="当前几何热计算结果" hidden>
+          <div class="result-heading"><span>同一几何 · 稳态计算</span><span id="result-badge">本次求解</span></div>
+          <div class="metric-primary"><span id="temperature-title">定子节点温度</span><div><strong id="selected-temperature">—</strong><span>°C</span></div><small id="selected-margin">尚未计算</small></div>
+          <div class="metric-pair"><div><span>总进气流量</span><strong id="cooling-flow">— <small>kg/s</small></strong></div><div><span>双 CMC 鳍片质量估算</span><strong id="heatsink-mass">— <small>kg</small></strong></div></div>
+          <p id="result-summary" class="result-summary"></p>
+        </section>
+        <div id="result-warning" class="notice warning" role="alert" hidden></div>
+        <div class="inspector-bottom"><div id="part-source" class="source-chip">公开结构参考 · 尺寸推定</div><p>有效域内显示节点代理温度；超出适用域时改用热源功率着色，绝不把无效温度伪装为预测。</p></div>
+      </aside>
+    </section>
+    <section class="design-dock" aria-label="几何与热网络设计输入">
+      <div class="design-intro"><span class="eyebrow">03 / DESIGN EXPLORATION</span><h2>改几何，看取舍。</h2><p>进气口 → 流量分配 → 热阻与温度</p></div>
+      <form id="nacelle-form"><div id="geometry-fields" class="geometry-fields"></div><div class="design-actions"><button id="evaluate-button" class="primary-button" type="submit" disabled>重建并计算 <span>↗</span></button><button id="cancel-button" class="text-button" type="button" hidden>取消本次计算</button><span id="compute-status" role="status">准备模型</span></div></form>
+    </section>
+    <section class="evidence-section" aria-label="模型边界与证据">
+      <details id="boundary-details"><summary><span><b>工况与边界</b> 来流、温度与损耗假设</span><span class="details-plus">＋</span></summary><div class="details-content"><p>同一组边界用于当前几何。修改后须重新计算；公开损耗与推定阻力、材料及接触参数分开记录。</p><div id="boundary-fields" class="boundary-fields"></div></div></details>
+      <details id="evidence-details"><summary><span><b>几何、热网络与可追溯证据</b> 部件来源 · 指纹 · 导出</span><span class="details-plus">＋</span></summary><div class="details-content"><div class="evidence-intro"><div><h3>公开图片定拓扑，推定尺寸定几何。</h3><p>此装配参考 NASA X-57 Mod II 公开热分析图 5–7，与早期独立的 43 鳍片散热器基准分别建模。这里没有原始工程 CAD、NASA 仿真网格、CFD 求解或适航验证。</p><a href="https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf#page=8" target="_blank" rel="noopener">NASA Mod II 热分析 · 图 5–7 ↗</a><a href="https://ntrs.nasa.gov/api/citations/20230006883/downloads/AIAA%20EATS%20X-57%20CMC%20Presentation%20.pdf#page=4" target="_blank" rel="noopener">CMC 设计演变与散热器参考 ↗</a></div><div class="export-actions"><button id="export-json" class="secondary-button" disabled>下载计算证据 JSON ↓</button><button id="export-step" class="secondary-button" disabled>下载当前装配 STEP ↓</button><small id="step-status">等待几何验证</small></div></div><div class="fingerprint"><span>几何指纹</span><code id="geometry-fingerprint">等待计算</code><span id="fingerprint-status">预览与证据将按指纹核对</span></div><div id="network-facts" class="network-facts"></div><pre id="evidence-json">尚未计算</pre></div></details>
+    </section>
+    <footer class="page-footer"><span>NASA X–57 MOD II <i>/</i> PUBLIC-SOURCE RECONSTRUCTION</span><span>研究与教学示范，不用于真实飞机设计、运行或适航判断</span><a href="/">返回独立系统基准 ↗</a></footer>
+  </main>
+</body>
+</html>

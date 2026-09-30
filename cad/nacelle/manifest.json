@@ -1,0 +1,2786 @@
+{
+  "schema": "aerolab-x57-modii-nacelle-v1",
+  "parameters": {
+    "motor_diameter_mm": 355.6,
+    "prop_diameter_mm": 1524.0,
+    "nacelle_length_mm": 1470.0,
+    "nacelle_width_mm": 520.0,
+    "nacelle_height_mm": 490.0,
+    "wing_span_mm": 2200.0,
+    "wing_chord_mm": 1100.0,
+    "cmc_length_mm": 300.0,
+    "cmc_width_mm": 185.0,
+    "cmc_thickness_mm": 42.0,
+    "cmc_tilt_deg": 48.0,
+    "hv_fin_count": 24,
+    "hv_fin_height_mm": 27.0,
+    "hv_fin_thickness_mm": 1.4,
+    "motor_gap_mm": 6.0,
+    "main_inlet_height_mm": 24.0,
+    "motor_bypass_gap_mm": 28.0,
+    "upper_inlet_height_mm": 30.0,
+    "backplate_gap_mm": 18.0,
+    "outlet_area_mm2": 22000.0,
+    "motor_exhaust_area_mm2": 9000.0
+  },
+  "fingerprint": "9ccf25d5e959fdbe87c9655923b08d6e529899b7c3db650c658e7f5d189133dd",
+  "provenance": {
+    "scope": "X-57 Mod II local-wing / cruise nacelle reconstruction",
+    "original_NASA_CAD": false,
+    "manufacturing_validated": false,
+    "CFD_solved": false,
+    "source_url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+    "source_location": "Figures 5\u20137, printed pages 7\u20138",
+    "scale_url": "https://www.nasa.gov/centers-and-facilities/armstrong/x-57-maxwell/",
+    "source_topology": [
+      "outrunner rotor/stator and cooling slots",
+      "twin tilted aft CMCs",
+      "HV fins and LV backplates",
+      "upper ear inlets",
+      "internal baffles and struts",
+      "lower nacelle outlet"
+    ],
+    "source_scale": {
+      "motor_diameter_mm": 355.6,
+      "prop_diameter_mm": 1524.0
+    },
+    "all_other_dimensions": "inferred editable reconstruction",
+    "assumptions": [
+      "Source topology is X-57 Mod II, 2023 thermal-analysis figures 5\u20137 (printed pp. 7\u20138), not the Mod IV aircraft exterior.",
+      "NASA's 14-inch motor and 5-foot propeller are historical scale anchors listed on a Mod IV specifications page; they are not a dimensioned Mod II nacelle drawing.",
+      "All dimensions beyond those anchors, airfoil section, propeller blade shape, shell thickness and material densities are inferred, editable reconstruction assumptions.",
+      "The twin side-by-side tilted CMCs use inferred 24-fin HV arrays and separate LV backplates; the older NASA 43-fin benchmark is not used here.",
+      "Local wing uses an illustrative NACA 2412 section; the NASA CFD figures omit the full wing and do not specify this section.",
+      "Solid-volume mass uses illustrative homogeneous material densities; it is geometric proxy mass, not weighed aircraft hardware. Gross component volumes include the small declared attachment overlaps; installation-context wing is excluded.",
+      "Air channels are reduced-order equivalent sections derived from the same dimensions; this is not a solved CFD volume mesh or a validated pressure-loss model.",
+      "Named STEP solids are regenerated with CadQuery/OpenCascade. Browser fallback is closed procedural surface tessellation of the same parameterized construction."
+    ]
+  },
+  "artifacts": {
+    "step": {
+      "storage": "ordered_chunks_v1",
+      "compression": "gzip",
+      "download_filename": "x57-modii-nacelle.step",
+      "chunk_max_bytes": 250000,
+      "chunks": [
+        {
+          "index": 0,
+          "file": "x57-modii-baseline.step.gz.part-0000",
+          "bytes": 250000,
+          "sha256": "48dfcfead7821f5243f10b59060b5055862b8423a18e09825edc33009cf04cf0"
+        },
+        {
+          "index": 1,
+          "file": "x57-modii-baseline.step.gz.part-0001",
+          "bytes": 250000,
+          "sha256": "bf2326e9c075040356302fd2c7da2bb92b1b685e8d5f9d255d89ce837dd7be8f"
+        },
+        {
+          "index": 2,
+          "file": "x57-modii-baseline.step.gz.part-0002",
+          "bytes": 250000,
+          "sha256": "2fa2911f60a4864d7e5a6f92bd5ed881aef09e35764b8f7738204975236f571a"
+        },
+        {
+          "index": 3,
+          "file": "x57-modii-baseline.step.gz.part-0003",
+          "bytes": 250000,
+          "sha256": "3278dd208afd93006d4907d1e173d63d839e415df973e0e2f535b1edb663253d"
+        },
+        {
+          "index": 4,
+          "file": "x57-modii-baseline.step.gz.part-0004",
+          "bytes": 250000,
+          "sha256": "97d2e16542fe02ec7110231043c8aa59e305aeec6a224a4132acc3b5491e6cb7"
+        },
+        {
+          "index": 5,
+          "file": "x57-modii-baseline.step.gz.part-0005",
+          "bytes": 250000,
+          "sha256": "4ae1803e7c0a0cd151e9af20b17d9f3f500bb907e332dee22f5ed7d549fbdc60"
+        },
+        {
+          "index": 6,
+          "file": "x57-modii-baseline.step.gz.part-0006",
+          "bytes": 250000,
+          "sha256": "b340a07bd938e8d5684129a86cf75f95292f719926f87fd0104f0a67367a0483"
+        },
+        {
+          "index": 7,
+          "file": "x57-modii-baseline.step.gz.part-0007",
+          "bytes": 250000,
+          "sha256": "d70c0387218335ce50b6247bf731441814af7035bf5dcfce50d9fd491c39842e"
+        },
+        {
+          "index": 8,
+          "file": "x57-modii-baseline.step.gz.part-0008",
+          "bytes": 250000,
+          "sha256": "a6e0997c0a64bfcf78bf8452a6098b91fe8857dd7913a30089efad50d9667631"
+        },
+        {
+          "index": 9,
+          "file": "x57-modii-baseline.step.gz.part-0009",
+          "bytes": 250000,
+          "sha256": "a645ad4391bc9a9e981ababd973133171c555407b6f269aba11ddd2d1615efa9"
+        },
+        {
+          "index": 10,
+          "file": "x57-modii-baseline.step.gz.part-0010",
+          "bytes": 250000,
+          "sha256": "09224e09113cac2d4b1c675df6f0c43114ac97fa70ecd9c622c6c4cfb9b636f5"
+        },
+        {
+          "index": 11,
+          "file": "x57-modii-baseline.step.gz.part-0011",
+          "bytes": 250000,
+          "sha256": "688fc8035a688e2f01f76c1c62e7330b672d37fe8af55565a7ab5c6d33ef3056"
+        },
+        {
+          "index": 12,
+          "file": "x57-modii-baseline.step.gz.part-0012",
+          "bytes": 250000,
+          "sha256": "d1db7c129d6611d3c03f3714ea9dc33f0a3a138680d4abda6418f02dbf0491f2"
+        },
+        {
+          "index": 13,
+          "file": "x57-modii-baseline.step.gz.part-0013",
+          "bytes": 250000,
+          "sha256": "f7b4ae56f04f74c292641fdc2e770fb794e8cb956a9e8fa9a48426e1e740c72c"
+        },
+        {
+          "index": 14,
+          "file": "x57-modii-baseline.step.gz.part-0014",
+          "bytes": 250000,
+          "sha256": "eef50540fe5989bc87ce8e4d3c246403d9ce9ee62b8502a58c4971d677a354f2"
+        },
+        {
+          "index": 15,
+          "file": "x57-modii-baseline.step.gz.part-0015",
+          "bytes": 250000,
+          "sha256": "06da4ecf3f523c685a60b6a661f271772aaa4e1c0c5a496ddf676aedef7cafe0"
+        },
+        {
+          "index": 16,
+          "file": "x57-modii-baseline.step.gz.part-0016",
+          "bytes": 185207,
+          "sha256": "8b0ee6552b1eae5c4c9bf4715a8806935390e814ce13b7c4c08165dfb7e84431"
+        }
+      ],
+      "sha256": "9790a38e94954b630d2c5625fb657bd888f7264773fe0f0504b17d8f278962af",
+      "compressed_sha256": "534d8cb1865380a8242394b4c75aea7df2de9425e6f8db1bfd43001c3eb76c39",
+      "bytes": 29072334,
+      "compressed_bytes": 4185207
+    }
+  },
+  "validation": {
+    "passed": true,
+    "method": "independent OpenCascade BRep volume, closed-shell and interference measurement",
+    "components": [
+      {
+        "id": "cowling_upper",
+        "valid": true,
+        "solid_count": 14,
+        "closed_shells": true,
+        "volume_mm3": 1432199.2526751535,
+        "mesh_volume_mm3": 1432199.2526751594,
+        "relative_volume_error": 4.064215283225653e-15,
+        "passed": true
+      },
+      {
+        "id": "cowling_lower",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 1505452.9620983119,
+        "mesh_volume_mm3": 1505452.9620983223,
+        "relative_volume_error": 6.959618950711425e-15,
+        "passed": true
+      },
+      {
+        "id": "cowling_tail",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 1525342.34574006,
+        "mesh_volume_mm3": 1525342.3457400624,
+        "relative_volume_error": 1.5264156555026035e-15,
+        "passed": true
+      },
+      {
+        "id": "local_wing",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 204538410.10939798,
+        "mesh_volume_mm3": 204538410.109398,
+        "relative_volume_error": 1.4570526079554176e-16,
+        "passed": true
+      },
+      {
+        "id": "propeller_spinner",
+        "valid": true,
+        "solid_count": 5,
+        "closed_shells": true,
+        "volume_mm3": 189921.5567538979,
+        "mesh_volume_mm3": 189921.5567538973,
+        "relative_volume_error": 3.0648264424713837e-15,
+        "passed": true
+      },
+      {
+        "id": "propeller_hub",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 1544687.400624068,
+        "mesh_volume_mm3": 1544687.4006240638,
+        "relative_volume_error": 2.7131389717275363e-15,
+        "passed": true
+      },
+      {
+        "id": "propeller_blade_1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 1082072.9328478102,
+        "mesh_volume_mm3": 1068222.756972175,
+        "relative_volume_error": 0.012965625179988453,
+        "passed": true
+      },
+      {
+        "id": "propeller_blade_2",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 1082072.9328478095,
+        "mesh_volume_mm3": 1068222.756972175,
+        "relative_volume_error": 0.012965625179987799,
+        "passed": true
+      },
+      {
+        "id": "propeller_blade_3",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 1082072.9328478097,
+        "mesh_volume_mm3": 1068222.7569721737,
+        "relative_volume_error": 0.012965625179989343,
+        "passed": true
+      },
+      {
+        "id": "motor_shaft",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 576873.998381209,
+        "mesh_volume_mm3": 576873.9983812093,
+        "relative_volume_error": 6.054111755094499e-16,
+        "passed": true
+      },
+      {
+        "id": "motor_rotor",
+        "valid": true,
+        "solid_count": 10,
+        "closed_shells": true,
+        "volume_mm3": 2046919.0319481732,
+        "mesh_volume_mm3": 2046919.0319481748,
+        "relative_volume_error": 7.962281263396607e-16,
+        "passed": true
+      },
+      {
+        "id": "motor_magnet",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 1581723.7652004294,
+        "mesh_volume_mm3": 1581723.76520043,
+        "relative_volume_error": 4.4160171727147227e-16,
+        "passed": true
+      },
+      {
+        "id": "motor_winding",
+        "valid": true,
+        "solid_count": 24,
+        "closed_shells": true,
+        "volume_mm3": 4162556.2248471803,
+        "mesh_volume_mm3": 4162556.2248471677,
+        "relative_volume_error": 3.0204648485608346e-15,
+        "passed": true
+      },
+      {
+        "id": "motor_stator",
+        "valid": true,
+        "solid_count": 26,
+        "closed_shells": true,
+        "volume_mm3": 3009947.156017598,
+        "mesh_volume_mm3": 3009947.156017593,
+        "relative_volume_error": 1.7017820894777171e-15,
+        "passed": true
+      },
+      {
+        "id": "motor_front_bearing",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 298662.1472697841,
+        "mesh_volume_mm3": 298662.1472697842,
+        "relative_volume_error": 1.9489467093694974e-16,
+        "passed": true
+      },
+      {
+        "id": "motor_rear_mount",
+        "valid": true,
+        "solid_count": 8,
+        "closed_shells": true,
+        "volume_mm3": 301819.59969203826,
+        "mesh_volume_mm3": 301819.59969203797,
+        "relative_volume_error": 9.642790092634752e-16,
+        "passed": true
+      },
+      {
+        "id": "motor_bypass_shroud",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 436155.8869013574,
+        "mesh_volume_mm3": 436155.8869013589,
+        "relative_volume_error": 3.4698584363998812e-15,
+        "passed": true
+      },
+      {
+        "id": "main_inlet_lip",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 38259.618487679385,
+        "mesh_volume_mm3": 38259.61848767947,
+        "relative_volume_error": 2.2820795089296967e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_case",
+        "valid": true,
+        "solid_count": 5,
+        "closed_shells": true,
+        "volume_mm3": 315323.9999999997,
+        "mesh_volume_mm3": 315323.9999999994,
+        "relative_volume_error": 9.229817729298676e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_hv",
+        "valid": true,
+        "solid_count": 25,
+        "closed_shells": true,
+        "volume_mm3": 605160.0000000023,
+        "mesh_volume_mm3": 605160.0000000034,
+        "relative_volume_error": 1.7313403008169864e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_lv",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 221999.9999999978,
+        "mesh_volume_mm3": 221999.9999999981,
+        "relative_volume_error": 1.4420816892976283e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_cpu",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 24840.0,
+        "mesh_volume_mm3": 24840.000000000022,
+        "relative_volume_error": 8.787388422926835e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_acdc",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 43200.00000000007,
+        "mesh_volume_mm3": 43200.00000000003,
+        "relative_volume_error": 1.0105496686365863e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_lv_duct",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 93563.99999999875,
+        "mesh_volume_mm3": 93563.9999999992,
+        "relative_volume_error": 4.821398957712114e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_connector_1",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.022320095224,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 8.853660078765914e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_connector_2",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.022320095231,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 1.7707320157531828e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_connector_3",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.022320095228,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 1.328049011814887e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_baffle_-1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 36737.99999999999,
+        "mesh_volume_mm3": 36737.99999999999,
+        "relative_volume_error": 0.0,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_baffle_+1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 36737.99999999999,
+        "mesh_volume_mm3": 36737.99999999999,
+        "relative_volume_error": 0.0,
+        "passed": true
+      },
+      {
+        "id": "lv_inlet_left",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 60873.764837476876,
+        "mesh_volume_mm3": 60873.76483747698,
+        "relative_volume_error": 1.6733548002251322e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_case",
+        "valid": true,
+        "solid_count": 5,
+        "closed_shells": true,
+        "volume_mm3": 315323.9999999997,
+        "mesh_volume_mm3": 315323.9999999994,
+        "relative_volume_error": 9.229817729298676e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_hv",
+        "valid": true,
+        "solid_count": 25,
+        "closed_shells": true,
+        "volume_mm3": 605160.0000000024,
+        "mesh_volume_mm3": 605160.0000000035,
+        "relative_volume_error": 1.7313403008169862e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_lv",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 221999.9999999978,
+        "mesh_volume_mm3": 221999.9999999981,
+        "relative_volume_error": 1.4420816892976283e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_cpu",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 24840.0,
+        "mesh_volume_mm3": 24840.000000000022,
+        "relative_volume_error": 8.787388422926835e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_acdc",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 43200.00000000007,
+        "mesh_volume_mm3": 43200.00000000003,
+        "relative_volume_error": 1.0105496686365863e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_lv_duct",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 93563.99999999875,
+        "mesh_volume_mm3": 93563.9999999992,
+        "relative_volume_error": 4.821398957712114e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_connector_1",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.022320095242,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 3.09878102756807e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_connector_2",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.02232009523,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 1.549390513784035e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_connector_3",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 8218.02232009521,
+        "mesh_volume_mm3": 8218.022320095217,
+        "relative_volume_error": 8.853660078765914e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_baffle_-1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 36737.99999999999,
+        "mesh_volume_mm3": 36737.99999999999,
+        "relative_volume_error": 0.0,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_baffle_+1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 36737.99999999999,
+        "mesh_volume_mm3": 36737.99999999999,
+        "relative_volume_error": 0.0,
+        "passed": true
+      },
+      {
+        "id": "lv_inlet_right",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 60873.76483747688,
+        "mesh_volume_mm3": 60873.76483747703,
+        "relative_volume_error": 2.3905068574644725e-15,
+        "passed": true
+      },
+      {
+        "id": "mount_strut_-1_-1",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 59848.18380716801,
+        "mesh_volume_mm3": 59848.18380716749,
+        "relative_volume_error": 8.753297341639087e-15,
+        "passed": true
+      },
+      {
+        "id": "mount_strut_-1_+1",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 52692.867814757206,
+        "mesh_volume_mm3": 52692.867814757265,
+        "relative_volume_error": 1.10465919444919e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_-1_-1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 22961.005941905376,
+        "mesh_volume_mm3": 22961.00594190537,
+        "relative_volume_error": 3.168832250900784e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_-1_+1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 22961.005941905416,
+        "mesh_volume_mm3": 22961.00594190537,
+        "relative_volume_error": 2.0597409630855096e-15,
+        "passed": true
+      },
+      {
+        "id": "mount_strut_+1_-1",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 59848.183807168614,
+        "mesh_volume_mm3": 59848.183807167494,
+        "relative_volume_error": 1.872233042517249e-14,
+        "passed": true
+      },
+      {
+        "id": "mount_strut_+1_+1",
+        "valid": true,
+        "solid_count": 3,
+        "closed_shells": true,
+        "volume_mm3": 52692.86781475723,
+        "mesh_volume_mm3": 52692.867814757265,
+        "relative_volume_error": 6.904119965307437e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_+1_-1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 22961.005941905376,
+        "mesh_volume_mm3": 22961.00594190537,
+        "relative_volume_error": 3.168832250900784e-16,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_+1_+1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 22961.005941905416,
+        "mesh_volume_mm3": 22961.00594190537,
+        "relative_volume_error": 2.0597409630855096e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_cross_front",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 37457.964531744365,
+        "mesh_volume_mm3": 37457.964531744976,
+        "relative_volume_error": 1.631643489526621e-14,
+        "passed": true
+      },
+      {
+        "id": "cmc_frame_cross_rear",
+        "valid": true,
+        "solid_count": 2,
+        "closed_shells": true,
+        "volume_mm3": 37457.96453174696,
+        "mesh_volume_mm3": 37457.96453174526,
+        "relative_volume_error": 4.545292577966981e-14,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_mount_upper",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 930.6861075119053,
+        "mesh_volume_mm3": 930.6861075119014,
+        "relative_volume_error": 4.275382739830656e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_left_mount_lower",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 930.6861075119014,
+        "mesh_volume_mm3": 930.6861075118978,
+        "relative_volume_error": 3.786767569564309e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_mount_upper",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 930.6861075119052,
+        "mesh_volume_mm3": 930.6861075119014,
+        "relative_volume_error": 4.1532289472640655e-15,
+        "passed": true
+      },
+      {
+        "id": "cmc_right_mount_lower",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 930.6861075119014,
+        "mesh_volume_mm3": 930.6861075118978,
+        "relative_volume_error": 3.786767569564309e-15,
+        "passed": true
+      },
+      {
+        "id": "motor_upper_exhaust",
+        "valid": true,
+        "solid_count": 4,
+        "closed_shells": true,
+        "volume_mm3": 13920.000000000058,
+        "mesh_volume_mm3": 13920.000000000035,
+        "relative_volume_error": 1.6987688395183963e-15,
+        "passed": true
+      },
+      {
+        "id": "flow_separator_-1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 16800.000000000004,
+        "mesh_volume_mm3": 16800.0,
+        "relative_volume_error": 2.1654635756498291e-16,
+        "passed": true
+      },
+      {
+        "id": "flow_separator_+1",
+        "valid": true,
+        "solid_count": 1,
+        "closed_shells": true,
+        "volume_mm3": 16800.000000000004,
+        "mesh_volume_mm3": 16800.0,
+        "relative_volume_error": 2.1654635756498291e-16,
+        "passed": true
+      }
+    ],
+    "component_count": 59,
+    "solid_count": 230,
+    "volume_mm3": 229804418.3186789,
+    "mesh_relative_volume_tolerance": 0.018,
+    "intersections": [
+      {
+        "a": "propeller_hub",
+        "b": "propeller_blade_1",
+        "intersection_mm3": 6410.11373362033,
+        "allowed": true,
+        "reason": "Blade root is seated inside the propeller hub"
+      },
+      {
+        "a": "propeller_hub",
+        "b": "propeller_blade_2",
+        "intersection_mm3": 6409.57872634526,
+        "allowed": true,
+        "reason": "Blade root is seated inside the propeller hub"
+      },
+      {
+        "a": "propeller_hub",
+        "b": "propeller_blade_3",
+        "intersection_mm3": 6410.620878909292,
+        "allowed": true,
+        "reason": "Blade root is seated inside the propeller hub"
+      },
+      {
+        "a": "motor_rear_mount",
+        "b": "mount_strut_-1_-1",
+        "intersection_mm3": 172.4724653381638,
+        "allowed": true,
+        "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
+      },
+      {
+        "a": "motor_rear_mount",
+        "b": "mount_strut_-1_+1",
+        "intersection_mm3": 172.47246533815576,
+        "allowed": true,
+        "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
+      },
+      {
+        "a": "motor_rear_mount",
+        "b": "mount_strut_+1_-1",
+        "intersection_mm3": 172.4724653381557,
+        "allowed": true,
+        "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
+      },
+      {
+        "a": "motor_rear_mount",
+        "b": "mount_strut_+1_+1",
+        "intersection_mm3": 172.47246533815996,
+        "allowed": true,
+        "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
+      },
+      {
+        "a": "cmc_left_case",
+        "b": "cmc_left_mount_upper",
+        "intersection_mm3": 97.9669586854637,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "cmc_left_case",
+        "b": "cmc_left_mount_lower",
+        "intersection_mm3": 97.96695868546342,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "cmc_right_case",
+        "b": "cmc_right_mount_upper",
+        "intersection_mm3": 97.96695868546367,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "cmc_right_case",
+        "b": "cmc_right_mount_lower",
+        "intersection_mm3": 97.96695868546335,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "mount_strut_-1_-1",
+        "b": "mount_strut_-1_+1",
+        "intersection_mm3": 554.736892407689,
+        "allowed": true,
+        "reason": "Upper and lower support tubes converge at the same inferred wing attachment node"
+      },
+      {
+        "a": "mount_strut_-1_-1",
+        "b": "cmc_frame_-1_-1",
+        "intersection_mm3": 3034.1589026282313,
+        "allowed": true,
+        "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
+      },
+      {
+        "a": "mount_strut_-1_-1",
+        "b": "cmc_frame_cross_front",
+        "intersection_mm3": 137.18553299902408,
+        "allowed": true,
+        "reason": "Cradle crossmember / motor support attachment envelope"
+      },
+      {
+        "a": "mount_strut_-1_+1",
+        "b": "cmc_frame_-1_+1",
+        "intersection_mm3": 3979.9109588292854,
+        "allowed": true,
+        "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
+      },
+      {
+        "a": "cmc_frame_-1_-1",
+        "b": "cmc_frame_cross_front",
+        "intersection_mm3": 160.30300552967253,
+        "allowed": true,
+        "reason": "Welded tubular CMC cradle corner joint"
+      },
+      {
+        "a": "cmc_frame_-1_-1",
+        "b": "cmc_frame_cross_rear",
+        "intersection_mm3": 160.30300552967344,
+        "allowed": true,
+        "reason": "Welded tubular CMC cradle corner joint"
+      },
+      {
+        "a": "cmc_frame_-1_-1",
+        "b": "cmc_left_mount_lower",
+        "intersection_mm3": 220.48142147405736,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "cmc_frame_-1_+1",
+        "b": "cmc_left_mount_upper",
+        "intersection_mm3": 220.4814214740785,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "mount_strut_+1_-1",
+        "b": "mount_strut_+1_+1",
+        "intersection_mm3": 554.7368924076852,
+        "allowed": true,
+        "reason": "Upper and lower support tubes converge at the same inferred wing attachment node"
+      },
+      {
+        "a": "mount_strut_+1_-1",
+        "b": "cmc_frame_+1_-1",
+        "intersection_mm3": 3034.158902628268,
+        "allowed": true,
+        "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
+      },
+      {
+        "a": "mount_strut_+1_-1",
+        "b": "cmc_frame_cross_front",
+        "intersection_mm3": 137.18553299902595,
+        "allowed": true,
+        "reason": "Cradle crossmember / motor support attachment envelope"
+      },
+      {
+        "a": "mount_strut_+1_+1",
+        "b": "cmc_frame_+1_+1",
+        "intersection_mm3": 3979.91095882938,
+        "allowed": true,
+        "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
+      },
+      {
+        "a": "cmc_frame_+1_-1",
+        "b": "cmc_frame_cross_front",
+        "intersection_mm3": 160.3030055296718,
+        "allowed": true,
+        "reason": "Welded tubular CMC cradle corner joint"
+      },
+      {
+        "a": "cmc_frame_+1_-1",
+        "b": "cmc_frame_cross_rear",
+        "intersection_mm3": 160.30300552967276,
+        "allowed": true,
+        "reason": "Welded tubular CMC cradle corner joint"
+      },
+      {
+        "a": "cmc_frame_+1_-1",
+        "b": "cmc_right_mount_lower",
+        "intersection_mm3": 220.4814214740576,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      },
+      {
+        "a": "cmc_frame_+1_+1",
+        "b": "cmc_right_mount_upper",
+        "intersection_mm3": 220.48142147407876,
+        "allowed": true,
+        "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
+      }
+    ],
+    "intersection_pairs_tested": 224,
+    "context_junctions": [
+      {
+        "a": "cowling_upper",
+        "b": "local_wing",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      },
+      {
+        "a": "cowling_tail",
+        "b": "local_wing",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      },
+      {
+        "a": "local_wing",
+        "b": "mount_strut_-1_-1",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      },
+      {
+        "a": "local_wing",
+        "b": "mount_strut_-1_+1",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      },
+      {
+        "a": "local_wing",
+        "b": "mount_strut_+1_-1",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      },
+      {
+        "a": "local_wing",
+        "b": "mount_strut_+1_+1",
+        "method": "overlapping installation-context bounds; not a hardware collision or mass contribution"
+      }
+    ],
+    "mechanical_contact_checks": [
+      {
+        "a": "motor_shaft",
+        "b": "motor_rotor",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "motor_shaft",
+        "b": "propeller_hub",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "main_inlet_lip",
+        "b": "cowling_upper",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "lv_inlet_left",
+        "b": "cmc_left_lv",
+        "minimum_distance_mm": 6.355287432313019e-14,
+        "passed": true
+      },
+      {
+        "a": "lv_inlet_left",
+        "b": "cmc_left_lv_duct",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_left_mount_upper",
+        "b": "cmc_left_case",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_left_mount_upper",
+        "b": "cmc_frame_-1_+1",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "mount_strut_-1_+1",
+        "b": "local_wing",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_left_mount_lower",
+        "b": "cmc_left_case",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_left_mount_lower",
+        "b": "cmc_frame_-1_-1",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "mount_strut_-1_-1",
+        "b": "local_wing",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "lv_inlet_right",
+        "b": "cmc_right_lv",
+        "minimum_distance_mm": 6.355287432313019e-14,
+        "passed": true
+      },
+      {
+        "a": "lv_inlet_right",
+        "b": "cmc_right_lv_duct",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_right_mount_upper",
+        "b": "cmc_right_case",
+        "minimum_distance_mm": 1.4210854715202004e-14,
+        "passed": true
+      },
+      {
+        "a": "cmc_right_mount_upper",
+        "b": "cmc_frame_+1_+1",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "mount_strut_+1_+1",
+        "b": "local_wing",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_right_mount_lower",
+        "b": "cmc_right_case",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "cmc_right_mount_lower",
+        "b": "cmc_frame_+1_-1",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      },
+      {
+        "a": "mount_strut_+1_-1",
+        "b": "local_wing",
+        "minimum_distance_mm": 0.0,
+        "passed": true
+      }
+    ],
+    "unexpected_intersection_count": 0,
+    "limitations": [
+      "Ruled polygonal BRep sections approximate smooth manufactured contours",
+      "Explicitly allowed attachment penetrations are visual structural joints, not engineered fasteners",
+      "Interference audit does not establish structural or manufacturing validity"
+    ],
+    "intersection_audit_complete": true
+  },
+  "roundtrip": {
+    "valid": true,
+    "closed_shells": true,
+    "solid_count": 230,
+    "volume_mm3": 229804418.31869063,
+    "relative_volume_error": 5.109612385462797e-14,
+    "passed": true
+  },
+  "mesh_validation": {
+    "passed": true,
+    "components": [
+      {
+        "id": "cowling_upper",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1432199.2526751594,
+        "parts": 14,
+        "vertex_count": 1848,
+        "triangle_count": 3640
+      },
+      {
+        "id": "cowling_lower",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1505452.9620983223,
+        "parts": 3,
+        "vertex_count": 792,
+        "triangle_count": 1572
+      },
+      {
+        "id": "cowling_tail",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1525342.3457400624,
+        "parts": 2,
+        "vertex_count": 792,
+        "triangle_count": 1576
+      },
+      {
+        "id": "local_wing",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 204538410.109398,
+        "parts": 2,
+        "vertex_count": 352,
+        "triangle_count": 696
+      },
+      {
+        "id": "propeller_spinner",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 189921.5567538973,
+        "parts": 5,
+        "vertex_count": 906,
+        "triangle_count": 1792
+      },
+      {
+        "id": "propeller_hub",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1544687.4006240638,
+        "parts": 2,
+        "vertex_count": 264,
+        "triangle_count": 520
+      },
+      {
+        "id": "propeller_blade_1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1068222.756972175,
+        "parts": 1,
+        "vertex_count": 240,
+        "triangle_count": 476
+      },
+      {
+        "id": "propeller_blade_2",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1068222.756972175,
+        "parts": 1,
+        "vertex_count": 240,
+        "triangle_count": 476
+      },
+      {
+        "id": "propeller_blade_3",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1068222.7569721737,
+        "parts": 1,
+        "vertex_count": 240,
+        "triangle_count": 476
+      },
+      {
+        "id": "motor_shaft",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 576873.9983812093,
+        "parts": 1,
+        "vertex_count": 128,
+        "triangle_count": 252
+      },
+      {
+        "id": "motor_rotor",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 2046919.0319481748,
+        "parts": 10,
+        "vertex_count": 624,
+        "triangle_count": 1208
+      },
+      {
+        "id": "motor_magnet",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 1581723.76520043,
+        "parts": 2,
+        "vertex_count": 264,
+        "triangle_count": 520
+      },
+      {
+        "id": "motor_winding",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 4162556.2248471677,
+        "parts": 24,
+        "vertex_count": 480,
+        "triangle_count": 864
+      },
+      {
+        "id": "motor_stator",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 3009947.156017593,
+        "parts": 26,
+        "vertex_count": 648,
+        "triangle_count": 1192
+      },
+      {
+        "id": "motor_front_bearing",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 298662.1472697842,
+        "parts": 2,
+        "vertex_count": 264,
+        "triangle_count": 520
+      },
+      {
+        "id": "motor_rear_mount",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 301819.59969203797,
+        "parts": 8,
+        "vertex_count": 592,
+        "triangle_count": 1152
+      },
+      {
+        "id": "motor_bypass_shroud",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 436155.8869013589,
+        "parts": 2,
+        "vertex_count": 396,
+        "triangle_count": 784
+      },
+      {
+        "id": "main_inlet_lip",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 38259.61848767947,
+        "parts": 2,
+        "vertex_count": 264,
+        "triangle_count": 520
+      },
+      {
+        "id": "cmc_left_case",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 315323.9999999994,
+        "parts": 5,
+        "vertex_count": 40,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_left_hv",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 605160.0000000034,
+        "parts": 25,
+        "vertex_count": 200,
+        "triangle_count": 300
+      },
+      {
+        "id": "cmc_left_lv",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 221999.9999999981,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_left_cpu",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 24840.000000000022,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_left_acdc",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 43200.00000000003,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_left_lv_duct",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 93563.9999999992,
+        "parts": 3,
+        "vertex_count": 24,
+        "triangle_count": 36
+      },
+      {
+        "id": "cmc_left_connector_1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_left_connector_2",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_left_connector_3",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_left_baffle_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 36737.99999999999,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_left_baffle_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 36737.99999999999,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "lv_inlet_left",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 60873.76483747698,
+        "parts": 2,
+        "vertex_count": 272,
+        "triangle_count": 536
+      },
+      {
+        "id": "cmc_right_case",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 315323.9999999994,
+        "parts": 5,
+        "vertex_count": 40,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_right_hv",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 605160.0000000035,
+        "parts": 25,
+        "vertex_count": 200,
+        "triangle_count": 300
+      },
+      {
+        "id": "cmc_right_lv",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 221999.9999999981,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_right_cpu",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 24840.000000000022,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_right_acdc",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 43200.00000000003,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_right_lv_duct",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 93563.9999999992,
+        "parts": 3,
+        "vertex_count": 24,
+        "triangle_count": 36
+      },
+      {
+        "id": "cmc_right_connector_1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_right_connector_2",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_right_connector_3",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 8218.022320095217,
+        "parts": 2,
+        "vertex_count": 104,
+        "triangle_count": 200
+      },
+      {
+        "id": "cmc_right_baffle_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 36737.99999999999,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "cmc_right_baffle_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 36737.99999999999,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "lv_inlet_right",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 60873.76483747703,
+        "parts": 2,
+        "vertex_count": 272,
+        "triangle_count": 536
+      },
+      {
+        "id": "mount_strut_-1_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 59848.18380716749,
+        "parts": 3,
+        "vertex_count": 96,
+        "triangle_count": 180
+      },
+      {
+        "id": "mount_strut_-1_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 52692.867814757265,
+        "parts": 3,
+        "vertex_count": 96,
+        "triangle_count": 180
+      },
+      {
+        "id": "cmc_frame_-1_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 22961.00594190537,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_frame_-1_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 22961.00594190537,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "mount_strut_+1_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 59848.183807167494,
+        "parts": 3,
+        "vertex_count": 96,
+        "triangle_count": 180
+      },
+      {
+        "id": "mount_strut_+1_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 52692.867814757265,
+        "parts": 3,
+        "vertex_count": 96,
+        "triangle_count": 180
+      },
+      {
+        "id": "cmc_frame_+1_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 22961.00594190537,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_frame_+1_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 22961.00594190537,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_frame_cross_front",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 37457.964531744976,
+        "parts": 2,
+        "vertex_count": 64,
+        "triangle_count": 120
+      },
+      {
+        "id": "cmc_frame_cross_rear",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 37457.96453174526,
+        "parts": 2,
+        "vertex_count": 64,
+        "triangle_count": 120
+      },
+      {
+        "id": "cmc_left_mount_upper",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 930.6861075119014,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_left_mount_lower",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 930.6861075118978,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_right_mount_upper",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 930.6861075119014,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "cmc_right_mount_lower",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 930.6861075118978,
+        "parts": 1,
+        "vertex_count": 32,
+        "triangle_count": 60
+      },
+      {
+        "id": "motor_upper_exhaust",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 13920.000000000035,
+        "parts": 4,
+        "vertex_count": 32,
+        "triangle_count": 48
+      },
+      {
+        "id": "flow_separator_-1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 16800.0,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      },
+      {
+        "id": "flow_separator_+1",
+        "closed_indexed_mesh": true,
+        "volume_mm3": 16800.0,
+        "parts": 1,
+        "vertex_count": 8,
+        "triangle_count": 12
+      }
+    ],
+    "method": "edge incidence and signed tetrahedral volume for each closed primitive"
+  },
+  "metrics": {
+    "parameters": {
+      "motor_diameter_mm": 355.6,
+      "prop_diameter_mm": 1524.0,
+      "nacelle_length_mm": 1470.0,
+      "nacelle_width_mm": 520.0,
+      "nacelle_height_mm": 490.0,
+      "wing_span_mm": 2200.0,
+      "wing_chord_mm": 1100.0,
+      "cmc_length_mm": 300.0,
+      "cmc_width_mm": 185.0,
+      "cmc_thickness_mm": 42.0,
+      "cmc_tilt_deg": 48.0,
+      "hv_fin_count": 24,
+      "hv_fin_height_mm": 27.0,
+      "hv_fin_thickness_mm": 1.4,
+      "motor_gap_mm": 6.0,
+      "main_inlet_height_mm": 24.0,
+      "motor_bypass_gap_mm": 28.0,
+      "upper_inlet_height_mm": 30.0,
+      "backplate_gap_mm": 18.0,
+      "outlet_area_mm2": 22000.0,
+      "motor_exhaust_area_mm2": 9000.0
+    },
+    "fingerprint": "9ccf25d5e959fdbe87c9655923b08d6e529899b7c3db650c658e7f5d189133dd",
+    "channels": {
+      "main_inlet": {
+        "area_m2": 0.0559424660461796,
+        "wetted_perimeter_m": 1.7266193224129505,
+        "length_m": 0.06,
+        "heated_area_m2": 0.0,
+        "hydraulic_diameter_m": 0.12960000000000002,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "reference_plane": "Front axial annulus: 105 mm spinner skirt to rotor inner lip R-8; feeds stator slots and rotor gap"
+      },
+      "motor_internal": {
+        "area_m2": 0.005911220736994562,
+        "wetted_perimeter_m": 1.9704069123315184,
+        "length_m": 0.15,
+        "heated_area_m2": 0.2955610368497278,
+        "hydraulic_diameter_m": 0.012000000000000012,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "heated_surfaces_m2": {
+          "motor_winding": 0.14495308503663307,
+          "motor_magnet": 0.1506079518130947
+        },
+        "heated_surface_note": "Equivalent cylindrical stator outer envelope and magnet inner wall; winding-to-stator conduction is lumped"
+      },
+      "motor_bypass": {
+        "area_m2": 0.024845599660180233,
+        "wetted_perimeter_m": 2.366247586683832,
+        "length_m": 0.221,
+        "heated_area_m2": 0.21337571639475733,
+        "hydraulic_diameter_m": 0.041999999999999996,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "segments": [
+          {
+            "area_m2": 0.024845599660180233,
+            "wetted_perimeter_m": 2.366247586683832,
+            "length_m": 0.043000000000000003,
+            "heated_area_m2": 0.014522954519014896,
+            "hydraulic_diameter_m": 0.041999999999999996,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Outer CM radius to inner cowling lip; 3 mm shell wall removed"
+          },
+          {
+            "area_m2": 0.025940965026239528,
+            "wetted_perimeter_m": 2.3717453738276144,
+            "length_m": 0.028,
+            "heated_area_m2": 0.031280209733262856,
+            "hydraulic_diameter_m": 0.04375,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Midpoint equivalent of tapered guide x=18..46 mm"
+          },
+          {
+            "area_m2": 0.028146127449610557,
+            "wetted_perimeter_m": 2.3827409481151784,
+            "length_m": 0.028,
+            "heated_area_m2": 0.031280209733262856,
+            "hydraulic_diameter_m": 0.04725000000000002,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Midpoint equivalent of tapered guide x=46..74 mm"
+          },
+          {
+            "area_m2": 0.030370532127984795,
+            "wetted_perimeter_m": 2.393736522402743,
+            "length_m": 0.028,
+            "heated_area_m2": 0.031280209733262856,
+            "hydraulic_diameter_m": 0.05074999999999999,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Midpoint equivalent of tapered guide x=74..102 mm"
+          },
+          {
+            "area_m2": 0.03261417906136229,
+            "wetted_perimeter_m": 2.404732096690307,
+            "length_m": 0.028,
+            "heated_area_m2": 0.031280209733262856,
+            "hydraulic_diameter_m": 0.05425000000000001,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Midpoint equivalent of tapered guide x=102..130 mm"
+          },
+          {
+            "area_m2": 0.033743218373677254,
+            "wetted_perimeter_m": 2.4102298838340896,
+            "length_m": 0.066,
+            "heated_area_m2": 0.07373192294269101,
+            "hydraulic_diameter_m": 0.05600000000000001,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Straight guide130..188 mm plus exposed rotor exit188..196 mm"
+          }
+        ],
+        "inlet": {
+          "area_m2": 0.024845599660180233,
+          "wetted_perimeter_m": 2.366247586683832,
+          "length_m": 0.043000000000000003,
+          "heated_area_m2": 0.014522954519014896,
+          "hydraulic_diameter_m": 0.041999999999999996,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "reference_plane": "Outer CM radius to inner cowling lip; 3 mm shell wall removed"
+        },
+        "heat_exchange": {
+          "area_m2": 0.030513380685186192,
+          "wetted_perimeter_m": 2.3943409911463003,
+          "hydraulic_diameter_m": 0.05097583142587855,
+          "length_m": 0.191,
+          "heated_area_m2": 0.21337571639475733,
+          "method": "heated-length-weighted representative annulus of same-geometry serial sections"
+        },
+        "heated_surfaces_m2": {
+          "motor_magnet": 0.21337571639475733
+        },
+        "reference_plane": "Outer inlet aperture for local-loss K; four tapered guide sections and straight exit in series"
+      },
+      "motor_top_exhaust": {
+        "area_m2": 0.009,
+        "wetted_perimeter_m": 0.42,
+        "length_m": 0.084,
+        "heated_area_m2": 0.0,
+        "hydraulic_diameter_m": 0.08571428571428572,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "reference_plane": "XY projected cowling cutout before louvers; louver contraction is a loss coefficient"
+      },
+      "cmc_hv_left": {
+        "area_m2": 0.0037638,
+        "wetted_perimeter_m": 1.5207999999999997,
+        "length_m": 0.3,
+        "heated_area_m2": 0.4144199999999999,
+        "hydraulic_diameter_m": 0.009899526564965809,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "fin_count": 24,
+        "fin_gap_m": 0.006060869565217391,
+        "fin_height_m": 0.027,
+        "fin_thickness_m": 0.0014,
+        "base_area_m2": 0.041819999999999996,
+        "fin_area_m2": 0.3726
+      },
+      "cmc_hv_right": {
+        "area_m2": 0.0037638,
+        "wetted_perimeter_m": 1.5207999999999997,
+        "length_m": 0.3,
+        "heated_area_m2": 0.4144199999999999,
+        "hydraulic_diameter_m": 0.009899526564965809,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "fin_count": 24,
+        "fin_gap_m": 0.006060869565217391,
+        "fin_height_m": 0.027,
+        "fin_thickness_m": 0.0014,
+        "base_area_m2": 0.041819999999999996,
+        "fin_area_m2": 0.3726
+      },
+      "cmc_bypass": {
+        "area_m2": 0.006944,
+        "wetted_perimeter_m": 0.34800000000000003,
+        "length_m": 0.3,
+        "heated_area_m2": 0.0,
+        "hydraulic_diameter_m": 0.07981609195402299,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction"
+      },
+      "lv_fresh_left": {
+        "area_m2": 0.0017435839227423352,
+        "wetted_perimeter_m": 0.17075672570229883,
+        "length_m": 0.48,
+        "heated_area_m2": 0.0555,
+        "hydraulic_diameter_m": 0.040843695393460264,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "heat_exchange": {
+          "area_m2": 0.003078,
+          "wetted_perimeter_m": 0.378,
+          "length_m": 0.3,
+          "heated_area_m2": 0.0555,
+          "hydraulic_diameter_m": 0.03257142857142857,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "gap_m": 0.018000000000000002
+        },
+        "segments": [
+          {
+            "area_m2": 0.0017435839227423352,
+            "wetted_perimeter_m": 0.17075672570229883,
+            "length_m": 0.18,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.040843695393460264
+          },
+          {
+            "area_m2": 0.003078,
+            "wetted_perimeter_m": 0.378,
+            "length_m": 0.3,
+            "heated_area_m2": 0.0555,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "gap_m": 0.018000000000000002
+          }
+        ],
+        "heat_exchange_note": "Inferred nominal backplate standoff with open connector end; full-plate jet heat-transfer area, not a sealed CFD duct"
+      },
+      "lv_fresh_right": {
+        "area_m2": 0.0017435839227423352,
+        "wetted_perimeter_m": 0.17075672570229883,
+        "length_m": 0.48,
+        "heated_area_m2": 0.0555,
+        "hydraulic_diameter_m": 0.040843695393460264,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "heat_exchange": {
+          "area_m2": 0.003078,
+          "wetted_perimeter_m": 0.378,
+          "length_m": 0.3,
+          "heated_area_m2": 0.0555,
+          "hydraulic_diameter_m": 0.03257142857142857,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "gap_m": 0.018000000000000002
+        },
+        "segments": [
+          {
+            "area_m2": 0.0017435839227423352,
+            "wetted_perimeter_m": 0.17075672570229883,
+            "length_m": 0.18,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.040843695393460264
+          },
+          {
+            "area_m2": 0.003078,
+            "wetted_perimeter_m": 0.378,
+            "length_m": 0.3,
+            "heated_area_m2": 0.0555,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "gap_m": 0.018000000000000002
+          }
+        ],
+        "heat_exchange_note": "Inferred nominal backplate standoff with open connector end; full-plate jet heat-transfer area, not a sealed CFD duct"
+      },
+      "lower_outlet": {
+        "area_m2": 0.022,
+        "wetted_perimeter_m": 0.595,
+        "length_m": 0.16,
+        "heated_area_m2": 0.0,
+        "hydraulic_diameter_m": 0.14789915966386555,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "reference_plane": "XY projected lower-shell aperture; opening angle solved from ruled shell section widths"
+      },
+      "motor_slots": {
+        "area_m2": 0.006153857280000002,
+        "wetted_perimeter_m": 2.6117568000000007,
+        "length_m": 0.133,
+        "heated_area_m2": 0.3140928000000001,
+        "hydraulic_diameter_m": 0.009424854994155659,
+        "method": "same-parameter equivalent flow section; not CFD volume extraction",
+        "slot_count": 24,
+        "slot_angle_rad": 0.043,
+        "inner_radius_m": 0.09659999999999999,
+        "outer_radius_m": 0.1458,
+        "heated_surfaces_m2": {
+          "motor_winding": 0.3140928000000001
+        }
+      }
+    },
+    "components": {
+      "cowling_upper": {
+        "volume_m3": 0.0014321992526751595,
+        "mass_kg": 2.219908841646497,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "cowling_lower": {
+        "volume_m3": 0.0015054529620983225,
+        "mass_kg": 2.3334520912523997,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "cowling_tail": {
+        "volume_m3": 0.0015253423457400625,
+        "mass_kg": 2.3642806358970967,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "local_wing": {
+        "volume_m3": 0.20453841010939802,
+        "mass_kg": 317.03453566956694,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "installation_context"
+      },
+      "propeller_spinner": {
+        "volume_m3": 0.0001899215567538973,
+        "mass_kg": 0.29437841296854084,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "propeller_hub": {
+        "volume_m3": 0.001544687400624064,
+        "mass_kg": 12.125796094898902,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "propeller_blade_1": {
+        "volume_m3": 0.0010682227569721752,
+        "mass_kg": 1.6557452733068716,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "propeller_blade_2": {
+        "volume_m3": 0.0010682227569721752,
+        "mass_kg": 1.6557452733068716,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "propeller_blade_3": {
+        "volume_m3": 0.0010682227569721737,
+        "mass_kg": 1.6557452733068692,
+        "material": "composite",
+        "density_kg_m3": 1550.0,
+        "role": "hardware"
+      },
+      "motor_shaft": {
+        "volume_m3": 0.0005768739983812094,
+        "mass_kg": 4.528460887292494,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "motor_rotor": {
+        "volume_m3": 0.002046919031948175,
+        "mass_kg": 5.526681386260072,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "motor_magnet": {
+        "volume_m3": 0.00158172376520043,
+        "mass_kg": 11.704755862483182,
+        "material": "magnet_proxy",
+        "density_kg_m3": 7400.0,
+        "role": "hardware",
+        "conduction_patch_areas_m2": {
+          "inner": 0.15362011084935656,
+          "outer": 0.16323338436934134
+        },
+        "conduction_area_m2": 0.316853495218698,
+        "conduction_length_m": 0.005,
+        "conduction_provenance": "Half the reconstructed 10 mm radial magnet thickness; separate inner/outer cylindrical conduction patches"
+      },
+      "motor_winding": {
+        "volume_m3": 0.004162556224847168,
+        "mass_kg": 24.97533734908301,
+        "material": "copper_proxy",
+        "density_kg_m3": 6000.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.4590458850366332,
+        "conduction_length_m": 0.013259242900628456,
+        "conduction_provenance": "Inferred conduction direction: half mean circumferential winding-sector width, derived from sector geometry; not calibrated winding insulation/contact resistance"
+      },
+      "motor_stator": {
+        "volume_m3": 0.003009947156017593,
+        "mass_kg": 23.628085174738107,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "motor_front_bearing": {
+        "volume_m3": 0.0002986621472697842,
+        "mass_kg": 2.344497856067806,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "motor_rear_mount": {
+        "volume_m3": 0.000301819599692038,
+        "mass_kg": 0.8149129191685026,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "motor_bypass_shroud": {
+        "volume_m3": 0.0004361558869013589,
+        "mass_kg": 1.177620894633669,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "main_inlet_lip": {
+        "volume_m3": 3.8259618487679475e-05,
+        "mass_kg": 0.10330096991673458,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_case": {
+        "volume_m3": 0.0003153239999999994,
+        "mass_kg": 0.8513747999999984,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_hv": {
+        "volume_m3": 0.0006051600000000035,
+        "mass_kg": 1.6339320000000093,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware",
+        "fin_count": 24,
+        "fin_height_m": 0.027,
+        "fin_thickness_m": 0.0014,
+        "fin_area_m2": 0.3726,
+        "conduction_area_m2": 0.0555,
+        "conduction_length_m": 0.006,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_left_lv": {
+        "volume_m3": 0.00022199999999999813,
+        "mass_kg": 0.5993999999999949,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.0555,
+        "conduction_length_m": 0.004,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_left_cpu": {
+        "volume_m3": 2.4840000000000023e-05,
+        "mass_kg": 0.04595400000000004,
+        "material": "electronics_proxy",
+        "density_kg_m3": 1850.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.002484,
+        "conduction_length_m": 0.01,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_left_acdc": {
+        "volume_m3": 4.3200000000000034e-05,
+        "mass_kg": 0.07992000000000006,
+        "material": "electronics_proxy",
+        "density_kg_m3": 1850.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.00432,
+        "conduction_length_m": 0.01,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_left_lv_duct": {
+        "volume_m3": 9.35639999999992e-05,
+        "mass_kg": 0.2526227999999978,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_connector_1": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_connector_2": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_connector_3": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_baffle_-1": {
+        "volume_m3": 3.673799999999999e-05,
+        "mass_kg": 0.09919259999999998,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_baffle_+1": {
+        "volume_m3": 3.673799999999999e-05,
+        "mass_kg": 0.09919259999999998,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "lv_inlet_left": {
+        "volume_m3": 6.087376483747698e-05,
+        "mass_kg": 0.16435916506118783,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_case": {
+        "volume_m3": 0.0003153239999999994,
+        "mass_kg": 0.8513747999999984,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_hv": {
+        "volume_m3": 0.0006051600000000036,
+        "mass_kg": 1.6339320000000097,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware",
+        "fin_count": 24,
+        "fin_height_m": 0.027,
+        "fin_thickness_m": 0.0014,
+        "fin_area_m2": 0.3726,
+        "conduction_area_m2": 0.0555,
+        "conduction_length_m": 0.006,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_right_lv": {
+        "volume_m3": 0.00022199999999999813,
+        "mass_kg": 0.5993999999999949,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.0555,
+        "conduction_length_m": 0.004,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_right_cpu": {
+        "volume_m3": 2.4840000000000023e-05,
+        "mass_kg": 0.04595400000000004,
+        "material": "electronics_proxy",
+        "density_kg_m3": 1850.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.002484,
+        "conduction_length_m": 0.01,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_right_acdc": {
+        "volume_m3": 4.3200000000000034e-05,
+        "mass_kg": 0.07992000000000006,
+        "material": "electronics_proxy",
+        "density_kg_m3": 1850.0,
+        "role": "hardware",
+        "conduction_area_m2": 0.00432,
+        "conduction_length_m": 0.01,
+        "conduction_provenance": "Effective full plate/package thickness, idealized one-dimensional conduction"
+      },
+      "cmc_right_lv_duct": {
+        "volume_m3": 9.35639999999992e-05,
+        "mass_kg": 0.2526227999999978,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_connector_1": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_connector_2": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_connector_3": {
+        "volume_m3": 8.218022320095218e-06,
+        "mass_kg": 0.022188660264257087,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_baffle_-1": {
+        "volume_m3": 3.673799999999999e-05,
+        "mass_kg": 0.09919259999999998,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_baffle_+1": {
+        "volume_m3": 3.673799999999999e-05,
+        "mass_kg": 0.09919259999999998,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "lv_inlet_right": {
+        "volume_m3": 6.0873764837477035e-05,
+        "mass_kg": 0.164359165061188,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "mount_strut_-1_-1": {
+        "volume_m3": 5.984818380716749e-05,
+        "mass_kg": 0.4698082428862648,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "mount_strut_-1_+1": {
+        "volume_m3": 5.2692867814757266e-05,
+        "mass_kg": 0.41363901234584455,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "cmc_frame_-1_-1": {
+        "volume_m3": 2.296100594190537e-05,
+        "mass_kg": 0.0619947160431445,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_frame_-1_+1": {
+        "volume_m3": 2.296100594190537e-05,
+        "mass_kg": 0.0619947160431445,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "mount_strut_+1_-1": {
+        "volume_m3": 5.98481838071675e-05,
+        "mass_kg": 0.4698082428862649,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "mount_strut_+1_+1": {
+        "volume_m3": 5.2692867814757266e-05,
+        "mass_kg": 0.41363901234584455,
+        "material": "steel",
+        "density_kg_m3": 7850.0,
+        "role": "hardware"
+      },
+      "cmc_frame_+1_-1": {
+        "volume_m3": 2.296100594190537e-05,
+        "mass_kg": 0.0619947160431445,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_frame_+1_+1": {
+        "volume_m3": 2.296100594190537e-05,
+        "mass_kg": 0.0619947160431445,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_frame_cross_front": {
+        "volume_m3": 3.745796453174498e-05,
+        "mass_kg": 0.10113650423571144,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_frame_cross_rear": {
+        "volume_m3": 3.745796453174526e-05,
+        "mass_kg": 0.1011365042357122,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_mount_upper": {
+        "volume_m3": 9.306861075119014e-07,
+        "mass_kg": 0.0025128524902821338,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_left_mount_lower": {
+        "volume_m3": 9.306861075118978e-07,
+        "mass_kg": 0.0025128524902821242,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_mount_upper": {
+        "volume_m3": 9.306861075119014e-07,
+        "mass_kg": 0.0025128524902821338,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "cmc_right_mount_lower": {
+        "volume_m3": 9.306861075118978e-07,
+        "mass_kg": 0.0025128524902821242,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "motor_upper_exhaust": {
+        "volume_m3": 1.3920000000000036e-05,
+        "mass_kg": 0.037584000000000096,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "flow_separator_-1": {
+        "volume_m3": 1.6800000000000002e-05,
+        "mass_kg": 0.045360000000000004,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      },
+      "flow_separator_+1": {
+        "volume_m3": 1.6800000000000002e-05,
+        "mass_kg": 0.045360000000000004,
+        "material": "aluminum",
+        "density_kg_m3": 2700.0,
+        "role": "hardware"
+      }
+    },
+    "mass_kg": 109.24923488100487,
+    "solid_volume_m3": 0.025224457681654003,
+    "material_volumes_m3": {
+      "composite": 0.007857584388183965,
+      "steel": 0.005655252805536501,
+      "aluminum": 0.0058312604978859334,
+      "magnet_proxy": 0.00158172376520043,
+      "copper_proxy": 0.004162556224847168,
+      "electronics_proxy": 0.00013608000000000012
+    },
+    "component_count": 59,
+    "method": "closed procedural loft volume and dimensional equivalent flow sections",
+    "assumptions": [
+      "Source topology is X-57 Mod II, 2023 thermal-analysis figures 5\u20137 (printed pp. 7\u20138), not the Mod IV aircraft exterior.",
+      "NASA's 14-inch motor and 5-foot propeller are historical scale anchors listed on a Mod IV specifications page; they are not a dimensioned Mod II nacelle drawing.",
+      "All dimensions beyond those anchors, airfoil section, propeller blade shape, shell thickness and material densities are inferred, editable reconstruction assumptions.",
+      "The twin side-by-side tilted CMCs use inferred 24-fin HV arrays and separate LV backplates; the older NASA 43-fin benchmark is not used here.",
+      "Local wing uses an illustrative NACA 2412 section; the NASA CFD figures omit the full wing and do not specify this section.",
+      "Solid-volume mass uses illustrative homogeneous material densities; it is geometric proxy mass, not weighed aircraft hardware. Gross component volumes include the small declared attachment overlaps; installation-context wing is excluded.",
+      "Air channels are reduced-order equivalent sections derived from the same dimensions; this is not a solved CFD volume mesh or a validated pressure-loss model.",
+      "Named STEP solids are regenerated with CadQuery/OpenCascade. Browser fallback is closed procedural surface tessellation of the same parameterized construction."
+    ],
+    "flow_geometry_role": "network_equivalent_sections_only; no volumetric CFD air mesh or air-solid mass",
+    "mass_scope": "nacelle hardware only, host wing installation-context volume excluded",
+    "installation_context_volume_m3": 0.20453841010939802
+  },
+  "named_components": [
+    {
+      "id": "cowling_upper",
+      "label": "Upper removable cowling with twin scoop openings",
+      "group": "shell",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cowling_lower",
+      "label": "Lower cowling with open nacelle exhaust",
+      "group": "shell",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cowling_tail",
+      "label": "Tapered aft fairing / dead-space shell",
+      "group": "shell",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "local_wing",
+      "label": "Local host-wing section, illustrative airfoil",
+      "group": "wing",
+      "role": "installation_context",
+      "thermal_node": null
+    },
+    {
+      "id": "propeller_spinner",
+      "label": "Hollow streamlined spinner with blade-root slots",
+      "group": "propeller",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "propeller_hub",
+      "label": "Three-blade hub",
+      "group": "propeller",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "propeller_blade_1",
+      "label": "Twisted cruise propeller blade 1",
+      "group": "propeller",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "propeller_blade_2",
+      "label": "Twisted cruise propeller blade 2",
+      "group": "propeller",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "propeller_blade_3",
+      "label": "Twisted cruise propeller blade 3",
+      "group": "propeller",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_shaft",
+      "label": "Motor shaft",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_rotor",
+      "label": "Outrunner outer rotor / rear cup",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_magnet",
+      "label": "Rotor magnet annulus",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": "motor_magnet"
+    },
+    {
+      "id": "motor_winding",
+      "label": "Segmented stator windings / cooling slots",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": "motor_winding"
+    },
+    {
+      "id": "motor_stator",
+      "label": "Stator teeth / internal support",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_front_bearing",
+      "label": "Front bearing carrier",
+      "group": "motor",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_rear_mount",
+      "label": "Ventilated motor rear mounting flange",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_bypass_shroud",
+      "label": "Tapered motor bypass annular guide",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "main_inlet_lip",
+      "label": "Annular main inlet lip",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_case",
+      "label": "Left CMC enclosure",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_hv",
+      "label": "Left CMC HV finned heat sink",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_left_hv"
+    },
+    {
+      "id": "cmc_left_lv",
+      "label": "Left CMC LV backplate",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_left_lv"
+    },
+    {
+      "id": "cmc_left_cpu",
+      "label": "Left LV CPU thermal proxy",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_left_cpu"
+    },
+    {
+      "id": "cmc_left_acdc",
+      "label": "Left LV ACDC thermal proxy",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_left_acdc"
+    },
+    {
+      "id": "cmc_left_lv_duct",
+      "label": "Left LV backplate cooling channel lid",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_connector_1",
+      "label": "Left CMC connector 1",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_connector_2",
+      "label": "Left CMC connector 2",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_connector_3",
+      "label": "Left CMC connector 3",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_baffle_-1",
+      "label": "Left HV cooling side baffle",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_baffle_+1",
+      "label": "Left HV cooling side baffle",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "lv_inlet_left",
+      "label": "Left upper ear inlet / LV fresh-air duct",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_case",
+      "label": "Right CMC enclosure",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_hv",
+      "label": "Right CMC HV finned heat sink",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_right_hv"
+    },
+    {
+      "id": "cmc_right_lv",
+      "label": "Right CMC LV backplate",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_right_lv"
+    },
+    {
+      "id": "cmc_right_cpu",
+      "label": "Right LV CPU thermal proxy",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_right_cpu"
+    },
+    {
+      "id": "cmc_right_acdc",
+      "label": "Right LV ACDC thermal proxy",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": "cmc_right_acdc"
+    },
+    {
+      "id": "cmc_right_lv_duct",
+      "label": "Right LV backplate cooling channel lid",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_connector_1",
+      "label": "Right CMC connector 1",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_connector_2",
+      "label": "Right CMC connector 2",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_connector_3",
+      "label": "Right CMC connector 3",
+      "group": "cmc",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_baffle_-1",
+      "label": "Right HV cooling side baffle",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_baffle_+1",
+      "label": "Right HV cooling side baffle",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "lv_inlet_right",
+      "label": "Right upper ear inlet / LV fresh-air duct",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "mount_strut_-1_-1",
+      "label": "Motor-to-wing routed mounting tube",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "mount_strut_-1_+1",
+      "label": "Motor-to-wing routed mounting tube",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_-1_-1",
+      "label": "CMC cradle longitudinal rail",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_-1_+1",
+      "label": "CMC cradle longitudinal rail",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "mount_strut_+1_-1",
+      "label": "Motor-to-wing routed mounting tube",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "mount_strut_+1_+1",
+      "label": "Motor-to-wing routed mounting tube",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_+1_-1",
+      "label": "CMC cradle longitudinal rail",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_+1_+1",
+      "label": "CMC cradle longitudinal rail",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_cross_front",
+      "label": "Lower V-shaped CMC cradle crossmember",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_frame_cross_rear",
+      "label": "Lower V-shaped CMC cradle crossmember",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_mount_upper",
+      "label": "Left CMC upper mounting bracket",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_left_mount_lower",
+      "label": "Left CMC lower mounting bracket",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_mount_upper",
+      "label": "Right CMC upper mounting bracket",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "cmc_right_mount_lower",
+      "label": "Right CMC lower mounting bracket",
+      "group": "structure",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "motor_upper_exhaust",
+      "label": "External top-center motor exhaust louvers",
+      "group": "duct",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "flow_separator_-1",
+      "label": "Motor / CMC stream separator",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    },
+    {
+      "id": "flow_separator_+1",
+      "label": "Motor / CMC stream separator",
+      "group": "baffle",
+      "role": "hardware",
+      "thermal_node": null
+    }
+  ],
+  "software": {
+    "cadquery": "2.7.0"
+  },
+  "geometry_module_sha256": "8c8f4293d64c1898d7cfd5cbd3b8d9f399cadb8772dde71ac729ab91b54d1925",
+  "generator_sha256": "4700427f9e8c72585a2a89463d9ef011c39c637a85218b0ca925cc8cd34a7283"
+}
