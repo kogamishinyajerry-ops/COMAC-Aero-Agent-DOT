@@ -1,0 +1,23 @@
+{
+  "schema": "pressure_fin_ui_contract_v1",
+  "purpose": "One bounded synthetic design-tradeoff panel within the physical-evidence journey",
+  "catalog": "catalog.json",
+  "candidate_records": "candidates/{design_id}.json",
+  "baseline_design_id": "n16_t860",
+  "default_selection": {"design_id": "n16_t860", "case_id": "combined_fault", "heat_load_W": 60},
+  "candidate_count": 9,
+  "case_ids": ["nominal", "pressure_loss", "asymmetric_blockage", "combined_fault"],
+  "case_labels": {"nominal": "25 Pa, all branches open", "pressure_loss": "15 Pa, all branches open", "asymmetric_blockage": "25 Pa, interior branch 1 sealed", "combined_fault": "15 Pa and interior branch 1 sealed"},
+  "selectable_heat_load_W": [40, 60, 80],
+  "load_semantics": "Selected-load temperatures are constant-property linear arithmetic Tin + Q/G. The fixed 60 W combined-fault design criterion stays visible and unchanged when the selected display load is 40 or 80 W.",
+  "synthetic_fixed_design_criteria": {"heat_load_W": 60, "combined_fault_base_temperature_limit_C": 85, "fin_only_aluminum_mass_budget_g": 40, "inlet_temperature_C": 25},
+  "comparison_fields": ["design_id", "geometry.N_fins", "geometry.fin_thickness_m", "fin_only_aluminum_mass_g", "cases.{case_id}.heat_load_records[heat_load_W].required_uniform_base_temperature_C", "fixed_60W_combined_criterion"],
+  "scatter": {"include_all_nine_candidates": true, "x": "fin_only_aluminum_mass_g", "y": "catalog.candidates[].combined_Tb_at_60W_C", "fixed_heat_load_W": 60, "keep_out_of_scope_and_dominated_points": true, "scope_marker": "all_cases_within_declared_Re_scope", "pareto_marker": "pareto_within_Re_scope", "warning": "The sole scoped Pareto candidate still fails the fixed 60 W combined-fault criterion. Pareto is not feasibility or a global optimum."},
+  "branch_flow_bars": {"for": ["baseline", "selected"], "records": "cases.{case_id}.branches[]", "absolute_key": "mass_flow_kg_s", "fraction_key": "total_flow_fraction", "index_key": "index", "sealed_key": "blocked", "sealed_indices": "cases.{case_id}.blocked_channel_indices", "show_pressure": "cases.{case_id}.supply_pressure_drop_Pa", "same_pressure_comparisons": [["nominal", "asymmetric_blockage"], ["pressure_loss", "combined_fault"]], "pressure_warning": "Open-branch flow is unchanged by sealing at the same pressure. Comparing 25 Pa nominal to 15 Pa combined reduces open-branch flow to 0.6 times nominal because pressure also changes."},
+  "flag_ownership": {"raw_mass_temperature_criterion_pass_at_60W": "Two synthetic criteria only; can be true outside Reynolds scope", "Reynolds_qualified_conditional_pass_at_60W": "Criteria plus saved numerical gates and the declared Reynolds cutoff, still conditional on omitted physics", "heat_load_records.selected_scenario_condition_pass": "Condition at selected display load and case, never redefines the fixed design requirement", "fixed_60W_combined_criterion.Reynolds_qualified_conditional_pass": "Authoritative fixed synthetic design result, false for all nine candidates"},
+  "required_labels": ["Synthetic 85°C uniform-base ceiling and 40 g fin-only aluminum budget", "Required uniform-base temperature, not hotspot", "Ideal fixed-pressure straight-channel source; entrance, exit and hydrodynamic developing losses omitted", "Fin-only mass excludes base, duct, fan, motor and aircraft", "Hydraulic dissipation is not electrical fan power", "Constant-property model; high failed temperatures are extrapolations", "Material and model-form scenarios are separate from pass flags and are not confidence bounds", "Research screening only; no aircraft validation"],
+  "sensitivity_records": "sensitivity_records.json",
+  "out_of_scope_candidates": "out_of_scope_candidates.json",
+  "immutable_source": "../../research/pressure_fin/original_freeze/study",
+  "arithmetic_only_default": true
+}

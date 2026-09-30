@@ -1,0 +1,202 @@
+{
+  "status": "accepted_for_declared_conditional_model_pressure_root_reporting_with_documented_procedural_exceptions",
+  "reviewed_utc": "2026-09-30T21:22:27.398883+00:00",
+  "checks": {
+    "frozen_original_plan_reviewed_before_root_conclusions": true,
+    "frozen_continuation_plan_reviewed_before_independent_solves": true,
+    "all18_root_refinement_and185_primary_run_checks_pass": true,
+    "all6_independent_main_root_reproductions_pass": true,
+    "unchanged_full_array_operator_and_hydraulics": true,
+    "independent_analytic_hydraulics": true,
+    "analytic_K_root_bounds": true,
+    "consumed_input_closure_unchanged": true,
+    "all_original_pressure_screen_tracked_artifacts_unchanged": true,
+    "original_phase180_solve_incomplete_evidence_preserved": true,
+    "separate_continuation_budget": true,
+    "continuation_completed_in_window": true,
+    "phase_one_and_accepted_hashes_preserved_after_reproduction": true,
+    "JSON_and_binary_limits": true
+  },
+  "roots": [
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "nominal_pressure_budget_Pa": 41.77125684927908,
+      "combined_pressure_budget_Pa": 25.062754109567447,
+      "fin_only_mass_g": 37.783584,
+      "main_bracket_Pa": [
+        41.77115684927907,
+        41.77135684927908
+      ],
+      "spatial_root_Pa": 41.803478703622865,
+      "axial_root_Pa": 41.758831108271266,
+      "nominal_base_C": 69.62128768616085,
+      "combined_heat_residual_W": 3.292579719982314e-08,
+      "nominal_max_Re": 1365.5882930314742,
+      "combined_max_Re": 819.3529758188845,
+      "nominal_peak_Mach_bound": 0.031476028670017774,
+      "combined_peak_Mach_bound": 0.018885617202010662,
+      "nominal_dissipation_fraction_60W": 0.0016095021324523812,
+      "combined_dissipation_fraction_60W": 0.000545341363910602
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "nominal_pressure_budget_Pa": 57.065136149020915,
+      "combined_pressure_budget_Pa": 34.23908168941255,
+      "fin_only_mass_g": 37.783584,
+      "main_bracket_Pa": [
+        57.06503614902091,
+        57.06523614902092
+      ],
+      "spatial_root_Pa": 57.10589708577547,
+      "axial_root_Pa": 57.04358796537199,
+      "nominal_base_C": 71.94913644673596,
+      "combined_heat_residual_W": 1.5802797292963078e-08,
+      "nominal_max_Re": 1210.2350388920893,
+      "combined_max_Re": 819.1299436340889,
+      "nominal_peak_Mach_bound": 0.02789522506601446,
+      "combined_peak_Mach_bound": 0.018880476437785617,
+      "nominal_dissipation_fraction_60W": 0.0019492614930483054,
+      "combined_dissipation_fraction_60W": 0.0007449938048754059
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "nominal_pressure_budget_Pa": 72.35901517992757,
+      "combined_pressure_budget_Pa": 43.41540910795654,
+      "fin_only_mass_g": 37.783584,
+      "main_bracket_Pa": [
+        72.35891517992756,
+        72.35911517992757
+      ],
+      "spatial_root_Pa": 72.40831522027477,
+      "axial_root_Pa": 72.32836692696854,
+      "nominal_base_C": 72.81000341128833,
+      "combined_heat_residual_W": 8.749402979901788e-09,
+      "nominal_max_Re": 1160.465629720462,
+      "combined_max_Re": 819.0394965124677,
+      "nominal_peak_Mach_bound": 0.026748068666117078,
+      "combined_peak_Mach_bound": 0.018878391683392365,
+      "nominal_dissipation_fraction_60W": 0.002370253654816879,
+      "combined_dissipation_fraction_60W": 0.0009446496401916756
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "nominal_pressure_budget_Pa": 33.17743236883015,
+      "combined_pressure_budget_Pa": 19.906459421298088,
+      "fin_only_mass_g": 26.360639999999993,
+      "main_bracket_Pa": [
+        33.17733236883014,
+        33.17753236883015
+      ],
+      "spatial_root_Pa": 33.20668104115826,
+      "axial_root_Pa": 33.16785243000583,
+      "nominal_base_C": 70.59986251475098,
+      "combined_heat_residual_W": 4.433294975569879e-08,
+      "nominal_max_Re": 1585.8947439577414,
+      "combined_max_Re": 951.5368463746448,
+      "nominal_peak_Mach_bound": 0.0330359557180564,
+      "combined_peak_Mach_bound": 0.019821573430833836,
+      "nominal_dissipation_fraction_60W": 0.001458299093195348,
+      "combined_dissipation_fraction_60W": 0.0004928580382847766
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "nominal_pressure_budget_Pa": 49.045834589664125,
+      "combined_pressure_budget_Pa": 29.427500753798473,
+      "fin_only_mass_g": 26.360639999999993,
+      "main_bracket_Pa": [
+        49.04573458966412,
+        49.04593458966413
+      ],
+      "spatial_root_Pa": 49.08775543387535,
+      "axial_root_Pa": 49.02708060374854,
+      "nominal_base_C": 73.11269400026575,
+      "combined_heat_residual_W": 1.791934778339055e-08,
+      "nominal_max_Re": 1372.3652769915195,
+      "combined_max_Re": 945.375653921049,
+      "nominal_peak_Mach_bound": 0.02858789884538398,
+      "combined_peak_Mach_bound": 0.01969322892257255,
+      "nominal_dissipation_fraction_60W": 0.001888694592150748,
+      "combined_dissipation_fraction_60W": 0.0007316480615345059
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "nominal_pressure_budget_Pa": 64.87573079352079,
+      "combined_pressure_budget_Pa": 38.92543847611247,
+      "fin_only_mass_g": 26.360639999999993,
+      "main_bracket_Pa": [
+        64.87563079352078,
+        64.87583079352079
+      ],
+      "spatial_root_Pa": 64.93028351095934,
+      "axial_root_Pa": 64.84784392824749,
+      "nominal_base_C": 73.89204168814057,
+      "combined_heat_residual_W": 9.062723904662562e-09,
+      "nominal_max_Re": 1315.3029639589115,
+      "combined_max_Re": 942.9120445178673,
+      "nominal_peak_Mach_bound": 0.0273992272429984,
+      "combined_peak_Mach_bound": 0.01964190919189043,
+      "nominal_dissipation_fraction_60W": 0.002403716909082201,
+      "combined_dissipation_fraction_60W": 0.0009696589392830406
+    }
+  ],
+  "numerical_summary": {
+    "independent_max_relative_G_difference": 3.774758283725532e-15,
+    "independent_max_heat_residual_W": 4.433294975569879e-08,
+    "max_spatial_root_relative_change": 0.0008815833607302981,
+    "max_axial_root_relative_change": 0.00042985049928856434,
+    "max_main_nominal_Re": 1585.8947439577414,
+    "max_main_combined_Re": 951.5368463746448,
+    "max_main_peak_Mach_bound": 0.0330359557180564,
+    "max_root_state_dissipation_fraction_60W": 0.002403716909082201
+  },
+  "thermal_solve_ledger": {
+    "original_phase_primary": 180,
+    "original_phase_reviewer": 0,
+    "separate_continuation_primary": 5,
+    "separate_continuation_reviewer": 6,
+    "separate_continuation_total": 11,
+    "all_phases_total": 191
+  },
+  "procedural_exceptions_retained": {
+    "brief_three_process_overlap": "A non-marching reviewer matrix/hydraulic audit briefly overlapped both phase-one workers; calculations then failed only at JSON serialization. It was rerun successfully after a slot was free. No thermal solve occurred in the overlapping reviewer process.",
+    "whole_checkout_original_checks": {
+      "tracked_tree_unchanged": false,
+      "checkpoint_unchanged": false
+    },
+    "unrelated_integration": "Parent integrated accepted axial material and guide/docs while this study ran. The original whole-checkout failures remain failures; independent consumed scientific source/input closure passes.",
+    "clarification_chronology": "Original plan preceded all new numerics. The frozen clarification preceded thermal/root solves, after independent Poisson/scalar hydraulic checks; all frozen bytes retained."
+  },
+  "scope": [
+    "Exactly two geometries and three illustrative K forms; no measured uncertainty, fitted hardware coefficient or extrapolated design ranking.",
+    "P is the synthetic mechanical pressure-loss budget, counting friction and the selected end loss once; not arbitrary NASA static/total station pressure or electrical fan demand.",
+    "Minimum wording is restricted to the verified grounded-M-matrix BE model and its admitted pressure domain; independent proof and local positive bracket slopes support monotonicity.",
+    "Root equality is zero mathematical thermal headroom, not a safety margin, installed cooler requirement, local-hotspot prediction or physical validation.",
+    "Original25/15Pa results and failures are unchanged.",
+    "Pressure-work heating, temperature-dependent properties, hydrodynamic entrance/development, contact/base/axial conduction, actual feeder/fan coupling and resolved blockage remain omitted or idealized as documented.",
+    "The0.0002Pa numerical brackets are neither sensor capability nor physical uncertainty."
+  ],
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "evidence_sha256": {
+    "review/independent/plan_review.json": "12c6303a3c548964b4acc39aaf2da7ab42f3c0426a0b9e2bc693bb8f52507374",
+    "review/independent/hydraulic_review.json": "8219b8dc6820804868486393252e3e64af75175d457b932aaac0cf3dcc7cb4ee",
+    "review/independent/implementation_review.json": "fe5c930642f3f23c1155044ae7b0328aec47c9bd39d51d6437c0afec81d094cf",
+    "review/independent/analytic_root_bounds.json": "7946488974ef538e4e6728357b14f9e2fcb918ff05abdea3110d39ae2b7cc67c",
+    "review/independent/monotonicity_review.md": "04eadf1a95d179bb7f3c671558e8d364f28bda693de545c70a07ee25d44a50b5",
+    "review/independent/consumed_input_closure.json": "990c898de0cfe311f77678db2e7bdbf54caff25d409691cdf2b8b222d214e1fd",
+    "review/independent/audit_results.json": "bfc6a2071121f76516b0c2ef88c9b99f417c4e10921f257f333633e62ff41976",
+    "review/independent/execution_notes.json": "de90b21bb82503d8a3310e0845aeb8454e5a709f635861f7f6606acbc996eba6",
+    "review/independent/bench_falsification_followup.md": "bf8bed6ceefa2e51c7c8c98fa4a9d5d27ab18f1b8253778f9cb838949bfce0db",
+    "continuation/plan.json": "c54ac979adafeb18dd3ff36e6c1ba1a7adca63ea982219ec7a7da4a173bb804c",
+    "continuation/execution.json": "401a3b2697f2e4ebf3c3d30951eaef4288f8a7529eb0d154966c7a179be91adb",
+    "continuation/review/plan_review.json": "25f6801666db012bd48f28f5f5a2ee46a63623567bd24bdda859b53e725346ed",
+    "continuation/review/audit_completed_results.json": "f7c9642b4f22125525d1b32005b5790c158a516fca7e607cc673c309195a6572",
+    "continuation/review/reproduce_main_roots.json": "3273c47511ee980f2e0fb05ad22b3d4aee5c735ed1cf26f61201dbb814ee2503"
+  }
+}

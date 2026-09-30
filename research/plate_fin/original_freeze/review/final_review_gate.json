@@ -1,0 +1,33 @@
+{
+  "independent_review_status": "accepted_for_conditional_predeclared_comparison",
+  "checks": {
+    "freeze_hash": true,
+    "freeze_verification": true,
+    "verification_predecessor": true,
+    "code": true,
+    "plan": true,
+    "refinement_plan": true,
+    "limits_script": true,
+    "review_script": true,
+    "all17_math_gates": true,
+    "independent_limits": true,
+    "precomparison_status": true,
+    "selected_dimensions": true,
+    "review_exact_BE": true,
+    "local_componentwise_residuals": true,
+    "full_half_symmetry": true,
+    "orders": true
+  },
+  "frozen_numerics_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+  "verification_sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7",
+  "independent_limits_sha256": "ab3bde3abcbf5951fcb5bbb82003b16407a93166d0a9d6ad5233be32ad859503",
+  "review_results_sha256": "752664c646f30875f550d6580783be629ffb22267731c4558be4275d323550e3",
+  "review_script_sha256": "d184eaf4b9d3093abea1a3917fddc0fc6c927cbc0a336cc71da452ed34491e1e",
+  "scope": "Backward Euler, fixed physical boundaries and parameters, research only; no validation of experimental applicability or raw run conditions. No experimental residuals inspected.",
+  "remaining_limitations": [
+    "No hydrodynamic entrance development or axial fin conduction",
+    "Unknown actual material conductivity and run properties",
+    "Refinement differences and Richardson indicators are not uncertainty bounds",
+    "BDF2 path excluded from acceptance"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "status": "frozen_before_new_numerical_solutions_or_root_searches",
+  "frozen_utc": "2026-09-30T20:22:30.550963+00:00",
+  "checkpoint": "1e95e2ac579e8f0d84293d3ac570aaf7cddb21d1",
+  "scope": "Conditional inverse boundary design in an existing constant-property synthetic model; no empirical fitting, physical validation, installed pressure specification or guaranteed engineering margin",
+  "only_geometries": [
+    {
+      "id": "n16_t860",
+      "N": 16,
+      "t_m": 0.00086
+    },
+    {
+      "id": "n16_t600",
+      "N": 16,
+      "t_m": 0.0006
+    }
+  ],
+  "fixed_requirements": {
+    "Q_W": 60,
+    "Tin_C": 25,
+    "uniform_base_ceiling_C": 85,
+    "fin_only_mass_budget_kg": 0.04,
+    "nominal_original_pressure_Pa": 25,
+    "combined_pressure_fraction": 0.6,
+    "combined_sealed_channel": 1
+  },
+  "equations": {
+    "inverse": "F(P)=G(deltaP=0.6*P, blocked=(1,))*(85-25)-60=0",
+    "hydraulic": "deltaP=a_i*U_i+0.5*rho*K*U_i^2; a_i=mu*L/wmean_i, raw conservative rectangular Poisson wmean",
+    "positive_solution": "K=0: use accepted original U exactly; K>0: U=2*deltaP/(a+sqrt(a*a+2*rho*K*deltaP))",
+    "thermal": "Inherit full-array conjugate finite-fin matrix and backward-Euler transverse-diffusion/axial-advection solver unchanged, replacing only branch mean velocities",
+    "branch_pressure": "straight friction aU plus illustrative end loss 0.5*rho*K*U^2 equals imposed branch pressure; raw Poisson wall-force balance applies to straight friction, not total pressure when K>0",
+    "dissipation": "sum(deltaP*Qv); split straight-friction/end-loss; total/60 is omitted mechanical-heating fraction, not electrical fan power"
+  },
+  "scenario_K": [
+    0,
+    1,
+    2
+  ],
+  "K_interpretation": "Uniform nonnegative illustrative end-loss scenarios, not measured uncertainty, fitted hardware coefficients, or resolved entrance/exit/developing flow. Preserve normalized fully developed Poisson profile for thermal advection.",
+  "domain": {
+    "Re_Dh_strict_max": 2300,
+    "peak_local_Mach_strict_max": 0.1,
+    "sound_speed_definition": "sqrt(gamma*R*T_in_K), gamma=1.4 and R=287.05 J/(kg K); fixed inlet-based conservative diagnostic",
+    "gamma": 1.4,
+    "gas_constant_J_kg_K": 287.05,
+    "check_conditions": [
+      "nominal P all branches open",
+      "combined 0.6P branch 1 sealed"
+    ],
+    "pressure_search_lower_Pa": 25,
+    "pressure_search_absolute_upper_Pa": 200,
+    "pressure_domain_limit": "For each mesh/channel, Ulim=min(2300*nu/Dh,0.1*sound_speed/max(normalized_Poisson_shape)); Plim=a*Ulim+0.5*rho*K*Ulim^2; Pupper=min(200,0.999*min(Plim over all active nominal channels)). Explicitly test both conditions before every thermal solve.",
+    "on_failure": "Retain every K/design and inability to bracket within domain. Never evaluate thermal solution outside domain or relax a tolerance."
+  },
+  "mesh_and_roots": {
+    "main_mesh": [
+      48,
+      144,
+      800
+    ],
+    "spatial_mesh": [
+      64,
+      192,
+      800
+    ],
+    "axial_mesh": [
+      48,
+      144,
+      1600
+    ],
+    "root_variable": "nominal P in Pa",
+    "primary_root_method": "bracket-preserving scipy.optimize.brentq on declared domain endpoints; max 20 iterations; xtol=0.001 Pa, rtol=1e-10",
+    "root_bracket": "Around returned root evaluate plus/minus 0.002 Pa, doubling halfwidth no more than 8 times while remaining in domain; record signs. Refine with Brent xtol=0.00005 Pa, rtol=1e-12, then evaluate a sign bracket with halfwidth=0.0001 Pa (same bounded widening).",
+    "refinement": "At each of six main roots evaluate spatial and axial meshes; re-root both meshes beginning at main root +/- 1% (bounded widening to full original domain if necessary), same fine root tolerance and sign-bracket procedure. No outcome-based mesh selection; keep all three roots and discretization differences.",
+    "gates": {
+      "spatial_G_relative": 0.005,
+      "axial_G_relative": 0.002,
+      "spatial_root_P_relative": 0.01,
+      "axial_root_P_relative": 0.005,
+      "root_absolute_heat_residual_W": 0.001,
+      "fine_pressure_bracket_width_Pa": 0.002,
+      "loose_to_fine_root_relative": 0.0001
+    }
+  },
+  "verification": {
+    "inherit_all_original_thermal_gates": true,
+    "energy_relative": 1e-08,
+    "componentwise_equation_relative": 1e-08,
+    "maximum_principle_absolute": 1e-09,
+    "mass_relative": 1e-12,
+    "branch_pressure_relative": 1e-12,
+    "poisson_residual_and_wall_force_relative": 1e-09,
+    "raw_poisson_mean_exact_relative": 0.002,
+    "independent_hydraulic_scalar_root_relative": 1e-10,
+    "K0_original_reproduction_relative": 1e-12,
+    "K_checks": [
+      "K0 reproduces saved accepted 25 Pa nominal and 15 Pa sealed cases for both geometries",
+      "Scalar brentq U roots cross-check closed-form positive roots for each distinct channel at P=15,25,domain upper and reported roots",
+      "positive K reduces every active flow at fixed pressure",
+      "pressure doubling gives exact doubling for K0, less than doubling and more than sqrt(2) for positive K",
+      "sealed branch zero flow and zero enthalpy; unsealed branch flows unchanged by closure at fixed P",
+      "same-width active branches equal; all mass fractions sum to one",
+      "floor ownership and full-array matrix inherited unchanged; all sealed fluid diffusion connections retained",
+      "K monotonic pressure requirements reported only if obtained within domains"
+    ]
+  },
+  "resource_plan": {
+    "optional_dependencies": "Existing NumPy and SciPy only; no installs",
+    "max_parallel_numerical_processes": 2,
+    "BLAS_threads_per_process": 1,
+    "max_new_thermal_solves": 180,
+    "max_root_iterations_per_search": 20,
+    "soft_wall_time_minutes": 90,
+    "on_budget": "Save all completed and incomplete scenarios with exact reason; stop rather than relax numerical gates",
+    "artifact_limits": {
+      "JSON_bytes_strict_max": 100000,
+      "binary_bytes_strict_max": 250000
+    },
+    "writes_only": "output/physics-campaign/pressure-requirement-study/",
+    "no_UI_or_tracked_edits": true
+  },
+  "interpretation_and_measurements": [
+    "Original 25/15 Pa failures and 40g/85C/60W fixed requirements remain intact",
+    "A root is zero thermal headroom under a conditional model, not a guaranteed margin",
+    "Nominal total P and 40% loss allowance refer to this declared boundary; existing 25 Pa boundary is not silently replaced",
+    "Measure branch/system pressure-flow, loss/development coefficients, nominal/fault fan operating point, blockage leakage, thermal contact/base spreading, actual base/hotspots, property variation and total system mass before engineering/aircraft use"
+  ],
+  "independent_review_required_before_root_conclusions": true,
+  "input_sha256": {
+    "research/pressure_fin/original_freeze/study/pressure_fin.py": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "research/pressure_fin/original_freeze/study/presweep_plan.json": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f",
+    "research/pressure_fin/original_freeze/study/verification.json": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44",
+    "research/pressure_fin/original_freeze/study/review/final_review_gate.json": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b",
+    "research/pressure_fin/original_freeze/study/RESULTS.md": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe",
+    "examples/pressure_fin_tradeoff/catalog.json": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9",
+    "examples/pressure_fin_tradeoff/candidates/n16_t600.json": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919",
+    "examples/pressure_fin_tradeoff/candidates/n16_t860.json": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "allow_comparison": true,
+  "basis": "Independent scientific reviewer explicitly released the unchanged frozen backward-Euler model for the predeclared conditional Figure8 comparison before inspecting any residuals",
+  "solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "freeze_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+  "review_decision_file": "review/final_review_gate.json",
+  "review_decision_sha256": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2",
+  "review_report_sha256": "752664c646f30875f550d6580783be629ffb22267731c4558be4275d323550e3"
+}

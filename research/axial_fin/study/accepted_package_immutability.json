@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "all_passed": true,
+  "study_id": "plate_fin_2024",
+  "checks": {
+    "manifest_inventory_hashes_and_caps": true,
+    "original_freeze_and_rejected_grid_preserved": true,
+    "original_independent_review_hash_chain": true,
+    "solver_and_physical_plan_unchanged": true,
+    "source_figure8_numeric_transcription": true,
+    "all12_points_and_two_model_forms_retained": true,
+    "robust_boundary_outside_labels_3_1_8": true,
+    "author_and_graphical_allowances_separate": true,
+    "source_to_display_arithmetic": true,
+    "side_channel_counterexample_ownership": true,
+    "small_field_samples_match_declared_rounding": true,
+    "display_channel_roles_and_half_width_explicit": true,
+    "size_preflight_and_bounded_reads": true,
+    "all40_post_comparison_replay_cases_equivalent": true,
+    "stdlib_only_no_model_execution": true,
+    "offline_no_source_pdf_required": true,
+    "no_validation_or_aircraft_transfer_claim": true
+  },
+  "listed_file_count": 61,
+  "listed_bytes": 965574,
+  "max_json_bytes": 48974,
+  "max_binary_bytes": 219589,
+  "original_comparison_sha256": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f",
+  "numeric_payload_equivalence_maximum_absolute_difference": 0.0,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

@@ -1,0 +1,37 @@
+{
+  "scope": "Candidates with at least one case above the declared channel Reynolds cutoff; each case keeps its own scope flag",
+  "candidates": [
+    {
+      "design_id": "n12_t600",
+      "file": "candidates/n12_t600.json",
+      "N_fins": 12,
+      "thickness_mm": 0.6,
+      "fin_only_aluminum_mass_g": 19.770479999999996,
+      "all_cases_within_declared_Re_scope": false,
+      "out_of_scope_case_ids": [
+        "nominal",
+        "asymmetric_blockage"
+      ],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": null,
+      "nominal_Tb_at_60W_C": 81.96160637585481,
+      "combined_Tb_at_60W_C": 100.02210875246593
+    },
+    {
+      "design_id": "n12_t860",
+      "file": "candidates/n12_t860.json",
+      "N_fins": 12,
+      "thickness_mm": 0.86,
+      "fin_only_aluminum_mass_g": 28.337688,
+      "all_cases_within_declared_Re_scope": false,
+      "out_of_scope_case_ids": [
+        "nominal",
+        "asymmetric_blockage"
+      ],
+      "pareto_within_Re_scope": false,
+      "dominated_by_within_Re_scope": null,
+      "nominal_Tb_at_60W_C": 83.91868192777211,
+      "combined_Tb_at_60W_C": 102.91748235855924
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "post_comparison_axial_only_plan_before_substantial_numerics",
+  "accepted_package_frozen": true,
+  "accepted_core_path": "research/plate_fin/conjugate_fin.py",
+  "accepted_core_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "accepted_manifest_sha256": "b56204f3ac3f6cbc7536869e5aa77f8a0cba3474297e3f0bc459a79f55f021c3",
+  "plan_sha256": "672540c89ce15d0302f7edc81624d654429004eb43ba6fc257d77b404bf35723",
+  "physical_change": "Add only lambda_z*k_s*t*d2T_s/dz2, lambda_z0 recovery versus lambda_z1 isotropic-fin case; insulating axial fin ends",
+  "fixed_primary_cases": {
+    "speeds_m_s": [
+      4.0,
+      10.0
+    ],
+    "ks_W_m_K": 205.0,
+    "profile": "fully_developed_rectangular",
+    "air": "unchanged accepted dimensional properties"
+  },
+  "resource_limits": {
+    "case_wall_seconds": 300,
+    "max_fluid_sweeps": 350,
+    "gmres_restart": 30,
+    "gmres_max_restart_cycles": 10,
+    "gmres_rtol": 1e-10,
+    "gmres_atol": 1e-12,
+    "peak_RSS_hard_GiB": 1.5,
+    "initial_total_compute_minutes": 30
+  },
+  "comparison_scope": "Paired effect first; no new experimental residual evaluation before verification and review",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

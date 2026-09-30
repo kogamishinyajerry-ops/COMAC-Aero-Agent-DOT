@@ -1,0 +1,73 @@
+{
+  "status": "accepted_portable_inner_package_and_six_case_reproduction",
+  "reviewed_utc": "2026-09-30T21:52:46.779527+00:00",
+  "checks": {
+    "independent_preservation_and16_contract_tests_pass": true,
+    "independent_relocated_six_case_replay_pass": true,
+    "six_case_scalar_results_exact": true,
+    "inner_manifest_still_matches_reviewed_pin": true,
+    "reviewed_wrappers_unchanged": true,
+    "all14_existing_paths_compare_only_and_identical": true,
+    "three_log_omissions_explicit_and_no_phase_one_overlap": true,
+    "old_serialization_failure_preserved": true,
+    "no_scientific_input_or_acceptance_changes": true
+  },
+  "inner_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "scientific_preservation": {
+    "original_inventory_entries": 251,
+    "distributed_non_log_artifacts": 248,
+    "omitted_runtime_logs_with_path_size_hash": 3,
+    "original_manifest_support_files": 5,
+    "preserved_phase_one_files": 192,
+    "consumed_scientific_dependencies": 13,
+    "additional_compare_only_gitignore": 1,
+    "original_exhausted_phase_thermal_solves": 180,
+    "accepted_scientific_phases_total": 191,
+    "original_failed_repository_gates_retained": true,
+    "procedural_exceptions_retained": true
+  },
+  "package_validation": {
+    "independent_contract_checks": 16,
+    "stdlib_audit_without_site_packages": true,
+    "portable_non_dirfd_branch_tested": true,
+    "actual_native_Windows_run": false,
+    "numerical_replay_platform": "Linux",
+    "successful_replay_cases": 6,
+    "root_searches": 0,
+    "scalar_values_exactly_reproduced": true,
+    "successful_worker_elapsed_s": 113.05245142600324,
+    "source_package_and_snapshot_unchanged": true,
+    "failed_prior_replay_thermal_solves": 1,
+    "successful_replay_thermal_solves": 6,
+    "package_verification_thermal_solves_total": 7,
+    "package_checks_separate_from_scientific_phases": true
+  },
+  "defects_found_and_resolved": [
+    "FIFO could block before regular-file validation; final descriptor open now includes O_NONBLOCK.",
+    "Plain numerical-result JSON serialization rejected NumPy booleans after the first solve; strict np.generic.item() conversion now preserves native values, rejects unsupported types, and retains allow_nan=False. Old failure, worker, manifest and pin are archived."
+  ],
+  "scope": [
+    "Read-only bounded externally pinned standard-library audit; no .git or original-workspace execution dependency.",
+    "Linux-only numerical replay evaluates exactly the six reviewed main-root cases from byte-verified staged sources in a fresh guarded output directory.",
+    "Protected, existing, traversal and symlinked outputs are rejected; no bytecode/log/PDF/full-array distribution.",
+    "Original physics, root requirements, failed original combined cases and physical-validation limits are unchanged.",
+    "This gate accepts the pinned inner package. Any later outer integration envelope must separately preserve these exact bytes and its own allowlist/pin."
+  ],
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "evidence_sha256": {
+    "contract_review.json": "67d882b78894406314278b4cea9646b91d2ae85bd24f6946c16d5354d6398a6d",
+    "numerical_package_review.json": "b3d485aff9a169555c1320ca0f4805b822be3ec83468c3058ab5cb8bcb328417",
+    "failed_replay_attempt.json": "f3ba07d61d25c8d069f15c7f459ee7ecd8ba06d7581cc6986952802a92e314bc"
+  },
+  "replay_evidence_sha256": {
+    "case_n16_t600_K0.json": "0ee00b6cbb535d395872488c67494dfe491db04d82332d1a74aa5735bf0d4b40",
+    "case_n16_t600_K1.json": "f395dc2000d8808896d3f5a79f15d2565d7ddc36782f15070978410e56c973f9",
+    "case_n16_t600_K2.json": "ba38a924e1d7f24d9cd0421cb5e86ad510f825a28e8cda09416b38b67013e2d2",
+    "case_n16_t860_K0.json": "7be9c6598629dbf7da6e42e53d61ab91f9a697fd56a4b43a10ebaf32235f706f",
+    "case_n16_t860_K1.json": "a812917b4015da6f865e7c35adefa9a9aa211d5904f32d90018d7958f8a6d779",
+    "case_n16_t860_K2.json": "2924416ba2ac6f4a6db12aa671df1a6f085d501b552be725e4126cacbcd88bee",
+    "numerical_replay.json": "879ad9b135823a9cc6b7cf2cbb023b02dc157a32b57f3265bef4fe00557c5665",
+    "replay_report.json": "89eac7842956b22788ca1c9dd55f2315d6785ab933bc45397b6b55dede127bbc"
+  }
+}

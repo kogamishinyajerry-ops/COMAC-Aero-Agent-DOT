@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "all_passed": true,
+  "thermal_evaluations": 6,
+  "root_searches": 0,
+  "new_parameter_or_geometry_sweep": false,
+  "rows": [
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "nominal_pressure_budget_Pa": 41.77125684927908,
+      "result_file": "case_n16_t860_K0.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 3.292579719982314e-08,
+      "all_passed": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "nominal_pressure_budget_Pa": 57.065136149020915,
+      "result_file": "case_n16_t860_K1.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 1.5802797292963078e-08,
+      "all_passed": true
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "nominal_pressure_budget_Pa": 72.35901517992757,
+      "result_file": "case_n16_t860_K2.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 8.749402979901788e-09,
+      "all_passed": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "nominal_pressure_budget_Pa": 33.17743236883015,
+      "result_file": "case_n16_t600_K0.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 4.433294975569879e-08,
+      "all_passed": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "nominal_pressure_budget_Pa": 49.045834589664125,
+      "result_file": "case_n16_t600_K1.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 1.791934778339055e-08,
+      "all_passed": true
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "nominal_pressure_budget_Pa": 64.87573079352079,
+      "result_file": "case_n16_t600_K2.json",
+      "relative_G_difference": 0.0,
+      "root_heat_residual_W": 9.062723904662562e-09,
+      "all_passed": true
+    }
+  ],
+  "elapsed_s": 113.05245142600324,
+  "source_model_sha256": "8bef70a9dbe2c9e917975fb92ff044a60bb05660db97c56a80477c95c22e92c2",
+  "accepted_thermal_source_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "package_manifest_sha256": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "numerical_gates": "unchanged inherited gates; G agreement1e-10 relative; root heat residual0.001W",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

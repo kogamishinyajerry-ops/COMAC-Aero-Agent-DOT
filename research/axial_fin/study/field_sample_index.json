@@ -1,0 +1,15 @@
+{
+  "rows": [
+    {
+      "file": "fields_V04.json",
+      "sha256": "fe756d61f49d2aee3565c68188948eafc680f599b871fbb3439c14d85b5511d8",
+      "replay_absolute_G_difference": 0.0
+    },
+    {
+      "file": "fields_V10.json",
+      "sha256": "ab81a2f27973e1d3fcd7283471946c6c7c62bded40c88eadd132085882eb9a30",
+      "replay_absolute_G_difference": 0.0
+    }
+  ],
+  "sample_code_sha256": "c53414e4707e1359718299a290ee803a7ab891537813d2223b9574e4a885fed8"
+}

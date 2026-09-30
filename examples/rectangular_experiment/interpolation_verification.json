@@ -1,0 +1,25 @@
+{
+  "points": [
+    {
+      "tau": 0.012,
+      "curve_prediction": 0.8103756380921093,
+      "direct_march": 0.8103702318926411,
+      "absolute_difference": 5.406199468205308e-06
+    },
+    {
+      "tau": 0.048,
+      "curve_prediction": 0.5737174248222856,
+      "direct_march": 0.5737030606364799,
+      "absolute_difference": 1.4364185805693097e-05
+    },
+    {
+      "tau": 0.192,
+      "curve_prediction": 0.18312660475835835,
+      "direct_march": 0.18311922695846902,
+      "absolute_difference": 7.377799889324299e-06
+    }
+  ],
+  "absolute_acceptance": 2e-05,
+  "caveat": "Includes the small BE path change from a shortened final interval, not interpolation error alone.",
+  "all_passed": true
+}

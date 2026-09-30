@@ -1,0 +1,303 @@
+{
+  "all_audits_passed": true,
+  "package_kind": "Offline research-only rectangular-duct experimental-comparison replay",
+  "chronology": "Original precomparison freeze preserved; this is a post-comparison packaging/reproducibility run",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "application_dependencies_added": false,
+  "research_requirements_file": "research/rectangular_duct/requirements-research.txt",
+  "original_freeze_anchors": {
+    "rectangular_graetz.py": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c",
+    "verification.json": "3ed1aa4b3e27136b3b37302de4ff29e0a6e351405483c568c47e4c4af271a396",
+    "frozen_response.json": "2b5be898efd870b883505135cb3e54ef6c1254c006dbf32063f904a0a07dcf91",
+    "experimental_comparison.json": "24ac0d0bb2e734539c2ed7e3e3a2fdbea5405a0f07511b22e47a5a94a1df5ab0",
+    "experimental_source.json": "8c5c9ba18de523626b4447d38617454ae93fc78b5501b61a4e5f968094e751b8",
+    "numerical_plan.json": "146ccbf6fc0795dea57a393bbbc7e10432110d13dd562d664736010603d6fb24",
+    "refinement_plan.json": "84ae6e4491bb8b9b5a3f71b85c7a18ea641fb4f43e281db3b8c313824d33851e",
+    "initial_solver_rejected.py": "e4bb3cfd594df934a75f21686be886795480bb50374cb98cb3b56279d4663bc0",
+    "initial_verification_rejected.json": "083eb264c40bef226acf01bcb46d0ea7cd638c3e4d581ba843d8c75df5b19a7b",
+    "artifact_manifest.json": "413677877d2cdad9298a86be7088de3060880ffeb0d16db0483d1dcd7103519d"
+  },
+  "packaged_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "reproduce_from_repository_root": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 bash research/rectangular_duct/reproduce.sh",
+  "optional_source_pdf_audit": "python research/rectangular_duct/compare_experiment.py --audit-source-pdf /path/to/388313.pdf",
+  "source_pdf_required": false,
+  "source_pdf_redistributed": false,
+  "publication_exclusions": [
+    "PDFs",
+    "full-resolution NPZ",
+    "logs",
+    "caches",
+    "__pycache__"
+  ],
+  "display_field_notice": "17\u00d733 point samples rounded to6 decimals; independent of full-grid acceptance evidence",
+  "files": [
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/README.md",
+      "bytes": 2273,
+      "sha256": "3bb039611e8ff69bf28ce954b4c756d08c1a94c4e32299418bd2c80e1628ee37"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/cross_section_fields.png",
+      "bytes": 73429,
+      "sha256": "6ab281fdcf400dd03d37f79c8c0a3977ec65a17619a2ff1d4b0318b8e0416ee7"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/display_fields.json",
+      "bytes": 73254,
+      "sha256": "917ddb4e3d4d22e5a8c7e4d31989012492e437ad0075cfe293f5b47d6326fd36"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/experimental_comparison.json",
+      "bytes": 30080,
+      "sha256": "a217b0284e679459983d78437cbed4795a01dd015b4f8ce2268561a2ba0458f8"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/frozen_response.json",
+      "bytes": 37369,
+      "sha256": "38306ba919f6151bc5a3d37607678d0745cc9f1a040ddd29ea841dfea1691c2f"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/frozen_response.png",
+      "bytes": 56924,
+      "sha256": "ce8da9891fcad4a84291e2ad67f8158b67d714221ccf726f20dc57073f2cc794"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/historical_comparison.png",
+      "bytes": 152713,
+      "sha256": "5b89ecd09d79baedbc5a5748461d2c7680c54f185dd7139ef7db8c18a338e75d"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/independent_continuum_comparison.json",
+      "bytes": 3393,
+      "sha256": "c890789b53cdc60a3ca1980326ea9b9e581ade4573f35c5d596db65db8c87190"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/independent_galerkin_reference.jsonl",
+      "bytes": 2024,
+      "sha256": "f0a191f37f48a6be52227ef1ba12ad2c013d2bed68aaee6ba640b42fbafb34af"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/interpolation_verification.json",
+      "bytes": 707,
+      "sha256": "e148a6921a2d5b678808a7db335523340d30b335ea6e8c4eae0d1ef8f88f3717"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/packaging_replay.json",
+      "bytes": 2022,
+      "sha256": "424533920f1e976caee82fda6de837313edd1dc035d45300c451613a18fa9829"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/packaging_tests.json",
+      "bytes": 2427,
+      "sha256": "86d40a4dc30026ee8ff2ce172b1046b67076e208eb3199b58112e47de394401f"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/relocation_audit.json",
+      "bytes": 1737,
+      "sha256": "a8b969698adc96ec8875629690b60e3de37196b1aef7a66571c1ad1b7f3925f6"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/replay_index.json",
+      "bytes": 1646,
+      "sha256": "556e7f88cb07550cdec3dd9ad133677dfff1d91318b5a583df89f5c47130f133"
+    },
+    {
+      "proposed_repository_path": "examples/rectangular_experiment/verification.json",
+      "bytes": 32415,
+      "sha256": "9c56d9fbd3a667a7059c32cc96bd59074af1e7db6cfd0d244438ffe43417284a"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/README.md",
+      "bytes": 9443,
+      "sha256": "16263a868961bff59ed10cf07f3c8f05b391dce7e8e051639ef46527a81b7151"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/audit_package.py",
+      "bytes": 7711,
+      "sha256": "bbffe2c110687b129bcb39d4c73762aed9215a7b967028540a2a69b62d5bedae"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/compare_accepted_evidence.py",
+      "bytes": 3327,
+      "sha256": "74a14a5d303f56faec271cc9aa09edc652d9741240b5964a2c21f559813d305f"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/compare_experiment.py",
+      "bytes": 8388,
+      "sha256": "d1abcc64002dc889ed30baf3608d56c76efea8188d01a7c4b262b21d8b3f4af8"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/compare_independent_reference.py",
+      "bytes": 2736,
+      "sha256": "ce6ecb9344ff26093c1fcc4df3e3ab1fef1796b8521d126c8c04debf9468ff1e"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/independent_galerkin_reference.py",
+      "bytes": 1876,
+      "sha256": "5c6bc80da5e84414be37c0cd553a3acbe27fa2e6e72de6353cc2ea06647050a1"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/inputs/experimental_source.json",
+      "bytes": 4065,
+      "sha256": "8c5c9ba18de523626b4447d38617454ae93fc78b5501b61a4e5f968094e751b8"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/inputs/numerical_plan.json",
+      "bytes": 2220,
+      "sha256": "146ccbf6fc0795dea57a393bbbc7e10432110d13dd562d664736010603d6fb24"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/inputs/refinement_plan.json",
+      "bytes": 823,
+      "sha256": "84ae6e4491bb8b9b5a3f71b85c7a18ea641fb4f43e281db3b8c313824d33851e"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/README.md",
+      "bytes": 12875,
+      "sha256": "15e918b9804a558548b33ba07c41bb9537db0fe081974832b33b182a7c6962a2"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/artifact_manifest.json",
+      "bytes": 3811,
+      "sha256": "413677877d2cdad9298a86be7088de3060880ffeb0d16db0483d1dcd7103519d"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/audit_artifacts.py",
+      "bytes": 3393,
+      "sha256": "da5079821a3778491178316cbdbd4daed66b4f8e42b281989162528262cb9f10"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/compare_experiment.py",
+      "bytes": 7383,
+      "sha256": "3ccdf243b873b6941191b0d358ce61bd7950005003deafde8ba0b6287d8812c0"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/compare_independent_reference.py",
+      "bytes": 2712,
+      "sha256": "2924601fc84bb75e4aef220134ef0b218b60f9c996b6844335861d561d7c1d3f"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/experimental_comparison.json",
+      "bytes": 29119,
+      "sha256": "24ac0d0bb2e734539c2ed7e3e3a2fdbea5405a0f07511b22e47a5a94a1df5ab0"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/experimental_source.json",
+      "bytes": 4065,
+      "sha256": "8c5c9ba18de523626b4447d38617454ae93fc78b5501b61a4e5f968094e751b8"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/frozen_response.json",
+      "bytes": 36876,
+      "sha256": "2b5be898efd870b883505135cb3e54ef6c1254c006dbf32063f904a0a07dcf91"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/independent_continuum_comparison.json",
+      "bytes": 3393,
+      "sha256": "1f39bff8150c9dd92dc87ebd79d49c03459a1377fa24497239f5aa0eb5cd8793"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/independent_galerkin_reference.jsonl",
+      "bytes": 2024,
+      "sha256": "f0a191f37f48a6be52227ef1ba12ad2c013d2bed68aaee6ba640b42fbafb34af"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/independent_galerkin_reference.py",
+      "bytes": 1876,
+      "sha256": "5c6bc80da5e84414be37c0cd553a3acbe27fa2e6e72de6353cc2ea06647050a1"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/initial_solver_rejected.py",
+      "bytes": 12666,
+      "sha256": "e4bb3cfd594df934a75f21686be886795480bb50374cb98cb3b56279d4663bc0"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/initial_verification_rejected.json",
+      "bytes": 31722,
+      "sha256": "083eb264c40bef226acf01bcb46d0ea7cd638c3e4d581ba843d8c75df5b19a7b"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/interpolation_verification.json",
+      "bytes": 707,
+      "sha256": "e148a6921a2d5b678808a7db335523340d30b335ea6e8c4eae0d1ef8f88f3717"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/numerical_plan.json",
+      "bytes": 2220,
+      "sha256": "146ccbf6fc0795dea57a393bbbc7e10432110d13dd562d664736010603d6fb24"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/rectangular_graetz.py",
+      "bytes": 12953,
+      "sha256": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/refinement_plan.json",
+      "bytes": 823,
+      "sha256": "84ae6e4491bb8b9b5a3f71b85c7a18ea641fb4f43e281db3b8c313824d33851e"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/render_plots.py",
+      "bytes": 3242,
+      "sha256": "a4a06e3b6c1443bbb6addbf2650e0a36f9ec833779b622c3305748eafb22f4c2"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/reproduce.sh",
+      "bytes": 497,
+      "sha256": "c18856a5617c227c463b7c50af0953881961ef65e93ee38a9c50bac8ffac901e"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/original_freeze/verification.json",
+      "bytes": 31922,
+      "sha256": "3ed1aa4b3e27136b3b37302de4ff29e0a6e351405483c568c47e4c4af271a396"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/package_paths.py",
+      "bytes": 707,
+      "sha256": "57679e8939be04b6cc123de5e666f13ee456a6d7a2bb2870a371da0abf54919e"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/packaging_history/relocation_audit_before_isolated_replay.json",
+      "bytes": 746,
+      "sha256": "192e0c84bb76820d7a91392e20e5de6b9406d17bea572f05a335470e63230dd6"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/packaging_provenance.json",
+      "bytes": 1764,
+      "sha256": "baddb4e39c0f2de67d4d625f001a833acc9add7d5741fa1899595160add72e30"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/prepare_replay.py",
+      "bytes": 1219,
+      "sha256": "d773f94a0b3cc9af11fe7839088f30915db9743296a0f2c0b7ebf614a5042a99"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/rectangular_graetz.py",
+      "bytes": 14716,
+      "sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/render_plots.py",
+      "bytes": 3459,
+      "sha256": "57f33e94b89caf528462317e8e47558565f6dce71376e41658f557d3e19c757d"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/reproduce.sh",
+      "bytes": 982,
+      "sha256": "65f82d80128d5e96878ebd63bee0d6f1e304a7e0745f4baf0a88f029612f34d6"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/requirements-research.txt",
+      "bytes": 178,
+      "sha256": "0956cd8353cba0ccb6de8aec5b20983d2e8fb36fed346cec15a0d849c381d0c4"
+    },
+    {
+      "proposed_repository_path": "research/rectangular_duct/test_packaging.py",
+      "bytes": 3091,
+      "sha256": "f91f5e5b573a8e5296f3ace66b806a791ee7cf0b97431d131a2f2308515fe0f5"
+    }
+  ],
+  "files_count": 53,
+  "total_listed_bytes": 744143
+}

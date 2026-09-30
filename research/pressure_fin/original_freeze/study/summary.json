@@ -1,0 +1,44 @@
+{
+  "scope": "declared synthetic component-scale screening exercise; not aircraft validation",
+  "numerical_verification_passed": true,
+  "all_design_gates_passed": true,
+  "all_sensitivity_gates_passed": true,
+  "design_count": 9,
+  "design_scenario_count": 36,
+  "sensitivity_run_count": 18,
+  "maximum_omitted_viscous_dissipation_fraction_of_60W": 0.001714636984256054,
+  "within_declared_Re_scope_design_ids": [
+    "n12_t1200",
+    "n16_t600",
+    "n16_t860",
+    "n16_t1200",
+    "n20_t600",
+    "n20_t860",
+    "n20_t1200"
+  ],
+  "nominal_conditional_screen_pass_design_ids": [
+    "n16_t600",
+    "n16_t860",
+    "n20_t600"
+  ],
+  "combined_conditional_screen_pass_design_ids": [],
+  "pareto_within_Re_scope_design_ids": [
+    "n16_t600"
+  ],
+  "baseline": {
+    "fin_only_mass_g": 37.783584,
+    "nominal_G_W_K": 1.064582795914931,
+    "combined_G_W_K": 0.7457788820095481,
+    "nominal_Tb_at_60W_C": 81.36010672935438,
+    "combined_Tb_at_60W_C": 105.45280102102949,
+    "nominal_flow_kg_s": 0.0016659202859249415,
+    "combined_flow_kg_s": 0.0009407621799879019,
+    "nominal_pressure_dissipation_W": 0.03459136806322553,
+    "combined_pressure_dissipation_W": 0.011720459053005422,
+    "nominal_side_flow_fraction": 0.11775503210194274,
+    "combined_side_flow_fraction": 0.12511376472482677
+  },
+  "grid_max_spatial_relative": 0.0006890041654814549,
+  "grid_max_axial_relative": 0.00016890367739375023,
+  "caveat": "Conditional screen = numerical gates plus declared Reynolds, mass and temperature conditions. Model-form uncertainty and omitted physics remain; the screened set is not a robust or validated design recommendation."
+}

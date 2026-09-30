@@ -1,0 +1,251 @@
+{
+  "status": "applicability_audit_not_a_combined_confidence_interval",
+  "fixed_laminar_cutoff": 2300,
+  "method": "Retain author and graphical components separately. For scope screening only, inspect the worst-case rectangular corner obtained by adding the maximum quoted author Re allowance and the separately converted graphical V allowance. No coverage probability, independence assumption or RSS uncertainty is asserted.",
+  "source_readout_sha256": "87bfcb8f105b07cd19fda9c2c9d1a9c2ea574eab655d00f5ee01a0f9d163a6c7",
+  "model_code_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "input_plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "audit_code_sha256": "c93f92af50fe141d6dda7694f1ced68a94ce2a2584989121904f5436037ed80b",
+  "rows": [
+    {
+      "marker_index": 0,
+      "V_m_s": 4.369970612080595,
+      "Re_nominal": 916.2188384428111,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        868.5754588437849,
+        963.8622180418374
+      ],
+      "graphical_only_Re_interval": [
+        862.4103537119863,
+        970.027323173636
+      ],
+      "conservative_joint_corner_Re_interval": [
+        814.76697411296,
+        1017.6707027726623
+      ],
+      "scope": "robustly_in_declared_laminar_scope"
+    },
+    {
+      "marker_index": 1,
+      "V_m_s": 6.354788172917206,
+      "Re_nominal": 1332.3605935116836,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        1263.077842649076,
+        1401.6433443742912
+      ],
+      "graphical_only_Re_interval": [
+        1278.5521087808588,
+        1386.1690782425085
+      ],
+      "conservative_joint_corner_Re_interval": [
+        1209.2693579182512,
+        1455.451829105116
+      ],
+      "scope": "robustly_in_declared_laminar_scope"
+    },
+    {
+      "marker_index": 2,
+      "V_m_s": 8.356446402382694,
+      "Re_nominal": 1752.0332047851941,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.81737499219209,
+      "author_only_Re_interval": [
+        1660.927478136364,
+        1843.1389314340242
+      ],
+      "graphical_only_Re_interval": [
+        1698.215829793002,
+        1805.8505797773862
+      ],
+      "conservative_joint_corner_Re_interval": [
+        1607.110103144172,
+        1896.9563064262163
+      ],
+      "scope": "robustly_in_declared_laminar_scope"
+    },
+    {
+      "marker_index": 3,
+      "V_m_s": 10.32346329676145,
+      "Re_nominal": 2164.4428281320734,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        2051.8918010692055,
+        2276.9938551949413
+      ],
+      "graphical_only_Re_interval": [
+        2110.6343434012488,
+        2218.251312862898
+      ],
+      "conservative_joint_corner_Re_interval": [
+        1998.0833163383807,
+        2330.802339925766
+      ],
+      "scope": "nominally_laminar_boundary_uncertain"
+    },
+    {
+      "marker_index": 4,
+      "V_m_s": 12.273593727561888,
+      "Re_nominal": 2573.311993792038,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.81737499219209,
+      "author_only_Re_interval": [
+        2439.499770114852,
+        2707.124217469224
+      ],
+      "graphical_only_Re_interval": [
+        2519.4946187998457,
+        2627.12936878423
+      ],
+      "conservative_joint_corner_Re_interval": [
+        2385.6823951226597,
+        2760.941592461416
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 5,
+      "V_m_s": 13.988185468414489,
+      "Re_nominal": 2932.7975356089114,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.89952100722596,
+      "author_only_Re_interval": [
+        2780.292063757248,
+        3085.303007460575
+      ],
+      "graphical_only_Re_interval": [
+        2878.8980146016856,
+        2986.697056616137
+      ],
+      "conservative_joint_corner_Re_interval": [
+        2726.392542750022,
+        3139.2025284678007
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 6,
+      "V_m_s": 14.510353050791688,
+      "Re_nominal": 3042.276481411329,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        2884.07810437794,
+        3200.474858444718
+      ],
+      "graphical_only_Re_interval": [
+        2988.4679966805043,
+        3096.0849661421535
+      ],
+      "conservative_joint_corner_Re_interval": [
+        2830.269619647115,
+        3254.2833431755425
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 7,
+      "V_m_s": 16.21645915712417,
+      "Re_nominal": 3399.982904123378,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.89952100722596,
+      "author_only_Re_interval": [
+        3223.183793108962,
+        3576.7820151377937
+      ],
+      "graphical_only_Re_interval": [
+        3346.083383116152,
+        3453.8824251306037
+      ],
+      "conservative_joint_corner_Re_interval": [
+        3169.2842721017364,
+        3630.6815361450194
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 8,
+      "V_m_s": 17.321803371186725,
+      "Re_nominal": 3631.7321037834877,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.89952100722596,
+      "author_only_Re_interval": [
+        3442.882034386746,
+        3820.5821731802293
+      ],
+      "graphical_only_Re_interval": [
+        3577.832582776262,
+        3685.6316247907134
+      ],
+      "conservative_joint_corner_Re_interval": [
+        3388.9825133795202,
+        3874.481694187455
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 9,
+      "V_m_s": 18.366569347687694,
+      "Re_nominal": 3850.7803204438133,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        3650.5397437807346,
+        4051.020897106892
+      ],
+      "graphical_only_Re_interval": [
+        3796.9718357129886,
+        3904.588805174638
+      ],
+      "conservative_joint_corner_Re_interval": [
+        3596.73125904991,
+        4104.829381837717
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 10,
+      "V_m_s": 19.236770065254976,
+      "Re_nominal": 4033.228753496775,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.81737499219209,
+      "author_only_Re_interval": [
+        3823.5008583149424,
+        4242.956648678607
+      ],
+      "graphical_only_Re_interval": [
+        3979.411378504583,
+        4087.046128488967
+      ],
+      "conservative_joint_corner_Re_interval": [
+        3769.6834833227504,
+        4296.7740236708
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    },
+    {
+      "marker_index": 11,
+      "V_m_s": 20.672741941502323,
+      "Re_nominal": 4334.298165921378,
+      "author_Re_upper_relative_allowance": 0.052,
+      "graphical_Re_absolute_allowance": 53.80848473082478,
+      "author_only_Re_interval": [
+        4108.914661293466,
+        4559.68167054929
+      ],
+      "graphical_only_Re_interval": [
+        4280.489681190554,
+        4388.106650652203
+      ],
+      "conservative_joint_corner_Re_interval": [
+        4055.106176562642,
+        4613.490155280115
+      ],
+      "scope": "nominally_outside_laminar_scope"
+    }
+  ]
+}

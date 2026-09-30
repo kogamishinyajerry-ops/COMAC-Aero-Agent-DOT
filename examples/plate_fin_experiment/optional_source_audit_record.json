@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "explicit_optional_source_audit": true,
+  "source_pdf_sha256": "c14571f635c5767ae3fc57f90fb18514595a54dc53918bc7454da084839c5a01",
+  "source_pdf_redistributed": false,
+  "checks": {
+    "source_byte_count": true,
+    "source_sha256": true,
+    "all12_figure8_markers_match": true
+  },
+  "figure8_extracted": true,
+  "maximum_absolute_transcription_difference": 0.0,
+  "source_audit_script_sha256": "f3a402b72d6c7ea68de4b27ae78eb54e0f3ef955ff9b2ae25549c9424baefc6b",
+  "original_extractor_sha256": "ccfaa374ca2f4bc7f1a9ee2c2c0270b3c3e335006ca7a177f2872ef7ec0d6fdb",
+  "marker_transcription_sha256": "31432593b0ca422015ac422069f5fecc19a08e3078103f51e93a9c6970d65f6c",
+  "claim": "Source-byte identity and marker transcription only; not physical validation."
+}

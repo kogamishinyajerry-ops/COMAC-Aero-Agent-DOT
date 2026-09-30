@@ -1,0 +1,1048 @@
+{
+  "provenance": {
+    "model_id": "rectangular-isothermal-laminar-fv-v1",
+    "code_sha256": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c",
+    "plan_sha256": "146ccbf6fc0795dea57a393bbbc7e10432110d13dd562d664736010603d6fb24",
+    "refinement_plan_sha256": "84ae6e4491bb8b9b5a3f71b85c7a18ea641fb4f43e281db3b8c313824d33851e",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "experiment_used_for_selection": false,
+  "gates": {
+    "velocity_exact_series": true,
+    "spatial_refinement": true,
+    "axial_refinement": true,
+    "plug_flow_exact_series": true,
+    "energy_closure": true,
+    "momentum_residual": true,
+    "linear_solve_residual": true,
+    "maximum_principle": true,
+    "inlet_limit": true,
+    "long_duct_limit": true,
+    "spatial_order": true
+  },
+  "all_passed": true,
+  "velocity": [
+    {
+      "aspect": 1.0,
+      "nx": 16,
+      "ny": 16,
+      "mean_velocity": 0.035670158117352434,
+      "exact_series_mean_velocity": 0.03514425373878841,
+      "relative_mean_error": 0.014964164055746743,
+      "darcy_f_re": 56.069277669589624,
+      "exact_darcy_f_re": 56.908307539124586,
+      "forcing_residual_inf": 1.9539925233402755e-14,
+      "normalized_mass_flux": 0.9999999999999999,
+      "integrated_momentum_wall_balance_error": -2.220446049250313e-16,
+      "minimum_velocity": 0.06571639821060878,
+      "maximum_velocity": 2.059025539984657
+    },
+    {
+      "aspect": 1.0,
+      "nx": 32,
+      "ny": 32,
+      "mean_velocity": 0.03527648247916574,
+      "exact_series_mean_velocity": 0.03514425373878841,
+      "relative_mean_error": 0.00376245691145205,
+      "darcy_f_re": 56.69499506310467,
+      "exact_darcy_f_re": 56.908307539124586,
+      "forcing_residual_inf": 1.5631940186722204e-13,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -2.886579864025407e-15,
+      "minimum_velocity": 0.01967181735897803,
+      "maximum_velocity": 2.0867935854432447
+    },
+    {
+      "aspect": 1.0,
+      "nx": 64,
+      "ny": 64,
+      "mean_velocity": 0.035177367851334476,
+      "exact_series_mean_velocity": 0.03514425373878841,
+      "relative_mean_error": 0.0009422340503282278,
+      "darcy_f_re": 56.85473706993483,
+      "exact_darcy_f_re": 56.908307539124586,
+      "forcing_residual_inf": 7.958078640513122e-13,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -6.661338147750939e-15,
+      "minimum_velocity": 0.005697785673846399,
+      "maximum_velocity": 2.093879957195206
+    },
+    {
+      "aspect": 1.0,
+      "nx": 128,
+      "ny": 128,
+      "mean_velocity": 0.03515253644170982,
+      "exact_series_mean_velocity": 0.03514425373878841,
+      "relative_mean_error": 0.00023567730255336095,
+      "darcy_f_re": 56.89489870286925,
+      "exact_darcy_f_re": 56.908307539124586,
+      "forcing_residual_inf": 4.547473508864641e-12,
+      "normalized_mass_flux": 0.9999999999999999,
+      "integrated_momentum_wall_balance_error": -5.329070518200751e-15,
+      "minimum_velocity": 0.0016170179819944602,
+      "maximum_velocity": 2.0956613071506704
+    },
+    {
+      "aspect": 2.0,
+      "nx": 32,
+      "ny": 16,
+      "mean_velocity": 0.05773310708288386,
+      "exact_series_mean_velocity": 0.05717041927989267,
+      "relative_mean_error": 0.00984228924815822,
+      "darcy_f_re": 61.586076606808355,
+      "exact_darcy_f_re": 62.1922245864318,
+      "forcing_residual_inf": 3.907985046680551e-14,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -6.661338147750939e-16,
+      "minimum_velocity": 0.04231825735464642,
+      "maximum_velocity": 1.9704500542334267
+    },
+    {
+      "aspect": 2.0,
+      "nx": 64,
+      "ny": 32,
+      "mean_velocity": 0.05731149458510491,
+      "exact_series_mean_velocity": 0.05717041927989267,
+      "relative_mean_error": 0.0024676276121322616,
+      "darcy_f_re": 62.039135103617305,
+      "exact_darcy_f_re": 62.1922245864318,
+      "forcing_residual_inf": 2.1316282072803006e-13,
+      "normalized_mass_flux": 0.9999999999999998,
+      "integrated_momentum_wall_balance_error": -1.5543122344752192e-15,
+      "minimum_velocity": 0.01253852051245133,
+      "maximum_velocity": 1.9864062658045765
+    },
+    {
+      "aspect": 2.0,
+      "nx": 128,
+      "ny": 64,
+      "mean_velocity": 0.05720571825307454,
+      "exact_series_mean_velocity": 0.05717041927989267,
+      "relative_mean_error": 0.0006174342190681248,
+      "darcy_f_re": 62.15384867341405,
+      "exact_darcy_f_re": 62.1922245864318,
+      "forcing_residual_inf": 1.2505552149377763e-12,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -6.661338147750939e-15,
+      "minimum_velocity": 0.00361132129783988,
+      "maximum_velocity": 1.9904452692803285
+    },
+    {
+      "aspect": 2.0,
+      "nx": 256,
+      "ny": 128,
+      "mean_velocity": 0.057179246215678554,
+      "exact_series_mean_velocity": 0.05717041927989267,
+      "relative_mean_error": 0.00015439690485163915,
+      "darcy_f_re": 62.182623781784336,
+      "exact_darcy_f_re": 62.1922245864318,
+      "forcing_residual_inf": 8.640199666842818e-12,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -1.3988810110276972e-14,
+      "minimum_velocity": 0.0010210107115144335,
+      "maximum_velocity": 1.9914583419601177
+    },
+    {
+      "aspect": 4.0,
+      "nx": 64,
+      "ny": 16,
+      "mean_velocity": 0.07080895938321605,
+      "exact_series_mean_velocity": 0.07020323957691933,
+      "relative_mean_error": 0.008628089101686554,
+      "darcy_f_re": 72.30723406469947,
+      "exact_darcy_f_re": 72.93110732290621,
+      "forcing_residual_inf": 6.039613253960852e-14,
+      "normalized_mass_flux": 1.0,
+      "integrated_momentum_wall_balance_error": -1.3322676295501878e-15,
+      "minimum_velocity": 0.03457005591276818,
+      "maximum_velocity": 1.7583707664129078
+    },
+    {
+      "aspect": 4.0,
+      "nx": 128,
+      "ny": 32,
+      "mean_velocity": 0.0703548731854986,
+      "exact_series_mean_velocity": 0.07020323957691933,
+      "relative_mean_error": 0.002159923238487238,
+      "darcy_f_re": 72.77392123926569,
+      "exact_darcy_f_re": 72.93110732290621,
+      "forcing_residual_inf": 2.7000623958883807e-13,
+      "normalized_mass_flux": 1.0000000000000002,
+      "integrated_momentum_wall_balance_error": -1.7763568394002505e-15,
+      "minimum_velocity": 0.010230462610159714,
+      "maximum_velocity": 1.76982401368147
+    },
+    {
+      "aspect": 4.0,
+      "nx": 256,
+      "ny": 64,
+      "mean_velocity": 0.07024116317560108,
+      "exact_series_mean_velocity": 0.07020323957691933,
+      "relative_mean_error": 0.0005401972745175954,
+      "darcy_f_re": 72.8917314082646,
+      "exact_darcy_f_re": 72.93110732290621,
+      "forcing_residual_inf": 1.4210854715202004e-12,
+      "normalized_mass_flux": 1.0000000000000002,
+      "integrated_momentum_wall_balance_error": -5.551115123125783e-15,
+      "minimum_velocity": 0.0029452487539003234,
+      "maximum_velocity": 1.7727150988515903
+    },
+    {
+      "aspect": 4.0,
+      "nx": 512,
+      "ny": 128,
+      "mean_velocity": 0.07021272158051668,
+      "exact_series_mean_velocity": 0.07020323957691933,
+      "relative_mean_error": 0.0001350650433582512,
+      "darcy_f_re": 72.92125821000434,
+      "exact_darcy_f_re": 72.93110732290621,
+      "forcing_residual_inf": 6.59383658785373e-12,
+      "normalized_mass_flux": 0.9999999999999999,
+      "integrated_momentum_wall_balance_error": -2.8310687127941492e-14,
+      "minimum_velocity": 0.0008325119959505739,
+      "maximum_velocity": 1.7734396817057112
+    }
+  ],
+  "spatial_convergence": [
+    {
+      "tau": 0.002,
+      "coarse_order": 1.9693857646507003,
+      "fine_order": 1.992018101668566
+    },
+    {
+      "tau": 0.004,
+      "coarse_order": 1.9777988531721047,
+      "fine_order": 1.9942089380498864
+    },
+    {
+      "tau": 0.008,
+      "coarse_order": 1.9834112027195114,
+      "fine_order": 1.9956516033106515
+    },
+    {
+      "tau": 0.016,
+      "coarse_order": 1.9871191826621701,
+      "fine_order": 1.9966012617186724
+    },
+    {
+      "tau": 0.032,
+      "coarse_order": 1.9894639564073822,
+      "fine_order": 1.9972029504564552
+    },
+    {
+      "tau": 0.064,
+      "coarse_order": 1.9908179967774138,
+      "fine_order": 1.9975488774333228
+    },
+    {
+      "tau": 0.128,
+      "coarse_order": 1.9913599429520425,
+      "fine_order": 1.9976789818097334
+    },
+    {
+      "tau": 0.256,
+      "coarse_order": 1.9911377517425979,
+      "fine_order": 1.9976118414036006
+    },
+    {
+      "tau": 0.512,
+      "coarse_order": 1.9902937978302124,
+      "fine_order": 1.9973869262587178
+    }
+  ],
+  "production_to_doubled_grid": [
+    {
+      "tau": 0.002,
+      "coarse_theta": 0.9379342763759861,
+      "fine_theta": 0.9379660493975551,
+      "relative_change": -3.3874383395193775e-05
+    },
+    {
+      "tau": 0.004,
+      "coarse_theta": 0.903817722453906,
+      "fine_theta": 0.9038516134520338,
+      "relative_change": -3.7496196967912176e-05
+    },
+    {
+      "tau": 0.008,
+      "coarse_theta": 0.8519981573741837,
+      "fine_theta": 0.8520341549600747,
+      "relative_change": -4.224899398863613e-05
+    },
+    {
+      "tau": 0.016,
+      "coarse_theta": 0.774457365248914,
+      "fine_theta": 0.7744951334676203,
+      "relative_change": -4.876495290195848e-05
+    },
+    {
+      "tau": 0.032,
+      "coarse_theta": 0.6610012346779541,
+      "fine_theta": 0.6610397519158152,
+      "relative_change": -5.8267657503829895e-05
+    },
+    {
+      "tau": 0.064,
+      "coarse_theta": 0.5015669047908902,
+      "fine_theta": 0.5016030192165238,
+      "relative_change": -7.19980228389705e-05
+    },
+    {
+      "tau": 0.128,
+      "coarse_theta": 0.3007929218237173,
+      "fine_theta": 0.3008203897686874,
+      "relative_change": -9.131011694796243e-05
+    },
+    {
+      "tau": 0.256,
+      "coarse_theta": 0.11204379537430667,
+      "fine_theta": 0.11205788801326946,
+      "relative_change": -0.00012576213252502022
+    },
+    {
+      "tau": 0.512,
+      "coarse_theta": 0.01585741645022482,
+      "fine_theta": 0.015860477861744538,
+      "relative_change": -0.00019302139231902604
+    }
+  ],
+  "production_to_doubled_time": [
+    {
+      "tau": 0.002,
+      "coarse_theta": 0.9379342763759861,
+      "fine_theta": 0.9379306055252854,
+      "relative_change": 3.91377643405022e-06
+    },
+    {
+      "tau": 0.004,
+      "coarse_theta": 0.903817722453906,
+      "fine_theta": 0.9038133498678758,
+      "relative_change": 4.837930343670749e-06
+    },
+    {
+      "tau": 0.008,
+      "coarse_theta": 0.8519981573741837,
+      "fine_theta": 0.8519917848758485,
+      "relative_change": 7.479530258702738e-06
+    },
+    {
+      "tau": 0.016,
+      "coarse_theta": 0.774457365248914,
+      "fine_theta": 0.7744474386771498,
+      "relative_change": 1.2817618431304467e-05
+    },
+    {
+      "tau": 0.032,
+      "coarse_theta": 0.6610012346779541,
+      "fine_theta": 0.6609853335799252,
+      "relative_change": 2.405665787286182e-05
+    },
+    {
+      "tau": 0.064,
+      "coarse_theta": 0.5015669047908902,
+      "fine_theta": 0.5015392923475142,
+      "relative_change": 5.505539405858961e-05
+    },
+    {
+      "tau": 0.128,
+      "coarse_theta": 0.3007929218237173,
+      "fine_theta": 0.30076063399038205,
+      "relative_change": 0.00010735392097993568
+    },
+    {
+      "tau": 0.256,
+      "coarse_theta": 0.11204379537430667,
+      "fine_theta": 0.11201953717492572,
+      "relative_change": 0.00021655329054848238
+    },
+    {
+      "tau": 0.512,
+      "coarse_theta": 0.01585741645022482,
+      "fine_theta": 0.015850336003565828,
+      "relative_change": 0.00044670640782618065
+    }
+  ],
+  "plug_flow_exact_series": [
+    {
+      "tau": 0.002,
+      "computed": 0.8539937111656903,
+      "exact": 0.8537050068577311,
+      "relative_error": 0.0003381780657722988
+    },
+    {
+      "tau": 0.004,
+      "computed": 0.7962957009405996,
+      "exact": 0.7960910224195489,
+      "relative_error": 0.0002571044205832429
+    },
+    {
+      "tau": 0.008,
+      "computed": 0.7177464125737545,
+      "exact": 0.7175959300733438,
+      "relative_error": 0.00020970367041428517
+    },
+    {
+      "tau": 0.016,
+      "computed": 0.6126717084900715,
+      "exact": 0.6125538799055756,
+      "relative_error": 0.00019235627813496414
+    },
+    {
+      "tau": 0.032,
+      "computed": 0.4760523230080904,
+      "exact": 0.4759497360708935,
+      "relative_error": 0.00021554153605340964
+    },
+    {
+      "tau": 0.064,
+      "computed": 0.308288518763394,
+      "exact": 0.30817748715905224,
+      "relative_error": 0.00036028460535941775
+    },
+    {
+      "tau": 0.128,
+      "computed": 0.13674473116353997,
+      "exact": 0.13665352077482354,
+      "relative_error": 0.0006674572905203124
+    }
+  ],
+  "thermal_mesh_runs": {
+    "32": {
+      "ny": 32,
+      "nx": 64,
+      "steps_per_interval": 512,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9595838813598947,
+          "field_min": 0.013158402824070334,
+          "field_max": 1.0000000000000635
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9373129371226332,
+          "field_min": 0.008865536682178767,
+          "field_max": 0.9999999999757273
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.9031508653901095,
+          "field_min": 0.005942811600512701,
+          "field_max": 0.9999999305978254
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8512869373129748,
+          "field_min": 0.003955159748688412,
+          "field_max": 0.9999631495251113
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.7737091369315714,
+          "field_min": 0.002605096082978972,
+          "field_max": 0.9972463630346786
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6602368575929721,
+          "field_min": 0.001681396238323963,
+          "field_max": 0.9618631245766118
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.500849502087538,
+          "field_min": 0.0010181546136985155,
+          "field_max": 0.8220606158701096
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.3002470659564915,
+          "field_min": 0.000515839940813007,
+          "field_max": 0.5426631857399378
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11176378734512718,
+          "field_min": 0.00017645023096927347,
+          "field_max": 0.21183722532461727
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.015796626864672068,
+          "field_min": 2.4598665045835084e-05,
+          "field_max": 0.030162077283285557
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 2.4598665045835084e-05,
+        "maximum_field": 1.0000000000000635,
+        "maximum_cellwise_axial_increase": 8.881784197001252e-16,
+        "maximum_sampled_linear_relative_residual": 1.5048632719329184e-15,
+        "maximum_step_energy_balance_abs": 5.220433460517704e-17,
+        "global_energy_closure_abs": 9.481304630298837e-14
+      }
+    },
+    "64": {
+      "ny": 64,
+      "nx": 128,
+      "steps_per_interval": 512,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9600431338278976,
+          "field_min": 0.0032819790218988885,
+          "field_max": 1.0000000000000577
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9378078855016787,
+          "field_min": 0.002213005511995151,
+          "field_max": 1.0000000000000542
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.9036827015324705,
+          "field_min": 0.0014843410275105543,
+          "field_max": 0.9999999957294938
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8518546003754809,
+          "field_min": 0.0009883528879015638,
+          "field_max": 0.9999826761591958
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.7743066478565814,
+          "field_min": 0.0006512469649035815,
+          "field_max": 0.9976248639170298
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6608474641409379,
+          "field_min": 0.0004205237238049463,
+          "field_max": 0.9628600655834001
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5014226923119841,
+          "field_min": 0.0002547623789188016,
+          "field_max": 0.8231479917645115
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.30068322666423686,
+          "field_min": 0.0001291122189308662,
+          "field_max": 0.5435922338933039
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11198751805400589,
+          "field_min": 4.418700789499822e-05,
+          "field_max": 0.21232358491943626
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.015845192963932997,
+          "field_min": 6.166701288023706e-06,
+          "field_max": 0.03026349787450906
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 6.166701288023706e-06,
+        "maximum_field": 1.0000000000000577,
+        "maximum_cellwise_axial_increase": 8.881784197001252e-16,
+        "maximum_sampled_linear_relative_residual": 1.9693727685014473e-15,
+        "maximum_step_energy_balance_abs": 5.307169634316544e-17,
+        "global_energy_closure_abs": 1.006972283335017e-13
+      }
+    },
+    "128": {
+      "ny": 128,
+      "nx": 256,
+      "steps_per_interval": 512,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9601614144939494,
+          "field_min": 0.0008199703130397231,
+          "field_max": 1.0000000000000198
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9379342763759861,
+          "field_min": 0.0005530184727692837,
+          "field_max": 1.0000000000000198
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.903817722453906,
+          "field_min": 0.0003709910234171824,
+          "field_max": 0.9999999989278262
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8519981573741837,
+          "field_min": 0.0002470572809036202,
+          "field_max": 0.9999866032870649
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.774457365248914,
+          "field_min": 0.0001628086503306745,
+          "field_max": 0.9977194665771729
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6610012346779541,
+          "field_min": 0.00010514134792488953,
+          "field_max": 0.9631106090957204
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5015669047908902,
+          "field_min": 6.370440746682649e-05,
+          "field_max": 0.8234203694373866
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.3007929218237173,
+          "field_min": 3.2287514466309524e-05,
+          "field_max": 0.5438251493622736
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11204379537430667,
+          "field_min": 1.1051398755013124e-05,
+          "field_max": 0.21244564500225616
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.01585741645022482,
+          "field_min": 1.5427422649242195e-06,
+          "field_max": 0.030288986636412347
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 1.5427422649242195e-06,
+        "maximum_field": 1.0000000000000198,
+        "maximum_cellwise_axial_increase": 1.887379141862766e-15,
+        "maximum_sampled_linear_relative_residual": 4.978073311285697e-15,
+        "maximum_step_energy_balance_abs": 3.04118709382184e-17,
+        "global_energy_closure_abs": 9.892087149410145e-14
+      }
+    },
+    "256": {
+      "ny": 256,
+      "nx": 512,
+      "steps_per_interval": 512,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9601912174641217,
+          "field_min": 0.00020495766738047784,
+          "field_max": 1.000000000000011
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9379660493975551,
+          "field_min": 0.00013823924785875247,
+          "field_max": 1.000000000000011
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.9038516134520338,
+          "field_min": 9.274156230182473e-05,
+          "field_max": 0.9999999993314912
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8520341549600747,
+          "field_min": 6.176227499604626e-05,
+          "field_max": 0.9999875232844934
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.7744951334676203,
+          "field_min": 4.0701928998782505e-05,
+          "field_max": 0.9977431173699255
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6610397519158152,
+          "field_min": 2.6285973854164285e-05,
+          "field_max": 0.9631733270567426
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5016030192165238,
+          "field_min": 1.5926960144845662e-05,
+          "field_max": 0.8234884987460641
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.3008203897686874,
+          "field_min": 8.072468142425993e-06,
+          "field_max": 0.5438834216987114
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11205788801326946,
+          "field_min": 2.763139782017637e-06,
+          "field_max": 0.21247619160357636
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.015860477861744538,
+          "field_min": 3.85752258012728e-07,
+          "field_max": 0.03029536781287154
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 3.85752258012728e-07,
+        "maximum_field": 1.000000000000011,
+        "maximum_cellwise_axial_increase": 2.3314683517128287e-15,
+        "maximum_sampled_linear_relative_residual": 1.762046228651992e-14,
+        "maximum_step_energy_balance_abs": 5.936006894358137e-17,
+        "global_energy_closure_abs": 1.8429702208777599e-13
+      }
+    }
+  },
+  "thermal_time_runs": {
+    "512": {
+      "ny": 128,
+      "nx": 256,
+      "steps_per_interval": 512,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9601614144939494,
+          "field_min": 0.0008199703130397231,
+          "field_max": 1.0000000000000198
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9379342763759861,
+          "field_min": 0.0005530184727692837,
+          "field_max": 1.0000000000000198
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.903817722453906,
+          "field_min": 0.0003709910234171824,
+          "field_max": 0.9999999989278262
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8519981573741837,
+          "field_min": 0.0002470572809036202,
+          "field_max": 0.9999866032870649
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.774457365248914,
+          "field_min": 0.0001628086503306745,
+          "field_max": 0.9977194665771729
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6610012346779541,
+          "field_min": 0.00010514134792488953,
+          "field_max": 0.9631106090957204
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5015669047908902,
+          "field_min": 6.370440746682649e-05,
+          "field_max": 0.8234203694373866
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.3007929218237173,
+          "field_min": 3.2287514466309524e-05,
+          "field_max": 0.5438251493622736
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11204379537430667,
+          "field_min": 1.1051398755013124e-05,
+          "field_max": 0.21244564500225616
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.01585741645022482,
+          "field_min": 1.5427422649242195e-06,
+          "field_max": 0.030288986636412347
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 1.5427422649242195e-06,
+        "maximum_field": 1.0000000000000198,
+        "maximum_cellwise_axial_increase": 1.887379141862766e-15,
+        "maximum_sampled_linear_relative_residual": 4.978073311285697e-15,
+        "maximum_step_energy_balance_abs": 3.04118709382184e-17,
+        "global_energy_closure_abs": 9.892087149410145e-14
+      }
+    },
+    "256": {
+      "ny": 128,
+      "nx": 256,
+      "steps_per_interval": 256,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.9601706590832664,
+          "field_min": 0.0008206712357413684,
+          "field_max": 1.000000000000015
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.93794161688263,
+          "field_min": 0.0005532580552789893,
+          "field_max": 1.000000000000015
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.9038264656141359,
+          "field_min": 0.0003711136960371839,
+          "field_max": 0.9999999988104215
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8520108984142147,
+          "field_min": 0.00024713388396887815,
+          "field_max": 0.9999862417458383
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.7744772116423084,
+          "field_min": 0.00016285936047230956,
+          "field_max": 0.9977055906152427
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.661033026657476,
+          "field_min": 0.00010517475887598468,
+          "field_max": 0.9630714590237692
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5016221137287921,
+          "field_min": 6.372763617639829e-05,
+          "field_max": 0.8234187068295029
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.30085748138464374,
+          "field_min": 3.2299634420017216e-05,
+          "field_max": 0.5438943356356174
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11209230604800983,
+          "field_min": 1.105672308945825e-05,
+          "field_max": 0.21253203400731316
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.015871580176312454,
+          "field_min": 1.5441232383047038e-06,
+          "field_max": 0.030316009266742636
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 1.5441232383047038e-06,
+        "maximum_field": 1.000000000000015,
+        "maximum_cellwise_axial_increase": 2.4424906541753444e-15,
+        "maximum_sampled_linear_relative_residual": 6.158475290665785e-15,
+        "maximum_step_energy_balance_abs": 3.496552006265752e-17,
+        "global_energy_closure_abs": 5.750955267558311e-14
+      }
+    },
+    "1024": {
+      "ny": 128,
+      "nx": 256,
+      "steps_per_interval": 1024,
+      "endpoints": [
+        {
+          "tau": 0.001,
+          "bulk_theta": 0.960156790692849,
+          "field_min": 0.0008196204247497406,
+          "field_max": 1.0000000000000338
+        },
+        {
+          "tau": 0.002,
+          "bulk_theta": 0.9379306055252854,
+          "field_min": 0.0005528987798397706,
+          "field_max": 1.0000000000000338
+        },
+        {
+          "tau": 0.004,
+          "bulk_theta": 0.9038133498678758,
+          "field_min": 0.0003709297123330133,
+          "field_max": 0.999999998983166
+        },
+        {
+          "tau": 0.008,
+          "bulk_theta": 0.8519917848758485,
+          "field_min": 0.00024701898653846995,
+          "field_max": 0.9999867822639877
+        },
+        {
+          "tau": 0.016,
+          "bulk_theta": 0.7744474386771498,
+          "field_min": 0.0001627832980238421,
+          "field_max": 0.9977264068726369
+        },
+        {
+          "tau": 0.032,
+          "bulk_theta": 0.6609853335799252,
+          "field_min": 0.00010512464465914297,
+          "field_max": 0.9631302091460902
+        },
+        {
+          "tau": 0.064,
+          "bulk_theta": 0.5015392923475142,
+          "field_min": 6.36927942584903e-05,
+          "field_max": 0.82342119697174
+        },
+        {
+          "tau": 0.128,
+          "bulk_theta": 0.30076063399038205,
+          "field_min": 3.228145476692019e-05,
+          "field_max": 0.5437905417417709
+        },
+        {
+          "tau": 0.256,
+          "bulk_theta": 0.11201953717492572,
+          "field_min": 1.1048736781935089e-05,
+          "field_max": 0.21240244022385021
+        },
+        {
+          "tau": 0.512,
+          "bulk_theta": 0.015850336003565828,
+          "field_min": 1.542051923964623e-06,
+          "field_max": 0.03027547794418875
+        }
+      ],
+      "checks": {
+        "inlet_bulk_theta": 1.0,
+        "minimum_field": 1.542051923964623e-06,
+        "maximum_field": 1.0000000000000338,
+        "maximum_cellwise_axial_increase": 1.887379141862766e-15,
+        "maximum_sampled_linear_relative_residual": 2.4369197156677414e-15,
+        "maximum_step_energy_balance_abs": 4.629543276513104e-17,
+        "global_energy_closure_abs": 2.1738166822160565e-13
+      }
+    }
+  },
+  "long_duct": {
+    "ny": 32,
+    "nx": 64,
+    "steps_per_interval": 128,
+    "endpoints": [
+      {
+        "tau": 0.001,
+        "bulk_theta": 0.9596117679398138,
+        "field_min": 0.013192384958314578,
+        "field_max": 1.000000000000018
+      },
+      {
+        "tau": 0.002,
+        "bulk_theta": 0.9373350432758877,
+        "field_min": 0.008877113554962469,
+        "field_max": 0.9999999999703574
+      },
+      {
+        "tau": 0.004,
+        "bulk_theta": 0.903177161159952,
+        "field_min": 0.0059487262483259844,
+        "field_max": 0.9999999231802146
+      },
+      {
+        "tau": 0.008,
+        "bulk_theta": 0.851325220146278,
+        "field_min": 0.003958847365404163,
+        "field_max": 0.9999614028969213
+      },
+      {
+        "tau": 0.016,
+        "bulk_theta": 0.7737687306528696,
+        "field_min": 0.002607534424583127,
+        "field_max": 0.9972048305712654
+      },
+      {
+        "tau": 0.032,
+        "bulk_theta": 0.660332304212283,
+        "field_min": 0.0016830027685930924,
+        "field_max": 0.9617483583399844
+      },
+      {
+        "tau": 0.064,
+        "bulk_theta": 0.5010151963218432,
+        "field_min": 0.0010192708689018871,
+        "field_max": 0.8220558594849706
+      },
+      {
+        "tau": 0.128,
+        "bulk_theta": 0.3005951341192263,
+        "field_min": 0.0005168856487061056,
+        "field_max": 0.5430367298608361
+      },
+      {
+        "tau": 0.256,
+        "bulk_theta": 0.11227832527543868,
+        "field_min": 0.00017735497848455435,
+        "field_max": 0.21275267316751284
+      },
+      {
+        "tau": 0.512,
+        "bulk_theta": 0.01609726968707195,
+        "field_min": 2.5067920418116265e-05,
+        "field_max": 0.030735415921518742
+      },
+      {
+        "tau": 1.024,
+        "bulk_theta": 0.0003417759431098316,
+        "field_min": 5.320752928546592e-07,
+        "field_max": 0.0006526789071441864
+      },
+      {
+        "tau": 2.048,
+        "bulk_theta": 1.724385816245268e-07,
+        "field_min": 2.6845158302568683e-10,
+        "field_max": 3.2930063559369745e-07
+      },
+      {
+        "tau": 4.096,
+        "bulk_theta": 6.715457135486773e-14,
+        "field_min": 1.0454592480282497e-16,
+        "field_max": 1.2824301163839e-13
+      },
+      {
+        "tau": 8.0,
+        "bulk_theta": 1.5323484582984065e-25,
+        "field_min": 2.3855529632738415e-28,
+        "field_max": 2.9262785422780806e-25
+      }
+    ],
+    "checks": {
+      "inlet_bulk_theta": 1.0,
+      "minimum_field": 2.3855529632738415e-28,
+      "maximum_field": 1.0000000000000215,
+      "maximum_cellwise_axial_increase": 6.661338147750939e-16,
+      "maximum_sampled_linear_relative_residual": 2.4089831624940093e-14,
+      "maximum_step_energy_balance_abs": 5.2583805365546965e-17,
+      "global_energy_closure_abs": 2.19824158875781e-14
+    }
+  },
+  "elapsed_seconds": 560.9889254570007
+}

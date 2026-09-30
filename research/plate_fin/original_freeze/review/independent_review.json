@@ -1,0 +1,334 @@
+{
+  "solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "plan_sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278",
+  "review_script_sha256": "d184eaf4b9d3093abea1a3917fddc0fc6c927cbc0a336cc71da452ed34491e1e",
+  "experimental_targets_read": false,
+  "spectral_reference": [
+    {
+      "speed": 4.0,
+      "nz": 100,
+      "implementation_G": 1.1096360761748256,
+      "spectral_BE_G": 1.1096360761748252,
+      "exact_axial_semidiscrete_G": 1.112189281077284,
+      "relative_implementation_vs_spectral_BE": 4.440892098500626e-16,
+      "relative_temporal_error": -0.002295656814805147,
+      "minimum_eigenvalue_per_m": 3.5336053186901024,
+      "spectral_capacity_relative_error": -6.661338147750939e-16
+    },
+    {
+      "speed": 4.0,
+      "nz": 200,
+      "implementation_G": 1.110910576624182,
+      "spectral_BE_G": 1.110910576624185,
+      "exact_axial_semidiscrete_G": 1.112189281077284,
+      "relative_implementation_vs_spectral_BE": -2.55351295663786e-15,
+      "relative_temporal_error": -0.00114971837515232,
+      "minimum_eigenvalue_per_m": 3.5336053186901024,
+      "spectral_capacity_relative_error": -6.661338147750939e-16
+    },
+    {
+      "speed": 4.0,
+      "nz": 400,
+      "implementation_G": 1.1115493991351906,
+      "spectral_BE_G": 1.1115493991351875,
+      "exact_axial_semidiscrete_G": 1.112189281077284,
+      "relative_implementation_vs_spectral_BE": 2.886579864025407e-15,
+      "relative_temporal_error": -0.0005753354694028046,
+      "minimum_eigenvalue_per_m": 3.5336053186901024,
+      "spectral_capacity_relative_error": -6.661338147750939e-16
+    },
+    {
+      "speed": 4.0,
+      "nz": 800,
+      "implementation_G": 1.1118692071496277,
+      "spectral_BE_G": 1.1118692071496388,
+      "exact_axial_semidiscrete_G": 1.112189281077284,
+      "relative_implementation_vs_spectral_BE": -9.992007221626409e-15,
+      "relative_temporal_error": -0.0002877872796492875,
+      "minimum_eigenvalue_per_m": 3.5336053186901024,
+      "spectral_capacity_relative_error": -6.661338147750939e-16
+    },
+    {
+      "speed": 10.0,
+      "nz": 100,
+      "implementation_G": 1.6907036468554009,
+      "spectral_BE_G": 1.6907036468554013,
+      "exact_axial_semidiscrete_G": 1.693517482204375,
+      "relative_implementation_vs_spectral_BE": -2.220446049250313e-16,
+      "relative_temporal_error": -0.0016615330981476495,
+      "minimum_eigenvalue_per_m": 1.413442127476045,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 10.0,
+      "nz": 200,
+      "implementation_G": 1.6921112762044312,
+      "spectral_BE_G": 1.6921112762044412,
+      "exact_axial_semidiscrete_G": 1.693517482204375,
+      "relative_implementation_vs_spectral_BE": -5.88418203051333e-15,
+      "relative_temporal_error": -0.0008303463145319379,
+      "minimum_eigenvalue_per_m": 1.413442127476045,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 10.0,
+      "nz": 400,
+      "implementation_G": 1.692814563719998,
+      "spectral_BE_G": 1.6928145637200074,
+      "exact_axial_semidiscrete_G": 1.693517482204375,
+      "relative_implementation_vs_spectral_BE": -5.551115123125783e-15,
+      "relative_temporal_error": -0.00041506420321213433,
+      "minimum_eigenvalue_per_m": 1.413442127476045,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 10.0,
+      "nz": 800,
+      "implementation_G": 1.693166069923188,
+      "spectral_BE_G": 1.6931660699231852,
+      "exact_axial_semidiscrete_G": 1.693517482204375,
+      "relative_implementation_vs_spectral_BE": 1.7763568394002505e-15,
+      "relative_temporal_error": -0.0002075043717467695,
+      "minimum_eigenvalue_per_m": 1.413442127476045,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 20.0,
+      "nz": 100,
+      "implementation_G": 2.1880554128540557,
+      "spectral_BE_G": 2.1880554128540677,
+      "exact_axial_semidiscrete_G": 2.191970979180856,
+      "relative_implementation_vs_spectral_BE": -5.440092820663267e-15,
+      "relative_temporal_error": -0.0017863221566297716,
+      "minimum_eigenvalue_per_m": 0.706721063738017,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 20.0,
+      "nz": 200,
+      "implementation_G": 2.190010717888667,
+      "spectral_BE_G": 2.1900107178886747,
+      "exact_axial_semidiscrete_G": 2.191970979180856,
+      "relative_implementation_vs_spectral_BE": -3.4416913763379853e-15,
+      "relative_temporal_error": -0.0008942916264891299,
+      "minimum_eigenvalue_per_m": 0.706721063738017,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 20.0,
+      "nz": 400,
+      "implementation_G": 2.1909902293802253,
+      "spectral_BE_G": 2.190990229380237,
+      "exact_axial_semidiscrete_G": 2.191970979180856,
+      "relative_implementation_vs_spectral_BE": -5.218048215738236e-15,
+      "relative_temporal_error": -0.00044742827799537643,
+      "minimum_eigenvalue_per_m": 0.706721063738017,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    },
+    {
+      "speed": 20.0,
+      "nz": 800,
+      "implementation_G": 2.1914804495432074,
+      "spectral_BE_G": 2.191480449543021,
+      "exact_axial_semidiscrete_G": 2.191970979180856,
+      "relative_implementation_vs_spectral_BE": 8.504308368628699e-14,
+      "relative_temporal_error": -0.00022378473178130687,
+      "minimum_eigenvalue_per_m": 0.706721063738017,
+      "spectral_capacity_relative_error": -2.220446049250313e-16
+    }
+  ],
+  "topology_and_symmetry": {
+    "half_channels": 9,
+    "half_fins": 8,
+    "full_channels": 17,
+    "full_fins": 16,
+    "half_channel_capacity_ratios": [
+      0.9999999999999999,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.5000000000000001
+    ],
+    "whole_array_capacity_per_speed": 0.4307234531674667,
+    "expected_capacity_per_speed": 0.43072345316746663,
+    "full_fluid_area": 0.00035527199999999996,
+    "expected_full_fluid_area": 0.00035527199999999996,
+    "heated_floor_ground_conductance": 2.221753061946903,
+    "expected_heated_floor_ground_conductance": 2.221753061946903,
+    "fin_root_ground_conductance": 8986.619469026547,
+    "expected_fin_root_ground_conductance": 8986.619469026547,
+    "symmetry_comparisons": [
+      {
+        "speed": 4.0,
+        "relative_total_G": 0.0,
+        "maximum_absolute_channel_G": 8.604228440844963e-16
+      },
+      {
+        "speed": 10.0,
+        "relative_total_G": -1.4432899320127035e-15,
+        "maximum_absolute_channel_G": 4.85722573273506e-15
+      },
+      {
+        "speed": 20.0,
+        "relative_total_G": 7.771561172376096e-15,
+        "maximum_absolute_channel_G": 8.93729534823251e-15
+      }
+    ]
+  },
+  "local_residual_and_interfaces": [
+    {
+      "ks": 167.0,
+      "maximum_componentwise_backward_error": 7.661616383192164e-16,
+      "maximum_cellwise_deficit_increase": 4.440892098500626e-16,
+      "maximum_absolute_fin_heat_imbalance_W_per_m_K": 1.4210854715202004e-13,
+      "matrix_symmetry_error": 0.0,
+      "matrix_rowsum_vs_ground_maxabs": 1.1368683772161603e-13
+    },
+    {
+      "ks": 205.0,
+      "maximum_componentwise_backward_error": 8.522915652472957e-16,
+      "maximum_cellwise_deficit_increase": 4.440892098500626e-16,
+      "maximum_absolute_fin_heat_imbalance_W_per_m_K": 2.495781359357352e-13,
+      "matrix_symmetry_error": 0.0,
+      "matrix_rowsum_vs_ground_maxabs": 2.2737367544323206e-13
+    },
+    {
+      "ks": 237.0,
+      "maximum_componentwise_backward_error": 8.227575483510192e-16,
+      "maximum_cellwise_deficit_increase": 4.440892098500626e-16,
+      "maximum_absolute_fin_heat_imbalance_W_per_m_K": 3.304023721284466e-13,
+      "matrix_symmetry_error": 0.0,
+      "matrix_rowsum_vs_ground_maxabs": 2.2737367544323206e-13
+    }
+  ],
+  "low_conductivity_limit": [
+    {
+      "speed": 4.0,
+      "ny": 72,
+      "ks": 1e-08,
+      "calculated_G": 0.10333474443962537,
+      "exact_zero_ks_continuum_G": 0.10368677861724322,
+      "relative_error": -0.003395169396836706,
+      "combined_side_channel_G": 2.3467808981176437e-09
+    },
+    {
+      "speed": 4.0,
+      "ny": 144,
+      "ks": 1e-08,
+      "calculated_G": 0.10359302727315053,
+      "exact_zero_ks_continuum_G": 0.10368677861724322,
+      "relative_error": -0.0009041783855467944,
+      "combined_side_channel_G": 2.3626683264489354e-09
+    },
+    {
+      "speed": 4.0,
+      "ny": 288,
+      "ks": 1e-08,
+      "calculated_G": 0.1036572932824725,
+      "exact_zero_ks_continuum_G": 0.10368677861724322,
+      "relative_error": -0.00028436928183062093,
+      "combined_side_channel_G": 2.366667561328521e-09
+    },
+    {
+      "speed": 10.0,
+      "ny": 72,
+      "ks": 1e-08,
+      "calculated_G": 0.16256015181569078,
+      "exact_zero_ks_continuum_G": 0.1639431918380663,
+      "relative_error": -0.008436093056804705,
+      "combined_side_channel_G": 2.0564630493451065e-09
+    },
+    {
+      "speed": 10.0,
+      "ny": 144,
+      "ks": 1e-08,
+      "calculated_G": 0.16359115373355582,
+      "exact_zero_ks_continuum_G": 0.1639431918380663,
+      "relative_error": -0.0021473176199851007,
+      "combined_side_channel_G": 2.0737891663764534e-09
+    },
+    {
+      "speed": 10.0,
+      "ny": 288,
+      "ks": 1e-08,
+      "calculated_G": 0.16384578559139798,
+      "exact_zero_ks_continuum_G": 0.1639431918380663,
+      "relative_error": -0.0005941463355461085,
+      "combined_side_channel_G": 2.078169254183626e-09
+    },
+    {
+      "speed": 20.0,
+      "ny": 72,
+      "ks": 1e-08,
+      "calculated_G": 0.22790236987527607,
+      "exact_zero_ks_continuum_G": 0.23185068535612804,
+      "relative_error": -0.017029561395461412,
+      "combined_side_channel_G": 1.9333771359000084e-09
+    },
+    {
+      "speed": 20.0,
+      "ny": 144,
+      "ks": 1e-08,
+      "calculated_G": 0.23087000427529264,
+      "exact_zero_ks_continuum_G": 0.23185068535612804,
+      "relative_error": -0.0042297959107994165,
+      "combined_side_channel_G": 1.9517614633810203e-09
+    },
+    {
+      "speed": 20.0,
+      "ny": 288,
+      "ks": 1e-08,
+      "calculated_G": 0.23159308306254034,
+      "exact_zero_ks_continuum_G": 0.23185068535612804,
+      "relative_error": -0.0011110697955971638,
+      "combined_side_channel_G": 1.956419161732083e-09
+    }
+  ],
+  "observed_spatial_order": {
+    "verification_sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7",
+    "reused_verification_sha256": "f5fe9dd9290b9d160698397b92572f0e0e8826a183473025e23c8be925397a5f",
+    "rows": [
+      {
+        "profile": "fd",
+        "speed": 4.0,
+        "observed_order_24_36_48": 1.9621560542629204,
+        "fine48_Richardson_relative_error_indicator": 0.0003360006237911891
+      },
+      {
+        "profile": "fd",
+        "speed": 10.0,
+        "observed_order_24_36_48": 1.9620928264712636,
+        "fine48_Richardson_relative_error_indicator": 0.0007414046853244391
+      },
+      {
+        "profile": "fd",
+        "speed": 20.0,
+        "observed_order_24_36_48": 1.9570766699432796,
+        "fine48_Richardson_relative_error_indicator": 0.0011490423305420836
+      },
+      {
+        "profile": "plug",
+        "speed": 4.0,
+        "observed_order_24_36_48": 2.00365589460303,
+        "fine48_Richardson_relative_error_indicator": -0.00022450635453878645
+      },
+      {
+        "profile": "plug",
+        "speed": 10.0,
+        "observed_order_24_36_48": 2.0091016393403596,
+        "fine48_Richardson_relative_error_indicator": -0.000562841733270573
+      },
+      {
+        "profile": "plug",
+        "speed": 20.0,
+        "observed_order_24_36_48": 2.021646277675757,
+        "fine48_Richardson_relative_error_indicator": -0.0011410459347159796
+      }
+    ],
+    "caveat": "Richardson indicators assume asymptotic convergence; they are not proven bounds or measurement uncertainties."
+  }
+}

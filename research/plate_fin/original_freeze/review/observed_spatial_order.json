@@ -1,0 +1,48 @@
+{
+  "verification_sha256": "f5fe9dd9290b9d160698397b92572f0e0e8826a183473025e23c8be925397a5f",
+  "experimental_targets_read": false,
+  "rows": [
+    {
+      "profile": "fd",
+      "speed": 4.0,
+      "observed_order_24_36_48": 1.9621560542629204,
+      "fine48_richardson_relative_error_indicator": 0.0003360006237911891,
+      "note": "Asymptotic indicator, not a proven error bound"
+    },
+    {
+      "profile": "fd",
+      "speed": 10.0,
+      "observed_order_24_36_48": 1.9620928264712636,
+      "fine48_richardson_relative_error_indicator": 0.0007414046853244391,
+      "note": "Asymptotic indicator, not a proven error bound"
+    },
+    {
+      "profile": "fd",
+      "speed": 20.0,
+      "observed_order_24_36_48": 1.9570766699432796,
+      "fine48_richardson_relative_error_indicator": 0.0011490423305420836,
+      "note": "Asymptotic indicator, not a proven error bound"
+    },
+    {
+      "profile": "plug",
+      "speed": 4.0,
+      "observed_order_24_36_48": 2.00365589460303,
+      "fine48_richardson_relative_error_indicator": -0.00022450635453878645,
+      "note": "Asymptotic indicator, not a proven error bound"
+    },
+    {
+      "profile": "plug",
+      "speed": 10.0,
+      "observed_order_24_36_48": 2.0091016393403596,
+      "fine48_richardson_relative_error_indicator": -0.000562841733270573,
+      "note": "Asymptotic indicator, not a proven error bound"
+    },
+    {
+      "profile": "plug",
+      "speed": 20.0,
+      "observed_order_24_36_48": 2.021646277675757,
+      "fine48_richardson_relative_error_indicator": -0.0011410459347159796,
+      "note": "Asymptotic indicator, not a proven error bound"
+    }
+  ]
+}

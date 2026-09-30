@@ -1,0 +1,1346 @@
+{
+  "schema": "aerolab-nacelle-source-audit-v1",
+  "source_url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+  "source_data_sha256": "d53e544e728d483ef03b0f244350449a16b7b76bc82e353c126725ffa32b509a",
+  "audit_source_sha256": "81f5ab1dc519de836ceb6aa4c31bbc5a856dc9d8d23882c6379997b09e1caba8",
+  "geometry_source_sha256": "1aa07e99841b599918ba93774d23578cb8ef96856de022c196103e0859c44c39",
+  "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+  "inference_case": "initial_climb",
+  "retrospective_check_cases": [
+    "cruise_climb",
+    "dash"
+  ],
+  "experimental_validation": false,
+  "blind_holdout": false,
+  "scope": [
+    "Initial-climb-only inference; cruise and dash are retrospective consistency checks on the same published CFD geometry.",
+    "Printed-rounding intervals are not statistical uncertainty or bounds on nonuniform-profile/averaging errors.",
+    "Flux-equivalent m/(rho*u_stream) is not an independently measured geometric area.",
+    "Pressure-energy speed and temperature-energy speed are algebraic diagnostics; differences from streamwise speed suggest unresolved transverse kinetic energy and averaging, not a recovered swirl vector.",
+    "Conditional pressure tests input both published upstream and downstream pressures and therefore do not validate a predictive nacelle network.",
+    "No current CAD geometry, heat-transfer coefficient or successful-temperature threshold is adjusted."
+  ],
+  "station_diagnostics": {
+    "initial_climb": {
+      "1_b": {
+        "density_ideal_gas_kg_m3": 1.0518124559478783,
+        "density_printed_rounding_kg_m3": [
+          1.0514073438488274,
+          1.0522175811393455
+        ],
+        "streamwise_velocity_m_s": 9.2964,
+        "mass_flow_kg_s": 0.10614061458000001,
+        "flux_equivalent_area_m2": 0.010854966471963113,
+        "area_printed_rounding_m2": [
+          0.010809880530746878,
+          0.01090022146583166
+        ],
+        "pressure_energy_velocity_m_s": 28.02451783620522,
+        "temperature_energy_velocity_m_s": 27.664417579265805,
+        "pressure_energy_to_streamwise_ratio": 3.014555939525539,
+        "temperature_energy_to_streamwise_ratio": 2.9758204874215615
+      },
+      "1_c": {
+        "density_ideal_gas_kg_m3": 1.0524306991255319,
+        "density_printed_rounding_kg_m3": [
+          1.0520250395394606,
+          1.0528363718391078
+        ],
+        "streamwise_velocity_m_s": 11.91768,
+        "mass_flow_kg_s": 0.25401172720000004,
+        "flux_equivalent_area_m2": 0.02025202895545547,
+        "area_printed_rounding_m2": [
+          0.020200318751813686,
+          0.020303891309944637
+        ],
+        "pressure_energy_velocity_m_s": 39.58981018336323,
+        "temperature_energy_velocity_m_s": 39.888093461583225,
+        "pressure_energy_to_streamwise_ratio": 3.321939352572248,
+        "temperature_energy_to_streamwise_ratio": 3.3469679888689092
+      },
+      "2a_b": {
+        "density_ideal_gas_kg_m3": 1.0312234034218806,
+        "density_printed_rounding_kg_m3": [
+          1.0308227030776314,
+          1.0316241165854643
+        ],
+        "streamwise_velocity_m_s": 1.70688,
+        "mass_flow_kg_s": 0.10750139169,
+        "flux_equivalent_area_m2": 0.06107427724328739,
+        "area_printed_rounding_m2": [
+          0.06038262497911001,
+          0.06177851059037196
+        ],
+        "pressure_energy_velocity_m_s": 16.34924103962916,
+        "temperature_energy_velocity_m_s": 14.884219831754665,
+        "pressure_energy_to_streamwise_ratio": 9.578436117143069,
+        "temperature_energy_to_streamwise_ratio": 8.720132541101112
+      },
+      "2a_g": {
+        "density_ideal_gas_kg_m3": 1.0398225275349884,
+        "density_printed_rounding_kg_m3": [
+          1.0394198474793,
+          1.0402252205325544
+        ],
+        "streamwise_velocity_m_s": 20.60448,
+        "mass_flow_kg_s": 0.045359237000000004,
+        "flux_equivalent_area_m2": 0.0021171170019221312,
+        "area_printed_rounding_m2": [
+          0.002104159603357119,
+          0.0021301023964654868
+        ],
+        "pressure_energy_velocity_m_s": 34.506373523823505,
+        "temperature_energy_velocity_m_s": 35.62049971575364,
+        "pressure_energy_to_streamwise_ratio": 1.6747024687749221,
+        "temperature_energy_to_streamwise_ratio": 1.7287745051442036
+      },
+      "2a_s": {
+        "density_ideal_gas_kg_m3": 1.0215671396475825,
+        "density_printed_rounding_kg_m3": [
+          1.0211712294014497,
+          1.0219630624132103
+        ],
+        "streamwise_velocity_m_s": 20.97024,
+        "mass_flow_kg_s": 0.20774530546000003,
+        "flux_equivalent_area_m2": 0.009697524890332999,
+        "area_printed_rounding_m2": [
+          0.009676153129615903,
+          0.009718938745575374
+        ],
+        "pressure_energy_velocity_m_s": 28.436183126384403,
+        "temperature_energy_velocity_m_s": 28.735692091891455,
+        "pressure_energy_to_streamwise_ratio": 1.356025640449723,
+        "temperature_energy_to_streamwise_ratio": 1.3703082125856192
+      },
+      "2c_b": {
+        "density_ideal_gas_kg_m3": 1.0212106022596916,
+        "density_printed_rounding_kg_m3": [
+          1.020814246455835,
+          1.0216069706114175
+        ],
+        "streamwise_velocity_m_s": 1.6764000000000001,
+        "mass_flow_kg_s": 0.10659420695,
+        "flux_equivalent_area_m2": 0.062264518737948284,
+        "area_printed_rounding_m2": [
+          0.06154840378465263,
+          0.06299389535532537
+        ],
+        "pressure_energy_velocity_m_s": 11.618741860518176,
+        "temperature_energy_velocity_m_s": 13.463283403390381,
+        "pressure_energy_to_streamwise_ratio": 6.930769422881278,
+        "temperature_energy_to_streamwise_ratio": 8.03106860140204
+      },
+      "2c_g": {
+        "density_ideal_gas_kg_m3": 0.9877821142229581,
+        "density_printed_rounding_kg_m3": [
+          0.9873992444054243,
+          0.9881649957646456
+        ],
+        "streamwise_velocity_m_s": 22.098000000000003,
+        "mass_flow_kg_s": 0.04626642174,
+        "flux_equivalent_area_m2": 0.002119589624534971,
+        "area_printed_rounding_m2": [
+          0.0021069291790562716,
+          0.002132276217157542
+        ],
+        "pressure_energy_velocity_m_s": 33.3832038828757,
+        "temperature_energy_velocity_m_s": 33.881853550241324,
+        "pressure_energy_to_streamwise_ratio": 1.5106889258247667,
+        "temperature_energy_to_streamwise_ratio": 1.5332543013051552
+      },
+      "2c_s": {
+        "density_ideal_gas_kg_m3": 0.9462663939640746,
+        "density_printed_rounding_kg_m3": [
+          0.94589967843635,
+          0.9466331202653507
+        ],
+        "streamwise_velocity_m_s": 22.555200000000003,
+        "mass_flow_kg_s": 0.20819889783,
+        "flux_equivalent_area_m2": 0.00975479904361269,
+        "area_printed_rounding_m2": [
+          0.009733821095646253,
+          0.009775816422129229
+        ],
+        "pressure_energy_velocity_m_s": 26.97516104980361,
+        "temperature_energy_velocity_m_s": 24.58048006040612,
+        "pressure_energy_to_streamwise_ratio": 1.1959619533324293,
+        "temperature_energy_to_streamwise_ratio": 1.0897921570372295
+      },
+      "4": {
+        "density_ideal_gas_kg_m3": 0.9920044438212419,
+        "density_printed_rounding_kg_m3": [
+          0.9916198725085763,
+          0.9923890269605029
+        ],
+        "streamwise_velocity_m_s": 2.4384,
+        "mass_flow_kg_s": 0.34064786987,
+        "flux_equivalent_area_m2": 0.14082738345854215,
+        "area_printed_rounding_m2": [
+          0.13980530154217652,
+          0.14186243581314037
+        ],
+        "pressure_energy_velocity_m_s": 0.0,
+        "temperature_energy_velocity_m_s": 7.773030297123658,
+        "pressure_energy_to_streamwise_ratio": 0.0,
+        "temperature_energy_to_streamwise_ratio": 3.1877584879936256
+      },
+      "ME_L": {
+        "density_ideal_gas_kg_m3": 1.0387001303180852,
+        "density_printed_rounding_kg_m3": [
+          1.0382964043421508,
+          1.0391038693037993
+        ],
+        "streamwise_velocity_m_s": 26.791920000000005,
+        "mass_flow_kg_s": 0.022226026130000003,
+        "flux_equivalent_area_m2": 0.0007986707818807653,
+        "area_printed_rounding_m2": [
+          0.0007897646862922846,
+          0.000807593585791421
+        ],
+        "pressure_energy_velocity_m_s": 34.52485924362346,
+        "temperature_energy_velocity_m_s": 34.177770553387425,
+        "pressure_energy_to_streamwise_ratio": 1.2886295287393905,
+        "temperature_energy_to_streamwise_ratio": 1.2756745523795017
+      },
+      "ME_R": {
+        "density_ideal_gas_kg_m3": 1.0396081247922635,
+        "density_printed_rounding_kg_m3": [
+          1.0392043321410316,
+          1.0400119304571007
+        ],
+        "streamwise_velocity_m_s": 31.607760000000003,
+        "mass_flow_kg_s": 0.02449398798,
+        "flux_equivalent_area_m2": 0.000745411547585403,
+        "area_printed_rounding_m2": [
+          0.0007378670774812469,
+          0.0007529688764040848
+        ],
+        "pressure_energy_velocity_m_s": 41.45371685787688,
+        "temperature_energy_velocity_m_s": 39.888093461583225,
+        "pressure_energy_to_streamwise_ratio": 1.311504417202512,
+        "temperature_energy_to_streamwise_ratio": 1.261971536786638
+      }
+    },
+    "cruise_climb": {
+      "1_b": {
+        "density_ideal_gas_kg_m3": 1.0531201660946374,
+        "density_printed_rounding_kg_m3": [
+          1.0527154252648296,
+          1.0535249199921934
+        ],
+        "streamwise_velocity_m_s": 10.088880000000001,
+        "mass_flow_kg_s": 0.11521246198000001,
+        "flux_equivalent_area_m2": 0.010843726907941874,
+        "area_printed_rounding_m2": [
+          0.01080190605801352,
+          0.010885693802200265
+        ],
+        "pressure_energy_velocity_m_s": 25.570275034200087,
+        "temperature_energy_velocity_m_s": 25.3866106441959,
+        "pressure_energy_to_streamwise_ratio": 2.5345008597782988,
+        "temperature_energy_to_streamwise_ratio": 2.516296223584372
+      },
+      "1_c": {
+        "density_ideal_gas_kg_m3": 1.0530311084517685,
+        "density_printed_rounding_kg_m3": [
+          1.052625806385419,
+          1.0534364236221794
+        ],
+        "streamwise_velocity_m_s": 13.07592,
+        "mass_flow_kg_s": 0.27895930755000004,
+        "flux_equivalent_area_m2": 0.020259438301702168,
+        "area_printed_rounding_m2": [
+          0.020211621957256596,
+          0.020307384687661384
+        ],
+        "pressure_energy_velocity_m_s": 37.898595272436346,
+        "temperature_energy_velocity_m_s": 38.34344794094564,
+        "pressure_energy_to_streamwise_ratio": 2.8983501942835646,
+        "temperature_energy_to_streamwise_ratio": 2.932370949114528
+      },
+      "2a_b": {
+        "density_ideal_gas_kg_m3": 1.0306299125259348,
+        "density_printed_rounding_kg_m3": [
+          1.0302294522773372,
+          1.0310303855788123
+        ],
+        "streamwise_velocity_m_s": 1.85928,
+        "mass_flow_kg_s": 0.11748042383000001,
+        "flux_equivalent_area_m2": 0.06130811507429433,
+        "area_printed_rounding_m2": [
+          0.06066870780942708,
+          0.06195820168994793
+        ],
+        "pressure_energy_velocity_m_s": 11.56552484368564,
+        "temperature_energy_velocity_m_s": 11.873499905251213,
+        "pressure_energy_to_streamwise_ratio": 6.220432018676929,
+        "temperature_energy_to_streamwise_ratio": 6.3860741282922495
+      },
+      "2a_g": {
+        "density_ideal_gas_kg_m3": 1.0410939905477092,
+        "density_printed_rounding_kg_m3": [
+          1.0406907976588258,
+          1.041497196410798
+        ],
+        "streamwise_velocity_m_s": 22.58568,
+        "mass_flow_kg_s": 0.0498951607,
+        "flux_equivalent_area_m2": 0.0021219508264088732,
+        "area_printed_rounding_m2": [
+          0.0021100640411970445,
+          0.002133861750443986
+        ],
+        "pressure_energy_velocity_m_s": 36.34590176667371,
+        "temperature_energy_velocity_m_s": 35.90208907570702,
+        "pressure_energy_to_streamwise_ratio": 1.6092454053485976,
+        "temperature_energy_to_streamwise_ratio": 1.5895952247489125
+      },
+      "2a_s": {
+        "density_ideal_gas_kg_m3": 1.026761989073708,
+        "density_printed_rounding_kg_m3": [
+          1.0263639830350442,
+          1.027160007762142
+        ],
+        "streamwise_velocity_m_s": 23.0124,
+        "mass_flow_kg_s": 0.22815696211,
+        "flux_equivalent_area_m2": 0.009656106091186938,
+        "area_printed_rounding_m2": [
+          0.009636387895269261,
+          0.009675860652467803
+        ],
+        "pressure_energy_velocity_m_s": 30.632738346525453,
+        "temperature_energy_velocity_m_s": 30.76654026698481,
+        "pressure_energy_to_streamwise_ratio": 1.331140530606345,
+        "temperature_energy_to_streamwise_ratio": 1.3369548707212116
+      },
+      "2c_b": {
+        "density_ideal_gas_kg_m3": 1.029642277651605,
+        "density_printed_rounding_kg_m3": [
+          1.0292422169246687,
+          1.0300423511577887
+        ],
+        "streamwise_velocity_m_s": 1.7983200000000001,
+        "mass_flow_kg_s": 0.11566605435,
+        "flux_equivalent_area_m2": 0.06246727771331196,
+        "area_printed_rounding_m2": [
+          0.061796875496705976,
+          0.06314925403405407
+        ],
+        "pressure_energy_velocity_m_s": 11.571070351145615,
+        "temperature_energy_velocity_m_s": 10.992724866929244,
+        "pressure_energy_to_streamwise_ratio": 6.434377836617295,
+        "temperature_energy_to_streamwise_ratio": 6.112774626834625
+      },
+      "2c_g": {
+        "density_ideal_gas_kg_m3": 1.0012415576441476,
+        "density_printed_rounding_kg_m3": [
+          1.0008532620752095,
+          1.0016298652654039
+        ],
+        "streamwise_velocity_m_s": 23.98776,
+        "mass_flow_kg_s": 0.05080234544,
+        "flux_equivalent_area_m2": 0.0021152183285404456,
+        "area_printed_rounding_m2": [
+          0.00210362254957024,
+          0.0021268367912146416
+        ],
+        "pressure_energy_velocity_m_s": 35.16478458739309,
+        "temperature_energy_velocity_m_s": 35.050534945989035,
+        "pressure_energy_to_streamwise_ratio": 1.4659469907733398,
+        "temperature_energy_to_streamwise_ratio": 1.4611841600044786
+      },
+      "2c_s": {
+        "density_ideal_gas_kg_m3": 0.9702380198850273,
+        "density_printed_rounding_kg_m3": [
+          0.9698616535124821,
+          0.9706143975947631
+        ],
+        "streamwise_velocity_m_s": 24.353520000000003,
+        "mass_flow_kg_s": 0.22861055448,
+        "flux_equivalent_area_m2": 0.009675117456337468,
+        "area_printed_rounding_m2": [
+          0.009655728718207685,
+          0.009694540727815872
+        ],
+        "pressure_energy_velocity_m_s": 26.639839876143153,
+        "temperature_energy_velocity_m_s": 26.167919290612442,
+        "pressure_energy_to_streamwise_ratio": 1.0938804688662316,
+        "temperature_energy_to_streamwise_ratio": 1.0745025479114494
+      },
+      "4": {
+        "density_ideal_gas_kg_m3": 1.0048312336469698,
+        "density_printed_rounding_kg_m3": [
+          1.0044411996493756,
+          1.0052212798032996
+        ],
+        "streamwise_velocity_m_s": 2.65176,
+        "mass_flow_kg_s": 0.37648166710000003,
+        "flux_equivalent_area_m2": 0.14129164831768418,
+        "area_printed_rounding_m2": [
+          0.14034516049839263,
+          0.14224918575621281
+        ],
+        "pressure_energy_velocity_m_s": 11.713054239867198,
+        "temperature_energy_velocity_m_s": 7.773030297123658,
+        "pressure_energy_to_streamwise_ratio": 4.41708685547229,
+        "temperature_energy_to_streamwise_ratio": 2.9312721728677023
+      },
+      "ME_L": {
+        "density_ideal_gas_kg_m3": 1.0393401586551259,
+        "density_printed_rounding_kg_m3": [
+          1.03893647439936,
+          1.0397438559176504
+        ],
+        "streamwise_velocity_m_s": 28.620720000000002,
+        "mass_flow_kg_s": 0.02358680324,
+        "flux_equivalent_area_m2": 0.0007929226452127322,
+        "area_printed_rounding_m2": [
+          0.0007845757123433361,
+          0.000801284627275091
+        ],
+        "pressure_energy_velocity_m_s": 36.37641194270927,
+        "temperature_energy_velocity_m_s": 36.733908041481286,
+        "pressure_energy_to_streamwise_ratio": 1.2709817203309095,
+        "temperature_energy_to_streamwise_ratio": 1.2834725346350924
+      },
+      "ME_R": {
+        "density_ideal_gas_kg_m3": 1.0394741244539407,
+        "density_printed_rounding_kg_m3": [
+          1.039070386007706,
+          1.0398778759103569
+        ],
+        "streamwise_velocity_m_s": 32.308800000000005,
+        "mass_flow_kg_s": 0.02494758035,
+        "flux_equivalent_area_m2": 0.0007428376701184559,
+        "area_printed_rounding_m2": [
+          0.000735451890916673,
+          0.0007502358836967008
+        ],
+        "pressure_energy_velocity_m_s": 41.45638870556627,
+        "temperature_energy_velocity_m_s": 40.885449734593806,
+        "pressure_energy_to_streamwise_ratio": 1.2831299430980496,
+        "temperature_energy_to_streamwise_ratio": 1.2654586284415947
+      }
+    },
+    "dash": {
+      "1_b": {
+        "density_ideal_gas_kg_m3": 0.9067697940321781,
+        "density_printed_rounding_kg_m3": [
+          0.9063530597133506,
+          0.9071865422860454
+        ],
+        "streamwise_velocity_m_s": 16.154400000000003,
+        "mass_flow_kg_s": 0.15830373713,
+        "flux_equivalent_area_m2": 0.010806953694393684,
+        "area_printed_rounding_m2": [
+          0.01077634714326643,
+          0.010837636696500607
+        ],
+        "pressure_energy_velocity_m_s": 27.552950259498733,
+        "temperature_energy_velocity_m_s": 27.664417579265933,
+        "pressure_energy_to_streamwise_ratio": 1.705600347861804,
+        "temperature_energy_to_streamwise_ratio": 1.7125004691765666
+      },
+      "1_c": {
+        "density_ideal_gas_kg_m3": 0.9004544158982308,
+        "density_printed_rounding_kg_m3": [
+          0.9000369915789974,
+          0.9008718542022311
+        ],
+        "streamwise_velocity_m_s": 20.20824,
+        "mass_flow_kg_s": 0.36877059681,
+        "flux_equivalent_area_m2": 0.020265907816832057,
+        "area_printed_rounding_m2": [
+          0.020228803782819285,
+          0.020303087823508977
+        ],
+        "pressure_energy_velocity_m_s": 44.526485326414516,
+        "temperature_energy_velocity_m_s": 43.04509263551425,
+        "pressure_energy_to_streamwise_ratio": 2.203382646208404,
+        "temperature_energy_to_streamwise_ratio": 2.130076277573616
+      },
+      "2a_b": {
+        "density_ideal_gas_kg_m3": 0.8636192144372575,
+        "density_printed_rounding_kg_m3": [
+          0.8632099481790549,
+          0.8640284941588299
+        ],
+        "streamwise_velocity_m_s": 3.01752,
+        "mass_flow_kg_s": 0.16193247609,
+        "flux_equivalent_area_m2": 0.062138605563133165,
+        "area_printed_rounding_m2": [
+          0.06171051436697693,
+          0.06257115284717334
+        ],
+        "pressure_energy_velocity_m_s": 17.864321792061435,
+        "temperature_energy_velocity_m_s": 15.546060594247084,
+        "pressure_energy_to_streamwise_ratio": 5.920199962903786,
+        "temperature_energy_to_streamwise_ratio": 5.151932909888612
+      },
+      "2a_g": {
+        "density_ideal_gas_kg_m3": 0.8832238226113724,
+        "density_printed_rounding_kg_m3": [
+          0.882808357157484,
+          0.8836393019286658
+        ],
+        "streamwise_velocity_m_s": 35.26536,
+        "mass_flow_kg_s": 0.06622448602,
+        "flux_equivalent_area_m2": 0.002126177413212291,
+        "area_printed_rounding_m2": [
+          0.002116984838244325,
+          0.0021353856981747516
+        ],
+        "pressure_energy_velocity_m_s": 46.64689706411157,
+        "temperature_energy_velocity_m_s": 45.766363193944066,
+        "pressure_energy_to_streamwise_ratio": 1.322739851914501,
+        "temperature_energy_to_streamwise_ratio": 1.2977710476780633
+      },
+      "2a_s": {
+        "density_ideal_gas_kg_m3": 0.8702034942346061,
+        "density_printed_rounding_kg_m3": [
+          0.8697928770026958,
+          0.8706141250153338
+        ],
+        "streamwise_velocity_m_s": 35.814,
+        "mass_flow_kg_s": 0.30163892605000003,
+        "flux_equivalent_area_m2": 0.00967862656855803,
+        "area_printed_rounding_m2": [
+          0.009662676074197595,
+          0.009694601675491183
+        ],
+        "pressure_energy_velocity_m_s": 46.994191471172435,
+        "temperature_energy_velocity_m_s": 46.421762138031696,
+        "pressure_energy_to_streamwise_ratio": 1.3121737720213447,
+        "temperature_energy_to_streamwise_ratio": 1.2961903763341625
+      },
+      "2c_b": {
+        "density_ideal_gas_kg_m3": 0.8648995354707185,
+        "density_printed_rounding_kg_m3": [
+          0.8644896413931769,
+          0.8653094430522738
+        ],
+        "streamwise_velocity_m_s": 2.95656,
+        "mass_flow_kg_s": 0.16011810661,
+        "flux_equivalent_area_m2": 0.06261639856170889,
+        "area_printed_rounding_m2": [
+          0.06217758363728428,
+          0.0630598725852198
+        ],
+        "pressure_energy_velocity_m_s": 12.62469017946521,
+        "temperature_energy_velocity_m_s": 14.191546779685282,
+        "pressure_energy_to_streamwise_ratio": 4.270060536388644,
+        "temperature_energy_to_streamwise_ratio": 4.800019881106855
+      },
+      "2c_g": {
+        "density_ideal_gas_kg_m3": 0.8460135176978812,
+        "density_printed_rounding_kg_m3": [
+          0.8456132444644222,
+          0.8464138038186446
+        ],
+        "streamwise_velocity_m_s": 37.88664,
+        "mass_flow_kg_s": 0.0680388555,
+        "flux_equivalent_area_m2": 0.002122724370689904,
+        "area_printed_rounding_m2": [
+          0.002113797809283701,
+          0.002131665733144617
+        ],
+        "pressure_energy_velocity_m_s": 45.93463078856194,
+        "temperature_energy_velocity_m_s": 45.324165739702174,
+        "pressure_energy_to_streamwise_ratio": 1.2124229223959142,
+        "temperature_energy_to_streamwise_ratio": 1.1963099852534342
+      },
+      "2c_s": {
+        "density_ideal_gas_kg_m3": 0.8211940014302962,
+        "density_printed_rounding_kg_m3": [
+          0.8208047913646546,
+          0.8215832236928655
+        ],
+        "streamwise_velocity_m_s": 38.069520000000004,
+        "mass_flow_kg_s": 0.30209251842,
+        "flux_equivalent_area_m2": 0.009663107263440074,
+        "area_printed_rounding_m2": [
+          0.009647416194864311,
+          0.009678821979158921
+        ],
+        "pressure_energy_velocity_m_s": 40.91130301400014,
+        "temperature_energy_velocity_m_s": 40.885449734593806,
+        "pressure_energy_to_streamwise_ratio": 1.0746471984411712,
+        "temperature_energy_to_streamwise_ratio": 1.0739680913915857
+      },
+      "4": {
+        "density_ideal_gas_kg_m3": 0.8495693456093176,
+        "density_printed_rounding_kg_m3": [
+          0.8491673325580638,
+          0.8499713716582937
+        ],
+        "streamwise_velocity_m_s": 4.23672,
+        "mass_flow_kg_s": 0.50439471544,
+        "flux_equivalent_area_m2": 0.14013348774981813,
+        "area_printed_rounding_m2": [
+          0.13950241920407963,
+          0.14076923342811895
+        ],
+        "pressure_energy_velocity_m_s": 12.7380869445336,
+        "temperature_energy_velocity_m_s": 12.693305322097808,
+        "pressure_energy_to_streamwise_ratio": 3.0065916427173853,
+        "temperature_energy_to_streamwise_ratio": 2.996021762613014
+      },
+      "ME_L": {
+        "density_ideal_gas_kg_m3": 0.8806991434407379,
+        "density_printed_rounding_kg_m3": [
+          0.8802822595290457,
+          0.8811160413120764
+        ],
+        "streamwise_velocity_m_s": 42.15384,
+        "mass_flow_kg_s": 0.02948350405,
+        "flux_equivalent_area_m2": 0.0007941716513321962,
+        "area_printed_rounding_m2": [
+          0.0007874050958977774,
+          0.0008009492303030399
+        ],
+        "pressure_energy_velocity_m_s": 54.37520707324065,
+        "temperature_energy_velocity_m_s": 54.03980014766899,
+        "pressure_energy_to_streamwise_ratio": 1.2899229838430057,
+        "temperature_energy_to_streamwise_ratio": 1.2819662490456145
+      },
+      "ME_R": {
+        "density_ideal_gas_kg_m3": 0.8816215197499063,
+        "density_printed_rounding_kg_m3": [
+          0.8812045645492607,
+          0.8820384889144561
+        ],
+        "streamwise_velocity_m_s": 44.40936,
+        "mass_flow_kg_s": 0.02948350405,
+        "flux_equivalent_area_m2": 0.000753047550703154,
+        "area_printed_rounding_m2": [
+          0.0007466453978311058,
+          0.0007594599053802457
+        ],
+        "pressure_energy_velocity_m_s": 58.45210583201898,
+        "temperature_energy_velocity_m_s": 57.47138418378316,
+        "pressure_energy_to_streamwise_ratio": 1.3162113984984016,
+        "temperature_energy_to_streamwise_ratio": 1.2941277285640496
+      }
+    }
+  },
+  "flow_area_constraints": {
+    "main_inlet": {
+      "station": "1_c",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.02025202895545547,
+      "current_rom_area_m2": 0.0559424660461796,
+      "current_rom_area_relative_to_inference_percent": 176.23141448802775,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": 0.03658569846505255,
+        "dash": 0.06853072058663479
+      },
+      "three_case_span_percent_of_inferred": 0.0685307205866297
+    },
+    "motor_internal": {
+      "station": "2a_g",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.0021171170019221312,
+      "current_rom_area_m2": 0.005911220736994562,
+      "current_rom_area_relative_to_inference_percent": 179.210867024721,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": 0.22832108392467632,
+        "dash": 0.4279598757146674
+      },
+      "three_case_span_percent_of_inferred": 0.4279598757146599
+    },
+    "motor_slots": {
+      "station": "2a_s",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.009697524890332999,
+      "current_rom_area_m2": 0.006153857280000002,
+      "current_rom_area_relative_to_inference_percent": -36.54198004550121,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": -0.42710691247980215,
+        "dash": -0.1948777857101236
+      },
+      "three_case_span_percent_of_inferred": 0.4271069124798011
+    },
+    "motor_bypass_inlet": {
+      "station": "1_b",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.010854966471963113,
+      "current_rom_area_m2": 0.024845599660180233,
+      "current_rom_area_relative_to_inference_percent": 128.88693138162154,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": -0.1035430560773154,
+        "dash": -0.44231161554887377
+      },
+      "three_case_span_percent_of_inferred": 0.4423116155488775
+    },
+    "motor_bypass_core": {
+      "station": "2a_b",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.06107427724328739,
+      "current_rom_area_m2": 0.030513380685186192,
+      "current_rom_area_relative_to_inference_percent": -50.03890006976728,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": 0.38287449571519083,
+        "dash": 1.7426785348700236
+      },
+      "three_case_span_percent_of_inferred": 1.7426785348700142
+    },
+    "lv_fresh_left": {
+      "station": "ME_L",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.0007986707818807653,
+      "current_rom_area_m2": 0.001738608880371088,
+      "current_rom_area_relative_to_inference_percent": 117.68780326192618,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": -0.719712902792935,
+        "dash": -0.5633272996383165
+      },
+      "three_case_span_percent_of_inferred": 0.7197129027929356
+    },
+    "lv_fresh_right": {
+      "station": "ME_R",
+      "inference_case": "initial_climb",
+      "inferred_flux_equivalent_area_m2": 0.000745411547585403,
+      "current_rom_area_m2": 0.001738608880371088,
+      "current_rom_area_relative_to_inference_percent": 133.2414739217456,
+      "cross_condition_relative_to_inference_percent": {
+        "cruise_climb": -0.34529616227231275,
+        "dash": 1.0244009691674716
+      },
+      "three_case_span_percent_of_inferred": 1.3696971314397761
+    }
+  },
+  "geometry_hypotheses": {
+    "concentric_gap_mm": 2.1226689467366833,
+    "status": "Illustrative inversion inside the ROM geometry assumption, not a NASA dimension or a design recommendation. No CAD or ROM input is changed."
+  },
+  "conditional_resistance_checks": {
+    "main_to_gap": {
+      "fitted_case": "initial_climb",
+      "fixed_effective_area_over_sqrt_k_m2": 0.0007851101271067741,
+      "cases": {
+        "initial_climb": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 1585.7941774286428,
+          "pressure_drop_printed_rounding_pa": [
+            1516.8466044969628,
+            1654.7417503603228
+          ],
+          "inlet_density_kg_m3": 1.0524306991255319,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0520250395394606,
+            1.0528363718391078
+          ],
+          "observed_mass_flow_kg_s": 0.045359237000000004,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.045132440815,
+            0.045586033185000006
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0007851101271067741,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0007645893971912548,
+            0.0008069245603340333
+          ],
+          "role": "inference",
+          "predicted_mass_flow_kg_s": 0.045359237000000004,
+          "relative_error_percent": 0.0,
+          "prediction_printed_rounding_kg_s": [
+            0.043194369519291044,
+            0.04763141510362315
+          ],
+          "error_printed_rounding_percent": [
+            -5.246483404254477,
+            5.536980148861348
+          ]
+        },
+        "cruise_climb": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 1654.7417503603215,
+          "pressure_drop_printed_rounding_pa": [
+            1585.7941774286414,
+            1723.6893232920015
+          ],
+          "inlet_density_kg_m3": 1.0530311084517685,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.052625806385419,
+            1.0534364236221794
+          ],
+          "observed_mass_flow_kg_s": 0.0498951607,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.049668364515,
+            0.050121956885000006
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0008451965486954905,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0008241973254614266,
+            0.0008674662855737195
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.046348031140982966,
+          "relative_error_percent": -7.109165516761307,
+          "prediction_printed_rounding_kg_s": [
+            0.04417775934127812,
+            0.04862746087696763
+          ],
+          "error_printed_rounding_percent": [
+            -11.859468211427327,
+            -2.0957074954985
+          ]
+        },
+        "dash": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 2551.0601984721666,
+          "pressure_drop_printed_rounding_pa": [
+            2482.1126255404865,
+            2620.0077714038466
+          ],
+          "inlet_density_kg_m3": 0.9004544158982308,
+          "inlet_density_printed_rounding_kg_m3": [
+            0.9000369915789974,
+            0.9008718542022311
+          ],
+          "observed_mass_flow_kg_s": 0.06622448602,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.065997689835,
+            0.066451282205
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0009770400783455646,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0009605742425838235,
+            0.0009941397655756025
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.05321533454879796,
+          "relative_error_percent": -19.6440202907324,
+          "prediction_printed_rounding_kg_s": [
+            0.05110744742645852,
+            0.0554409586394068
+          ],
+          "error_printed_rounding_percent": [
+            -23.090351712411294,
+            -15.995607152289647
+          ]
+        }
+      }
+    },
+    "main_to_slots": {
+      "fitted_case": "initial_climb",
+      "fixed_effective_area_over_sqrt_k_m2": 0.0035958043821490253,
+      "cases": {
+        "initial_climb": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 1585.7941774286428,
+          "pressure_drop_printed_rounding_pa": [
+            1516.8466044969628,
+            1654.7417503603228
+          ],
+          "inlet_density_kg_m3": 1.0524306991255319,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0520250395394606,
+            1.0528363718391078
+          ],
+          "observed_mass_flow_kg_s": 0.20774530546000003,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.20751850927500004,
+            0.20797210164500002
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0035958043821490253,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.003515574363969841,
+            0.0036813423971458134
+          ],
+          "role": "inference",
+          "predicted_mass_flow_kg_s": 0.20774530546000003,
+          "relative_error_percent": 0.0,
+          "prediction_printed_rounding_kg_s": [
+            0.19860727693543373,
+            0.21730352064687775
+          ],
+          "error_printed_rounding_percent": [
+            -4.502923534211178,
+            4.715247524697075
+          ]
+        },
+        "cruise_climb": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 1654.7417503603215,
+          "pressure_drop_printed_rounding_pa": [
+            1585.7941774286414,
+            1723.6893232920015
+          ],
+          "inlet_density_kg_m3": 1.0530311084517685,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.052625806385419,
+            1.0534364236221794
+          ],
+          "observed_mass_flow_kg_s": 0.22815696211,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.227930165925,
+            0.228383758295
+          ],
+          "effective_area_over_sqrt_k_m2": 0.003864853309034834,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.003782275397665451,
+            0.0039526631202386215
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.212273982625702,
+          "relative_error_percent": -6.96142661499869,
+          "prediction_printed_rounding_kg_s": [
+            0.2031288934536155,
+            0.22184766977203638
+          ],
+          "error_printed_rounding_percent": [
+            -11.058082689384218,
+            -2.6685788290809476
+          ]
+        },
+        "dash": {
+          "inlet_station": "1_c",
+          "outlet_station": "4",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 2551.0601984721666,
+          "pressure_drop_printed_rounding_pa": [
+            2482.1126255404865,
+            2620.0077714038466
+          ],
+          "inlet_density_kg_m3": 0.9004544158982308,
+          "inlet_density_printed_rounding_kg_m3": [
+            0.9000369915789974,
+            0.9008718542022311
+          ],
+          "observed_mass_flow_kg_s": 0.30163892605000003,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.30141212986500004,
+            0.301865722235
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0044502167952041125,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.004386952468707566,
+            0.004516041051130126
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.24372623223349466,
+          "relative_error_percent": -19.199343590987894,
+          "prediction_printed_rounding_kg_s": [
+            0.23499152962416864,
+            0.25293213468823894
+          ],
+          "error_printed_rounding_percent": [
+            -22.153622516560645,
+            -16.084288047224536
+          ]
+        }
+      }
+    },
+    "bypass_to_mix": {
+      "fitted_case": "initial_climb",
+      "fixed_effective_area_over_sqrt_k_m2": 0.00210394406679737,
+      "cases": {
+        "initial_climb": {
+          "inlet_station": "1_b",
+          "outlet_station": "4",
+          "flow_station": "2a_b",
+          "pressure_drop_pa": 1241.056312770238,
+          "pressure_drop_printed_rounding_pa": [
+            1172.108739838558,
+            1310.003885701918
+          ],
+          "inlet_density_kg_m3": 1.0518124559478783,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0514073438488274,
+            1.0522175811393455
+          ],
+          "observed_mass_flow_kg_s": 0.10750139169,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.107274595505,
+            0.107728187875
+          ],
+          "effective_area_over_sqrt_k_m2": 0.00210394406679737,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.002043115031037628,
+            0.0021699258897075195
+          ],
+          "role": "inference",
+          "predicted_mass_flow_kg_s": 0.10750139169000002,
+          "relative_error_percent": 2.220446049250313e-14,
+          "prediction_printed_rounding_kg_s": [
+            0.10143253322975243,
+            0.11393285182576406
+          ],
+          "error_printed_rounding_percent": [
+            -5.844017958004266,
+            6.206741017684592
+          ]
+        },
+        "cruise_climb": {
+          "inlet_station": "1_b",
+          "outlet_station": "4",
+          "flow_station": "2a_b",
+          "pressure_drop_pa": 1378.9514586336072,
+          "pressure_drop_printed_rounding_pa": [
+            1310.0038857019272,
+            1447.8990315652873
+          ],
+          "inlet_density_kg_m3": 1.0531201660946374,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0527154252648296,
+            1.0535249199921934
+          ],
+          "observed_mass_flow_kg_s": 0.11748042383000001,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.11725362764500001,
+            0.11770722001500002
+          ],
+          "effective_area_over_sqrt_k_m2": 0.00217990241730623,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0021228521351285314,
+            0.0022412810524981754
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.11338683728210504,
+          "relative_error_percent": -3.48448397991703,
+          "prediction_printed_rounding_kg_s": [
+            0.10729997034787116,
+            0.11985369968954804
+          ],
+          "error_printed_rounding_percent": [
+            -8.841640866042555,
+            2.217476846362554
+          ]
+        },
+        "dash": {
+          "inlet_station": "1_b",
+          "outlet_station": "4",
+          "flow_station": "2a_b",
+          "pressure_drop_pa": 2688.955344335524,
+          "pressure_drop_printed_rounding_pa": [
+            2620.007771403844,
+            2757.902917267204
+          ],
+          "inlet_density_kg_m3": 0.9067697940321781,
+          "inlet_density_printed_rounding_kg_m3": [
+            0.9063530597133506,
+            0.9071865422860454
+          ],
+          "observed_mass_flow_kg_s": 0.16193247609,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.161705679905,
+            0.162159272275
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0023188819579375575,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0022859803360778088,
+            0.002353026382104913
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.14692290443036718,
+          "relative_error_percent": -9.269031155486495,
+          "prediction_printed_rounding_kg_s": [
+            0.14080167104237928,
+            0.15349622033086166
+          ],
+          "error_printed_rounding_percent": [
+            -13.170755475765283,
+            -5.076791105273049
+          ]
+        }
+      }
+    },
+    "gap_core": {
+      "fitted_case": "initial_climb",
+      "fixed_effective_area_over_sqrt_k_m2": 0.0016940516135167838,
+      "cases": {
+        "initial_climb": {
+          "inlet_station": "2a_g",
+          "outlet_station": "2c_g",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 344.7378646584049,
+          "pressure_drop_printed_rounding_pa": [
+            275.7902917267249,
+            413.68543759008486
+          ],
+          "inlet_density_kg_m3": 1.0398225275349884,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0394198474793,
+            1.0402252205325544
+          ],
+          "observed_mass_flow_kg_s": 0.045359237000000004,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.045132440815,
+            0.045586033185000006
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0016940516135167838,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0015384203542738544,
+            0.0019038459949383838
+          ],
+          "role": "inference",
+          "predicted_mass_flow_kg_s": 0.045359237000000004,
+          "relative_error_percent": 0.0,
+          "prediction_printed_rounding_kg_s": [
+            0.03683621548636717,
+            0.05585288601306158
+          ],
+          "error_printed_rounding_percent": [
+            -19.19407565717288,
+            23.75330251249912
+          ]
+        },
+        "cruise_climb": {
+          "inlet_station": "2a_g",
+          "outlet_station": "2c_g",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 344.7378646584049,
+          "pressure_drop_printed_rounding_pa": [
+            275.7902917267249,
+            413.68543759008486
+          ],
+          "inlet_density_kg_m3": 1.0410939905477092,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0406907976588258,
+            1.041497196410798
+          ],
+          "observed_mass_flow_kg_s": 0.0498951607,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.049668364515,
+            0.050121956885000006
+          ],
+          "effective_area_over_sqrt_k_m2": 0.0018623185297984256,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.001692001301075429,
+            0.002092004799112786
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.04538696046785459,
+          "relative_error_percent": -9.03534565055607,
+          "prediction_printed_rounding_kg_s": [
+            0.036858729339732936,
+            0.05588702372564369
+          ],
+          "error_printed_rounding_percent": [
+            -26.461910846175197,
+            12.520362350094372
+          ]
+        },
+        "dash": {
+          "inlet_station": "2a_g",
+          "outlet_station": "2c_g",
+          "flow_station": "2a_g",
+          "pressure_drop_pa": 620.528156385119,
+          "pressure_drop_printed_rounding_pa": [
+            551.580583453439,
+            689.4757293167991
+          ],
+          "inlet_density_kg_m3": 0.8832238226113724,
+          "inlet_density_printed_rounding_kg_m3": [
+            0.882808357157484,
+            0.8836393019286658
+          ],
+          "observed_mass_flow_kg_s": 0.06622448602,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.065997689835,
+            0.066451282205
+          ],
+          "effective_area_over_sqrt_k_m2": 0.002000264674065348,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.0018906743513393322,
+            0.0021293677124388866
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.056086426387009,
+          "relative_error_percent": -15.30862712913963,
+          "prediction_printed_rounding_kg_s": [
+            0.0480095591355981,
+            0.0664574718425422
+          ],
+          "error_printed_rounding_percent": [
+            -27.752245641415605,
+            0.6966637903413009
+          ]
+        }
+      }
+    },
+    "slot_core": {
+      "fitted_case": "initial_climb",
+      "fixed_effective_area_over_sqrt_k_m2": 0.00782777384420316,
+      "cases": {
+        "initial_climb": {
+          "inlet_station": "2a_s",
+          "outlet_station": "2c_s",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 344.73786465839265,
+          "pressure_drop_printed_rounding_pa": [
+            275.79029172671267,
+            413.68543759007264
+          ],
+          "inlet_density_kg_m3": 1.0215671396475825,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0211712294014497,
+            1.0219630624132103
+          ],
+          "observed_mass_flow_kg_s": 0.20774530546000003,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.20751850927500004,
+            0.20797210164500002
+          ],
+          "effective_area_over_sqrt_k_m2": 0.00782777384420316,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.007136563344525208,
+            0.008762969707663057
+          ],
+          "role": "inference",
+          "predicted_mass_flow_kg_s": 0.20774530546,
+          "relative_error_percent": -1.1102230246251565e-14,
+          "prediction_printed_rounding_kg_s": [
+            0.16937249891274492,
+            0.2548114999849697
+          ],
+          "error_printed_rounding_percent": [
+            -18.55999070401426,
+            22.789769874116537
+          ]
+        },
+        "cruise_climb": {
+          "inlet_station": "2a_s",
+          "outlet_station": "2c_s",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 413.68543759007116,
+          "pressure_drop_printed_rounding_pa": [
+            344.7378646583912,
+            482.63301052175115
+          ],
+          "inlet_density_kg_m3": 1.026761989073708,
+          "inlet_density_printed_rounding_kg_m3": [
+            1.0263639830350442,
+            1.027160007762142
+          ],
+          "observed_mass_flow_kg_s": 0.22815696211,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.227930165925,
+            0.228383758295
+          ],
+          "effective_area_over_sqrt_k_m2": 0.007827962199585729,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.007238677803198428,
+            0.008585291040253778
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.228151472227603,
+          "relative_error_percent": -0.0024061866647495656,
+          "prediction_printed_rounding_kg_s": [
+            0.189845067603535,
+            0.2759267912961753
+          ],
+          "error_printed_rounding_percent": [
+            -16.874532138001296,
+            21.05760120710327
+          ]
+        },
+        "dash": {
+          "inlet_station": "2a_s",
+          "outlet_station": "2c_s",
+          "flow_station": "2a_s",
+          "pressure_drop_pa": 758.423302248476,
+          "pressure_drop_printed_rounding_pa": [
+            689.475729316796,
+            827.3708751801561
+          ],
+          "inlet_density_kg_m3": 0.8702034942346061,
+          "inlet_density_printed_rounding_kg_m3": [
+            0.8697928770026958,
+            0.8706141250153338
+          ],
+          "observed_mass_flow_kg_s": 0.30163892605000003,
+          "observed_mass_flow_printed_rounding_kg_s": [
+            0.30141212986500004,
+            0.301865722235
+          ],
+          "effective_area_over_sqrt_k_m2": 0.00830244758680045,
+          "effective_area_over_sqrt_k_printed_rounding_m2": [
+            0.007941138289999023,
+            0.008716284309378876
+          ],
+          "role": "retrospective_cross_condition_check",
+          "predicted_mass_flow_kg_s": 0.2843933997826842,
+          "relative_error_percent": -5.717274787159665,
+          "prediction_printed_rounding_kg_s": [
+            0.24715621609002378,
+            0.33260538566058945
+          ],
+          "error_printed_rounding_percent": [
+            -18.123788862117085,
+            10.349037979845278
+          ]
+        }
+      }
+    }
+  },
+  "station_enthalpy_diagnostic": {
+    "initial_climb": {
+      "inlet_stations": [
+        "1_c",
+        "1_b"
+      ],
+      "outlet_stations": [
+        "2c_g",
+        "2c_s",
+        "2c_b"
+      ],
+      "reference_total_temperature_c": 36.66,
+      "apparent_enthalpy_gain_w": 7942.8125641364995,
+      "table4_motor_heat_w": 5819.0,
+      "apparent_difference_w": 2123.8125641364995,
+      "apparent_relative_difference_percent": 36.497895929481004,
+      "mass_difference_kg_s": 0.000907184740000011,
+      "is_integrated_control_volume_balance": false,
+      "interpretation": "The product of reported station mass flow and reported total-temperature averages is not known to equal integrated enthalpy flux. Swirl work, spatial averaging, station coverage and rounding are unresolved. This discrepancy is not proof that NASA CFD violates conservation, and cannot identify wall heat fractions."
+    },
+    "cruise_climb": {
+      "inlet_stations": [
+        "1_c",
+        "1_b"
+      ],
+      "outlet_stations": [
+        "2c_g",
+        "2c_s",
+        "2c_b"
+      ],
+      "reference_total_temperature_c": 36.88,
+      "apparent_enthalpy_gain_w": 6141.764543196628,
+      "table4_motor_heat_w": 4662.0,
+      "apparent_difference_w": 1479.7645431966284,
+      "apparent_relative_difference_percent": 31.740981192548865,
+      "mass_difference_kg_s": 0.000907184740000011,
+      "is_integrated_control_volume_balance": false,
+      "interpretation": "The product of reported station mass flow and reported total-temperature averages is not known to equal integrated enthalpy flux. Swirl work, spatial averaging, station coverage and rounding are unresolved. This discrepancy is not proof that NASA CFD violates conservation, and cannot identify wall heat fractions."
+    },
+    "dash": {
+      "inlet_stations": [
+        "1_c",
+        "1_b"
+      ],
+      "outlet_stations": [
+        "2c_g",
+        "2c_s",
+        "2c_b"
+      ],
+      "reference_total_temperature_c": 26.26,
+      "apparent_enthalpy_gain_w": 7759.201157817647,
+      "table4_motor_heat_w": 5819.0,
+      "apparent_difference_w": 1940.201157817647,
+      "apparent_relative_difference_percent": 33.34251860831152,
+      "mass_difference_kg_s": 0.0031751465900000664,
+      "is_integrated_control_volume_balance": false,
+      "interpretation": "The product of reported station mass flow and reported total-temperature averages is not known to equal integrated enthalpy flux. Swirl work, spatial averaging, station coverage and rounding are unresolved. This discrepancy is not proof that NASA CFD violates conservation, and cannot identify wall heat fractions."
+    }
+  }
+}

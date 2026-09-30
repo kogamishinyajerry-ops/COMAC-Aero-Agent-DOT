@@ -1,0 +1,113 @@
+{
+  "status": "packaging_replay_passed",
+  "suite": "final",
+  "post_comparison_packaging_replay": true,
+  "source_manifest_sha256": "d9cc9323dbe3dec35b8c72fa086ce000bf56108b1305199de664de7ff09c0fd8",
+  "source_package_unchanged_after_replay": true,
+  "original_scientific_records_preserved": 34,
+  "numerical_run_solver_sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+  "label_corrected_math_solver_sha256": "c38a4306cf95c0d40610cd9bebc1df1f0af5f68f06a876a34e043879b245eade",
+  "mathematical_gates": {
+    "zero_axial_G_recovery": true,
+    "zero_axial_solid_recovery": true,
+    "independent_direct_reference_G": true,
+    "independent_direct_reference_fields": true,
+    "energy": true,
+    "componentwise_backward_error": true,
+    "maximum_principle": true,
+    "full_half_symmetry_G": true,
+    "full_half_symmetry_fields": true,
+    "uniform_bath_fin_heat": true,
+    "uniform_bath_fin_shape": true,
+    "manufactured_axial_mode": true,
+    "insulated_limit": true,
+    "high_conductivity_limit": true,
+    "tolerance_change_negligible_for_pilot_effect": true
+  },
+  "mathematical_replay_sha256": "f949db8140fdb739debe0683575574fb3a47f1e39e29b1183317f4bcf37f9aaf",
+  "compared_scalar_keys": [
+    "G_W_K",
+    "Rth_K_W",
+    "baseline_same_mesh_G_W_K",
+    "paired_relative_conductance_change",
+    "integrated_base_heat_W_K",
+    "minimum_normalized_temperature",
+    "maximum_normalized_temperature",
+    "maximum_absolute_net_axial_heat_across_internal_section_W_K"
+  ],
+  "absolute_equivalence_tolerance": 1e-09,
+  "maximum_absolute_payload_difference": 0.0,
+  "cases": [
+    {
+      "speed_m_s": 4.0,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_slabs": 480,
+        "fluid_unknowns_per_slice": 58752,
+        "solid_global_unknowns": 552960,
+        "equivalent_global_fluid_solid_unknowns": 28753920
+      },
+      "scalar_absolute_differences": {
+        "G_W_K": 0.0,
+        "Rth_K_W": 0.0,
+        "baseline_same_mesh_G_W_K": 0.0,
+        "paired_relative_conductance_change": 0.0,
+        "integrated_base_heat_W_K": 0.0,
+        "minimum_normalized_temperature": 0.0,
+        "maximum_normalized_temperature": 0.0,
+        "maximum_absolute_net_axial_heat_across_internal_section_W_K": 0.0
+      },
+      "maximum_absolute_difference": 0.0,
+      "conductance_change_percent": -0.016848112405865034,
+      "energy_relative_balance": 3.7694933519311625e-13,
+      "true_schur_relative_residual": 1.708840507877805e-11,
+      "elapsed_seconds": 94.89339381099853,
+      "process_peak_RSS_MiB": 925.69140625,
+      "result_file": "case_00.json",
+      "result_sha256": "83d5512bb1f747f5be41666c5e150eb13f4d5ca24529d10ab9990a0af068d8d2"
+    },
+    {
+      "speed_m_s": 10.0,
+      "mesh": {
+        "gap_cells": 48,
+        "height_cells": 144,
+        "axial_slabs": 480,
+        "fluid_unknowns_per_slice": 58752,
+        "solid_global_unknowns": 552960,
+        "equivalent_global_fluid_solid_unknowns": 28753920
+      },
+      "scalar_absolute_differences": {
+        "G_W_K": 0.0,
+        "Rth_K_W": 0.0,
+        "baseline_same_mesh_G_W_K": 0.0,
+        "paired_relative_conductance_change": 0.0,
+        "integrated_base_heat_W_K": 0.0,
+        "minimum_normalized_temperature": 0.0,
+        "maximum_normalized_temperature": 0.0,
+        "maximum_absolute_net_axial_heat_across_internal_section_W_K": 0.0
+      },
+      "maximum_absolute_difference": 0.0,
+      "conductance_change_percent": -0.01304908933893456,
+      "energy_relative_balance": 3.111550457687071e-13,
+      "true_schur_relative_residual": 6.928841205876285e-11,
+      "elapsed_seconds": 92.15079989999504,
+      "process_peak_RSS_MiB": 927.2890625,
+      "result_file": "case_01.json",
+      "result_sha256": "91ff5de7a43cc4ee086faa87b8ff35af6feac33b43678a6ca2dd9ea5b1928d2d"
+    }
+  ],
+  "elapsed_seconds": 190.18501720800123,
+  "linux_resource_assumptions": "ru_maxrss is KiB; process peak RSS includes interpreter and libraries; per-case subprocess avoids previous-case high-water accumulation; source caps unchanged",
+  "unchanged_equations_revalidated_claim": false,
+  "physical_validation_pass": null,
+  "experimental_residuals_recomputed": false,
+  "aircraft_transfer_authorized": false,
+  "promotion_performed": false,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "linux",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "Portable staged exact-code scientific replay of selected candidate and case only; full54-case science rerun remains optional and was not repeated for packaging",
+  "design_id": "n16_t600",
+  "case_id": "combined_fault",
+  "mesh": {
+    "nx": 48,
+    "ny": 144,
+    "nz": 800,
+    "unknowns": 119808
+  },
+  "G_W_K": 0.8751468356994956,
+  "frozen_expected_G_W_K": 0.8751468356994956,
+  "frozen_G_relative_difference": 0.0,
+  "all_numerical_gates_passed": true,
+  "gates": {
+    "energy": true,
+    "componentwise_residual": true,
+    "maximum_principle": true,
+    "capacity_upper_bound": true,
+    "mass": true,
+    "pressure": true,
+    "momentum": true,
+    "hydraulic_exact": true,
+    "geometry": true
+  },
+  "replay_matches_frozen": true,
+  "scientific_code_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "inherited_solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "numpy_version": "2.3.5",
+  "scipy_version": "1.17.0",
+  "pinned_examples_modified": false,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

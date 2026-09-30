@@ -1,0 +1,80 @@
+{
+  "recorded_utc": "2026-09-30T21:15:50.999573+00:00",
+  "status": "consumed_numerical_source_and_input_closure_unchanged_with_separate_repository_exceptions",
+  "frozen_checkpoint": "1e95e2ac579e8f0d84293d3ac570aaf7cddb21d1",
+  "current_HEAD": "d3221a3b7f8f34d09f348419adfad1bf3a301c7e",
+  "repository_HEAD_unchanged": false,
+  "current_worktree_status": [
+    " M README.md",
+    " M docs/EXPERIMENTAL_COMPARISONS.md",
+    "?? START_HERE.md",
+    "?? docs/VALIDATION_PLAN.md"
+  ],
+  "original_failed_repository_gates_retained": {
+    "tracked_tree_unchanged": false,
+    "checkpoint_unchanged": false
+  },
+  "consumed_tracked_source_and_reproduction_inputs": {
+    "research/pressure_fin/original_freeze/study/pressure_fin.py": {
+      "checkpoint_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "current_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+      "unchanged": true
+    },
+    "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py": {
+      "checkpoint_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "current_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+      "unchanged": true
+    },
+    "research/pressure_fin/original_freeze/study/runs/n16_t860_nominal.json": {
+      "checkpoint_sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+      "current_sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c",
+      "unchanged": true
+    },
+    "research/pressure_fin/original_freeze/study/runs/n16_t860_combined_fault.json": {
+      "checkpoint_sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+      "current_sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d",
+      "unchanged": true
+    },
+    "research/pressure_fin/original_freeze/study/runs/n16_t600_nominal.json": {
+      "checkpoint_sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+      "current_sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8",
+      "unchanged": true
+    },
+    "research/pressure_fin/original_freeze/study/runs/n16_t600_combined_fault.json": {
+      "checkpoint_sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+      "current_sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2",
+      "unchanged": true
+    }
+  },
+  "all_declared_inherited_input_hashes": {
+    "research/pressure_fin/original_freeze/study/pressure_fin.py": true,
+    "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py": true,
+    "research/pressure_fin/original_freeze/study/presweep_plan.json": true,
+    "research/pressure_fin/original_freeze/study/verification.json": true,
+    "research/pressure_fin/original_freeze/study/review/final_review_gate.json": true,
+    "research/pressure_fin/original_freeze/study/RESULTS.md": true,
+    "examples/pressure_fin_tradeoff/catalog.json": true,
+    "examples/pressure_fin_tradeoff/candidates/n16_t600.json": true,
+    "examples/pressure_fin_tradeoff/candidates/n16_t860.json": true
+  },
+  "run_to_current_source_identity": {
+    "all_180_runs_same_current_numerical_runner": true,
+    "all_180_runs_same_current_accepted_operator": true,
+    "all_180_runs_same_current_frozen_plan": true,
+    "plan_digest_file_matches": true
+  },
+  "installed_dependency_versions": {
+    "numpy": {
+      "recorded": "2.3.5",
+      "current": "2.3.5",
+      "matches": true
+    },
+    "scipy": {
+      "recorded": "1.17.0",
+      "current": "1.17.0",
+      "matches": true
+    }
+  },
+  "interpretation": "The parent reports unrelated integration of an accepted axial appendix and guide/docs. The whole-checkout checks remain failed. Actual pressure numerical sources, frozen plan, accepted base solver and K0 reference runs are independently hash-verified unchanged; no reset, tracked edit or relabeling of original repository checks was done by this reviewer.",
+  "consumed_closure_checks_pass": true
+}

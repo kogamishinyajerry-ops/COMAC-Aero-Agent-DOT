@@ -1,0 +1,1989 @@
+{
+  "schema": "duct-verification-v1",
+  "purpose": "Analytical/numerical verification only; no aircraft calibration or experiment.",
+  "sources_checked_date": "2026-09-30",
+  "sources": [
+    {
+      "title": "Cess and Shaffer (1959), prescribed-wall-flux parallel-plate Graetz problem",
+      "url": "https://link.springer.com/article/10.1007/BF00411758",
+      "checked": "Publisher abstract and bibliographic metadata; no paywalled tables reproduced."
+    },
+    {
+      "title": "NASA TN D-1972, heat transfer in concentric annuli (1963)",
+      "url": "https://ntrs.nasa.gov/citations/19630010444",
+      "checked": "Plane-gap limit and unequal-wall heat-flux superposition; not a rotating-motor validation."
+    },
+    {
+      "title": "Inman, laminar slip flow with uniform wall heat transfer, NASA (1966 archive)",
+      "url": "https://ntrs.nasa.gov/api/citations/19660009101/downloads/19660009101.pdf",
+      "checked": "Primary report describes eigenfunction solution, equal/one-wall heating and continuum limit."
+    }
+  ],
+  "reference": {
+    "source_sha256": "c29d20b81f1d2a839577dfb61680a3a21cabb77b0bef789a9c4b1fd9490403fa",
+    "method": "Independent Decimal power-series Sturm-Liouville eigenproblem and exact polynomial-product quadrature",
+    "precision_decimal_digits": 90,
+    "power_series_terms": 180,
+    "root_bisections": 180,
+    "modes_used": 12,
+    "even_modes_lambda_amplitude": [
+      [
+        12.25353182296061,
+        0.22222832013360147
+      ],
+      [
+        45.96789346579023,
+        0.0725315868981365
+      ],
+      [
+        101.03401442101303,
+        0.037368454223534464
+      ],
+      [
+        177.44241211469918,
+        0.023281984370234148
+      ],
+      [
+        275.18962701224206,
+        0.016111452217518422
+      ],
+      [
+        394.27394881281356,
+        0.011918905372039691
+      ],
+      [
+        534.6943895539703,
+        0.009234403951800038
+      ],
+      [
+        696.4503202394314,
+        0.007401289066045443
+      ],
+      [
+        879.5413125793339,
+        0.006087984693115085
+      ],
+      [
+        1083.9670601686971,
+        0.005111406645035037
+      ],
+      [
+        1309.7273353138485,
+        0.00436331448755659
+      ],
+      [
+        1556.8219636339484,
+        0.003776164741173241
+      ]
+    ],
+    "odd_modes_lambda_amplitude": [
+      [
+        3.4144462049161675,
+        0.664124601350902
+      ],
+      [
+        26.440559276122112,
+        0.11572604283407158
+      ],
+      [
+        70.8328214557503,
+        0.05038223750104906
+      ],
+      [
+        136.5707069909409,
+        0.02900669054848151
+      ],
+      [
+        223.6487979858821,
+        0.019172330489690873
+      ],
+      [
+        332.06472245413454,
+        0.013763633067777895
+      ],
+      [
+        461.8171996312513,
+        0.010440118868952138
+      ],
+      [
+        612.9054489629891,
+        0.00823693844532219
+      ],
+      [
+        785.3289550882097,
+        0.006693441113197205
+      ],
+      [
+        979.0873576851459,
+        0.005565607823244422
+      ],
+      [
+        1194.1803937258267,
+        0.004713720773876565
+      ],
+      [
+        1430.607864619716,
+        0.004052790701239218
+      ]
+    ],
+    "analytical_equal_flux_nusselt": 8.235294117647058,
+    "analytical_one_heated_wall_nusselt": 5.384615384615385,
+    "analytical_darcy_f_re": 96.0
+  },
+  "gates": {
+    "friction_relative_error_below_0_02_percent": true,
+    "equal_flux_nusselt_relative_error_below_0_01_percent": true,
+    "second_order_transverse": true,
+    "first_order_axial": true,
+    "asymmetric_offsets_absolute_error_below_0_0001": true,
+    "developing_offsets_absolute_error_below_0_0005": true,
+    "spectral_8_vs_12_difference_below_1e_8": true,
+    "coupled_refinement_error_decreases": true,
+    "visual_case_energy_residual_below_1e_9_w": true
+  },
+  "fully_developed_grid_convergence": [
+    {
+      "transverse_cells": 16,
+      "darcy_f_re": 95.25581395348834,
+      "nusselt_dh": 8.257488268234404,
+      "friction_absolute_error": 0.7441860465116577,
+      "nusselt_absolute_error": 0.022194150587345973,
+      "energy_residual_w": -9.769962616701378e-15
+    },
+    {
+      "transverse_cells": 32,
+      "darcy_f_re": 95.81286549707616,
+      "nusselt_dh": 8.240938906302906,
+      "friction_absolute_error": 0.18713450292383982,
+      "nusselt_absolute_error": 0.005644788655848387,
+      "energy_residual_w": -1.5987211554602254e-14
+    },
+    {
+      "transverse_cells": 64,
+      "darcy_f_re": 95.95314787701321,
+      "nusselt_dh": 8.236711335930293,
+      "friction_absolute_error": 0.046852122986791755,
+      "nusselt_absolute_error": 0.0014172182832350444,
+      "energy_residual_w": 9.769962616701378e-15
+    },
+    {
+      "transverse_cells": 128,
+      "darcy_f_re": 95.98828268033766,
+      "nusselt_dh": 8.23564879861828,
+      "friction_absolute_error": 0.011717319662338355,
+      "nusselt_absolute_error": 0.0003546809712222654,
+      "energy_residual_w": -5.808686864838819e-13
+    }
+  ],
+  "transverse_nusselt_observed_orders": [
+    1.9751880232315473,
+    1.9938575840785469,
+    1.9984681463054543
+  ],
+  "asymmetric_wall_verification": [
+    {
+      "flux_ratios": {
+        "left": 1,
+        "right": 1
+      },
+      "fv_wall_offsets": {
+        "left": 0.4856933676762598,
+        "right": 0.48569336767627735
+      },
+      "analytical_wall_offsets": {
+        "left": 0.4857142857142857,
+        "right": 0.4857142857142857
+      },
+      "max_absolute_error": 2.0918038025896646e-05,
+      "energy_residual_w": -5.808686864838819e-13
+    },
+    {
+      "flux_ratios": {
+        "left": 0,
+        "right": 1
+      },
+      "fv_wall_offsets": {
+        "left": -0.25715331616184534,
+        "right": 0.7428466838381172
+      },
+      "analytical_wall_offsets": {
+        "left": -0.2571428571428571,
+        "right": 0.7428571428571429
+      },
+      "max_absolute_error": 1.0459019025632621e-05,
+      "energy_residual_w": -2.9176661087149114e-13
+    },
+    {
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1
+      },
+      "fv_wall_offsets": {
+        "left": -0.1828686477780348,
+        "right": 0.7171313522219336
+      },
+      "analytical_wall_offsets": {
+        "left": -0.18285714285714286,
+        "right": 0.7171428571428572
+      },
+      "max_absolute_error": 1.1504920923610662e-05,
+      "energy_residual_w": -3.2018832030189515e-13
+    },
+    {
+      "flux_ratios": {
+        "left": 1,
+        "right": 0.1
+      },
+      "fv_wall_offsets": {
+        "left": 0.7171313522219208,
+        "right": -0.18286864777802908
+      },
+      "analytical_wall_offsets": {
+        "left": 0.7171428571428572,
+        "right": -0.18285714285714286
+      },
+      "max_absolute_error": 1.1504920936378227e-05,
+      "energy_residual_w": -3.1441516057384433e-13
+    },
+    {
+      "flux_ratios": {
+        "left": -1,
+        "right": 1
+      },
+      "fv_wall_offsets": {
+        "left": -0.9999999999999513,
+        "right": 0.9999999999999583
+      },
+      "analytical_wall_offsets": {
+        "left": -1.0,
+        "right": 1.0
+      },
+      "max_absolute_error": 4.873879078104437e-14,
+      "energy_residual_w": -3.944047012060227e-15
+    },
+    {
+      "flux_ratios": {
+        "left": -1,
+        "right": -1
+      },
+      "fv_wall_offsets": {
+        "left": -0.4856933676762598,
+        "right": -0.48569336767627735
+      },
+      "analytical_wall_offsets": {
+        "left": -0.4857142857142857,
+        "right": -0.4857142857142857
+      },
+      "max_absolute_error": 2.0918038025896646e-05,
+      "energy_residual_w": 5.808686864838819e-13
+    }
+  ],
+  "developing_spectral_comparison": [
+    {
+      "zeta": 0.02,
+      "flux_ratios": {
+        "left": 1.0,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.2770413611239356,
+        "right": 0.2770413611239362
+      },
+      "spectral_wall_offsets": {
+        "left": 0.2771700815401098,
+        "right": 0.2771700815401098
+      },
+      "max_absolute_error": 0.0001287204161741773,
+      "max_8_vs_12_mode_difference": 1.4157985894769354e-10,
+      "energy_residual_w": 5.551115123125783e-17
+    },
+    {
+      "zeta": 0.05,
+      "flux_ratios": {
+        "left": 1.0,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.3576291285531461,
+        "right": 0.3576291285531469
+      },
+      "spectral_wall_offsets": {
+        "left": 0.3577630972051439,
+        "right": 0.3577630972051439
+      },
+      "max_absolute_error": 0.00013396865199777341,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": 0.0
+    },
+    {
+      "zeta": 0.1,
+      "flux_ratios": {
+        "left": 1.0,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.4195795739160386,
+        "right": 0.41957957391604006
+      },
+      "spectral_wall_offsets": {
+        "left": 0.4197231070730363,
+        "right": 0.4197231070730363
+      },
+      "max_absolute_error": 0.0001435331569976661,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -5.551115123125783e-16
+    },
+    {
+      "zeta": 0.2,
+      "flux_ratios": {
+        "left": 1.0,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.46641083151424345,
+        "right": 0.466410831514243
+      },
+      "spectral_wall_offsets": {
+        "left": 0.4665435722122828,
+        "right": 0.4665435722122828
+      },
+      "max_absolute_error": 0.0001327406980398127,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -8.881784197001252e-16
+    },
+    {
+      "zeta": 1.0,
+      "flux_ratios": {
+        "left": 1.0,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.4856921641045938,
+        "right": 0.4856921641045976
+      },
+      "spectral_wall_offsets": {
+        "left": 0.48571322607476186,
+        "right": 0.48571322607476186
+      },
+      "max_absolute_error": 2.1061970168045896e-05,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -1.2434497875801753e-14
+    },
+    {
+      "zeta": 0.02,
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.018704136112393542,
+        "right": 0.2860413611239362
+      },
+      "spectral_wall_offsets": {
+        "left": 0.018717008154010978,
+        "right": 0.2861700815401098
+      },
+      "max_absolute_error": 0.00012872041617362218,
+      "max_8_vs_12_mode_difference": 5.403522074232114e-10,
+      "energy_residual_w": 4.163336342344337e-17
+    },
+    {
+      "zeta": 0.05,
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": 0.013262913224601738,
+        "right": 0.3801291281838597
+      },
+      "spectral_wall_offsets": {
+        "left": 0.013276309961975735,
+        "right": 0.38026309696368255
+      },
+      "max_absolute_error": 0.00013396877982285726,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -8.326672684688674e-17
+    },
+    {
+      "zeta": 0.1,
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": -0.00303605774132832,
+        "right": 0.4645735890489722
+      },
+      "spectral_wall_offsets": {
+        "left": -0.003022226695275687,
+        "right": 0.46471764447561564
+      },
+      "max_absolute_error": 0.00014405542664341908,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -1.6653345369377348e-16
+    },
+    {
+      "zeta": 0.2,
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": -0.04215811411739716,
+        "right": 0.5552100287830652
+      },
+      "spectral_wall_offsets": {
+        "left": -0.042169216954230315,
+        "right": 0.5553671463877414
+      },
+      "max_absolute_error": 0.0001571176046761824,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -6.661338147750939e-16
+    },
+    {
+      "zeta": 1.0,
+      "flux_ratios": {
+        "left": 0.1,
+        "right": 1.0
+      },
+      "fv_wall_offsets": {
+        "left": -0.17293809699821755,
+        "right": 0.7071994775132734
+      },
+      "spectral_wall_offsets": {
+        "left": -0.17302696921881539,
+        "right": 0.7073115179010534
+      },
+      "max_absolute_error": 0.00011204038778001024,
+      "max_8_vs_12_mode_difference": 0.0,
+      "energy_residual_w": -4.440892098500626e-16
+    }
+  ],
+  "coupled_grid_convergence": [
+    {
+      "transverse_cells": 16,
+      "axial_cells": 100,
+      "wall_offset": 0.35346605218462285,
+      "absolute_error": 0.004297045020521029
+    },
+    {
+      "transverse_cells": 32,
+      "axial_cells": 200,
+      "wall_offset": 0.35652432175392956,
+      "absolute_error": 0.0012387754512143134
+    },
+    {
+      "transverse_cells": 64,
+      "axial_cells": 400,
+      "wall_offset": 0.3573774873986137,
+      "absolute_error": 0.00038560980653018495
+    },
+    {
+      "transverse_cells": 128,
+      "axial_cells": 800,
+      "wall_offset": 0.3576291285531469,
+      "absolute_error": 0.00013396865199699626
+    }
+  ],
+  "axial_grid_convergence": [
+    {
+      "transverse_cells": 256,
+      "axial_cells": 100,
+      "wall_offset": 0.357149187969108,
+      "absolute_error": 0.0006139092360358811
+    },
+    {
+      "transverse_cells": 256,
+      "axial_cells": 200,
+      "wall_offset": 0.3574484865907817,
+      "absolute_error": 0.0003146106143621652
+    },
+    {
+      "transverse_cells": 256,
+      "axial_cells": 400,
+      "wall_offset": 0.35759835157927494,
+      "absolute_error": 0.00016474562586893393
+    },
+    {
+      "transverse_cells": 256,
+      "axial_cells": 800,
+      "wall_offset": 0.3576733376188483,
+      "absolute_error": 8.975958629559022e-05
+    }
+  ],
+  "axial_observed_orders_from_successive_differences": [
+    0.9979222551994487,
+    0.9989694458897133
+  ],
+  "visual_cases": {
+    "equal_flux_developing": {
+      "provenance": {
+        "model_id": "parallel-plate-graetz-finite-volume-v1",
+        "source_sha256": "fa53b8f5c9cdb76711630acd60e0a86fa5bf481afd570a42d662868ddeaafb08",
+        "input_sha256": "aa700af5770fee383a456aa6ac0b92a6ad26d0cb12b749fac5f75fba80a948ae",
+        "case": {
+          "gap_m": 0.004,
+          "span_m": 0.08,
+          "length_m": 0.2,
+          "mean_velocity_m_s": 1.0,
+          "inlet_c": 25.0,
+          "density_kg_m3": 1.2,
+          "viscosity_pa_s": 1.8e-05,
+          "conductivity_w_m_k": 0.026,
+          "specific_heat_j_kg_k": 1005.0,
+          "left_heat_flux_w_m2": 200.0,
+          "right_heat_flux_w_m2": 200.0,
+          "wall_thickness_m": 0.002,
+          "wall_conductivity_w_m_k": 167.0,
+          "transverse_cells": 64,
+          "axial_cells": 400,
+          "axial_stretch": 2.0,
+          "inlet_profile": "uniform",
+          "axial_samples": 9,
+          "transverse_samples": 17
+        },
+        "arithmetic": "IEEE-754 binary64; standard-library-only",
+        "algorithm": "cell-centred FV; direct tridiagonal solves; backward-Euler axial marching",
+        "grid": {
+          "transverse_full_gap_cells": 64,
+          "axial_cells": 400,
+          "total_marched_cells": 25600,
+          "axial_stretch": 2.0,
+          "transverse_order": 2,
+          "axial_order": 1
+        },
+        "scope": [
+          "Verification of an ideal laminar subproblem, not physical validation of an aircraft.",
+          "Infinite parallel plates with a specified reporting span; no spanwise sidewall effects.",
+          "Hydrodynamically developed, constant-property, steady incompressible flow.",
+          "Independent uniform signed heat fluxes on the two walls; no imposed thermal symmetry.",
+          "No axial heat conduction, buoyancy, viscous heating, radiation, rotation or turbulence.",
+          "Solid temperatures use local 1D conduction; no axial/spreading/contact resistance.",
+          "No connection, fitted coefficient or calibration transfer to the nacelle ROM."
+        ],
+        "experimental_validation": false,
+        "spatial_field_type": "computed full-gap fluid cells; sampled, not a 3D CFD mesh"
+      },
+      "status": "solved",
+      "hydraulics": {
+        "mass_flow_kg_s": 0.00038399999999999996,
+        "reynolds_dh": 533.3333333333333,
+        "peclet_dh": 371.0769230769231,
+        "peclet_length": 9276.923076923078,
+        "prandtl": 0.6957692307692309,
+        "hydraulic_diameter_m": 0.008,
+        "flow_direction": 1,
+        "signed_pressure_drop_pa": 2.6986822840409967,
+        "darcy_friction_factor": 0.1799121522693998,
+        "darcy_f_re": 95.95314787701321,
+        "exact_darcy_f_re": 96.0,
+        "wall_shear_pa": {
+          "left": 0.026986822840409933,
+          "right": 0.02698682284040999
+        },
+        "hydraulic_dissipation_w": 0.0008635783308931189,
+        "velocity_samples": [
+          {
+            "eta": -0.984375,
+            "y_from_midplane_m": -0.00196875,
+            "velocity_m_s": 0.0468521229868228
+          },
+          {
+            "eta": -0.859375,
+            "y_from_midplane_m": -0.00171875,
+            "velocity_m_s": 0.3923865300146409
+          },
+          {
+            "eta": -0.734375,
+            "y_from_midplane_m": -0.00146875,
+            "velocity_m_s": 0.6910688140556357
+          },
+          {
+            "eta": -0.609375,
+            "y_from_midplane_m": -0.00121875,
+            "velocity_m_s": 0.942898975109808
+          },
+          {
+            "eta": -0.484375,
+            "y_from_midplane_m": -0.00096875,
+            "velocity_m_s": 1.147877013177158
+          },
+          {
+            "eta": -0.359375,
+            "y_from_midplane_m": -0.00071875,
+            "velocity_m_s": 1.306002928257686
+          },
+          {
+            "eta": -0.234375,
+            "y_from_midplane_m": -0.00046875,
+            "velocity_m_s": 1.4172767203513907
+          },
+          {
+            "eta": -0.109375,
+            "y_from_midplane_m": -0.00021875,
+            "velocity_m_s": 1.4816983894582723
+          },
+          {
+            "eta": 0.015625,
+            "y_from_midplane_m": 3.125e-05,
+            "velocity_m_s": 1.4992679355783314
+          },
+          {
+            "eta": 0.109375,
+            "y_from_midplane_m": 0.00021875,
+            "velocity_m_s": 1.4816983894582723
+          },
+          {
+            "eta": 0.234375,
+            "y_from_midplane_m": 0.00046875,
+            "velocity_m_s": 1.4172767203513916
+          },
+          {
+            "eta": 0.359375,
+            "y_from_midplane_m": 0.00071875,
+            "velocity_m_s": 1.3060029282576877
+          },
+          {
+            "eta": 0.484375,
+            "y_from_midplane_m": 0.00096875,
+            "velocity_m_s": 1.1478770131771607
+          },
+          {
+            "eta": 0.609375,
+            "y_from_midplane_m": 0.00121875,
+            "velocity_m_s": 0.942898975109811
+          },
+          {
+            "eta": 0.734375,
+            "y_from_midplane_m": 0.00146875,
+            "velocity_m_s": 0.6910688140556378
+          },
+          {
+            "eta": 0.859375,
+            "y_from_midplane_m": 0.00171875,
+            "velocity_m_s": 0.39238653001464174
+          },
+          {
+            "eta": 0.984375,
+            "y_from_midplane_m": 0.00196875,
+            "velocity_m_s": 0.0468521229868229
+          }
+        ]
+      },
+      "thermal": {
+        "wall_heat_w": 6.4,
+        "inlet_c": 25.0,
+        "wall_flux_w_m2": {
+          "left": 200.0,
+          "right": 200.0
+        },
+        "reference_flux_w_m2": 200.0,
+        "outlet_bulk_c": 41.583747927031524,
+        "outlet_wall_c": {
+          "left": 49.0549812095301,
+          "right": 49.054981209530055
+        },
+        "outlet_solid_outer_c": {
+          "left": 49.05737641911094,
+          "right": 49.057376419110895
+        },
+        "outlet_nusselt": {
+          "left": 8.236720660645933,
+          "right": 8.23672066064598
+        },
+        "dimensionless_length_zeta": 1.077943615257048,
+        "fully_developed_wall_offset_on_grid": {
+          "left": 0.48563071314047623,
+          "right": 0.48563071314047573
+        },
+        "fully_developed_nusselt_on_grid": {
+          "left": 8.236711335930142,
+          "right": 8.236711335930151
+        },
+        "exact_equal_flux_nusselt": 8.235294117647058,
+        "axial_samples": [
+          {
+            "axial_face_index": 0,
+            "s_from_inlet_m": 0.0,
+            "x_physical_m": 0.0,
+            "zeta": 0.0,
+            "bulk_c": 25.0,
+            "wall_c": {
+              "left": 25.0,
+              "right": 25.0
+            },
+            "solid_outer_c": {
+              "left": null,
+              "right": null
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.0,
+              "right": 0.0
+            },
+            "nusselt_dh": {
+              "left": null,
+              "right": null
+            },
+            "fluid_c": [
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0
+            ]
+          },
+          {
+            "axial_face_index": 50,
+            "s_from_inlet_m": 0.003125,
+            "x_physical_m": 0.003125,
+            "zeta": 0.016842868988391376,
+            "bulk_c": 25.259121061359867,
+            "wall_c": {
+              "left": 29.292841092723794,
+              "right": 29.29284109272379
+            },
+            "solid_outer_c": {
+              "left": 29.295236302304634,
+              "right": 29.29523630230463
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.26219180203865516,
+              "right": 0.26219180203865494
+            },
+            "nusselt_dh": {
+              "left": 15.256007124930155,
+              "right": 15.256007124930168
+            },
+            "fluid_c": [
+              29.052456477339177,
+              27.24665219394411,
+              25.93491436845667,
+              25.26787843470118,
+              25.049403575705867,
+              25.005716677474844,
+              25.000423650542654,
+              25.000021314934866,
+              25.00000260666126,
+              25.000021314934866,
+              25.000423650542654,
+              25.005716677474844,
+              25.049403575705867,
+              25.267878434701178,
+              25.934914368456667,
+              27.246652193944108,
+              29.052456477339174
+            ]
+          },
+          {
+            "axial_face_index": 100,
+            "s_from_inlet_m": 0.0125,
+            "x_physical_m": 0.0125,
+            "zeta": 0.0673714759535655,
+            "bulk_c": 26.036484245439468,
+            "wall_c": {
+              "left": 31.946908349537583,
+              "right": 31.94690834953758
+            },
+            "solid_outer_c": {
+              "left": 31.949303559118423,
+              "right": 31.94930355911842
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.3841775667663774,
+              "right": 0.3841775667663771
+            },
+            "nusselt_dh": {
+              "left": 10.411852086179838,
+              "right": 10.411852086179845
+            },
+            "fluid_c": [
+              31.706523734152967,
+              29.83171948657609,
+              28.17312275485506,
+              26.868951903200323,
+              25.971907311008003,
+              25.4409893108732,
+              25.174655447238973,
+              25.065479151557593,
+              25.04161031855179,
+              25.065479151557593,
+              25.174655447238973,
+              25.440989310873196,
+              25.971907311007996,
+              26.868951903200315,
+              28.173122754855058,
+              29.831719486576084,
+              31.706523734152963
+            ]
+          },
+          {
+            "axial_face_index": 150,
+            "s_from_inlet_m": 0.028125,
+            "x_physical_m": 0.028125,
+            "zeta": 0.1515858208955224,
+            "bulk_c": 27.33208955223881,
+            "wall_c": {
+              "left": 34.25901375920518,
+              "right": 34.25901375920519
+            },
+            "solid_outer_c": {
+              "left": 34.26140896878602,
+              "right": 34.26140896878603
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.4502500734528142,
+              "right": 0.4502500734528144
+            },
+            "nusselt_dh": {
+              "left": 8.883951909936105,
+              "right": 8.8839519099361
+            },
+            "fluid_c": [
+              34.01862914382057,
+              32.12489963128238,
+              30.364176634220215,
+              28.831676765430352,
+              27.590474121069438,
+              26.665522462788115,
+              26.047379322684208,
+              25.707089523591268,
+              25.616962833718464,
+              25.707089523591268,
+              26.047379322684208,
+              26.66552246278811,
+              27.590474121069434,
+              28.83167676543035,
+              30.364176634220208,
+              32.12489963128238,
+              34.01862914382057
+            ]
+          },
+          {
+            "axial_face_index": 200,
+            "s_from_inlet_m": 0.05,
+            "x_physical_m": 0.05,
+            "zeta": 0.269485903814262,
+            "bulk_c": 29.14593698175788,
+            "wall_c": {
+              "left": 36.48620193058037,
+              "right": 36.48620193058035
+            },
+            "solid_outer_c": {
+              "left": 36.48859714016121,
+              "right": 36.48859714016119
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.47711722167346166,
+              "right": 0.4771172216734603
+            },
+            "nusselt_dh": {
+              "left": 8.38368396338792,
+              "right": 8.383683963387943
+            },
+            "fluid_c": [
+              36.24581731519575,
+              34.345323189530156,
+              32.547737375024184,
+              30.930496236801986,
+              29.554834582846627,
+              28.464300089771786,
+              27.68551490043569,
+              27.231670576579013,
+              27.10763091057794,
+              27.23167057657901,
+              27.685514900435688,
+              28.464300089771783,
+              29.554834582846624,
+              30.930496236801982,
+              32.54773737502418,
+              34.345323189530134,
+              36.24581731519574
+            ]
+          },
+          {
+            "axial_face_index": 250,
+            "s_from_inlet_m": 0.078125,
+            "x_physical_m": 0.078125,
+            "zeta": 0.4210717247097844,
+            "bulk_c": 31.47802653399668,
+            "wall_c": {
+              "left": 38.92807278009225,
+              "right": 38.92807278009228
+            },
+            "solid_outer_c": {
+              "left": 38.93046798967309,
+              "right": 38.93046798967312
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.4842530059962119,
+              "right": 0.4842530059962139
+            },
+            "nusselt_dh": {
+              "left": 8.260144904565218,
+              "right": 8.260144904565184
+            },
+            "fluid_c": [
+              38.68768816470764,
+              36.78541247163112,
+              34.97811196052396,
+              33.33849760320881,
+              31.92721892430613,
+              30.792623404560995,
+              29.970879179507502,
+              29.48654026190939,
+              29.353372730945473,
+              29.486540261909383,
+              29.970879179507495,
+              30.792623404560988,
+              31.92721892430612,
+              33.33849760320882,
+              34.97811196052398,
+              36.78541247163115,
+              38.687688164707666
+            ]
+          },
+          {
+            "axial_face_index": 300,
+            "s_from_inlet_m": 0.1125,
+            "x_physical_m": 0.1125,
+            "zeta": 0.6063432835820896,
+            "bulk_c": 34.32835820895522,
+            "wall_c": {
+              "left": 41.79729113446146,
+              "right": 41.79729113446143
+            },
+            "solid_outer_c": {
+              "left": 41.7996863440423,
+              "right": 41.79968634404227
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.4854806401579054,
+              "right": 0.4854806401579034
+            },
+            "nusselt_dh": {
+              "left": 8.239257488617831,
+              "right": 8.239257488617865
+            },
+            "fluid_c": [
+              41.55690651907685,
+              39.654324385996,
+              37.845352865372575,
+              36.201889964588155,
+              34.78448413609794,
+              33.64230806915369,
+              32.813172054749906,
+              32.32358555467353,
+              32.18884719832795,
+              32.32358555467352,
+              32.81317205474989,
+              33.64230806915368,
+              34.784484136097916,
+              36.201889964588126,
+              37.845352865372554,
+              39.65432438599596,
+              41.55690651907682
+            ]
+          },
+          {
+            "axial_face_index": 350,
+            "s_from_inlet_m": 0.153125,
+            "x_physical_m": 0.153125,
+            "zeta": 0.8253005804311774,
+            "bulk_c": 37.69693200663352,
+            "wall_c": {
+              "left": 45.16800394000798,
+              "right": 45.168003940007836
+            },
+            "solid_outer_c": {
+              "left": 45.17039914958882,
+              "right": 45.170399149588675
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.48561967566933995,
+              "right": 0.4856196756693306
+            },
+            "nusselt_dh": {
+              "left": 8.236898545114991,
+              "right": 8.23689854511515
+            },
+            "fluid_c": [
+              44.927619324623365,
+              43.02500248578806,
+              41.2158417155471,
+              39.57194294911184,
+              38.15384319164434,
+              37.01080859070767,
+              36.18083541922229,
+              35.69065460370682,
+              35.55573834330657,
+              35.690654603706804,
+              36.18083541922227,
+              37.010808590707626,
+              38.153843191644285,
+              39.57194294911177,
+              41.215841715546986,
+              43.02500248578794,
+              44.927619324623215
+            ]
+          },
+          {
+            "axial_face_index": 400,
+            "s_from_inlet_m": 0.2,
+            "x_physical_m": 0.2,
+            "zeta": 1.077943615257048,
+            "bulk_c": 41.583747927031524,
+            "wall_c": {
+              "left": 49.0549812095301,
+              "right": 49.054981209530055
+            },
+            "solid_outer_c": {
+              "left": 49.05737641911094,
+              "right": 49.057376419110895
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.4856301633624074,
+              "right": 0.4856301633624045
+            },
+            "nusselt_dh": {
+              "left": 8.236720660645933,
+              "right": 8.23672066064598
+            },
+            "fluid_c": [
+              48.814596594145485,
+              46.911977137394146,
+              45.10280209172189,
+              43.45887044717445,
+              42.04071834542427,
+              40.89761898375903,
+              40.067582664042845,
+              39.57735701826856,
+              39.442427338252564,
+              39.57735701826855,
+              40.067582664042824,
+              40.897618983759,
+              42.040718345424224,
+              43.458870447174405,
+              45.10280209172185,
+              46.911977137394096,
+              48.81459659414544
+            ]
+          }
+        ],
+        "sample_eta": [
+          -0.984375,
+          -0.859375,
+          -0.734375,
+          -0.609375,
+          -0.484375,
+          -0.359375,
+          -0.234375,
+          -0.109375,
+          0.015625,
+          0.109375,
+          0.234375,
+          0.359375,
+          0.484375,
+          0.609375,
+          0.734375,
+          0.859375,
+          0.984375
+        ],
+        "outlet_profile": [
+          {
+            "eta": -0.984375,
+            "temperature_c": 48.814596594145485,
+            "temperature_minus_bulk_over_qref_b_k": 0.4700051633624074
+          },
+          {
+            "eta": -0.859375,
+            "temperature_c": 46.911977137394146,
+            "temperature_minus_bulk_over_qref_b_k": 0.34633489867357015
+          },
+          {
+            "eta": -0.734375,
+            "temperature_c": 45.10280209172189,
+            "temperature_minus_bulk_over_qref_b_k": 0.22873852070487377
+          },
+          {
+            "eta": -0.609375,
+            "temperature_c": 43.45887044717445,
+            "temperature_minus_bulk_over_qref_b_k": 0.12188296380928976
+          },
+          {
+            "eta": -0.484375,
+            "temperature_c": 42.04071834542427,
+            "temperature_minus_bulk_over_qref_b_k": 0.029703077195528227
+          },
+          {
+            "eta": -0.359375,
+            "temperature_c": 40.89761898375903,
+            "temperature_minus_bulk_over_qref_b_k": -0.04459838131271221
+          },
+          {
+            "eta": -0.234375,
+            "temperature_c": 40.067582664042845,
+            "temperature_minus_bulk_over_qref_b_k": -0.09855074209426395
+          },
+          {
+            "eta": -0.109375,
+            "temperature_c": 39.57735701826856,
+            "temperature_minus_bulk_over_qref_b_k": -0.1304154090695928
+          },
+          {
+            "eta": 0.015625,
+            "temperature_c": 39.442427338252564,
+            "temperature_minus_bulk_over_qref_b_k": -0.13918583827063236
+          },
+          {
+            "eta": 0.109375,
+            "temperature_c": 39.57735701826855,
+            "temperature_minus_bulk_over_qref_b_k": -0.13041540906959326
+          },
+          {
+            "eta": 0.234375,
+            "temperature_c": 40.067582664042824,
+            "temperature_minus_bulk_over_qref_b_k": -0.0985507420942654
+          },
+          {
+            "eta": 0.359375,
+            "temperature_c": 40.897618983759,
+            "temperature_minus_bulk_over_qref_b_k": -0.044598381312713986
+          },
+          {
+            "eta": 0.484375,
+            "temperature_c": 42.040718345424224,
+            "temperature_minus_bulk_over_qref_b_k": 0.029703077195525784
+          },
+          {
+            "eta": 0.609375,
+            "temperature_c": 43.458870447174405,
+            "temperature_minus_bulk_over_qref_b_k": 0.12188296380928731
+          },
+          {
+            "eta": 0.734375,
+            "temperature_c": 45.10280209172185,
+            "temperature_minus_bulk_over_qref_b_k": 0.2287385207048711
+          },
+          {
+            "eta": 0.859375,
+            "temperature_c": 46.911977137394096,
+            "temperature_minus_bulk_over_qref_b_k": 0.34633489867356704
+          },
+          {
+            "eta": 0.984375,
+            "temperature_c": 48.81459659414544,
+            "temperature_minus_bulk_over_qref_b_k": 0.4700051633624045
+          }
+        ],
+        "outlet_solid_profile": {
+          "left": [
+            {
+              "depth_from_fluid_m": 0.0,
+              "temperature_c": 49.0549812095301
+            },
+            {
+              "depth_from_fluid_m": 0.0005,
+              "temperature_c": 49.05558001192531
+            },
+            {
+              "depth_from_fluid_m": 0.001,
+              "temperature_c": 49.05617881432052
+            },
+            {
+              "depth_from_fluid_m": 0.0015,
+              "temperature_c": 49.05677761671573
+            },
+            {
+              "depth_from_fluid_m": 0.002,
+              "temperature_c": 49.05737641911094
+            }
+          ],
+          "right": [
+            {
+              "depth_from_fluid_m": 0.0,
+              "temperature_c": 49.054981209530055
+            },
+            {
+              "depth_from_fluid_m": 0.0005,
+              "temperature_c": 49.055580011925265
+            },
+            {
+              "depth_from_fluid_m": 0.001,
+              "temperature_c": 49.056178814320475
+            },
+            {
+              "depth_from_fluid_m": 0.0015,
+              "temperature_c": 49.056777616715685
+            },
+            {
+              "depth_from_fluid_m": 0.002,
+              "temperature_c": 49.057376419110895
+            }
+          ]
+        }
+      },
+      "diagnostics": {
+        "converged": true,
+        "momentum_max_residual_over_forcing": 1.7053025658242404e-13,
+        "thermal_max_cell_residual_over_reference_flux": 2.3092638912203256e-14,
+        "max_bulk_energy_error_dimensionless": 1.3322676295501878e-15,
+        "energy_removed_w": 6.400000000000005,
+        "energy_residual_w": 4.440892098500626e-15,
+        "momentum_linear_solves": 1,
+        "thermal_linear_solves": 400,
+        "absolute_temperature_admissible": true,
+        "minimum_computed_temperature_c": 25.0,
+        "minimum_temperature_location": "inlet bulk datum",
+        "absolute_temperature_checked_axial_states": 401,
+        "warning": "Numerical convergence does not establish experimental or aircraft validation."
+      }
+    },
+    "unequal_flux_developing": {
+      "provenance": {
+        "model_id": "parallel-plate-graetz-finite-volume-v1",
+        "source_sha256": "fa53b8f5c9cdb76711630acd60e0a86fa5bf481afd570a42d662868ddeaafb08",
+        "input_sha256": "665fd436e08ab91727b8409e671e0676242fb805a8663710c965e87121c25ed4",
+        "case": {
+          "gap_m": 0.004,
+          "span_m": 0.08,
+          "length_m": 0.2,
+          "mean_velocity_m_s": 1.0,
+          "inlet_c": 25.0,
+          "density_kg_m3": 1.2,
+          "viscosity_pa_s": 1.8e-05,
+          "conductivity_w_m_k": 0.026,
+          "specific_heat_j_kg_k": 1005.0,
+          "left_heat_flux_w_m2": 20.0,
+          "right_heat_flux_w_m2": 200.0,
+          "wall_thickness_m": 0.002,
+          "wall_conductivity_w_m_k": 167.0,
+          "transverse_cells": 64,
+          "axial_cells": 400,
+          "axial_stretch": 2.0,
+          "inlet_profile": "uniform",
+          "axial_samples": 9,
+          "transverse_samples": 17
+        },
+        "arithmetic": "IEEE-754 binary64; standard-library-only",
+        "algorithm": "cell-centred FV; direct tridiagonal solves; backward-Euler axial marching",
+        "grid": {
+          "transverse_full_gap_cells": 64,
+          "axial_cells": 400,
+          "total_marched_cells": 25600,
+          "axial_stretch": 2.0,
+          "transverse_order": 2,
+          "axial_order": 1
+        },
+        "scope": [
+          "Verification of an ideal laminar subproblem, not physical validation of an aircraft.",
+          "Infinite parallel plates with a specified reporting span; no spanwise sidewall effects.",
+          "Hydrodynamically developed, constant-property, steady incompressible flow.",
+          "Independent uniform signed heat fluxes on the two walls; no imposed thermal symmetry.",
+          "No axial heat conduction, buoyancy, viscous heating, radiation, rotation or turbulence.",
+          "Solid temperatures use local 1D conduction; no axial/spreading/contact resistance.",
+          "No connection, fitted coefficient or calibration transfer to the nacelle ROM."
+        ],
+        "experimental_validation": false,
+        "spatial_field_type": "computed full-gap fluid cells; sampled, not a 3D CFD mesh"
+      },
+      "status": "solved",
+      "hydraulics": {
+        "mass_flow_kg_s": 0.00038399999999999996,
+        "reynolds_dh": 533.3333333333333,
+        "peclet_dh": 371.0769230769231,
+        "peclet_length": 9276.923076923078,
+        "prandtl": 0.6957692307692309,
+        "hydraulic_diameter_m": 0.008,
+        "flow_direction": 1,
+        "signed_pressure_drop_pa": 2.6986822840409967,
+        "darcy_friction_factor": 0.1799121522693998,
+        "darcy_f_re": 95.95314787701321,
+        "exact_darcy_f_re": 96.0,
+        "wall_shear_pa": {
+          "left": 0.026986822840409933,
+          "right": 0.02698682284040999
+        },
+        "hydraulic_dissipation_w": 0.0008635783308931189,
+        "velocity_samples": [
+          {
+            "eta": -0.984375,
+            "y_from_midplane_m": -0.00196875,
+            "velocity_m_s": 0.0468521229868228
+          },
+          {
+            "eta": -0.859375,
+            "y_from_midplane_m": -0.00171875,
+            "velocity_m_s": 0.3923865300146409
+          },
+          {
+            "eta": -0.734375,
+            "y_from_midplane_m": -0.00146875,
+            "velocity_m_s": 0.6910688140556357
+          },
+          {
+            "eta": -0.609375,
+            "y_from_midplane_m": -0.00121875,
+            "velocity_m_s": 0.942898975109808
+          },
+          {
+            "eta": -0.484375,
+            "y_from_midplane_m": -0.00096875,
+            "velocity_m_s": 1.147877013177158
+          },
+          {
+            "eta": -0.359375,
+            "y_from_midplane_m": -0.00071875,
+            "velocity_m_s": 1.306002928257686
+          },
+          {
+            "eta": -0.234375,
+            "y_from_midplane_m": -0.00046875,
+            "velocity_m_s": 1.4172767203513907
+          },
+          {
+            "eta": -0.109375,
+            "y_from_midplane_m": -0.00021875,
+            "velocity_m_s": 1.4816983894582723
+          },
+          {
+            "eta": 0.015625,
+            "y_from_midplane_m": 3.125e-05,
+            "velocity_m_s": 1.4992679355783314
+          },
+          {
+            "eta": 0.109375,
+            "y_from_midplane_m": 0.00021875,
+            "velocity_m_s": 1.4816983894582723
+          },
+          {
+            "eta": 0.234375,
+            "y_from_midplane_m": 0.00046875,
+            "velocity_m_s": 1.4172767203513916
+          },
+          {
+            "eta": 0.359375,
+            "y_from_midplane_m": 0.00071875,
+            "velocity_m_s": 1.3060029282576877
+          },
+          {
+            "eta": 0.484375,
+            "y_from_midplane_m": 0.00096875,
+            "velocity_m_s": 1.1478770131771607
+          },
+          {
+            "eta": 0.609375,
+            "y_from_midplane_m": 0.00121875,
+            "velocity_m_s": 0.942898975109811
+          },
+          {
+            "eta": 0.734375,
+            "y_from_midplane_m": 0.00146875,
+            "velocity_m_s": 0.6910688140556378
+          },
+          {
+            "eta": 0.859375,
+            "y_from_midplane_m": 0.00171875,
+            "velocity_m_s": 0.39238653001464174
+          },
+          {
+            "eta": 0.984375,
+            "y_from_midplane_m": 0.00196875,
+            "velocity_m_s": 0.0468521229868229
+          }
+        ]
+      },
+      "thermal": {
+        "wall_heat_w": 3.52,
+        "inlet_c": 25.0,
+        "wall_flux_w_m2": {
+          "left": 20.0,
+          "right": 200.0
+        },
+        "reference_flux_w_m2": 200.0,
+        "outlet_bulk_c": 34.12106135986733,
+        "outlet_wall_c": {
+          "left": 31.42593675215395,
+          "right": 45.034542578329116
+        },
+        "outlet_solid_outer_c": {
+          "left": 31.426176273112034,
+          "right": 45.036937787909956
+        },
+        "outlet_nusselt": {
+          "left": -2.283325281596996,
+          "right": 5.63875635158102
+        },
+        "dimensionless_length_zeta": 1.077943615257048,
+        "fully_developed_wall_offset_on_grid": {
+          "left": -0.18290310777273822,
+          "right": 0.7170968922272616
+        },
+        "fully_developed_nusselt_on_grid": {
+          "left": -2.186950264929398,
+          "right": 5.578046765167579
+        },
+        "exact_equal_flux_nusselt": 8.235294117647058,
+        "axial_samples": [
+          {
+            "axial_face_index": 0,
+            "s_from_inlet_m": 0.0,
+            "x_physical_m": 0.0,
+            "zeta": 0.0,
+            "bulk_c": 25.0,
+            "wall_c": {
+              "left": 25.0,
+              "right": 25.0
+            },
+            "solid_outer_c": {
+              "left": null,
+              "right": null
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.0,
+              "right": 0.0
+            },
+            "nusselt_dh": {
+              "left": null,
+              "right": null
+            },
+            "fluid_c": [
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0,
+              25.0
+            ]
+          },
+          {
+            "axial_face_index": 50,
+            "s_from_inlet_m": 0.003125,
+            "x_physical_m": 0.003125,
+            "zeta": 0.016842868988391376,
+            "bulk_c": 25.142516583747927,
+            "wall_c": {
+              "left": 25.42928410927238,
+              "right": 29.29284109272379
+            },
+            "solid_outer_c": {
+              "left": 25.429523630230463,
+              "right": 29.29523630230463
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.018639889159089408,
+              "right": 0.26977109308343106
+            },
+            "nusselt_dh": {
+              "left": 21.45935507373697,
+              "right": 14.827385522595394
+            },
+            "fluid_c": [
+              25.405245647733917,
+              25.22466521939441,
+              25.093491436845667,
+              25.026787843470146,
+              25.004940357571453,
+              25.00057166778052,
+              25.00004236638266,
+              25.000002181995388,
+              25.000001904685178,
+              25.000021264432963,
+              25.00042364921426,
+              25.00571667744181,
+              25.049403575705,
+              25.267878434701153,
+              25.934914368456667,
+              27.246652193944108,
+              29.052456477339174
+            ]
+          },
+          {
+            "axial_face_index": 100,
+            "s_from_inlet_m": 0.0125,
+            "x_physical_m": 0.0125,
+            "zeta": 0.0673714759535655,
+            "bulk_c": 25.570066334991708,
+            "wall_c": {
+              "left": 25.694692936222573,
+              "right": 31.946906248268764
+            },
+            "solid_outer_c": {
+              "left": 25.694932457180656,
+              "right": 31.949301457849604
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": 0.008100729080006287,
+              "right": 0.4144945943630086
+            },
+            "nusselt_dh": {
+              "left": 49.37827151722121,
+              "right": 9.650306793860997
+            },
+            "fluid_c": [
+              25.670654474684113,
+              25.483174516743933,
+              25.31731811163114,
+              25.18691519565734,
+              25.097271673515014,
+              25.044445576197532,
+              25.018937955461762,
+              25.01246046242367,
+              25.02580226816264,
+              25.059566604289678,
+              25.173183036501108,
+              25.440642665762983,
+              25.971826368593785,
+              26.868931897863007,
+              28.173116918709425,
+              29.83171691848976,
+              31.706521632884147
+            ]
+          },
+          {
+            "axial_face_index": 150,
+            "s_from_inlet_m": 0.028125,
+            "x_physical_m": 0.028125,
+            "zeta": 0.1515858208955224,
+            "bulk_c": 26.282649253731346,
+            "wall_c": {
+              "left": 25.929586779257384,
+              "right": 34.25532835586832
+            },
+            "solid_outer_c": {
+              "left": 25.929826300215467,
+              "right": 34.25772356544916
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.022949060840807445,
+              "right": 0.5182241416389034
+            },
+            "nusselt_dh": {
+              "left": -17.429907165905895,
+              "right": 7.718667809164291
+            },
+            "fluid_c": [
+              25.90554831771892,
+              25.716387504743622,
+              25.541561814907332,
+              25.391858432113935,
+              25.276070835900533,
+              25.20192415835759,
+              25.178873744888094,
+              25.222944428346107,
+              25.362266140186176,
+              25.554854047604287,
+              25.973243510064535,
+              26.63015055070933,
+              27.57345069727584,
+              28.82298600985945,
+              30.359032482734897,
+              32.121002089666995,
+              34.01494374048371
+            ]
+          },
+          {
+            "axial_face_index": 200,
+            "s_from_inlet_m": 0.05,
+            "x_physical_m": 0.05,
+            "zeta": 0.269485903814262,
+            "bulk_c": 27.280265339966835,
+            "wall_c": {
+              "left": 26.23342823734501,
+              "right": 36.40139388629338
+            },
+            "solid_outer_c": {
+              "left": 26.233667758303092,
+              "right": 36.40378909587422
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.06804441167041865,
+              "right": 0.5928733555112251
+            },
+            "nusselt_dh": {
+              "left": -5.878513608692048,
+              "right": 6.746803449365446
+            },
+            "fluid_c": [
+              26.20938977580655,
+              26.021140355157712,
+              25.85156841657008,
+              25.715999602692637,
+              25.630037373612595,
+              25.611544977176642,
+              25.682614151579727,
+              25.87091348231823,
+              26.209555458528104,
+              26.583924151918684,
+              27.271452238899528,
+              28.19918512157232,
+              29.380280667518694,
+              30.807546257789546,
+              32.45094269595652,
+              34.25871515332544,
+              36.161009270908764
+            ]
+          },
+          {
+            "axial_face_index": 250,
+            "s_from_inlet_m": 0.078125,
+            "x_physical_m": 0.078125,
+            "zeta": 0.4210717247097844,
+            "bulk_c": 28.562914593698178,
+            "wall_c": {
+              "left": 26.83618390917025,
+              "right": 38.48469614893125
+            },
+            "solid_outer_c": {
+              "left": 26.83642343012833,
+              "right": 38.48709135851209
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.11223749449431529,
+              "right": 0.6449158010901497
+            },
+            "nusselt_dh": {
+              "left": -3.563871429972625,
+              "right": 6.202360049542125
+            },
+            "fluid_c": [
+              26.81214544763179,
+              26.626295640462878,
+              26.470082395660945,
+              26.367227075187213,
+              26.340249763183106,
+              26.412008696800935,
+              26.60674142282255,
+              26.950108677312258,
+              27.467938222924023,
+              27.985085610788065,
+              28.861225674635694,
+              29.959877048216153,
+              31.27969105355363,
+              32.805120288342486,
+              34.50584076091543,
+              36.33765807833137,
+              38.244311533546636
+            ]
+          },
+          {
+            "axial_face_index": 300,
+            "s_from_inlet_m": 0.1125,
+            "x_physical_m": 0.1125,
+            "zeta": 0.6063432835820896,
+            "bulk_c": 30.130597014925375,
+            "wall_c": {
+              "left": 27.901655301890788,
+              "right": 40.5753649460168
+            },
+            "solid_outer_c": {
+              "left": 27.90189482284887,
+              "right": 40.57776015559764
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.1448812113472482,
+              "right": 0.6789099155209424
+            },
+            "nusselt_dh": {
+              "left": -2.7608824931846305,
+              "right": 5.891797878560535
+            },
+            "fluid_c": [
+              27.877616840352324,
+              27.6939232203829,
+              27.54965955191592,
+              27.475690244321743,
+              27.499534586897212,
+              27.646244207709778,
+              27.938930807327402,
+              28.398659057355037,
+              29.043584399106386,
+              29.657285052785838,
+              30.655558452897488,
+              31.860294668359277,
+              33.26339796281051,
+              34.846388716725215,
+              36.5802285999939,
+              38.42583360421267,
+              40.33498033063218
+            ]
+          },
+          {
+            "axial_face_index": 350,
+            "s_from_inlet_m": 0.153125,
+            "x_physical_m": 0.153125,
+            "zeta": 0.8253005804311774,
+            "bulk_c": 31.98331260364843,
+            "wall_c": {
+              "left": 29.448553023459194,
+              "right": 42.73625131054946
+            },
+            "solid_outer_c": {
+              "left": 29.448792544417277,
+              "right": 42.7386465201303
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.1647593727123,
+              "right": 0.6989410159485672
+            },
+            "nusselt_dh": {
+              "left": -2.4277829747414317,
+              "right": 5.722943579969196
+            },
+            "fluid_c": [
+              29.424514561920734,
+              29.242193836959714,
+              29.10553153151143,
+              29.049886719061284,
+              29.10580050786794,
+              29.29941979551605,
+              29.652745684923968,
+              30.18356884364436,
+              30.905038893548962,
+              31.57615122043312,
+              32.64617327622053,
+              33.912469654262345,
+              35.36342700294079,
+              36.979250524961685,
+              38.73189435559029,
+              40.58530889740705,
+              42.49586669516485
+            ]
+          },
+          {
+            "axial_face_index": 400,
+            "s_from_inlet_m": 0.2,
+            "x_physical_m": 0.2,
+            "zeta": 1.077943615257048,
+            "bulk_c": 34.12106135986733,
+            "wall_c": {
+              "left": 31.42593675215395,
+              "right": 45.034542578329116
+            },
+            "solid_outer_c": {
+              "left": 31.426176273112034,
+              "right": 45.036937787909956
+            },
+            "wall_minus_bulk_over_qref_b_k": {
+              "left": -0.1751830995013699,
+              "right": 0.7093762792000158
+            },
+            "nusselt_dh": {
+              "left": -2.283325281596996,
+              "right": 5.63875635158102
+            },
+            "fluid_c": [
+              31.40189829061549,
+              31.220303657812657,
+              31.08766082154374,
+              31.041700682014817,
+              31.11454655505967,
+              31.33289482107447,
+              31.718120389741753,
+              32.28624826878698,
+              33.04776902981195,
+              33.74884445130843,
+              34.85622054070536,
+              36.15448606106044,
+              37.63024362490699,
+              39.263056809877035,
+              41.0254214793503,
+              42.88287119332086,
+              44.7941579629445
+            ]
+          }
+        ],
+        "sample_eta": [
+          -0.984375,
+          -0.859375,
+          -0.734375,
+          -0.609375,
+          -0.484375,
+          -0.359375,
+          -0.234375,
+          -0.109375,
+          0.015625,
+          0.109375,
+          0.234375,
+          0.359375,
+          0.484375,
+          0.609375,
+          0.734375,
+          0.859375,
+          0.984375
+        ],
+        "outlet_profile": [
+          {
+            "eta": -0.984375,
+            "temperature_c": 31.40189829061549,
+            "temperature_minus_bulk_over_qref_b_k": -0.17674559950136992
+          },
+          {
+            "eta": -0.859375,
+            "temperature_c": 31.220303657812657,
+            "temperature_minus_bulk_over_qref_b_k": -0.1885492506335541
+          },
+          {
+            "eta": -0.734375,
+            "temperature_c": 31.08766082154374,
+            "temperature_minus_bulk_over_qref_b_k": -0.1971710349910336
+          },
+          {
+            "eta": -0.609375,
+            "temperature_c": 31.041700682014817,
+            "temperature_minus_bulk_over_qref_b_k": -0.20015844406041366
+          },
+          {
+            "eta": -0.484375,
+            "temperature_c": 31.11454655505967,
+            "temperature_minus_bulk_over_qref_b_k": -0.19542346231249824
+          },
+          {
+            "eta": -0.359375,
+            "temperature_c": 31.33289482107447,
+            "temperature_minus_bulk_over_qref_b_k": -0.1812308250215363
+          },
+          {
+            "eta": -0.234375,
+            "temperature_c": 31.718120389741753,
+            "temperature_minus_bulk_over_qref_b_k": -0.15619116305816283
+          },
+          {
+            "eta": -0.109375,
+            "temperature_c": 32.28624826878698,
+            "temperature_minus_bulk_over_qref_b_k": -0.11926285092022332
+          },
+          {
+            "eta": 0.015625,
+            "temperature_c": 33.04776902981195,
+            "temperature_minus_bulk_over_qref_b_k": -0.06976400145359996
+          },
+          {
+            "eta": 0.109375,
+            "temperature_c": 33.74884445130843,
+            "temperature_minus_bulk_over_qref_b_k": -0.024194099056328966
+          },
+          {
+            "eta": 0.234375,
+            "temperature_c": 34.85622054070536,
+            "temperature_minus_bulk_over_qref_b_k": 0.04778534675447166
+          },
+          {
+            "eta": 0.359375,
+            "temperature_c": 36.15448606106044,
+            "temperature_minus_bulk_over_qref_b_k": 0.13217260557755173
+          },
+          {
+            "eta": 0.484375,
+            "temperature_c": 37.63024362490699,
+            "temperature_minus_bulk_over_qref_b_k": 0.2280968472275774
+          },
+          {
+            "eta": 0.609375,
+            "temperature_c": 39.263056809877035,
+            "temperature_minus_bulk_over_qref_b_k": 0.3342297042506305
+          },
+          {
+            "eta": 0.734375,
+            "temperature_c": 41.0254214793503,
+            "temperature_minus_bulk_over_qref_b_k": 0.4487834077663926
+          },
+          {
+            "eta": 0.859375,
+            "temperature_c": 42.88287119332086,
+            "temperature_minus_bulk_over_qref_b_k": 0.569517639174479
+          },
+          {
+            "eta": 0.984375,
+            "temperature_c": 44.7941579629445,
+            "temperature_minus_bulk_over_qref_b_k": 0.6937512792000158
+          }
+        ],
+        "outlet_solid_profile": {
+          "left": [
+            {
+              "depth_from_fluid_m": 0.0,
+              "temperature_c": 31.42593675215395
+            },
+            {
+              "depth_from_fluid_m": 0.0005,
+              "temperature_c": 31.425996632393474
+            },
+            {
+              "depth_from_fluid_m": 0.001,
+              "temperature_c": 31.426056512632993
+            },
+            {
+              "depth_from_fluid_m": 0.0015,
+              "temperature_c": 31.426116392872515
+            },
+            {
+              "depth_from_fluid_m": 0.002,
+              "temperature_c": 31.426176273112034
+            }
+          ],
+          "right": [
+            {
+              "depth_from_fluid_m": 0.0,
+              "temperature_c": 45.034542578329116
+            },
+            {
+              "depth_from_fluid_m": 0.0005,
+              "temperature_c": 45.035141380724326
+            },
+            {
+              "depth_from_fluid_m": 0.001,
+              "temperature_c": 45.035740183119536
+            },
+            {
+              "depth_from_fluid_m": 0.0015,
+              "temperature_c": 45.036338985514746
+            },
+            {
+              "depth_from_fluid_m": 0.002,
+              "temperature_c": 45.036937787909956
+            }
+          ]
+        }
+      },
+      "diagnostics": {
+        "converged": true,
+        "momentum_max_residual_over_forcing": 1.7053025658242404e-13,
+        "thermal_max_cell_residual_over_reference_flux": 2.353672812205332e-14,
+        "max_bulk_energy_error_dimensionless": 4.440892098500626e-16,
+        "energy_removed_w": 3.5200000000000014,
+        "energy_residual_w": 1.3322676295501878e-15,
+        "momentum_linear_solves": 1,
+        "thermal_linear_solves": 400,
+        "absolute_temperature_admissible": true,
+        "minimum_computed_temperature_c": 25.0,
+        "minimum_temperature_location": "inlet bulk datum",
+        "absolute_temperature_checked_axial_states": 401,
+        "warning": "Numerical convergence does not establish experimental or aircraft validation."
+      }
+    }
+  }
+}

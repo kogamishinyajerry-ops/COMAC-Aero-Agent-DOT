@@ -1,0 +1,711 @@
+{
+  "schema": "pressure_fin_package_manifest_v1",
+  "study_id": "pressure_fin_tradeoff",
+  "source_checkpoint": "14d72777b434d025c87f560b9e3e9c24fd786865",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "default_reproduce_uses_standard_library_only": true,
+  "default_reproduce_overwrites_accepted_examples": false,
+  "scientific_rerun_is_optional": true,
+  "original_scientific_plan_and_model_unchanged": true,
+  "files_count": 116,
+  "total_listed_bytes": 772277,
+  "files": [
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n12_t1200.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n12_t1200.json",
+      "bytes": 30268,
+      "sha256": "f0d880956c96fb1f1aadee7be4ce6f0e4b17e100ff5bef8b536b26fc24aa9d87"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n12_t600.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n12_t600.json",
+      "bytes": 30554,
+      "sha256": "0e5c1fe169d69f976202722326f0c0a7d33985205f89f6e60ebe7c46297c2b12"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n12_t860.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n12_t860.json",
+      "bytes": 30514,
+      "sha256": "b37fb3506d972629d4a739830060b24eb69c990bf717aa83375d1a7c9d24e51e"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n16_t1200.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n16_t1200.json",
+      "bytes": 37701,
+      "sha256": "4cc57a0200577748426a28cd20fc33375fd1f4a3300f64839f7bb4a732a5e199"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n16_t600.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n16_t600.json",
+      "bytes": 36552,
+      "sha256": "ade5844d685ca4b4b60a5ca8d9b8462e48df0989f5036cb7a96409ad137fc919"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n16_t860.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n16_t860.json",
+      "bytes": 36695,
+      "sha256": "99fd24f7bdeb832c71e3afd8a58b5c549a073bc541c5d62d5ece9f1856b954e8"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n20_t1200.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n20_t1200.json",
+      "bytes": 44473,
+      "sha256": "203db771b7aa2cec0af17fb23fa1dd0ade75d44f329c569575131222907a218c"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n20_t600.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n20_t600.json",
+      "bytes": 43300,
+      "sha256": "468da95cfe7df970da95a5c804e22b72f5b22c1fb2d2db5189335bb70b1d8c9e"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/candidates/n20_t860.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/candidates/n20_t860.json",
+      "bytes": 44358,
+      "sha256": "ef1ce32d872fa4eed9d83792ba9db05b7e98180f93748dfe4accea214c2e6cc3"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/catalog.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/catalog.json",
+      "bytes": 6493,
+      "sha256": "51d41fa7994a2c377ffddcb1ee2c045cd4701119b74d423d4ceb93c52e74dda9"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/out_of_scope_candidates.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/out_of_scope_candidates.json",
+      "bytes": 1162,
+      "sha256": "ffffdd46934840a8bb6e64e73e816aa5cb1b3462c6791fb1655781ae3ee4e403"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/sensitivity_records.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/sensitivity_records.json",
+      "bytes": 13502,
+      "sha256": "a7e48209c039ba131e96b124eb7fa67418c7ae8da40e72a1fe4562baa9eedd14"
+    },
+    {
+      "path": "examples/pressure_fin_tradeoff/ui_contract.json",
+      "proposed_repository_path": "examples/pressure_fin_tradeoff/ui_contract.json",
+      "bytes": 3848,
+      "sha256": "7ab12a499608ef62eafe821082067ee26fec27ffb1371c074ec6addec5eb7de5"
+    },
+    {
+      "path": "research/pressure_fin/README.md",
+      "proposed_repository_path": "research/pressure_fin/README.md",
+      "bytes": 6743,
+      "sha256": "e0d8bfbd84dc35d9570f24d2a301347575132f005efbc0dbb88b6fb24e27a5b8"
+    },
+    {
+      "path": "research/pressure_fin/audit_package.py",
+      "proposed_repository_path": "research/pressure_fin/audit_package.py",
+      "bytes": 15555,
+      "sha256": "7b59672444061fb86eacfdb95e81ea20612693838a873e4e983e5bb0e0efb6d9"
+    },
+    {
+      "path": "research/pressure_fin/export_display.py",
+      "proposed_repository_path": "research/pressure_fin/export_display.py",
+      "bytes": 7100,
+      "sha256": "44be4ae2061cb4bf4b56286cb3dba9c4411f26c7b0d1488513161061ca08498f"
+    },
+    {
+      "path": "research/pressure_fin/freeze_provenance.json",
+      "proposed_repository_path": "research/pressure_fin/freeze_provenance.json",
+      "bytes": 25104,
+      "sha256": "43181ac72b4731f1ffe15f4a358de5999ff7fef2516dd25beceb76e953eca481"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/fin-study/conjugate_fin.py",
+      "bytes": 10060,
+      "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/fin-study/precomparison_plan.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/fin-study/precomparison_plan.json",
+      "bytes": 5700,
+      "sha256": "f1b67b777da358a0934d3aca90e77bf747199d01a7cf712d755c968cf939a278"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/fin-study/review/final_review_gate.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/fin-study/review/final_review_gate.json",
+      "bytes": 1528,
+      "sha256": "d75bbdad8a1e16b41f0e529355c2f1bdb0d85dac46e559a361ee1e4549deb7e2"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/fin-study/verification.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/fin-study/verification.json",
+      "bytes": 12069,
+      "sha256": "8bf29f714adfa6c3e09b1f83f7a25ae7c2228c18f4197c12bb7d5d36cba25fb7"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/README.md",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/README.md",
+      "bytes": 7028,
+      "sha256": "a10555ad208ae302502b141fee4837cbc664ca427eb5fb0c9fc954e71e3ebe55"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/RESULTS.md",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/RESULTS.md",
+      "bytes": 6026,
+      "sha256": "2d05345e1ff817dc0f2ef3492b2f7f5891d375286ad675a08297ada348b452fe"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/artifact_audit.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/artifact_audit.json",
+      "bytes": 889,
+      "sha256": "9d9d8e99df8be4418de9f9a1be304db1119f5eb7999e1a99137ef943046d503c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/audit_study.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/audit_study.py",
+      "bytes": 3587,
+      "sha256": "b82f715ab2e920aecedc395be984a1f7a1b692780c39d89fb7a68e4618fe679c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/check_inherited_operator.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/check_inherited_operator.py",
+      "bytes": 831,
+      "sha256": "2f30ccef65ca2881b1c032518fa6afb67954f53166f4338f3c3f5c62131a7fda"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/check_screen_point.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/check_screen_point.py",
+      "bytes": 1333,
+      "sha256": "3bd7e480b858812827aebfbd3f4796338c7d82b9c173ae3ecabb39509ab3dbc1"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/design_results.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/design_results.json",
+      "bytes": 41374,
+      "sha256": "396f160b7b1ac9e15bbef520aa45506d0145cb3c3847cc8b9211203f9ba79328"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/first_probe.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/first_probe.json",
+      "bytes": 19259,
+      "sha256": "57eddc732eb113a8a7fc1da335129f5d1bd4cb683c5d2199d2c59bfed1e2e384"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/inherited_operator_check.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/inherited_operator_check.json",
+      "bytes": 530,
+      "sha256": "50f59ec5ce214d36c775c1ba4c69329947ac8dc7cfafdc769f35dbd3424c4577"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/manifest.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/manifest.json",
+      "bytes": 16712,
+      "sha256": "e3d7608547c798537b79bc20abfc2e6b0ecd695a2da10e1966061e876bf3ec43"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/postscreen_point_check.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/postscreen_point_check.json",
+      "bytes": 1639,
+      "sha256": "6fd609715a90b5db485320fa427ccbdacc0aebd23b677e05100c65999c7febe0"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/pressure_fin.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/pressure_fin.py",
+      "bytes": 8538,
+      "sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/presweep_plan.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/presweep_plan.json",
+      "bytes": 8460,
+      "sha256": "d517e0a8f6d3ee3ff0dd90783024ed7db8464e810f0479c1c8b6e2721586c29f"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/reproduce.sh",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/reproduce.sh",
+      "bytes": 365,
+      "sha256": "22db24b561c40edf429d71b66fa57a599819e003d6bab522251c3e09b3d31ef4"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/review/accepted_mesh_gate_review.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/review/accepted_mesh_gate_review.json",
+      "bytes": 1941,
+      "sha256": "80290575003b98c7133b72ffa67e8429880aa2006af89837567da9ad636792b7"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/review/final_review_gate.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/review/final_review_gate.json",
+      "bytes": 2913,
+      "sha256": "d4f11f0844c61d080c3e575cc205eb82c3be71a4a66aa25cf3a5b38a2db2776b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/review/independent_operator_review.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/review/independent_operator_review.json",
+      "bytes": 2362,
+      "sha256": "9d53c2733d3b39ea90e5938f37359cc1137541de9e1a813c94bf8b9913ffc8b3"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/review/independent_operator_review.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/review/independent_operator_review.py",
+      "bytes": 4918,
+      "sha256": "3855588349261864496f9a4ab37a8f86bc7b8e1ff8770c4443e1fdd6f63dbd3c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/run_sweep.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/run_sweep.py",
+      "bytes": 5855,
+      "sha256": "0a8c4c9cf4ba1f7806364900ae718d8b15f3353423b6c71cfd16e36033815e9d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_asymmetric_blockage.json",
+      "bytes": 1697,
+      "sha256": "e893f9ec18eab1bd0dfd7adbbaa6658e2b28c80f03f071c657dea96ff801b079"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_combined_fault.json",
+      "bytes": 1694,
+      "sha256": "0004374a1a9d8bbe4582c6c9020dab26fa5a91f7aa45b4c6c25167f982137a48"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_nominal.json",
+      "bytes": 1659,
+      "sha256": "ea3971c6f7c453b187d9d1f3968c3a12121ba6569f6f4e90309630bd8bf49bf3"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t1200_pressure_loss.json",
+      "bytes": 1685,
+      "sha256": "843a31e893d03de65332a842b6ac71f558337b64d6e6f83a1902bde78c7f3e1d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t600_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t600_asymmetric_blockage.json",
+      "bytes": 1684,
+      "sha256": "71a30041f6bec1ffb4238ebdc59c6a8a40f2490b0dd1886b8d32b537878890e8"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t600_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t600_combined_fault.json",
+      "bytes": 1672,
+      "sha256": "4a99a313e9a3783b25f2d0058533bdf3f15c563c11596e36baed731919979982"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t600_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t600_nominal.json",
+      "bytes": 1642,
+      "sha256": "d1ec857e5d44cb909558bd52bdf17d56db2049008f6977691faf27f3ddde34bc"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t600_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t600_pressure_loss.json",
+      "bytes": 1663,
+      "sha256": "029d5259c2abb689b2e9cfa5cd14e0074040dd14a1e68055d58cb67f9c437f71"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t860_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t860_asymmetric_blockage.json",
+      "bytes": 1689,
+      "sha256": "15619e4f0f0a2dcf3102f824f26d5fc582b85023121848b07dc12cd5d77e9d3e"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t860_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t860_combined_fault.json",
+      "bytes": 1687,
+      "sha256": "5009622345fadb4975c4d19d986f957b8ab5002dd1077ac0bb6b86eaef99aafc"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t860_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t860_nominal.json",
+      "bytes": 1671,
+      "sha256": "224d8315790eb316bce775b9a0f2c7cfc4c833b752a342d3dda1ba17984d1836"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n12_t860_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n12_t860_pressure_loss.json",
+      "bytes": 1676,
+      "sha256": "35fda9153929446ec10a017548cbefe4eb25005b5d1d89cfc01087148568ee97"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_asymmetric_blockage.json",
+      "bytes": 1663,
+      "sha256": "211be35c9dffdb8730834722431d379fc29a5e053e27b8fc8c51dfe2cbdfce51"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_combined_fault.json",
+      "bytes": 1677,
+      "sha256": "56e58a699a1e317b0ecc1dae2ac0c14239a41631dc695ba0e47abf60928b929b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_nominal.json",
+      "bytes": 1641,
+      "sha256": "c1e5a7815c1bff7c0048866f786d6c30e71867cf7c3482e664d1790e7edfe4ba"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t1200_pressure_loss.json",
+      "bytes": 1665,
+      "sha256": "13859e5c8883ce02c303e45ed598e038ea9948d6a02d698904645f381f179394"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t600_asymmetric_blockage.json",
+      "bytes": 1662,
+      "sha256": "9853a35feb55c5e9c8301cc59498d708b267d7cc63859252e3ff4b947eaedc15"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t600_combined_fault.json",
+      "bytes": 1654,
+      "sha256": "286c97b021e483518637f9afac447da227466d872a66f754551f7ff085b6b8b2"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t600_nominal.json",
+      "bytes": 1640,
+      "sha256": "6c344dbaf3c643ec99179a0ec2f3f915c11bf65d78525cb891a041742c2c0cd8"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t600_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t600_pressure_loss.json",
+      "bytes": 1663,
+      "sha256": "45a37617c9d44d7d072d32a55ca966cbc3f0db9e4f17ae436577ae457fe9f5c5"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t860_asymmetric_blockage.json",
+      "bytes": 1680,
+      "sha256": "185ecb50ed237bbf85525183f70d9ea8d0c4ad311eac6d3967af2863b5a26363"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t860_combined_fault.json",
+      "bytes": 19464,
+      "sha256": "3f8fd65458498db87a07b3dae53e267700245eaa4de902fc5f8fda3efec5cc9d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t860_nominal.json",
+      "bytes": 19562,
+      "sha256": "b5a14f05636501347efb2a447d05ef8449b8387b9ea13d682d67ce00c407755c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n16_t860_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n16_t860_pressure_loss.json",
+      "bytes": 1666,
+      "sha256": "bbce886d7b8c8894cac1e0f15800ad664ce442d04012fee365222d18f455d2e5"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_asymmetric_blockage.json",
+      "bytes": 1682,
+      "sha256": "b924b84e66c79fa7e0d5c348dd560592fa7aadf0bee3fc8ba58c09fe1826d50b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_combined_fault.json",
+      "bytes": 1657,
+      "sha256": "44c8f5870b598246f8a38c2b023a155c268b40c6dd037f92cd218c5d3b6b3bcf"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_nominal.json",
+      "bytes": 1662,
+      "sha256": "5f132cff39dc1bcd6b2e2d9b93d0449e97281e8ad44beb408a5f91af7ea282d1"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t1200_pressure_loss.json",
+      "bytes": 1671,
+      "sha256": "cff677e11ba91f13c6c8a03ca0e4ca56223a4a1cb9b5d4078bff1c8a064ad28b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t600_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t600_asymmetric_blockage.json",
+      "bytes": 1677,
+      "sha256": "ec94b89d2b2c9a594ed7c2a22a57b41cd2ecea2e37d52aaebf9645833c98d34d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t600_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t600_combined_fault.json",
+      "bytes": 1677,
+      "sha256": "377b3f7aaaf0df051189c8a0e70df53e109df19db47b666594dced39b3ebb7b4"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t600_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t600_nominal.json",
+      "bytes": 1676,
+      "sha256": "b9eebd25d26634e778245bcea75ce1326a8ddda64943f42337194061b2c94f87"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t600_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t600_pressure_loss.json",
+      "bytes": 1665,
+      "sha256": "623a4bbcf326be03acca8a9788a95fb1d939fbe4400ef50a1dffcf67d6c0091e"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t860_asymmetric_blockage.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t860_asymmetric_blockage.json",
+      "bytes": 1679,
+      "sha256": "57a883d48b7cb1e724ce13cc7f47912a1fb05d553251c2c740331a47b1ff38ec"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t860_combined_fault.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t860_combined_fault.json",
+      "bytes": 1677,
+      "sha256": "f2ffd37090414e7d27dab1394282a603ad193237ff1e0c18edd34e6e3cc1599a"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t860_nominal.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t860_nominal.json",
+      "bytes": 1656,
+      "sha256": "fb8c283cb78ea2d7332565002daa6dca54fc0e4e74dbf4f9d2a1b3e2d222b2f5"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/runs/n20_t860_pressure_loss.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/runs/n20_t860_pressure_loss.json",
+      "bytes": 1672,
+      "sha256": "e56f429e194ee803687dda13010cd990d94be8650962bfaf1e8e9db97ac764e9"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_results.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_results.json",
+      "bytes": 13502,
+      "sha256": "a7e48209c039ba131e96b124eb7fa67418c7ae8da40e72a1fe4562baa9eedd14"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_0.95.json",
+      "bytes": 1699,
+      "sha256": "42fb4d2878b072cece5ec15f9bdbedd49c0f863038df54277e101a3806f38990"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_heatcap_multiplier_1.05.json",
+      "bytes": 1710,
+      "sha256": "ef0234ab71036ff0e567f5018f41440e3ea6a19f0349768ffc298daaeba71770"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_0.95.json",
+      "bytes": 1737,
+      "sha256": "3b6d2d72aeaa3001400fe7abde7eaacf4555bb23c6af37ba633b405498787080"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ka_multiplier_1.05.json",
+      "bytes": 1727,
+      "sha256": "1a3b85eb20b862dac7a77c8774ef3ffd52fc1593856db2ff8990c5674e4882fb"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ks_167.0.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ks_167.0.json",
+      "bytes": 1714,
+      "sha256": "a45bb3dc5a75d05099abceefd6fb174cd03d6fd8f259a3e6b62aea6368649abe"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ks_237.0.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_ks_237.0.json",
+      "bytes": 1714,
+      "sha256": "51e279ed1c9d718224beb4a0105e4d19bc0f6f1cc4b742ce311917c2bb59721e"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_0.95.json",
+      "bytes": 1733,
+      "sha256": "970e65e94c8af557eebacbedee561a90f86ab01c1dbc9f765426e224fac26178"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_mu_multiplier_1.05.json",
+      "bytes": 1725,
+      "sha256": "921aad75b7d35717330bb0d0205766fa39b7bc9de4582bc9acfc866a6eef57fa"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_profile_plug.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/combined_fault_profile_plug.json",
+      "bytes": 1720,
+      "sha256": "1aa4d79432ba792225788b130094672e23ab59b6ece4786e11aea7b03bd7677a"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_0.95.json",
+      "bytes": 1681,
+      "sha256": "12e7c717704dc8efdac5d1d21045aab2ffc433a63be37577612c0d323028f028"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_heatcap_multiplier_1.05.json",
+      "bytes": 1693,
+      "sha256": "736a81080d0711ec671df2c0b806e6d9342c1f2278059da2c2559372fefa96c2"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ka_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ka_multiplier_0.95.json",
+      "bytes": 1699,
+      "sha256": "dfa1dcf266d7eb30344b95ae4dd4047ab836c7d2b6cfdb43d0e5e05e241fb64c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ka_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ka_multiplier_1.05.json",
+      "bytes": 1692,
+      "sha256": "d833f355fd9a5e9953d0e27618e313dd44e01e03af9efabaddd9a99bdde556eb"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ks_167.0.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ks_167.0.json",
+      "bytes": 1674,
+      "sha256": "508ae1bed5d0602edc17d6b81e4b9170315326eaa63eea174e5bd7fe616af02d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ks_237.0.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_ks_237.0.json",
+      "bytes": 1674,
+      "sha256": "8c33b4dac634a2b30b9cdd9957c7fb7206cb88ed11cccc53769b0868ed9097b4"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_mu_multiplier_0.95.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_mu_multiplier_0.95.json",
+      "bytes": 1719,
+      "sha256": "68c7f4904cb9f59dc724dc7a6d11c575a76460687b459adc0e988a8a21c00064"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_mu_multiplier_1.05.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_mu_multiplier_1.05.json",
+      "bytes": 1705,
+      "sha256": "587c623ce50b6233c378957269891a4c630839df12b79b25105bb7c232dee9de"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_profile_plug.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/sensitivity_runs/nominal_profile_plug.json",
+      "bytes": 1706,
+      "sha256": "68823e53d3cd7b77a48dfb8f881b48cfc985ae93c3d19ab7a6cb8864c6060d2b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/summarize_results.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/summarize_results.py",
+      "bytes": 9346,
+      "sha256": "a5599e22da6ad700ad694cd1522afaeefc2c36564b65f73085e5dd4b0c8a2450"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/summary.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/summary.json",
+      "bytes": 1646,
+      "sha256": "22c1dbc3f03923181e94405bfb9dee20d89c57585cea14705c2cd57461d745ad"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification.json",
+      "bytes": 3048,
+      "sha256": "951912b0bce677a79b141086e1ec4a2770240efcd108e616974b2563f0dcea44"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_48_1600.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_48_1600.json",
+      "bytes": 1650,
+      "sha256": "74e7de9c286526315777eaca51d124dbc86fe407407bf8b8cc9096b11795f1fb"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_48_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_48_800.json",
+      "bytes": 1651,
+      "sha256": "206884b06ba79aa7384cb16100247f96d705ce1a5b4feab1d5fc92a68e014561"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_64_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_combined_64_800.json",
+      "bytes": 1656,
+      "sha256": "be169cc0a8439f8cc53427fc3996cb54cfecb9003b53db101ba9ec572fa1495d"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_48_1600.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_48_1600.json",
+      "bytes": 1622,
+      "sha256": "862510f4a03c297482352fcf80f3a51f2a90c923e79405e4f5abd2b871449d43"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_48_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_48_800.json",
+      "bytes": 1619,
+      "sha256": "832ff7ff366e869b9743405257a35e5a0a0e47724b48a2d3b3cccb5df9eb7c06"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_64_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/baseline_nominal_64_800.json",
+      "bytes": 1644,
+      "sha256": "ee996e66435693b044f893bf98b7ca2cebfe2a8fc678d9396c3e2e7f0ec0f924"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_48_1600.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_48_1600.json",
+      "bytes": 1628,
+      "sha256": "d524400cc5903d278ccf2bb48b681d61c8e1a4ea19a43aea5bb50b63934a6006"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_48_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_48_800.json",
+      "bytes": 1625,
+      "sha256": "89c95d69b410370752195f403cb488e182b819d0bec0ee821787f470f0c1936f"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_64_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/dense_combined_64_800.json",
+      "bytes": 1654,
+      "sha256": "3f46f222cfcfd52f29dcb5fab14fee275e3919d2227c186ebbef7eebb1bdfc62"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_48_1600.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_48_1600.json",
+      "bytes": 1616,
+      "sha256": "15c84ec858a867a97afb3e2fb3fb47af0443502063e08a8bb2ad5f6700a1a40c"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_48_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_48_800.json",
+      "bytes": 1618,
+      "sha256": "ecff71ae57f6568e6d8aafcfc146e636f2ef610076b3e9dc9656605964761765"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_64_800.json",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verification_runs/wide_nominal_64_800.json",
+      "bytes": 1619,
+      "sha256": "8b60962a36f767651a3df89e0e032de72defb675ac27247146e99486442e651b"
+    },
+    {
+      "path": "research/pressure_fin/original_freeze/study/verify_tradeoff.py",
+      "proposed_repository_path": "research/pressure_fin/original_freeze/study/verify_tradeoff.py",
+      "bytes": 4937,
+      "sha256": "61348dd5ab91b091d8c3fc08d9d528c86c4a242230ad2f7a09a6b8aa290f8b6f"
+    },
+    {
+      "path": "research/pressure_fin/packaging_checks.json",
+      "proposed_repository_path": "research/pressure_fin/packaging_checks.json",
+      "bytes": 1164,
+      "sha256": "5ce1a0eb3bcdfc6ee8c3026cc2ca30eebacc6167f78d165f88f617ba2ac7f2d4"
+    },
+    {
+      "path": "research/pressure_fin/reproduce.py",
+      "proposed_repository_path": "research/pressure_fin/reproduce.py",
+      "bytes": 8388,
+      "sha256": "fb13f35755f2a40dcc702fc0847820e826fbdbadc55a5efd7dc2d14bb053b4f8"
+    },
+    {
+      "path": "research/pressure_fin/reproduce.sh",
+      "proposed_repository_path": "research/pressure_fin/reproduce.sh",
+      "bytes": 150,
+      "sha256": "1c0ff987cb596cb8abbfeb95da224a87e56930e3c97e119eba47221177edb45a"
+    },
+    {
+      "path": "research/pressure_fin/scientific_replay_check.json",
+      "proposed_repository_path": "research/pressure_fin/scientific_replay_check.json",
+      "bytes": 1144,
+      "sha256": "1fcc8d8c982be3cc20fd91a6b3641517c4a9b2e5af14d92ce08b88f12497857f"
+    },
+    {
+      "path": "research/pressure_fin/test_packaging.py",
+      "proposed_repository_path": "research/pressure_fin/test_packaging.py",
+      "bytes": 4982,
+      "sha256": "96bf177d3bec8338e7d2adc78f9fbcd1fca6425eef17faa95cbe2f52a13b66d4"
+    }
+  ]
+}

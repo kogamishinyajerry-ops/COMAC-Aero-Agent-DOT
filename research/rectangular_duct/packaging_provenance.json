@@ -1,0 +1,25 @@
+{
+  "stage": "Packaging begun after original experimental comparison was completed",
+  "original_freeze_anchors": {
+    "rectangular_graetz.py": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c",
+    "verification.json": "3ed1aa4b3e27136b3b37302de4ff29e0a6e351405483c568c47e4c4af271a396",
+    "frozen_response.json": "2b5be898efd870b883505135cb3e54ef6c1254c006dbf32063f904a0a07dcf91",
+    "experimental_comparison.json": "24ac0d0bb2e734539c2ed7e3e3a2fdbea5405a0f07511b22e47a5a94a1df5ab0",
+    "experimental_source.json": "8c5c9ba18de523626b4447d38617454ae93fc78b5501b61a4e5f968094e751b8",
+    "numerical_plan.json": "146ccbf6fc0795dea57a393bbbc7e10432110d13dd562d664736010603d6fb24",
+    "refinement_plan.json": "84ae6e4491bb8b9b5a3f71b85c7a18ea641fb4f43e281db3b8c313824d33851e",
+    "initial_solver_rejected.py": "e4bb3cfd594df934a75f21686be886795480bb50374cb98cb3b56279d4663bc0",
+    "initial_verification_rejected.json": "083eb264c40bef226acf01bcb46d0ea7cd638c3e4d581ba843d8c75df5b19a7b",
+    "artifact_manifest.json": "413677877d2cdad9298a86be7088de3060880ffeb0d16db0483d1dcd7103519d"
+  },
+  "original_source_pdf_sha256": "8fac58915fcb924f0fb0095f01e15c85de9af85b1f8a39405e71837e889c03ba",
+  "ordering_notice": "The original precomparison solver, plans, rejected trial, mathematical verification and frozen response are preserved verbatim. The packaged replay occurs after inspection of all experimental residuals; it is a reproducibility test, not a newly blinded validation.",
+  "publication_exclusions": [
+    "original copyrighted source PDF",
+    "full-resolution1.2MB NPZ",
+    "caches",
+    "logs"
+  ],
+  "proposed_code_destination": "research/rectangular_duct/",
+  "proposed_evidence_destination": "examples/rectangular_experiment/"
+}

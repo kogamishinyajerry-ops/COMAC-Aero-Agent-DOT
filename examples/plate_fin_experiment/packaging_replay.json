@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "study_id": "plate_fin_2024",
+  "status": "post_comparison_packaging_numeric_replay_passed",
+  "all_passed": true,
+  "checks": {
+    "all40_cases_replayed": true,
+    "numeric_payload_equivalent": true,
+    "small_field_samples_equivalent": true,
+    "independent_review_numeric_payload_equivalent": true,
+    "solver_bytes_unchanged": true,
+    "precomparison_plan_bytes_unchanged": true,
+    "all_replayed_energy_and_temperature_gates_pass": true,
+    "no_source_pdf_required": true
+  },
+  "chronology": "Packaging-only replay performed after experimental residuals were already observed. It preserves, and does not replace, the original precomparison freeze.",
+  "equations_grids_materials_properties_and_scenarios_changed": false,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "application_dependencies_added": false,
+  "source_pdf_required": false,
+  "source_pdf_redistributed": false,
+  "original_solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "packaged_solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+  "original_precomparison_freeze_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+  "original_comparison_sha256": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f",
+  "packaged_marker_transcription_sha256": "31432593b0ca422015ac422069f5fecc19a08e3078103f51e93a9c6970d65f6c",
+  "replay_script_sha256": "5014ef656ab5532884fcbb62c48807e862e8eed5fc1371e6f1b1b8949edfb27c",
+  "numeric_equivalence_tolerance": {
+    "relative": 1e-11,
+    "absolute": 1e-12
+  },
+  "maximum_absolute_payload_difference": 0.0,
+  "maximum_absolute_independent_review_difference": 0.0,
+  "cases": [
+    {
+      "case_id": "primary_fd_00",
+      "kind": "primary",
+      "G_W_K": 1.1268329940081705,
+      "Rth_K_W": 0.8874429532303428,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.067031777005098e-13
+    },
+    {
+      "case_id": "primary_fd_01",
+      "kind": "primary",
+      "G_W_K": 1.3316155668066705,
+      "Rth_K_W": 0.7509674901128459,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.178309572590347e-13
+    },
+    {
+      "case_id": "primary_fd_02",
+      "kind": "primary",
+      "G_W_K": 1.486690961744288,
+      "Rth_K_W": 0.672634747726408,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.457751296672817e-13
+    },
+    {
+      "case_id": "primary_fd_03",
+      "kind": "primary",
+      "G_W_K": 1.6118425560768133,
+      "Rth_K_W": 0.6204079897443435,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.14718728852649e-13
+    },
+    {
+      "case_id": "primary_fd_04",
+      "kind": "primary",
+      "G_W_K": 1.7190570534354968,
+      "Rth_K_W": 0.5817142589895562,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 3.7985742118482737e-13
+    },
+    {
+      "case_id": "primary_fd_05",
+      "kind": "primary",
+      "G_W_K": 1.8034446708419378,
+      "Rth_K_W": 0.5544944162512899,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.496381277201714e-13
+    },
+    {
+      "case_id": "primary_fd_06",
+      "kind": "primary",
+      "G_W_K": 1.8276611839536563,
+      "Rth_K_W": 0.5471473645004417,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.503241909803164e-13
+    },
+    {
+      "case_id": "primary_fd_07",
+      "kind": "primary",
+      "G_W_K": 1.9027149542111754,
+      "Rth_K_W": 0.5255647977048556,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.634972803912007e-13
+    },
+    {
+      "case_id": "primary_fd_08",
+      "kind": "primary",
+      "G_W_K": 1.9484154887758152,
+      "Rth_K_W": 0.5132375541873246,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.664278164003782e-13
+    },
+    {
+      "case_id": "primary_fd_09",
+      "kind": "primary",
+      "G_W_K": 1.9897712567914607,
+      "Rth_K_W": 0.5025703314322254,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.745135842321e-13
+    },
+    {
+      "case_id": "primary_fd_10",
+      "kind": "primary",
+      "G_W_K": 2.022981625801526,
+      "Rth_K_W": 0.49431986294180497,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.081794765880697e-13
+    },
+    {
+      "case_id": "primary_fd_11",
+      "kind": "primary",
+      "G_W_K": 2.0755688033737494,
+      "Rth_K_W": 0.481795640006991,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.686303362639619e-13
+    },
+    {
+      "case_id": "primary_plug_00",
+      "kind": "primary",
+      "G_W_K": 1.3624809321613696,
+      "Rth_K_W": 0.7339552256438933,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.276394559580107e-13
+    },
+    {
+      "case_id": "primary_plug_01",
+      "kind": "primary",
+      "G_W_K": 1.6958335470175143,
+      "Rth_K_W": 0.5896805153776523,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 1.9715436670362402e-13
+    },
+    {
+      "case_id": "primary_plug_02",
+      "kind": "primary",
+      "G_W_K": 1.9655979173346203,
+      "Rth_K_W": 0.5087510478012791,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 1.549779929687527e-12
+    },
+    {
+      "case_id": "primary_plug_03",
+      "kind": "primary",
+      "G_W_K": 2.1936277474501207,
+      "Rth_K_W": 0.4558658601772351,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 2.5691416233919303e-13
+    },
+    {
+      "case_id": "primary_plug_04",
+      "kind": "primary",
+      "G_W_K": 2.395934309145355,
+      "Rth_K_W": 0.41737371353754116,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 8.751657343539911e-13
+    },
+    {
+      "case_id": "primary_plug_05",
+      "kind": "primary",
+      "G_W_K": 2.559468517455769,
+      "Rth_K_W": 0.39070611464056865,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 2.596661441997891e-13
+    },
+    {
+      "case_id": "primary_plug_06",
+      "kind": "primary",
+      "G_W_K": 2.607072384746435,
+      "Rth_K_W": 0.383572011982038,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 1.1554404843936182e-12
+    },
+    {
+      "case_id": "primary_plug_07",
+      "kind": "primary",
+      "G_W_K": 2.7564627338905305,
+      "Rth_K_W": 0.3627837908726517,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 2.1986569628229287e-13
+    },
+    {
+      "case_id": "primary_plug_08",
+      "kind": "primary",
+      "G_W_K": 2.8487654562167313,
+      "Rth_K_W": 0.35102924946585035,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 4.897950310976631e-13
+    },
+    {
+      "case_id": "primary_plug_09",
+      "kind": "primary",
+      "G_W_K": 2.9331420602911424,
+      "Rth_K_W": 0.34093132192197345,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.08636930910926e-13
+    },
+    {
+      "case_id": "primary_plug_10",
+      "kind": "primary",
+      "G_W_K": 3.0014721584583417,
+      "Rth_K_W": 0.3331698404004634,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 1.1611326656365298e-12
+    },
+    {
+      "case_id": "primary_plug_11",
+      "kind": "primary",
+      "G_W_K": 3.1106905618120937,
+      "Rth_K_W": 0.3214720269114336,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.412085331193297e-13
+    },
+    {
+      "case_id": "material_167_4.369970612",
+      "kind": "material",
+      "G_W_K": 1.1232005400712306,
+      "Rth_K_W": 0.8903129622218509,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 4.904551088462665e-13
+    },
+    {
+      "case_id": "material_167_6.354788173",
+      "kind": "material",
+      "G_W_K": 1.3264238923132086,
+      "Rth_K_W": 0.7539068059578272,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.196535299164067e-13
+    },
+    {
+      "case_id": "material_167_8.356446402",
+      "kind": "material",
+      "G_W_K": 1.4801942013453728,
+      "Rth_K_W": 0.6755870270881237,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.703108346894921e-13
+    },
+    {
+      "case_id": "material_167_10.323463297",
+      "kind": "material",
+      "G_W_K": 1.6042144211598415,
+      "Rth_K_W": 0.623358066608704,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 4.834492316546794e-13
+    },
+    {
+      "case_id": "material_237_4.369970612",
+      "kind": "material",
+      "G_W_K": 1.1289981209269093,
+      "Rth_K_W": 0.8857410667601452,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 9.46583687375852e-13
+    },
+    {
+      "case_id": "material_237_6.354788173",
+      "kind": "material",
+      "G_W_K": 1.3347151663738945,
+      "Rth_K_W": 0.7492235236352064,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 9.645794029267786e-13
+    },
+    {
+      "case_id": "material_237_8.356446402",
+      "kind": "material",
+      "G_W_K": 1.490573738866817,
+      "Rth_K_W": 0.670882609779663,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 9.19320683961299e-13
+    },
+    {
+      "case_id": "material_237_10.323463297",
+      "kind": "material",
+      "G_W_K": 1.6164048739325645,
+      "Rth_K_W": 0.6186568823979675,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 1.143560683929909e-12
+    },
+    {
+      "case_id": "area_mapping_4.369970612",
+      "kind": "mapping",
+      "G_W_K": 1.1299418284497424,
+      "Rth_K_W": 0.8850013114143938,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.304941801928618e-13
+    },
+    {
+      "case_id": "area_mapping_6.354788173",
+      "kind": "mapping",
+      "G_W_K": 1.3348123484335963,
+      "Rth_K_W": 0.7491689758290752,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.862261328790421e-13
+    },
+    {
+      "case_id": "area_mapping_8.356446402",
+      "kind": "mapping",
+      "G_W_K": 1.490023632403747,
+      "Rth_K_W": 0.6711302950187257,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.492821137245217e-13
+    },
+    {
+      "case_id": "area_mapping_10.323463297",
+      "kind": "mapping",
+      "G_W_K": 1.6153315835043944,
+      "Rth_K_W": 0.6190679425895591,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 5.360328949998694e-13
+    },
+    {
+      "case_id": "air_k_air_0.95",
+      "kind": "air",
+      "G_W_K": 1.5441091072959796,
+      "Rth_K_W": 0.6476226293044698,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.509809115030621e-13
+    },
+    {
+      "case_id": "air_k_air_1.05",
+      "kind": "air",
+      "G_W_K": 1.6399334390474607,
+      "Rth_K_W": 0.6097808460938757,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 3.9326198765577887e-13
+    },
+    {
+      "case_id": "air_volumetric_heat_capacity_0.95",
+      "kind": "air",
+      "G_W_K": 1.5619364502926396,
+      "Rth_K_W": 0.6402309132440331,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 4.935005786255386e-13
+    },
+    {
+      "case_id": "air_volumetric_heat_capacity_1.05",
+      "kind": "air",
+      "G_W_K": 1.6221429159894827,
+      "Rth_K_W": 0.6164684937085306,
+      "maximum_absolute_payload_difference": 0.0,
+      "energy_relative_balance_max": 6.241667806585654e-13
+    }
+  ]
+}

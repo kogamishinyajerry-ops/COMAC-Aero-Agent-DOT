@@ -1,0 +1,13 @@
+{
+  "observed_finished_utc": "2026-09-30T21:20:26.073553+00:00",
+  "primary_process_exit_code": 0,
+  "primary_additional_thermal_solves": 5,
+  "independent_review_thermal_solves": 6,
+  "total_additional_thermal_solves": 11,
+  "cap": 14,
+  "within_execution_window": true,
+  "independent_reproduction_status": "passed",
+  "phase_one_snapshot_preserved": true,
+  "accepted_upstream_preserved": true,
+  "main_root_reproduction_max_abs_relative_G": 3.774758283725532e-15
+}

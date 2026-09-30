@@ -1,0 +1,34 @@
+{
+  "purpose": "Post-comparison packaging replay and numeric equivalence evidence, not a new unseen experimental test",
+  "original_precomparison_solver_sha256": "efe82dc9d96dc5bb6ff4c19216d6ac84e083c6c482bab090d21f7ff48b2f488c",
+  "original_precomparison_verification_sha256": "3ed1aa4b3e27136b3b37302de4ff29e0a6e351405483c568c47e4c4af271a396",
+  "original_precomparison_frozen_response_sha256": "2b5be898efd870b883505135cb3e54ef6c1254c006dbf32063f904a0a07dcf91",
+  "original_experimental_comparison_sha256": "24ac0d0bb2e734539c2ed7e3e3a2fdbea5405a0f07511b22e47a5a94a1df5ab0",
+  "packaged_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "packaged_verification_sha256": "9c56d9fbd3a667a7059c32cc96bd59074af1e7db6cfd0d244438ffe43417284a",
+  "packaged_frozen_response_sha256": "38306ba919f6151bc5a3d37607678d0745cc9f1a040ddd29ea841dfea1691c2f",
+  "packaged_experimental_comparison_sha256": "a217b0284e679459983d78437cbed4795a01dd015b4f8ce2268561a2ba0458f8",
+  "guard_change": "Reject unsupported grid dimensions below2 before assembly; accepted grids use at least16 cells per short side",
+  "non_numerical_changes": [
+    "relocatable code/input/output paths",
+    "explicit replay provenance",
+    "optional source-PDF audit",
+    "display-only downsampled/rounded field export"
+  ],
+  "equations_grids_and_tolerances_changed": false,
+  "checks": {
+    "verification_numerical_payload_exactly_equal": true,
+    "frozen_response_numerical_payload_exactly_equal": true,
+    "all_32_comparison_rows_exactly_equal": true,
+    "grouped_residual_statistics_exactly_equal": true,
+    "interpolation_check_results_exactly_equal": true,
+    "source_transcription_bytes_identical": true,
+    "initial_plan_bytes_identical": true,
+    "refinement_plan_bytes_identical": true,
+    "all_original_math_gates_still_pass": true,
+    "no_physical_validation_pass_claimed": true,
+    "new_execution_phase_honestly_labeled": true,
+    "source_pdf_audit_status_explicit": true
+  },
+  "all_passed": true
+}

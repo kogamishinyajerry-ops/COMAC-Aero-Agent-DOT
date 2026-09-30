@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "scope": "Additional post-screen confirmation of the sole within-Re-scope Pareto point; no original requirements, parameters, frozen mesh, result or ranking changed",
+  "design_id": "n16_t600",
+  "case": "combined_fault",
+  "primary_G_W_K": 0.8751468356994956,
+  "primary_Tb_at_60W_C": 93.55992337793536,
+  "rows": [
+    {
+      "mesh": {
+        "nx": 64,
+        "ny": 192,
+        "nz": 800,
+        "unknowns": 211968
+      },
+      "G_W_K": 0.8748192293852244,
+      "Tb_at_60W_C": 93.58559801224848,
+      "relative_G_difference_from_frozen": 0.00037448458294808695,
+      "gates": {
+        "energy": true,
+        "componentwise_residual": true,
+        "maximum_principle": true,
+        "capacity_upper_bound": true,
+        "mass": true,
+        "pressure": true,
+        "momentum": true,
+        "hydraulic_exact": true,
+        "geometry": true
+      }
+    },
+    {
+      "mesh": {
+        "nx": 48,
+        "ny": 144,
+        "nz": 1600,
+        "unknowns": 119808
+      },
+      "G_W_K": 0.8752774659434912,
+      "Tb_at_60W_C": 93.54969119457904,
+      "relative_G_difference_from_frozen": 0.00014924438144292562,
+      "gates": {
+        "energy": true,
+        "componentwise_residual": true,
+        "maximum_principle": true,
+        "capacity_upper_bound": true,
+        "mass": true,
+        "pressure": true,
+        "momentum": true,
+        "hydraulic_exact": true,
+        "geometry": true
+      }
+    }
+  ],
+  "code_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "check_code_sha256": "3bd7e480b858812827aebfbd3f4796338c7d82b9c173ae3ecabb39509ab3dbc1"
+}

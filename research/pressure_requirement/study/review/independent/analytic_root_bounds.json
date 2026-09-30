@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "method": "Map each active branch speed at the K0 heat-sign endpoints through the K>0 pressure law. The minimum lower mapping and maximum upper mapping enclose the root by coordinatewise thermal monotonicity.",
+  "scope": "Independent analytic bounds conditional on the K0 brackets and the verified discrete thermal monotonicity; no physical uncertainty interpretation.",
+  "rows": [
+    {
+      "design": "n16_t860",
+      "K": 1,
+      "independent_lower_Pa": 57.06387799623562,
+      "independent_upper_Pa": 57.08501556797657,
+      "bound_width_Pa": 0.02113757174095099,
+      "reported_root_Pa": 57.065136149020915,
+      "whole_reported_bracket_within_bound": true
+    },
+    {
+      "design": "n16_t860",
+      "K": 2,
+      "independent_lower_Pa": 72.35659914319217,
+      "independent_upper_Pa": 72.39867428667407,
+      "bound_width_Pa": 0.04207514348189534,
+      "reported_root_Pa": 72.35901517992757,
+      "whole_reported_bracket_within_bound": true
+    },
+    {
+      "design": "n16_t600",
+      "K": 1,
+      "independent_lower_Pa": 42.83794628670363,
+      "independent_upper_Pa": 49.4711743656253,
+      "bound_width_Pa": 6.633228078921675,
+      "reported_root_Pa": 49.045834589664125,
+      "whole_reported_bracket_within_bound": true
+    },
+    {
+      "design": "n16_t600",
+      "K": 2,
+      "independent_lower_Pa": 52.4985602045771,
+      "independent_upper_Pa": 65.76481636242045,
+      "bound_width_Pa": 13.266256157843344,
+      "reported_root_Pa": 64.87573079352079,
+      "whole_reported_bracket_within_bound": true
+    }
+  ],
+  "new_thermal_solves": 0,
+  "new_Poisson_solves": 0,
+  "review_code_sha256": "22a10c0f1bbeabc176150db00ecfa44599da62f4f383049daef70cb9cf78ea47"
+}

@@ -1,0 +1,283 @@
+{
+  "status": "approximate_vector_figure_readout_not_raw_data",
+  "source_url": "https://zenodo.org/records/10975619/files/8.%20343222.pdf?download=1",
+  "source_sha256": "c14571f635c5767ae3fc57f90fb18514595a54dc53918bc7454da084839c5a01",
+  "pdf_page_1based": 9,
+  "printed_page": 94,
+  "source_figure_ids": [
+    "Figure7 plate-fin black-square series",
+    "Figure8 plate-fin black-square series"
+  ],
+  "extractor_sha256": "ccfaa374ca2f4bc7f1a9ee2c2c0270b3c3e335006ca7a177f2872ef7ec0d6fdb",
+  "method": "Direct filled-square centers and axis tick positions from vector paths; linear axis mapping; curve paths explicitly excluded",
+  "readout_uncertainty_policy": "Conservative half-symbol-width/height envelopes, separate from experimental uncertainty; these are graphical readout allowances, not confidence intervals",
+  "warning": "12 plate-fin symbols recovered in each figure; text says13 tests. No missing point is invented. Run identity and per-run inputs absent.",
+  "figure8_Rth": [
+    {
+      "drawing_index": 150,
+      "center_pdf_points": [
+        359.7431182861328,
+        258.230224609375
+      ],
+      "V_channel_inferred_m_s": 4.369970612080595,
+      "Rth_K_W": 0.8829677297552696,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      }
+    },
+    {
+      "drawing_index": 151,
+      "center_pdf_points": [
+        377.59922790527344,
+        284.69635009765625
+      ],
+      "V_channel_inferred_m_s": 6.354788172917206,
+      "Rth_K_W": 0.7293341543058922,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 152,
+      "center_pdf_points": [
+        395.6068420410156,
+        300.12017822265625
+      ],
+      "V_channel_inferred_m_s": 8.356446402382694,
+      "Rth_K_W": 0.6398001625242223,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 153,
+      "center_pdf_points": [
+        413.3028106689453,
+        311.9474792480469
+      ],
+      "V_channel_inferred_m_s": 10.32346329676145,
+      "Rth_K_W": 0.5711437003136348,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 154,
+      "center_pdf_points": [
+        430.84686279296875,
+        320.4823913574219
+      ],
+      "V_channel_inferred_m_s": 12.273593727561888,
+      "Rth_K_W": 0.5215992717538115,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013404907765858828
+      }
+    },
+    {
+      "drawing_index": 155,
+      "center_pdf_points": [
+        446.2719268798828,
+        329.2537841796875
+      ],
+      "V_channel_inferred_m_s": 13.988185468414489,
+      "Rth_K_W": 0.47068209305486064,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 156,
+      "center_pdf_points": [
+        450.9695281982422,
+        330.7396545410156
+      ],
+      "V_channel_inferred_m_s": 14.510353050791688,
+      "Rth_K_W": 0.46205674378089245,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      }
+    },
+    {
+      "drawing_index": 157,
+      "center_pdf_points": [
+        466.31825256347656,
+        336.84747314453125
+      ],
+      "V_channel_inferred_m_s": 16.21645915712417,
+      "Rth_K_W": 0.4266013836576352,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013427583210149488
+      }
+    },
+    {
+      "drawing_index": 158,
+      "center_pdf_points": [
+        476.26231384277344,
+        341.78192138671875
+      ],
+      "V_channel_inferred_m_s": 17.321803371186725,
+      "Rth_K_W": 0.3979573372650934,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 159,
+      "center_pdf_points": [
+        485.66139221191406,
+        346.0875549316406
+      ],
+      "V_channel_inferred_m_s": 18.366569347687694,
+      "Rth_K_W": 0.3729635059476223,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      }
+    },
+    {
+      "drawing_index": 160,
+      "center_pdf_points": [
+        493.4900207519531,
+        347.9696044921875
+      ],
+      "V_channel_inferred_m_s": 19.236770065254976,
+      "Rth_K_W": 0.3620383705972373,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      }
+    },
+    {
+      "drawing_index": 161,
+      "center_pdf_points": [
+        506.4085235595703,
+        353.29283142089844
+      ],
+      "V_channel_inferred_m_s": 20.672741941502323,
+      "Rth_K_W": 0.331137497466095,
+      "conservative_graphical_half_symbol_envelope": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013425368811292977
+      }
+    }
+  ],
+  "figure7_Nu": [
+    {
+      "drawing_index": 34,
+      "Re_channel_reduced": 839.4469396327424,
+      "Nu_inlet_reduced_with_fin_efficiency": 3.8019388202001148,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.65976820582157,
+        "Nu": 0.25982212040561936
+      }
+    },
+    {
+      "drawing_index": 35,
+      "Re_channel_reduced": 1227.7241268886191,
+      "Nu_inlet_reduced_with_fin_efficiency": 4.612197217262406,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.66830892494355,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 36,
+      "Re_channel_reduced": 1603.982551404688,
+      "Nu_inlet_reduced_with_fin_efficiency": 5.273250682208672,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.66830892494355,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 37,
+      "Re_channel_reduced": 1947.6047529758891,
+      "Nu_inlet_reduced_with_fin_efficiency": 5.916330896472728,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.74566813083687,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 38,
+      "Re_channel_reduced": 2344.481294675411,
+      "Nu_inlet_reduced_with_fin_efficiency": 6.497648485665195,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.65976820582157,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 39,
+      "Re_channel_reduced": 2662.313645145603,
+      "Nu_inlet_reduced_with_fin_efficiency": 7.211477108109019,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.66830892494355,
+        "Nu": 0.26021881211467845
+      }
+    },
+    {
+      "drawing_index": 40,
+      "Re_channel_reduced": 2753.4533013422397,
+      "Nu_inlet_reduced_with_fin_efficiency": 7.352489640534986,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.65976820582157,
+        "Nu": 0.25982212040561936
+      }
+    },
+    {
+      "drawing_index": 41,
+      "Re_channel_reduced": 3067.8754412137846,
+      "Nu_inlet_reduced_with_fin_efficiency": 7.9779916113600375,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.74566813083687,
+        "Nu": 0.26021881211467845
+      }
+    },
+    {
+      "drawing_index": 42,
+      "Re_channel_reduced": 3304.9892910175427,
+      "Nu_inlet_reduced_with_fin_efficiency": 8.559749688373817,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.66830892494355,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 43,
+      "Re_channel_reduced": 3536.8540476978515,
+      "Nu_inlet_reduced_with_fin_efficiency": 9.167676784691574,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.66830892494355,
+        "Nu": 0.25977832429336656
+      }
+    },
+    {
+      "drawing_index": 44,
+      "Re_channel_reduced": 3655.4670621301184,
+      "Nu_inlet_reduced_with_fin_efficiency": 9.440317690260418,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.74566813083687,
+        "Nu": 0.25982212040561936
+      }
+    },
+    {
+      "drawing_index": 45,
+      "Re_channel_reduced": 3940.663025410845,
+      "Nu_inlet_reduced_with_fin_efficiency": 10.356919785735943,
+      "conservative_graphical_half_symbol_envelope": {
+        "Re": 50.65960396122307,
+        "Nu": 0.25977832429336656
+      }
+    }
+  ]
+}

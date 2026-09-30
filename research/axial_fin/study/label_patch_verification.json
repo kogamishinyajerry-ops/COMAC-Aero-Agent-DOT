@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "checks": {
+    "all_AST_except_notice_unchanged": true,
+    "half_domain_notice_correct": true,
+    "full_domain_notice_correct": true,
+    "symmetry_unchanged": true
+  },
+  "numerical_run_solver_sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+  "current_solver_sha256": "c38a4306cf95c0d40610cd9bebc1df1f0af5f68f06a876a34e043879b245eade",
+  "scope": "Display-label-only correction after completed numerical refinement; no numerical operation, equation, grid, parameter or tolerance changed",
+  "rows": [
+    {
+      "full_array": false,
+      "notice": "Last sampled fluid channel is half a physical interior channel; its right boundary is symmetry, not a wall.",
+      "G_W_K": 1.0994172561081719
+    },
+    {
+      "full_array": true,
+      "notice": "Last sampled fluid channel is the right-side full clearance channel; its right boundary is the duct wall.",
+      "G_W_K": 1.0994172561081719
+    }
+  ],
+  "reviewable_diff": [
+    "--- axial_fin_numerical_run.py\n",
+    "+++ axial_fin.py\n",
+    "@@ -77,7 +77,7 @@\n",
+    "         for fi in [0,len(self.model.fins)-1]:",
+    "             ids=np.arange(fi*self.ny,(fi+1)*self.ny);fins.append({'fin_index_from_side':fi,'normalized_T':(1-self.solid[np.ix_(zi,ids[yi])]).tolist()})",
+    "         combined=np.r_[self.fluid_outlet,self.solid[-1]];fluid=self.model.sample(combined,base.L)['channels']",
+    "-        return {'normalization':'(T-Tin)/(Tb-Tin)','solid_z_slab_centres_m':((zi+.5)*self.dz).tolist(),'solid_y_cell_centres_m':((yi+.5)*self.model.dy).tolist(),'fins':fins,'fluid_outgoing_face_z_m':base.L,'fluid_outlet_is_first_order_upwind_face_state':True,'fluid_outlet_channels':fluid,'central_channel_notice':'Last sampled fluid channel is half a physical interior channel; its right boundary is symmetry, not a wall.'}",
+    "+        return {'normalization':'(T-Tin)/(Tb-Tin)','solid_z_slab_centres_m':((zi+.5)*self.dz).tolist(),'solid_y_cell_centres_m':((yi+.5)*self.model.dy).tolist(),'fins':fins,'fluid_outgoing_face_z_m':base.L,'fluid_outlet_is_first_order_upwind_face_state':True,'fluid_outlet_channels':fluid,'central_channel_notice':('Last sampled fluid channel is the right-side full clearance channel; its right boundary is the duct wall.' if self.full else 'Last sampled fluid channel is half a physical interior channel; its right boundary is symmetry, not a wall.')}",
+    " ",
+    " def main():",
+    "     p=argparse.ArgumentParser();p.add_argument('--nx',type=int,default=12);p.add_argument('--ny',type=int,default=36);p.add_argument('--nz',type=int,default=120);p.add_argument('--speed',type=float,default=4.);p.add_argument('--lambda-z',type=float,default=1.);p.add_argument('--output',type=pathlib.Path,required=True);a=p.parse_args()"
+  ],
+  "physical_validation_pass": null
+}

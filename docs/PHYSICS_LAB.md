@@ -1,0 +1,73 @@
+# Physics evidence: an explanation with separate source, numerical and design evidence
+
+Run `python -m aerolab serve`, then open `http://127.0.0.1:8765/physics`. The nacelle navigation also links to this page. No API key, network request or third-party runtime package is required. The page is served only by the existing local-loopback application.
+
+The page answers three engineering questions without conflating their evidence:
+
+1. **Where is the air going?** Published CFD stations constrain effective flow areas. An initial-climb-only conditional conductance fit is checked retrospectively against cruise and dash, including table-rounding intervals. This is source/model discrepancy analysis
+2. **What is the cooling passage?** A historical 2 × 17 × 105 mm heat-sink unit cell is compared with the current broad passage at matched area, velocity, length and heating boundary. This is an explicitly hypothetical component-scale comparison, not a replacement of final-2023 CAD
+3. **How do the walls exchange heat through the air?** A finite-volume parallel-plate solution exposes asymmetric thermal coupling. This is a verified numerical subproblem, not turbulent rotating-motor CFD or an experimental validation
+
+## What is newly computed?
+
+`POST /api/physics/evaluate` accepts only an optional `case` selected from `asymmetric`, `equal`, `one_wall`, `balanced`, `reversed` and `zero_flow`. The server rejects all other parameters, preserves same-origin/one-calculation-at-a-time safeguards, and bounds its response below 100,000 bytes.
+
+The source audit, historical arithmetic and chosen finite-volume case are computed in that process. The spatial fluid-cell samples, wall temperatures, outlet bulk temperature, residuals and input fingerprint are returned from the solver. The graphic uses those samples, not a painted field. Its displayed cell patches are a downsampled representation rather than a CFD mesh. Flow reversal changes physical inlet/outlet coordinates. Zero forced flow with heat returns a no-steady-state status and no plotted temperatures.
+
+The grid-convergence and independent spectral-reference comparisons are a **saved verification record**. Before displaying their status, the server checks the numerical-model and reference-generator source fingerprints and all saved acceptance gates. A stale record causes an explicit error, not a pass badge. CI additionally regenerates and compares the complete record.
+
+## Interaction and evidence
+
+- Keyboard-accessible tabs support Left/Right, Home/End and browser Back/Forward
+- A new calculation temporarily disables repeat actions and exports
+- Cancelling or encountering an error retains the previous result with an explicit old-result label; it does not relabel the old temperature as the newly requested case
+- Navigating away aborts the wait and does not leave a restored page permanently busy
+- Native JSON download contains the actually displayed case, source identities and limitations; the filename binds its input hash
+- Desktop/mobile browser tests exercise all six cases, failure/cancellation, export identity, navigation and overflow, and save actual Chromium screenshots
+
+## Verification commands
+
+```sh
+python -m unittest discover -s tests -v
+python scripts/generate_source_audit.py --check
+python scripts/generate_duct_verification.py --check
+python scripts/generate_historical_motor.py --check
+python scripts/generate_nacelle_evidence.py --check
+python scripts/generate_nacelle_credibility.py --check
+python tests/ui_physics_smoke.py
+```
+
+The last command needs an authorized Playwright/Chromium environment. A blocked or never-run browser test is not a pass. The project CI runs it alongside the existing mission, CAD and nacelle browser tests. Acceptance belongs to the exact published commit and its CI/pixel review, not merely this document.
+
+## Scientific limits that stay visible
+
+Full-load X-57 temperature validation remains unresolved. The current nacelle CAD and thermal model are unchanged by this page. No fitted coefficient, historical material assumption, effective channel count or laminar correlation is transferred into the production nacelle model. No actual fin count, final motor dimensions, physical uncertainty interval or airworthiness margin is newly asserted.
+
+Further work needs final-configuration passage geometry/face exposure, directional winding and potting/contact properties, component-node definitions, and matched test boundaries with pressure, flow and temperature measurements. Useful public subproblems can be verified while those aircraft-level gaps remain open.
+
+Details: [source audit](NACELLE_SOURCE_AUDIT.md), [historical unit-cell benchmark](HISTORICAL_MOTOR_BENCHMARK.md), [finite-volume formulation](DUCT_SUBMODEL.md), [physics research and independent references](research/NACELLE_THERMAL_PHYSICS_AUDIT_2026-09-30.md).
+
+## Public component experiments
+
+The linked `/experiments` page consolidates two untuned component comparisons: all 32 historical rectangular-duct records and all 12 recoverable modern plate-fin graph markers. These are separately labeled, integrity-checked saved research replays. They retain discrepancies, missing data, numerical failures and physical applicability limits. See [experimental comparisons](EXPERIMENTAL_COMPARISONS.md) for equations, uncertainty distinctions, reproducibility and browser-acceptance requirements.
+
+## Synthetic component design tradeoff
+
+The fourth tab at `/physics#tradeoff` links the verified pressure-driven fin study to an explicit synthetic design screen. It selects one of nine saved geometries, four fault states and three heat-load presets. The declared60W combined-fault criterion stays fixed when the preview load changes; all nine points remain in the fixed60W scatter. Fin-only mass, required uniform-base temperature, channel flow and heat-rejection shortfall are shown together. The lighter scoped Pareto point remains a combined-fault failure.
+
+`GET /api/physics/tradeoff` is an integrity-checked saved replay, separate from the live calculations. It rejects unrecognized selections and stale evidence. The reader consumes one verified byte snapshot and binds its native export to the selected geometry, case and load. Optional scientific reruns write to a new ignored directory and leave accepted evidence untouched.
+
+The source study and scope are preserved under `research/pressure_fin/` and `examples/pressure_fin_tradeoff/`. See [the concise demonstration route](ENGINEERING_DEMO_RUNBOOK.md) for the intended user journey. Actual browser acceptance still belongs to the exact published commit.
+
+## Conditional pressure-requirement appendix
+
+The [offline pressure appendix](../research/pressure_requirement/README.md) asks a narrower follow-up: with the same two 16-fin geometries, what nominal mechanical pressure-loss budget P makes the combined condition at 0.6P reject 60 W at an 85°C uniform base and 25°C inlet? The original 25/15 Pa screen remains a failure. The added aggregate end-loss coefficients K=0,1,2 are illustrative model scenarios, not measured uncertainty bounds.
+
+| Geometry | Required nominal P, K=0 | K=1 | K=2 |
+|---|---:|---:|---:|
+| 16 fins × 0.86 mm | 41.77 Pa | 57.07 Pa | 72.36 Pa |
+| 16 fins × 0.60 mm | 33.18 Pa | 49.05 Pa | 64.88 Pa |
+
+These are zero-headroom roots of the declared component equations, not installed pressure specifications or engineering margins. The combined pressure is 0.6 times each table value. Eighteen mesh-root brackets and six separately computed hydraulic/accepted-thermal reproductions passed; maximum spatial and axial root shifts were 0.0882% and 0.0430%. Those shifts and the narrow numerical brackets are not physical uncertainty. The initial 180-solve incomplete phase, separate 11-solve continuation and documented procedural exceptions remain preserved.
+
+The pressure source's electrical power, total installation mass, structural limits, actual entry flow and real loss coefficients remain unresolved. The [measurement and validation plan](VALIDATION_PLAN.md) separates a proposed component bench test from the full-load X-57 gap, and keeps hydraulic calibration, same-pressure fault checks and heated holdouts distinct. This appendix adds no main application page and changes none of the original screen's requirements or outcomes.

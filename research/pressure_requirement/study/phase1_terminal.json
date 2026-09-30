@@ -1,0 +1,222 @@
+{
+  "status": "primary_phase_stopped_at_exact_predeclared_180_thermal_solve_limit",
+  "recorded_utc": "2026-09-30T21:13:30.705529+00:00",
+  "primary_thermal_solves": 180,
+  "reviewer_thermal_solves": 0,
+  "completed_roots": [
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "roots_Pa": {
+        "main": 41.77125684927908,
+        "spatial": 41.803478703622865,
+        "axial": 41.758831108271266
+      },
+      "completed_root_brackets": 3
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "roots_Pa": {
+        "main": 57.065136149020915,
+        "spatial": 57.10589708577547,
+        "axial": 57.04358796537199
+      },
+      "completed_root_brackets": 3
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "roots_Pa": {
+        "main": 72.35901517992757,
+        "spatial": 72.40831522027477
+      },
+      "completed_root_brackets": 2
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "roots_Pa": {
+        "main": 33.17743236883015,
+        "spatial": 33.20668104115826,
+        "axial": 33.16785243000583
+      },
+      "completed_root_brackets": 3
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "roots_Pa": {
+        "main": 49.045834589664125,
+        "spatial": 49.08775543387535,
+        "axial": 49.02708060374854
+      },
+      "completed_root_brackets": 3
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "roots_Pa": {
+        "main": 64.87573079352079,
+        "spatial": 64.93028351095934
+      },
+      "completed_root_brackets": 2
+    }
+  ],
+  "completed_root_bracket_count": 16,
+  "outstanding_refined_roots": [
+    {
+      "design_id": "n16_t860",
+      "thermal_solve_count": 90,
+      "retained_case_status": "failed_or_resource_limited",
+      "retained_error": "predeclared thermal-solve resource cap reached",
+      "outstanding": "n16_t860:K2:axial",
+      "last_axial_evaluations": [
+        {
+          "file": "runs/n16_t860/K2_48_144_1600_combined_086.json",
+          "nominal_P_Pa": 72.35901517992757,
+          "capacity_W": 60.009004402338554,
+          "residual_W": 0.009004402338554485,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t860/K2_48_144_1600_combined_087.json",
+          "nominal_P_Pa": 71.6354250281283,
+          "capacity_W": 59.795268562945914,
+          "residual_W": -0.20473143705408603,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t860/K2_48_144_1600_combined_088.json",
+          "nominal_P_Pa": 73.08260533172684,
+          "capacity_W": 60.22042814028515,
+          "residual_W": 0.22042814028515068,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t860/K2_48_144_1600_combined_089.json",
+          "nominal_P_Pa": 72.33230055210524,
+          "capacity_W": 60.001154771512226,
+          "residual_W": 0.0011547715122262048,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t860/K2_48_144_1600_combined_090.json",
+          "nominal_P_Pa": 72.3283919270047,
+          "capacity_W": 60.000006025289764,
+          "residual_W": 6.025289764011177e-06,
+          "all_numerical_gates_pass": true
+        }
+      ],
+      "remaining_work": "Finish unchanged Brent root routine and evaluate the fine sign bracket; direct near-root evaluation retained but no completed axial root acceptance."
+    },
+    {
+      "design_id": "n16_t600",
+      "thermal_solve_count": 90,
+      "retained_case_status": "failed_or_resource_limited",
+      "retained_error": "predeclared thermal-solve resource cap reached",
+      "outstanding": "n16_t600:K2:axial",
+      "last_axial_evaluations": [
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_085.json",
+          "nominal_P_Pa": 64.87573079352079,
+          "capacity_W": 60.007724601051976,
+          "residual_W": 0.00772460105197581,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_086.json",
+          "nominal_P_Pa": 64.22697348558557,
+          "capacity_W": 59.8270522990027,
+          "residual_W": -0.17294770099729817,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_087.json",
+          "nominal_P_Pa": 65.524488101456,
+          "capacity_W": 60.186489473833845,
+          "residual_W": 0.18648947383384495,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_088.json",
+          "nominal_P_Pa": 64.85128890296166,
+          "capacity_W": 60.00095261894033,
+          "residual_W": 0.0009526189403317176,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_089.json",
+          "nominal_P_Pa": 64.84786892827991,
+          "capacity_W": 60.000004849065895,
+          "residual_W": 4.849065895484728e-06,
+          "all_numerical_gates_pass": true
+        },
+        {
+          "file": "runs/n16_t600/K2_48_144_1600_combined_090.json",
+          "nominal_P_Pa": 64.84784392824749,
+          "capacity_W": 59.99999792066768,
+          "residual_W": -2.079332318771776e-06,
+          "all_numerical_gates_pass": true
+        }
+      ],
+      "remaining_work": "Finish unchanged Brent root routine and evaluate the fine sign bracket; direct near-root evaluation retained but no completed axial root acceptance."
+    }
+  ],
+  "independent_main_root_reproductions_outstanding": 6,
+  "proposed_separate_continuation": {
+    "estimated_new_primary_thermal_solves": 5,
+    "maximum_new_primary_thermal_solves": 8,
+    "independent_review_thermal_solves": 6,
+    "maximum_total_new_thermal_solves": 14,
+    "soft_wall_time_minutes": 20,
+    "max_numerical_processes": 2,
+    "scope": "Only complete the two existing K2 axial roots and independently reproduce the six existing main roots; no physics, threshold, tolerance, geometry or scenario changes.",
+    "remaining_evaluation_units": [
+      {
+        "case": "n16_t860:K2:axial",
+        "mesh": [
+          48,
+          144,
+          1600
+        ],
+        "work": [
+          "Finish the existing fine-tolerance Brent termination, estimated one evaluation",
+          "Evaluate both final fine-bracket endpoints, two evaluations"
+        ],
+        "estimated_evaluations": 3
+      },
+      {
+        "case": "n16_t600:K2:axial",
+        "mesh": [
+          48,
+          144,
+          1600
+        ],
+        "work": [
+          "Evaluate the final fine-bracket lower and upper endpoints around the cached returned root64.84784392824749Pa"
+        ],
+        "estimated_evaluations": 2
+      },
+      {
+        "case": "six existing main roots",
+        "mesh": [
+          48,
+          144,
+          800
+        ],
+        "work": [
+          "One independent thermal reproduction per declared geometry/K root"
+        ],
+        "estimated_evaluations": 6
+      }
+    ]
+  },
+  "original_accepted_sources_unchanged": true,
+  "repository_state_observed_at_terminal": {
+    "initial_checkpoint": "1e95e2ac579e8f0d84293d3ac570aaf7cddb21d1",
+    "observed_HEAD": "d3221a3b7f8f34d09f348419adfad1bf3a301c7e",
+    "status_porcelain": " M README.md\n M docs/EXPERIMENTAL_COMPARISONS.md\n?? START_HERE.md\n?? docs/VALIDATION_PLAN.md\n",
+    "interpretation": "Concurrent repository work outside this study; study writes confined to ignored output directory. All declared accepted-input hashes unchanged. Original checkpoint/worktree gates remain recorded as false."
+  }
+}

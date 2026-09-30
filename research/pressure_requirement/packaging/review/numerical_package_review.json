@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-09-30T21:51:43.119204+00:00",
+  "checks": {
+    "six_cases_only": true,
+    "zero_root_searches": true,
+    "correct_new_pin": true,
+    "source_snapshot_unchanged": true,
+    "all_reported_pass": true,
+    "no_physical_validation_claim": true,
+    "all_case_checks": true,
+    "all_output_JSON_below100KB": true,
+    "no_bytecode_logs_PDF_or_full_arrays": true,
+    "old_failure_preserved": true,
+    "scientific_phases_still191": true
+  },
+  "rows": [
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t860_K0.json",
+      "sha256": "7be9c6598629dbf7da6e42e53d61ab91f9a697fd56a4b43a10ebaf32235f706f"
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t860_K1.json",
+      "sha256": "a812917b4015da6f865e7c35adefa9a9aa211d5904f32d90018d7958f8a6d779"
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t860_K2.json",
+      "sha256": "2924416ba2ac6f4a6db12aa671df1a6f085d501b552be725e4126cacbcd88bee"
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t600_K0.json",
+      "sha256": "0ee00b6cbb535d395872488c67494dfe491db04d82332d1a74aa5735bf0d4b40"
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t600_K1.json",
+      "sha256": "f395dc2000d8808896d3f5a79f15d2565d7ddc36782f15070978410e56c973f9"
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "checks": {
+        "all_scalar_difference_records_correct": true,
+        "all_scalar_values_reproduced_exactly": true,
+        "original_numeric_gates_pass": true,
+        "six_known_geometry_loss_pairs": true,
+        "main_mesh": true,
+        "blocked_branch_1": true,
+        "pressure_relation": true,
+        "sealed_enthalpy_zero": true,
+        "root_residual": true
+      },
+      "max_absolute_scalar_difference": 0.0,
+      "file": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/case_n16_t600_K2.json",
+      "sha256": "ba38a924e1d7f24d9cd0421cb5e86ad510f825a28e8cda09416b38b67013e2d2"
+    }
+  ],
+  "package_pin": "384a5816d373a7344c569322fb789eb642583e296c105a493d68c6187240aa1a",
+  "successful_package_replay_thermal_solves": 6,
+  "failed_package_replay_thermal_solves": 1,
+  "package_verification_total_thermal_solves": 7,
+  "scientific_phase_total_unchanged": 191,
+  "elapsed_worker_seconds": 113.05245142600324,
+  "replay_report": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/replay_report.json",
+  "replay_report_sha256": "89eac7842956b22788ca1c9dd55f2315d6785ab933bc45397b6b55dede127bbc",
+  "numerical_report": "fixtures_v3/relocation/deeper/offline/output/independent_six_case_replay/results/numerical_replay.json",
+  "numerical_report_sha256": "879ad9b135823a9cc6b7cf2cbb023b02dc157a32b57f3265bef4fe00557c5665",
+  "scope": "Portable wrapper reproduction verification; no new scientific scenario, root search or physical validation"
+}

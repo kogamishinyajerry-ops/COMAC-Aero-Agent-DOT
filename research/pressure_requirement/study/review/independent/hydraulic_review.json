@@ -1,0 +1,1383 @@
+{
+  "status": "passed",
+  "checks": {
+    "stable_formula_matches_scalar_root": true,
+    "pressure_closure": true,
+    "raw_vs_exact_flow": true,
+    "conservative_peak_exceeds_sampled": true,
+    "doubling_law": true
+  },
+  "rows": [
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 0,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 70.35348153144102,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.3381818646650534,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011262812412344836,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 490.3808489503385,
+          "Mach_conservative_bound": 0.01128538373562109
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.896969774441756,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0011262812412347056,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 817.3014149172308,
+          "Mach_conservative_bound": 0.01880897289270182
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.793939548883512,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0011262812412347056,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1634.6028298344615,
+          "Mach_conservative_bound": 0.03761794578540364
+        },
+        {
+          "pressure_Pa": 70.28312804990958,
+          "mean_speed_m_s": 10.955649026548686,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011262812412344836,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000003,
+          "Mach_conservative_bound": 0.0528781380122016
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 1,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 142.75401003485547,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9729211423377955,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.000822029918374767,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.7822211022476988,
+          "Re": 413.7756601881233,
+          "Mach_conservative_bound": 0.009522429588509122
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0334691130929157,
+          "stable_root_relative": 6.661338147750939e-16,
+          "raw_vs_exact_flow_relative": 0.0007177828265065855,
+          "pressure_closure_relative": -1.1102230246251565e-15,
+          "double_pressure_speed_ratio": 1.7236277939471363,
+          "Re": 636.2016494196988,
+          "Mach_conservative_bound": 0.014641231936982692
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.228571675407118,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005685390640626231,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6482849965207622,
+          "Re": 1096.574845494805,
+          "Mach_conservative_bound": 0.02523603430420984
+        },
+        {
+          "pressure_Pa": 142.61125602482062,
+          "mean_speed_m_s": 10.959337719723258,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.000368493450462859,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5585928523593762,
+          "Re": 2298.473620101071,
+          "Mach_conservative_bound": 0.0528959417248157
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 2,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 215.15453853826995,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.7580908464724938,
+          "stable_root_relative": 1.3988810110276972e-14,
+          "raw_vs_exact_flow_relative": 0.0006786108696441584,
+          "pressure_closure_relative": -1.7541523789077473e-14,
+          "double_pressure_speed_ratio": 1.702986562480069,
+          "Re": 368.7198565918661,
+          "Mach_conservative_bound": 0.008485537478654253
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.614285837703559,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005685390640626231,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6482849965207622,
+          "Re": 548.2874227474025,
+          "Mach_conservative_bound": 0.01261801715210492
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.309088122903489,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0004303555467837228,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5852112125351,
+          "Re": 903.73393269558,
+          "Mach_conservative_bound": 0.020798088357656175
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.496812478939502,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.000228010902152187,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.501084262270614,
+          "Re": 2201.4693948677227,
+          "Mach_conservative_bound": 0.050663534182640635
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 0,
+      "raw_mean_m2": 2.5589406210035224e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.4196003084892945,
+      "sampled_peak_factor": 1.6703936318945174,
+      "conservative_peak_factor": 1.6706297079084658,
+      "branch_scope_pressure_limit_Pa": 70.4230977124265,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.336594068039402,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0011263680973909729,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 489.89608694694374,
+          "Mach_conservative_bound": 0.011277251591236874
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.8943234467323364,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011263680973909729,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 816.4934782449061,
+          "Mach_conservative_bound": 0.01879541931872812
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.788646893464673,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011263680973909729,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1632.9869564898122,
+          "Mach_conservative_bound": 0.03759083863745624
+        },
+        {
+          "pressure_Pa": 70.35267461471408,
+          "mean_speed_m_s": 10.959042811696476,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0011263680973909729,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000007,
+          "Mach_conservative_bound": 0.05289232078310362
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 1,
+      "raw_mean_m2": 2.5589406210035224e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.4196003084892945,
+      "sampled_peak_factor": 1.6703936318945174,
+      "conservative_peak_factor": 1.6706297079084658,
+      "branch_scope_pressure_limit_Pa": 142.86848889725985,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9719431675423005,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0008223542471068601,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.7823752565757596,
+          "Re": 413.4424779531042,
+          "Mach_conservative_bound": 0.009517313909238295
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0321560458768158,
+          "stable_root_relative": 6.661338147750939e-16,
+          "raw_vs_exact_flow_relative": 0.000718127765395371,
+          "pressure_closure_relative": -9.992007221626409e-16,
+          "double_pressure_speed_ratio": 1.7237829397580744,
+          "Re": 635.7293302272136,
+          "Mach_conservative_bound": 0.014634286314838922
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.226778862566756,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005688707847741892,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6484223729239973,
+          "Re": 1095.859373749498,
+          "Mach_conservative_bound": 0.025226333085054398
+        },
+        {
+          "pressure_Pa": 142.7256204083626,
+          "mean_speed_m_s": 10.96273220139811,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0003686135352152231,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.558631648265819,
+          "Re": 2298.4735265627764,
+          "Mach_conservative_bound": 0.05291012711773939
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 2,
+      "raw_mean_m2": 2.5589406210035224e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.4196003084892945,
+      "sampled_peak_factor": 1.6703936318945174,
+      "conservative_peak_factor": 1.6706297079084658,
+      "branch_scope_pressure_limit_Pa": 215.3138800820932,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.757371354600478,
+          "stable_root_relative": 1.3766765505351941e-14,
+          "raw_vs_exact_flow_relative": 0.0006789568782237243,
+          "pressure_closure_relative": -1.7208456881689926e-14,
+          "double_pressure_speed_ratio": 1.703138807830794,
+          "Re": 368.45482136048383,
+          "Mach_conservative_bound": 0.008481712410445163
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.613389431283378,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005688707847741892,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6484223729239973,
+          "Re": 547.929686874749,
+          "Mach_conservative_bound": 0.012613166542527199
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.307969607690642,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00043063848953917017,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.58532050565555,
+          "Re": 903.2195546335766,
+          "Mach_conservative_bound": 0.020791825922118253
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.495368694334541,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00022817709505185135,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.501143220202128,
+          "Re": 2200.484938633013,
+          "Mach_conservative_bound": 0.050654461092642815
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 0,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 70.38810183165735,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.337031832827163,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 490.1396557405598,
+          "Mach_conservative_bound": 0.011285383735621091
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.895053054711938,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 816.8994262342663,
+          "Mach_conservative_bound": 0.01880897289270182
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.790106109423876,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1633.7988524685327,
+          "Mach_conservative_bound": 0.03761794578540364
+        },
+        {
+          "pressure_Pa": 70.3177137298257,
+          "mean_speed_m_s": 10.955649026548688,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000007,
+          "Mach_conservative_bound": 0.052904158856842326
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 1,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 142.78863033507182,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9722128498073468,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0004627277887114811,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.7823327470513433,
+          "Re": 413.62711182341496,
+          "Mach_conservative_bound": 0.009523695187101375
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0325181513492154,
+          "stable_root_relative": 8.881784197001252e-16,
+          "raw_vs_exact_flow_relative": 0.00040406796994152394,
+          "pressure_closure_relative": -1.1102230246251565e-15,
+          "double_pressure_speed_ratio": 1.7237401530551455,
+          "Re": 636.0022066670874,
+          "Mach_conservative_bound": 0.01464384461627621
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.227273302349204,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00032007517863319457,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6483844832020813,
+          "Re": 1096.3025410637358,
+          "Mach_conservative_bound": 0.025242182960175726
+        },
+        {
+          "pressure_Pa": 142.64584170473674,
+          "mean_speed_m_s": 10.9593371260097,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0002074479780997951,
+          "pressure_closure_relative": -2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.5586444978043044,
+          "Re": 2298.4734955830586,
+          "Mach_conservative_bound": 0.05292196846349295
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 2,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 215.18915883848626,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.7575697731835096,
+          "stable_root_relative": 1.3988810110276972e-14,
+          "raw_vs_exact_flow_relative": 0.0003820238667435749,
+          "pressure_closure_relative": -1.7319479184152442e-14,
+          "double_pressure_speed_ratio": 1.7030968198581993,
+          "Re": 368.6105732355631,
+          "Mach_conservative_bound": 0.00848719690245286
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.613636651174602,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00032007517863319457,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6483844832020813,
+          "Re": 548.1512705318679,
+          "Mach_conservative_bound": 0.012621091480087863
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.308278100524465,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00024229465001512906,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5852903597869343,
+          "Re": 903.5640487922373,
+          "Mach_conservative_bound": 0.020804411356850825
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.495766926198312,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0001283815012544931,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5011269572913506,
+          "Re": 2201.250113789294,
+          "Mach_conservative_bound": 0.05068341633091832
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 0,
+      "raw_mean_m2": 2.5576819130872267e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.422759576139585,
+      "sampled_peak_factor": 1.671216586772407,
+      "conservative_peak_factor": 1.6714518722392933,
+      "branch_scope_pressure_limit_Pa": 70.45775491906628,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.3354447293535134,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006339277201530269,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 489.65511375759297,
+          "Mach_conservative_bound": 0.011277251591236874
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.892407882255856,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0006339277201530269,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 816.0918562626549,
+          "Mach_conservative_bound": 0.01879541931872812
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.784815764511712,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0006339277201530269,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1632.1837125253098,
+          "Mach_conservative_bound": 0.03759083863745624
+        },
+        {
+          "pressure_Pa": 70.38729716414721,
+          "mean_speed_m_s": 10.959042811696474,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006339277201530269,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000003,
+          "Mach_conservative_bound": 0.05291835059648278
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 1,
+      "raw_mean_m2": 2.5576819130872267e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.422759576139585,
+      "sampled_peak_factor": 1.671216586772407,
+      "conservative_peak_factor": 1.6714518722392933,
+      "branch_scope_pressure_limit_Pa": 142.90314610389964,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9712349473567183,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0004629105242215381,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.7824868940826992,
+          "Re": 413.29399075870475,
+          "Mach_conservative_bound": 0.009518577839747858
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0312050397414216,
+          "stable_root_relative": 8.881784197001252e-16,
+          "raw_vs_exact_flow_relative": 0.0004042622964333109,
+          "pressure_closure_relative": -1.1102230246251565e-15,
+          "double_pressure_speed_ratio": 1.723895318851962,
+          "Re": 635.5299399305571,
+          "Mach_conservative_bound": 0.014636896102975526
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.225480178490712,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00032026205392088336,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6485219029426246,
+          "Re": 1095.5870884365563,
+          "Mach_conservative_bound": 0.025232476674442037
+        },
+        {
+          "pressure_Pa": 142.76024295779575,
+          "mean_speed_m_s": 10.962731607379377,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0002075156774994369,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5586833066889676,
+          "Re": 2298.473402019341,
+          "Mach_conservative_bound": 0.05293616282576054
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.86,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 2,
+      "raw_mean_m2": 2.5576819130872267e-07,
+      "exact_mean_m2": 2.556061554813213e-07,
+      "linear_resistance_Pa_s_m": 6.422759576139585,
+      "sampled_peak_factor": 1.671216586772407,
+      "conservative_peak_factor": 1.6714518722392933,
+      "branch_scope_pressure_limit_Pa": 215.34853728873298,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.7568502294105413,
+          "stable_root_relative": 1.354472090042691e-14,
+          "raw_vs_exact_flow_relative": 0.0003822187926141307,
+          "pressure_closure_relative": -1.6986412276764895e-14,
+          "double_pressure_speed_ratio": 1.7032490933066602,
+          "Re": 368.3455609652566,
+          "Mach_conservative_bound": 0.00848337012482812
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.612740089245356,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00032026205392088336,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6485219029426246,
+          "Re": 547.7935442182782,
+          "Mach_conservative_bound": 0.012616238337221019
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.307159263817237,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00024245405174294632,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5853997003310176,
+          "Re": 903.0496559344006,
+          "Mach_conservative_bound": 0.020798145231653284
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.494322524241387,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00012847513739000505,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.5011859465306927,
+          "Re": 2200.265596025785,
+          "Mach_conservative_bound": 0.05067433791002813
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 0,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 70.35348153144102,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.3381818646650534,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011262812412344836,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 490.3808489503385,
+          "Mach_conservative_bound": 0.01128538373562109
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.896969774441756,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0011262812412347056,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 817.3014149172308,
+          "Mach_conservative_bound": 0.01880897289270182
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.793939548883512,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0011262812412347056,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1634.6028298344615,
+          "Mach_conservative_bound": 0.03761794578540364
+        },
+        {
+          "pressure_Pa": 70.28312804990958,
+          "mean_speed_m_s": 10.955649026548686,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0011262812412344836,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000003,
+          "Mach_conservative_bound": 0.0528781380122016
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 1,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 142.75401003485547,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9729211423377955,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.000822029918374767,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.7822211022476988,
+          "Re": 413.7756601881233,
+          "Mach_conservative_bound": 0.009522429588509122
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0334691130929157,
+          "stable_root_relative": 6.661338147750939e-16,
+          "raw_vs_exact_flow_relative": 0.0007177828265065855,
+          "pressure_closure_relative": -1.1102230246251565e-15,
+          "double_pressure_speed_ratio": 1.7236277939471363,
+          "Re": 636.2016494196988,
+          "Mach_conservative_bound": 0.014641231936982692
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.228571675407118,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005685390640626231,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6482849965207622,
+          "Re": 1096.574845494805,
+          "Mach_conservative_bound": 0.02523603430420984
+        },
+        {
+          "pressure_Pa": 142.61125602482062,
+          "mean_speed_m_s": 10.959337719723258,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.000368493450462859,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5585928523593762,
+          "Re": 2298.473620101071,
+          "Mach_conservative_bound": 0.0528959417248157
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 0,
+      "K": 2,
+      "raw_mean_m2": 2.5606795098155964e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.415240930007283,
+      "sampled_peak_factor": 1.6704622167329364,
+      "conservative_peak_factor": 1.6706991185742222,
+      "branch_scope_pressure_limit_Pa": 215.15453853826995,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.7580908464724938,
+          "stable_root_relative": 1.3988810110276972e-14,
+          "raw_vs_exact_flow_relative": 0.0006786108696441584,
+          "pressure_closure_relative": -1.7541523789077473e-14,
+          "double_pressure_speed_ratio": 1.702986562480069,
+          "Re": 368.7198565918661,
+          "Mach_conservative_bound": 0.008485537478654253
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.614285837703559,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0005685390640626231,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6482849965207622,
+          "Re": 548.2874227474025,
+          "Mach_conservative_bound": 0.01261801715210492
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.309088122903489,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0004303555467837228,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5852112125351,
+          "Re": 903.73393269558,
+          "Mach_conservative_bound": 0.020798088357656175
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.496812478939502,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.000228010902152187,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.501084262270614,
+          "Re": 2201.4693948677227,
+          "Mach_conservative_bound": 0.050663534182640635
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 0,
+      "raw_mean_m2": 3.325518208997706e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.9397943320692645,
+      "sampled_peak_factor": 1.6991647421753933,
+      "conservative_peak_factor": 1.7000023856711322,
+      "branch_scope_pressure_limit_Pa": 48.116745918380246,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 3.036563668778604,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0010947520310340408,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 717.0060930247001,
+          "Mach_conservative_bound": 0.014913230215995991
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 5.06093944796434,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0010947520310340408,
+          "pressure_closure_relative": -1.1102230246251565e-16,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1195.0101550411666,
+          "Mach_conservative_bound": 0.024855383693326648
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 10.12187889592868,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0010947520310340408,
+          "pressure_closure_relative": -1.1102230246251565e-16,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2390.0203100823333,
+          "Mach_conservative_bound": 0.049710767386653296
+        },
+        {
+          "pressure_Pa": 48.06862917246187,
+          "mean_speed_m_s": 9.73089686353927,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0010947520310340408,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000007,
+          "Mach_conservative_bound": 0.04779056886775098
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 1,
+      "raw_mean_m2": 3.325518208997706e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.9397943320692645,
+      "sampled_peak_factor": 1.6991647421753933,
+      "conservative_peak_factor": 1.7000023856711322,
+      "branch_scope_pressure_limit_Pa": 105.23451731223727,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.3586101194044122,
+          "stable_root_relative": 1.3322676295501878e-15,
+          "raw_vs_exact_flow_relative": 0.0006952237716875143,
+          "pressure_closure_relative": -1.4432899320127035e-15,
+          "double_pressure_speed_ratio": 1.7222718342383605,
+          "Re": 556.9248700663354,
+          "Mach_conservative_bound": 0.011583651632967084
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.5366418085294806,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.0005880232556925158,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.6658909148555014,
+          "Re": 835.0866315217107,
+          "Mach_conservative_bound": 0.017369223647245722
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.891659457927392,
+          "stable_root_relative": 6.439293542825908e-15,
+          "raw_vs_exact_flow_relative": 0.0004494646152803927,
+          "pressure_closure_relative": -8.992806499463768e-15,
+          "double_pressure_speed_ratio": 1.5993689232760635,
+          "Re": 1391.163232569302,
+          "Mach_conservative_bound": 0.02893523187203999
+        },
+        {
+          "pressure_Pa": 105.12928279492503,
+          "mean_speed_m_s": 9.734322313529635,
+          "stable_root_relative": 4.440892098500626e-16,
+          "raw_vs_exact_flow_relative": 0.0003246394817195686,
+          "pressure_closure_relative": -4.440892098500626e-16,
+          "double_pressure_speed_ratio": 1.5441153585422334,
+          "Re": 2298.508831555122,
+          "Mach_conservative_bound": 0.04780739200399045
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        48,
+        144
+      ],
+      "channel": 1,
+      "K": 2,
+      "raw_mean_m2": 3.325518208997706e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.9397943320692645,
+      "sampled_peak_factor": 1.6991647421753933,
+      "conservative_peak_factor": 1.7000023856711322,
+      "branch_scope_pressure_limit_Pa": 162.35228870609427,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.031083888299898,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0005501765197182262,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.6470858418016534,
+          "Re": 479.58800875105413,
+          "Mach_conservative_bound": 0.0099750984725442
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.945829728963696,
+          "stable_root_relative": 6.439293542825908e-15,
+          "raw_vs_exact_flow_relative": 0.0004494646152803927,
+          "pressure_closure_relative": -8.992806499463768e-15,
+          "double_pressure_speed_ratio": 1.5993689232760635,
+          "Re": 695.581616284651,
+          "Mach_conservative_bound": 0.014467615936019996
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.7114685217672845,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00033211371557673175,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5473203833413771,
+          "Re": 1112.4916206878063,
+          "Mach_conservative_bound": 0.02313905532196392
+        },
+        {
+          "pressure_Pa": 162.18993641738817,
+          "mean_speed_m_s": 9.734918527946165,
+          "stable_root_relative": 4.440892098500626e-15,
+          "raw_vs_exact_flow_relative": 0.00019055650919308498,
+          "pressure_closure_relative": -7.327471962526033e-15,
+          "double_pressure_speed_ratio": 1.4884827600346273,
+          "Re": 2298.649612192721,
+          "Mach_conservative_bound": 0.04781032014376346
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 0,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 70.38810183165735,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.337031832827163,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 490.1396557405598,
+          "Mach_conservative_bound": 0.011285383735621091
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.895053054711938,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 816.8994262342663,
+          "Mach_conservative_bound": 0.01880897289270182
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 7.790106109423876,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1633.7988524685327,
+          "Mach_conservative_bound": 0.03761794578540364
+        },
+        {
+          "pressure_Pa": 70.3177137298257,
+          "mean_speed_m_s": 10.955649026548688,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006338785267256952,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000007,
+          "Mach_conservative_bound": 0.052904158856842326
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 1,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 142.78863033507182,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.9722128498073468,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0004627277887114811,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.7823327470513433,
+          "Re": 413.62711182341496,
+          "Mach_conservative_bound": 0.009523695187101375
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.0325181513492154,
+          "stable_root_relative": 8.881784197001252e-16,
+          "raw_vs_exact_flow_relative": 0.00040406796994152394,
+          "pressure_closure_relative": -1.1102230246251565e-15,
+          "double_pressure_speed_ratio": 1.7237401530551455,
+          "Re": 636.0022066670874,
+          "Mach_conservative_bound": 0.01464384461627621
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.227273302349204,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00032007517863319457,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6483844832020813,
+          "Re": 1096.3025410637358,
+          "Mach_conservative_bound": 0.025242182960175726
+        },
+        {
+          "pressure_Pa": 142.64584170473674,
+          "mean_speed_m_s": 10.9593371260097,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0002074479780997951,
+          "pressure_closure_relative": -2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.5586444978043044,
+          "Re": 2298.4734955830586,
+          "Mach_conservative_bound": 0.05292196846349295
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 0,
+      "K": 2,
+      "raw_mean_m2": 2.559420042788063e-07,
+      "exact_mean_m2": 2.557798709110671e-07,
+      "linear_resistance_Pa_s_m": 6.418397810976389,
+      "sampled_peak_factor": 1.6712851448487853,
+      "conservative_peak_factor": 1.671521254221203,
+      "branch_scope_pressure_limit_Pa": 215.18915883848626,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 1.7575697731835096,
+          "stable_root_relative": 1.3988810110276972e-14,
+          "raw_vs_exact_flow_relative": 0.0003820238667435749,
+          "pressure_closure_relative": -1.7319479184152442e-14,
+          "double_pressure_speed_ratio": 1.7030968198581993,
+          "Re": 368.6105732355631,
+          "Mach_conservative_bound": 0.00848719690245286
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.613636651174602,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.00032007517863319457,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6483844832020813,
+          "Re": 548.1512705318679,
+          "Mach_conservative_bound": 0.012621091480087863
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.308278100524465,
+          "stable_root_relative": -2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00024229465001512906,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5852903597869343,
+          "Re": 903.5640487922373,
+          "Mach_conservative_bound": 0.020804411356850825
+        },
+        {
+          "pressure_Pa": 200.0,
+          "mean_speed_m_s": 10.495766926198312,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.0001283815012544931,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.5011269572913506,
+          "Re": 2201.250113789294,
+          "Mach_conservative_bound": 0.05068341633091832
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 0,
+      "raw_mean_m2": 3.3239279723344255e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.942157632995549,
+      "sampled_peak_factor": 1.6999799091658485,
+      "conservative_peak_factor": 1.7008157023686836,
+      "branch_scope_pressure_limit_Pa": 48.13976597600906,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 3.0351116079047795,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006160363909302191,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 716.6632263479103,
+          "Mach_conservative_bound": 0.014913230215995991
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 5.058519346507966,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006160363909302191,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 1194.4387105798503,
+          "Mach_conservative_bound": 0.024855383693326655
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 10.117038693015932,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006160363909302191,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2388.8774211597006,
+          "Mach_conservative_bound": 0.04971076738665331
+        },
+        {
+          "pressure_Pa": 48.09162621003305,
+          "mean_speed_m_s": 9.73089686353927,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0006160363909304412,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 2.0,
+          "Re": 2297.7000000000007,
+          "Mach_conservative_bound": 0.04781343287545664
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 1,
+      "raw_mean_m2": 3.3239279723344255e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.942157632995549,
+      "sampled_peak_factor": 1.6999799091658485,
+      "conservative_peak_factor": 1.7008157023686836,
+      "branch_scope_pressure_limit_Pa": 105.25753736986607,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.3578937908683257,
+          "stable_root_relative": 1.1102230246251565e-15,
+          "raw_vs_exact_flow_relative": 0.00039130472257653537,
+          "pressure_closure_relative": -1.3322676295501878e-15,
+          "double_pressure_speed_ratio": 1.722380973113367,
+          "Re": 556.755727581275,
+          "Mach_conservative_bound": 0.01158567376451813
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 3.535733287172082,
+          "stable_root_relative": -1.1102230246251565e-16,
+          "raw_vs_exact_flow_relative": 0.00033098405344911264,
+          "pressure_closure_relative": 0.0,
+          "double_pressure_speed_ratio": 1.6659917595756764,
+          "Re": 834.8721076651569,
+          "Mach_conservative_bound": 0.017373069364773026
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 5.890502520486107,
+          "stable_root_relative": 6.439293542825908e-15,
+          "raw_vs_exact_flow_relative": 0.00025300766592817325,
+          "pressure_closure_relative": -8.992806499463768e-15,
+          "double_pressure_speed_ratio": 1.5994509249039544,
+          "Re": 1390.8900516697283,
+          "Mach_conservative_bound": 0.02894339040024849
+        },
+        {
+          "pressure_Pa": 105.1522798324962,
+          "mean_speed_m_s": 9.734321827679652,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00018273275849778337,
+          "pressure_closure_relative": -2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.544162125953623,
+          "Re": 2298.508716834195,
+          "Mach_conservative_bound": 0.047830261672978956
+        }
+      ]
+    },
+    {
+      "thickness_mm": 0.6,
+      "mesh": [
+        64,
+        192
+      ],
+      "channel": 1,
+      "K": 2,
+      "raw_mean_m2": 3.3239279723344255e-07,
+      "exact_mean_m2": 3.321881572399467e-07,
+      "linear_resistance_Pa_s_m": 4.942157632995549,
+      "sampled_peak_factor": 1.6999799091658485,
+      "conservative_peak_factor": 1.7008157023686836,
+      "branch_scope_pressure_limit_Pa": 162.3753087637231,
+      "comparisons": [
+        {
+          "pressure_Pa": 15.0,
+          "mean_speed_m_s": 2.0305957010068765,
+          "stable_root_relative": 0.0,
+          "raw_vs_exact_flow_relative": 0.0003096862647264942,
+          "pressure_closure_relative": 2.220446049250313e-16,
+          "double_pressure_speed_ratio": 1.647182260222051,
+          "Re": 479.47273592893856,
+          "Mach_conservative_bound": 0.009977472026352375
+        },
+        {
+          "pressure_Pa": 25.0,
+          "mean_speed_m_s": 2.9452512602430536,
+          "stable_root_relative": 6.439293542825908e-15,
+          "raw_vs_exact_flow_relative": 0.00025300766592817325,
+          "pressure_closure_relative": -8.992806499463768e-15,
+          "double_pressure_speed_ratio": 1.5994509249039544,
+          "Re": 695.4450258348642,
+          "Mach_conservative_bound": 0.014471695200124245
+        },
+        {
+          "pressure_Pa": 50.0,
+          "mean_speed_m_s": 4.710784852270289,
+          "stable_root_relative": 2.220446049250313e-16,
+          "raw_vs_exact_flow_relative": 0.00018695800672441365,
+          "pressure_closure_relative": -1.1102230246251565e-16,
+          "double_pressure_speed_ratio": 1.5473823669565099,
+          "Re": 1112.330189791428,
+          "Mach_conservative_bound": 0.023146766272766843
+        },
+        {
+          "pressure_Pa": 162.21293345495937,
+          "mean_speed_m_s": 9.734918193093558,
+          "stable_root_relative": 4.440892098500626e-15,
+          "raw_vs_exact_flow_relative": 0.00010726821084849902,
+          "pressure_closure_relative": -7.327471962526033e-15,
+          "double_pressure_speed_ratio": 1.488513109085235,
+          "Re": 2298.6495331259252,
+          "Mach_conservative_bound": 0.047833191955571286
+        }
+      ]
+    }
+  ],
+  "accepted_model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "review_code_sha256": "661c1ffd6ff3feec96197ca52dace189c7f18a3918e28c7678b3ecf599ec61a9",
+  "scope": "Independent scalar-root and rectangular-series checks; no thermal roots or physical validation"
+}

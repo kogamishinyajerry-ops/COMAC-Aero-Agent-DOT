@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "study_id": "plate_fin_2024",
+  "report_kind": "saved_conditional_experimental_comparison",
+  "live_computation": false,
+  "mathematical_verification_pass": true,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "source_pdf_required": false,
+  "source_pdf_redistributed": false,
+  "chronology": "Saved original comparison with a separate post-comparison packaging replay; original precomparison freeze is preserved byte-for-byte.",
+  "source": {
+    "title": "Pires-Fonseca and Carrasco-Altemani,2024, Figure8 plate-fin series",
+    "doi": "10.17533/udea.redin.20230417",
+    "url": "https://doi.org/10.17533/udea.redin.20230417",
+    "marker_count": 12,
+    "author_claimed_run_count": 13,
+    "missing_point_policy": "No missing or overlapping13th marker is invented"
+  },
+  "source_conditioning": {
+    "response": "Approximate vector-marker Rth=(Tb-Tin)/qcv; qcv is electrical power minus estimated losses, not raw temperatures",
+    "speed": "Nozzle flow divided equally among17 channels; reported V mapped to arithmetic interior-channel area",
+    "properties": "Source numerical air properties, not recovered per-run conditions; aluminum conductivity independently declared"
+  },
+  "primary_profile": "fd",
+  "model_forms": {
+    "fd": "Prescribed fully developed rectangular laminar velocity",
+    "plug": "Prescribed plug transport, not a no-slip momentum solution"
+  },
+  "model_forms_are_confidence_bounds": false,
+  "geometry": {
+    "interior_gap_m": 0.0018493333333333335,
+    "side_gap_m": 0.0018499999999999975,
+    "height_m": 0.0113,
+    "length_m": 0.09,
+    "fin_thickness_m": 0.00086,
+    "hydraulic_diameter_m": 0.0031784830663151493
+  },
+  "geometry_ownership": {
+    "fins": 16,
+    "interior_channels": 15,
+    "side_channels": 2,
+    "interior_floor": "isothermal heat-sink base",
+    "side_floor": "adiabatic duct surface outside41.5mm base",
+    "side_channel_fin_faces": 1,
+    "interior_channel_fin_faces": 2
+  },
+  "nominal_properties": {
+    "ks_W_m_K": 205.0,
+    "rho_kg_m3": 1.204,
+    "cp_J_kg_K": 1007.0,
+    "k_air_W_m_K": 0.02514,
+    "nu_m2_s": 1.516e-05,
+    "derived_Pr": 0.7311220556881465,
+    "source_separately_printed_Pr_not_used": 0.7
+  },
+  "frozen_numerics": {
+    "gap_cells": 48,
+    "height_cells": 144,
+    "axial_steps": 1600,
+    "method": "backward_euler",
+    "half_array_symmetry": true
+  },
+  "laminar_cutoff_Re": 2300,
+  "scope_counts": {
+    "robustly_in_declared_laminar_scope": 3,
+    "nominally_laminar_boundary_uncertain": 1,
+    "nominally_outside_laminar_scope": 8
+  },
+  "scope_screen_notice": "Retain author and graphical components separately. For scope screening only, inspect the worst-case rectangular corner obtained by adding the maximum quoted author Re allowance and the separately converted graphical V allowance. No coverage probability, independence assumption or RSS uncertainty is asserted.",
+  "rows": [
+    {
+      "id": "figure8_plate_fin_01",
+      "marker_index": 0,
+      "source_drawing_index": 150,
+      "observed": {
+        "V_channel_inferred_m_s": 4.369970612080595,
+        "Rth_K_W": 0.8829677297552696,
+        "G_W_K": 1.1325442213807384
+      },
+      "scope": {
+        "marker_index": 0,
+        "V_m_s": 4.369970612080595,
+        "Re_nominal": 916.2188384428111,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          868.5754588437849,
+          963.8622180418374
+        ],
+        "graphical_only_Re_interval": [
+          862.4103537119863,
+          970.027323173636
+        ],
+        "conservative_joint_corner_Re_interval": [
+          814.76697411296,
+          1017.6707027726623
+        ],
+        "scope": "robustly_in_declared_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.010595612757063236
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.1268329940081705,
+          "Rth_K_W": 0.8874429532303428,
+          "relative_Rth_discrepancy": 0.005068388486081599,
+          "relative_G_discrepancy": -0.005042829467272414,
+          "side_channels_G_fraction": 0.06456457018258434,
+          "naive_17_central_channels_relative_G_bias": 0.06019858497411734
+        },
+        "plug": {
+          "G_W_K": 1.3624809321613696,
+          "Rth_K_W": 0.7339552256438933,
+          "relative_Rth_discrepancy": -0.16876325044481277,
+          "relative_G_discrepancy": 0.2030266955053679,
+          "side_channels_G_fraction": 0.06376076473079331,
+          "naive_17_central_channels_relative_G_bias": 0.06112395714587282
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_02",
+      "marker_index": 1,
+      "source_drawing_index": 151,
+      "observed": {
+        "V_channel_inferred_m_s": 6.354788172917206,
+        "Rth_K_W": 0.7293341543058922,
+        "G_W_K": 1.3711136302833653
+      },
+      "scope": {
+        "marker_index": 1,
+        "V_m_s": 6.354788172917206,
+        "Re_nominal": 1332.3605935116836,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          1263.077842649076,
+          1401.6433443742912
+        ],
+        "graphical_only_Re_interval": [
+          1278.5521087808588,
+          1386.1690782425085
+        ],
+        "conservative_joint_corner_Re_interval": [
+          1209.2693579182512,
+          1455.451829105116
+        ],
+        "scope": "robustly_in_declared_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.008752009851670706
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.3316155668066705,
+          "Rth_K_W": 0.7509674901128459,
+          "relative_Rth_discrepancy": 0.029661761593411384,
+          "relative_G_discrepancy": -0.028807286722495662,
+          "side_channels_G_fraction": 0.06260576309122508,
+          "naive_17_central_channels_relative_G_bias": 0.06239753386725555
+        },
+        "plug": {
+          "G_W_K": 1.6958335470175143,
+          "Rth_K_W": 0.5896805153776523,
+          "relative_Rth_discrepancy": -0.19148100785318134,
+          "relative_G_discrepancy": 0.2368293258575802,
+          "side_channels_G_fraction": 0.06153722390983807,
+          "naive_17_central_channels_relative_G_bias": 0.06361332546025511
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_03",
+      "marker_index": 2,
+      "source_drawing_index": 152,
+      "observed": {
+        "V_channel_inferred_m_s": 8.356446402382694,
+        "Rth_K_W": 0.6398001625242223,
+        "G_W_K": 1.5629880368499294
+      },
+      "scope": {
+        "marker_index": 2,
+        "V_m_s": 8.356446402382694,
+        "Re_nominal": 1752.0332047851941,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.81737499219209,
+        "author_only_Re_interval": [
+          1660.927478136364,
+          1843.1389314340242
+        ],
+        "graphical_only_Re_interval": [
+          1698.215829793002,
+          1805.8505797773862
+        ],
+        "conservative_joint_corner_Re_interval": [
+          1607.110103144172,
+          1896.9563064262163
+        ],
+        "scope": "robustly_in_declared_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.007677601950290668
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.486690961744288,
+          "Rth_K_W": 0.672634747726408,
+          "relative_Rth_discrepancy": 0.0513200638659459,
+          "relative_G_discrepancy": -0.048814881052712145,
+          "side_channels_G_fraction": 0.06182670653741567,
+          "naive_17_central_channels_relative_G_bias": 0.06327210263014771
+        },
+        "plug": {
+          "G_W_K": 1.9655979173346203,
+          "Rth_K_W": 0.5087510478012791,
+          "relative_Rth_discrepancy": -0.20482819855173418,
+          "relative_G_discrepancy": 0.25758986696796304,
+          "side_channels_G_fraction": 0.06068905911504039,
+          "naive_17_central_channels_relative_G_bias": 0.06456217166615219
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_04",
+      "marker_index": 3,
+      "source_drawing_index": 153,
+      "observed": {
+        "V_channel_inferred_m_s": 10.32346329676145,
+        "Rth_K_W": 0.5711437003136348,
+        "G_W_K": 1.7508728529280202
+      },
+      "scope": {
+        "marker_index": 3,
+        "V_m_s": 10.32346329676145,
+        "Re_nominal": 2164.4428281320734,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          2051.8918010692055,
+          2276.9938551949413
+        ],
+        "graphical_only_Re_interval": [
+          2110.6343434012488,
+          2218.251312862898
+        ],
+        "conservative_joint_corner_Re_interval": [
+          1998.0833163383807,
+          2330.802339925766
+        ],
+        "scope": "nominally_laminar_boundary_uncertain"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.006853724403763618
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.6118425560768133,
+          "Rth_K_W": 0.6204079897443435,
+          "relative_Rth_discrepancy": 0.08625550698301665,
+          "relative_G_discrepancy": -0.07940627819930146,
+          "side_channels_G_fraction": 0.061437817199741444,
+          "naive_17_central_channels_relative_G_bias": 0.06370927278859062
+        },
+        "plug": {
+          "G_W_K": 2.1936277474501207,
+          "Rth_K_W": 0.4558658601772351,
+          "relative_Rth_discrepancy": -0.20183684083899833,
+          "relative_G_discrepancy": 0.2528766687893256,
+          "side_channels_G_fraction": 0.06028050630424097,
+          "naive_17_central_channels_relative_G_bias": 0.06502024048044208
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_05",
+      "marker_index": 4,
+      "source_drawing_index": 154,
+      "observed": {
+        "V_channel_inferred_m_s": 12.273593727561888,
+        "Rth_K_W": 0.5215992717538115,
+        "G_W_K": 1.9171805908348505
+      },
+      "scope": {
+        "marker_index": 4,
+        "V_m_s": 12.273593727561888,
+        "Re_nominal": 2573.311993792038,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.81737499219209,
+        "author_only_Re_interval": [
+          2439.499770114852,
+          2707.124217469224
+        ],
+        "graphical_only_Re_interval": [
+          2519.4946187998457,
+          2627.12936878423
+        ],
+        "conservative_joint_corner_Re_interval": [
+          2385.6823951226597,
+          2760.941592461416
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.006259191261045738
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.7190570534354968,
+          "Rth_K_W": 0.5817142589895562,
+          "relative_Rth_discrepancy": 0.11525128674665464,
+          "relative_G_discrepancy": -0.10334109282479187,
+          "side_channels_G_fraction": 0.06119954783704911,
+          "naive_17_central_channels_relative_G_bias": 0.06397759493006472
+        },
+        "plug": {
+          "G_W_K": 2.395934309145355,
+          "Rth_K_W": 0.41737371353754116,
+          "relative_Rth_discrepancy": -0.19981921728116125,
+          "relative_G_discrepancy": 0.24971759082018874,
+          "side_channels_G_fraction": 0.06003420687968101,
+          "naive_17_central_channels_relative_G_bias": 0.06529731826717877
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_06",
+      "marker_index": 5,
+      "source_drawing_index": 155,
+      "observed": {
+        "V_channel_inferred_m_s": 13.988185468414489,
+        "Rth_K_W": 0.47068209305486064,
+        "G_W_K": 2.124576258063517
+      },
+      "scope": {
+        "marker_index": 5,
+        "V_m_s": 13.988185468414489,
+        "Re_nominal": 2932.7975356089114,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.89952100722596,
+        "author_only_Re_interval": [
+          2780.292063757248,
+          3085.303007460575
+        ],
+        "graphical_only_Re_interval": [
+          2878.8980146016856,
+          2986.697056616137
+        ],
+        "conservative_joint_corner_Re_interval": [
+          2726.392542750022,
+          3139.2025284678007
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.005648185116658328
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.8034446708419378,
+          "Rth_K_W": 0.5544944162512899,
+          "relative_Rth_discrepancy": 0.17806567199627987,
+          "relative_G_discrepancy": -0.15115088761948248,
+          "side_channels_G_fraction": 0.06104943759882539,
+          "naive_17_central_channels_relative_G_bias": 0.06414688254629608
+        },
+        "plug": {
+          "G_W_K": 2.559468517455769,
+          "Rth_K_W": 0.39070611464056865,
+          "relative_Rth_discrepancy": -0.16991506495440512,
+          "relative_G_discrepancy": 0.20469599890410262,
+          "side_channels_G_fraction": 0.05987905183630735,
+          "naive_17_central_channels_relative_G_bias": 0.0654723354465574
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_07",
+      "marker_index": 6,
+      "source_drawing_index": 156,
+      "observed": {
+        "V_channel_inferred_m_s": 14.510353050791688,
+        "Rth_K_W": 0.46205674378089245,
+        "G_W_K": 2.164236348586226
+      },
+      "scope": {
+        "marker_index": 6,
+        "V_m_s": 14.510353050791688,
+        "Re_nominal": 3042.276481411329,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          2884.07810437794,
+          3200.474858444718
+        ],
+        "graphical_only_Re_interval": [
+          2988.4679966805043,
+          3096.0849661421535
+        ],
+        "conservative_joint_corner_Re_interval": [
+          2830.269619647115,
+          3254.2833431755425
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.0055446809253707095
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.8276611839536563,
+          "Rth_K_W": 0.5471473645004417,
+          "relative_Rth_discrepancy": 0.1841562142850126,
+          "relative_G_discrepancy": -0.15551682460764293,
+          "side_channels_G_fraction": 0.061010740166176324,
+          "naive_17_central_channels_relative_G_bias": 0.06419055521921702
+        },
+        "plug": {
+          "G_W_K": 2.607072384746435,
+          "Rth_K_W": 0.383572011982038,
+          "relative_Rth_discrepancy": -0.169859509368122,
+          "relative_G_discrepancy": 0.2046153768970238,
+          "side_channels_G_fraction": 0.05983889468900009,
+          "naive_17_central_channels_relative_G_bias": 0.06551768976655215
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_08",
+      "marker_index": 7,
+      "source_drawing_index": 157,
+      "observed": {
+        "V_channel_inferred_m_s": 16.21645915712417,
+        "Rth_K_W": 0.4266013836576352,
+        "G_W_K": 2.344108665157402
+      },
+      "scope": {
+        "marker_index": 7,
+        "V_m_s": 16.21645915712417,
+        "Re_nominal": 3399.982904123378,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.89952100722596,
+        "author_only_Re_interval": [
+          3223.183793108962,
+          3576.7820151377937
+        ],
+        "graphical_only_Re_interval": [
+          3346.083383116152,
+          3453.8824251306037
+        ],
+        "conservative_joint_corner_Re_interval": [
+          3169.2842721017364,
+          3630.6815361450194
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.005119216603891623
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013427583210149488
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.9027149542111754,
+          "Rth_K_W": 0.5255647977048556,
+          "relative_Rth_discrepancy": 0.23198099640164904,
+          "relative_G_discrepancy": -0.1882991678274385,
+          "side_channels_G_fraction": 0.06090047181875495,
+          "naive_17_central_channels_relative_G_bias": 0.06431506685390187
+        },
+        "plug": {
+          "G_W_K": 2.7564627338905305,
+          "Rth_K_W": 0.3627837908726517,
+          "relative_Rth_discrepancy": -0.14959537223676633,
+          "relative_G_discrepancy": 0.1759108162784082,
+          "side_channels_G_fraction": 0.0597238914685616,
+          "naive_17_central_channels_relative_G_bias": 0.06564768320999836
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_09",
+      "marker_index": 8,
+      "source_drawing_index": 158,
+      "observed": {
+        "V_channel_inferred_m_s": 17.321803371186725,
+        "Rth_K_W": 0.3979573372650934,
+        "G_W_K": 2.512832171589953
+      },
+      "scope": {
+        "marker_index": 8,
+        "V_m_s": 17.321803371186725,
+        "Re_nominal": 3631.7321037834877,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.89952100722596,
+        "author_only_Re_interval": [
+          3442.882034386746,
+          3820.5821731802293
+        ],
+        "graphical_only_Re_interval": [
+          3577.832582776262,
+          3685.6316247907134
+        ],
+        "conservative_joint_corner_Re_interval": [
+          3388.9825133795202,
+          3874.481694187455
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.0047754880471811215
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2570775811673076,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.9484154887758152,
+          "Rth_K_W": 0.5132375541873246,
+          "relative_Rth_discrepancy": 0.28967983783005113,
+          "relative_G_discrepancy": -0.2246137602007111,
+          "side_channels_G_fraction": 0.06083932800736509,
+          "naive_17_central_channels_relative_G_bias": 0.06438414749188448
+        },
+        "plug": {
+          "G_W_K": 2.8487654562167313,
+          "Rth_K_W": 0.35102924946585035,
+          "relative_Rth_discrepancy": -0.11792240877313598,
+          "relative_G_discrepancy": 0.13368711544878953,
+          "side_channels_G_fraction": 0.05965969876390018,
+          "naive_17_central_channels_relative_G_bias": 0.06572029840265103
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_10",
+      "marker_index": 9,
+      "source_drawing_index": 159,
+      "observed": {
+        "V_channel_inferred_m_s": 18.366569347687694,
+        "Rth_K_W": 0.3729635059476223,
+        "G_W_K": 2.6812274768256725
+      },
+      "scope": {
+        "marker_index": 9,
+        "V_m_s": 18.366569347687694,
+        "Re_nominal": 3850.7803204438133,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          3650.5397437807346,
+          4051.020897106892
+        ],
+        "graphical_only_Re_interval": [
+          3796.9718357129886,
+          3904.588805174638
+        ],
+        "conservative_joint_corner_Re_interval": [
+          3596.73125904991,
+          4104.829381837717
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.0044755620713714675
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013404907765858828
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 1.9897712567914607,
+          "Rth_K_W": 0.5025703314322254,
+          "relative_Rth_discrepancy": 0.3475053816734677,
+          "relative_G_discrepancy": -0.2578879360332502,
+          "side_channels_G_fraction": 0.06078725435162098,
+          "naive_17_central_channels_relative_G_bias": 0.0644430000941929
+        },
+        "plug": {
+          "G_W_K": 2.9331420602911424,
+          "Rth_K_W": 0.34093132192197345,
+          "relative_Rth_discrepancy": -0.08588557195230606,
+          "relative_G_discrepancy": 0.09395494624861667,
+          "side_channels_G_fraction": 0.05960478160402087,
+          "naive_17_central_channels_relative_G_bias": 0.06578244400839095
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_11",
+      "marker_index": 10,
+      "source_drawing_index": 160,
+      "observed": {
+        "V_channel_inferred_m_s": 19.236770065254976,
+        "Rth_K_W": 0.3620383705972373,
+        "G_W_K": 2.762138163284593
+      },
+      "scope": {
+        "marker_index": 10,
+        "V_m_s": 19.236770065254976,
+        "Re_nominal": 4033.228753496775,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.81737499219209,
+        "author_only_Re_interval": [
+          3823.5008583149424,
+          4242.956648678607
+        ],
+        "graphical_only_Re_interval": [
+          3979.411378504583,
+          4087.046128488967
+        ],
+        "conservative_joint_corner_Re_interval": [
+          3769.6834833227504,
+          4296.7740236708
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.0043444604471668475
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.25668577993321856,
+        "Rth_K_W": 0.013402604791048057
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 2.022981625801526,
+          "Rth_K_W": 0.49431986294180497,
+          "relative_Rth_discrepancy": 0.3653797583011691,
+          "relative_G_discrepancy": -0.2676030284466655,
+          "side_channels_G_fraction": 0.06074741988494198,
+          "naive_17_central_channels_relative_G_bias": 0.0644880312153937
+        },
+        "plug": {
+          "G_W_K": 3.0014721584583417,
+          "Rth_K_W": 0.3331698404004634,
+          "relative_Rth_discrepancy": -0.07973886897444293,
+          "relative_G_discrepancy": 0.08664808964123094,
+          "side_channels_G_fraction": 0.05956262638203137,
+          "naive_17_central_channels_relative_G_bias": 0.06583015885931087
+        }
+      }
+    },
+    {
+      "id": "figure8_plate_fin_12",
+      "marker_index": 11,
+      "source_drawing_index": 161,
+      "observed": {
+        "V_channel_inferred_m_s": 20.672741941502323,
+        "Rth_K_W": 0.331137497466095,
+        "G_W_K": 3.0198935718610045
+      },
+      "scope": {
+        "marker_index": 11,
+        "V_m_s": 20.672741941502323,
+        "Re_nominal": 4334.298165921378,
+        "author_Re_upper_relative_allowance": 0.052,
+        "graphical_Re_absolute_allowance": 53.80848473082478,
+        "author_only_Re_interval": [
+          4108.914661293466,
+          4559.68167054929
+        ],
+        "graphical_only_Re_interval": [
+          4280.489681190554,
+          4388.106650652203
+        ],
+        "conservative_joint_corner_Re_interval": [
+          4055.106176562642,
+          4613.490155280115
+        ],
+        "scope": "nominally_outside_laminar_scope"
+      },
+      "author_uncertainty_separate": {
+        "Rth_relative": 0.012,
+        "V_relative_range": [
+          0.037,
+          0.046
+        ],
+        "Re_relative_range": [
+          0.046,
+          0.052
+        ],
+        "coverage_convention": "unspecified here",
+        "Rth_absolute_K_W": 0.00397364996959314
+      },
+      "graphical_readout_allowance_separate": {
+        "V_m_s": 0.2566433772022565,
+        "Rth_K_W": 0.013425368811292977
+      },
+      "predictions": {
+        "fd": {
+          "G_W_K": 2.0755688033737494,
+          "Rth_K_W": 0.481795640006991,
+          "relative_Rth_discrepancy": 0.45497155620777074,
+          "relative_G_discrepancy": -0.3127013406321192,
+          "side_channels_G_fraction": 0.06068755633529369,
+          "naive_17_central_channels_relative_G_bias": 0.06455572055122438
+        },
+        "plug": {
+          "G_W_K": 3.1106905618120937,
+          "Rth_K_W": 0.3214720269114336,
+          "relative_Rth_discrepancy": -0.0291886923970337,
+          "relative_G_discrepancy": 0.03006628802985789,
+          "side_channels_G_fraction": 0.05949906456231153,
+          "naive_17_central_channels_relative_G_bias": 0.06590211666227863
+        }
+      }
+    }
+  ],
+  "material_sensitivity": [
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 4.369970612080595,
+      "G_W_K": 1.1232005400712306,
+      "Rth_K_W": 0.8903129622218509
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 6.354788172917206,
+      "G_W_K": 1.3264238923132086,
+      "Rth_K_W": 0.7539068059578272
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 8.356446402382694,
+      "G_W_K": 1.4801942013453728,
+      "Rth_K_W": 0.6755870270881237
+    },
+    {
+      "ks_W_m_K": 167.0,
+      "V_m_s": 10.32346329676145,
+      "G_W_K": 1.6042144211598415,
+      "Rth_K_W": 0.623358066608704
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 4.369970612080595,
+      "G_W_K": 1.1289981209269093,
+      "Rth_K_W": 0.8857410667601452
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 6.354788172917206,
+      "G_W_K": 1.3347151663738945,
+      "Rth_K_W": 0.7492235236352064
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 8.356446402382694,
+      "G_W_K": 1.490573738866817,
+      "Rth_K_W": 0.670882609779663
+    },
+    {
+      "ks_W_m_K": 237.0,
+      "V_m_s": 10.32346329676145,
+      "G_W_K": 1.6164048739325645,
+      "Rth_K_W": 0.6186568823979675
+    }
+  ],
+  "reported_area_mapping_sensitivity": [
+    {
+      "reported_V_m_s": 4.369970612080595,
+      "alternative_actual_V_m_s": 4.395175922027707,
+      "G_W_K": 1.1299418284497424,
+      "Rth_K_W": 0.8850013114143938
+    },
+    {
+      "reported_V_m_s": 6.354788172917206,
+      "alternative_actual_V_m_s": 6.391441601456021,
+      "G_W_K": 1.3348123484335963,
+      "Rth_K_W": 0.7491689758290752
+    },
+    {
+      "reported_V_m_s": 8.356446402382694,
+      "alternative_actual_V_m_s": 8.404645083867237,
+      "G_W_K": 1.490023632403747,
+      "Rth_K_W": 0.6711302950187257
+    },
+    {
+      "reported_V_m_s": 10.32346329676145,
+      "alternative_actual_V_m_s": 10.383007425365697,
+      "G_W_K": 1.6153315835043944,
+      "Rth_K_W": 0.6190679425895591
+    }
+  ],
+  "air_property_sensitivities": [
+    {
+      "property": "k_air",
+      "factor": 0.95,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.5441091072959796,
+      "Rth_K_W": 0.6476226293044698
+    },
+    {
+      "property": "k_air",
+      "factor": 1.05,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.6399334390474607,
+      "Rth_K_W": 0.6097808460938757
+    },
+    {
+      "property": "volumetric_heat_capacity",
+      "factor": 0.95,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.5619364502926396,
+      "Rth_K_W": 0.6402309132440331
+    },
+    {
+      "property": "volumetric_heat_capacity",
+      "factor": 1.05,
+      "speed_m_s": 10.0,
+      "G_W_K": 1.6221429159894827,
+      "Rth_K_W": 0.6164684937085306
+    }
+  ],
+  "sensitivity_notice": "Prespecified material/property/model-form cases, not fitted parameters or confidence intervals",
+  "verification_summary": {
+    "original_mathematical_gate_count": 17,
+    "all_original_gates_pass": true,
+    "maximum_spatial_relative_G_difference": 0.0005045542017216853,
+    "maximum_axial_relative_G_difference": 0.00014876800618734976,
+    "maximum_refinement_energy_relative_imbalance": 2.1991786700210702e-12,
+    "difference_notice": "Refinement differences are numerical-convergence evidence, not uncertainty bounds"
+  },
+  "omissions": [
+    "hydrodynamic entrance development",
+    "axial solid conduction",
+    "axial fluid conduction",
+    "turbulence",
+    "base spreading",
+    "contact resistance",
+    "duct heat loss",
+    "measured per-channel flow partition"
+  ],
+  "limitations": [
+    "Prescribed fully developed and plug profiles are model-form sensitivity cases, not an entrance-flow solution or confidence bounds.",
+    "No axial solid conduction, axial fluid conduction, cross-flow, turbulence, base spreading, contact resistance or duct heat loss.",
+    "Source numerical air properties are assumptions, not recovered per-run experimental conditions.",
+    "Material conductivities are independently declared scenarios; tested alloy remains unidentified.",
+    "Rth target is approximately graph-read, loss-corrected; author uncertainty and graphical allowance are kept separate.",
+    "12 recoverable markers retained; a thirteenth claimed experiment is not invented.",
+    "The high-speed cases exceed the predeclared Re2300 scope and cannot validate this laminar model.",
+    "Nominal source velocity range and stated approximate Re range are not algebraically identical under the recovered physical dimensions."
+  ],
+  "artifact_paths": {
+    "comparison": "examples/plate_fin_experiment/experimental_comparison.json",
+    "source_markers": "research/plate_fin/inputs/figure8_markers.json",
+    "counterexample": "examples/plate_fin_experiment/side_channel_counterexample.json",
+    "fields": "examples/plate_fin_experiment/display_fields.json",
+    "verification": "examples/plate_fin_experiment/verification.json",
+    "frozen_numerics": "examples/plate_fin_experiment/frozen_numerics.json",
+    "packaging_replay": "examples/plate_fin_experiment/packaging_replay.json"
+  },
+  "provenance": {
+    "solver_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "original_comparison_sha256": "d90a397ec7e1f4b19a78f5b1264c0f326b1ca4b557085622b77adbaab5228d3f",
+    "original_precomparison_freeze_sha256": "db1c7ce73681dca1c327c43d29343db35d207fac1cf47488b86d8a3a424afb54",
+    "source_marker_transcription_sha256": "31432593b0ca422015ac422069f5fecc19a08e3078103f51e93a9c6970d65f6c",
+    "projection_script_sha256": "3e75514140b755883e5de089a53624f7ceea93db40e026dc7469b2c7fec06666"
+  }
+}

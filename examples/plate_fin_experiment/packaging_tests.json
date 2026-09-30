@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "all_passed": true,
+  "checks": {
+    "relocated_audit_from_empty_cwd_without_site_packages": true,
+    "verified_record_snapshot_survives_disk_change": true,
+    "wrong_pinned_manifest_identity_rejected": true,
+    "changed_payload_rejected": true,
+    "missing_source_rejected": true,
+    "traversal_rejected": true,
+    "nonfinite_json_rejected": true,
+    "physical_validation_claim_rejected": true,
+    "boundary_label_rejected": true,
+    "source_marker_rejected": true,
+    "central_half_channel_rejected": true,
+    "oversized_manifest_rejected_before_open": true,
+    "oversized_json_artifact_rejected_before_open": true,
+    "fresh_output_no_preexisting_artifacts": true,
+    "pinned_files_unchanged_after_default_entry": true,
+    "existing_output_directory_rejected": true,
+    "pinned_directory_output_rejected": true,
+    "test_source_publication_unchanged": true
+  },
+  "test_count": 18,
+  "dependencies": "Python standard library only, including a python -S audit",
+  "test_script_sha256": "e206b41b4d2f7d2d9453f035e8b777817bd46b3f777cd6ea8621516b71b419a8",
+  "chronology": "Post-comparison packaging robustness checks; no solver, parameter, grid or validation-scope change",
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

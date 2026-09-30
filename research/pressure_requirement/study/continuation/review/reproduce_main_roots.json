@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "design_id": "n16_t860",
+      "K": 2,
+      "nominal_root_pressure_Pa": 72.35901517992757,
+      "combined_pressure_Pa": 43.41540910795654,
+      "independent_G_W_K": 1.0000000001458271,
+      "relative_G_difference": 3.774758283725532e-15,
+      "heat_residual_W": 8.749630353577231e-09,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 5.902219769434382e-13,
+      "equation_relative_residual": 8.917467811490362e-16,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1160.4656297204617,
+          "max_peak_Mach_bound": 0.026748068666117078
+        },
+        {
+          "condition": "combined",
+          "max_Re": 819.0394965124735,
+          "max_peak_Mach_bound": 0.018878391683392497
+        }
+      ]
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 2,
+      "nominal_root_pressure_Pa": 64.87573079352079,
+      "combined_pressure_Pa": 38.92543847611247,
+      "independent_G_W_K": 1.0000000001510452,
+      "relative_G_difference": -2.220446049250313e-16,
+      "heat_residual_W": 9.062709693807847e-09,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 7.160246700299233e-13,
+      "equation_relative_residual": 9.163274923488283e-16,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1315.3029639589126,
+          "max_peak_Mach_bound": 0.02739922724299844
+        },
+        {
+          "condition": "combined",
+          "max_Re": 942.9120445178673,
+          "max_peak_Mach_bound": 0.019641909191890433
+        }
+      ]
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 1,
+      "nominal_root_pressure_Pa": 57.065136149020915,
+      "combined_pressure_Pa": 34.23908168941255,
+      "independent_G_W_K": 1.00000000026338,
+      "relative_G_difference": 0.0,
+      "heat_residual_W": 1.5802797292963078e-08,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 5.419846652542949e-13,
+      "equation_relative_residual": 1.1952194748331583e-15,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1210.2350388920893,
+          "max_peak_Mach_bound": 0.027895225066014457
+        },
+        {
+          "condition": "combined",
+          "max_Re": 819.1299436340892,
+          "max_peak_Mach_bound": 0.018880476437785617
+        }
+      ]
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 1,
+      "nominal_root_pressure_Pa": 49.045834589664125,
+      "combined_pressure_Pa": 29.427500753798473,
+      "independent_G_W_K": 1.0000000002986558,
+      "relative_G_difference": 0.0,
+      "heat_residual_W": 1.791934778339055e-08,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 6.849457172615067e-13,
+      "equation_relative_residual": 1.0669587947839134e-15,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1372.3652769915132,
+          "max_peak_Mach_bound": 0.02858789884538385
+        },
+        {
+          "condition": "combined",
+          "max_Re": 945.3756539210491,
+          "max_peak_Mach_bound": 0.019693228922572553
+        }
+      ]
+    },
+    {
+      "design_id": "n16_t860",
+      "K": 0,
+      "nominal_root_pressure_Pa": 41.77125684927908,
+      "combined_pressure_Pa": 25.062754109567447,
+      "independent_G_W_K": 1.0000000005487633,
+      "relative_G_difference": 0.0,
+      "heat_residual_W": 3.292579719982314e-08,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 5.39246435222403e-13,
+      "equation_relative_residual": 9.46875285057431e-16,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1365.5882930314742,
+          "max_peak_Mach_bound": 0.031476028670017774
+        },
+        {
+          "condition": "combined",
+          "max_Re": 819.3529758188845,
+          "max_peak_Mach_bound": 0.018885617202010666
+        }
+      ]
+    },
+    {
+      "design_id": "n16_t600",
+      "K": 0,
+      "nominal_root_pressure_Pa": 33.17743236883015,
+      "combined_pressure_Pa": 19.906459421298088,
+      "independent_G_W_K": 1.0000000007388825,
+      "relative_G_difference": 0.0,
+      "heat_residual_W": 4.433294975569879e-08,
+      "checks": {
+        "reproduced_G": true,
+        "root_heat_residual": true,
+        "numerical_gates": true,
+        "sealed_zero_flow_and_enthalpy": true
+      },
+      "energy_relative_balance": 6.401735346271729e-13,
+      "equation_relative_residual": 1.01637684507981e-15,
+      "domain_checks": [
+        {
+          "condition": "nominal",
+          "max_Re": 1585.8947439577414,
+          "max_peak_Mach_bound": 0.033035955718056405
+        },
+        {
+          "condition": "combined",
+          "max_Re": 951.5368463746448,
+          "max_peak_Mach_bound": 0.01982157343083384
+        }
+      ]
+    }
+  ],
+  "implementation_thermal_solve_count": 180,
+  "review_thermal_solve_count": 6,
+  "total_thermal_solve_count_at_write": 190,
+  "continuation_plan_sha256": "c54ac979adafeb18dd3ff36e6c1ba1a7adca63ea982219ec7a7da4a173bb804c",
+  "original_phase_reviewer_thermal_count": 0,
+  "accepted_model_sha256": "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+  "review_code_sha256": "9ad95961102badd0726c4519670b58ad7fdce25c2d7fddabc7701ffe51ebf538",
+  "not_run": [],
+  "phase_one_hashes_unchanged_after": true,
+  "accepted_input_hashes_unchanged_after": true,
+  "finished_utc": "2026-09-30T21:20:02.854097+00:00",
+  "completed_within_window": true
+}

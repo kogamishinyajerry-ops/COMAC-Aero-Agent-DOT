@@ -1,0 +1,31 @@
+{
+  "label": "Recorded experimental-comparison replay",
+  "live_computation": false,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "chronology": "Post-comparison packaged replay; original precomparison freeze is preserved separately",
+  "source_title": "P. Wibulswas, UCL1966, Appendix7.6 pp124\u2013125",
+  "source_url": "https://discovery.ucl.ac.uk/1381757/1/388313.pdf",
+  "source_pdf_sha256": "8fac58915fcb924f0fb0095f01e15c85de9af85b1f8a39405e71837e889c03ba",
+  "source_pdf_required": false,
+  "target": "Mixed outlet attenuation (Tw\u2212Tout)/(Tw\u2212Tin)",
+  "conditioning": "Reported source Gz is a reduced flow/property input; this is not a raw device-temperature prediction",
+  "case_count": 32,
+  "missing_Re_count": 8,
+  "residual_display": "Multiply raw theta residual by100 for attenuation percentage points; positive means less predicted heat pickup",
+  "caveats": [
+    "Incomplete experimental uncertainty",
+    "Transition/buoyancy/property applicability concerns",
+    "No fitted coefficients or residual-based filtering"
+  ],
+  "artifacts": {
+    "comparison": "experimental_comparison.json",
+    "response": "frozen_response.json",
+    "display_fields": "display_fields.json",
+    "mathematical_verification": "verification.json",
+    "replay_identity": "packaging_replay.json"
+  },
+  "packaged_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+  "original_precomparison_frozen_response_sha256": "2b5be898efd870b883505135cb3e54ef6c1254c006dbf32063f904a0a07dcf91",
+  "comparison_sha256": "a217b0284e679459983d78437cbed4795a01dd015b4f8ce2268561a2ba0458f8"
+}

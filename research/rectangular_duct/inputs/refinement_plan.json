@@ -1,0 +1,18 @@
+{
+  "status": "Mathematical refinement only; no experiment discrepancies computed",
+  "rejected_evidence_file": "initial_verification_rejected.json",
+  "rejected_gates": [
+    "velocity_exact_series",
+    "axial_refinement"
+  ],
+  "reason": "Mean Poiseuille error exceeds0.05%; backward-Euler temporal difference at tau0.512 exceeds0.05%. All remaining mathematical gates passed.",
+  "revised_production": {
+    "ny": 128,
+    "nx": 256,
+    "base_steps_per_doubling_interval": 512,
+    "first_interval_end_tau": 0.001,
+    "maximum_dt_tau": 6.25e-05,
+    "final_tau": 0.512
+  },
+  "rule": "Actual interval steps = base_steps * max(1, round(interval_end_tau/0.064)); double all steps for temporal verification. Acceptance thresholds unchanged. Spatial refinement uses512x256 cells. No measurements used to select grids."
+}
