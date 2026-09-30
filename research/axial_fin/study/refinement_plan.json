@@ -1,0 +1,96 @@
+{
+  "status": "numerical_refinement_only_after_mathematical_checks",
+  "source_targets_read": false,
+  "case_sequence": [
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 60,
+      "speed": 4.0
+    },
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 60,
+      "speed": 10.0
+    },
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 120,
+      "speed": 4.0
+    },
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 120,
+      "speed": 10.0
+    },
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 240,
+      "speed": 4.0
+    },
+    {
+      "nx": 12,
+      "ny": 36,
+      "nz": 240,
+      "speed": 10.0
+    },
+    {
+      "nx": 24,
+      "ny": 72,
+      "nz": 240,
+      "speed": 4.0
+    },
+    {
+      "nx": 24,
+      "ny": 72,
+      "nz": 240,
+      "speed": 10.0
+    },
+    {
+      "nx": 36,
+      "ny": 108,
+      "nz": 240,
+      "speed": 4.0
+    },
+    {
+      "nx": 36,
+      "ny": 108,
+      "nz": 240,
+      "speed": 10.0
+    },
+    {
+      "nx": 48,
+      "ny": 144,
+      "nz": 240,
+      "speed": 4.0
+    },
+    {
+      "nx": 48,
+      "ny": 144,
+      "nz": 240,
+      "speed": 10.0
+    },
+    {
+      "nx": 48,
+      "ny": 144,
+      "nz": 480,
+      "speed": 4.0
+    },
+    {
+      "nx": 48,
+      "ny": 144,
+      "nz": 480,
+      "speed": 10.0
+    }
+  ],
+  "reason_for48_grid": "The very small paired effect merits a cross-section check at the original accepted48x144 resolution. The measured12x36x120 pilot needed0.55s and82MiB, so staged growth is justified within original resource caps. The original1600-slab coupled system remains outside this planned sequence.",
+  "continuation_guard": "Advance beyond36x108 only if that stage uses less than900MiB observed peak RSS and60s per case; maintain all original hard limits",
+  "paired_effect_outer_difference_gate": 0.0005,
+  "interpretation": "Report actual differences and tolerance floor; the loose outer gate alone cannot resolve an effect smaller than itself",
+  "solver_sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+  "mathematical_verification_sha256": "8e2d08ec177b7cd2785bc5f12545021f8826cfd9d4357a6b866bd3b9f0b3c345"
+}

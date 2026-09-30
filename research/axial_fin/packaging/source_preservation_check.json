@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "original_manifest_sha256": "4d283fbb2dc3171e97dca0094053929c481da375c8f2970b8e1b69d9bd7a3413",
+  "accepted_study_records_checked": 34,
+  "changed_study_records": [],
+  "original_manifest_preserved_byte_for_byte": true,
+  "baseline_core_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+}

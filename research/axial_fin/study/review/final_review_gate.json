@@ -1,0 +1,120 @@
+{
+  "status": "accepted_for_reporting_defined_two_probe_axial_conduction_effect",
+  "scope": "Post-comparison numerical model-form investigation; no new experimental residuals, no physical-validation or aircraft-transfer claim",
+  "checks": {
+    "equations_units_and_insulated_end_faces": true,
+    "zero_axial_preserves_transverse_conductivity_and_recovers_original": true,
+    "15_heated_and2_adiabatic_floors_full_mirror_ownership": true,
+    "independent_global_reference_fields_and_heat": true,
+    "local_residual_energy_and_temperature_bounds": true,
+    "full_mirror_symmetry": true,
+    "analytic_and_manufactured_limits": true,
+    "paired_axial_and_transverse_refinement": true,
+    "absolute_G_accuracy_distinct_from_paired_delta": true,
+    "attainable_tolerance_sensitivity_negligible": true,
+    "unattainable_tolerance_failure_retained_without_false_convergence": true,
+    "resource_limits_respected": true,
+    "original_measurements_and_accepted_package_unchanged": true,
+    "label_only_revision_and_scalar_source_identity": true,
+    "moderate_fields_labeled_and_arithmetic_checked": true,
+    "readout_matches_scoped_evidence": true,
+    "compact_JSON_and_recorded_inventory_valid": true
+  },
+  "accepted_parameters": {
+    "profile": "prescribed fully developed rectangular velocity",
+    "speed_m_s": [
+      4.0,
+      10.0
+    ],
+    "ks_W_m_K": 205.0,
+    "axial_multiplier_pair": [
+      0.0,
+      1.0
+    ],
+    "solid_axial_ends": "insulated at0 andL",
+    "mesh": [
+      48,
+      144,
+      480
+    ],
+    "array": "mirrored half-domain representing16fins and17channels; equal per-channel mass flow"
+  },
+  "results": [
+    {
+      "speed_m_s": 4.0,
+      "baseline_same_mesh_G_W_K": 1.0787449227266066,
+      "axial_conduction_G_W_K": 1.078563174569453,
+      "relative_conductance_change": -0.00016848112405865034,
+      "conductance_change_percent": -0.016848112405865034,
+      "relative_resistance_change": 0.00016850951473101894,
+      "resistance_change_percent": 0.016850951473101894,
+      "last_axial_delta_change_percentage_points": 0.00010462733297522675,
+      "last_transverse_delta_change_percentage_points": 2.7365538568524528e-05,
+      "effect_over_last_axial_change": 161.0297417201131,
+      "effect_over_last_transverse_change": 615.6689503360809,
+      "absolute_G_axial_refinement_percent": 0.04955152232544169,
+      "absolute_G_transverse_refinement_percent": -0.0255028389169909,
+      "energy_relative_balance": 3.7694933519311625e-13,
+      "true_schur_relative_residual": 1.708840507877805e-11
+    },
+    {
+      "speed_m_s": 10.0,
+      "baseline_same_mesh_G_W_K": 1.5922806701604937,
+      "axial_conduction_G_W_K": 1.5920728920333178,
+      "relative_conductance_change": -0.0001304908933893456,
+      "conductance_change_percent": -0.01304908933893456,
+      "relative_resistance_change": 0.0001305079234850126,
+      "resistance_change_percent": 0.013050792348501261,
+      "last_axial_delta_change_percentage_points": 6.589004248880315e-05,
+      "last_transverse_delta_change_percentage_points": 3.8669438695571046e-05,
+      "effect_over_last_axial_change": 198.04341970415368,
+      "effect_over_last_transverse_change": 337.4522563325731,
+      "absolute_G_axial_refinement_percent": 0.03015430615005421,
+      "absolute_G_transverse_refinement_percent": -0.05620521239245724,
+      "energy_relative_balance": 3.111550457687071e-13,
+      "true_schur_relative_residual": 6.928841205876285e-11
+    }
+  ],
+  "independent_accuracy": {
+    "max_relative_G_direct_difference": 1.1091128016005314e-13,
+    "max_absolute_normalized_field_difference": 1.7337797864058757e-12,
+    "default_to_1e12_tolerance_absolute_delta_change_at10m_s": 3.885780586188048e-15,
+    "full_mirror_relative_G_difference": -1.1102230246251565e-16
+  },
+  "resource_observations": {
+    "mathematical_gate_count": 15,
+    "all_mathematical_gates_passed": true,
+    "all_refinement_gates_passed": true,
+    "maximum_refinement_energy_relative_balance": 1.7628187575347038e-12,
+    "maximum_case_seconds": 95.51789014100359,
+    "maximum_process_peak_RSS_MiB": 933.96484375,
+    "default_to_tighter_tolerance_pilot_absolute_delta_difference": 1.2212453270876722e-15,
+    "too_strict_tolerance_stress_test": "Independent reviewer retained a failed rtol1e-13 attempt; default1e-10 and attainable1e-12 results agree. Preconditioned callback residuals are not substituted for true residuals."
+  },
+  "source_hashes": {
+    "PLAN.md": "672540c89ce15d0302f7edc81624d654429004eb43ba6fc257d77b404bf35723",
+    "axial_fin_numerical_run.py": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+    "axial_fin.py": "c38a4306cf95c0d40610cd9bebc1df1f0af5f68f06a876a34e043879b245eade",
+    "mathematical_verification.json": "8e2d08ec177b7cd2785bc5f12545021f8826cfd9d4357a6b866bd3b9f0b3c345",
+    "refinement.json": "bc480630130cdbdd0f408566811e787485131123801bfdeb71e42967073d69d9",
+    "label_patch_verification.json": "ce6b6a0288f9b269559198eedaac7e18b8e2ada28428eb8577358a229d31ba3d",
+    "study_summary.json": "240ea301c289e95c53c7ff7b470e7f2a3558425254b9ed1df1a8aa0f1a7387ea",
+    "RESULTS.md": "08804a0a21ce17ce4af66604c37fe53d60287e667dec9ba8ddba715f67795c6a",
+    "accepted_package_immutability.json": "c12afb0cd3220294d166631e4b71f0be681b7cd40483d597eb81abccbffbd586",
+    "review/reduced_solver_comparison.json": "15da7cbbb99bc9347dd8ee8809a5ffce46f4c0daff6ad1ac6c0142adf05294c7"
+  },
+  "accepted_frozen_files_checked": 62,
+  "accepted_frozen_changed_files": [],
+  "inventory_before_final_review_addition": {
+    "file_count": 32,
+    "all_hashes_and_sizes_match": true
+  },
+  "limitations": [
+    "Numerical convergence is demonstrated only on the declared cases, not an all-domain or physical uncertainty bound.",
+    "Hydrodynamic entrance development, fin end-face convection, actual material/per-run properties and actual channel flow partition remain unresolved.",
+    "Fin-only extension retains an isothermal base and omits base spreading, contact resistance and fluid axial conduction.",
+    "No source-residual revisiting is part of this accepted deliverable; do not mix the480-slab axial result with an unmatched1600-slab baseline."
+  ],
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": {
+    "saved_mathematical_and_refinement_gates": true,
+    "run_solver_identity": true,
+    "summary_arithmetic_exact": true,
+    "paired_effect_resolved_in_observed_refinements": true,
+    "physical_and_numerical_limits_distinct": true,
+    "sample_baseline_difference_and_end_flux_arithmetic": true,
+    "compact_JSON": true
+  },
+  "summary_sha256": "240ea301c289e95c53c7ff7b470e7f2a3558425254b9ed1df1a8aa0f1a7387ea",
+  "refinement_sha256": "bc480630130cdbdd0f408566811e787485131123801bfdeb71e42967073d69d9"
+}

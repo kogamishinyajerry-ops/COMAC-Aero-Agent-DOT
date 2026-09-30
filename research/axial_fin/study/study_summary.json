@@ -1,0 +1,82 @@
+{
+  "status": "verified_conditional_small_axial_effect_at_two_declared_probes",
+  "post_comparison_model_form_investigation": true,
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false,
+  "experimental_residuals_recomputed": false,
+  "original12_measurements_unchanged": true,
+  "accepted_package_unchanged": true,
+  "physical_change": "Only axial fin conduction0\u2192ks, with insulated fin axial ends; vertical conduction, interface resistance, side floors, equal-flow assumption and prescribed FD velocity held fixed",
+  "primary_material_k_W_m_K": 205.0,
+  "mesh": {
+    "gap_cells": 48,
+    "height_cells": 144,
+    "axial_slabs": 480,
+    "half_domain_represents_full16_fin17_channel_array": true
+  },
+  "results": [
+    {
+      "speed_m_s": 4.0,
+      "baseline_same_mesh_G_W_K": 1.0787449227266066,
+      "axial_conduction_G_W_K": 1.078563174569453,
+      "relative_conductance_change": -0.00016848112405865034,
+      "conductance_change_percent": -0.016848112405865034,
+      "relative_resistance_change": 0.00016850951473101894,
+      "resistance_change_percent": 0.016850951473101894,
+      "last_axial_delta_change_percentage_points": 0.00010462733297522675,
+      "last_transverse_delta_change_percentage_points": 2.7365538568524528e-05,
+      "effect_over_last_axial_change": 161.0297417201131,
+      "effect_over_last_transverse_change": 615.6689503360809,
+      "absolute_G_axial_refinement_percent": 0.04955152232544169,
+      "absolute_G_transverse_refinement_percent": -0.0255028389169909,
+      "energy_relative_balance": 3.7694933519311625e-13,
+      "true_schur_relative_residual": 1.708840507877805e-11
+    },
+    {
+      "speed_m_s": 10.0,
+      "baseline_same_mesh_G_W_K": 1.5922806701604937,
+      "axial_conduction_G_W_K": 1.5920728920333178,
+      "relative_conductance_change": -0.0001304908933893456,
+      "conductance_change_percent": -0.01304908933893456,
+      "relative_resistance_change": 0.0001305079234850126,
+      "resistance_change_percent": 0.013050792348501261,
+      "last_axial_delta_change_percentage_points": 6.589004248880315e-05,
+      "last_transverse_delta_change_percentage_points": 3.8669438695571046e-05,
+      "effect_over_last_axial_change": 198.04341970415368,
+      "effect_over_last_transverse_change": 337.4522563325731,
+      "absolute_G_axial_refinement_percent": 0.03015430615005421,
+      "absolute_G_transverse_refinement_percent": -0.05620521239245724,
+      "energy_relative_balance": 3.111550457687071e-13,
+      "true_schur_relative_residual": 6.928841205876285e-11
+    }
+  ],
+  "interpretation": "Stable paired differences indicate a small conductance decrease in this defined model. Absolute-G grid changes are larger than the paired effect; do not claim equally precise absolute conductance or compare this480-slab result directly against an unmatched1600-slab reference.",
+  "uncertainty_notice": "Successive mesh differences and tolerance tests are numerical diagnostics, not confidence intervals or proven physical bounds",
+  "remaining_omissions": [
+    "hydrodynamic entrance development",
+    "fluid axial conduction",
+    "fin frontal/end-face convection",
+    "base spreading",
+    "actual material/per-run property identification",
+    "actual channel flow partition"
+  ],
+  "numerical_quality": {
+    "mathematical_gate_count": 15,
+    "all_mathematical_gates_passed": true,
+    "all_refinement_gates_passed": true,
+    "maximum_refinement_energy_relative_balance": 1.7628187575347038e-12,
+    "maximum_case_seconds": 95.51789014100359,
+    "maximum_process_peak_RSS_MiB": 933.96484375,
+    "default_to_tighter_tolerance_pilot_absolute_delta_difference": 1.2212453270876722e-15,
+    "too_strict_tolerance_stress_test": "Independent reviewer retained a failed rtol1e-13 attempt; default1e-10 and attainable1e-12 results agree. Preconditioned callback residuals are not substituted for true residuals."
+  },
+  "provenance": {
+    "numerical_run_solver_sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+    "current_label_corrected_solver_sha256": "c38a4306cf95c0d40610cd9bebc1df1f0af5f68f06a876a34e043879b245eade",
+    "label_only_patch_proof_sha256": "ce6b6a0288f9b269559198eedaac7e18b8e2ada28428eb8577358a229d31ba3d",
+    "plan_sha256": "672540c89ce15d0302f7edc81624d654429004eb43ba6fc257d77b404bf35723",
+    "mathematical_verification_sha256": "8e2d08ec177b7cd2785bc5f12545021f8826cfd9d4357a6b866bd3b9f0b3c345",
+    "refinement_sha256": "bc480630130cdbdd0f408566811e787485131123801bfdeb71e42967073d69d9",
+    "accepted_package_manifest_sha256": "b56204f3ac3f6cbc7536869e5aa77f8a0cba3474297e3f0bc459a79f55f021c3"
+  }
+}

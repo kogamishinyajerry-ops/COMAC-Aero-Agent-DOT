@@ -1,0 +1,52 @@
+{
+  "G_W_K": 1.078563174569453,
+  "Rth_K_W": 0.9271594131694564,
+  "integrated_base_heat_W_K": 1.0785631745690465,
+  "energy_relative_balance": 3.7694933519311625e-13,
+  "energy_absolute_balance_W_K": 4.065636716177323e-13,
+  "componentwise_backward_error_max": 7.363028730357403e-15,
+  "minimum_normalized_temperature": -6.661338147750939e-15,
+  "maximum_normalized_temperature": 0.9999138141970734,
+  "net_internal_axial_heat_W_K": 1.3322676295501879e-18,
+  "imposed_external_axial_end_heat_W_K": [
+    0.0,
+    0.0
+  ],
+  "maximum_absolute_net_axial_heat_across_internal_section_W_K": 0.03693018227962415,
+  "status": "computed_pending_verification",
+  "lambda_z": 1.0,
+  "V_interior_m_s": 4.0,
+  "ks_W_m_K": 205.0,
+  "profile": "fd",
+  "full_array": false,
+  "geometry_fin_count": 16,
+  "grounded": true,
+  "baseline_same_mesh_G_W_K": 1.0787449227266066,
+  "paired_relative_conductance_change": -0.00016848112405865034,
+  "zero_recovery_solid_max_absolute_difference": null,
+  "true_schur_relative_residual": 1.708840507877805e-11,
+  "linear_solver_tolerance": {
+    "rtol": 1e-10,
+    "atol": 1e-12
+  },
+  "GMRES_inner_iterations": 14,
+  "fluid_sweeps": 19,
+  "factorization_seconds": 2.391492109003593,
+  "elapsed_seconds": 94.89339381099853,
+  "process_peak_RSS_MiB": 925.69140625,
+  "mesh": {
+    "gap_cells": 48,
+    "height_cells": 144,
+    "axial_slabs": 480,
+    "fluid_unknowns_per_slice": 58752,
+    "solid_global_unknowns": 552960,
+    "equivalent_global_fluid_solid_unknowns": 28753920
+  },
+  "provenance": {
+    "core_sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c",
+    "axial_code_sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f",
+    "plan_sha256": "672540c89ce15d0302f7edc81624d654429004eb43ba6fc257d77b404bf35723"
+  },
+  "physical_validation_pass": null,
+  "aircraft_transfer_authorized": false
+}

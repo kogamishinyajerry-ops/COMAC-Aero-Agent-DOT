@@ -30,6 +30,14 @@ The primary model's Rth differences at the three robustly in-scope points are +0
 
 The side-channel topology has a measurable effect: across the four nominally laminar points, the side channels carry 2/17 of stipulated mass flow but only 6.14–6.46% of heat. Replacing all 17 channels with heated interior-channel copies would overstate total conductance by 6.02–6.37%. That incorrect shortcut would hide much of the discrepancy and is shown only as a counterexample.
 
+## Axial-conduction research appendix
+
+The [offline axial-fin appendix](../research/axial_fin/README.md) adds conduction along the fins while retaining the same prescribed fully developed flow, side-channel topology, aluminum conductivity and insulated fin ends. At the two 4 and 10 m/s probes, paired conductance decreases by 0.01685% and 0.01305%. Fifteen mathematical gates, independent direct checks and matched-grid refinements passed. Absolute conductance grid changes are larger than these paired effects; cancellation does not establish absolute accuracy or a physical uncertainty bound.
+
+This post-comparison investigation has not recomputed the experimental residuals. Its two controlled probes do not resolve inlet development, actual flow partition, material properties, base/contact effects or aircraft transfer. The final scalar grid is 48 × 144 × 480, and its lambda-zero reference uses that same grid; it is not compared directly with the earlier 1,600-step experimental solve. Compact illustrative fields use a coarser grid and are labeled accordingly.
+
+The appendix preserves accepted source and evidence bytes, including a failed strict-tolerance attempt. A standard-library integrity audit works independently of scientific dependencies. Optional numerical replay requires Linux with NumPy/SciPy already installed, writes a fresh output directory and leaves accepted evidence intact. No additional main application page is introduced.
+
 ## Runtime and provenance
 
 `GET /api/physics/experiment` and `GET /api/physics/fin-experiment` accept no tuning parameters. They use standard-library readers to verify pinned package manifests, original freezes, source transcription, complete artifact hashes and displayed arithmetic. Missing or stale evidence returns an explicit error. Each JSON response/export remains below 100,000 bytes.

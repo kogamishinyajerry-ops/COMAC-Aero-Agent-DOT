@@ -1,0 +1,248 @@
+{
+  "schema": "axial_fin_appendix_v1",
+  "study_id": "plate_fin_axial_conduction_two_probe_appendix",
+  "status": "accepted_scientific_evidence_packaged_for_offline_replay",
+  "chronology": "Post-comparison model-form investigation; packaging replay occurs after original scientific acceptance",
+  "physical_validation_pass": null,
+  "experimental_residuals_recomputed": false,
+  "aircraft_transfer_authorized": false,
+  "main_UI_page_added": false,
+  "source_PDF_required": false,
+  "source_PDF_redistributed": false,
+  "runtime_dependencies_added": false,
+  "numerical_replay_platform": "Linux only; immutable ru_maxrss assumes KiB",
+  "proposed_directory": "research/axial_fin/",
+  "required_unchanged_core": "research/plate_fin/conjugate_fin.py",
+  "original_study_manifest_sha256": "4d283fbb2dc3171e97dca0094053929c481da375c8f2970b8e1b69d9bd7a3413",
+  "stable_readout": "research/axial_fin/study/RESULTS.md",
+  "stable_summary": "research/axial_fin/study/study_summary.json",
+  "stable_result_keys": [
+    "results[].speed_m_s",
+    "results[].conductance_change_percent",
+    "results[].resistance_change_percent",
+    "results[].last_axial_delta_change_percentage_points",
+    "results[].last_transverse_delta_change_percentage_points",
+    "results[].absolute_G_axial_refinement_percent",
+    "results[].absolute_G_transverse_refinement_percent",
+    "remaining_omissions",
+    "provenance"
+  ],
+  "physical_scope": "Prescribed fully developed equal-flow 16-fin/17-channel baseline, ks205, isothermal base, adiabatic side floors and duct top/sides, insulated fin axial ends; 4 and10m/s probes",
+  "exclusions": [
+    "logs",
+    "caches",
+    "PDF",
+    "NPZ",
+    "full-resolution arrays",
+    "experimental residual recomputation"
+  ],
+  "files_count": 41,
+  "total_bytes": 362658,
+  "files": [
+    {
+      "path": "research/axial_fin/README.md",
+      "bytes": 5707,
+      "sha256": "26e7db335420bd8c5330c29ae0e4ee330ebb022dc3514a0a8513a858f3403e48"
+    },
+    {
+      "path": "research/axial_fin/audit_package.py",
+      "bytes": 7974,
+      "sha256": "a804c9d5688685d62759c716c438fedb4cd9d7623aa155f55c349bef17993e0b"
+    },
+    {
+      "path": "research/axial_fin/replay_case.py",
+      "bytes": 1216,
+      "sha256": "7b5a7e2cd661234b1eaf1b32ea8474fdcc1b85c6ad34542a19422e9705aa5d5c"
+    },
+    {
+      "path": "research/axial_fin/reproduce.py",
+      "bytes": 7949,
+      "sha256": "b56d124f34e931e42fd55a682c29f73fad3cd2fdc0cada6f0b60412c38549a94"
+    },
+    {
+      "path": "research/axial_fin/study/PLAN.md",
+      "bytes": 9271,
+      "sha256": "672540c89ce15d0302f7edc81624d654429004eb43ba6fc257d77b404bf35723"
+    },
+    {
+      "path": "research/axial_fin/study/README.md",
+      "bytes": 3979,
+      "sha256": "6454391b32b6b4b79ecff79d259589200f1e420415f0f6e4f061339ef6f84881"
+    },
+    {
+      "path": "research/axial_fin/study/RESULTS.md",
+      "bytes": 5578,
+      "sha256": "08804a0a21ce17ce4af66604c37fe53d60287e667dec9ba8ddba715f67795c6a"
+    },
+    {
+      "path": "research/axial_fin/study/accepted_package_immutability.json",
+      "bytes": 1320,
+      "sha256": "c12afb0cd3220294d166631e4b71f0be681b7cd40483d597eb81abccbffbd586"
+    },
+    {
+      "path": "research/axial_fin/study/axial_fin.py",
+      "bytes": 9616,
+      "sha256": "c38a4306cf95c0d40610cd9bebc1df1f0af5f68f06a876a34e043879b245eade"
+    },
+    {
+      "path": "research/axial_fin/study/axial_fin_first_probe.py",
+      "bytes": 9237,
+      "sha256": "4ca0046fe62f394350be39fd7e198d5ded833a99f1b4037cb715df8c0ae81a10"
+    },
+    {
+      "path": "research/axial_fin/study/axial_fin_numerical_run.py",
+      "bytes": 9488,
+      "sha256": "29174c5a2a3e0549541ac498e8cfc26387e3f54d94b5ddca5b12b76e949e5c4f"
+    },
+    {
+      "path": "research/axial_fin/study/field_sample_index.json",
+      "bytes": 455,
+      "sha256": "d1c0393b4d74076e320c5036bab7e083b2b529ba44f2fc22c1c9ea4677d61883"
+    },
+    {
+      "path": "research/axial_fin/study/fields_V04.json",
+      "bytes": 23076,
+      "sha256": "fe756d61f49d2aee3565c68188948eafc680f599b871fbb3439c14d85b5511d8"
+    },
+    {
+      "path": "research/axial_fin/study/fields_V10.json",
+      "bytes": 23123,
+      "sha256": "ab81a2f27973e1d3fcd7283471946c6c7c62bded40c88eadd132085882eb9a30"
+    },
+    {
+      "path": "research/axial_fin/study/finalize_study.py",
+      "bytes": 11830,
+      "sha256": "5eab7ea800f83ec5fdabdbf6f73117141161747f1a71988ab032e614a494c97a"
+    },
+    {
+      "path": "research/axial_fin/study/label_patch_verification.json",
+      "bytes": 2820,
+      "sha256": "ce6b6a0288f9b269559198eedaac7e18b8e2ada28428eb8577358a229d31ba3d"
+    },
+    {
+      "path": "research/axial_fin/study/manifest.json",
+      "bytes": 5542,
+      "sha256": "4d283fbb2dc3171e97dca0094053929c481da375c8f2970b8e1b69d9bd7a3413"
+    },
+    {
+      "path": "research/axial_fin/study/mathematical_verification.json",
+      "bytes": 24445,
+      "sha256": "8e2d08ec177b7cd2785bc5f12545021f8826cfd9d4357a6b866bd3b9f0b3c345"
+    },
+    {
+      "path": "research/axial_fin/study/plan.json",
+      "bytes": 1261,
+      "sha256": "acd349133cd2ad8d05c223418b75f4ff2ff34e4e65256a3dde7f2a0182f3b217"
+    },
+    {
+      "path": "research/axial_fin/study/refinement.json",
+      "bytes": 34189,
+      "sha256": "bc480630130cdbdd0f408566811e787485131123801bfdeb71e42967073d69d9"
+    },
+    {
+      "path": "research/axial_fin/study/refinement_plan.json",
+      "bytes": 2127,
+      "sha256": "9e619324b8beacfb0f961cb52fe70d82a2445a82064a3381e35a29d7e36180f6"
+    },
+    {
+      "path": "research/axial_fin/study/resource_pilot.json",
+      "bytes": 13924,
+      "sha256": "b5d8622bc3053582b4fb2e7649cef36204412a9ab1c3ba6d39aac23c02c4f2a1"
+    },
+    {
+      "path": "research/axial_fin/study/review/FINAL_REVIEW.md",
+      "bytes": 3388,
+      "sha256": "fb895249ed1af1b6f904bbd33d48ae03582d05d5b43c39f62999982b7230d500"
+    },
+    {
+      "path": "research/axial_fin/study/review/IMPLEMENTATION_REVIEW.md",
+      "bytes": 2350,
+      "sha256": "cc4128c052b6e7b722e4a2d968812b61ae7c11405e772f3ec84bd8fe1221d23c"
+    },
+    {
+      "path": "research/axial_fin/study/review/PLAN_REVIEW.md",
+      "bytes": 2296,
+      "sha256": "0f72fbc4ca8fffea1f24b04b61623665a01461e9e59cdb2b2f20af5feb50ef54"
+    },
+    {
+      "path": "research/axial_fin/study/review/REVIEW_SCOPE.md",
+      "bytes": 3663,
+      "sha256": "025ffcc139368bfcfd23315651f35b3b4b29b42d54be627a357078e4c3598c5d"
+    },
+    {
+      "path": "research/axial_fin/study/review/compare_reduced_solver.py",
+      "bytes": 5252,
+      "sha256": "84fea7e1927d28c039451e1604149eee3c6f75c1524944d4f94be12a2a560b39"
+    },
+    {
+      "path": "research/axial_fin/study/review/final_review_gate.json",
+      "bytes": 6281,
+      "sha256": "3f125c045657b3214340ed06307e990e748b54e501073315cb16d88bbafe3165"
+    },
+    {
+      "path": "research/axial_fin/study/review/independent_axial_review.py",
+      "bytes": 7454,
+      "sha256": "e066ace0943c20837f4211f0edd729c9e0448198f6edd8690ff34f7b41ba08a4"
+    },
+    {
+      "path": "research/axial_fin/study/review/independent_reference_self_checks.json",
+      "bytes": 18703,
+      "sha256": "202f4af7d25ced59b2bd5f12988a31390dc39855dd7318ab4142e86e62ad7eb0"
+    },
+    {
+      "path": "research/axial_fin/study/review/readout_checks.json",
+      "bytes": 548,
+      "sha256": "3db9c5fb4125a80f014167c52855559fc452e8fec1a6c8f70872b29c503a4066"
+    },
+    {
+      "path": "research/axial_fin/study/review/reduced_solver_comparison.json",
+      "bytes": 39097,
+      "sha256": "15da7cbbb99bc9347dd8ee8809a5ffce46f4c0daff6ad1ac6c0142adf05294c7"
+    },
+    {
+      "path": "research/axial_fin/study/run_refinement.py",
+      "bytes": 4788,
+      "sha256": "a13c06a215b039bb8b01f0f807b9639506fc6966beabc48e124af4e6cd8d0a15"
+    },
+    {
+      "path": "research/axial_fin/study/sample_fields.py",
+      "bytes": 2340,
+      "sha256": "c53414e4707e1359718299a290ee803a7ab891537813d2223b9574e4a885fed8"
+    },
+    {
+      "path": "research/axial_fin/study/study_summary.json",
+      "bytes": 4651,
+      "sha256": "240ea301c289e95c53c7ff7b470e7f2a3558425254b9ed1df1a8aa0f1a7387ea"
+    },
+    {
+      "path": "research/axial_fin/study/tiny_axial.json",
+      "bytes": 12267,
+      "sha256": "9cc49a25d10742db5112d11386bb79a48e13081e08d4946f64e8ba57cfc6144a"
+    },
+    {
+      "path": "research/axial_fin/study/tiny_zero.json",
+      "bytes": 12235,
+      "sha256": "6a3233c7dee739c837597ca8b6ed273029ab4126abaf162d2c6fac128be39b88"
+    },
+    {
+      "path": "research/axial_fin/study/verify_label_patch.py",
+      "bytes": 1746,
+      "sha256": "3d31cadb8b20313331ae326d211f4f1b95ddf8516362cad5ee4200e5ad27f476"
+    },
+    {
+      "path": "research/axial_fin/study/verify_math.py",
+      "bytes": 6222,
+      "sha256": "5c563c95960e557d2148cb611874d0ff755f1e3e49f0318af6155fc78b35d35a"
+    },
+    {
+      "path": "research/axial_fin/test_package.py",
+      "bytes": 5190,
+      "sha256": "6fa5f688f12f8eb9c65eb90aeee729f276d2cb1313dc4968dc0c4f0bf2485979"
+    },
+    {
+      "path": "research/plate_fin/conjugate_fin.py",
+      "bytes": 10060,
+      "sha256": "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+    }
+  ]
+}

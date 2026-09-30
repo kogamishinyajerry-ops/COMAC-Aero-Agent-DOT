@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "all_passed": true,
+  "checks": {
+    "pinned_audit": true,
+    "immutable_snapshot_bytes": true,
+    "stdlib_python_S_audit": true,
+    "wrong_pin_rejected": true,
+    "duplicate_json_key_rejected": true,
+    "nonfinite_json_rejected": true,
+    "relocated_audit": true,
+    "tamper_rejected": true,
+    "snapshot_survives_disk_mutation": true,
+    "oversize_rejected_before_open": true,
+    "existing_directory_rejected": true,
+    "protected_destination_rejected": true,
+    "outside_root_rejected": true,
+    "symlink_output_root_rejected": true,
+    "symlink_destination_parent_rejected": true,
+    "fresh_default_directory": true,
+    "existing_output_rejected": true,
+    "unknown_suite_rejected": true,
+    "nonlinux_replay_rejected": true,
+    "source_mutation_during_replay_rejected": true,
+    "staging_uses_verified_snapshot": true,
+    "source_package_unchanged_after_tests": true
+  },
+  "checked_manifest_sha256": "d9cc9323dbe3dec35b8c72fa086ce000bf56108b1305199de664de7ff09c0fd8",
+  "test_script_sha256": "6fa5f688f12f8eb9c65eb90aeee729f276d2cb1313dc4968dc0c4f0bf2485979",
+  "mocked_orchestration_is_not_numerical_replay": true,
+  "physical_validation_pass": null
+}
