@@ -27,6 +27,9 @@ def verify(out):
     manifest=json.loads((out/'manifest.json').read_text());p=parse_nacelle(manifest['parameters'])
     assert manifest['fingerprint']==nacelle_fingerprint(p)
     assert manifest['geometry_module_sha256']==GEOMETRY_SOURCE_SHA256
+    assert manifest['generator_sha256']==digest(Path(__file__).read_bytes())
+    assert manifest['metrics']['resolution']['support_tube_wall_mm']==1.2
+    assert manifest['metrics']['channels']['lv_fresh_left']['section_profile']=='half_ellipse_with_flat_sill'
     check=manifest['validation']
     assert check['passed'] and check['intersection_audit_complete'] and check['unexpected_intersection_count']==0
     assert manifest['roundtrip']['passed'] and manifest['mesh_validation']['passed']
@@ -57,12 +60,19 @@ def main():
     check['intersection_audit_complete']=not args.skip_intersections
     if args.skip_intersections:check['passed']=False
     print(f"BRep audit: passed={check['passed']}, unexpected intersections={check['unexpected_intersection_count']}",flush=True)
+    if not args.skip_intersections and not check['passed']:
+        # Preserve the previous verified cache when a candidate fails its audit.
+        rejected=args.out/'rejected-validation.json'
+        rejected.write_text(json.dumps(check,indent=2)+'\n')
+        raise SystemExit(f'Geometry audit failed; candidate report: {rejected}')
     with tempfile.TemporaryDirectory() as tmp:
-        path=Path(tmp)/'x57-modii-nacelle.step';assembly.save(str(path),exportType='STEP',mode='default');blob=path.read_bytes()
+        path=Path(tmp)/'x57-modii-nacelle.step' ;assembly.save(str(path),exportType='STEP',mode='default');blob=path.read_bytes()
         imported=cq.importers.importStep(str(path)).val()
         roundtrip={'valid':imported.isValid(),'closed_shells':all(s.Closed() for s in imported.Shells()),'solid_count':len(imported.Solids()),'volume_mm3':imported.Volume()}
         roundtrip['relative_volume_error']=abs(imported.Volume()-check['volume_mm3'])/max(check['volume_mm3'],1)
         roundtrip['passed']=roundtrip['valid'] and roundtrip['closed_shells'] and roundtrip['solid_count']==check['solid_count'] and roundtrip['relative_volume_error']<1e-8
+    if not roundtrip['passed']:
+        raise SystemExit('STEP roundtrip failed; previous verified cache preserved')
     packed=gzip.compress(blob,compresslevel=9,mtime=0);chunks=[]
     for index,offset in enumerate(range(0,len(packed),STEP_CHUNK_MAX_BYTES)):
         part=packed[offset:offset+STEP_CHUNK_MAX_BYTES];filename=f'x57-modii-baseline.step.gz.part-{index:04d}'
@@ -71,9 +81,13 @@ def main():
     artifact={'storage':'ordered_chunks_v1','compression':'gzip','download_filename':'x57-modii-nacelle.step','chunk_max_bytes':STEP_CHUNK_MAX_BYTES,'chunks':chunks,'sha256':digest(blob),'compressed_sha256':digest(packed),'bytes':len(blob),'compressed_bytes':len(packed)}
     if _read_step_artifact(args.out,artifact)!=blob:
         raise RuntimeError('Written STEP chunks failed exact reassembly')
-    manifest={'schema':SCHEMA,'parameters':p.to_dict(),'fingerprint':nacelle_fingerprint(p),'provenance':provenance(),'artifacts':{'step':artifact},'validation':check,'roundtrip':roundtrip,'mesh_validation':mesh_audit(p),'metrics':nacelle_metrics(p),'named_components':[{'id':c['id'],'label':c['label'],'group':c['group'],'role':c['role'],'thermal_node':c['thermal_node']} for c in assembly_geometry(p)['components']],'software':{'cadquery':cq.__version__},'geometry_module_sha256':GEOMETRY_SOURCE_SHA256,'generator_sha256':digest(Path(__file__).read_bytes())}
+    manifest={'schema':SCHEMA,'parameters':p.to_dict(),'fingerprint':nacelle_fingerprint(p),'provenance':provenance(),'artifacts':{'step':artifact},'validation':check,'roundtrip':roundtrip,'mesh_validation':mesh_audit(p),'metrics':nacelle_metrics(p),'named_components':[{'id':c['id'],'label':c['label'],'group':c['group'],'role':c['role'],'thermal_node':c['thermal_node'],'source':c['source'],'material':c['material']} for c in assembly_geometry(p)['components']],'software':{'cadquery':cq.__version__},'geometry_module_sha256':GEOMETRY_SOURCE_SHA256,'generator_sha256':digest(Path(__file__).read_bytes())}
     manifest_temp=args.out/'manifest.json.tmp'
     manifest_temp.write_text(json.dumps(manifest,indent=2)+'\n');manifest_temp.replace(args.out/'manifest.json')
+    # Remove only obsolete generated chunks after the new manifest is installed.
+    active={part['file'] for part in chunks}
+    for path in args.out.glob('x57-modii-baseline.step.gz.part-*'):
+        if path.name not in active and path.is_file():path.unlink()
     print(f"Wrote {len(packed):,}-byte compressed named STEP in {len(chunks)} bounded chunks in {time.time()-start:.1f}s; roundtrip={roundtrip['passed']}",flush=True)
     if not args.skip_intersections and not (check['passed'] and roundtrip['passed']):raise SystemExit('Geometry audit failed; inspect manifest before using generated artifact')
 

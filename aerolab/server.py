@@ -66,6 +66,7 @@ class Handler(BaseHTTPRequestHandler):
                   "/nacelle": ("nacelle.html", "text/html; charset=utf-8"),
                   "/nacelle.html": ("nacelle.html", "text/html; charset=utf-8"),
                   "/nacelle.js": ("nacelle.js", "text/javascript; charset=utf-8"),
+                  "/nacelle_story.js": ("nacelle_story.js", "text/javascript; charset=utf-8"),
                   "/nacelle.css": ("nacelle.css", "text/css; charset=utf-8"),
                   "/styles.css": ("styles.css", "text/css; charset=utf-8")}
         if path not in routes:
@@ -83,7 +84,7 @@ class Handler(BaseHTTPRequestHandler):
         if origin and origin not in (f"http://{host}", f"https://{host}"):
             return self.send_json(403, {"error": "Cross-origin requests are disabled"})
         path = urlparse(self.path).path
-        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step", "/api/nacelle/geometry", "/api/nacelle/evaluate", "/api/nacelle/compare", "/api/nacelle/step"):
+        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step", "/api/nacelle/geometry", "/api/nacelle/evaluate", "/api/nacelle/compare", "/api/nacelle/step", "/api/nacelle/story"):
             return self.send_json(404, {"error": "Unknown operation"})
         try:
             size = int(self.headers.get("Content-Length", "0"))
@@ -93,11 +94,16 @@ class Handler(BaseHTTPRequestHandler):
             allowed = {"geometry", "boundary"} if path.startswith(("/api/cad/", "/api/nacelle/")) else ALLOWED_ARGS
             if path in ("/api/cad/step", "/api/nacelle/step", "/api/nacelle/geometry"):
                 allowed = {"geometry"}
+            if path == "/api/nacelle/story":
+                allowed = set()
             if not isinstance(body, dict) or set(body) - allowed:
                 raise ValueError("Invalid or unknown request fields")
             if not COMPUTE_LOCK.acquire(blocking=False):
                 return self.send_json(429, {"error": "A calculation is in progress; try again when it completes"})
             try:
+                if path == "/api/nacelle/story":
+                    from .nacelle_story import engineering_story
+                    return self.send_json(200, engineering_story())
                 if path == "/api/nacelle/geometry":
                     from .nacelle_geometry import assembly_geometry
                     return self.send_json(200, assembly_geometry(body.get("geometry")))

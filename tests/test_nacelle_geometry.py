@@ -92,8 +92,73 @@ class NacelleGeometryTests(unittest.TestCase):
         slot=m['channels']['motor_slots'];self.assertEqual(slot['slot_count'],24)
         self.assertGreater(slot['heated_area_m2'],gap['heated_surfaces_m2']['motor_winding'])
         hv=m['channels']['cmc_hv_left'];self.assertAlmostEqual(hv['heated_area_m2'],hv['fin_area_m2']+hv['base_area_m2'])
-        lv=m['channels']['lv_fresh_left'];self.assertNotEqual(lv['hydraulic_diameter_m'],lv['heat_exchange']['hydraulic_diameter_m']);self.assertEqual(len(lv['segments']),2)
+        lv=m['channels']['lv_fresh_left'];self.assertNotEqual(lv['hydraulic_diameter_m'],lv['heat_exchange']['hydraulic_diameter_m']);self.assertEqual(len(lv['segments']),4)
         self.assertAlmostEqual(m['components']['cmc_left_cpu']['conduction_area_m2'],54*46*1e-6)
+
+    def test_half_moon_inlets_match_actual_section_polygons(self):
+        from aerolab.nacelle_geometry import _d_section,_lv_duct_sections,_section_area_perimeter
+        for height in (15,30,50):
+            p=NacelleParams(upper_inlet_height_mm=height);c=nacelle_metrics(p)['channels']['lv_fresh_left']
+            sections=_lv_duct_sections(p,0);points=_d_section(sections[0])
+            self.assertEqual(c['section_profile'],'half_ellipse_with_flat_sill')
+            self.assertAlmostEqual(points[0][2],points[-1][2])
+            self.assertAlmostEqual(max(q[2] for q in points)-points[0][2],height)
+            area,perimeter=_section_area_perimeter(points)
+            self.assertAlmostEqual(c['area_m2'],area*1e-6)
+            self.assertAlmostEqual(c['wetted_perimeter_m'],perimeter*1e-3)
+            self.assertAlmostEqual(area/(math.pi*37*height/2),math.sin(math.pi/24)/(math.pi/24))
+            self.assertAlmostEqual(c['length_m'],sum(seg['length_m'] for seg in c['segments']))
+            for i,(a,b) in enumerate(zip(sections,sections[1:])):
+                midpoint=[[sum(v)/2 for v in zip(pa,pb)] for pa,pb in zip(_d_section(a),_d_section(b))]
+                area,perimeter=_section_area_perimeter(midpoint)
+                self.assertAlmostEqual(c['segments'][i]['area_m2'],area*1e-6)
+                self.assertAlmostEqual(c['segments'][i]['wetted_perimeter_m'],perimeter*1e-3)
+
+    def test_hollow_supports_have_real_empty_cores(self):
+        from aerolab.nacelle_geometry import _hollow_rod,_mesh_part
+        parts=_hollow_rod((0,0,0),(100,0,0),6)
+        volume=sum(_mesh_part(part)[2] for part in parts)
+        expected=24/2*math.sin(2*math.pi/24)*(6**2-4.8**2)*100
+        self.assertAlmostEqual(volume,expected,places=6)
+        for part in parts:
+            for ring in part['rings']:
+                self.assertGreaterEqual(min(math.hypot(v[1],v[2]) for v in ring),4.8-1e-8)
+        self.assertEqual(nacelle_metrics()['resolution']['support_tube_wall_mm'],1.2)
+
+    def test_cowling_refinement_has_shared_seams_and_bounded_sampling(self):
+        from aerolab.nacelle_geometry import _cowling_stations,_cowling_station,_construction
+        for length in (1300,1470,1650):
+            p=NacelleParams(nacelle_length_mm=length);stations=_cowling_stations(p,[-25,1445])
+            self.assertGreater(len(stations),30)
+            for a,b in zip(stations,stations[1:]):
+                self.assertLessEqual(b[0]-a[0],55+1e-8)
+                for f in (.25,.5,.75):
+                    q=_cowling_station(p,a[0]+f*(b[0]-a[0]))
+                    for j in (1,2,3):self.assertLessEqual(abs(q[j]-(a[j]+f*(b[j]-a[j]))),.15000001)
+        p=NacelleParams();components={c['id']:c for c in _construction(p)}
+        def seam_points(component):
+            return {tuple(round(v,6) for v in point) for part in component['parts'] for ring in part['rings'] for point in ring if abs(point[2]-_cowling_station(p,point[0])[3])<1e-7 and point[1]>0}
+        self.assertEqual(seam_points(components['cowling_upper']),seam_points(components['cowling_lower']))
+
+    def test_refined_aperture_area_tracks_ruled_cowling(self):
+        from aerolab.nacelle_geometry import _construction
+        for params in ({},{'motor_exhaust_area_mm2':4500},{'motor_exhaust_area_mm2':16000},{'outlet_area_mm2':12000},{'outlet_area_mm2':36000}):
+            p=parse_nacelle(params);components={c['id']:c for c in _construction(p)}
+            # Lower opening edge is the final outer vertex of the left panel.
+            rings=components['cowling_lower']['parts'][1]['rings']
+            edge=[ring[32] for ring in rings]
+            projected_area=sum((b[0]-a[0])*(abs(a[1])+abs(b[1])) for a,b in zip(edge,edge[1:]))
+            self.assertAlmostEqual(projected_area,p.outlet_area_mm2,places=6)
+            scale=p.nacelle_length_mm/1470;start=258*scale-p.motor_exhaust_area_mm2/150
+            projected_area=0.
+            for part in components['cowling_upper']['parts']:
+                rings=part['rings']
+                if rings[0][0][0]<start-1e-8 or rings[-1][0][0]>258*scale+1e-8:continue
+                # Positive-Y aperture edge at the end of the first upper arc.
+                if rings[0][0][1]<0 or rings[0][32][1]<0:continue
+                edge=[ring[32] for ring in rings]
+                projected_area+=sum((b[0]-a[0])*(a[1]+b[1]) for a,b in zip(edge,edge[1:]))
+            self.assertAlmostEqual(projected_area,p.motor_exhaust_area_mm2,places=6)
 
     def test_knobs_change_own_physical_sections(self):
         a=nacelle_metrics();b=nacelle_metrics({'upper_inlet_height_mm':40});c=nacelle_metrics({'backplate_gap_mm':24})
@@ -131,6 +196,18 @@ class NacelleGeometryTests(unittest.TestCase):
                 self.assertFalse(status['kernel_available'])
                 self.assertTrue(status['stored_step_available'])
                 self.assertEqual(status['verification'],'verified_baseline_BRep')
+
+
+class NacelleGenerationSafetyTests(unittest.TestCase):
+    def test_failed_candidate_does_not_replace_verified_cache(self):
+        from scripts import generate_nacelle
+        from unittest.mock import Mock
+        with tempfile.TemporaryDirectory() as tmp:
+            directory=Path(tmp);manifest=directory/'manifest.json';manifest.write_text('previous verified cache')
+            with patch('sys.argv',['generate_nacelle','--out',tmp]),patch.object(generate_nacelle,'_load_kernel',return_value=Mock()),patch.object(generate_nacelle,'build_nacelle',return_value=(Mock(),{})),patch.object(generate_nacelle,'inspect_nacelle_brep',return_value={'passed':False,'unexpected_intersection_count':1}):
+                with self.assertRaisesRegex(SystemExit,'Geometry audit failed'):generate_nacelle.main()
+            self.assertEqual(manifest.read_text(),'previous verified cache')
+            self.assertTrue((directory/'rejected-validation.json').exists())
 
 
 class ChunkedStepIntegrityTests(unittest.TestCase):

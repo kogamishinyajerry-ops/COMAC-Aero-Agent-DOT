@@ -23,7 +23,7 @@
     "outlet_area_mm2": 22000.0,
     "motor_exhaust_area_mm2": 9000.0
   },
-  "fingerprint": "9ccf25d5e959fdbe87c9655923b08d6e529899b7c3db650c658e7f5d189133dd",
+  "fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
   "provenance": {
     "scope": "X-57 Mod II local-wing / cruise nacelle reconstruction",
     "original_NASA_CAD": false,
@@ -53,7 +53,33 @@
       "Local wing uses an illustrative NACA 2412 section; the NASA CFD figures omit the full wing and do not specify this section.",
       "Solid-volume mass uses illustrative homogeneous material densities; it is geometric proxy mass, not weighed aircraft hardware. Gross component volumes include the small declared attachment overlaps; installation-context wing is excluded.",
       "Air channels are reduced-order equivalent sections derived from the same dimensions; this is not a solved CFD volume mesh or a validated pressure-loss model.",
+      "Upper ear mouths use source-described half-moon topology with inferred 74 mm width and editable height; serial section areas come from the same polygon rings as CAD.",
+      "Motor-support tubes use an inferred 12 mm outside diameter and 1.2 mm wall; hollowness corrects a construction assumption, not measured NASA hardware.",
+      "Cowling control stations are inferred; monotone cubic interpolation, <=55 mm spacing and <=0.15 mm quarter/midpoint sampled deviation improve contour representation, not source dimensional accuracy.",
       "Named STEP solids are regenerated with CadQuery/OpenCascade. Browser fallback is closed procedural surface tessellation of the same parameterized construction."
+    ],
+    "feature_evidence": [
+      {
+        "feature": "upper_ear_mouth",
+        "source_fact": "Paired half-moon inlets feed cool ambient jets to separate CMC backplates",
+        "location": "2023 paper, p.8, Fig.7 and final paragraph",
+        "construction": "Half-ellipse roof and flat sill; dimensions and transition stations inferred",
+        "dimensional_confidence": "unmeasured"
+      },
+      {
+        "feature": "cowling_contour",
+        "source_fact": "Isolated Mod II nacelle envelope and lower exhaust topology",
+        "location": "2023 paper, pp.7\u20138, Figs.4,6\u20137",
+        "construction": "Inferred station envelope with shape-preserving interpolation; no image-derived metrology",
+        "dimensional_confidence": "unmeasured"
+      },
+      {
+        "feature": "motor_support_tubes",
+        "source_fact": "Major structural struts/braces included in source model",
+        "location": "2023 paper, p.6, section III.A; Fig.5",
+        "construction": "Inferred hollow round support sections, 12 mm OD / 1.2 mm wall; strength unanalysed",
+        "dimensional_confidence": "unmeasured"
+      }
     ]
   },
   "artifacts": {
@@ -67,109 +93,193 @@
           "index": 0,
           "file": "x57-modii-baseline.step.gz.part-0000",
           "bytes": 250000,
-          "sha256": "48dfcfead7821f5243f10b59060b5055862b8423a18e09825edc33009cf04cf0"
+          "sha256": "02ce01c181793bde20caa6d9764e2ed9b564df825a67738331dbfbc5cb3df625"
         },
         {
           "index": 1,
           "file": "x57-modii-baseline.step.gz.part-0001",
           "bytes": 250000,
-          "sha256": "bf2326e9c075040356302fd2c7da2bb92b1b685e8d5f9d255d89ce837dd7be8f"
+          "sha256": "87354ece033a6eb39315c5a5895037260c2e8982fae08fe73c33a4683a593244"
         },
         {
           "index": 2,
           "file": "x57-modii-baseline.step.gz.part-0002",
           "bytes": 250000,
-          "sha256": "2fa2911f60a4864d7e5a6f92bd5ed881aef09e35764b8f7738204975236f571a"
+          "sha256": "d8da509b10756dd92849331d8068863b342c8b67e3b18dadddab5d743921c716"
         },
         {
           "index": 3,
           "file": "x57-modii-baseline.step.gz.part-0003",
           "bytes": 250000,
-          "sha256": "3278dd208afd93006d4907d1e173d63d839e415df973e0e2f535b1edb663253d"
+          "sha256": "50723042662972690427287f66fefeb6f5ec08f0f4ff01138b762740c7714c5a"
         },
         {
           "index": 4,
           "file": "x57-modii-baseline.step.gz.part-0004",
           "bytes": 250000,
-          "sha256": "97d2e16542fe02ec7110231043c8aa59e305aeec6a224a4132acc3b5491e6cb7"
+          "sha256": "a602156286656fbad1862dcb046c055a8468d43f2338d1185ce8488c45ad1221"
         },
         {
           "index": 5,
           "file": "x57-modii-baseline.step.gz.part-0005",
           "bytes": 250000,
-          "sha256": "4ae1803e7c0a0cd151e9af20b17d9f3f500bb907e332dee22f5ed7d549fbdc60"
+          "sha256": "5c76293b08d91744e2abedf338dc815e0b220bb962a7deba8b7f0519b942bd78"
         },
         {
           "index": 6,
           "file": "x57-modii-baseline.step.gz.part-0006",
           "bytes": 250000,
-          "sha256": "b340a07bd938e8d5684129a86cf75f95292f719926f87fd0104f0a67367a0483"
+          "sha256": "5f8c8d457cfcfa9a01cb4e27db820b33386e03ef3633249a4987b22ead5b8940"
         },
         {
           "index": 7,
           "file": "x57-modii-baseline.step.gz.part-0007",
           "bytes": 250000,
-          "sha256": "d70c0387218335ce50b6247bf731441814af7035bf5dcfce50d9fd491c39842e"
+          "sha256": "1cb506f27c40c5c7cd1673074a762a951623d4f8b9a70747b40d01321989db5f"
         },
         {
           "index": 8,
           "file": "x57-modii-baseline.step.gz.part-0008",
           "bytes": 250000,
-          "sha256": "a6e0997c0a64bfcf78bf8452a6098b91fe8857dd7913a30089efad50d9667631"
+          "sha256": "c7871c92f70aff49af8dfc384d92594a162f783b61ae38ffb4a3361f8b1c5139"
         },
         {
           "index": 9,
           "file": "x57-modii-baseline.step.gz.part-0009",
           "bytes": 250000,
-          "sha256": "a645ad4391bc9a9e981ababd973133171c555407b6f269aba11ddd2d1615efa9"
+          "sha256": "a0d3abc9c401c2a9fc5a5ea0b5a7c2089ff3bf5653f34aae7c0f203074cff370"
         },
         {
           "index": 10,
           "file": "x57-modii-baseline.step.gz.part-0010",
           "bytes": 250000,
-          "sha256": "09224e09113cac2d4b1c675df6f0c43114ac97fa70ecd9c622c6c4cfb9b636f5"
+          "sha256": "de7fa02ff5cfd475d41765021b5f2539f89fc5a597496c7265c4d4cf9a7a9619"
         },
         {
           "index": 11,
           "file": "x57-modii-baseline.step.gz.part-0011",
           "bytes": 250000,
-          "sha256": "688fc8035a688e2f01f76c1c62e7330b672d37fe8af55565a7ab5c6d33ef3056"
+          "sha256": "cb408cd89b3c209756e782f2347c9399eadc1feb9550f68606eeb20617fef70f"
         },
         {
           "index": 12,
           "file": "x57-modii-baseline.step.gz.part-0012",
           "bytes": 250000,
-          "sha256": "d1db7c129d6611d3c03f3714ea9dc33f0a3a138680d4abda6418f02dbf0491f2"
+          "sha256": "922e70cd991923e2633cbc97aaa1d54cb587755a7992fd18603d5f1bfc85fbad"
         },
         {
           "index": 13,
           "file": "x57-modii-baseline.step.gz.part-0013",
           "bytes": 250000,
-          "sha256": "f7b4ae56f04f74c292641fdc2e770fb794e8cb956a9e8fa9a48426e1e740c72c"
+          "sha256": "25b36c58788d51db472d89f16353a80d265e7c7b5a1c1f435e457578b2050eb6"
         },
         {
           "index": 14,
           "file": "x57-modii-baseline.step.gz.part-0014",
           "bytes": 250000,
-          "sha256": "eef50540fe5989bc87ce8e4d3c246403d9ce9ee62b8502a58c4971d677a354f2"
+          "sha256": "cc241bbf2af8314bd21d3962105b230aadaf534d16d54c982d6a839d1f3097a1"
         },
         {
           "index": 15,
           "file": "x57-modii-baseline.step.gz.part-0015",
           "bytes": 250000,
-          "sha256": "06da4ecf3f523c685a60b6a661f271772aaa4e1c0c5a496ddf676aedef7cafe0"
+          "sha256": "38ebe214819d858aa8f8f1933bc5c6f0a2194d90d346f6dfe05487e7d869c740"
         },
         {
           "index": 16,
           "file": "x57-modii-baseline.step.gz.part-0016",
-          "bytes": 185207,
-          "sha256": "8b0ee6552b1eae5c4c9bf4715a8806935390e814ce13b7c4c08165dfb7e84431"
+          "bytes": 250000,
+          "sha256": "3f021486e09f3973130fec90e02c5852d2df08ef6d48e0f0dbc9ac4a89571c77"
+        },
+        {
+          "index": 17,
+          "file": "x57-modii-baseline.step.gz.part-0017",
+          "bytes": 250000,
+          "sha256": "cfa3dc75e422779c703a284018a28cb95913c60d6bbd7440d4e93e6474ec255d"
+        },
+        {
+          "index": 18,
+          "file": "x57-modii-baseline.step.gz.part-0018",
+          "bytes": 250000,
+          "sha256": "5b05e6dca49aab351afe4d0ccee89d274a40b08734f07bab00895f28a4343c6f"
+        },
+        {
+          "index": 19,
+          "file": "x57-modii-baseline.step.gz.part-0019",
+          "bytes": 250000,
+          "sha256": "94e92391047859de0632c8fbe967008ad8b2edb7b8a93c2430bba6f1cdb920d2"
+        },
+        {
+          "index": 20,
+          "file": "x57-modii-baseline.step.gz.part-0020",
+          "bytes": 250000,
+          "sha256": "925b4a82e5744d00f2292f36088282cc3c77de925963cd73d8a7da27361acf76"
+        },
+        {
+          "index": 21,
+          "file": "x57-modii-baseline.step.gz.part-0021",
+          "bytes": 250000,
+          "sha256": "83fde9d8e33af08d46356bd893d65def4a675fa2b06618133328b2efc6fad072"
+        },
+        {
+          "index": 22,
+          "file": "x57-modii-baseline.step.gz.part-0022",
+          "bytes": 250000,
+          "sha256": "e0b4ba90c81193e6bd9b04e5a1cd07ebafa8717b71d157b9731f4cb403a7c9f0"
+        },
+        {
+          "index": 23,
+          "file": "x57-modii-baseline.step.gz.part-0023",
+          "bytes": 250000,
+          "sha256": "78cee81ffe09d35fd3e7d2d6d34297c32e3cf00b53c76f4341c627f9ff7572bd"
+        },
+        {
+          "index": 24,
+          "file": "x57-modii-baseline.step.gz.part-0024",
+          "bytes": 250000,
+          "sha256": "1cc6d2aa925be6d4ad21372f3a07faa639b490119eeaf3af7d53688077147a68"
+        },
+        {
+          "index": 25,
+          "file": "x57-modii-baseline.step.gz.part-0025",
+          "bytes": 250000,
+          "sha256": "d1a9b53f3c17bc2d5fd853fb7531617e17c21ef05c1fcf66b0dde907d8e259ef"
+        },
+        {
+          "index": 26,
+          "file": "x57-modii-baseline.step.gz.part-0026",
+          "bytes": 250000,
+          "sha256": "cf91e23adfc2ffa6c94781f1d76d68d4a7aa0e1b394cce28463d5634f485dea1"
+        },
+        {
+          "index": 27,
+          "file": "x57-modii-baseline.step.gz.part-0027",
+          "bytes": 250000,
+          "sha256": "2d4c87dcd0befabb1c17c756ce3d53c5eef64a9a13d3f7f87b9e41cc21c2100c"
+        },
+        {
+          "index": 28,
+          "file": "x57-modii-baseline.step.gz.part-0028",
+          "bytes": 250000,
+          "sha256": "17c8118145d4da81135d1ab8ef632dd2d81417973de9006afbc501198d7b150e"
+        },
+        {
+          "index": 29,
+          "file": "x57-modii-baseline.step.gz.part-0029",
+          "bytes": 250000,
+          "sha256": "bbb28a5605613bbd0a9903413a27abb597369542faba25a0850936ee88232993"
+        },
+        {
+          "index": 30,
+          "file": "x57-modii-baseline.step.gz.part-0030",
+          "bytes": 25556,
+          "sha256": "3f03b8bfeaeb918f318f5d1560bbed1542c23fa698d77f32c00b4cf178a83ab7"
         }
       ],
-      "sha256": "9790a38e94954b630d2c5625fb657bd888f7264773fe0f0504b17d8f278962af",
-      "compressed_sha256": "534d8cb1865380a8242394b4c75aea7df2de9425e6f8db1bfd43001c3eb76c39",
-      "bytes": 29072334,
-      "compressed_bytes": 4185207
+      "sha256": "23a230995a9156fd3bdf7c272f71cc85272655bf9a7c047862126741d3342adf",
+      "compressed_sha256": "b36c7d40ca66e484f247f303d2ae8e9898e308f0b9a4a9db449a8965a4028523",
+      "bytes": 51511453,
+      "compressed_bytes": 7525556
     }
   },
   "validation": {
@@ -181,9 +291,9 @@
         "valid": true,
         "solid_count": 14,
         "closed_shells": true,
-        "volume_mm3": 1432199.2526751535,
-        "mesh_volume_mm3": 1432199.2526751594,
-        "relative_volume_error": 4.064215283225653e-15,
+        "volume_mm3": 1439646.9055293407,
+        "mesh_volume_mm3": 1439646.9055293386,
+        "relative_volume_error": 1.4555484298522135e-15,
         "passed": true
       },
       {
@@ -191,9 +301,9 @@
         "valid": true,
         "solid_count": 3,
         "closed_shells": true,
-        "volume_mm3": 1505452.9620983119,
-        "mesh_volume_mm3": 1505452.9620983223,
-        "relative_volume_error": 6.959618950711425e-15,
+        "volume_mm3": 1512890.2354244024,
+        "mesh_volume_mm3": 1512890.2354244026,
+        "relative_volume_error": 1.538979089177312e-16,
         "passed": true
       },
       {
@@ -201,9 +311,9 @@
         "valid": true,
         "solid_count": 2,
         "closed_shells": true,
-        "volume_mm3": 1525342.34574006,
-        "mesh_volume_mm3": 1525342.3457400624,
-        "relative_volume_error": 1.5264156555026035e-15,
+        "volume_mm3": 1526344.5788918503,
+        "mesh_volume_mm3": 1526344.5788918734,
+        "relative_volume_error": 1.5101592419234436e-14,
         "passed": true
       },
       {
@@ -471,9 +581,9 @@
         "valid": true,
         "solid_count": 2,
         "closed_shells": true,
-        "volume_mm3": 60873.764837476876,
-        "mesh_volume_mm3": 60873.76483747698,
-        "relative_volume_error": 1.6733548002251322e-15,
+        "volume_mm3": 70479.74825409887,
+        "mesh_volume_mm3": 70479.74825409873,
+        "relative_volume_error": 2.0646945525263835e-15,
         "passed": true
       },
       {
@@ -591,29 +701,29 @@
         "valid": true,
         "solid_count": 2,
         "closed_shells": true,
-        "volume_mm3": 60873.76483747688,
-        "mesh_volume_mm3": 60873.76483747703,
-        "relative_volume_error": 2.3905068574644725e-15,
+        "volume_mm3": 70479.74825409889,
+        "mesh_volume_mm3": 70479.74825409878,
+        "relative_volume_error": 1.4452861867684672e-15,
         "passed": true
       },
       {
         "id": "mount_strut_-1_-1",
         "valid": true,
-        "solid_count": 3,
+        "solid_count": 6,
         "closed_shells": true,
-        "volume_mm3": 59848.18380716801,
-        "mesh_volume_mm3": 59848.18380716749,
-        "relative_volume_error": 8.753297341639087e-15,
+        "volume_mm3": 21857.5411841436,
+        "mesh_volume_mm3": 21857.541184143334,
+        "relative_volume_error": 1.2150152237176429e-14,
         "passed": true
       },
       {
         "id": "mount_strut_-1_+1",
         "valid": true,
-        "solid_count": 3,
+        "solid_count": 6,
         "closed_shells": true,
-        "volume_mm3": 52692.867814757206,
-        "mesh_volume_mm3": 52692.867814757265,
-        "relative_volume_error": 1.10465919444919e-15,
+        "volume_mm3": 19244.302084130017,
+        "mesh_volume_mm3": 19244.302084130093,
+        "relative_volume_error": 3.969879220090168e-15,
         "passed": true
       },
       {
@@ -639,21 +749,21 @@
       {
         "id": "mount_strut_+1_-1",
         "valid": true,
-        "solid_count": 3,
+        "solid_count": 6,
         "closed_shells": true,
-        "volume_mm3": 59848.183807168614,
-        "mesh_volume_mm3": 59848.183807167494,
-        "relative_volume_error": 1.872233042517249e-14,
+        "volume_mm3": 21857.5411841435,
+        "mesh_volume_mm3": 21857.541184143352,
+        "relative_volume_error": 6.824058105811413e-15,
         "passed": true
       },
       {
         "id": "mount_strut_+1_+1",
         "valid": true,
-        "solid_count": 3,
+        "solid_count": 6,
         "closed_shells": true,
-        "volume_mm3": 52692.86781475723,
-        "mesh_volume_mm3": 52692.867814757265,
-        "relative_volume_error": 6.904119965307437e-16,
+        "volume_mm3": 19244.30208413032,
+        "mesh_volume_mm3": 19244.30208413009,
+        "relative_volume_error": 1.1909637660270507e-14,
         "passed": true
       },
       {
@@ -768,8 +878,8 @@
       }
     ],
     "component_count": 59,
-    "solid_count": 230,
-    "volume_mm3": 229804418.3186789,
+    "solid_count": 242,
+    "volume_mm3": 229696639.02813688,
     "mesh_relative_volume_tolerance": 0.018,
     "intersections": [
       {
@@ -796,28 +906,28 @@
       {
         "a": "motor_rear_mount",
         "b": "mount_strut_-1_-1",
-        "intersection_mm3": 172.4724653381638,
+        "intersection_mm3": 39.31986153692298,
         "allowed": true,
         "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
       },
       {
         "a": "motor_rear_mount",
         "b": "mount_strut_-1_+1",
-        "intersection_mm3": 172.47246533815576,
+        "intersection_mm3": 39.3198615369399,
         "allowed": true,
         "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
       },
       {
         "a": "motor_rear_mount",
         "b": "mount_strut_+1_-1",
-        "intersection_mm3": 172.4724653381557,
+        "intersection_mm3": 39.31986153694001,
         "allowed": true,
         "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
       },
       {
         "a": "motor_rear_mount",
         "b": "mount_strut_+1_+1",
-        "intersection_mm3": 172.47246533815996,
+        "intersection_mm3": 39.319861536922964,
         "allowed": true,
         "reason": "Motor support tube seats into the inferred mounting-flange attachment envelope"
       },
@@ -852,28 +962,28 @@
       {
         "a": "mount_strut_-1_-1",
         "b": "mount_strut_-1_+1",
-        "intersection_mm3": 554.736892407689,
+        "intersection_mm3": 62.50509281547325,
         "allowed": true,
         "reason": "Upper and lower support tubes converge at the same inferred wing attachment node"
       },
       {
         "a": "mount_strut_-1_-1",
         "b": "cmc_frame_-1_-1",
-        "intersection_mm3": 3034.1589026282313,
+        "intersection_mm3": 2009.499557526001,
         "allowed": true,
         "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
       },
       {
         "a": "mount_strut_-1_-1",
         "b": "cmc_frame_cross_front",
-        "intersection_mm3": 137.18553299902408,
+        "intersection_mm3": 70.43788228391547,
         "allowed": true,
         "reason": "Cradle crossmember / motor support attachment envelope"
       },
       {
         "a": "mount_strut_-1_+1",
         "b": "cmc_frame_-1_+1",
-        "intersection_mm3": 3979.9109588292854,
+        "intersection_mm3": 2354.5732045756968,
         "allowed": true,
         "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
       },
@@ -908,28 +1018,28 @@
       {
         "a": "mount_strut_+1_-1",
         "b": "mount_strut_+1_+1",
-        "intersection_mm3": 554.7368924076852,
+        "intersection_mm3": 62.50509281550214,
         "allowed": true,
         "reason": "Upper and lower support tubes converge at the same inferred wing attachment node"
       },
       {
         "a": "mount_strut_+1_-1",
         "b": "cmc_frame_+1_-1",
-        "intersection_mm3": 3034.158902628268,
+        "intersection_mm3": 2009.4995575259857,
         "allowed": true,
         "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
       },
       {
         "a": "mount_strut_+1_-1",
         "b": "cmc_frame_cross_front",
-        "intersection_mm3": 137.18553299902595,
+        "intersection_mm3": 70.43788228392454,
         "allowed": true,
         "reason": "Cradle crossmember / motor support attachment envelope"
       },
       {
         "a": "mount_strut_+1_+1",
         "b": "cmc_frame_+1_+1",
-        "intersection_mm3": 3979.91095882938,
+        "intersection_mm3": 2354.5732045753766,
         "allowed": true,
         "reason": "Longitudinal support/cradle shared welded attachment envelope; detailed clamp hardware omitted"
       },
@@ -962,7 +1072,7 @@
         "reason": "Explicit inferred CMC mounting bracket seats into case and cradle attachment envelopes"
       }
     ],
-    "intersection_pairs_tested": 224,
+    "intersection_pairs_tested": 226,
     "context_junctions": [
       {
         "a": "cowling_upper",
@@ -1017,7 +1127,7 @@
       {
         "a": "lv_inlet_left",
         "b": "cmc_left_lv",
-        "minimum_distance_mm": 6.355287432313019e-14,
+        "minimum_distance_mm": 0.0,
         "passed": true
       },
       {
@@ -1065,7 +1175,7 @@
       {
         "a": "lv_inlet_right",
         "b": "cmc_right_lv",
-        "minimum_distance_mm": 6.355287432313019e-14,
+        "minimum_distance_mm": 0.0,
         "passed": true
       },
       {
@@ -1122,9 +1232,9 @@
   "roundtrip": {
     "valid": true,
     "closed_shells": true,
-    "solid_count": 230,
-    "volume_mm3": 229804418.31869063,
-    "relative_volume_error": 5.109612385462797e-14,
+    "solid_count": 242,
+    "volume_mm3": 229696639.02814752,
+    "relative_volume_error": 4.63194809354783e-14,
     "passed": true
   },
   "mesh_validation": {
@@ -1133,26 +1243,26 @@
       {
         "id": "cowling_upper",
         "closed_indexed_mesh": true,
-        "volume_mm3": 1432199.2526751594,
+        "volume_mm3": 1439646.9055293386,
         "parts": 14,
-        "vertex_count": 1848,
-        "triangle_count": 3640
+        "vertex_count": 3762,
+        "triangle_count": 7468
       },
       {
         "id": "cowling_lower",
         "closed_indexed_mesh": true,
-        "volume_mm3": 1505452.9620983223,
+        "volume_mm3": 1512890.2354244026,
         "parts": 3,
-        "vertex_count": 792,
-        "triangle_count": 1572
+        "vertex_count": 2838,
+        "triangle_count": 5664
       },
       {
         "id": "cowling_tail",
         "closed_indexed_mesh": true,
-        "volume_mm3": 1525342.3457400624,
+        "volume_mm3": 1526344.5788918734,
         "parts": 2,
-        "vertex_count": 792,
-        "triangle_count": 1576
+        "vertex_count": 3300,
+        "triangle_count": 6592
       },
       {
         "id": "local_wing",
@@ -1365,10 +1475,10 @@
       {
         "id": "lv_inlet_left",
         "closed_indexed_mesh": true,
-        "volume_mm3": 60873.76483747698,
+        "volume_mm3": 70479.74825409873,
         "parts": 2,
-        "vertex_count": 272,
-        "triangle_count": 536
+        "vertex_count": 216,
+        "triangle_count": 424
       },
       {
         "id": "cmc_right_case",
@@ -1461,26 +1571,26 @@
       {
         "id": "lv_inlet_right",
         "closed_indexed_mesh": true,
-        "volume_mm3": 60873.76483747703,
+        "volume_mm3": 70479.74825409878,
         "parts": 2,
-        "vertex_count": 272,
-        "triangle_count": 536
+        "vertex_count": 216,
+        "triangle_count": 424
       },
       {
         "id": "mount_strut_-1_-1",
         "closed_indexed_mesh": true,
-        "volume_mm3": 59848.18380716749,
-        "parts": 3,
-        "vertex_count": 96,
-        "triangle_count": 180
+        "volume_mm3": 21857.541184143334,
+        "parts": 6,
+        "vertex_count": 312,
+        "triangle_count": 600
       },
       {
         "id": "mount_strut_-1_+1",
         "closed_indexed_mesh": true,
-        "volume_mm3": 52692.867814757265,
-        "parts": 3,
-        "vertex_count": 96,
-        "triangle_count": 180
+        "volume_mm3": 19244.302084130093,
+        "parts": 6,
+        "vertex_count": 312,
+        "triangle_count": 600
       },
       {
         "id": "cmc_frame_-1_-1",
@@ -1501,18 +1611,18 @@
       {
         "id": "mount_strut_+1_-1",
         "closed_indexed_mesh": true,
-        "volume_mm3": 59848.183807167494,
-        "parts": 3,
-        "vertex_count": 96,
-        "triangle_count": 180
+        "volume_mm3": 21857.541184143352,
+        "parts": 6,
+        "vertex_count": 312,
+        "triangle_count": 600
       },
       {
         "id": "mount_strut_+1_+1",
         "closed_indexed_mesh": true,
-        "volume_mm3": 52692.867814757265,
-        "parts": 3,
-        "vertex_count": 96,
-        "triangle_count": 180
+        "volume_mm3": 19244.30208413009,
+        "parts": 6,
+        "vertex_count": 312,
+        "triangle_count": 600
       },
       {
         "id": "cmc_frame_+1_-1",
@@ -1629,7 +1739,7 @@
       "outlet_area_mm2": 22000.0,
       "motor_exhaust_area_mm2": 9000.0
     },
-    "fingerprint": "9ccf25d5e959fdbe87c9655923b08d6e529899b7c3db650c658e7f5d189133dd",
+    "fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
     "channels": {
       "main_inlet": {
         "area_m2": 0.0559424660461796,
@@ -1784,11 +1894,11 @@
         "method": "same-parameter equivalent flow section; not CFD volume extraction"
       },
       "lv_fresh_left": {
-        "area_m2": 0.0017435839227423352,
-        "wetted_perimeter_m": 0.17075672570229883,
-        "length_m": 0.48,
+        "area_m2": 0.001738608880371088,
+        "wetted_perimeter_m": 0.1794554209675597,
+        "length_m": 0.4453501515685907,
         "heated_area_m2": 0.0555,
-        "hydraulic_diameter_m": 0.040843695393460264,
+        "hydraulic_diameter_m": 0.03875299773051443,
         "method": "same-parameter equivalent flow section; not CFD volume extraction",
         "heat_exchange": {
           "area_m2": 0.003078,
@@ -1801,11 +1911,31 @@
         },
         "segments": [
           {
-            "area_m2": 0.0017435839227423352,
-            "wetted_perimeter_m": 0.17075672570229883,
-            "length_m": 0.18,
+            "area_m2": 0.0017386088803710807,
+            "wetted_perimeter_m": 0.1794554209675597,
+            "length_m": 0.02501999200639361,
             "heated_area_m2": 0.0,
-            "hydraulic_diameter_m": 0.040843695393460264
+            "hydraulic_diameter_m": 0.038752997730514264,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 1: exact midpoint polygon, straight centroid path"
+          },
+          {
+            "area_m2": 0.001548170242232833,
+            "wetted_perimeter_m": 0.17466291376099258,
+            "length_m": 0.05601690249616904,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.035455042147100276,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 2: exact midpoint polygon, straight centroid path"
+          },
+          {
+            "area_m2": 0.001173126161584191,
+            "wetted_perimeter_m": 0.16578774663205476,
+            "length_m": 0.06431325706602804,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.028304291129254526,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 3: exact midpoint polygon, straight centroid path"
           },
           {
             "area_m2": 0.003078,
@@ -1817,14 +1947,64 @@
             "gap_m": 0.018000000000000002
           }
         ],
-        "heat_exchange_note": "Inferred nominal backplate standoff with open connector end; full-plate jet heat-transfer area, not a sealed CFD duct"
+        "section_profile": "half_ellipse_with_flat_sill",
+        "inlet_width_m": 0.074,
+        "inlet_height_m": 0.03,
+        "inlet_analytic_area_m2": 0.0017435839227423352,
+        "section_stations": [
+          {
+            "floor_origin_mm": [
+              275.0,
+              0.0,
+              222.95000000000002
+            ],
+            "height_mm": 30.0,
+            "tilt_rad": 0.0,
+            "area_m2": 0.001738608880371088,
+            "perimeter_m": 0.1794554209675597
+          },
+          {
+            "floor_origin_mm": [
+              300.0,
+              0.0,
+              221.95000000000002
+            ],
+            "height_mm": 30.0,
+            "tilt_rad": 0.0,
+            "area_m2": 0.001738608880371088,
+            "perimeter_m": 0.1794554209675597
+          },
+          {
+            "floor_origin_mm": [
+              345.0,
+              0.0,
+              195.95000000000002
+            ],
+            "height_mm": 24.0,
+            "tilt_rad": 0.2932153143350474,
+            "area_m2": 0.0013908871042968727,
+            "perimeter_m": 0.17084049599712695
+          },
+          {
+            "floor_origin_mm": [
+              373.2090296831061,
+              0.0,
+              144.1999889805806
+            ],
+            "height_mm": 18.0,
+            "tilt_rad": 0.8377580409572782,
+            "area_m2": 0.0010431653282226509,
+            "perimeter_m": 0.16292763755751813
+          }
+        ],
+        "heat_exchange_note": "D-shaped scoop transition to inferred backplate standoff with open connector end; full-plate jet area, not a sealed CFD duct"
       },
       "lv_fresh_right": {
-        "area_m2": 0.0017435839227423352,
-        "wetted_perimeter_m": 0.17075672570229883,
-        "length_m": 0.48,
+        "area_m2": 0.001738608880371088,
+        "wetted_perimeter_m": 0.1794554209675597,
+        "length_m": 0.4453501515685907,
         "heated_area_m2": 0.0555,
-        "hydraulic_diameter_m": 0.040843695393460264,
+        "hydraulic_diameter_m": 0.03875299773051443,
         "method": "same-parameter equivalent flow section; not CFD volume extraction",
         "heat_exchange": {
           "area_m2": 0.003078,
@@ -1837,11 +2017,31 @@
         },
         "segments": [
           {
-            "area_m2": 0.0017435839227423352,
-            "wetted_perimeter_m": 0.17075672570229883,
-            "length_m": 0.18,
+            "area_m2": 0.0017386088803710807,
+            "wetted_perimeter_m": 0.1794554209675597,
+            "length_m": 0.02501999200639361,
             "heated_area_m2": 0.0,
-            "hydraulic_diameter_m": 0.040843695393460264
+            "hydraulic_diameter_m": 0.038752997730514264,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 1: exact midpoint polygon, straight centroid path"
+          },
+          {
+            "area_m2": 0.001548170242232833,
+            "wetted_perimeter_m": 0.17466291376099258,
+            "length_m": 0.05601690249616904,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.035455042147100276,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 2: exact midpoint polygon, straight centroid path"
+          },
+          {
+            "area_m2": 0.001173126161584191,
+            "wetted_perimeter_m": 0.16578774663205476,
+            "length_m": 0.06431325706602804,
+            "heated_area_m2": 0.0,
+            "hydraulic_diameter_m": 0.028304291129254526,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "D-section transition 3: exact midpoint polygon, straight centroid path"
           },
           {
             "area_m2": 0.003078,
@@ -1853,7 +2053,57 @@
             "gap_m": 0.018000000000000002
           }
         ],
-        "heat_exchange_note": "Inferred nominal backplate standoff with open connector end; full-plate jet heat-transfer area, not a sealed CFD duct"
+        "section_profile": "half_ellipse_with_flat_sill",
+        "inlet_width_m": 0.074,
+        "inlet_height_m": 0.03,
+        "inlet_analytic_area_m2": 0.0017435839227423352,
+        "section_stations": [
+          {
+            "floor_origin_mm": [
+              275.0,
+              0.0,
+              222.95000000000002
+            ],
+            "height_mm": 30.0,
+            "tilt_rad": 0.0,
+            "area_m2": 0.001738608880371088,
+            "perimeter_m": 0.1794554209675597
+          },
+          {
+            "floor_origin_mm": [
+              300.0,
+              0.0,
+              221.95000000000002
+            ],
+            "height_mm": 30.0,
+            "tilt_rad": 0.0,
+            "area_m2": 0.001738608880371088,
+            "perimeter_m": 0.1794554209675597
+          },
+          {
+            "floor_origin_mm": [
+              345.0,
+              0.0,
+              195.95000000000002
+            ],
+            "height_mm": 24.0,
+            "tilt_rad": 0.2932153143350474,
+            "area_m2": 0.0013908871042968727,
+            "perimeter_m": 0.17084049599712695
+          },
+          {
+            "floor_origin_mm": [
+              373.2090296831061,
+              0.0,
+              144.1999889805806
+            ],
+            "height_mm": 18.0,
+            "tilt_rad": 0.8377580409572782,
+            "area_m2": 0.0010431653282226509,
+            "perimeter_m": 0.16292763755751813
+          }
+        ],
+        "heat_exchange_note": "D-shaped scoop transition to inferred backplate standoff with open connector end; full-plate jet area, not a sealed CFD duct"
       },
       "lower_outlet": {
         "area_m2": 0.022,
@@ -1882,22 +2132,22 @@
     },
     "components": {
       "cowling_upper": {
-        "volume_m3": 0.0014321992526751595,
-        "mass_kg": 2.219908841646497,
+        "volume_m3": 0.0014396469055293387,
+        "mass_kg": 2.231452703570475,
         "material": "composite",
         "density_kg_m3": 1550.0,
         "role": "hardware"
       },
       "cowling_lower": {
-        "volume_m3": 0.0015054529620983225,
-        "mass_kg": 2.3334520912523997,
+        "volume_m3": 0.0015128902354244027,
+        "mass_kg": 2.344979864907824,
         "material": "composite",
         "density_kg_m3": 1550.0,
         "role": "hardware"
       },
       "cowling_tail": {
-        "volume_m3": 0.0015253423457400625,
-        "mass_kg": 2.3642806358970967,
+        "volume_m3": 0.0015263445788918735,
+        "mass_kg": 2.365834097282404,
         "material": "composite",
         "density_kg_m3": 1550.0,
         "role": "hardware"
@@ -2111,8 +2361,8 @@
         "role": "hardware"
       },
       "lv_inlet_left": {
-        "volume_m3": 6.087376483747698e-05,
-        "mass_kg": 0.16435916506118783,
+        "volume_m3": 7.047974825409872e-05,
+        "mass_kg": 0.19029532028606655,
         "material": "aluminum",
         "density_kg_m3": 2700.0,
         "role": "hardware"
@@ -2211,22 +2461,22 @@
         "role": "hardware"
       },
       "lv_inlet_right": {
-        "volume_m3": 6.0873764837477035e-05,
-        "mass_kg": 0.164359165061188,
+        "volume_m3": 7.047974825409879e-05,
+        "mass_kg": 0.19029532028606674,
         "material": "aluminum",
         "density_kg_m3": 2700.0,
         "role": "hardware"
       },
       "mount_strut_-1_-1": {
-        "volume_m3": 5.984818380716749e-05,
-        "mass_kg": 0.4698082428862648,
+        "volume_m3": 2.1857541184143337e-05,
+        "mass_kg": 0.1715816982955252,
         "material": "steel",
         "density_kg_m3": 7850.0,
         "role": "hardware"
       },
       "mount_strut_-1_+1": {
-        "volume_m3": 5.2692867814757266e-05,
-        "mass_kg": 0.41363901234584455,
+        "volume_m3": 1.9244302084130094e-05,
+        "mass_kg": 0.15106777136042124,
         "material": "steel",
         "density_kg_m3": 7850.0,
         "role": "hardware"
@@ -2246,15 +2496,15 @@
         "role": "hardware"
       },
       "mount_strut_+1_-1": {
-        "volume_m3": 5.98481838071675e-05,
-        "mass_kg": 0.4698082428862649,
+        "volume_m3": 2.1857541184143354e-05,
+        "mass_kg": 0.17158169829552533,
         "material": "steel",
         "density_kg_m3": 7850.0,
         "role": "hardware"
       },
       "mount_strut_+1_+1": {
-        "volume_m3": 5.2692867814757266e-05,
-        "mass_kg": 0.41363901234584455,
+        "volume_m3": 1.924430208413009e-05,
+        "mass_kg": 0.1510677713604212,
         "material": "steel",
         "density_kg_m3": 7850.0,
         "role": "hardware"
@@ -2337,12 +2587,12 @@
         "role": "hardware"
       }
     },
-    "mass_kg": 109.24923488100487,
-    "solid_volume_m3": 0.025224457681654003,
+    "mass_kg": 108.20413671726703,
+    "solid_volume_m3": 0.025116678391112007,
     "material_volumes_m3": {
-      "composite": 0.007857584388183965,
-      "steel": 0.005655252805536501,
-      "aluminum": 0.0058312604978859334,
+      "composite": 0.007873471547516036,
+      "steel": 0.005512374388829198,
+      "aluminum": 0.005850472464719177,
       "magnet_proxy": 0.00158172376520043,
       "copper_proxy": 0.004162556224847168,
       "electronics_proxy": 0.00013608000000000012
@@ -2357,8 +2607,22 @@
       "Local wing uses an illustrative NACA 2412 section; the NASA CFD figures omit the full wing and do not specify this section.",
       "Solid-volume mass uses illustrative homogeneous material densities; it is geometric proxy mass, not weighed aircraft hardware. Gross component volumes include the small declared attachment overlaps; installation-context wing is excluded.",
       "Air channels are reduced-order equivalent sections derived from the same dimensions; this is not a solved CFD volume mesh or a validated pressure-loss model.",
+      "Upper ear mouths use source-described half-moon topology with inferred 74 mm width and editable height; serial section areas come from the same polygon rings as CAD.",
+      "Motor-support tubes use an inferred 12 mm outside diameter and 1.2 mm wall; hollowness corrects a construction assumption, not measured NASA hardware.",
+      "Cowling control stations are inferred; monotone cubic interpolation, <=55 mm spacing and <=0.15 mm quarter/midpoint sampled deviation improve contour representation, not source dimensional accuracy.",
       "Named STEP solids are regenerated with CadQuery/OpenCascade. Browser fallback is closed procedural surface tessellation of the same parameterized construction."
     ],
+    "resolution": {
+      "cowling_max_axial_station_spacing_mm": 55.0,
+      "cowling_sampled_deviation_tolerance_mm": 0.15,
+      "cowling_station_count": 56,
+      "cowling_interpolation": "shape-preserving cubic through inferred stations, sampled into ruled CAD",
+      "ear_roof_segments": 24,
+      "support_tube_circumferential_segments": 24,
+      "support_tube_outer_diameter_mm": 12.0,
+      "support_tube_wall_mm": 1.2,
+      "dimensional_accuracy": "unmeasured; numerical refinement does not increase source dimensional accuracy"
+    },
     "flow_geometry_role": "network_equivalent_sections_only; no volumetric CFD air mesh or air-solid mass",
     "mass_scope": "nacelle hardware only, host wing installation-context volume excluded",
     "installation_context_volume_m3": 0.20453841010939802
@@ -2369,418 +2633,772 @@
       "label": "Upper removable cowling with twin scoop openings",
       "group": "shell",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "cowling_lower",
       "label": "Lower cowling with open nacelle exhaust",
       "group": "shell",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "cowling_tail",
       "label": "Tapered aft fairing / dead-space shell",
       "group": "shell",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "local_wing",
       "label": "Local host-wing section, illustrative airfoil",
       "group": "wing",
       "role": "installation_context",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Illustrative NACA 2412 local host wing; original wing section is not supplied by cited nacelle figures",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "propeller_spinner",
       "label": "Hollow streamlined spinner with blade-root slots",
       "group": "propeller",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "propeller_hub",
       "label": "Three-blade hub",
       "group": "propeller",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "propeller_blade_1",
       "label": "Twisted cruise propeller blade 1",
       "group": "propeller",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Three-blade visual reconstruction with inferred chord and twist; historical 5-foot diameter anchor",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "propeller_blade_2",
       "label": "Twisted cruise propeller blade 2",
       "group": "propeller",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Three-blade visual reconstruction with inferred chord and twist; historical 5-foot diameter anchor",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "propeller_blade_3",
       "label": "Twisted cruise propeller blade 3",
       "group": "propeller",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Three-blade visual reconstruction with inferred chord and twist; historical 5-foot diameter anchor",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "composite"
     },
     {
       "id": "motor_shaft",
       "label": "Motor shaft",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "motor_rotor",
       "label": "Outrunner outer rotor / rear cup",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "motor_magnet",
       "label": "Rotor magnet annulus",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": "motor_magnet"
+      "thermal_node": "motor_magnet",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "magnet_proxy"
     },
     {
       "id": "motor_winding",
       "label": "Segmented stator windings / cooling slots",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": "motor_winding"
+      "thermal_node": "motor_winding",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "copper_proxy"
     },
     {
       "id": "motor_stator",
       "label": "Stator teeth / internal support",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "motor_front_bearing",
       "label": "Front bearing carrier",
       "group": "motor",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "motor_rear_mount",
       "label": "Ventilated motor rear mounting flange",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "motor_bypass_shroud",
       "label": "Tapered motor bypass annular guide",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "main_inlet_lip",
       "label": "Annular main inlet lip",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_case",
       "label": "Left CMC enclosure",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_hv",
       "label": "Left CMC HV finned heat sink",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_left_hv"
+      "thermal_node": "cmc_left_hv",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_lv",
       "label": "Left CMC LV backplate",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_left_lv"
+      "thermal_node": "cmc_left_lv",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_cpu",
       "label": "Left LV CPU thermal proxy",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_left_cpu"
+      "thermal_node": "cmc_left_cpu",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Explicit lumped electronics proxy; package shape and placement are not source dimensions",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "electronics_proxy"
     },
     {
       "id": "cmc_left_acdc",
       "label": "Left LV ACDC thermal proxy",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_left_acdc"
+      "thermal_node": "cmc_left_acdc",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Explicit lumped electronics proxy; package shape and placement are not source dimensions",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "electronics_proxy"
     },
     {
       "id": "cmc_left_lv_duct",
       "label": "Left LV backplate cooling channel lid",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_connector_1",
       "label": "Left CMC connector 1",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_connector_2",
       "label": "Left CMC connector 2",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_connector_3",
       "label": "Left CMC connector 3",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_baffle_-1",
       "label": "Left HV cooling side baffle",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_baffle_+1",
       "label": "Left HV cooling side baffle",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "lv_inlet_left",
-      "label": "Left upper ear inlet / LV fresh-air duct",
+      "label": "Left half-moon ear inlet / LV fresh-air duct",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Half-moon inlet topology from 2023 p.8; 74 mm width, height, wall and transition stations are inferred",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_case",
       "label": "Right CMC enclosure",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_hv",
       "label": "Right CMC HV finned heat sink",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_right_hv"
+      "thermal_node": "cmc_right_hv",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_lv",
       "label": "Right CMC LV backplate",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_right_lv"
+      "thermal_node": "cmc_right_lv",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_cpu",
       "label": "Right LV CPU thermal proxy",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_right_cpu"
+      "thermal_node": "cmc_right_cpu",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Explicit lumped electronics proxy; package shape and placement are not source dimensions",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "electronics_proxy"
     },
     {
       "id": "cmc_right_acdc",
       "label": "Right LV ACDC thermal proxy",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": "cmc_right_acdc"
+      "thermal_node": "cmc_right_acdc",
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Explicit lumped electronics proxy; package shape and placement are not source dimensions",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "electronics_proxy"
     },
     {
       "id": "cmc_right_lv_duct",
       "label": "Right LV backplate cooling channel lid",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_connector_1",
       "label": "Right CMC connector 1",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_connector_2",
       "label": "Right CMC connector 2",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_connector_3",
       "label": "Right CMC connector 3",
       "group": "cmc",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_baffle_-1",
       "label": "Right HV cooling side baffle",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_baffle_+1",
       "label": "Right HV cooling side baffle",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "lv_inlet_right",
-      "label": "Right upper ear inlet / LV fresh-air duct",
+      "label": "Right half-moon ear inlet / LV fresh-air duct",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Half-moon inlet topology from 2023 p.8; 74 mm width, height, wall and transition stations are inferred",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "mount_strut_-1_-1",
-      "label": "Motor-to-wing routed mounting tube",
+      "label": "Hollow motor-to-wing routed mounting tube",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Structural-strut topology from 2023 p.6 / Fig.5; route, 12 mm OD and 1.2 mm hollow wall are inferred, no stress validation",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "mount_strut_-1_+1",
-      "label": "Motor-to-wing routed mounting tube",
+      "label": "Hollow motor-to-wing routed mounting tube",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Structural-strut topology from 2023 p.6 / Fig.5; route, 12 mm OD and 1.2 mm hollow wall are inferred, no stress validation",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "cmc_frame_-1_-1",
       "label": "CMC cradle longitudinal rail",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_frame_-1_+1",
       "label": "CMC cradle longitudinal rail",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "mount_strut_+1_-1",
-      "label": "Motor-to-wing routed mounting tube",
+      "label": "Hollow motor-to-wing routed mounting tube",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Structural-strut topology from 2023 p.6 / Fig.5; route, 12 mm OD and 1.2 mm hollow wall are inferred, no stress validation",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "mount_strut_+1_+1",
-      "label": "Motor-to-wing routed mounting tube",
+      "label": "Hollow motor-to-wing routed mounting tube",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Structural-strut topology from 2023 p.6 / Fig.5; route, 12 mm OD and 1.2 mm hollow wall are inferred, no stress validation",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "steel"
     },
     {
       "id": "cmc_frame_+1_-1",
       "label": "CMC cradle longitudinal rail",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_frame_+1_+1",
       "label": "CMC cradle longitudinal rail",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_frame_cross_front",
       "label": "Lower V-shaped CMC cradle crossmember",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_frame_cross_rear",
       "label": "Lower V-shaped CMC cradle crossmember",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_mount_upper",
       "label": "Left CMC upper mounting bracket",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_left_mount_lower",
       "label": "Left CMC lower mounting bracket",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_mount_upper",
       "label": "Right CMC upper mounting bracket",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "cmc_right_mount_lower",
       "label": "Right CMC lower mounting bracket",
       "group": "structure",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "motor_upper_exhaust",
       "label": "External top-center motor exhaust louvers",
       "group": "duct",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "flow_separator_-1",
       "label": "Motor / CMC stream separator",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     },
     {
       "id": "flow_separator_+1",
       "label": "Motor / CMC stream separator",
       "group": "baffle",
       "role": "hardware",
-      "thermal_node": null
+      "thermal_node": null,
+      "source": {
+        "classification": "inferred_reconstruction",
+        "note": "Inferred dimensions; topology from Mod II figures 5\u20137",
+        "url": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf"
+      },
+      "material": "aluminum"
     }
   ],
   "software": {
     "cadquery": "2.7.0"
   },
-  "geometry_module_sha256": "8c8f4293d64c1898d7cfd5cbd3b8d9f399cadb8772dde71ac729ab91b54d1925",
-  "generator_sha256": "4700427f9e8c72585a2a89463d9ef011c39c637a85218b0ca925cc8cd34a7283"
+  "geometry_module_sha256": "1aa07e99841b599918ba93774d23578cb8ef96856de022c196103e0859c44c39",
+  "generator_sha256": "858fe93b9dda49c851db489ebb69f93f3c92e70d4937e665714fd00ca186aae2"
 }

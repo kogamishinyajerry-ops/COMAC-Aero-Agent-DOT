@@ -6,6 +6,9 @@
   const $$ = selector => [...document.querySelectorAll(selector)];
   const state = {revision: 0, request: 0, controller: null, geometry: null, result: null, catalog: null,
     mode: 'assembled', selected: 'motor_winding', dirty: false, busy: false, exportRevision: -1};
+  let storyScene = null;
+  const sceneResult = () => storyScene?.result || state.result;
+  const sceneGeometry = () => storyScene?.geometry || state.geometry;
   const finite = x => typeof x === 'number' && Number.isFinite(x);
   const fixed = (x, n = 1) => finite(x) ? x.toFixed(n) : '—';
   const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
@@ -27,7 +30,8 @@
     {key:'main_inlet_height_mm', name:'外环进气高度', index:'01', note:'改变电机外侧旁通入口', unit:'mm'},
     {key:'upper_inlet_height_mm', name:'低压新风入口', index:'02', note:'独立冷却 CPU 与 AC/DC', unit:'mm'},
     {key:'hv_fin_count', name:'高压侧鳍片数', index:'03', note:'每组 CMC 的鳍片数量', unit:'片'},
-    {key:'motor_bypass_gap_mm', name:'电机旁通间隙', index:'04', note:'改变冷却与旁通分配', unit:'mm'}
+    {key:'motor_bypass_gap_mm', name:'电机旁通间隙', index:'04', note:'改变冷却与旁通分配', unit:'mm'},
+    {key:'motor_exhaust_area_mm2', name:'电机顶部排气', index:'05', note:'面积变化会重新分配流量', unit:'mm²'}
   ];
   const boundaryLabels = {airspeed_m_s:'来流速度 · m/s',ambient_c:'环境温度 · °C',density_kg_m3:'空气密度 · kg/m³',ram_recovery:'电机内部入口动压恢复',bypass_ram_recovery:'外环旁通入口动压恢复',lv_ram_recovery:'低压侧动压恢复',main_propeller_pressure_pa:'内入口桨诱导增压 · Pa',bypass_propeller_pressure_pa:'旁通入口桨诱导增压 · Pa',lv_propeller_pressure_pa:'低压入口桨诱导增压 · Pa',exhaust_suction_coefficient:'短舱排气抽吸系数',motor_exhaust_suction_coefficient:'电机排气抽吸系数',heat_scale:'热负荷比例',loss_multiplier:'支路阻力倍率',contact_multiplier:'接触热阻倍率'};
 
@@ -80,7 +84,7 @@
     });
     const heat = document.createElement('label'); heat.innerHTML = '<span>公开损耗工况</span><select id="boundary-heat_load" data-boundary="heat_load"><option value="peak">峰值功率 · PEAK</option><option value="mcp">最大连续功率 · MCP</option></select>';
     $('boundary-fields').append(heat); $('boundary-heat_load').value = defaults.heat_load || 'peak'; $('boundary-heat_load').addEventListener('change', invalidate);
-    const names = {reduced_load_screening:'0.25×损耗 · 低负荷网络演示',initial_climb:'推定来流 · 初始爬升',source_pressure_initial_climb:'公开压力增量参考 · 初始爬升',cruise_climb:'推定来流 · 持续爬升',dash:'推定来流 · 高速工况',no_ram:'无强制流动 · 边界失效演示'};
+    const names = {reduced_load_screening:'0.25×损耗 · 低负荷网络演示',initial_climb:'推定来流 · 初始爬升',source_pressure_initial_climb:'公开压力增量参考 · 初始爬升',source_pressure_cruise_climb:'公开压力增量参考 · 持续爬升',source_pressure_dash:'公开压力增量参考 · 高速工况',cruise_climb:'推定来流 · 持续爬升',dash:'推定来流 · 高速工况',no_ram:'无强制流动 · 边界失效演示'};
     const preset = document.createElement('label'); preset.className = 'boundary-preset';
     preset.innerHTML = `<span>边界参考方案</span><select id="boundary-preset">${(catalog.boundary.presets || []).map(p => `<option value="${escapeHTML(p.id)}">${escapeHTML(names[p.id] || p.id)}</option>`).join('')}<option value="custom">自定义边界</option></select><small id="boundary-preset-note">所有工况都未做真实飞机校准</small>`;
     $('boundary-fields').prepend(preset);
@@ -88,12 +92,13 @@
     $('boundary-preset').addEventListener('change',()=>{
       const selected=(catalog.boundary.presets || []).find(p=>p.id===$('boundary-preset').value);if(!selected)return;
       $$('#boundary-fields [data-boundary]').forEach(input=>{input.value=selected.boundary[input.dataset.boundary] ?? defaults[input.dataset.boundary];});
-      $('boundary-preset-note').textContent=selected.id==='source_pressure_initial_climb'?'采用公开表 7 压力增量，含对称化与边界近似；未拟合温度，仍需检查适用域':selected.id==='reduced_load_screening'?'主动选择 0.25×公开损耗用于网络演示；不是 25% 飞机功率，未拟合真实损耗曲线':'推定边界下的研究工况；未做真实飞机校准';
+      $('boundary-preset-note').textContent=selected.id.startsWith('source_pressure_')?'采用公开表 7–9 对应工况压力增量，含对称化与边界近似；未拟合温度，仍需检查适用域':selected.id==='reduced_load_screening'?'主动选择 0.25×公开损耗用于网络演示；不是 25% 飞机功率，未拟合真实损耗曲线':'推定边界下的研究工况；未做真实飞机校准';
       invalidate();
     });
   }
   function invalidate() {
     state.revision++; state.dirty = true; state.result = null; state.exportRevision = -1;
+    $('start-story').disabled = true;
     $('thermal-results').hidden = true; $('result-warning').hidden = true; $('result-loading').hidden = false;
     $('result-loading').textContent = '输入已更改，等待新几何与热网络';
     $('stale-banner').hidden = !state.geometry; $('export-json').disabled = true; $('export-step').disabled = true;
@@ -103,6 +108,7 @@
   }
   function busy(on) {
     state.busy = on; $('evaluate-button').disabled = on || !state.catalog;
+    $('start-story').disabled = on || !state.result || state.dirty;
     $('evaluate-button').innerHTML = on ? '正在计算…' : '重建并计算 <span>↗</span>';
     $('cancel-button').hidden = !on;
   }
@@ -138,6 +144,7 @@
       $('step-status').textContent = cad.stored_step_available && cad.verification === 'verified_baseline_BRep' ? '当前几何匹配已验证缓存 STEP；无 CadQuery 也可下载' : cad.stored_step_available ? '缓存 STEP 未确认通过完整验证，请查看证据' : kernel ? '从当前参数生成具名实体，导出前再次核对输入版本' : '自定义 STEP 需 CadQuery；默认重建 STEP 可直接下载';
       $('compute-status').textContent = '几何与证据已同步';
       renderResult(); updateInspector(); renderer.requestDraw();
+      window.dispatchEvent(new Event('nacelle-ready'));
     } catch (error) {
       if (error.name === 'AbortError' || !current()) return;
       setError(error.message); $('result-loading').textContent = '本次计算未完成，请检查输入后重试';
@@ -147,8 +154,8 @@
       if (request === state.request) { state.controller = null; busy(false); if (revision !== state.revision) $('compute-status').textContent = '新输入尚未计算'; }
     }
   }
-  function thermalNodes() { return state.result?.thermal?.components || {}; }
-  function selectedComponent() { return state.geometry?.components.find(c => c.id === state.selected || c.thermal_node === state.selected); }
+  function thermalNodes() { return sceneResult()?.thermal?.components || {}; }
+  function selectedComponent() { return sceneGeometry()?.components.find(c => c.id === state.selected || c.thermal_node === state.selected); }
   function updateInspector() {
     const component = selectedComponent(), id = component?.thermal_node || state.selected;
     const entry = labels[id];
@@ -161,15 +168,14 @@
     $('part-source').textContent = component?.source?.classification === 'public_source' ? '公开来源拓扑 · 尺寸推定' : '公开结构参考 · 尺寸与实体推定';
     $$('#component-tabs button').forEach(button => { button.classList.toggle('active', button.dataset.select === id); button.setAttribute('aria-pressed', String(button.dataset.select === id)); });
     const value = thermalNodes()[id];
-    const invalidDomain = state.result?.thermal?.summary?.within_model_limits === false && finite(value?.temperature_c);
+    const invalidDomain = sceneResult()?.thermal?.summary?.within_model_limits === false && finite(value?.temperature_c);
     $('selected-temperature').textContent = invalidDomain ? '超范围' : fixed(value?.temperature_c);
     $('selected-temperature').classList.toggle('invalid-domain', invalidDomain);
     $('selected-temperature').nextElementSibling.hidden = invalidDomain;
-    $('selected-margin').textContent = invalidDomain ? '全网未通过物理适用域筛查；原始诊断数值保留在 JSON，不作为温度预测' : value ? finite(value.margin_c) ? `距来源裕度参考线 ${fixed(value.margin_c)} °C · 参考 ${fixed(value.limit_c, 0)} °C` : '此节点没有公开允许温度，不推定安全裕度' : state.result ? '结构件保持材质色' : '等待同一几何计算';
+    $('selected-margin').textContent = invalidDomain ? '全网未通过物理适用域筛查；原始诊断数值保留在 JSON，不作为温度预测' : value ? finite(value.margin_c) ? `距来源裕度参考线 ${fixed(value.margin_c)} °C · 参考 ${fixed(value.limit_c, 0)} °C` : '此节点没有公开允许温度，不推定安全裕度' : sceneResult() ? '结构件保持材质色' : '等待同一几何计算';
     document.querySelector('.metric-primary').classList.toggle('hot', finite(value?.margin_c) && value.margin_c < 10);
   }
-  function renderResult() {
-    const r = state.result;
+  function renderResult(r = state.result) {
     $('cooling-flow').innerHTML = `${fixed(r.flow?.total_inlet_kg_s, 3)} <small>kg/s</small>`;
     const mass = ['cmc_left_hv','cmc_right_hv'].map(id => r.metrics?.components?.[id]?.mass_kg).reduce((sum,value) => finite(value) ? sum + value : NaN, 0);
     $('heatsink-mass').innerHTML = `${fixed(mass, 2)} <small>kg</small>`;
@@ -336,8 +342,8 @@
       // Browsers can restore checkbox values on Back without a change event.
       // Keep explanatory overlays coupled to the actual rendered state.
       $('flow-disclaimer').hidden=!$('show-flow').checked;
-      $('flow-disclaimer').textContent=state.result?'箭头仅表示集中参数网络的连接与方向，不代表 CFD 流线或局部速度场。':'当前输入未计算，暂不显示支路箭头；请先重建并计算。';
-      $('thermal-legend').hidden=!$('show-thermal').checked||!state.result;
+      $('flow-disclaimer').textContent=sceneResult()?'箭头仅表示集中参数网络的连接与方向，不代表 CFD 流线或局部速度场。':'当前输入未计算，暂不显示支路箭头；请先重建并计算。';
+      $('thermal-legend').hidden=!$('show-thermal').checked||!sceneResult();
       if(!this.gl)return;const rect=this.canvas.getBoundingClientRect();this.width=rect.width;this.height=rect.height;if(!this.width||!this.height)return;
       const ratio=Math.min(devicePixelRatio||1,2);for(const canvas of [this.canvas,this.overlay]){if(canvas.width!==Math.round(this.width*ratio)||canvas.height!==Math.round(this.height*ratio)){canvas.width=Math.round(this.width*ratio);canvas.height=Math.round(this.height*ratio);}}
       this.basis();const gl=this.gl;gl.viewport(0,0,this.canvas.width,this.canvas.height);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.program);gl.uniformMatrix4fv(this.locations.uMatrix,false,this.matrix());
@@ -345,7 +351,7 @@
       ordered.sort((a,b)=>(a.color[3]<.99)-(b.color[3]<.99)||(a.color[3]<.99?a.depth-b.depth:0));
       for(const {mesh,color} of ordered){this.prepareTriangles(mesh,color[3]);gl.depthMask(color[3]>=.99);gl.bindBuffer(gl.ARRAY_BUFFER,mesh.buffer);gl.enableVertexAttribArray(this.position);gl.vertexAttribPointer(this.position,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(this.normal);gl.vertexAttribPointer(this.normal,3,gl.FLOAT,false,24,12);gl.uniform3fv(this.locations.uOffset,this.offset(mesh));gl.uniform4fv(this.locations.uColor,color);gl.uniform1f(this.locations.uClip,this.clipped(mesh)?1:0);gl.uniform1f(this.locations.uSelected,mesh.id===state.selected||mesh.thermal_node===state.selected?1:0);gl.drawArrays(gl.TRIANGLES,0,mesh.count);}
       gl.depthMask(true);this.ctx.setTransform(ratio,0,0,ratio,0,0);this.ctx.clearRect(0,0,this.width,this.height);this.drawGround();
-      if($('show-flow').checked&&state.result)this.drawFlows();
+      if($('show-flow').checked&&sceneResult())this.drawFlows();
       if($('show-labels').checked)this.drawLabels();
       this.canvas.dataset.clippedComponents=this.meshes.filter(m=>this.clipped(m)).map(m=>m.id).join(',');this.canvas.dataset.mode=state.mode;this.canvas.dataset.rendered=String(this.meshes.length>0);this.canvas.dataset.camera=`${this.yaw.toFixed(3)},${this.pitch.toFixed(3)},${this.zoom.toFixed(3)}`;
     }
@@ -375,7 +381,7 @@
         {keys:['lv_fresh_left'],points:[[170,0,390],[290,-120,295],[450,-120,160],[610,0,-180]],color:'#2b94af'},
         {keys:['lv_fresh_right'],points:[[170,0,390],[290,120,295],[450,120,160],[610,0,-180]],color:'#2b94af'},
         {keys:['lower_outlet'],points:[[610,0,-180],[650,0,-300],[880,0,-360]],color:'#a98756'}];
-      const branches=state.result.flow?.branches||{},ctx=this.ctx;ctx.save();
+      const branches=sceneResult().flow?.branches||{},ctx=this.ctx;ctx.save();
       for(const path of paths){const branch=path.keys.map(k=>branches[k]).find(Boolean);if(!branch || Math.abs(branch.mass_flow_kg_s)<1e-12)continue;const points=path.points.map(p=>this.project(p));if(branch.mass_flow_kg_s<0)points.reverse();ctx.strokeStyle=path.color;ctx.fillStyle=path.color;ctx.lineWidth=clamp(1.2+Math.abs(branch.mass_flow_kg_s)*1.5,1.2,3.3);ctx.setLineDash([7,4]);ctx.beginPath();points.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();ctx.setLineDash([]);const [a,b]=points.slice(-2),angle=Math.atan2(b[1]-a[1],b[0]-a[0]);ctx.beginPath();ctx.moveTo(b[0],b[1]);ctx.lineTo(b[0]-9*Math.cos(angle-.4),b[1]-9*Math.sin(angle-.4));ctx.lineTo(b[0]-9*Math.cos(angle+.4),b[1]-9*Math.sin(angle+.4));ctx.closePath();ctx.fill();}
       ctx.restore();
     }
@@ -395,7 +401,7 @@
   $$('#component-tabs button').forEach(button=>button.addEventListener('click',()=>select(button.dataset.select,true)));
   $('show-labels').addEventListener('change',()=>renderer.requestDraw());
   $('show-flow').addEventListener('change',()=>{if($('show-flow').checked&&state.mode==='assembled')changeMode('open');renderer.requestDraw();});
-  $('show-thermal').addEventListener('change',()=>{if($('show-thermal').checked&&state.mode==='assembled')changeMode('open');$('thermal-legend').hidden=!$('show-thermal').checked||!state.result;renderer.requestDraw();});
+  $('show-thermal').addEventListener('change',()=>{if($('show-thermal').checked&&state.mode==='assembled')changeMode('open');$('thermal-legend').hidden=!$('show-thermal').checked||!sceneResult();renderer.requestDraw();});
   $('zoom-in').addEventListener('click',()=>{renderer.zoom=clamp(renderer.zoom*1.18,.5,3.5);renderer.requestDraw();});
   $('zoom-out').addEventListener('click',()=>{renderer.zoom=clamp(renderer.zoom/1.18,.5,3.5);renderer.requestDraw();});
   $('reset-camera').addEventListener('click',()=>renderer.reset(state.mode));
@@ -403,6 +409,37 @@
   $('nacelle-form').addEventListener('submit',event=>{event.preventDefault();evaluate();});
   window.addEventListener('pagehide',()=>{if(state.busy)cancel();else{state.request++;state.controller?.abort();state.controller=null;}});
   window.addEventListener('pageshow',event=>{if(event.persisted){busy(false);renderer.requestDraw();}});
+  // A separate guided scene never mutates workbench parameters or exports.
+  let savedWorkbench = null;
+  window.NacelleLab = {
+    ready: () => !!state.result && !state.busy,
+    start() {
+      if (!this.ready()) return false;
+      savedWorkbench = {mode:state.mode, selected:state.selected, yaw:renderer.yaw, pitch:renderer.pitch, zoom:renderer.zoom, target:[...renderer.target], flow:$('show-flow').checked, thermal:$('show-thermal').checked, labels:$('show-labels').checked};
+      return true;
+    },
+    show(geometry, result, options) {
+      if (geometryFingerprint(geometry) !== resultFingerprint(result)) throw new Error('讲解几何与计算指纹不一致，未采用结果');
+      storyScene = {geometry,result}; renderer.setGeometry(geometry);
+      state.selected = options.selected || 'motor_winding';
+      $('show-flow').checked = !!options.flow; $('show-thermal').checked = !!options.thermal; $('show-labels').checked = true;
+      changeMode(options.mode || 'open'); renderResult(result);
+      $('assembly-canvas').dataset.storyCase = options.caseId || '';
+      renderer.requestDraw();
+    },
+    restore() {
+      storyScene = null;
+      if (state.geometry) renderer.setGeometry(state.geometry);
+      if (savedWorkbench) {
+        state.selected = savedWorkbench.selected; changeMode(savedWorkbench.mode);
+        Object.assign(renderer,{yaw:savedWorkbench.yaw,pitch:savedWorkbench.pitch,zoom:savedWorkbench.zoom,target:savedWorkbench.target});
+        $('show-flow').checked = savedWorkbench.flow; $('show-thermal').checked = savedWorkbench.thermal; $('show-labels').checked = savedWorkbench.labels;
+      }
+      if (state.result) renderResult(); updateInspector(); renderer.requestDraw();
+      delete $('assembly-canvas').dataset.storyCase; savedWorkbench = null;
+    },
+    loading(on) { $('scene-loading').hidden = !on; },
+  };
   async function initialize(){
     try{state.catalog=await api('/api/nacelle/catalog');renderFields(state.catalog);busy(false);await evaluate();}
     catch(error){setError(error.message);$('scene-loading').hidden=true;$('result-loading').textContent='目录加载失败，请刷新后重试';}

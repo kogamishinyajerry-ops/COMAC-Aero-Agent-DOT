@@ -324,6 +324,98 @@ def main():
             results['flows'].append('Explicit optional 0.25x heat-load teaching case enables in-domain proxy temperatures; never presented as quarter aircraft power or physical validation')
             page.locator('#boundary-details summary').click()
 
+            # A separate leadership story uses six newly solved cases and
+            # preserves every workbench field/result while switching scenes.
+            workbench_evidence = page.locator('#evidence-json').text_content()
+            workbench_fields = page.locator('#nacelle-form input, #boundary-fields input, #boundary-fields select').evaluate_all('(inputs) => inputs.map(input => [input.id, input.value])')
+            workbench_camera = canvas.get_attribute('data-camera')
+            with page.expect_response('**/api/nacelle/story', timeout=120000) as response:
+                page.locator('#start-story').click()
+            narrative = response.value.json()
+            expect(page.locator('#story-panel')).to_have_attribute('data-step', '0', timeout=120000)
+            expect(page.locator('#story-next')).to_be_enabled(timeout=120000)
+            expect(page.locator('.inspector')).to_be_hidden()
+            expect(page.locator('.design-dock')).to_be_hidden()
+            assert narrative['execution'] == 'computed'
+            assert narrative['cases']['source_load']['boundary']['heat_scale'] == 1
+            assert canvas.get_attribute('data-geometry-fingerprint') == narrative['cases']['source_load']['metrics']['fingerprint']
+            page.screenshot(path=str(args.output_dir / 'ui-nacelle-story-01-assembly.png'), full_page=True)
+            for index, case_id in enumerate(('source_pressure', 'hot_day', 'more_fins', 'redistributed_cooling', 'redistributed_cooling'), start=1):
+                page.locator('#story-next').click()
+                expect(page.locator('#story-panel')).to_have_attribute('data-step', str(index), timeout=120000)
+                expect(page.locator('#story-next')).to_be_enabled(timeout=120000)
+                expect(canvas).to_have_attribute('data-story-case', case_id)
+                assert canvas.get_attribute('data-geometry-fingerprint') == narrative['cases'][case_id]['metrics']['fingerprint']
+                if index >= 2:
+                    expect(page.locator('#story-boundary')).to_contain_text('不是 25% 飞机功率')
+                if index in (3, 4):
+                    delta = narrative['deltas_vs_hot_day'][case_id]
+                    expected_sign = '+' if delta['motor_temperature_c'] > 0 else ''
+                    expect(page.locator('#story-visual')).to_contain_text(f"{expected_sign}{delta['motor_temperature_c']:.1f}")
+                page.screenshot(path=str(args.output_dir / f'ui-nacelle-story-0{index+1}.png'), full_page=True)
+            expect(page.locator('.assembly-workspace')).to_be_hidden()
+            expect(page.locator('#story-answer')).to_contain_text('还不可以')
+            with page.expect_download() as download:
+                page.locator('#export-story').click()
+            download.value.save_as(str(args.output_dir / 'ui-nacelle-story-evidence.json'))
+            story_export = json.loads((args.output_dir / 'ui-nacelle-story-evidence.json').read_text(encoding='utf-8'))
+            assert story_export == narrative
+            assert story_export['claims']['physically_validated'] is False
+            results['flows'].append('Six-question live story: full-load credibility gate, explicit reduced heat, isolated hot-day perturbation, two independently solved geometry alternatives and uncertainty-qualified decision')
+            results['flows'].append('All story geometry fingerprints and displayed deltas agree with actual solver responses; exact full story evidence download')
+            page.set_viewport_size({'width': 390, 'height': 844})
+            assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
+            page.screenshot(path=str(args.output_dir / 'ui-nacelle-story-mobile.png'), full_page=True)
+            page.locator('#story-prev').click()
+            expect(page.locator('#story-panel')).to_have_attribute('data-step', '4')
+            expect(page.locator('.assembly-workspace')).to_be_visible()
+            assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
+            page.screenshot(path=str(args.output_dir / 'ui-nacelle-story-mobile-model.png'), full_page=True)
+            page.set_viewport_size({'width': 1440, 'height': 1100})
+            page.locator('#open-workbench').click()
+            expect(page.locator('#story-panel')).to_be_hidden()
+            expect(page.locator('.inspector')).to_be_visible()
+            assert page.locator('#evidence-json').text_content() == workbench_evidence
+            assert page.locator('#nacelle-form input, #boundary-fields input, #boundary-fields select').evaluate_all('(inputs) => inputs.map(input => [input.id, input.value])') == workbench_fields
+            expect(canvas).to_have_attribute('data-camera', workbench_camera)
+            results['flows'].append('Story Back and 390px layouts work without overflow; leaving restores exact workbench inputs, evidence and camera')
+
+            # Leaving while the complete story is computing must discard its
+            # delayed response and keep the expert workspace's own evidence.
+            held_story = []
+            page.route('**/api/nacelle/story', lambda route: held_story.append(route))
+            with page.expect_request('**/api/nacelle/story'):
+                page.locator('#start-story').click()
+            pending_story = wait_for_held_route(page, held_story, 'cancelled engineering story')
+            expect(page.locator('#story-next')).to_be_disabled()
+            page.locator('#open-workbench').click()
+            response = pending_story.fetch()
+            pending_story.fulfill(response=response)
+            expect(page.locator('#story-panel')).to_be_hidden()
+            expect(page.locator('#start-story')).to_be_enabled()
+            assert page.locator('#evidence-json').text_content() == workbench_evidence
+            page.unroute('**/api/nacelle/story')
+            results['flows'].append('Cancelling a pending story rejects its late response without reviving the guided view or replacing workbench evidence')
+
+            # A bad story mesh identity must be refused, and re-entry recovers.
+            def wrong_story_mesh(route):
+                response = route.fetch()
+                data = response.json()
+                data['fingerprint'] = 'invalid-story-mesh'
+                route.fulfill(status=200, content_type='application/json', body=json.dumps(data))
+            page.route('**/api/nacelle/geometry', wrong_story_mesh)
+            page.locator('#start-story').click()
+            expect(page.locator('#story-request-status')).to_contain_text('指纹不一致', timeout=120000)
+            page.locator('#open-workbench').click()
+            assert page.locator('#evidence-json').text_content() == workbench_evidence
+            page.unroute('**/api/nacelle/geometry')
+            page.locator('#start-story').click()
+            expect(page.locator('#story-panel')).to_have_attribute('data-step', '0', timeout=120000)
+            expect(page.locator('#story-next')).to_be_enabled(timeout=120000)
+            expect(page.locator('#story-request-status')).to_be_empty()
+            page.locator('#open-workbench').click()
+            results['flows'].append('Story rejects a deliberately mismatched mesh fingerprint and recovers cleanly on re-entry')
+
             page.set_viewport_size({'width': 390, 'height': 844})
             expect(page.locator('#part-name')).to_be_visible()
             assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')

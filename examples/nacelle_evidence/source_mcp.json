@@ -1,0 +1,2073 @@
+{
+  "geometry": {
+    "motor_diameter_mm": 355.6,
+    "prop_diameter_mm": 1524.0,
+    "nacelle_length_mm": 1470.0,
+    "nacelle_width_mm": 520.0,
+    "nacelle_height_mm": 490.0,
+    "wing_span_mm": 2200.0,
+    "wing_chord_mm": 1100.0,
+    "cmc_length_mm": 300.0,
+    "cmc_width_mm": 185.0,
+    "cmc_thickness_mm": 42.0,
+    "cmc_tilt_deg": 48.0,
+    "hv_fin_count": 24,
+    "hv_fin_height_mm": 27.0,
+    "hv_fin_thickness_mm": 1.4,
+    "motor_gap_mm": 6.0,
+    "main_inlet_height_mm": 24.0,
+    "motor_bypass_gap_mm": 28.0,
+    "upper_inlet_height_mm": 30.0,
+    "backplate_gap_mm": 18.0,
+    "outlet_area_mm2": 22000.0,
+    "motor_exhaust_area_mm2": 9000.0
+  },
+  "boundary": {
+    "airspeed_m_s": 45.3,
+    "ambient_c": 35.9,
+    "density_kg_m3": 1.02,
+    "ram_recovery": 0.65,
+    "bypass_ram_recovery": 0.65,
+    "lv_ram_recovery": 0.55,
+    "main_propeller_pressure_pa": 0.0,
+    "bypass_propeller_pressure_pa": 0.0,
+    "lv_propeller_pressure_pa": 0.0,
+    "exhaust_suction_coefficient": 0.15,
+    "motor_exhaust_suction_coefficient": 0.1,
+    "heat_load": "mcp",
+    "heat_scale": 1.0,
+    "loss_multiplier": 1.0,
+    "contact_multiplier": 1.0
+  },
+  "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+  "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+  "input_hash": "ec0269c5402384939e841e855dfab234b44b86106ef0e4a8578e6084f6e72f23",
+  "flow": {
+    "branches": {
+      "main_inlet": {
+        "velocity_m_s": 2.2720402922307,
+        "heat_exchange_velocity_m_s": 2.2720402922307,
+        "heat_exchange_hydraulic_diameter_m": 0.12960000000000002,
+        "reynolds": 15807.660542661091,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.027797070624234498,
+        "nusselt": 43.0756619701766,
+        "h_w_m2_k": 8.97409624378679,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0,
+        "ua_w_k": 0.0,
+        "air_capacity_w_k": 130.55312689523345,
+        "convective_conductance_w_k": 0.0,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 0.46296296296296285,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.0559424660461796,
+            "hydraulic_diameter_m": 0.12960000000000002,
+            "velocity_m_s": 2.2720402922307,
+            "reynolds": 15807.660542661091,
+            "mach_approx": 0.0064470176837694475
+          }
+        ],
+        "max_section_reynolds": 15807.660542661091,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.0064470176837694475,
+        "id": "main_inlet",
+        "from_node": "main_ram",
+        "to_node": "inlet_plenum",
+        "actual_from_node": "main_ram",
+        "actual_to_node": "inlet_plenum",
+        "mass_flow_kg_s": 0.12964560764174127,
+        "pressure_drop_pa": 2.140044493270352,
+        "minor_loss_k": 0.8,
+        "heat_w": 0.0,
+        "inlet_c": 35.9,
+        "outlet_c": 35.9,
+        "exchange_surface_c": 35.9,
+        "geometry": {
+          "area_m2": 0.0559424660461796,
+          "wetted_perimeter_m": 1.7266193224129505,
+          "length_m": 0.06,
+          "heated_area_m2": 0.0,
+          "hydraulic_diameter_m": 0.12960000000000002,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "reference_plane": "Front axial annulus: 105 mm spinner skirt to rotor inner lip R-8; feeds stator slots and rotor gap"
+        }
+      },
+      "motor_internal": {
+        "velocity_m_s": 10.62180685648281,
+        "heat_exchange_velocity_m_s": 10.62180685648281,
+        "heat_exchange_hydraulic_diameter_m": 0.012000000000000012,
+        "reynolds": 6842.679785439459,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.03511534945305629,
+        "nusselt": 21.965210046126654,
+        "h_w_m2_k": 49.421722603784914,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.2955610368497278,
+        "ua_w_k": 14.607135575674297,
+        "air_capacity_w_k": 64.4919070664544,
+        "convective_conductance_w_k": 11.9096514772702,
+        "convective_conductance_basis": "downstream_area_weighted_wall",
+        "heat_boundary": "uniform_axial_heat_flux",
+        "length_to_hydraulic_diameter": 12.499999999999986,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.005911220736994562,
+            "hydraulic_diameter_m": 0.012000000000000012,
+            "velocity_m_s": 10.62180685648281,
+            "reynolds": 6842.679785439459,
+            "mach_approx": 0.030139860138701697
+          }
+        ],
+        "max_section_reynolds": 6842.679785439459,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.030139860138701697,
+        "id": "motor_internal",
+        "from_node": "inlet_plenum",
+        "to_node": "motor_mix",
+        "actual_from_node": "inlet_plenum",
+        "actual_to_node": "motor_mix",
+        "mass_flow_kg_s": 0.06404360185348004,
+        "pressure_drop_pa": 169.10559317413276,
+        "minor_loss_k": 2.5,
+        "heat_w": 1557.9724366120272,
+        "inlet_c": 35.9,
+        "outlet_c": 60.05764252414873,
+        "exchange_surface_c": 245.0106944818915,
+        "geometry": {
+          "area_m2": 0.005911220736994562,
+          "wetted_perimeter_m": 1.9704069123315184,
+          "length_m": 0.15,
+          "heated_area_m2": 0.2955610368497278,
+          "hydraulic_diameter_m": 0.012000000000000012,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "heated_surfaces_m2": {
+            "motor_winding": 0.14495308503663307,
+            "motor_magnet": 0.1506079518130947
+          },
+          "heated_surface_note": "Equivalent cylindrical stator outer envelope and magnet inner wall; winding-to-stator conduction is lumped"
+        },
+        "axial_heat_balance": {
+          "boundary_condition": "uniform_axial_heat_flux",
+          "evaluable": true,
+          "air_mean_c": 47.97882126207436,
+          "air_rise_c": 24.157642524148734,
+          "surface_mean_c": {
+            "motor_winding": 232.93187321981713,
+            "motor_magnet": 79.28212245255858
+          },
+          "surface_max_c": {
+            "motor_winding": 245.0106944818915,
+            "motor_magnet": 91.36094371463295
+          },
+          "samples": [
+            {
+              "flow_fraction": 0.0,
+              "air_c": 35.9,
+              "wall_c": {
+                "motor_winding": 220.85305195774276,
+                "motor_magnet": 67.20330119048421
+              }
+            },
+            {
+              "flow_fraction": 0.25,
+              "air_c": 41.939410631037184,
+              "wall_c": {
+                "motor_winding": 226.89246258877995,
+                "motor_magnet": 73.2427118215214
+              }
+            },
+            {
+              "flow_fraction": 0.5,
+              "air_c": 47.97882126207436,
+              "wall_c": {
+                "motor_winding": 232.93187321981713,
+                "motor_magnet": 79.28212245255858
+              }
+            },
+            {
+              "flow_fraction": 0.75,
+              "air_c": 54.01823189311155,
+              "wall_c": {
+                "motor_winding": 238.97128385085432,
+                "motor_magnet": 85.32153308359577
+              }
+            },
+            {
+              "flow_fraction": 1.0,
+              "air_c": 60.05764252414873,
+              "wall_c": {
+                "motor_winding": 245.0106944818915,
+                "motor_magnet": 91.36094371463295
+              }
+            }
+          ],
+          "flow_direction": "forward"
+        },
+        "heated_surface_temperatures_c": {
+          "motor_winding": 245.0106944818915,
+          "motor_magnet": 91.36094371463295
+        }
+      },
+      "motor_slots": {
+        "velocity_m_s": 10.451281045840634,
+        "heat_exchange_velocity_m_s": 10.451281045840634,
+        "heat_exchange_hydraulic_diameter_m": 0.009424854994155659,
+        "reynolds": 5287.991817232621,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.037956608598104506,
+        "nusselt": 17.570214651388444,
+        "h_w_m2_k": 50.33454582395806,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.3140928000000001,
+        "ua_w_k": 15.8097184345753,
+        "air_capacity_w_k": 66.06121982877568,
+        "convective_conductance_w_k": 12.756776789072779,
+        "convective_conductance_basis": "downstream_area_weighted_wall",
+        "heat_boundary": "uniform_axial_heat_flux",
+        "length_to_hydraulic_diameter": 14.111622946185713,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.006153857280000002,
+            "hydraulic_diameter_m": 0.009424854994155659,
+            "velocity_m_s": 10.451281045840634,
+            "reynolds": 5287.991817232621,
+            "mach_approx": 0.029655985393826533
+          }
+        ],
+        "max_section_reynolds": 5287.991817232621,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.029655985393826533,
+        "id": "motor_slots",
+        "from_node": "inlet_plenum",
+        "to_node": "motor_mix",
+        "actual_from_node": "inlet_plenum",
+        "actual_to_node": "motor_mix",
+        "mass_flow_kg_s": 0.06560200578825787,
+        "pressure_drop_pa": 169.10559317413276,
+        "minor_loss_k": 2.5,
+        "heat_w": 2871.027563387973,
+        "inlet_c": 35.9,
+        "outlet_c": 79.36010519983432,
+        "exchange_surface_c": 260.95901066225775,
+        "geometry": {
+          "area_m2": 0.006153857280000002,
+          "wetted_perimeter_m": 2.6117568000000007,
+          "length_m": 0.133,
+          "heated_area_m2": 0.3140928000000001,
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "slot_count": 24,
+          "slot_angle_rad": 0.043,
+          "inner_radius_m": 0.09659999999999999,
+          "outer_radius_m": 0.1458,
+          "heated_surfaces_m2": {
+            "motor_winding": 0.3140928000000001
+          }
+        },
+        "axial_heat_balance": {
+          "boundary_condition": "uniform_axial_heat_flux",
+          "evaluable": true,
+          "air_mean_c": 57.630052599917164,
+          "air_rise_c": 43.46010519983433,
+          "surface_mean_c": {
+            "motor_winding": 239.2289580623406
+          },
+          "surface_max_c": {
+            "motor_winding": 260.95901066225775
+          },
+          "samples": [
+            {
+              "flow_fraction": 0.0,
+              "air_c": 35.9,
+              "wall_c": {
+                "motor_winding": 217.49890546242344
+              }
+            },
+            {
+              "flow_fraction": 0.25,
+              "air_c": 46.76502629995858,
+              "wall_c": {
+                "motor_winding": 228.363931762382
+              }
+            },
+            {
+              "flow_fraction": 0.5,
+              "air_c": 57.630052599917164,
+              "wall_c": {
+                "motor_winding": 239.2289580623406
+              }
+            },
+            {
+              "flow_fraction": 0.75,
+              "air_c": 68.49507889987575,
+              "wall_c": {
+                "motor_winding": 250.09398436229918
+              }
+            },
+            {
+              "flow_fraction": 1.0,
+              "air_c": 79.36010519983432,
+              "wall_c": {
+                "motor_winding": 260.95901066225775
+              }
+            }
+          ],
+          "flow_direction": "forward"
+        },
+        "heated_surface_temperatures_c": {
+          "motor_winding": 260.95901066225775
+        }
+      },
+      "motor_bypass": {
+        "velocity_m_s": 15.615403418513615,
+        "heat_exchange_velocity_m_s": 12.714882886017117,
+        "heat_exchange_hydraulic_diameter_m": 0.05097583142587855,
+        "reynolds": 34795.51374364972,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.022809912969964357,
+        "nusselt": 79.31828539287525,
+        "h_w_m2_k": 42.011942634454485,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.21337571639475733,
+        "ua_w_k": 8.964328356762174,
+        "air_capacity_w_k": 398.5036779077129,
+        "convective_conductance_w_k": 8.767112424094096,
+        "convective_conductance_basis": "downstream_area_weighted_wall",
+        "heat_boundary": "uniform_axial_heat_flux",
+        "length_to_hydraulic_diameter": 3.7468736587008635,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.024845599660180233,
+            "hydraulic_diameter_m": 0.041999999999999996,
+            "velocity_m_s": 15.615403418513615,
+            "reynolds": 35208.62539205911,
+            "mach_approx": 0.04430941754096717
+          },
+          {
+            "id": "serial_0",
+            "area_m2": 0.024845599660180233,
+            "hydraulic_diameter_m": 0.041999999999999996,
+            "velocity_m_s": 15.615403418513615,
+            "reynolds": 35208.62539205911,
+            "mach_approx": 0.04430941754096717
+          },
+          {
+            "id": "serial_1",
+            "area_m2": 0.025940965026239528,
+            "hydraulic_diameter_m": 0.04375,
+            "velocity_m_s": 14.956038122566365,
+            "reynolds": 35127.01059050126,
+            "mach_approx": 0.04243843851934859
+          },
+          {
+            "id": "serial_2",
+            "area_m2": 0.028146127449610557,
+            "hydraulic_diameter_m": 0.04725000000000002,
+            "velocity_m_s": 13.784278585506346,
+            "reynolds": 34964.91086465677,
+            "mach_approx": 0.03911351752988209
+          },
+          {
+            "id": "serial_3",
+            "area_m2": 0.030370532127984795,
+            "hydraulic_diameter_m": 0.05074999999999999,
+            "velocity_m_s": 12.774687655574601,
+            "reynolds": 34804.30034162205,
+            "mach_approx": 0.03624875734015289
+          },
+          {
+            "id": "serial_4",
+            "area_m2": 0.03261417906136229,
+            "hydraulic_diameter_m": 0.05425000000000001,
+            "velocity_m_s": 11.895870846193654,
+            "reynolds": 34645.15859337505,
+            "mach_approx": 0.03375507466636978
+          },
+          {
+            "id": "serial_5",
+            "area_m2": 0.033743218373677254,
+            "hydraulic_diameter_m": 0.05600000000000001,
+            "velocity_m_s": 11.497838101040587,
+            "reynolds": 34566.13222797045,
+            "mach_approx": 0.03262563864558439
+          },
+          {
+            "id": "heat_exchange",
+            "area_m2": 0.030513380685186192,
+            "hydraulic_diameter_m": 0.05097583142587855,
+            "velocity_m_s": 12.714882886017117,
+            "reynolds": 34795.51374364972,
+            "mach_approx": 0.036079058586028986
+          }
+        ],
+        "max_section_reynolds": 35208.62539205911,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.04430941754096717,
+        "id": "motor_bypass",
+        "from_node": "bypass_ram",
+        "to_node": "motor_mix",
+        "actual_from_node": "bypass_ram",
+        "actual_to_node": "motor_mix",
+        "mass_flow_kg_s": 0.39573354310597114,
+        "pressure_drop_pa": 171.24563766740312,
+        "minor_loss_k": 1.3,
+        "heat_w": 233.0,
+        "inlet_c": 35.9,
+        "outlet_c": 36.484687200939604,
+        "exchange_surface_c": 62.476595431770775,
+        "geometry": {
+          "area_m2": 0.024845599660180233,
+          "wetted_perimeter_m": 2.366247586683832,
+          "length_m": 0.221,
+          "heated_area_m2": 0.21337571639475733,
+          "hydraulic_diameter_m": 0.041999999999999996,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "segments": [
+            {
+              "area_m2": 0.024845599660180233,
+              "wetted_perimeter_m": 2.366247586683832,
+              "length_m": 0.043000000000000003,
+              "heated_area_m2": 0.014522954519014896,
+              "hydraulic_diameter_m": 0.041999999999999996,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Outer CM radius to inner cowling lip; 3 mm shell wall removed"
+            },
+            {
+              "area_m2": 0.025940965026239528,
+              "wetted_perimeter_m": 2.3717453738276144,
+              "length_m": 0.028,
+              "heated_area_m2": 0.031280209733262856,
+              "hydraulic_diameter_m": 0.04375,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Midpoint equivalent of tapered guide x=18..46 mm"
+            },
+            {
+              "area_m2": 0.028146127449610557,
+              "wetted_perimeter_m": 2.3827409481151784,
+              "length_m": 0.028,
+              "heated_area_m2": 0.031280209733262856,
+              "hydraulic_diameter_m": 0.04725000000000002,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Midpoint equivalent of tapered guide x=46..74 mm"
+            },
+            {
+              "area_m2": 0.030370532127984795,
+              "wetted_perimeter_m": 2.393736522402743,
+              "length_m": 0.028,
+              "heated_area_m2": 0.031280209733262856,
+              "hydraulic_diameter_m": 0.05074999999999999,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Midpoint equivalent of tapered guide x=74..102 mm"
+            },
+            {
+              "area_m2": 0.03261417906136229,
+              "wetted_perimeter_m": 2.404732096690307,
+              "length_m": 0.028,
+              "heated_area_m2": 0.031280209733262856,
+              "hydraulic_diameter_m": 0.05425000000000001,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Midpoint equivalent of tapered guide x=102..130 mm"
+            },
+            {
+              "area_m2": 0.033743218373677254,
+              "wetted_perimeter_m": 2.4102298838340896,
+              "length_m": 0.066,
+              "heated_area_m2": 0.07373192294269101,
+              "hydraulic_diameter_m": 0.05600000000000001,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "Straight guide130..188 mm plus exposed rotor exit188..196 mm"
+            }
+          ],
+          "inlet": {
+            "area_m2": 0.024845599660180233,
+            "wetted_perimeter_m": 2.366247586683832,
+            "length_m": 0.043000000000000003,
+            "heated_area_m2": 0.014522954519014896,
+            "hydraulic_diameter_m": 0.041999999999999996,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "reference_plane": "Outer CM radius to inner cowling lip; 3 mm shell wall removed"
+          },
+          "heat_exchange": {
+            "area_m2": 0.030513380685186192,
+            "wetted_perimeter_m": 2.3943409911463003,
+            "hydraulic_diameter_m": 0.05097583142587855,
+            "length_m": 0.191,
+            "heated_area_m2": 0.21337571639475733,
+            "method": "heated-length-weighted representative annulus of same-geometry serial sections"
+          },
+          "heated_surfaces_m2": {
+            "motor_magnet": 0.21337571639475733
+          },
+          "reference_plane": "Outer inlet aperture for local-loss K; four tapered guide sections and straight exit in series"
+        },
+        "axial_heat_balance": {
+          "boundary_condition": "uniform_axial_heat_flux",
+          "evaluable": true,
+          "air_mean_c": 36.192343600469805,
+          "air_rise_c": 0.5846872009396086,
+          "surface_mean_c": {
+            "motor_magnet": 62.184251831300976
+          },
+          "surface_max_c": {
+            "motor_magnet": 62.476595431770775
+          },
+          "samples": [
+            {
+              "flow_fraction": 0.0,
+              "air_c": 35.9,
+              "wall_c": {
+                "motor_magnet": 61.89190823083117
+              }
+            },
+            {
+              "flow_fraction": 0.25,
+              "air_c": 36.0461718002349,
+              "wall_c": {
+                "motor_magnet": 62.03808003106607
+              }
+            },
+            {
+              "flow_fraction": 0.5,
+              "air_c": 36.192343600469805,
+              "wall_c": {
+                "motor_magnet": 62.184251831300976
+              }
+            },
+            {
+              "flow_fraction": 0.75,
+              "air_c": 36.33851540070471,
+              "wall_c": {
+                "motor_magnet": 62.33042363153588
+              }
+            },
+            {
+              "flow_fraction": 1.0,
+              "air_c": 36.484687200939604,
+              "wall_c": {
+                "motor_magnet": 62.476595431770775
+              }
+            }
+          ],
+          "flow_direction": "forward"
+        },
+        "heated_surface_temperatures_c": {
+          "motor_magnet": 62.476595431770775
+        }
+      },
+      "motor_top_exhaust": {
+        "velocity_m_s": 24.423650489940382,
+        "heat_exchange_velocity_m_s": 24.423650489940382,
+        "heat_exchange_hydraulic_diameter_m": 0.08571428571428572,
+        "reynolds": 112385.51954769559,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.01755492140545463,
+        "nusselt": 197.28273260215238,
+        "h_w_m2_k": 62.144060769678,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0,
+        "ua_w_k": 0.0,
+        "air_capacity_w_k": 225.77857527813626,
+        "convective_conductance_w_k": 0.0,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 0.9800000000000001,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.009,
+            "hydraulic_diameter_m": 0.08571428571428572,
+            "velocity_m_s": 24.423650489940382,
+            "reynolds": 112385.51954769559,
+            "mach_approx": 0.06930321929117518
+          }
+        ],
+        "max_section_reynolds": 112385.51954769559,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.06930321929117518,
+        "id": "motor_top_exhaust",
+        "from_node": "motor_mix",
+        "to_node": "top_exhaust",
+        "actual_from_node": "motor_mix",
+        "actual_to_node": "top_exhaust",
+        "mass_flow_kg_s": 0.22420911149765269,
+        "pressure_drop_pa": 613.6787873325968,
+        "minor_loss_k": 2.0,
+        "heat_w": 0.0,
+        "inlet_c": 44.711908206598814,
+        "outlet_c": 44.711908206598814,
+        "exchange_surface_c": 44.711908206598814,
+        "geometry": {
+          "area_m2": 0.009,
+          "wetted_perimeter_m": 0.42,
+          "length_m": 0.084,
+          "heated_area_m2": 0.0,
+          "hydraulic_diameter_m": 0.08571428571428572,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "reference_plane": "XY projected cowling cutout before louvers; louver contraction is a loss coefficient"
+        }
+      },
+      "cmc_hv_left": {
+        "velocity_m_s": 17.816645299232317,
+        "heat_exchange_velocity_m_s": 17.816645299232317,
+        "heat_exchange_hydraulic_diameter_m": 0.009899526564965809,
+        "reynolds": 9468.625289846841,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.03196723762609261,
+        "nusselt": 28.708271554170402,
+        "h_w_m2_k": 78.29903045118785,
+        "fin_efficiency": 0.8637839375799253,
+        "effective_heated_area_m2": 0.3636658951422801,
+        "ua_w_k": 28.474686997803875,
+        "air_capacity_w_k": 68.87825155637717,
+        "convective_conductance_w_k": 23.32261273943074,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 30.304479515383385,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.0037638,
+            "hydraulic_diameter_m": 0.009899526564965809,
+            "velocity_m_s": 17.816645299232317,
+            "reynolds": 9468.625289846841,
+            "mach_approx": 0.050555541511468655
+          }
+        ],
+        "max_section_reynolds": 9468.625289846841,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.050555541511468655,
+        "id": "cmc_hv_left",
+        "from_node": "motor_mix",
+        "to_node": "lower_mix",
+        "actual_from_node": "motor_mix",
+        "actual_to_node": "lower_mix",
+        "mass_flow_kg_s": 0.0683994553687956,
+        "pressure_drop_pa": 512.9914052881824,
+        "minor_loss_k": 2.2,
+        "heat_w": 679.0,
+        "inlet_c": 44.711908206598814,
+        "outlet_c": 54.56988201774057,
+        "exchange_surface_c": 73.82528446448428,
+        "geometry": {
+          "area_m2": 0.0037638,
+          "wetted_perimeter_m": 1.5207999999999997,
+          "length_m": 0.3,
+          "heated_area_m2": 0.4144199999999999,
+          "hydraulic_diameter_m": 0.009899526564965809,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "fin_count": 24,
+          "fin_gap_m": 0.006060869565217391,
+          "fin_height_m": 0.027,
+          "fin_thickness_m": 0.0014,
+          "base_area_m2": 0.041819999999999996,
+          "fin_area_m2": 0.3726
+        }
+      },
+      "cmc_hv_right": {
+        "velocity_m_s": 17.816645299232317,
+        "heat_exchange_velocity_m_s": 17.816645299232317,
+        "heat_exchange_hydraulic_diameter_m": 0.009899526564965809,
+        "reynolds": 9468.625289846841,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.03196723762609261,
+        "nusselt": 28.708271554170402,
+        "h_w_m2_k": 78.29903045118785,
+        "fin_efficiency": 0.8637839375799253,
+        "effective_heated_area_m2": 0.3636658951422801,
+        "ua_w_k": 28.474686997803875,
+        "air_capacity_w_k": 68.87825155637717,
+        "convective_conductance_w_k": 23.32261273943074,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 30.304479515383385,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.0037638,
+            "hydraulic_diameter_m": 0.009899526564965809,
+            "velocity_m_s": 17.816645299232317,
+            "reynolds": 9468.625289846841,
+            "mach_approx": 0.050555541511468655
+          }
+        ],
+        "max_section_reynolds": 9468.625289846841,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.050555541511468655,
+        "id": "cmc_hv_right",
+        "from_node": "motor_mix",
+        "to_node": "lower_mix",
+        "actual_from_node": "motor_mix",
+        "actual_to_node": "lower_mix",
+        "mass_flow_kg_s": 0.0683994553687956,
+        "pressure_drop_pa": 512.9914052881824,
+        "minor_loss_k": 2.2,
+        "heat_w": 679.0,
+        "inlet_c": 44.711908206598814,
+        "outlet_c": 54.56988201774057,
+        "exchange_surface_c": 73.82528446448428,
+        "geometry": {
+          "area_m2": 0.0037638,
+          "wetted_perimeter_m": 1.5207999999999997,
+          "length_m": 0.3,
+          "heated_area_m2": 0.4144199999999999,
+          "hydraulic_diameter_m": 0.009899526564965809,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "fin_count": 24,
+          "fin_gap_m": 0.006060869565217391,
+          "fin_height_m": 0.027,
+          "fin_thickness_m": 0.0014,
+          "base_area_m2": 0.041819999999999996,
+          "fin_area_m2": 0.3726
+        }
+      },
+      "cmc_bypass": {
+        "velocity_m_s": 23.20682102654066,
+        "heat_exchange_velocity_m_s": 23.20682102654066,
+        "heat_exchange_hydraulic_diameter_m": 0.07981609195402299,
+        "reynolds": 99438.06927553799,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.01801353416832838,
+        "nusselt": 179.22877644373466,
+        "h_w_m2_k": 60.62908926646496,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0,
+        "ua_w_k": 0.0,
+        "air_capacity_w_k": 165.52172641205155,
+        "convective_conductance_w_k": 0.0,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 3.7586405529953915,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.006944,
+            "hydraulic_diameter_m": 0.07981609195402299,
+            "velocity_m_s": 23.20682102654066,
+            "reynolds": 99438.06927553799,
+            "mach_approx": 0.06585041033549971
+          }
+        ],
+        "max_section_reynolds": 99438.06927553799,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.06585041033549971,
+        "id": "cmc_bypass",
+        "from_node": "motor_mix",
+        "to_node": "lower_mix",
+        "actual_from_node": "motor_mix",
+        "actual_to_node": "lower_mix",
+        "mass_flow_kg_s": 0.1643711285124643,
+        "pressure_drop_pa": 512.9914052881824,
+        "minor_loss_k": 1.8,
+        "heat_w": 0.0,
+        "inlet_c": 44.711908206598814,
+        "outlet_c": 44.711908206598814,
+        "exchange_surface_c": 44.711908206598814,
+        "geometry": {
+          "area_m2": 0.006944,
+          "wetted_perimeter_m": 0.34800000000000003,
+          "length_m": 0.3,
+          "heated_area_m2": 0.0,
+          "hydraulic_diameter_m": 0.07981609195402299,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction"
+        }
+      },
+      "lv_fresh_left": {
+        "velocity_m_s": 18.712322790156012,
+        "heat_exchange_velocity_m_s": 10.56965905631434,
+        "heat_exchange_hydraulic_diameter_m": 0.03257142857142857,
+        "reynolds": 18481.8038356125,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.026687025114772032,
+        "nusselt": 48.64590248299619,
+        "h_w_m2_k": 40.324892847746845,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0555,
+        "ua_w_k": 2.23803155304995,
+        "air_capacity_w_k": 33.41636733835015,
+        "convective_conductance_w_k": 2.1647319482767817,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 9.210526315789474,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.03875299773051443,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799794,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "serial_0",
+            "area_m2": 0.0017386088803710807,
+            "hydraulic_diameter_m": 0.038752997730514264,
+            "velocity_m_s": 18.71232279015609,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611787
+          },
+          {
+            "id": "serial_1",
+            "area_m2": 0.001548170242232833,
+            "hydraulic_diameter_m": 0.035455042147100276,
+            "velocity_m_s": 21.014104061588572,
+            "reynolds": 39997.74021531144,
+            "mach_approx": 0.059628476201282345
+          },
+          {
+            "id": "serial_2",
+            "area_m2": 0.001173126161584191,
+            "hydraulic_diameter_m": 0.028304291129254526,
+            "velocity_m_s": 27.732235151420017,
+            "reynolds": 42138.95171255541,
+            "mach_approx": 0.07869147877484181
+          },
+          {
+            "id": "serial_3",
+            "area_m2": 0.003078,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "velocity_m_s": 10.56965905631434,
+            "reynolds": 18481.8038356125,
+            "mach_approx": 0.029991888383532814
+          },
+          {
+            "id": "endpoint_0",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.038752997730514424,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "endpoint_1",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.038752997730514424,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "endpoint_2",
+            "area_m2": 0.0013908871042968727,
+            "hydraulic_diameter_m": 0.032565747276225736,
+            "velocity_m_s": 23.390403487694975,
+            "reynolds": 40892.65726540043,
+            "mach_approx": 0.06637133392014695
+          },
+          {
+            "id": "endpoint_3",
+            "area_m2": 0.0010431653282226509,
+            "hydraulic_diameter_m": 0.02561051872747823,
+            "velocity_m_s": 31.18720465026008,
+            "reynolds": 42878.678869907664,
+            "mach_approx": 0.0884951118935296
+          },
+          {
+            "id": "heat_exchange",
+            "area_m2": 0.003078,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "velocity_m_s": 10.56965905631434,
+            "reynolds": 18481.8038356125,
+            "mach_approx": 0.029991888383532814
+          }
+        ],
+        "max_section_reynolds": 42878.678869907664,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.0884951118935296,
+        "id": "lv_fresh_left",
+        "from_node": "lv_ram",
+        "to_node": "lower_mix",
+        "actual_from_node": "lv_ram",
+        "actual_to_node": "lower_mix",
+        "mass_flow_kg_s": 0.03318407878684225,
+        "pressure_drop_pa": 579.5804529555855,
+        "minor_loss_k": 3.0,
+        "heat_w": 30.0,
+        "inlet_c": 35.9,
+        "outlet_c": 36.79776365265086,
+        "exchange_surface_c": 49.758528777145486,
+        "geometry": {
+          "area_m2": 0.001738608880371088,
+          "wetted_perimeter_m": 0.1794554209675597,
+          "length_m": 0.4453501515685907,
+          "heated_area_m2": 0.0555,
+          "hydraulic_diameter_m": 0.03875299773051443,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "heat_exchange": {
+            "area_m2": 0.003078,
+            "wetted_perimeter_m": 0.378,
+            "length_m": 0.3,
+            "heated_area_m2": 0.0555,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "gap_m": 0.018000000000000002
+          },
+          "segments": [
+            {
+              "area_m2": 0.0017386088803710807,
+              "wetted_perimeter_m": 0.1794554209675597,
+              "length_m": 0.02501999200639361,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.038752997730514264,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 1: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.001548170242232833,
+              "wetted_perimeter_m": 0.17466291376099258,
+              "length_m": 0.05601690249616904,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.035455042147100276,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 2: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.001173126161584191,
+              "wetted_perimeter_m": 0.16578774663205476,
+              "length_m": 0.06431325706602804,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.028304291129254526,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 3: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.003078,
+              "wetted_perimeter_m": 0.378,
+              "length_m": 0.3,
+              "heated_area_m2": 0.0555,
+              "hydraulic_diameter_m": 0.03257142857142857,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "gap_m": 0.018000000000000002
+            }
+          ],
+          "section_profile": "half_ellipse_with_flat_sill",
+          "inlet_width_m": 0.074,
+          "inlet_height_m": 0.03,
+          "inlet_analytic_area_m2": 0.0017435839227423352,
+          "section_stations": [
+            {
+              "floor_origin_mm": [
+                275.0,
+                0.0,
+                222.95000000000002
+              ],
+              "height_mm": 30.0,
+              "tilt_rad": 0.0,
+              "area_m2": 0.001738608880371088,
+              "perimeter_m": 0.1794554209675597
+            },
+            {
+              "floor_origin_mm": [
+                300.0,
+                0.0,
+                221.95000000000002
+              ],
+              "height_mm": 30.0,
+              "tilt_rad": 0.0,
+              "area_m2": 0.001738608880371088,
+              "perimeter_m": 0.1794554209675597
+            },
+            {
+              "floor_origin_mm": [
+                345.0,
+                0.0,
+                195.95000000000002
+              ],
+              "height_mm": 24.0,
+              "tilt_rad": 0.2932153143350474,
+              "area_m2": 0.0013908871042968727,
+              "perimeter_m": 0.17084049599712695
+            },
+            {
+              "floor_origin_mm": [
+                373.2090296831061,
+                0.0,
+                144.1999889805806
+              ],
+              "height_mm": 18.0,
+              "tilt_rad": 0.8377580409572782,
+              "area_m2": 0.0010431653282226509,
+              "perimeter_m": 0.16292763755751813
+            }
+          ],
+          "heat_exchange_note": "D-shaped scoop transition to inferred backplate standoff with open connector end; full-plate jet area, not a sealed CFD duct"
+        }
+      },
+      "lv_fresh_right": {
+        "velocity_m_s": 18.712322790156012,
+        "heat_exchange_velocity_m_s": 10.56965905631434,
+        "heat_exchange_hydraulic_diameter_m": 0.03257142857142857,
+        "reynolds": 18481.8038356125,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.026687025114772032,
+        "nusselt": 48.64590248299619,
+        "h_w_m2_k": 40.324892847746845,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0555,
+        "ua_w_k": 2.23803155304995,
+        "air_capacity_w_k": 33.41636733835015,
+        "convective_conductance_w_k": 2.1647319482767817,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 9.210526315789474,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.03875299773051443,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799794,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "serial_0",
+            "area_m2": 0.0017386088803710807,
+            "hydraulic_diameter_m": 0.038752997730514264,
+            "velocity_m_s": 18.71232279015609,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611787
+          },
+          {
+            "id": "serial_1",
+            "area_m2": 0.001548170242232833,
+            "hydraulic_diameter_m": 0.035455042147100276,
+            "velocity_m_s": 21.014104061588572,
+            "reynolds": 39997.74021531144,
+            "mach_approx": 0.059628476201282345
+          },
+          {
+            "id": "serial_2",
+            "area_m2": 0.001173126161584191,
+            "hydraulic_diameter_m": 0.028304291129254526,
+            "velocity_m_s": 27.732235151420017,
+            "reynolds": 42138.95171255541,
+            "mach_approx": 0.07869147877484181
+          },
+          {
+            "id": "serial_3",
+            "area_m2": 0.003078,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "velocity_m_s": 10.56965905631434,
+            "reynolds": 18481.8038356125,
+            "mach_approx": 0.029991888383532814
+          },
+          {
+            "id": "endpoint_0",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.038752997730514424,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "endpoint_1",
+            "area_m2": 0.001738608880371088,
+            "hydraulic_diameter_m": 0.038752997730514424,
+            "velocity_m_s": 18.712322790156012,
+            "reynolds": 38929.56708799793,
+            "mach_approx": 0.05309706713611765
+          },
+          {
+            "id": "endpoint_2",
+            "area_m2": 0.0013908871042968727,
+            "hydraulic_diameter_m": 0.032565747276225736,
+            "velocity_m_s": 23.390403487694975,
+            "reynolds": 40892.65726540043,
+            "mach_approx": 0.06637133392014695
+          },
+          {
+            "id": "endpoint_3",
+            "area_m2": 0.0010431653282226509,
+            "hydraulic_diameter_m": 0.02561051872747823,
+            "velocity_m_s": 31.18720465026008,
+            "reynolds": 42878.678869907664,
+            "mach_approx": 0.0884951118935296
+          },
+          {
+            "id": "heat_exchange",
+            "area_m2": 0.003078,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "velocity_m_s": 10.56965905631434,
+            "reynolds": 18481.8038356125,
+            "mach_approx": 0.029991888383532814
+          }
+        ],
+        "max_section_reynolds": 42878.678869907664,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.0884951118935296,
+        "id": "lv_fresh_right",
+        "from_node": "lv_ram",
+        "to_node": "lower_mix",
+        "actual_from_node": "lv_ram",
+        "actual_to_node": "lower_mix",
+        "mass_flow_kg_s": 0.03318407878684225,
+        "pressure_drop_pa": 579.5804529555855,
+        "minor_loss_k": 3.0,
+        "heat_w": 30.0,
+        "inlet_c": 35.9,
+        "outlet_c": 36.79776365265086,
+        "exchange_surface_c": 49.758528777145486,
+        "geometry": {
+          "area_m2": 0.001738608880371088,
+          "wetted_perimeter_m": 0.1794554209675597,
+          "length_m": 0.4453501515685907,
+          "heated_area_m2": 0.0555,
+          "hydraulic_diameter_m": 0.03875299773051443,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "heat_exchange": {
+            "area_m2": 0.003078,
+            "wetted_perimeter_m": 0.378,
+            "length_m": 0.3,
+            "heated_area_m2": 0.0555,
+            "hydraulic_diameter_m": 0.03257142857142857,
+            "method": "same-parameter equivalent flow section; not CFD volume extraction",
+            "gap_m": 0.018000000000000002
+          },
+          "segments": [
+            {
+              "area_m2": 0.0017386088803710807,
+              "wetted_perimeter_m": 0.1794554209675597,
+              "length_m": 0.02501999200639361,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.038752997730514264,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 1: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.001548170242232833,
+              "wetted_perimeter_m": 0.17466291376099258,
+              "length_m": 0.05601690249616904,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.035455042147100276,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 2: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.001173126161584191,
+              "wetted_perimeter_m": 0.16578774663205476,
+              "length_m": 0.06431325706602804,
+              "heated_area_m2": 0.0,
+              "hydraulic_diameter_m": 0.028304291129254526,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "reference_plane": "D-section transition 3: exact midpoint polygon, straight centroid path"
+            },
+            {
+              "area_m2": 0.003078,
+              "wetted_perimeter_m": 0.378,
+              "length_m": 0.3,
+              "heated_area_m2": 0.0555,
+              "hydraulic_diameter_m": 0.03257142857142857,
+              "method": "same-parameter equivalent flow section; not CFD volume extraction",
+              "gap_m": 0.018000000000000002
+            }
+          ],
+          "section_profile": "half_ellipse_with_flat_sill",
+          "inlet_width_m": 0.074,
+          "inlet_height_m": 0.03,
+          "inlet_analytic_area_m2": 0.0017435839227423352,
+          "section_stations": [
+            {
+              "floor_origin_mm": [
+                275.0,
+                0.0,
+                222.95000000000002
+              ],
+              "height_mm": 30.0,
+              "tilt_rad": 0.0,
+              "area_m2": 0.001738608880371088,
+              "perimeter_m": 0.1794554209675597
+            },
+            {
+              "floor_origin_mm": [
+                300.0,
+                0.0,
+                221.95000000000002
+              ],
+              "height_mm": 30.0,
+              "tilt_rad": 0.0,
+              "area_m2": 0.001738608880371088,
+              "perimeter_m": 0.1794554209675597
+            },
+            {
+              "floor_origin_mm": [
+                345.0,
+                0.0,
+                195.95000000000002
+              ],
+              "height_mm": 24.0,
+              "tilt_rad": 0.2932153143350474,
+              "area_m2": 0.0013908871042968727,
+              "perimeter_m": 0.17084049599712695
+            },
+            {
+              "floor_origin_mm": [
+                373.2090296831061,
+                0.0,
+                144.1999889805806
+              ],
+              "height_mm": 18.0,
+              "tilt_rad": 0.8377580409572782,
+              "area_m2": 0.0010431653282226509,
+              "perimeter_m": 0.16292763755751813
+            }
+          ],
+          "heat_exchange_note": "D-shaped scoop transition to inferred backplate standoff with open connector end; full-plate jet area, not a sealed CFD duct"
+        }
+      },
+      "lower_outlet": {
+        "velocity_m_s": 16.378707523339568,
+        "heat_exchange_velocity_m_s": 16.378707523339568,
+        "heat_exchange_hydraulic_diameter_m": 0.14789915966386555,
+        "reynolds": 130044.47477177881,
+        "prandtl": 0.7086296296296296,
+        "darcy_friction_factor": 0.017030632886356294,
+        "nusselt": 221.270835667998,
+        "h_w_m2_k": 40.39449971598168,
+        "fin_efficiency": 1.0,
+        "effective_heated_area_m2": 0.0,
+        "ua_w_k": 0.0,
+        "air_capacity_w_k": 370.1109642015061,
+        "convective_conductance_w_k": 0.0,
+        "convective_conductance_basis": "isothermal_wall",
+        "heat_boundary": "isothermal_exchange_surface",
+        "length_to_hydraulic_diameter": 1.0818181818181818,
+        "correlation_numeric_range_satisfied": true,
+        "actual_geometry_correlation_validated": false,
+        "section_transport": [
+          {
+            "id": "aperture",
+            "area_m2": 0.022,
+            "hydraulic_diameter_m": 0.14789915966386555,
+            "velocity_m_s": 16.378707523339568,
+            "reynolds": 130044.47477177881,
+            "mach_approx": 0.04647532766093041
+          }
+        ],
+        "max_section_reynolds": 130044.47477177881,
+        "regime": "turbulent_equivalent_duct",
+        "mach_approx": 0.04647532766093041,
+        "id": "lower_outlet",
+        "from_node": "lower_mix",
+        "to_node": "lower_exhaust",
+        "actual_from_node": "lower_mix",
+        "actual_to_node": "lower_exhaust",
+        "mass_flow_kg_s": 0.3675381968237399,
+        "pressure_drop_pa": 153.01567704441433,
+        "minor_loss_k": 1.1,
+        "heat_w": 0.0,
+        "inlet_c": 46.95198255463017,
+        "outlet_c": 46.95198255463017,
+        "exchange_surface_c": 46.95198255463017,
+        "geometry": {
+          "area_m2": 0.022,
+          "wetted_perimeter_m": 0.595,
+          "length_m": 0.16,
+          "heated_area_m2": 0.0,
+          "hydraulic_diameter_m": 0.14789915966386555,
+          "method": "same-parameter equivalent flow section; not CFD volume extraction",
+          "reference_plane": "XY projected lower-shell aperture; opening angle solved from ruled shell section widths"
+        }
+      }
+    },
+    "nodes": {
+      "main_ram": {
+        "id": "main_ram",
+        "pressure_pa": 680.2678349999999,
+        "temperature_c": 35.9,
+        "external_reservoir": true
+      },
+      "bypass_ram": {
+        "id": "bypass_ram",
+        "pressure_pa": 680.2678349999999,
+        "temperature_c": 35.9,
+        "external_reservoir": true
+      },
+      "lv_ram": {
+        "id": "lv_ram",
+        "pressure_pa": 575.6112449999999,
+        "temperature_c": 35.9,
+        "external_reservoir": true
+      },
+      "top_exhaust": {
+        "id": "top_exhaust",
+        "pressure_pa": -104.65659,
+        "temperature_c": 44.711908206598814,
+        "external_reservoir": true
+      },
+      "lower_exhaust": {
+        "id": "lower_exhaust",
+        "pressure_pa": -156.98488499999996,
+        "temperature_c": 46.95198255463017,
+        "external_reservoir": true
+      },
+      "inlet_plenum": {
+        "id": "inlet_plenum",
+        "pressure_pa": 678.1277905067295,
+        "temperature_c": 35.9,
+        "external_reservoir": false
+      },
+      "motor_mix": {
+        "id": "motor_mix",
+        "pressure_pa": 509.02219733259676,
+        "temperature_c": 44.711908206598814,
+        "external_reservoir": false
+      },
+      "lower_mix": {
+        "id": "lower_mix",
+        "pressure_pa": -3.969207955585634,
+        "temperature_c": 46.95198255463017,
+        "external_reservoir": false
+      }
+    },
+    "total_inlet_kg_s": 0.5917473083213969,
+    "total_outlet_kg_s": 0.5917473083213926,
+    "pressure_drive_pa": 837.2527199999998,
+    "hydraulic_dissipation_w": 467.4153900591992,
+    "power_note": "Passive pressure loss, not blower electrical power or complete aircraft cooling drag."
+  },
+  "thermal": {
+    "components": {
+      "motor_winding": {
+        "id": "motor_winding",
+        "thermal_node": "motor_winding",
+        "temperature_c": 282.4028532554979,
+        "limit_c": 124.0,
+        "margin_c": -158.40285325549792,
+        "heat_w": 4196.0,
+        "conduction_resistance_k_w": 0.0036105439926692544,
+        "contact_resistance_k_w": 0.0015,
+        "channel_id": "motor_slots",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "gap_patch_c": 266.4545370751317,
+        "slot_patch_c": 282.4028532554979,
+        "secondary_channel_id": "motor_internal",
+        "heat_by_branch_w": {
+          "motor_internal": 1324.9724366120272,
+          "motor_slots": 2871.027563387973
+        }
+      },
+      "motor_magnet": {
+        "id": "motor_magnet",
+        "thermal_node": "motor_magnet",
+        "temperature_c": 94.638899025919,
+        "limit_c": 83.0,
+        "margin_c": -11.638899025919002,
+        "heat_w": 466.0,
+        "conduction_resistance_k_w": 0.0019725204532416904,
+        "contact_resistance_k_w": 0.01,
+        "channel_id": "motor_internal",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "inner_surface_c": 94.638899025919,
+        "outer_surface_c": 65.69872298620842,
+        "secondary_channel_id": "motor_bypass",
+        "conduction_patch_areas_m2": {
+          "inner": 0.15362011084935656,
+          "outer": 0.16323338436934134
+        },
+        "patch_conduction_resistance_k_w": {
+          "inner": 0.004068477730841436,
+          "outer": 0.0038288736241958855
+        },
+        "patch_contact_resistance_k_w": {
+          "inner": 0.01,
+          "outer": 0.01
+        },
+        "resistance_note": "Reported aggregate conduction resistance describes parallel area only; temperatures use individual patch L/(k A) and declared per-patch contact resistance."
+      },
+      "cmc_left_hv": {
+        "id": "cmc_left_hv",
+        "thermal_node": "cmc_left_hv",
+        "temperature_c": 91.23983779026516,
+        "limit_c": 150.0,
+        "margin_c": 58.760162209734844,
+        "heat_w": 679.0,
+        "conduction_resistance_k_w": 0.0006473539407671144,
+        "contact_resistance_k_w": 0.025,
+        "channel_id": "cmc_hv_left",
+        "temperature_kind": "uncalibrated_lumped_proxy"
+      },
+      "cmc_left_lv": {
+        "id": "cmc_left_lv",
+        "thermal_node": "cmc_left_lv",
+        "temperature_c": 49.92147585596083,
+        "limit_c": null,
+        "margin_c": null,
+        "heat_w": 10.0,
+        "conduction_resistance_k_w": 0.000431569293844743,
+        "contact_resistance_k_w": 0.005,
+        "channel_id": "lv_fresh_left",
+        "temperature_kind": "backplate_proxy_no_published_limit",
+        "total_backplate_heat_w": 30.0
+      },
+      "cmc_left_cpu": {
+        "id": "cmc_left_cpu",
+        "thermal_node": "cmc_left_cpu",
+        "temperature_c": 83.39222196438809,
+        "limit_c": 74.0,
+        "margin_c": -9.392221964388085,
+        "heat_w": 8.0,
+        "conduction_resistance_k_w": 2.6838432635534084,
+        "contact_resistance_k_w": 1.5,
+        "channel_id": "lv_fresh_left",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "parent_backplate": "cmc_left_lv"
+      },
+      "cmc_left_acdc": {
+        "id": "cmc_left_acdc",
+        "thermal_node": "cmc_left_acdc",
+        "temperature_c": 82.83999437447935,
+        "limit_c": 74.0,
+        "margin_c": -8.839994374479346,
+        "heat_w": 12.0,
+        "conduction_resistance_k_w": 1.54320987654321,
+        "contact_resistance_k_w": 1.2,
+        "channel_id": "lv_fresh_left",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "parent_backplate": "cmc_left_lv"
+      },
+      "cmc_right_hv": {
+        "id": "cmc_right_hv",
+        "thermal_node": "cmc_right_hv",
+        "temperature_c": 91.23983779026516,
+        "limit_c": 150.0,
+        "margin_c": 58.760162209734844,
+        "heat_w": 679.0,
+        "conduction_resistance_k_w": 0.0006473539407671144,
+        "contact_resistance_k_w": 0.025,
+        "channel_id": "cmc_hv_right",
+        "temperature_kind": "uncalibrated_lumped_proxy"
+      },
+      "cmc_right_lv": {
+        "id": "cmc_right_lv",
+        "thermal_node": "cmc_right_lv",
+        "temperature_c": 49.92147585596083,
+        "limit_c": null,
+        "margin_c": null,
+        "heat_w": 10.0,
+        "conduction_resistance_k_w": 0.000431569293844743,
+        "contact_resistance_k_w": 0.005,
+        "channel_id": "lv_fresh_right",
+        "temperature_kind": "backplate_proxy_no_published_limit",
+        "total_backplate_heat_w": 30.0
+      },
+      "cmc_right_cpu": {
+        "id": "cmc_right_cpu",
+        "thermal_node": "cmc_right_cpu",
+        "temperature_c": 83.39222196438809,
+        "limit_c": 74.0,
+        "margin_c": -9.392221964388085,
+        "heat_w": 8.0,
+        "conduction_resistance_k_w": 2.6838432635534084,
+        "contact_resistance_k_w": 1.5,
+        "channel_id": "lv_fresh_right",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "parent_backplate": "cmc_right_lv"
+      },
+      "cmc_right_acdc": {
+        "id": "cmc_right_acdc",
+        "thermal_node": "cmc_right_acdc",
+        "temperature_c": 82.83999437447935,
+        "limit_c": 74.0,
+        "margin_c": -8.839994374479346,
+        "heat_w": 12.0,
+        "conduction_resistance_k_w": 1.54320987654321,
+        "contact_resistance_k_w": 1.2,
+        "channel_id": "lv_fresh_right",
+        "temperature_kind": "uncalibrated_lumped_proxy",
+        "parent_backplate": "cmc_right_lv"
+      }
+    },
+    "motor_patch_budget": {
+      "motor_winding:motor_internal": {
+        "component": "motor_winding",
+        "branch_id": "motor_internal",
+        "heat_w": 1324.9724366120272,
+        "heated_area_m2": 0.14495308503663307,
+        "inlet_c": 35.9,
+        "temperature_c": 266.45453707513167,
+        "rise_c": {
+          "air_advection": 24.157642524148734,
+          "convection": 184.95305195774276,
+          "solid_conduction": 15.149842593240193,
+          "contact": 6.2940000000000005
+        },
+        "resistance_k_w": {
+          "convection": 0.13959011285598533,
+          "solid_conduction": 0.011434081324724421,
+          "contact": 0.0047502874973715265
+        },
+        "actual_patch_ua_w_k": 7.163831159243325,
+        "infinite_h_temperature_floor_c": 81.50148511738892,
+        "fixed_flow_target_closure": {
+          "margined_reference": {
+            "target_c": 124.0,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 42.498514882611076,
+            "required_patch_ua_w_k": 31.176911482009462,
+            "required_h_w_m2_k": 215.08277298223987,
+            "required_h_multiplier": 4.351988592274766
+          },
+          "published_icpt_context": {
+            "target_c": 92.2,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 10.698514882611079,
+            "required_patch_ua_w_k": 123.8463890689709,
+            "required_h_w_m2_k": 854.3894670311569,
+            "required_h_multiplier": 17.287731426943914
+          }
+        },
+        "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+      },
+      "motor_magnet:motor_internal": {
+        "component": "motor_magnet",
+        "branch_id": "motor_internal",
+        "heat_w": 233.0,
+        "heated_area_m2": 0.1506079518130947,
+        "inlet_c": 35.9,
+        "temperature_c": 94.638899025919,
+        "rise_c": {
+          "air_advection": 24.157642524148734,
+          "convection": 31.303301190484213,
+          "solid_conduction": 0.9479553112860546,
+          "contact": 2.33
+        },
+        "resistance_k_w": {
+          "convection": 0.1343489321480009,
+          "solid_conduction": 0.004068477730841436,
+          "contact": 0.01
+        },
+        "actual_patch_ua_w_k": 7.443304416430971,
+        "infinite_h_temperature_floor_c": 63.33559783543479,
+        "fixed_flow_target_closure": {
+          "margined_reference": {
+            "target_c": 83.0,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 19.66440216456521,
+            "required_patch_ua_w_k": 11.848821949942648,
+            "required_h_w_m2_k": 78.67328256775646,
+            "required_h_multiplier": 1.5918765761865887
+          },
+          "published_icpt_context": {
+            "target_c": 43.1,
+            "possible_by_convection_alone_at_fixed_flow": false,
+            "available_wall_to_air_delta_c": -20.23559783543479,
+            "required_patch_ua_w_k": null,
+            "required_h_w_m2_k": null,
+            "required_h_multiplier": null
+          }
+        },
+        "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+      },
+      "motor_winding:motor_slots": {
+        "component": "motor_winding",
+        "branch_id": "motor_slots",
+        "heat_w": 2871.027563387973,
+        "heated_area_m2": 0.3140928000000001,
+        "inlet_c": 35.9,
+        "temperature_c": 282.4028532554979,
+        "rise_c": {
+          "air_advection": 43.46010519983433,
+          "convection": 181.59890546242343,
+          "solid_conduction": 15.149842593240193,
+          "contact": 6.294
+        },
+        "resistance_k_w": {
+          "convection": 0.06325223337393758,
+          "solid_conduction": 0.00527680151400655,
+          "contact": 0.00219224645568109
+        },
+        "actual_patch_ua_w_k": 15.8097184345753,
+        "infinite_h_temperature_floor_c": 100.80394779307451,
+        "fixed_flow_target_closure": {
+          "margined_reference": {
+            "target_c": 124.0,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 23.196052206925486,
+            "required_patch_ua_w_k": 123.77224959559238,
+            "required_h_w_m2_k": 394.0626770037146,
+            "required_h_multiplier": 7.828871216637661
+          },
+          "published_icpt_context": {
+            "target_c": 92.2,
+            "possible_by_convection_alone_at_fixed_flow": false,
+            "available_wall_to_air_delta_c": -8.60394779307451,
+            "required_patch_ua_w_k": null,
+            "required_h_w_m2_k": null,
+            "required_h_multiplier": null
+          }
+        },
+        "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+      },
+      "motor_magnet:motor_bypass": {
+        "component": "motor_magnet",
+        "branch_id": "motor_bypass",
+        "heat_w": 233.0,
+        "heated_area_m2": 0.21337571639475733,
+        "inlet_c": 35.9,
+        "temperature_c": 65.69872298620842,
+        "rise_c": {
+          "air_advection": 0.5846872009396086,
+          "convection": 25.99190823083117,
+          "solid_conduction": 0.8921275544376414,
+          "contact": 2.33
+        },
+        "resistance_k_w": {
+          "convection": 0.11155325420957583,
+          "solid_conduction": 0.0038288736241958855,
+          "contact": 0.01
+        },
+        "actual_patch_ua_w_k": 8.964328356762174,
+        "infinite_h_temperature_floor_c": 39.706814755377245,
+        "fixed_flow_target_closure": {
+          "margined_reference": {
+            "target_c": 83.0,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 43.293185244622755,
+            "required_patch_ua_w_k": 5.381909385587189,
+            "required_h_w_m2_k": 25.222689238124676,
+            "required_h_multiplier": 0.6003695058233098
+          },
+          "published_icpt_context": {
+            "target_c": 43.1,
+            "possible_by_convection_alone_at_fixed_flow": true,
+            "available_wall_to_air_delta_c": 3.3931852446227566,
+            "required_patch_ua_w_k": 68.66704385480853,
+            "required_h_w_m2_k": 321.8128333205947,
+            "required_h_multiplier": 7.660032198955548
+          }
+        },
+        "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+      }
+    },
+    "summary": {
+      "max_temperature_c": 282.4028532554979,
+      "min_margin_c": -158.40285325549792,
+      "limiting_component": "motor_winding",
+      "steady_state_exists": true,
+      "total_heat_w": 6080.0,
+      "result_status": "out_of_domain_diagnostic",
+      "physically_validated": false,
+      "within_model_limits": false,
+      "all_reference_margins_nonnegative": false
+    }
+  },
+  "diagnostics": {
+    "converged": true,
+    "iterations": 10,
+    "dynamic_pressure_pa": 1046.5658999999998,
+    "mass_residuals_kg_s": {
+      "inlet_plenum": -3.3584246494910985e-15,
+      "motor_mix": -8.604228440844963e-16,
+      "lower_mix": -1.1102230246251565e-16
+    },
+    "max_mass_residual_kg_s": 3.3584246494910985e-15,
+    "external_mass_residual_kg_s": 4.3298697960381105e-15,
+    "max_pressure_residual_pa": 6.52562448522076e-11,
+    "energy_residual_w": 5.4569682106375694e-12,
+    "energy_removed_w": 6079.9999999999945,
+    "total_heat_w": 6080.0,
+    "steady_energy_balance_evaluable": true,
+    "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+    "heat_scale_to_200c_guard_at_fixed_flow": 0.6657123754665504,
+    "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+    "correlation_applicability": {
+      "actual_geometry_validated": false,
+      "motor_rotation_resolved": false,
+      "entrance_development_resolved": false,
+      "lv_jet_resolved": false,
+      "short_ducts_l_over_d_below_10": [
+        "main_inlet",
+        "motor_bypass",
+        "motor_top_exhaust",
+        "cmc_bypass",
+        "lv_fresh_left",
+        "lv_fresh_right",
+        "lower_outlet"
+      ],
+      "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+    },
+    "conservation_pass": true
+  },
+  "uncertainty": {
+    "kind": "uncalibrated_screening_scenario_range",
+    "scenario_count": 8,
+    "note": "Selected assumption corners plus nominal; not confidence intervals, calibrated error bars, guaranteed extrema, or certification margins. Geometry dimensional uncertainty and heat-load uncertainty are not sampled.",
+    "factors": {
+      "pressure_drive": [
+        0.75,
+        1.25
+      ],
+      "minor_loss": [
+        0.5,
+        2
+      ],
+      "heat_transfer_h": [
+        0.6,
+        1.4
+      ],
+      "contact_resistance": [
+        0.5,
+        2
+      ]
+    },
+    "component_temperature_c": {
+      "motor_winding": {
+        "min": 175.81460446113456,
+        "max": 618.1929205086485
+      },
+      "motor_magnet": {
+        "min": 70.13897415850674,
+        "max": 158.21367029175795
+      },
+      "cmc_left_hv": {
+        "min": 68.35887412415929,
+        "max": 145.0110076645512
+      },
+      "cmc_right_hv": {
+        "min": 68.35887412415929,
+        "max": 145.0110076645512
+      },
+      "cmc_left_lv": {
+        "min": 43.107548648820874,
+        "max": 69.48726260485078
+      },
+      "cmc_right_lv": {
+        "min": 43.107548648820874,
+        "max": 69.48726260485078
+      },
+      "cmc_left_cpu": {
+        "min": 70.57829475724814,
+        "max": 114.95800871327805
+      },
+      "cmc_right_cpu": {
+        "min": 70.57829475724814,
+        "max": 114.95800871327805
+      },
+      "cmc_left_acdc": {
+        "min": 68.8260671673394,
+        "max": 116.8057811233693
+      },
+      "cmc_right_acdc": {
+        "min": 68.8260671673394,
+        "max": 116.8057811233693
+      }
+    },
+    "total_inlet_kg_s": {
+      "min": 0.36880442283713066,
+      "max": 0.9098562577484579
+    },
+    "min_margin_c": {
+      "min": -494.1929205086485,
+      "max": -51.814604461134564
+    },
+    "scenarios": [
+      {
+        "drive_factor": 0.75,
+        "minor_loss_factor": 0.5,
+        "h_factor": 1.4,
+        "contact_factor": 0.5,
+        "thermal_case": "lower_resistance",
+        "total_inlet_kg_s": 0.7019800832937335,
+        "max_temperature_c": 207.97005727986414,
+        "min_margin_c": -83.97005727986414,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 0.75,
+        "minor_loss_factor": 0.5,
+        "h_factor": 0.6,
+        "contact_factor": 2.0,
+        "thermal_case": "higher_resistance",
+        "total_inlet_kg_s": 0.7019800832937335,
+        "max_temperature_c": 371.6003369183354,
+        "min_margin_c": -247.60033691833542,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 0.75,
+        "minor_loss_factor": 2.0,
+        "h_factor": 1.4,
+        "contact_factor": 0.5,
+        "thermal_case": "lower_resistance",
+        "total_inlet_kg_s": 0.36880442283713066,
+        "max_temperature_c": 330.49841186611195,
+        "min_margin_c": -206.49841186611195,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 0.75,
+        "minor_loss_factor": 2.0,
+        "h_factor": 0.6,
+        "contact_factor": 2.0,
+        "thermal_case": "higher_resistance",
+        "total_inlet_kg_s": 0.36880442283713066,
+        "max_temperature_c": 618.1929205086485,
+        "min_margin_c": -494.1929205086485,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 1.25,
+        "minor_loss_factor": 0.5,
+        "h_factor": 1.4,
+        "contact_factor": 0.5,
+        "thermal_case": "lower_resistance",
+        "total_inlet_kg_s": 0.9098562577484579,
+        "max_temperature_c": 175.81460446113456,
+        "min_margin_c": -51.814604461134564,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "uncalibrated_screening_result",
+        "physically_validated": false,
+        "within_model_limits": true,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 1.25,
+        "minor_loss_factor": 0.5,
+        "h_factor": 0.6,
+        "contact_factor": 2.0,
+        "thermal_case": "higher_resistance",
+        "total_inlet_kg_s": 0.9098562577484579,
+        "max_temperature_c": 308.4434771667412,
+        "min_margin_c": -184.44347716674122,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 1.25,
+        "minor_loss_factor": 2.0,
+        "h_factor": 1.4,
+        "contact_factor": 0.5,
+        "thermal_case": "lower_resistance",
+        "total_inlet_kg_s": 0.47680215788789615,
+        "max_temperature_c": 261.5499065124735,
+        "min_margin_c": -137.5499065124735,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      {
+        "drive_factor": 1.25,
+        "minor_loss_factor": 2.0,
+        "h_factor": 0.6,
+        "contact_factor": 2.0,
+        "thermal_case": "higher_resistance",
+        "total_inlet_kg_s": 0.47680215788789615,
+        "max_temperature_c": 477.23987244770115,
+        "min_margin_c": -353.23987244770115,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      }
+    ]
+  },
+  "warnings": [
+    "Uncalibrated geometry-linked reduced-order model; temperatures and margins are illustrative proxies, not validated NASA predictions.",
+    "A temperature proxy exceeds 200 C; fixed-property thermal approximation is outside its declared screening envelope.",
+    "At least one illustrative component proxy exceeds its NASA margined reference limit; this is not an airworthiness assessment.",
+    "Motor rotation, developing noncircular passages and LV impingement jets are unresolved; passing numeric guards does not establish convection-correlation applicability."
+  ],
+  "source_flow_diagnostic": {
+    "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+    "location": "Table 8, stations 2a_g, 2a_s, 2a_b",
+    "reference_case": "cruise_climb",
+    "matched_nominal_flight_inputs": true,
+    "matched_geometry_or_thermal_nodes": false,
+    "matched_pressure_boundary": false,
+    "boundary_mode": "user_or_inferred_pressure_boundary",
+    "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+    "published_kg_s": {
+      "motor_gap": 0.0498951607,
+      "motor_slots": 0.22815696211,
+      "motor_internal_total": 0.27805212281,
+      "motor_bypass": 0.11748042383000001
+    },
+    "computed_kg_s": {
+      "motor_gap": 0.06404360185348004,
+      "motor_slots": 0.06560200578825787,
+      "motor_internal_total": 0.1296456076417379,
+      "motor_bypass": 0.39573354310597114
+    },
+    "used_to_fit_coefficients": false,
+    "validation": false,
+    "relative_error_percent": {
+      "motor_gap": 28.356339482598436,
+      "motor_slots": -71.24698489076589,
+      "motor_internal_total": -53.373631414305734,
+      "motor_bypass": 236.8506260060971
+    },
+    "motor_slot_flow_fraction": {
+      "published": 0.8205546492659053,
+      "computed": 0.5060102457889831
+    }
+  },
+  "source_temperature_diagnostic": {
+    "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+    "location": "Table 6, printed p. 12",
+    "reference_case": "cruise_climb",
+    "matched_nominal_flight_inputs": true,
+    "matched_geometry_or_thermal_nodes": false,
+    "matched_pressure_boundary": false,
+    "boundary_mode": "user_or_inferred_pressure_boundary",
+    "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+    "published_analysis_c": {
+      "motor_winding": 92.2,
+      "motor_magnet": 43.1,
+      "cmc_left_hv": 91.7,
+      "cmc_right_hv": 91.7,
+      "cmc_left_cpu": 72.4,
+      "cmc_right_cpu": 72.4,
+      "cmc_left_acdc": 73.1,
+      "cmc_right_acdc": 73.1
+    },
+    "computed_proxy_c": {
+      "motor_winding": 282.4028532554979,
+      "motor_magnet": 94.638899025919,
+      "cmc_left_hv": 91.23983779026516,
+      "cmc_right_hv": 91.23983779026516,
+      "cmc_left_cpu": 83.39222196438809,
+      "cmc_right_cpu": 83.39222196438809,
+      "cmc_left_acdc": 82.83999437447935,
+      "cmc_right_acdc": 82.83999437447935
+    },
+    "proxy_minus_published_c": {
+      "motor_winding": 190.20285325549793,
+      "motor_magnet": 51.538899025919,
+      "cmc_left_hv": -0.4601622097348468,
+      "cmc_right_hv": -0.4601622097348468,
+      "cmc_left_cpu": 10.99222196438808,
+      "cmc_right_cpu": 10.99222196438808,
+      "cmc_left_acdc": 9.739994374479352,
+      "cmc_right_acdc": 9.739994374479352
+    },
+    "used_to_fit_coefficients": false,
+    "validation": false
+  },
+  "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+  "mass_kg": 108.20413671726703,
+  "component_mass_kg": {
+    "cowling_upper": 2.231452703570475,
+    "cowling_lower": 2.344979864907824,
+    "cowling_tail": 2.365834097282404,
+    "local_wing": 317.03453566956694,
+    "propeller_spinner": 0.29437841296854084,
+    "propeller_hub": 12.125796094898902,
+    "propeller_blade_1": 1.6557452733068716,
+    "propeller_blade_2": 1.6557452733068716,
+    "propeller_blade_3": 1.6557452733068692,
+    "motor_shaft": 4.528460887292494,
+    "motor_rotor": 5.526681386260072,
+    "motor_magnet": 11.704755862483182,
+    "motor_winding": 24.97533734908301,
+    "motor_stator": 23.628085174738107,
+    "motor_front_bearing": 2.344497856067806,
+    "motor_rear_mount": 0.8149129191685026,
+    "motor_bypass_shroud": 1.177620894633669,
+    "main_inlet_lip": 0.10330096991673458,
+    "cmc_left_case": 0.8513747999999984,
+    "cmc_left_hv": 1.6339320000000093,
+    "cmc_left_lv": 0.5993999999999949,
+    "cmc_left_cpu": 0.04595400000000004,
+    "cmc_left_acdc": 0.07992000000000006,
+    "cmc_left_lv_duct": 0.2526227999999978,
+    "cmc_left_connector_1": 0.022188660264257087,
+    "cmc_left_connector_2": 0.022188660264257087,
+    "cmc_left_connector_3": 0.022188660264257087,
+    "cmc_left_baffle_-1": 0.09919259999999998,
+    "cmc_left_baffle_+1": 0.09919259999999998,
+    "lv_inlet_left": 0.19029532028606655,
+    "cmc_right_case": 0.8513747999999984,
+    "cmc_right_hv": 1.6339320000000097,
+    "cmc_right_lv": 0.5993999999999949,
+    "cmc_right_cpu": 0.04595400000000004,
+    "cmc_right_acdc": 0.07992000000000006,
+    "cmc_right_lv_duct": 0.2526227999999978,
+    "cmc_right_connector_1": 0.022188660264257087,
+    "cmc_right_connector_2": 0.022188660264257087,
+    "cmc_right_connector_3": 0.022188660264257087,
+    "cmc_right_baffle_-1": 0.09919259999999998,
+    "cmc_right_baffle_+1": 0.09919259999999998,
+    "lv_inlet_right": 0.19029532028606674,
+    "mount_strut_-1_-1": 0.1715816982955252,
+    "mount_strut_-1_+1": 0.15106777136042124,
+    "cmc_frame_-1_-1": 0.0619947160431445,
+    "cmc_frame_-1_+1": 0.0619947160431445,
+    "mount_strut_+1_-1": 0.17158169829552533,
+    "mount_strut_+1_+1": 0.1510677713604212,
+    "cmc_frame_+1_-1": 0.0619947160431445,
+    "cmc_frame_+1_+1": 0.0619947160431445,
+    "cmc_frame_cross_front": 0.10113650423571144,
+    "cmc_frame_cross_rear": 0.1011365042357122,
+    "cmc_left_mount_upper": 0.0025128524902821338,
+    "cmc_left_mount_lower": 0.0025128524902821242,
+    "cmc_right_mount_upper": 0.0025128524902821338,
+    "cmc_right_mount_lower": 0.0025128524902821242,
+    "motor_upper_exhaust": 0.037584000000000096,
+    "flow_separator_-1": 0.045360000000000004,
+    "flow_separator_+1": 0.045360000000000004
+  }
+}

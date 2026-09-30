@@ -59,6 +59,16 @@ class NacelleApiTests(unittest.TestCase):
         self.assertEqual(result['reference']['boundary'], result['candidate']['boundary'])
         self.assertEqual(result['reference']['geometry'], result['candidate']['geometry'])
 
+    def test_bounded_live_story_has_no_user_supplied_targets(self):
+        status, raw, _ = self.request('POST', '/api/nacelle/story', {})
+        self.assertEqual(status, 200)
+        story = json.loads(raw)
+        self.assertEqual(story['execution'], 'computed')
+        self.assertEqual(len(story['cases']), 6)
+        self.assertFalse(story['claims']['physically_validated'])
+        self.assertEqual(self.request('POST', '/api/nacelle/story', {'geometry': {}})[0], 400)
+        self.assertEqual(self.request('POST', '/api/nacelle/story', {'boundary': {}})[0], 400)
+
     def test_named_default_step_without_arbitrary_files(self):
         status, raw, headers = self.request('POST', '/api/nacelle/step', {})
         self.assertEqual(status, 200)
@@ -78,7 +88,7 @@ class NacelleApiTests(unittest.TestCase):
         status, raw, _ = self.request('GET', '/nacelle')
         self.assertEqual(status, 200)
         self.assertIn(b'nacelle.js', raw)
-        for path, expected in [('/nacelle.js', 'text/javascript'), ('/nacelle.css', 'text/css')]:
+        for path, expected in [('/nacelle.js', 'text/javascript'), ('/nacelle.css', 'text/css'), ('/nacelle_story.js', 'text/javascript')]:
             status, raw, headers = self.request('GET', path)
             self.assertEqual(status, 200)
             self.assertIn(expected, headers['Content-Type'])

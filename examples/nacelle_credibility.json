@@ -1,0 +1,2327 @@
+{
+  "schema": "aerolab-nacelle-credibility-v1",
+  "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+  "purpose": "Disclose model-form and boundary discrepancies before interpreting geometry sensitivities.",
+  "calibration_performed": false,
+  "experimental_validation": false,
+  "source_cases": "NASA Tables 6-9 are analysis references; no fitted training set or validated holdout is claimed.",
+  "interpretation": [
+    "Conservation checks establish equation/numerical consistency only.",
+    "Source pressures include propeller influence; source flows and temperatures are never imposed or fitted.",
+    "Agreement in total motor flow does not establish its gap/slot split or local convection.",
+    "Required UA is an inverse diagnostic at frozen flow and solid resistance, not an available physical enhancement.",
+    "Out-of-domain raw temperatures describe model failure, not actual X-57 temperatures."
+  ],
+  "cases": {
+    "initial_climb_inferred_pressure": {
+      "boundary": {
+        "airspeed_m_s": 39.1,
+        "ambient_c": 35.9,
+        "density_kg_m3": 1.02,
+        "ram_recovery": 0.65,
+        "bypass_ram_recovery": 0.65,
+        "lv_ram_recovery": 0.55,
+        "main_propeller_pressure_pa": 0.0,
+        "bypass_propeller_pressure_pa": 0.0,
+        "lv_propeller_pressure_pa": 0.0,
+        "exhaust_suction_coefficient": 0.15,
+        "motor_exhaust_suction_coefficient": 0.1,
+        "heat_load": "peak",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "633654182665cf2ed357e8c644b562a9ed502ba7a8d4d2503fdfbe2977451651",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 385.91187156408336,
+        "min_margin_c": -261.91187156408336,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 7499.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 779.6931000000001,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": -6.2450045135165055e-15,
+          "motor_mix": -1.6653345369377348e-16,
+          "lower_mix": -3.885780586188048e-16
+        },
+        "max_mass_residual_kg_s": 6.2450045135165055e-15,
+        "external_mass_residual_kg_s": 6.772360450213455e-15,
+        "max_pressure_residual_pa": 3.609557097661309e-11,
+        "energy_residual_w": 9.094947017729282e-12,
+        "energy_removed_w": 7498.999999999991,
+        "total_heat_w": 7499.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 0.46884124034620084,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 7, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "initial_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.045359237000000004,
+          "motor_slots": 0.20774530546000003,
+          "motor_internal_total": 0.25310454246,
+          "motor_bypass": 0.10750139169
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.05509399601036762,
+          "motor_slots": 0.05638898820592023,
+          "motor_internal_total": 0.11148298421628786,
+          "motor_bypass": 0.34124162644507205
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 21.461469932502663,
+          "motor_slots": -72.85667270263416,
+          "motor_internal_total": -55.95377975726914,
+          "motor_bypass": 217.42996167817523
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8207885304659499,
+          "computed": 0.5058080262412074
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "initial_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 109.4,
+          "motor_magnet": 45.4,
+          "cmc_left_hv": 104.9,
+          "cmc_right_hv": 104.9,
+          "cmc_left_cpu": 75.1,
+          "cmc_right_cpu": 75.1,
+          "cmc_left_acdc": 75.6,
+          "cmc_right_acdc": 75.6
+        },
+        "computed_proxy_c": {
+          "motor_winding": 385.91187156408336,
+          "motor_magnet": 119.51962128092569,
+          "cmc_left_hv": 108.57138069519272,
+          "cmc_right_hv": 108.57138069519272,
+          "cmc_left_cpu": 85.10065631227057,
+          "cmc_right_cpu": 85.10065631227057,
+          "cmc_left_acdc": 84.54842872236182,
+          "cmc_right_acdc": 84.54842872236182
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 276.5118715640833,
+          "motor_magnet": 74.11962128092568,
+          "cmc_left_hv": 3.6713806951927097,
+          "cmc_right_hv": 3.6713806951927097,
+          "cmc_left_cpu": 10.000656312270578,
+          "cmc_right_cpu": 10.000656312270578,
+          "cmc_left_acdc": 8.948428722361825,
+          "cmc_right_acdc": 8.948428722361825
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1653.689382873495,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 35.89999999999999,
+          "temperature_c": 360.3083324320907,
+          "rise_c": {
+            "air_advection": 35.05229833425072,
+            "convection": 262.5921152082311,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.855499999999999
+          },
+          "resistance_k_w": {
+            "convection": 0.15879167994169738,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 6.297559169140122,
+          "infinite_h_temperature_floor_c": 97.7162172238596,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 26.2837827761404,
+              "required_patch_ua_w_k": 62.91671929257698,
+              "required_h_w_m2_k": 434.04884605716694,
+              "required_h_multiplier": 9.990651552888501
+            },
+            "published_icpt_context": {
+              "target_c": 109.4,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 11.683782776140404,
+              "required_patch_ua_w_k": 141.53715577890702,
+              "required_h_w_m2_k": 976.4342424525648,
+              "required_h_multiplier": 22.474922740302368
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 35.89999999999999,
+          "temperature_c": 119.51962128092569,
+          "rise_c": {
+            "air_advection": 35.05229833425072,
+            "convection": 44.47339592700013,
+            "solid_conduction": 1.183927019674858,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.1528295392680417,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 6.5432376802899315,
+          "infinite_h_temperature_floor_c": 75.04622535392556,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 7.953774646074436,
+              "required_patch_ua_w_k": 36.58640242512054,
+              "required_h_w_m2_k": 242.92477246171217,
+              "required_h_multiplier": 5.591483026106334
+            },
+            "published_icpt_context": {
+              "target_c": 45.4,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -29.646225353925566,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 3583.310617126505,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 35.89999999999999,
+          "temperature_c": 385.9118715640834,
+          "rise_c": {
+            "air_advection": 63.10455139752704,
+            "convection": 260.1434012769475,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.8555
+          },
+          "resistance_k_w": {
+            "convection": 0.0725986187280519,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 13.774366751327776,
+          "infinite_h_temperature_floor_c": 125.76847028713591,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -1.7684702871359121,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            },
+            "published_icpt_context": {
+              "target_c": 109.4,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -16.368470287135906,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 35.9,
+          "temperature_c": 77.16400945042268,
+          "rise_c": {
+            "air_advection": 0.8468402958082529,
+            "convection": 36.392966929973426,
+            "solid_conduction": 1.1142022246410026,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.12506174202740009,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 7.996050461066722,
+          "infinite_h_temperature_floor_c": 40.77104252044926,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 42.22895747955074,
+              "required_patch_ua_w_k": 6.891006015029283,
+              "required_h_w_m2_k": 32.2951745937224,
+              "required_h_multiplier": 0.8618012165608545
+            },
+            "published_icpt_context": {
+              "target_c": 45.4,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 4.628957479550742,
+              "required_patch_ua_w_k": 62.86512703682097,
+              "required_h_w_m2_k": 294.62175030506694,
+              "required_h_multiplier": 7.86202229999864
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.05509399601036762,
+          "reynolds": 5886.467373613834,
+          "h_w_m2_k": 43.44549940105504,
+          "ua_w_k": 12.840796849430054,
+          "air_capacity_w_k": 55.4796539824402,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.89999999999999,
+          "outlet_c": 70.95229833425071,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.05638898820592023,
+          "reynolds": 4545.356573050165,
+          "h_w_m2_k": 43.854449230697966,
+          "ua_w_k": 13.774366751327776,
+          "air_capacity_w_k": 56.78371112336168,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.89999999999999,
+          "outlet_c": 99.00455139752702,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.34124162644507205,
+          "reynolds": 30004.223573474803,
+          "h_w_m2_k": 37.47404154591598,
+          "ua_w_k": 7.996050461066722,
+          "air_capacity_w_k": 343.63031783018755,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 36.746840295808255,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.05867473024236797,
+          "reynolds": 8122.418982027184,
+          "h_w_m2_k": 69.102292456932,
+          "ua_w_k": 25.48176540055876,
+          "air_capacity_w_k": 59.08545335406454,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 48.66394084367479,
+          "outlet_c": 62.37289887004626,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.028618867217542955,
+          "reynolds": 15939.218723220805,
+          "h_w_m2_k": 35.93906449844777,
+          "ua_w_k": 1.9946180796638513,
+          "air_capacity_w_k": 28.819199288065757,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 35.9,
+          "outlet_c": 36.94097271059238,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -939.7572846043615,
+          "max": -108.3059742900877
+        },
+        "outside_screening_guard_count": 8,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    },
+    "initial_climb_source_pressure": {
+      "boundary": {
+        "airspeed_m_s": 39.1,
+        "ambient_c": 35.9,
+        "density_kg_m3": 1.02,
+        "ram_recovery": 1.0,
+        "bypass_ram_recovery": 1.0,
+        "lv_ram_recovery": 1.0,
+        "main_propeller_pressure_pa": 896.31844811184,
+        "bypass_propeller_pressure_pa": 551.58058345344,
+        "lv_propeller_pressure_pa": 34.47378646584,
+        "exhaust_suction_coefficient": 0.1768582354561814,
+        "motor_exhaust_suction_coefficient": -0.0884291177280907,
+        "heat_load": "peak",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "d0195f79c120a02f24a7f9ec3c279d9f305b99820406ddde80de3ce2ce651dc4",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 225.79213071261177,
+        "min_margin_c": -101.79213071261177,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 7499.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 779.6931000000001,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": 1.329492071988625e-14,
+          "motor_mix": -1.1657341758564144e-15,
+          "lower_mix": -1.6653345369377348e-16
+        },
+        "max_mass_residual_kg_s": 1.329492071988625e-14,
+        "external_mass_residual_kg_s": -1.199040866595169e-14,
+        "max_pressure_residual_pa": 1.0459189070388675e-10,
+        "energy_residual_w": 1.1823431123048067e-11,
+        "energy_removed_w": 7498.999999999988,
+        "total_heat_w": 7499.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 0.8641748311748298,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 7, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "initial_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.045359237000000004,
+          "motor_slots": 0.20774530546000003,
+          "motor_internal_total": 0.25310454246,
+          "motor_bypass": 0.10750139169
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.11927495919567924,
+          "motor_slots": 0.12252158403364086,
+          "motor_internal_total": 0.2417965432293201,
+          "motor_bypass": 0.46415310769520024
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 162.9562732628841,
+          "motor_slots": -41.023175583993364,
+          "motor_internal_total": -4.467718801398846,
+          "motor_bypass": 331.7647431334386
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8207885304659499,
+          "computed": 0.5067135468410782
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "initial_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 109.4,
+          "motor_magnet": 45.4,
+          "cmc_left_hv": 104.9,
+          "cmc_right_hv": 104.9,
+          "cmc_left_cpu": 75.1,
+          "cmc_right_cpu": 75.1,
+          "cmc_left_acdc": 75.6,
+          "cmc_right_acdc": 75.6
+        },
+        "computed_proxy_c": {
+          "motor_winding": 225.79213071261177,
+          "motor_magnet": 79.78937180479357,
+          "cmc_left_hv": 91.99506298892081,
+          "cmc_right_hv": 91.99506298892081,
+          "cmc_left_cpu": 82.52445620641706,
+          "cmc_right_cpu": 82.52445620641706,
+          "cmc_left_acdc": 81.97222861650832,
+          "cmc_right_acdc": 81.97222861650832
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 116.39213071261176,
+          "motor_magnet": 34.389371804793576,
+          "cmc_left_hv": -12.904937011079198,
+          "cmc_right_hv": -12.904937011079198,
+          "cmc_left_cpu": 7.424456206417062,
+          "cmc_right_cpu": 7.424456206417062,
+          "cmc_left_acdc": 6.372228616508323,
+          "cmc_right_acdc": 6.372228616508323
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1653.689382873495,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 35.9,
+          "temperature_c": 218.2272033005554,
+          "rise_c": {
+            "air_advection": 16.190918845029312,
+            "convection": 139.37236556591722,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.855499999999999
+          },
+          "resistance_k_w": {
+            "convection": 0.08427965191609324,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 11.865260205340851,
+          "infinite_h_temperature_floor_c": 78.8548377346382,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 45.145162265361805,
+              "required_patch_ua_w_k": 36.630489290373184,
+              "required_h_w_m2_k": 252.7058274138546,
+              "required_h_multiplier": 3.0872048869088333
+            },
+            "published_icpt_context": {
+              "target_c": 109.4,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 30.54516226536181,
+              "required_patch_ua_w_k": 54.13915855175461,
+              "required_h_w_m2_k": 373.49435190063303,
+              "required_h_multiplier": 4.562829437772062
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 35.9,
+          "temperature_c": 79.78937180479357,
+          "rise_c": {
+            "air_advection": 16.190918845029312,
+            "convection": 23.604525940089403,
+            "solid_conduction": 1.183927019674858,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.08111520941611479,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 12.328144218553106,
+          "infinite_h_temperature_floor_c": 56.184845864704165,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 26.815154135295835,
+              "required_patch_ua_w_k": 10.85207262027135,
+              "required_h_w_m2_k": 72.05511056772642,
+              "required_h_multiplier": 0.8802681431921962
+            },
+            "published_icpt_context": {
+              "target_c": 45.4,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -10.784845864704167,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 3583.310617126505,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 35.9,
+          "temperature_c": 225.79213071261177,
+          "rise_c": {
+            "air_advection": 29.04306071914648,
+            "convection": 134.08515110385642,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.8555
+          },
+          "resistance_k_w": {
+            "convection": 0.0374193491524273,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 26.72414199206168,
+          "infinite_h_temperature_floor_c": 91.70697960875536,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 32.29302039124464,
+              "required_patch_ua_w_k": 110.96238672360361,
+              "required_h_w_m2_k": 353.2789886415848,
+              "required_h_multiplier": 4.1521402915971874
+            },
+            "published_icpt_context": {
+              "target_c": 109.4,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 17.693020391244644,
+              "required_patch_ua_w_k": 202.52678954124187,
+              "required_h_w_m2_k": 644.7992107467659,
+              "required_h_multiplier": 7.578420650563891
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 35.9,
+          "temperature_c": 69.24844303852446,
+          "rise_c": {
+            "air_advection": 0.6225901649474671,
+            "convection": 28.701650648935992,
+            "solid_conduction": 1.1142022246410026,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.09863110188637798,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 10.138789700960553,
+          "infinite_h_temperature_floor_c": 40.54679238958847,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 42.45320761041153,
+              "required_patch_ua_w_k": 6.854605726626722,
+              "required_h_w_m2_k": 32.124582133541885,
+              "required_h_multiplier": 0.6760773158138702
+            },
+            "published_icpt_context": {
+              "target_c": 45.4,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 4.8532076104115305,
+              "required_patch_ua_w_k": 59.96034444842645,
+              "required_h_w_m2_k": 281.00828651699226,
+              "required_h_multiplier": 5.913954842435067
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.11927495919567924,
+          "reynolds": 12743.823404320934,
+          "h_w_m2_k": 81.85586531216096,
+          "ua_w_k": 24.19340442389396,
+          "air_capacity_w_k": 120.10988391004899,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 52.09091884502931,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.12252158403364086,
+          "reynolds": 9876.117750049625,
+          "h_w_m2_k": 85.08358673634565,
+          "ua_w_k": 26.72414199206168,
+          "air_capacity_w_k": 123.37923512187635,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 64.94306071914647,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.46415310769520024,
+          "reynolds": 40811.41495160352,
+          "h_w_m2_k": 47.516136663851704,
+          "ua_w_k": 10.138789700960553,
+          "air_capacity_w_k": 467.40217944906664,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 36.52259016494747,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.09506904770890984,
+          "reynolds": 13160.531535882757,
+          "h_w_m2_k": 101.77132503678362,
+          "ua_w_k": 35.774390177725635,
+          "air_capacity_w_k": 95.7345310428722,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 44.08549898195946,
+          "outlet_c": 52.54639591409425,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.03604159625695091,
+          "reynolds": 20073.29226229513,
+          "h_w_m2_k": 42.992367032402,
+          "ua_w_k": 2.386076370298311,
+          "air_capacity_w_k": 36.293887430749564,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 35.9,
+          "outlet_c": 36.72658546999798,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -318.7867497076894,
+          "max": -23.698088480370302
+        },
+        "outside_screening_guard_count": 6,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    },
+    "cruise_climb_inferred_pressure": {
+      "boundary": {
+        "airspeed_m_s": 45.3,
+        "ambient_c": 35.9,
+        "density_kg_m3": 1.02,
+        "ram_recovery": 0.65,
+        "bypass_ram_recovery": 0.65,
+        "lv_ram_recovery": 0.55,
+        "main_propeller_pressure_pa": 0.0,
+        "bypass_propeller_pressure_pa": 0.0,
+        "lv_propeller_pressure_pa": 0.0,
+        "exhaust_suction_coefficient": 0.15,
+        "motor_exhaust_suction_coefficient": 0.1,
+        "heat_load": "mcp",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "ec0269c5402384939e841e855dfab234b44b86106ef0e4a8578e6084f6e72f23",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 282.4028532554979,
+        "min_margin_c": -158.40285325549792,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 1046.5658999999998,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": -3.3584246494910985e-15,
+          "motor_mix": -8.604228440844963e-16,
+          "lower_mix": -1.1102230246251565e-16
+        },
+        "max_mass_residual_kg_s": 3.3584246494910985e-15,
+        "external_mass_residual_kg_s": 4.3298697960381105e-15,
+        "max_pressure_residual_pa": 6.52562448522076e-11,
+        "energy_residual_w": 5.4569682106375694e-12,
+        "energy_removed_w": 6079.9999999999945,
+        "total_heat_w": 6080.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 0.6657123754665504,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 8, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "cruise_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.0498951607,
+          "motor_slots": 0.22815696211,
+          "motor_internal_total": 0.27805212281,
+          "motor_bypass": 0.11748042383000001
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.06404360185348004,
+          "motor_slots": 0.06560200578825787,
+          "motor_internal_total": 0.1296456076417379,
+          "motor_bypass": 0.39573354310597114
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 28.356339482598436,
+          "motor_slots": -71.24698489076589,
+          "motor_internal_total": -53.373631414305734,
+          "motor_bypass": 236.8506260060971
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8205546492659053,
+          "computed": 0.5060102457889831
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "cruise_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 92.2,
+          "motor_magnet": 43.1,
+          "cmc_left_hv": 91.7,
+          "cmc_right_hv": 91.7,
+          "cmc_left_cpu": 72.4,
+          "cmc_right_cpu": 72.4,
+          "cmc_left_acdc": 73.1,
+          "cmc_right_acdc": 73.1
+        },
+        "computed_proxy_c": {
+          "motor_winding": 282.4028532554979,
+          "motor_magnet": 94.638899025919,
+          "cmc_left_hv": 91.23983779026516,
+          "cmc_right_hv": 91.23983779026516,
+          "cmc_left_cpu": 83.39222196438809,
+          "cmc_right_cpu": 83.39222196438809,
+          "cmc_left_acdc": 82.83999437447935,
+          "cmc_right_acdc": 82.83999437447935
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 190.20285325549793,
+          "motor_magnet": 51.538899025919,
+          "cmc_left_hv": -0.4601622097348468,
+          "cmc_right_hv": -0.4601622097348468,
+          "cmc_left_cpu": 10.99222196438808,
+          "cmc_right_cpu": 10.99222196438808,
+          "cmc_left_acdc": 9.739994374479352,
+          "cmc_right_acdc": 9.739994374479352
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1324.9724366120272,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 35.9,
+          "temperature_c": 266.45453707513167,
+          "rise_c": {
+            "air_advection": 24.157642524148734,
+            "convection": 184.95305195774276,
+            "solid_conduction": 15.149842593240193,
+            "contact": 6.2940000000000005
+          },
+          "resistance_k_w": {
+            "convection": 0.13959011285598533,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 7.163831159243325,
+          "infinite_h_temperature_floor_c": 81.50148511738892,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 42.498514882611076,
+              "required_patch_ua_w_k": 31.176911482009462,
+              "required_h_w_m2_k": 215.08277298223987,
+              "required_h_multiplier": 4.351988592274766
+            },
+            "published_icpt_context": {
+              "target_c": 92.2,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 10.698514882611079,
+              "required_patch_ua_w_k": 123.8463890689709,
+              "required_h_w_m2_k": 854.3894670311569,
+              "required_h_multiplier": 17.287731426943914
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 233.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 35.9,
+          "temperature_c": 94.638899025919,
+          "rise_c": {
+            "air_advection": 24.157642524148734,
+            "convection": 31.303301190484213,
+            "solid_conduction": 0.9479553112860546,
+            "contact": 2.33
+          },
+          "resistance_k_w": {
+            "convection": 0.1343489321480009,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 7.443304416430971,
+          "infinite_h_temperature_floor_c": 63.33559783543479,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 19.66440216456521,
+              "required_patch_ua_w_k": 11.848821949942648,
+              "required_h_w_m2_k": 78.67328256775646,
+              "required_h_multiplier": 1.5918765761865887
+            },
+            "published_icpt_context": {
+              "target_c": 43.1,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -20.23559783543479,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 2871.027563387973,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 35.9,
+          "temperature_c": 282.4028532554979,
+          "rise_c": {
+            "air_advection": 43.46010519983433,
+            "convection": 181.59890546242343,
+            "solid_conduction": 15.149842593240193,
+            "contact": 6.294
+          },
+          "resistance_k_w": {
+            "convection": 0.06325223337393758,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 15.8097184345753,
+          "infinite_h_temperature_floor_c": 100.80394779307451,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 23.196052206925486,
+              "required_patch_ua_w_k": 123.77224959559238,
+              "required_h_w_m2_k": 394.0626770037146,
+              "required_h_multiplier": 7.828871216637661
+            },
+            "published_icpt_context": {
+              "target_c": 92.2,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -8.60394779307451,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 233.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 35.9,
+          "temperature_c": 65.69872298620842,
+          "rise_c": {
+            "air_advection": 0.5846872009396086,
+            "convection": 25.99190823083117,
+            "solid_conduction": 0.8921275544376414,
+            "contact": 2.33
+          },
+          "resistance_k_w": {
+            "convection": 0.11155325420957583,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 8.964328356762174,
+          "infinite_h_temperature_floor_c": 39.706814755377245,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 43.293185244622755,
+              "required_patch_ua_w_k": 5.381909385587189,
+              "required_h_w_m2_k": 25.222689238124676,
+              "required_h_multiplier": 0.6003695058233098
+            },
+            "published_icpt_context": {
+              "target_c": 43.1,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 3.3931852446227566,
+              "required_patch_ua_w_k": 68.66704385480853,
+              "required_h_w_m2_k": 321.8128333205947,
+              "required_h_multiplier": 7.660032198955548
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.06404360185348004,
+          "reynolds": 6842.679785439459,
+          "h_w_m2_k": 49.421722603784914,
+          "ua_w_k": 14.607135575674297,
+          "air_capacity_w_k": 64.4919070664544,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 60.05764252414873,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.06560200578825787,
+          "reynolds": 5287.991817232621,
+          "h_w_m2_k": 50.33454582395806,
+          "ua_w_k": 15.8097184345753,
+          "air_capacity_w_k": 66.06121982877568,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 79.36010519983432,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.39573354310597114,
+          "reynolds": 34795.51374364972,
+          "h_w_m2_k": 42.011942634454485,
+          "ua_w_k": 8.964328356762174,
+          "air_capacity_w_k": 398.5036779077129,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 36.484687200939604,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.0683994553687956,
+          "reynolds": 9468.625289846841,
+          "h_w_m2_k": 78.29903045118785,
+          "ua_w_k": 28.474686997803875,
+          "air_capacity_w_k": 68.87825155637717,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 44.711908206598814,
+          "outlet_c": 54.56988201774057,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.03318407878684225,
+          "reynolds": 18481.8038356125,
+          "h_w_m2_k": 40.324892847746845,
+          "ua_w_k": 2.23803155304995,
+          "air_capacity_w_k": 33.41636733835015,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 35.9,
+          "outlet_c": 36.79776365265086,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -494.1929205086485,
+          "max": -51.814604461134564
+        },
+        "outside_screening_guard_count": 7,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    },
+    "cruise_climb_source_pressure": {
+      "boundary": {
+        "airspeed_m_s": 45.3,
+        "ambient_c": 35.9,
+        "density_kg_m3": 1.02,
+        "ram_recovery": 1.0,
+        "bypass_ram_recovery": 1.0,
+        "lv_ram_recovery": 0.8353004504262942,
+        "main_propeller_pressure_pa": 689.4757293168,
+        "bypass_propeller_pressure_pa": 413.68543759007997,
+        "lv_propeller_pressure_pa": 0.0,
+        "exhaust_suction_coefficient": 0.13175963965896464,
+        "motor_exhaust_suction_coefficient": 0.06587981982948232,
+        "heat_load": "mcp",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "7a5e30a3ae096aa139b631c312746186a5ed93cb810b34911306649efe8ffba3",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 189.9727376688532,
+        "min_margin_c": -65.9727376688532,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 6080.0,
+        "result_status": "uncalibrated_screening_result",
+        "physically_validated": false,
+        "within_model_limits": true,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 1046.5658999999998,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": 1.3183898417423734e-14,
+          "motor_mix": -1.0547118733938987e-15,
+          "lower_mix": -2.220446049250313e-16
+        },
+        "max_mass_residual_kg_s": 1.3183898417423734e-14,
+        "external_mass_residual_kg_s": -1.199040866595169e-14,
+        "max_pressure_residual_pa": 5.729816621169448e-11,
+        "energy_residual_w": 7.275957614183426e-12,
+        "energy_removed_w": 6079.999999999993,
+        "total_heat_w": 6080.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 1.0650813536700976,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 8, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "cruise_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.0498951607,
+          "motor_slots": 0.22815696211,
+          "motor_internal_total": 0.27805212281,
+          "motor_bypass": 0.11748042383000001
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.11722231827544963,
+          "motor_slots": 0.12040481347857612,
+          "motor_internal_total": 0.23762713175402575,
+          "motor_bypass": 0.510988652977742
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 134.93724968692126,
+          "motor_slots": -47.227201675079264,
+          "motor_internal_total": -14.538637809141164,
+          "motor_bypass": 334.9564262018393
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8205546492659053,
+          "computed": 0.5066964053718007
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "cruise_climb",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 92.2,
+          "motor_magnet": 43.1,
+          "cmc_left_hv": 91.7,
+          "cmc_right_hv": 91.7,
+          "cmc_left_cpu": 72.4,
+          "cmc_right_cpu": 72.4,
+          "cmc_left_acdc": 73.1,
+          "cmc_right_acdc": 73.1
+        },
+        "computed_proxy_c": {
+          "motor_winding": 189.9727376688532,
+          "motor_magnet": 71.53680076581247,
+          "cmc_left_hv": 81.71427615139731,
+          "cmc_right_hv": 81.71427615139731,
+          "cmc_left_cpu": 82.2186683502442,
+          "cmc_right_cpu": 82.2186683502442,
+          "cmc_left_acdc": 81.66644076033546,
+          "cmc_right_acdc": 81.66644076033546
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 97.7727376688532,
+          "motor_magnet": 28.43680076581247,
+          "cmc_left_hv": -9.985723848602689,
+          "cmc_right_hv": -9.985723848602689,
+          "cmc_left_cpu": 9.818668350244195,
+          "cmc_right_cpu": 9.818668350244195,
+          "cmc_left_acdc": 8.566440760335468,
+          "cmc_right_acdc": 8.566440760335468
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1324.9724366120272,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 35.9,
+          "temperature_c": 183.75039528764336,
+          "rise_c": {
+            "air_advection": 13.198360707214446,
+            "convection": 113.2081919871887,
+            "solid_conduction": 15.149842593240193,
+            "contact": 6.2940000000000005
+          },
+          "resistance_k_w": {
+            "convection": 0.08544192230644707,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 11.703856526230618,
+          "infinite_h_temperature_floor_c": 70.54220330045464,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 53.457796699545355,
+              "required_patch_ua_w_k": 24.785391812141327,
+              "required_h_w_m2_k": 170.9890603975588,
+              "required_h_multiplier": 2.117711521547829
+            },
+            "published_icpt_context": {
+              "target_c": 92.2,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 21.657796699545358,
+              "required_patch_ua_w_k": 61.177619080699984,
+              "required_h_w_m2_k": 422.0511696266344,
+              "required_h_multiplier": 5.227133376386582
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 233.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 35.9,
+          "temperature_c": 71.53680076581247,
+          "rise_c": {
+            "air_advection": 13.198360707214446,
+            "convection": 19.160484747311973,
+            "solid_conduction": 0.9479553112860546,
+            "contact": 2.33
+          },
+          "resistance_k_w": {
+            "convection": 0.08223384011721878,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 12.160443906967833,
+          "infinite_h_temperature_floor_c": 52.3763160185005,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 30.623683981499497,
+              "required_patch_ua_w_k": 7.6084902175963185,
+              "required_h_w_m2_k": 50.51851596148454,
+              "required_h_multiplier": 0.6256753680872388
+            },
+            "published_icpt_context": {
+              "target_c": 43.1,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -9.276316018500502,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 2871.027563387973,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 35.9,
+          "temperature_c": 189.9727376688532,
+          "rise_c": {
+            "air_advection": 23.67903732839655,
+            "convection": 108.94985774721646,
+            "solid_conduction": 15.149842593240193,
+            "contact": 6.294
+          },
+          "resistance_k_w": {
+            "convection": 0.03794803614447001,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 26.35182480044426,
+          "infinite_h_temperature_floor_c": 81.02287992163674,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 42.97712007836326,
+              "required_patch_ua_w_k": 66.8036284923937,
+              "required_h_w_m2_k": 212.68755123451947,
+              "required_h_multiplier": 2.5350665086111026
+            },
+            "published_icpt_context": {
+              "target_c": 92.2,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 11.17712007836326,
+              "required_patch_ua_w_k": 256.8664864704931,
+              "required_h_w_m2_k": 817.8044401861265,
+              "required_h_multiplier": 9.74757871288529
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 233.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 35.9,
+          "temperature_c": 60.910630880560824,
+          "rise_c": {
+            "air_advection": 0.45280915004314753,
+            "convection": 21.33569417608004,
+            "solid_conduction": 0.8921275544376414,
+            "contact": 2.33
+          },
+          "resistance_k_w": {
+            "convection": 0.09156950290163107,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 10.920666469864473,
+          "infinite_h_temperature_floor_c": 39.574936704480784,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 43.425063295519216,
+              "required_patch_ua_w_k": 5.365565005959172,
+              "required_h_w_m2_k": 25.14609017659989,
+              "required_h_multiplier": 0.4913221203820685
+            },
+            "published_icpt_context": {
+              "target_c": 43.1,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 3.5250632955192174,
+              "required_patch_ua_w_k": 66.09810391097693,
+              "required_h_w_m2_k": 309.773319231377,
+              "required_h_multiplier": 6.052570517868514
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.11722231827544963,
+          "reynolds": 12524.510871528752,
+          "h_w_m2_k": 80.74237621967671,
+          "ua_w_k": 23.864300433198455,
+          "air_capacity_w_k": 118.04287450337777,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 49.09836070721445,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.12040481347857612,
+          "reynolds": 9705.490873025923,
+          "h_w_m2_k": 83.89821352302329,
+          "ua_w_k": 26.35182480044426,
+          "air_capacity_w_k": 121.24764717292615,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 59.57903732839655,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.510988652977742,
+          "reynolds": 44929.50624803326,
+          "h_w_m2_k": 51.18045602556109,
+          "ua_w_k": 10.920666469864473,
+          "air_capacity_w_k": 514.5655735485861,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 35.9,
+          "outlet_c": 36.35280915004314,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.09819665843982464,
+          "reynolds": 13593.490744459239,
+          "h_w_m2_k": 104.39503490184069,
+          "ua_w_k": 36.562170049895535,
+          "air_capacity_w_k": 98.88403504890341,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 42.084204159826065,
+          "outlet_c": 48.950833334739876,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.03715668152099472,
+          "reynolds": 20694.33668671385,
+          "h_w_m2_k": 44.018951347216436,
+          "ua_w_k": 2.443051799770512,
+          "air_capacity_w_k": 37.41677829164168,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 35.9,
+          "outlet_c": 36.701779345249015,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -242.47213095343852,
+          "max": -2.513512914392834
+        },
+        "outside_screening_guard_count": 5,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    },
+    "dash_inferred_pressure": {
+      "boundary": {
+        "airspeed_m_s": 77.2,
+        "ambient_c": 23.3,
+        "density_kg_m3": 0.9,
+        "ram_recovery": 0.65,
+        "bypass_ram_recovery": 0.65,
+        "lv_ram_recovery": 0.55,
+        "main_propeller_pressure_pa": 0.0,
+        "bypass_propeller_pressure_pa": 0.0,
+        "lv_propeller_pressure_pa": 0.0,
+        "exhaust_suction_coefficient": 0.15,
+        "motor_exhaust_suction_coefficient": 0.1,
+        "heat_load": "peak",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "9406efac335988e04ec736cc4dbd41e7ca7b500c43b0d6ff8a2b9c59d1d7aa16",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 244.37587563296776,
+        "min_margin_c": -120.37587563296776,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 7499.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 2681.9280000000003,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": -1.7388868123191514e-14,
+          "motor_mix": 9.298117831235686e-15,
+          "lower_mix": -5.551115123125783e-16
+        },
+        "max_mass_residual_kg_s": 1.7388868123191514e-14,
+        "external_mass_residual_kg_s": 8.659739592076221e-15,
+        "max_pressure_residual_pa": 1.432454155292362e-10,
+        "energy_residual_w": -6.548361852765083e-11,
+        "energy_removed_w": 7499.0000000000655,
+        "total_heat_w": 7499.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 0.7992730979537496,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 9, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "dash",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.06622448602,
+          "motor_slots": 0.30163892605000003,
+          "motor_internal_total": 0.36786341207000006,
+          "motor_bypass": 0.16193247609
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.09710476324385367,
+          "motor_slots": 0.09966354611350499,
+          "motor_internal_total": 0.19676830935735867,
+          "motor_bypass": 0.5965384335276911
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 46.62969707991049,
+          "motor_slots": -66.95932205481176,
+          "motor_internal_total": -46.51049740170517,
+          "motor_bypass": 268.38714996005046
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8199753390875462,
+          "computed": 0.5065020197561494
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "dash",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "user_or_inferred_pressure_boundary",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 85.6,
+          "motor_magnet": 31.9,
+          "cmc_left_hv": 85.3,
+          "cmc_right_hv": 85.3,
+          "cmc_left_cpu": 57.7,
+          "cmc_right_cpu": 57.7,
+          "cmc_left_acdc": 58.7,
+          "cmc_right_acdc": 58.7
+        },
+        "computed_proxy_c": {
+          "motor_winding": 244.37587563296776,
+          "motor_magnet": 75.07399667747569,
+          "cmc_left_hv": 76.69914356508968,
+          "cmc_right_hv": 76.69914356508968,
+          "cmc_left_cpu": 66.99704175992412,
+          "cmc_right_cpu": 66.99704175992412,
+          "cmc_left_acdc": 66.44481417001536,
+          "cmc_right_acdc": 66.44481417001536
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 158.77587563296777,
+          "motor_magnet": 43.17399667747569,
+          "cmc_left_hv": -8.600856434910312,
+          "cmc_right_hv": -8.600856434910312,
+          "cmc_left_cpu": 9.297041759924113,
+          "cmc_right_cpu": 9.297041759924113,
+          "cmc_left_acdc": 7.74481417001536,
+          "cmc_right_acdc": 7.74481417001536
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1653.689382873495,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 23.299999999999997,
+          "temperature_c": 234.05197922773516,
+          "rise_c": {
+            "air_advection": 19.887502116984567,
+            "convection": 164.1005582211417,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.855499999999999
+          },
+          "resistance_k_w": {
+            "convection": 0.09923299981281622,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 10.077292855061378,
+          "infinite_h_temperature_floor_c": 69.95142100659345,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 54.04857899340655,
+              "required_patch_ua_w_k": 30.596352645556706,
+              "required_h_w_m2_k": 211.07762306558902,
+              "required_h_multiplier": 3.0361678563493877
+            },
+            "published_icpt_context": {
+              "target_c": 85.6,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 15.648578993406545,
+              "required_patch_ua_w_k": 105.67664856791593,
+              "required_h_w_m2_k": 729.0403549618068,
+              "required_h_multiplier": 10.486610847559048
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 23.299999999999997,
+          "temperature_c": 75.07399667747569,
+          "rise_c": {
+            "air_advection": 19.887502116984567,
+            "convection": 27.792567540816272,
+            "solid_conduction": 1.183927019674858,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.09550710495125866,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 10.47042521611709,
+          "infinite_h_temperature_floor_c": 47.28142913665942,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 35.71857086334058,
+              "required_patch_ua_w_k": 8.147022486240207,
+              "required_h_w_m2_k": 54.09423863854617,
+              "required_h_multiplier": 0.7780985316336078
+            },
+            "published_icpt_context": {
+              "target_c": 31.9,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -15.38142913665942,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 3583.310617126505,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 23.299999999999997,
+          "temperature_c": 244.3758756329678,
+          "rise_c": {
+            "air_advection": 35.704146031914625,
+            "convection": 158.60781071144427,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.8555
+          },
+          "resistance_k_w": {
+            "convection": 0.0442629254503852,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 22.59227084122379,
+          "infinite_h_temperature_floor_c": 85.76806492152352,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 38.23193507847648,
+              "required_patch_ua_w_k": 93.72558856284022,
+              "required_h_w_m2_k": 298.4009457168078,
+              "required_h_multiplier": 4.148568739350472
+            },
+            "published_icpt_context": {
+              "target_c": 85.6,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -0.16806492152352348,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 23.3,
+          "temperature_c": 51.447274589679814,
+          "rise_c": {
+            "air_advection": 0.4844233726432984,
+            "convection": 23.638648992395513,
+            "solid_conduction": 1.1142022246410026,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.08123247076424575,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 12.31034819687089,
+          "infinite_h_temperature_floor_c": 27.8086255972843,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 55.191374402715695,
+              "required_patch_ua_w_k": 5.272563025458582,
+              "required_h_w_m2_k": 24.71022998560922,
+              "required_h_multiplier": 0.42830332181820735
+            },
+            "published_icpt_context": {
+              "target_c": 31.9,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 4.091374402715697,
+              "required_patch_ua_w_k": 71.12524334288383,
+              "required_h_w_m2_k": 333.33335463206157,
+              "required_h_multiplier": 5.777679250450675
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.09710476324385367,
+          "reynolds": 10375.069191747782,
+          "h_w_m2_k": 69.5210650571156,
+          "ua_w_k": 20.54771807117847,
+          "air_capacity_w_k": 97.78449658656065,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.299999999999997,
+          "outlet_c": 43.18750211698456,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.09966354611350499,
+          "reynolds": 8033.596076706116,
+          "h_w_m2_k": 71.92864924386609,
+          "ua_w_k": 22.59227084122379,
+          "air_capacity_w_k": 100.36119093629952,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.299999999999997,
+          "outlet_c": 59.00414603191462,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.5965384335276911,
+          "reynolds": 52451.60948327721,
+          "h_w_m2_k": 57.69329521123219,
+          "ua_w_k": 12.31034819687089,
+          "air_capacity_w_k": 600.7142025623849,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.3,
+          "outlet_c": 23.7844233726433,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.10445355508273134,
+          "reynolds": 14459.641059100662,
+          "h_w_m2_k": 109.57791183864413,
+          "ua_w_k": 38.10270933208593,
+          "air_capacity_w_k": 105.18472996831046,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 30.584130887306237,
+          "outlet_c": 38.28486843964899,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.050001556675403916,
+          "reynolds": 27848.26325558558,
+          "h_w_m2_k": 55.36956180789683,
+          "ua_w_k": 3.073010680338274,
+          "air_capacity_w_k": 50.35156757213174,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 23.3,
+          "outlet_c": 23.895810645955027,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -380.76633507151837,
+          "max": -28.021266267291423
+        },
+        "outside_screening_guard_count": 6,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    },
+    "dash_source_pressure": {
+      "boundary": {
+        "airspeed_m_s": 77.2,
+        "ambient_c": 23.3,
+        "density_kg_m3": 0.9,
+        "ram_recovery": 1.0,
+        "bypass_ram_recovery": 1.0,
+        "lv_ram_recovery": 0.6400850354507952,
+        "main_propeller_pressure_pa": 137.89514586336,
+        "bypass_propeller_pressure_pa": 275.79029172672,
+        "lv_propeller_pressure_pa": 0.0,
+        "exhaust_suction_coefficient": 0.05141642350702926,
+        "motor_exhaust_suction_coefficient": 0.10283284701405852,
+        "heat_load": "peak",
+        "heat_scale": 1.0,
+        "loss_multiplier": 1.0,
+        "contact_multiplier": 1.0
+      },
+      "input_hash": "6134b748c45c9cd2fb0da6520fa5f6b1bb346ea6e1be8d6609d30d0a3e38a11a",
+      "geometry_fingerprint": "3eabc7b8713af1a3c23c4fe367a383f6f44a9a0b16ad43b2c53276f08f727621",
+      "model_sha256": "9c3963631d15f6100ddb4c1c82ac734de034f4af4a550c1bdeea0b7262626f36",
+      "model_id": "x57-mod-ii-nacelle-pressure-thermal-rom-v2",
+      "summary": {
+        "max_temperature_c": 224.97606971072526,
+        "min_margin_c": -100.97606971072526,
+        "limiting_component": "motor_winding",
+        "steady_state_exists": true,
+        "total_heat_w": 7499.0,
+        "result_status": "out_of_domain_diagnostic",
+        "physically_validated": false,
+        "within_model_limits": false,
+        "all_reference_margins_nonnegative": false
+      },
+      "numerical_verification": {
+        "converged": true,
+        "iterations": 10,
+        "dynamic_pressure_pa": 2681.9280000000003,
+        "mass_residuals_kg_s": {
+          "inlet_plenum": 2.7977620220553945e-14,
+          "motor_mix": 5.284661597215745e-14,
+          "lower_mix": -2.5868196473766147e-14
+        },
+        "max_mass_residual_kg_s": 5.284661597215745e-14,
+        "external_mass_residual_kg_s": -5.5067062021407764e-14,
+        "max_pressure_residual_pa": 2.3101165425032377e-10,
+        "energy_residual_w": -1.1550582712516189e-10,
+        "energy_removed_w": 7499.0000000001155,
+        "total_heat_w": 7499.0,
+        "steady_energy_balance_evaluable": true,
+        "verification_scope": "Numerical conservation and analytical equation checks only; not source agreement or physical validation.",
+        "heat_scale_to_200c_guard_at_fixed_flow": 0.8761574948056566,
+        "heat_scale_guard_note": "Linear fixed-property, fixed-flow rescaling to the 200 C screening guard; not allowable motor power, a flight operating limit, or an uncertainty bound.",
+        "correlation_applicability": {
+          "actual_geometry_validated": false,
+          "motor_rotation_resolved": false,
+          "entrance_development_resolved": false,
+          "lv_jet_resolved": false,
+          "short_ducts_l_over_d_below_10": [
+            "main_inlet",
+            "motor_bypass",
+            "motor_top_exhaust",
+            "cmc_bypass",
+            "lv_fresh_left",
+            "lv_fresh_right",
+            "lower_outlet"
+          ],
+          "note": "L/D<10 is a descriptive short-duct flag, not a universal fully-developed criterion; hydraulic diameter alone does not validate annulus/slot/jet h."
+        },
+        "conservation_pass": true
+      },
+      "source_flow_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 9, stations 2a_g, 2a_s, 2a_b",
+        "reference_case": "dash",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD station flows are a diagnostic reference, not boundary inputs or calibration targets. Our reconstructed geometry and inferred pressure boundaries are not a matched NASA CFD case.",
+        "published_kg_s": {
+          "motor_gap": 0.06622448602,
+          "motor_slots": 0.30163892605000003,
+          "motor_internal_total": 0.36786341207000006,
+          "motor_bypass": 0.16193247609
+        },
+        "computed_kg_s": {
+          "motor_gap": 0.10983112149034549,
+          "motor_slots": 0.11278341146248178,
+          "motor_internal_total": 0.22261453295282727,
+          "motor_bypass": 0.7526822283006004
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false,
+        "relative_error_percent": {
+          "motor_gap": 65.8466952196143,
+          "motor_slots": -62.60979544669687,
+          "motor_internal_total": -39.484459272490426,
+          "motor_bypass": 364.812399880966
+        },
+        "motor_slot_flow_fraction": {
+          "published": 0.8199753390875462,
+          "computed": 0.506630946176281
+        }
+      },
+      "source_temperature_comparison": {
+        "source": "https://ntrs.nasa.gov/api/citations/20230006888/downloads/Borer_Bui_Smith_X-57_thermal_analysis.pdf",
+        "location": "Table 6, printed p. 12",
+        "reference_case": "dash",
+        "matched_nominal_flight_inputs": true,
+        "matched_geometry_or_thermal_nodes": false,
+        "matched_pressure_boundary": false,
+        "boundary_mode": "source_pressure_sensitivity",
+        "note": "Published CFD-driven ICPT component estimates, not measured temperatures. One published component estimate is repeated for left/right context; our lumped patches/contact proxies and boundary assumptions are not node-equivalent NASA predictions. No coefficient fitting.",
+        "published_analysis_c": {
+          "motor_winding": 85.6,
+          "motor_magnet": 31.9,
+          "cmc_left_hv": 85.3,
+          "cmc_right_hv": 85.3,
+          "cmc_left_cpu": 57.7,
+          "cmc_right_cpu": 57.7,
+          "cmc_left_acdc": 58.7,
+          "cmc_right_acdc": 58.7
+        },
+        "computed_proxy_c": {
+          "motor_winding": 224.97606971072526,
+          "motor_magnet": 70.17237124028304,
+          "cmc_left_hv": 72.20899521909712,
+          "cmc_right_hv": 72.20899521909712,
+          "cmc_left_cpu": 67.43952233032851,
+          "cmc_right_cpu": 67.43952233032851,
+          "cmc_left_acdc": 66.88729474041978,
+          "cmc_right_acdc": 66.88729474041978
+        },
+        "proxy_minus_published_c": {
+          "motor_winding": 139.37606971072526,
+          "motor_magnet": 38.27237124028304,
+          "cmc_left_hv": -13.091004780902878,
+          "cmc_right_hv": -13.091004780902878,
+          "cmc_left_cpu": 9.739522330328512,
+          "cmc_right_cpu": 9.739522330328512,
+          "cmc_left_acdc": 8.187294740419773,
+          "cmc_right_acdc": 8.187294740419773
+        },
+        "used_to_fit_coefficients": false,
+        "validation": false
+      },
+      "motor_patch_budget": {
+        "motor_winding:motor_internal": {
+          "component": "motor_winding",
+          "branch_id": "motor_internal",
+          "heat_w": 1653.689382873495,
+          "heated_area_m2": 0.14495308503663307,
+          "inlet_c": 23.3,
+          "temperature_c": 216.41235160245543,
+          "rise_c": {
+            "air_advection": 17.58309628797864,
+            "convection": 148.76533642486788,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.855499999999999
+          },
+          "resistance_k_w": {
+            "convection": 0.08995966108603132,
+            "solid_conduction": 0.011434081324724421,
+            "contact": 0.0047502874973715265
+          },
+          "actual_patch_ua_w_k": 11.116093457084814,
+          "infinite_h_temperature_floor_c": 67.64701517758753,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 56.352984822412466,
+              "required_patch_ua_w_k": 29.345195965836346,
+              "required_h_w_m2_k": 202.44616358748158,
+              "required_h_multiplier": 2.639883883589811
+            },
+            "published_icpt_context": {
+              "target_c": 85.6,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 17.95298482241246,
+              "required_patch_ua_w_k": 92.11222530579057,
+              "required_h_w_m2_k": 635.4623310191131,
+              "required_h_multiplier": 8.286384570389076
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_internal": {
+          "component": "motor_magnet",
+          "branch_id": "motor_internal",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.1506079518130947,
+          "inlet_c": 23.3,
+          "temperature_c": 70.17237124028304,
+          "rise_c": {
+            "air_advection": 17.58309628797864,
+            "convection": 25.195347932629538,
+            "solid_conduction": 1.183927019674858,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.08658195165852076,
+            "solid_conduction": 0.004068477730841436,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 11.549751199233766,
+          "infinite_h_temperature_floor_c": 44.9770233076535,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 38.0229766923465,
+              "required_patch_ua_w_k": 7.653267190376873,
+              "required_h_w_m2_k": 50.815824119795614,
+              "required_h_multiplier": 0.6626348099069533
+            },
+            "published_icpt_context": {
+              "target_c": 31.9,
+              "possible_by_convection_alone_at_fixed_flow": false,
+              "available_wall_to_air_delta_c": -13.077023307653505,
+              "required_patch_ua_w_k": null,
+              "required_h_w_m2_k": null,
+              "required_h_multiplier": null
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_winding:motor_slots": {
+          "component": "motor_winding",
+          "branch_id": "motor_slots",
+          "heat_w": 3583.310617126505,
+          "heated_area_m2": 0.3140928000000001,
+          "inlet_c": 23.3,
+          "temperature_c": 224.97606971072526,
+          "rise_c": {
+            "air_advection": 31.55075518954991,
+            "convection": 143.36139563156647,
+            "solid_conduction": 18.908418889608885,
+            "contact": 7.8555
+          },
+          "resistance_k_w": {
+            "convection": 0.040008084966557965,
+            "solid_conduction": 0.00527680151400655,
+            "contact": 0.00219224645568109
+          },
+          "actual_patch_ua_w_k": 24.994947917049316,
+          "infinite_h_temperature_floor_c": 81.6146740791588,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 124.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 42.3853259208412,
+              "required_patch_ua_w_k": 84.54130148293994,
+              "required_h_w_m2_k": 269.16026563786215,
+              "required_h_multiplier": 3.382335572912854
+            },
+            "published_icpt_context": {
+              "target_c": 85.6,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 3.9853259208411913,
+              "required_patch_ua_w_k": 899.1261162324631,
+              "required_h_w_m2_k": 2862.612948251163,
+              "required_h_multiplier": 35.97231405387966
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        },
+        "motor_magnet:motor_bypass": {
+          "component": "motor_magnet",
+          "branch_id": "motor_bypass",
+          "heat_w": 291.0,
+          "heated_area_m2": 0.21337571639475733,
+          "inlet_c": 23.3,
+          "temperature_c": 47.445133693998436,
+          "rise_c": {
+            "air_advection": 0.38392982990083924,
+            "convection": 19.737001639456594,
+            "solid_conduction": 1.1142022246410026,
+            "contact": 2.91
+          },
+          "resistance_k_w": {
+            "convection": 0.06782474790191269,
+            "solid_conduction": 0.0038288736241958855,
+            "contact": 0.01
+          },
+          "actual_patch_ua_w_k": 14.74388082424114,
+          "infinite_h_temperature_floor_c": 27.708132054541842,
+          "fixed_flow_target_closure": {
+            "margined_reference": {
+              "target_c": 83.0,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 55.29186794545816,
+              "required_patch_ua_w_k": 5.262980087542939,
+              "required_h_w_m2_k": 24.66531888664464,
+              "required_h_multiplier": 0.3569602976503862
+            },
+            "published_icpt_context": {
+              "target_c": 31.9,
+              "possible_by_convection_alone_at_fixed_flow": true,
+              "available_wall_to_air_delta_c": 4.191867945458156,
+              "required_patch_ua_w_k": 69.42012577359345,
+              "required_h_w_m2_k": 325.34220363278,
+              "required_h_multiplier": 4.708402529913048
+            }
+          },
+          "closure_note": "Algebraic required UA at current flow, heat distribution and solid resistances; not applied, not an attainable enhancement, not calibration. Published ICPT and downstream ROM patches are different nodes."
+        }
+      },
+      "transport": {
+        "motor_internal": {
+          "mass_flow_kg_s": 0.10983112149034549,
+          "reynolds": 11734.805243363973,
+          "h_w_m2_k": 76.68752585897371,
+          "ua_w_k": 22.665844656318583,
+          "air_capacity_w_k": 110.59993934077791,
+          "length_to_hydraulic_diameter": 12.499999999999986,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.3,
+          "outlet_c": 40.883096287978645,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_slots": {
+          "mass_flow_kg_s": 0.11278341146248178,
+          "reynolds": 9091.151250133466,
+          "h_w_m2_k": 79.57822629824469,
+          "ua_w_k": 24.994947917049316,
+          "air_capacity_w_k": 113.57289534271915,
+          "length_to_hydraulic_diameter": 14.111622946185713,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.3,
+          "outlet_c": 54.850755189549915,
+          "actual_geometry_correlation_validated": false
+        },
+        "motor_bypass": {
+          "mass_flow_kg_s": 0.7526822283006004,
+          "reynolds": 66180.80593795198,
+          "h_w_m2_k": 69.0982135800501,
+          "ua_w_k": 14.74388082424114,
+          "air_capacity_w_k": 757.9510038987046,
+          "length_to_hydraulic_diameter": 3.7468736587008635,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "uniform_axial_heat_flux",
+          "inlet_c": 23.3,
+          "outlet_c": 23.68392982990084,
+          "actual_geometry_correlation_validated": false
+        },
+        "cmc_hv_left": {
+          "mass_flow_kg_s": 0.12567531453279418,
+          "reynolds": 17397.396734792517,
+          "h_w_m2_k": 126.58853501120012,
+          "ua_w_k": 43.01971336190681,
+          "air_capacity_w_k": 126.55504173452374,
+          "length_to_hydraulic_diameter": 30.304479515383385,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 29.224914732138398,
+          "outlet_c": 35.62529190319689,
+          "actual_geometry_correlation_validated": false
+        },
+        "lv_fresh_left": {
+          "mass_flow_kg_s": 0.047313490267742286,
+          "reynolds": 26351.150246584402,
+          "h_w_m2_k": 53.05786194246594,
+          "ua_w_k": 2.9447113378068597,
+          "air_capacity_w_k": 47.644684699616484,
+          "length_to_hydraulic_diameter": 9.210526315789474,
+          "regime": "turbulent_equivalent_duct",
+          "heat_boundary": "isothermal_exchange_surface",
+          "inlet_c": 23.3,
+          "outlet_c": 23.929661003932335,
+          "actual_geometry_correlation_validated": false
+        }
+      },
+      "assumption_scenarios": {
+        "min_margin_c": {
+          "min": -333.89561619774764,
+          "max": -17.53202197404937
+        },
+        "outside_screening_guard_count": 6,
+        "count": 8,
+        "not_confidence_interval": true
+      }
+    }
+  }
+}
