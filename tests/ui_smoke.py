@@ -50,7 +50,47 @@ def main():
             page.on('pageerror', lambda error: results['errors'].append(str(error)))
             page.on('console', lambda message: results['console_errors'].append(message.text) if message.type == 'error' else None)
             page.goto(f'http://127.0.0.1:{server.server_port}/', wait_until='networkidle')
+            # Leadership view is the default: one question and visual, no workbench.
+            expect(page.locator('#guided-view')).to_be_visible()
+            expect(page.locator('.app-layout')).to_be_hidden()
+            expect(page.locator('#guide-provenance')).to_contain_text('回放')
+            assert page.locator('[data-guide-step]').count() == 6
+            for step in range(6):
+                page.locator(f'[data-guide-step="{step}"]').click()
+                expect(page.locator('#guide-question')).not_to_be_empty()
+                expect(page.locator('#guide-visual')).to_be_visible()
+                expect(page.locator('.app-layout')).to_be_hidden()
+                if step == 4:
+                    expect(page.locator('#guide-compute-lv')).to_be_visible()
+                    page.locator('#guide-compute-lv').click()
+                    expect(page.locator('#guide-provenance')).to_contain_text('本次', timeout=120000)
+                    evidence = json.loads(page.locator('#guide-evidence-json').inner_text())
+                    assert 'command_loss' in json.dumps(evidence)
+                    assert 'input_hash' in json.dumps(evidence)
+                elif step == 5:
+                    expect(page.locator('#guide-compute-sweep')).to_be_visible()
+                    page.locator('#guide-compute-sweep').click()
+                    expect(page.locator('#guide-provenance')).to_contain_text('本次', timeout=120000)
+                    evidence = json.loads(page.locator('#guide-evidence-json').inner_text())
+                    assert 'command_loss' in json.dumps(evidence)
+                    assert 'results' in evidence
+                    assert len(evidence['results']) == 4
+                else:
+                    expect(page.locator('#guide-provenance')).to_contain_text('回放')
+                page.screenshot(path=str(args.output_dir / f'ui-guide-{step + 1:02d}.png'), full_page=True)
+            results['flows'].append('Default six-step guide shows one visual, hides expert workbench and uses authentic evidence')
+            results['flows'].append('Guide LV and equal-mass design examples require explicit fresh solver computations')
+            page.set_viewport_size({'width': 390, 'height': 844})
+            page.locator('[data-guide-step="0"]').click()
+            page.screenshot(path=str(args.output_dir / 'ui-guide-mobile.png'), full_page=True)
+            assert not page.evaluate('document.documentElement.scrollWidth > window.innerWidth')
+            page.set_viewport_size({'width': 1440, 'height': 1100})
+            page.locator('#expert-mode-button').click()
+            expect(page.locator('.app-layout')).to_be_visible()
+            expect(page.locator('#guided-view')).to_be_hidden()
             expect(page.locator('#provenance')).to_have_text('已存结果回放')
+            assert page.locator('#scenario').input_value() == 'cooling_fault'
+            results['flows'].append('Expert mode restores unchanged replay and preserves its inputs after guided computations')
             results['flows'].append('Authentic replay explicitly labeled; solver-derived comparison rendered')
             assert page.locator('#trace-chart svg').count() == 1
             assert '两种策略都未满足' in page.locator('.comparison-conclusion').inner_text()

@@ -2,7 +2,7 @@
 
 // The UI only renders solver output. No synthetic fallback values or trajectories.
 const $ = (id) => document.getElementById(id);
-const state = { catalog: null, run: null, comparison: null, sweep: null, index: 0, chart: 'thermal', timer: null, busy: false, view: 'control' };
+const state = { catalog: null, run: null, comparison: null, sweep: null, index: 0, chart: 'thermal', timer: null, busy: false, view: 'control', guide: { mode: 'guided', step: 0, cooling: null, lv: null, sweep: null, busy: false, request: 0, error: '' } };
 const COLORS = { cyan: '#78ddd6', amber: '#edba72', violet: '#bbb1d9', gray: '#c0d0d5', red: '#f19789' };
 const finite = (value) => typeof value === 'number' && Number.isFinite(value);
 const fmt = (value, decimals = 1) => finite(value) ? (Math.abs(value) < 1e-8 ? 0 : value).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) : '—';
@@ -250,7 +250,7 @@ function renderEvidence() {
   if (planner?.description) $('planner-explanation').textContent = `${planner.description} 它不是 LLM 智能体，不表示已完成陌生任务泛化验证。`;
 }
 async function compute(compare = false) {
-  if (state.busy) return;
+  if (state.busy || state.guide.busy) return;
   stopPlayback(); setError(); setBusy(true, compare ? '正在用相同输入比较两种策略' : '正在调用确定性求解器');
   const input = selectedInputs();
   try {
@@ -268,7 +268,7 @@ function switchView(view) {
   if (view !== 'control') stopPlayback();
 }
 async function computeSweep() {
-  if (state.busy) return;
+  if (state.busy || state.guide.busy) return;
   stopPlayback(); setError(); setBusy(true, '正在逐一计算固定硬件方案');
   try {
     const response = await api('/api/sweep', { scenario_id: $('scenario').value, ambient_c: Number($('ambient').value) });
@@ -307,6 +307,7 @@ function downloadEvidence() {
   const anchor = document.createElement('a'); anchor.href = url; anchor.download = `power-thermal-${state.view === 'design' ? 'design-sweep' : 'evidence'}-${safeId(state.run?.meta?.run_id || 'run')}.json`; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 500);
 }
 function bindEvents() {
+  bindGuideEvents();
   $('scenario').addEventListener('change', () => { const item = state.catalog.scenarios.find((scenario) => scenario.id === $('scenario').value); if (finite(item?.ambient_c)) $('ambient').value = item.ambient_c; updateInputsDescription(); });
   $('design').addEventListener('change', updateInputsDescription);
   $('ambient').addEventListener('input', updateInputsDescription);
@@ -341,9 +342,186 @@ async function boot() {
     if (finite(state.catalog.scenarios[0]?.ambient_c)) $('ambient').value = state.catalog.scenarios[0].ambient_c;
     updateInputsDescription(); setBusy(false); renderEvidence();
     if (state.catalog.replay_url) {
-      try { const replay = await api(state.catalog.replay_url); assertRun(replay.baseline); assertRun(replay.planner); state.comparison = replay; loadRun(replay[policy()], true); }
-      catch (error) { setError(`预存回放暂不可用：${error.message}。可以点击计算按钮获取新结果。`); }
+      try { const replay = await api(state.catalog.replay_url); assertRun(replay.baseline); assertRun(replay.planner); state.comparison = replay; loadRun(replay[policy()], true); if (replay.baseline.scenario.id === 'cooling_fault') state.guide.cooling = replay; renderGuide(); }
+      catch (error) { setError(`预存回放暂不可用：${error.message}。可以点击计算按钮获取新结果。`); state.guide.error = '预存演示结果暂不可用，请进入专家工作台检查连接与重新计算。'; renderGuide(); }
     }
-  } catch (error) { state.catalog = null; setBusy(false); setError(`未连接到本地计算服务：${error.message}。请通过项目 Python 服务打开本页，不能仅双击 HTML 文件。`); }
+  } catch (error) { state.catalog = null; setBusy(false); setError(`未连接到本地计算服务：${error.message}。请通过项目 Python 服务打开本页，不能仅双击 HTML 文件。`); state.guide.error = '未连接到计算服务。请通过项目 Python 服务打开本页。'; renderGuide(); }
 }
+/* Guide state is independent of expert settings and displayed results. */
+const GUIDE_STEPS = [
+  { kicker: '01 / 先把任务说清楚', question: '一段任务，要同时满足什么？', intro: '左右推进需要功率。A、B 两路电源都能供给两侧，但温度和指令供电也决定这些能力能否用上。', next: '看看冷却故障 →' },
+  { kicker: '02 / 一个散热条件改变', question: '有电，为什么仍会越来越热？', intro: '现在看同一段合成任务中的冷却衰减。先只看温度随时间的变化，不急着宣布任务成功或失败。', next: '保护之后呢？ →' },
+  { kicker: '03 / 约束与任务分开检查', question: '温度守住了，任务就完成了吗？', intro: '两种策略使用相同的硬保护器。保护会限制实际输出；需求没有消失，未交付的推进功率仍必须记账。', next: '看看另一种策略 →' },
+  { kicker: '04 / 不只挑最好看的一个时刻', question: '晚一点缺供，整段任务就更好吗？', intro: '保持同一任务、同一硬件与同一物理模型，只比较固定规则和确定性有界规划器。它不是 LLM 智能体。', next: '还有另一种限制 →' },
+  { kicker: '05 / 总电量之外的依赖', question: '电池还有电，为什么推进仍会停？', intro: '换一个算例：主低压供电失效后，后备电源维持推进指令。它能坚持多久，需要重新计算。', next: '把问题带到设计 →' },
+  { kicker: '06 / 现在才讨论硬件', question: '同样增加 20 kg，应该放在哪里？', intro: '沿用指令供电失效工况。把质量预算分给推进储能、散热或指令后备，再从初态分别计算完整任务。', next: '进入专家工作台 ↗' }
+];
+function setMode(mode) {
+  state.guide.mode = mode;
+  document.body.classList.toggle('mode-guided', mode === 'guided');
+  document.body.classList.toggle('mode-expert', mode === 'expert');
+  ['guided', 'expert'].forEach((key) => { $(`${key}-mode-button`).classList.toggle('active', key === mode); $(`${key}-mode-button`).setAttribute('aria-pressed', String(key === mode)); });
+  stopPlayback();
+  if (mode === 'guided') renderGuide();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+function goGuideStep(step) {
+  state.guide.step = Math.max(0, Math.min(5, step));
+  $('guide-evidence').open = false;
+  renderGuide();
+}
+function bindGuideEvents() {
+  $('guided-mode-button').addEventListener('click', () => setMode('guided'));
+  $('expert-mode-button').addEventListener('click', () => setMode('expert'));
+  document.querySelectorAll('[data-guide-step]').forEach((button) => button.addEventListener('click', () => goGuideStep(Number(button.dataset.guideStep))));
+  $('guide-previous').addEventListener('click', () => goGuideStep(state.guide.step - 1));
+  $('guide-next').addEventListener('click', () => state.guide.step === 5 ? setMode('expert') : goGuideStep(state.guide.step + 1));
+}
+function guideEvidence(run) { return run ? { meta: run.meta, scenario: run.scenario, design: run.design, policy: run.policy, summary: run.summary, validation: run.validation } : null; }
+function guideSource(execution, caption) {
+  $('guide-provenance').className = `badge ${execution === 'replay' ? 'replay' : execution === 'computed' ? 'live' : 'neutral'}`;
+  $('guide-provenance').textContent = execution === 'replay' ? '已存结果回放' : execution === 'computed' ? '本次实际计算' : '尚未计算此工况';
+  $('guide-source-caption').textContent = caption;
+}
+function guideTakeaway(label, text) { $('guide-takeaway').innerHTML = `<span>${esc(label)}</span><p>${esc(text)}</p>`; }
+function guideFault(run) { return (run.scenario.events || []).find((event) => event.type === 'cooling_degraded'); }
+function guideChart(run, series, { unit = 'kW', limits = [], event = null, label = '' } = {}) {
+  const trace = run.trace, values = series.flatMap((line) => trace.map(line.value)).filter(finite);
+  if (!values.length) return '<div class="empty-state">这项指标没有有效数据</div>';
+  const low = 0, high = Math.max(...values, ...limits.map((line) => line.value), .01) * 1.13;
+  const W = 940, H = 305, left = 54, right = 26, top = 29, bottom = 36;
+  const end = trace[trace.length - 1].t_s, plotW = W - left - right, plotH = H - top - bottom;
+  const x = (t) => left + t / Math.max(end, 1) * plotW;
+  const y = (v) => top + (1 - (v - low) / (high - low)) * plotH;
+  let svg = `<svg class="guide-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}"><title>${esc(label)}，数据来自求解器输出</title>`;
+  for (let i = 0; i <= 4; i++) {
+    const value = low + (high - low) * i / 4;
+    svg += `<line x1="${left}" x2="${W - right}" y1="${y(value)}" y2="${y(value)}" stroke="#2b3d43"/><text x="${left - 10}" y="${y(value) + 4}" text-anchor="end" fill="#81999f" font-size="11">${fmt(value, unit === 'kWh' ? 2 : 0)}</text><text x="${x(end * i / 4)}" y="${H - 10}" text-anchor="middle" fill="#81999f" font-size="11">${time(end * i / 4)}</text>`;
+  }
+  svg += `<text x="${left}" y="14" fill="#81999f" font-size="11">${esc(unit)}</text>`;
+  limits.forEach((line) => { svg += `<line x1="${left}" x2="${W - right}" y1="${y(line.value)}" y2="${y(line.value)}" stroke="${line.color || COLORS.amber}" stroke-dasharray="${line.soft ? '3 6' : '7 4'}"/><text x="${W - right}" y="${y(line.value) - 6}" text-anchor="end" fill="#c8aa7e" font-size="10">${esc(line.label)} ${fmt(line.value, 0)} °C</text>`; });
+  if (event && finite(event.t_s)) svg += `<line x1="${x(event.t_s)}" x2="${x(event.t_s)}" y1="${top}" y2="${H - bottom}" stroke="#9f7c59" stroke-dasharray="3 4"/><text x="${x(event.t_s) + 7}" y="${top + 13}" fill="#d5b482" font-size="10">${time(event.t_s)} 冷却衰减</text>`;
+  series.forEach((line) => {
+    let move = true;
+    const path = trace.map((row) => { const v = line.value(row); if (!finite(v)) { move = true; return ''; } const point = `${move ? 'M' : 'L'}${x(row.t_s).toFixed(2)},${y(v).toFixed(2)}`; move = false; return point; }).join(' ');
+    svg += `<path d="${path}" fill="none" stroke="${line.color}" stroke-width="2.5" ${line.dashed ? 'stroke-dasharray="6 5"' : ''}/>`;
+  });
+  return `<div class="guide-chart-legend">${series.map((line) => `<span><i class="line-${line.key}"></i>${esc(line.name)}</span>`).join('')}</div>${svg}</svg>`;
+}
+function guideTopology(run) {
+  const row = run.trace[0], duration = run.summary.duration_s ?? run.trace[run.trace.length - 1].t_s;
+  const node = (x, y, title, value, unit, detail) => `<g><rect x="${x}" y="${y}" width="215" height="91" rx="9" fill="#1b2d34" stroke="#426267"/><text x="${x + 18}" y="${y + 25}" fill="#bcd0d2" font-size="13">${title}</text><text x="${x + 18}" y="${y + 56}" fill="#e2efed" font-size="24">${fmt(value, 1)}<tspan font-size="12" fill="#8ca6ab"> ${unit}</tspan></text><text x="${x + 18}" y="${y + 77}" fill="#77949d" font-size="10">${detail}</text></g>`;
+  return `<div class="guide-visual-title"><span>双源、双推进：先看任务起点</span><span>${time(row.t_s)} 时刻 · 全任务 ${fmt(duration / 60, 0)} min · 峰值需求 ${fmt(max(run.trace.map((item) => item.demand_kw)), 0)} kW</span></div><svg class="guide-svg" viewBox="0 0 930 310" role="img" aria-label="A和B两路电源均可为左右推进电机供电"><title>任务起点的计算功率与双源供能关系</title><g fill="none" stroke="#67c4be" stroke-width="2" opacity=".7"><path d="M258 85H410V105H673M410 105V229H673"/><path d="M258 229H486V209H673M486 209V85H673"/></g>${node(43, 40, '电源 A', row.pack_kw[0], 'kW', '可向左右两个推进通道供电')}${node(43, 184, '电源 B', row.pack_kw[1], 'kW', '可向左右两个推进通道供电')}${node(673, 40, '左推进通道', row.motor_shaft_kw[0], 'kW', '交付的推进轴功率')}${node(673, 184, '右推进通道', row.motor_shaft_kw[1], 'kW', '交付的推进轴功率')}<text x="465" y="151" fill="#b7d9d5" font-size="13" text-anchor="middle">共同承担任务需求</text><text x="465" y="176" fill="#739198" font-size="11" text-anchor="middle">A、B 均可供给左右通道</text></svg><p class="guide-figure-note">这里只展示供能关系；开局有功率交付，不代表整段任务已通过。</p>`;
+}
+function guideCompare(compare) {
+  const card = (run, planner) => `<article class="guide-policy-card ${planner ? 'planner' : ''}"><h2>${planner ? '受约束规划器' : '热感知固定规则'}<small>${planner ? '18 候选 · 有限预测 · 确定性' : '阶段预冷 · 温度规则 · 同一保护器'}</small></h2><div class="guide-comparison-stat"><span>首次推进缺供</span><strong>${finite(run.summary.first_propulsion_shortfall_s) ? time(run.summary.first_propulsion_shortfall_s) : '未发生'}</strong></div><div class="guide-comparison-stat"><span>全任务累计缺供</span><strong>${fmt(run.summary.unmet_propulsion_kwh, 3)} <small>kWh</small></strong></div>${verdict(run.summary)}</article>`;
+  return `<div class="guide-visual-title"><span>同一任务，比较两个不同的问题</span><span>发生得多晚？总共缺了多少？</span></div><div class="guide-comparison">${card(compare.baseline, false)}${card(compare.planner, true)}</div><p class="guide-figure-note">不能用一个更好的时刻，替代完整任务的服务与约束检查。</p>`;
+}
+function guidePrompt(kind) {
+  const busy = state.guide.busy || state.busy;
+  const isLv = kind === 'lv';
+  return `<div class="guide-compute-prompt"><span class="tiny-label">${isLv ? '一个新的依赖问题' : '离线固定硬件比较'}</span><h2>${isLv ? '这次，故障发生在指令供电' : '每个方案，都从头跑一遍'}</h2><p>${isLv ? '保留基准硬件，让主低压失效，再检查后备储能、指令状态与推进输出。只有实际计算后才展示结果。' : '同一指令供电失效场景，四个预设硬件组合。控制策略固定为确定性规划器，质量不会在任务中改变。'}</p><button id="guide-compute-${isLv ? 'lv' : 'sweep'}" class="button primary" ${busy ? 'disabled' : ''}>${busy ? '计算中，请稍候…' : isLv ? '计算指令供电失效' : '计算四个硬件方案'} <span>↗</span></button></div>`;
+}
+function guideLv(run) {
+  const row = run.trace.find((point) => point.command_alive === false) || run.trace[run.trace.length - 1];
+  const dead = row.command_alive === false;
+  const capacities = run.design.traction_kwh / 2;
+  const accessible = sum((row.pack_soc || []).map((soc, index) => row.pack_available?.[index] !== false ? soc * capacities : 0));
+  return `<div class="guide-visual-title"><span>${dead ? '首次指令关闭时刻' : '任务结束时刻'} ${time(row.t_s)}</span><span>模型中的逻辑依赖，非真实电路图</span></div><div class="guide-dependency"><article class="guide-dependency-card"><h3>推进可接入储能</h3><strong>${fmt(accessible, 2)} <small>kWh</small></strong><p>${accessible > 1e-6 ? '仍有储能可接入' : '无可接入推进储能'}</p></article><div class="guide-dependency-arrow">→</div><article class="guide-dependency-card ${dead ? 'blocked' : ''}"><h3>指令后备储能</h3><strong>${fmt(row.backup_kwh, 3)} <small>kWh</small></strong><p>${dead ? '指令供电已不足' : '指令仍可用'}</p></article><div class="guide-dependency-arrow">→</div><article class="guide-dependency-card ${dead ? 'blocked' : ''}"><h3>实际推进输出</h3><strong>${fmt(row.served_propulsion_kw, 1)} <small>kW</small></strong><p>此刻任务需求 ${fmt(row.demand_kw, 1)} kW</p></article></div><p class="guide-figure-note">读数来自同一个真实时间步。低压供电在这里是合成子系统模型，不对应真实飞机的单个器件故障结论。</p>`;
+}
+function guideDesign(sweep) {
+  return `<div class="guide-visual-title"><span>相同工况 · 相同规划器 · 分别完整重算</span><span>质量仅是所列子系统的合成代理</span></div><div class="guide-designs">${sweep.results.map((item) => `<article class="guide-design-card ${item.summary.feasible && item.summary.solver_valid ? 'feasible' : ''}"><h3>${esc(item.design.name.replace(/ · \d+ kg/, '').replace(/增重 \d+ kg · /, ''))}</h3><div class="guide-design-mass">${fmt(item.design.mass_kg, 0)} <small>kg</small></div><dl><div><dt>推进储能</dt><dd>${fmt(item.design.traction_kwh, 1)} kWh</dd></div><div><dt>指令后备</dt><dd>${fmt(item.design.backup_kwh, 2)} kWh</dd></div><div><dt>散热倍率</dt><dd>${fmt(item.design.cooling_scale, 2)}×</dd></div><div><dt>推进缺供</dt><dd>${fmt(item.summary.unmet_propulsion_kwh, 3)} kWh</dd></div></dl>${verdict(item.summary)}</article>`).join('')}</div><p class="guide-figure-note">方案同时改变多项参数。散热优先方案也增加后备储能，不能把通过任务全部归功于散热。</p>`;
+}
+function renderGuide() {
+  const step = state.guide.step, copy = GUIDE_STEPS[step];
+  $('guide-step-count').textContent = `${String(step + 1).padStart(2, '0')} / 06`;
+  $('guide-kicker').textContent = copy.kicker; $('guide-question').textContent = copy.question; $('guide-intro').textContent = copy.intro;
+  $('guide-next').textContent = copy.next; $('guide-previous').disabled = step === 0;
+  $('guide-navigation-hint').textContent = `第 ${step + 1} 步，共 6 步 · 专家细节随时可展开`;
+  document.querySelectorAll('[data-guide-step]').forEach((button) => { const active = Number(button.dataset.guideStep) === step; button.classList.toggle('active', active); if (active) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current'); });
+  $('guide-error').hidden = !state.guide.error; $('guide-error').textContent = state.guide.error;
+  let evidence = null;
+  const compare = state.guide.cooling, base = compare?.baseline;
+  if (step < 4 && !base) {
+    guideSource(null, '讲解前四步需要冷却衰减工况的保存结果');
+    $('guide-visual').innerHTML = '<div class="empty-state">正在等待有效演示证据<span>若无法加载，请进入专家工作台检查服务</span></div>';
+    guideTakeaway('先有证据', '没有实际输出时不显示数值、曲线或成功结论。');
+  } else if (step < 4) {
+    guideSource(base.meta.execution, `冷却衰减工况 · 基准硬件 · ${fmt(runAmbient(base), 0)} °C · ${step === 3 ? '同输入双策略比较' : '热感知固定规则'}`);
+    evidence = step === 3 ? { baseline: guideEvidence(compare.baseline), planner: guideEvidence(compare.planner) } : guideEvidence(base);
+    if (base.summary.solver_valid === false || (step === 3 && compare.planner.summary.solver_valid === false)) {
+      $('guide-visual').innerHTML = '<div class="empty-state guide-solver-invalid">求解校验未通过<span>不能把这些输出当作有效工程证据</span></div>';
+      guideTakeaway('没有有效结论', '先在专家工作台检查验证记录，不能继续解释为物理成功或失败。');
+    } else if (step === 0) {
+      $('guide-visual').innerHTML = guideTopology(base);
+      guideTakeaway('先看全任务', '接下来跟随这一个冷却衰减算例：先看供能，再看热保护，最后看真正交付了多少推进任务。');
+    } else if (step === 1) {
+      const event = guideFault(base);
+      $('guide-visual').innerHTML = `<div class="guide-visual-title"><span>左右通道的合成热节点</span><span>电机 + 控制器集总温度，不是器件热点</span></div>${guideChart(base, [{ name: '左通道', color: COLORS.cyan, key: 'cyan', value: (row) => row.temperature_c[0] }, { name: '右通道', color: COLORS.amber, key: 'amber', value: (row) => row.temperature_c[1] }], { unit: '°C', limits: [{ value: state.catalog.limits.temperature_c, label: '硬上限' }, { value: state.catalog.limits.protection_c, label: '规划软目标', soft: true }], event, label: '冷却衰减后的实际温度轨迹' })}<p class="guide-figure-note">可控风扇是合成的强制风冷替代方案；NASA 参考热设计采用被动冷却。</p>`;
+      guideTakeaway('散热能力改变了', event ? `${time(event.t_s)} 时，${event.channel === 0 ? '左' : '右'}通道冷却效能降至 ${fmt(event.factor * 100, 0)}%。图中的规划软目标与硬上限是两件事，跨过软目标不等于硬约束违规。` : '本次场景未提供冷却衰减事件。应按真实输入解释曲线，不能补造故障。');
+    } else if (step === 2) {
+      $('guide-visual').innerHTML = `<div class="guide-visual-title"><span>推进需求，与真正交付的功率</span><span>曲线之间的差距就是任务缺供</span></div>${guideChart(base, [{ name: '任务需求', color: COLORS.gray, key: 'gray', dashed: true, value: (row) => row.demand_kw }, { name: '实际交付', color: COLORS.cyan, key: 'cyan', value: (row) => row.served_propulsion_kw }], { event: guideFault(base), label: '任务需求和实际推进交付' })}<p class="guide-figure-note">缺供是未完成的任务，不应算作节能收益；本模型不把功率缺口直接换算为真实飞行后果。</p>`;
+      const s = base.summary;
+      guideTakeaway('两件事分别记账', `本次最高热节点温度 ${fmt(s.max_temperature_c, 1)} °C，硬约束违规 ${fmt(s.violation_count, 0)} 次；推进累计缺供 ${fmt(s.unmet_propulsion_kwh, 3)} kWh。${s.feasible ? '全部任务条件已满足。' : '任务仍未满足全部条件，保护没有抹去需求缺口。'}`);
+    } else {
+      $('guide-visual').innerHTML = guideCompare(compare);
+      const b = compare.baseline.summary, p = compare.planner.summary;
+      const later = finite(p.first_propulsion_shortfall_s) && finite(b.first_propulsion_shortfall_s) && p.first_propulsion_shortfall_s > b.first_propulsion_shortfall_s;
+      const more = p.unmet_propulsion_kwh > b.unmet_propulsion_kwh + 1e-6;
+      let text = later && more ? '这次规划器把首次缺供推迟了，但整段任务累计缺得更多。这个反例说明：只看一个更好的时刻，会得出错误结论。' : `本次规划器累计推进缺供 ${fmt(p.unmet_propulsion_kwh, 3)} kWh，固定规则 ${fmt(b.unmet_propulsion_kwh, 3)} kWh。可行性与完整任务代价必须一起检查。`;
+      if (p.energy_used_kwh < b.energy_used_kwh && p.served_propulsion_kwh < b.served_propulsion_kwh) text += ' 较低能耗同时伴随较少推进交付，不能称为效率提升。';
+      guideTakeaway('没有预设赢家', text);
+    }
+  } else if (step === 4) {
+    const run = state.guide.lv;
+    guideSource(run?.meta.execution, run ? `主低压失效 + 后备衰减 · 基准硬件 · ${fmt(runAmbient(run), 0)} °C · 受约束规划器` : '新工况需要一次独立计算，不复用上一幕的物理结果');
+    evidence = guideEvidence(run);
+    if (!run) {
+      $('guide-visual').innerHTML = guidePrompt('lv');
+      guideTakeaway('要核对这条依赖', '推进不仅需要牵引储能，还需要关键指令供电。点击计算后，检查同一时刻的后备电量与推进输出。');
+    } else if (run.summary.solver_valid === false) {
+      $('guide-visual').innerHTML = '<div class="empty-state guide-solver-invalid">求解校验未通过，不作物理解释</div>';
+      guideTakeaway('先检查证据', '在专家工作台查看该结果的验证记录。');
+    } else {
+      $('guide-visual').innerHTML = guideLv(run);
+      const row = run.trace.find((point) => point.command_alive === false);
+      guideTakeaway('总电量不是唯一条件', row ? `${time(row.t_s)} 时，模型记录指令不可用，实际推进输出 ${fmt(row.served_propulsion_kw, 1)} kW。即使推进储能仍有剩余，也不能代替指令供电。` : '本次任务中指令始终可用。应保留这个通过结果，不能为了讲解把它说成失效。');
+    }
+  } else {
+    const sweep = state.guide.sweep;
+    guideSource(sweep ? 'computed' : null, sweep ? `指令供电失效 · ${fmt(sweep.scenario.ambient_c, 0)} °C · 四次固定硬件独立运行` : '离线选型：硬件在每次运行中保持固定');
+    evidence = sweep;
+    if (!sweep) {
+      $('guide-visual').innerHTML = guidePrompt('sweep');
+      guideTakeaway('把质量放到瓶颈上', '这里只比较预设组合，不自动宣称最优设计。推进、冷却和后备储能的变化都要一起核对。');
+    } else {
+      $('guide-visual').innerHTML = guideDesign(sweep);
+      const passed = sweep.results.filter((item) => item.summary.feasible && item.summary.solver_valid);
+      guideTakeaway('设计结论来自这次计算', `${sweep.results.length} 个方案中，${passed.length} 个满足任务条件。${passed.length ? '先检查哪些瓶颈被改变，再比较质量与任务收益。' : '当前枚举方案全部不可行，不能宣布可行赢家。'} 组合方案同时改变多项硬件，名称本身不能证明因果。`);
+    }
+  }
+  $('guide-evidence-json').textContent = evidence ? JSON.stringify(evidence, null, 2) : '这一步尚无计算结果；不会用其他工况的结果代替。';
+  const lvButton = $('guide-compute-lv'); if (lvButton) lvButton.addEventListener('click', () => computeGuide('lv'));
+  const sweepButton = $('guide-compute-sweep'); if (sweepButton) sweepButton.addEventListener('click', () => computeGuide('sweep'));
+}
+async function computeGuide(kind) {
+  if (state.guide.busy || state.busy || !state.catalog) return;
+  const scenario = state.catalog.scenarios.find((item) => item.id === 'command_loss');
+  if (!scenario) { state.guide.error = '当前模型没有指令供电失效场景。'; renderGuide(); return; }
+  const request = ++state.guide.request;
+  state.guide.busy = true; state.guide.error = '';
+  ['run-button', 'compare-button', 'sweep-button'].forEach((id) => { $(id).disabled = true; });
+  renderGuide();
+  try {
+    const input = { scenario_id: scenario.id, ambient_c: scenario.ambient_c };
+    const result = kind === 'lv' ? await api('/api/run', { ...input, policy: 'planner', design_id: 'reference' }) : await api('/api/sweep', input);
+    if (request !== state.guide.request) return;
+    if (kind === 'lv') { assertRun(result); if (result.scenario.id !== scenario.id || result.design.id !== 'reference') throw new Error('计算结果与请求的场景或硬件不一致'); state.guide.lv = result; }
+    else { if (result.scenario?.id !== scenario.id || !Array.isArray(result.results) || !result.results.length) throw new Error('选型结果与请求不一致'); state.guide.sweep = result; }
+  } catch (error) { if (request === state.guide.request) state.guide.error = `这次计算没有完成：${error.message}。已有证据仍保留，可重试。`; }
+  finally {
+    if (request === state.guide.request) { state.guide.busy = false; ['run-button', 'compare-button', 'sweep-button'].forEach((id) => { $(id).disabled = !state.catalog; }); renderGuide(); }
+  }
+}
+
 boot();
