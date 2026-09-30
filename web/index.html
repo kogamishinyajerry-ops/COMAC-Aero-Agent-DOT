@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="可追溯的航空电推进供电与热管理交互研究示范。合成参数、确定性求解、真实计算轨迹。">
+  <title>航空电热实验室 · Power / Thermal Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#" aria-label="航空电热实验室首页"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 23 15 5l13 22-12-5-12 1Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m15 5 1 17 12 5M4 23l12-1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span>航空电热实验室<small>POWER / THERMAL LAB</small></span></a>
+    <nav class="top-nav" aria-label="工作空间"><button class="nav-tab active" data-view="control" aria-current="page">在线控制 <span>01</span></button><button class="nav-tab" data-view="design">离线选型 <span>02</span></button></nav>
+    <div class="header-meta"><span class="status-dot"></span> 研究示范 <span class="version">SYNTHETIC MODEL</span></div>
+  </header>
+
+  <main class="app-layout">
+    <aside class="configuration">
+      <div class="section-label">实验输入 <span>CONFIGURATION</span></div>
+      <h2>一次故障，<br>不止一个取舍。</h2>
+      <p class="sidebar-intro">改变工况，亲自看看系统怎样保住关键负载，又付出了什么代价。</p>
+      <div class="input-group"><label for="scenario">任务场景 <span>SCENARIO</span></label><select id="scenario" disabled><option>正在读取场景…</option></select><p id="scenario-description" class="input-help">正在连接本地计算服务</p></div>
+      <div class="input-group"><label for="ambient">环境温度 <output id="ambient-output" for="ambient">— °C</output></label><input type="range" id="ambient" min="15" max="50" step="1" value="30" disabled><div class="range-labels"><span id="ambient-min">15 °C</span><span id="ambient-max">50 °C</span></div><p class="input-help">空气越热，推进通道越难散热</p></div>
+      <div class="input-group"><label for="design">系统方案 <span>ARCHITECTURE</span></label><select id="design" disabled><option>正在读取方案…</option></select><p id="design-description" class="input-help"></p></div>
+      <fieldset class="policy-field"><legend>控制策略 <span>CONTROL POLICY</span></legend><label class="policy-option"><input type="radio" name="policy" value="baseline"><span class="radio-mark"></span><span><strong>固定规则</strong><small>Baseline · 响应当前状态</small></span></label><label class="policy-option selected"><input type="radio" name="policy" value="planner" checked><span class="radio-mark"></span><span><strong>受约束规划器</strong><small>Deterministic planner</small></span></label><p class="input-help policy-help">在有限动作集中确定性搜索，不调用 LLM</p></fieldset>
+      <button id="run-button" class="button primary" disabled><span aria-hidden="true">▷</span> 重新计算当前策略</button>
+      <button id="compare-button" class="button secondary" disabled><span aria-hidden="true">⇄</span> 公平比较两种策略</button>
+      <div id="input-dirty" class="dirty-notice" hidden>输入已更改，图表仍显示上次结果</div>
+      <div class="sidebar-footer"><span class="tiny-label">计算边界</span><p>只操作仿真。全部参数为教学合成参数，不复现真实 X-57，不用于飞行、工程设计或适航判断。</p><button id="model-details-link" class="text-button">查看模型与证据 <span>↗</span></button></div>
+    </aside>
+
+    <section class="workspace">
+      <div id="error-banner" class="error-banner" role="alert" hidden></div>
+      <div class="workspace-heading"><div><div class="eyebrow">从故障响应，到有证据的取舍</div><h1 id="workspace-title">供得上电，也要散得了热。</h1><p id="workspace-subtitle">同一任务、同一模型。看清控制动作如何改变系统结果。</p></div><button id="export-button" class="icon-button" disabled title="下载当前计算的完整 JSON 证据">↓ <span>导出证据</span></button></div>
+      <div class="evidence-bar"><div class="evidence-status"><span id="provenance" class="badge neutral">等待计算</span><span id="evidence-caption">每个数值与曲线均来自求解器输出</span></div><span id="run-meta" class="mono">—</span></div>
+
+      <div id="control-view">
+        <section class="outcome-banner" id="outcome-banner" aria-live="polite"><span class="outcome-icon" id="outcome-icon">○</span><div><h2 id="outcome-title">先建立证据，再讨论结果</h2><p id="outcome-summary">选择任务场景并计算。约束是否满足，会与性能收益分开显示。</p></div><div class="outcome-tag" id="outcome-tag">NO RUN YET</div></section>
+        <div class="metrics-grid" id="metrics-grid">
+          <article class="metric"><div class="metric-label">关键负载保障 <span class="metric-dot cyan"></span></div><div class="metric-value" id="metric-service">— <small>%</small></div><div class="metric-detail" id="metric-service-note">全任务最低保障率</div></article>
+          <article class="metric"><div class="metric-label">最高通道温度 <span class="metric-dot amber"></span></div><div class="metric-value" id="metric-temperature">— <small>°C</small></div><div class="metric-detail" id="metric-temperature-note">电机 + 控制器合成热节点</div></article>
+          <article class="metric"><div class="metric-label">任务能量消耗 <span class="metric-dot violet"></span></div><div class="metric-value" id="metric-energy">— <small>kWh</small></div><div class="metric-detail" id="metric-energy-note">含推进、辅助与冷却</div></article>
+          <article class="metric"><div class="metric-label">决策记录数 <span class="metric-dot gray"></span></div><div class="metric-value" id="metric-actions">— <small>次</small></div><div class="metric-detail" id="metric-actions-note">求解器返回的决策记录</div></article>
+        </div>
+
+        <div class="analysis-grid">
+          <section class="panel architecture-panel">
+            <div class="panel-heading"><div><span class="section-index">01 /</span><h2>此刻，能量流向哪里？</h2></div><span id="phase-pill" class="pill">等待任务</span></div>
+            <div class="system-legend"><span><i class="legend-line cyan"></i>电能通路</span><span><i class="legend-line amber"></i>故障 / 受限</span><span><i class="legend-line dashed"></i>简化热管理</span></div>
+            <div class="system-stage">
+              <svg id="system-diagram" viewBox="0 0 720 338" role="img" aria-labelledby="diagram-title diagram-description">
+                <title id="diagram-title">双电源交叉馈电架构</title><desc id="diagram-description">电源 A 与 B 均通过各自馈电通道连接左、右两个推进电机；热管理为简化合成风扇冷却。</desc>
+                <defs><marker id="arrow-cyan" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#6cddd6"/></marker><marker id="arrow-muted" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5" fill="#477775"/></marker></defs>
+                <g class="routing"><path id="route-a" class="power-route route-a" d="M188 88H250V116H508M350 116V216H508"/><path id="route-b" class="power-route route-b" d="M188 216H280V188H508M410 188V88H508"/><circle cx="350" cy="116" r="4" fill="#6cddd6"/><circle cx="410" cy="188" r="4" fill="#6cddd6"/><path class="thermal-route" d="M128 255V297H542V255M334 297V276"/></g>
+                <g class="system-node source-node" id="source-a-node"><rect x="36" y="48" width="152" height="90" rx="9"/><rect class="node-icon" x="52" y="65" width="15" height="9" rx="1.5"/><path d="M67 68h3M56 68v3M60 68v3" class="icon-stroke"/><text x="80" y="73" class="node-title">电源 A</text><text id="source-a-power" x="52" y="106" class="node-value">— kW</text><text id="source-a-meta" x="52" y="124" class="node-detail">— V · SOC —%</text></g>
+                <g class="system-node source-node" id="source-b-node"><rect x="36" y="176" width="152" height="90" rx="9"/><rect class="node-icon" x="52" y="193" width="15" height="9" rx="1.5"/><path d="M67 196h3M56 196v3M60 196v3" class="icon-stroke"/><text x="80" y="201" class="node-title">电源 B</text><text id="source-b-power" x="52" y="234" class="node-value">— kW</text><text id="source-b-meta" x="52" y="252" class="node-detail">— V · SOC —%</text></g>
+                <g class="channel-label"><rect x="265" y="65" width="107" height="25" rx="4"/><text x="318.5" y="82" text-anchor="middle">A 馈电通道</text><rect x="292" y="208" width="107" height="25" rx="4"/><text x="345.5" y="225" text-anchor="middle">B 馈电通道</text></g>
+                <g class="system-node motor-node" id="motor-left-node"><rect x="508" y="48" width="176" height="90" rx="9"/><circle class="node-icon" cx="531" cy="70" r="8"/><path d="m526 70 4-4 2 8 4-4" class="icon-stroke"/><text x="549" y="74" class="node-title">左推进电机</text><text id="motor-left-power" x="524" y="106" class="node-value">— kW</text><text id="motor-left-meta" x="524" y="124" class="node-detail">热节点 — °C</text></g>
+                <g class="system-node motor-node" id="motor-right-node"><rect x="508" y="176" width="176" height="90" rx="9"/><circle class="node-icon" cx="531" cy="198" r="8"/><path d="m526 198 4-4 2 8 4-4" class="icon-stroke"/><text x="549" y="202" class="node-title">右推进电机</text><text id="motor-right-power" x="524" y="234" class="node-value">— kW</text><text id="motor-right-meta" x="524" y="252" class="node-detail">热节点 — °C</text></g>
+                <g class="cooling-label"><rect x="267" y="256" width="134" height="40" rx="7"/><text x="334" y="272" text-anchor="middle">合成风扇冷却</text><text id="cooling-meta" x="334" y="287" text-anchor="middle" class="node-detail">— kW</text></g>
+                <text x="360" y="329" text-anchor="middle" class="diagram-footnote">A、B 均可向左右电机供电 · 不是一电源对应一电机</text>
+              </svg>
+            </div>
+            <div class="instant-metrics"><div><span>最低有载母线电压</span><strong id="instant-voltage">— <small>V</small></strong></div><div><span>最大支路电流</span><strong id="instant-current">— <small>A</small></strong></div><div><span>辅助负载供给</span><strong id="instant-aux">— <small>kW</small></strong></div></div>
+            <div class="timeline"><div class="timeline-top"><button id="play-button" class="play-button" disabled aria-label="播放轨迹">▷</button><span id="current-time" class="mono">00:00</span><span class="timeline-instruction">拖动时间轴，回看系统状态</span><span id="duration" class="mono">—</span></div><input id="time-scrubber" type="range" min="0" max="0" value="0" step="1" disabled aria-label="轨迹时间点"><div class="phase-track" id="phase-track"></div></div>
+          </section>
+
+          <section class="panel trace-panel"><div class="panel-heading"><div><span class="section-index">02 /</span><h2>约束正在被逼近吗？</h2></div><span class="tiny-label">全任务轨迹</span></div><div class="chart-tabs" role="group" aria-label="图表指标"><button data-chart="thermal" class="active">温度</button><button data-chart="power">功率</button><button data-chart="electrical">电气</button><button data-chart="energy">能量</button></div><div id="chart-legend" class="chart-legend"></div><div id="trace-chart" class="trace-chart"><div class="empty-state">计算后将显示真实时序曲线<br><span>不会使用装饰性模拟数据</span></div></div><div class="chart-note" id="chart-note">阴影与虚线表示模型中的约束边界</div><div id="constraint-list" class="constraint-list"><div class="empty-state small">等待约束检查</div></div></section>
+        </div>
+
+        <section class="panel comparison-panel"><div class="panel-heading"><div><span class="section-index">03 /</span><h2>保住了什么，付出了什么？</h2></div><span class="tiny-label">同输入 · 同模型 · 同时间步长</span></div><div id="comparison-content" class="comparison-content"><div class="comparison-placeholder"><span>⇄</span><div><h3>收益需要一个公平的参照</h3><p>点击「公平比较两种策略」，并列检查约束、关键负载与能量代价。</p></div></div></div></section>
+
+        <div class="bottom-grid"><section class="panel action-panel"><div class="panel-heading"><div><span class="section-index">04 /</span><h2>动作为什么发生？</h2></div><span id="action-count" class="tiny-label">EVENT LOG</span></div><div id="action-log" class="action-log"><div class="empty-state small">尚无动作记录</div></div></section><section class="panel explanation-panel"><div class="panel-heading"><div><span class="section-index">05 /</span><h2>读懂这次实验</h2></div></div><div class="explanation-step"><span>1</span><div><h3>供电只是第一道题</h3><p>电流、母线电压、可用储能、指令供电与通道温度共同限制可用功率。</p></div></div><div class="explanation-step"><span>2</span><div><h3>动作有收益，也有成本</h3><p>冷却消耗电力，推进缺供意味着任务没做完。先查硬约束，再比较目标指标。</p></div></div><div class="explanation-step"><span>3</span><div><h3>规划不等于保证可行</h3><p>故障或环境足够严苛时，有限动作集也可能无解。失败会保留在结果中。</p></div></div><details><summary>规划器究竟做了什么？</summary><p id="planner-explanation">确定性规划器在合法动作集合内进行有限范围预测与筛选，再交给同一个物理模型推进状态。它不是 LLM 智能体，也不表示已完成陌生任务泛化验证。</p></details></section></div>
+      </div>
+
+      <div id="design-view" hidden><section class="panel design-intro"><div><div class="eyebrow">设计参数改变，物理代价随之改变</div><h2>更轻，还是更有余量？</h2><p>对同一任务枚举系统方案，用同一个规划器重新计算。先排除约束不满足的方案，再看质量与任务收益的取舍。</p></div><button id="sweep-button" class="button primary" disabled>计算方案对比 <span>↗</span></button></section><div id="sweep-content"><div class="panel empty-state">尚未进行选型计算<br><span>质量是公开说明的教学代理模型，不代表真实装机质量</span></div></div></div>
+
+      <section class="model-evidence panel" id="model-evidence"><details><summary><span class="section-index">证据层 /</span> 模型、假设与复现信息 <span class="summary-hint">展开查看</span></summary><div class="model-grid"><div><h3>这是什么</h3><p>面向工程推理的合成电推进系统：双电源交叉馈电，任务阶段负载、简化电池电气模型与集总热模型。当前风扇是合成的强制风冷替代方案，NASA 参考热设计采用被动冷却；不能将这里的风扇结果归因于 X-57。所有展示结果由当前模型计算或由其保存结果回放。</p></div><div><h3>这不代表什么</h3><p>不是 NASA X-57 数字孪生，不是 OEM 设计。不包含电磁瞬态、飞行动力学、真实电池老化、详细热流场或适航验证。</p></div><div><h3>如何检查结果</h3><p>导出 JSON，检查输入、模型版本、每个时间步、控制动作与约束报告。相同版本和输入应得到相同结果。</p></div></div><pre id="evidence-details">尚未加载模型信息</pre></details></section>
+      <footer class="workspace-footer"><span>原创研究与教育用途 · SYNTHETIC / DETERMINISTIC / TRACEABLE</span><span>先看约束，再谈优化。</span></footer>
+    </section>
+  </main>
+  <div id="loading-overlay" class="loading-overlay" hidden><div class="loading-card" role="status" aria-live="polite"><div class="spinner"></div><h2 id="loading-title">正在调用求解器</h2><p id="loading-description">每条曲线都来自实际计算，请稍候</p></div></div>
+</body>
+</html>

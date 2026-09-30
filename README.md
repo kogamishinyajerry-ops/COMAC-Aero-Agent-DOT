@@ -14,7 +14,51 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 
 ## 当前状态
 
-仅完成任务说明初始化。尚无已验证模型、可运行仿真、实际评测结果或已连接的本地开发设备。以下为实施与验收目标，不是完成声明。
+首个可运行的确定性样板已实现：6 个任务/故障场景、热感知固定规则、18 候选有界预测搜索、双电源与低压指令依赖、热保护、4 种离线硬件方案、中文交互回放与实时计算界面、可复现证据与自动化测试。
+
+所有数值均来自本仓库求解器和明确标注的合成参数。**没有接入大模型，没有完成真实 X-57 校准，没有通过封存泛化或适航验收。** 规划器不保证更好；公开结果保留它落后于固定规则的案例。当前已在云端 Linux / Python 3.12 验证，本地 Mac、Windows 与跨版本兼容性仍需独立复核。
+
+### 5 分钟运行
+
+仅需 Python 3.10+ 和浏览器。无第三方 Python/Node 依赖、付费 API、密钥或模型下载。
+
+```bash
+git clone https://github.com/kogamishinyajerry-ops/COMAC-Aero-Agent-DOT.git
+cd COMAC-Aero-Agent-DOT
+git checkout feat/thermal-mission-demonstrator
+python3 -m unittest discover -s tests -v
+python3 -m aerolab serve
+```
+
+打开 http://127.0.0.1:8765 。Windows 可将 `python3` 换为 `py -3`。初次显示的是带模型指纹的真实求解结果**回放**；点击计算后显示**本次计算**。服务只监听本机回环地址，不是云端公开部署。停止使用 Ctrl+C。
+
+### 可以直接试的内容
+
+1. 正常/热天任务：两种策略都可以满足需求，比较热裕度与风扇能耗
+2. 单侧冷却衰减：保护器避免热越界，但不能凭空保证任务功率；查看规划器失败反例
+3. 电源隔离 + 冷却衰减：有储能但失去连接、功率不足、热约束可能同时出现
+4. 主低压失效 + 后备衰减：牵引电池还有电，也可能失去推进指令
+5. 离线硬件取舍：同样增重 20 kg，分配给牵引电量、散热或低压后备会带来不同后果；在线控制不会改质量
+
+### 命令行与证据
+
+```bash
+python3 -m aerolab compare --scenario cooling_fault
+python3 -m aerolab run --scenario hot_day --policy planner --ambient 42 --output output/hot_day.json
+python3 -m aerolab sweep --scenario command_loss --output output/sweep.json
+python3 scripts/generate_evidence.py
+```
+
+- [模型、全部假设与方程](docs/MODEL.md)
+- [已核查公开来源与许可边界](docs/SOURCES.md)
+- [求解器生成的结果与反例](docs/RESULTS.md)
+- [非专家演示顺序与专家证据层](docs/demo-storyboard.md)
+- `examples/reference_compare.json.gz.b64`：无损 gzip + Base64 保存的完整双策略轨迹，应用自动解码，包含输入与模型 SHA-256；用 `python3 -m aerolab export-demo --output output/reference_compare.json` 可导出普通 JSON
+- `tests/`：部件、守恒、限值、故障、公平输入、确定性、时步、API 与参考结果检查
+
+### 当前限制
+
+没有气动/飞行动力学或瞬态电磁模型；热容/热导与风扇为合成参数；热节点不是器件热点。NASA 参考热分析为被动空气冷却，本演示的可控强制风冷是明确的替代设计。两路馈电以可达的汇总功率抽象，未实现真实开关/绕组/接触器保护。不得拿展示结果做真实飞机设计或运行决策。
 
 ## 候选系统与旗舰复杂度
 
@@ -75,10 +119,10 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 
 ## 紧接着做什么
 
-1. 核查候选公开资料，确定可用范围、许可和参考价值
-2. 固定需求、系统边界、单位、假设及基线验收测试
-3. 在可用执行环境中实现不依赖大模型的确定性仿真
-4. 基线通过后接入智能体，再扩展综合约束与演示
+1. 独立复核模型参数范围、热瞬态及拓扑近似；不要把软件通过当作物理有效
+2. 在 Mac / Windows 按同一提交和配置复现；记录差异和未运行项
+3. 用受约束工具适配层接入实际模型智能体，验证其真实调用与解释忠实性
+4. 冻结开发版本后另建封存任务，验证泛化，而不是把公开场景当成未见测试
 
 优先复用成熟 Harness。自定义开发聚焦状态、合法动作、仿真、记录回放和评测接口，不先建设通用代理平台。
 
