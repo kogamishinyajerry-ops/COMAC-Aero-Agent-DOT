@@ -64,14 +64,14 @@ def main():
                     expect(page.locator('#guide-compute-lv')).to_be_visible()
                     page.locator('#guide-compute-lv').click()
                     expect(page.locator('#guide-provenance')).to_contain_text('本次', timeout=120000)
-                    evidence = json.loads(page.locator('#guide-evidence-json').inner_text())
+                    evidence = json.loads(page.locator('#guide-evidence-json').text_content())
                     assert 'command_loss' in json.dumps(evidence)
                     assert 'input_hash' in json.dumps(evidence)
                 elif step == 5:
                     expect(page.locator('#guide-compute-sweep')).to_be_visible()
                     page.locator('#guide-compute-sweep').click()
                     expect(page.locator('#guide-provenance')).to_contain_text('本次', timeout=120000)
-                    evidence = json.loads(page.locator('#guide-evidence-json').inner_text())
+                    evidence = json.loads(page.locator('#guide-evidence-json').text_content())
                     assert 'command_loss' in json.dumps(evidence)
                     assert 'results' in evidence
                     assert len(evidence['results']) == 4
