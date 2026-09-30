@@ -25,7 +25,7 @@ L3 指智能体应用；L4 指样板泛化共享。这是项目组织方式，�
 ```bash
 git clone https://github.com/kogamishinyajerry-ops/COMAC-Aero-Agent-DOT.git
 cd COMAC-Aero-Agent-DOT
-git checkout feat/x57-refined-engineering-demo
+git checkout feat/x57-physics-validation-campaign
 python3 -m unittest discover -s tests -v
 python3 -m aerolab serve
 ```
@@ -47,6 +47,8 @@ python3 -m aerolab serve
 点击短舱页的「六步设计讲解」，依次看源装配、满负荷可信度、明确的 0.25×损耗教学基线、热天扰动、加鳍片反例，以及减鳍片/扩排气的候选取舍。温度、质量、被动压损功率与失败角点均来自本次求解；可以导出完整证据，返回后保留原工作台状态。见 [完整推演与重现](docs/NACELLE_STORY.md)。新增版本的跨平台/浏览器通过状态只以其对应提交 CI 为准。
 
 ### 可以直接试的内容
+
+新增独立的[物理证据页](docs/PHYSICS_LAB.md)：运行服务后打开 `http://127.0.0.1:8765/physics`，按三步检查公开流量与截面差异、历史窄散热通道的换热/阻力取舍，以及实际有限体积求解的双壁热耦合。数值子问题有解析解和网格收敛检查，但不将其冒充满负荷短舱验证。原短舱 CAD、降阶模型和既有证据保持独立；新页面浏览器验收以对应提交的 CI 为准。
 
 1. 正常/热天任务：两种策略都可以满足需求，比较热裕度与风扇能耗
 2. 单侧冷却衰减：保护器避免热越界，但不能凭空保证任务功率；查看规划器失败反例

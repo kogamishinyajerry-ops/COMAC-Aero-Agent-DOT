@@ -25,6 +25,9 @@ jobs:
       - run: python -m aerolab benchmark --output output/benchmark.json
       - run: python scripts/generate_nacelle_evidence.py --check
       - run: python scripts/generate_nacelle_credibility.py --check
+      - run: python scripts/generate_source_audit.py --check
+      - run: python scripts/generate_duct_verification.py --check
+      - run: python scripts/generate_historical_motor.py --check
   browser-smoke:
     runs-on: ubuntu-latest
     steps:
@@ -38,6 +41,7 @@ jobs:
       - run: python tests/ui_smoke.py
       - run: python tests/ui_cad_smoke.py
       - run: python tests/ui_nacelle_smoke.py
+      - run: python tests/ui_physics_smoke.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

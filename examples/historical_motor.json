@@ -1,0 +1,1232 @@
+{
+  "schema": "aerolab-historical-motor-benchmark-v1",
+  "model_id": "x57-2019-historical-motor-unit-cell-v1",
+  "source_code_sha256": "09baffcbbcf38d1a211d9980c4de967665929ae00cdec5a34166ed705d2d7df4",
+  "experimental_validation": false,
+  "calibration_performed": false,
+  "modifies_final2023_rom": false,
+  "applicability": [
+    "Dated 2019 narrow motor heat-sink channel/material component subcase; not final2023 geometry or an aircraft temperature prediction.",
+    "No source-defined channel count, fin thickness, heated-wall allocation, contact geometry or solid volume; no full-motor transient or hotspot is inferred.",
+    "The rectangular hydraulic diameter is source-defined. Two-, three- and four-wall heating are explicit idealizations, not recovered NASA boundary conditions.",
+    "Smooth developed-flow friction/Gnielinski with hydraulic diameter is unvalidated for the noncircular real channels; source 12-40m/s and Re3000-10000 are uncertain estimates.",
+    "The 12m/s point falls slightly below Re3000 with our declared constants and is retained only as flagged extrapolation; transition-sensitive points are not smoothed or fitted.",
+    "Friction-only pressure excludes entrance/exit, turning, contraction, roughness and rotating flow. Fin corrections omit contact, spreading, end faces, curvature and axial solid conduction.",
+    "Finite air capacity is included analytically. The +1K response and fin-thickness sweep establish equation scales, not actual motor temperatures or an optimization."
+  ],
+  "sources": {
+    "historical_nasa": "https://ntrs.nasa.gov/api/citations/20190032520/downloads/20190032520.pdf",
+    "nomex_manufacturer_authored_distributor_copy": "https://pronatindustries.com/wp-content/uploads/2014/07/Nomex_Tape410_technicaldatasheet.pdf",
+    "smooth_friction_reference": "https://www.osti.gov/servlets/purl/2375525"
+  },
+  "source_access_notes": {
+    "nomex": "Manufacturer-authored primary datasheet, distributor-hosted historical copy, p6 TableIV visually checked; current official URL redirected",
+    "nomex_pdf_sha256": "ddd32f71661ac495062c76f91fa6aa2b3be9772ae0f4e82e9310191bcada5533",
+    "historical_date": "2019 NTRS archive record; not evidence of final2023 hardware configuration"
+  },
+  "geometry": {
+    "source_location": "2019 paper p4 Eq(1); Fig4 p5 only establishes qualitative fin-pack topology",
+    "source_dimensions_m": {
+      "a": 0.002,
+      "b": 0.017,
+      "length": 0.105
+    },
+    "flow_area_m2": 3.4000000000000007e-05,
+    "wetted_perimeter_m": 0.038000000000000006,
+    "hydraulic_diameter_m": 0.0035789473684210526,
+    "source_rounded_hydraulic_diameter_m": 0.00358,
+    "aspect_ratio_small_over_large": 0.11764705882352941,
+    "length_to_hydraulic_diameter": 29.338235294117645,
+    "all_wetted_area_m2": 0.0039900000000000005,
+    "heating_hypotheses_m2": {
+      "two_long_side_walls": 0.0035700000000000003,
+      "three_walls_two_sides_plus_base": 0.0037800000000000004,
+      "all_four_walls": 0.0039900000000000005
+    },
+    "base_area_m2": 0.00021,
+    "fin_side_area_per_cell_m2": 0.0035700000000000003,
+    "heated_perimeter_source_defined": false,
+    "actual_fin_count_known": false,
+    "actual_fin_thickness_known": false
+  },
+  "air_assumptions": {
+    "density_kg_m3": 1.225,
+    "viscosity_pa_s": 1.7894e-05,
+    "conductivity_w_m_k": 0.0257,
+    "specific_heat_j_kg_k": 1006.0,
+    "status": "Frozen representative near-room-temperature constants; NASA test-air properties were not tabulated",
+    "source_reported_velocity_range_m_s": [
+      12,
+      40
+    ],
+    "source_reported_reynolds_range": [
+      3000,
+      10000
+    ]
+  },
+  "fin_assumptions": {
+    "conductivity_w_m_k": 201.0,
+    "height_m": 0.017,
+    "thickness_scenarios_m": [
+      0.0005,
+      0.001,
+      0.002
+    ],
+    "open_flow_area_held_fixed": true,
+    "not_fixed_envelope_design_sweep": true,
+    "status": "17mm dimension interpreted as fin height; thicknesses are unfitted illustrative sensitivities, not recovered dimensions",
+    "boundary": "isothermal base; two-side thin straight-fin conduction; insulated tips; no top-wall heating; base area aL"
+  },
+  "velocity_sweep": [
+    {
+      "transport": {
+        "velocity_m_s": 12.0,
+        "reynolds": 2940.12106380851,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.045870464056058206,
+        "nusselt": 9.778952706770527,
+        "h_w_m2_k": 70.22150892229483,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 118.69589683588156,
+        "hydraulic_dissipation_w": 0.04842792590903968,
+        "mass_flow_kg_s": 0.0004998000000000001,
+        "air_capacity_w_k": 0.5027988000000001,
+        "isothermal_wall_ua_w_k": 0.25069078685259255,
+        "inside_nominal_gnielinski_re_pr_range": false,
+        "transition_sensitive": true,
+        "correlation_status": "extrapolation_not_validated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.25069078685259255,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.392613931313416,
+            "ntu": 0.49859066261214724,
+            "effectiveness": 0.3926139313134168,
+            "heat_w": 0.19740581352766845,
+            "effective_inlet_to_wall_conductance_w_k": 0.19740581352766845,
+            "air_enthalpy_gain_w": 0.19740581352766828,
+            "energy_balance_residual_w": 1.6653345369377348e-16,
+            "integrated_local_convection_w": 0.19740578232749562,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.5805093212124362e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.2654373037262745,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.41016917773165,
+            "ntu": 0.5279195251187442,
+            "effectiveness": 0.41016917773164835,
+            "heat_w": 0.20623257036045956,
+            "effective_inlet_to_wall_conductance_w_k": 0.20623257036045956,
+            "air_enthalpy_gain_w": 0.2062325703604602,
+            "energy_balance_residual_w": -6.38378239159465e-16,
+            "integrated_local_convection_w": 0.20623253381768844,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.7719204610006225e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.2801838205999564,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.427217025820063,
+            "ntu": 0.557248387625341,
+            "effectiveness": 0.42721702582006427,
+            "heat_w": 0.21480420792189736,
+            "effective_inlet_to_wall_conductance_w_k": 0.21480420792189736,
+            "air_enthalpy_gain_w": 0.2148042079218968,
+            "energy_balance_residual_w": 5.551115123125783e-16,
+            "integrated_local_convection_w": 0.21480416551376044,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.9742693743794335e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.884071827348842,
+          "cross_thickness_biot": 8.734018522673486e-05,
+          "effective_heated_area_m2": 0.0033661364236353664,
+          "ua_w_k": 0.23637517890597248,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.37507199051323,
+            "ntu": 0.4701188207011879,
+            "effectiveness": 0.3750719905132321,
+            "heat_w": 0.18858574674366452,
+            "effective_inlet_to_wall_conductance_w_k": 0.18858574674366452,
+            "air_enthalpy_gain_w": 0.18858574674366382,
+            "energy_balance_residual_w": 6.938893903907228e-16,
+            "integrated_local_convection_w": 0.18858572024445452,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.4051544430343246e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9377158630440665,
+          "cross_thickness_biot": 0.00017468037045346971,
+          "effective_heated_area_m2": 0.0035576456310673177,
+          "ua_w_k": 0.24982324442435688,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.39156502658504,
+            "ntu": 0.49686523600365956,
+            "effectiveness": 0.39156502658504044,
+            "heat_w": 0.19687842548892648,
+            "effective_inlet_to_wall_conductance_w_k": 0.19687842548892648,
+            "air_enthalpy_gain_w": 0.1968784254889271,
+            "energy_balance_residual_w": -6.106226635438361e-16,
+            "integrated_local_convection_w": 0.19687839458710135,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.5695892045971464e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9676507500648678,
+          "cross_thickness_biot": 0.00034936074090693943,
+          "effective_heated_area_m2": 0.0036645131777315785,
+          "ua_w_k": 0.257327644805945,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.400578641234635,
+            "ntu": 0.5117904911585807,
+            "effectiveness": 0.40057864123463294,
+            "heat_w": 0.201410460118404,
+            "effective_inlet_to_wall_conductance_w_k": 0.201410460118404,
+            "air_enthalpy_gain_w": 0.20141046011840483,
+            "energy_balance_residual_w": -8.326672684688674e-16,
+            "integrated_local_convection_w": 0.2014104265774644,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.6653027634007872e-07
+          }
+        }
+      ]
+    },
+    {
+      "transport": {
+        "velocity_m_s": 16.0,
+        "reynolds": 3920.1614184113473,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.04171106302944752,
+        "nusselt": 13.227510405295094,
+        "h_w_m2_k": 94.98519604272933,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 191.88070430323026,
+        "hydraulic_dissipation_w": 0.10438310314095728,
+        "mass_flow_kg_s": 0.0006664000000000002,
+        "air_capacity_w_k": 0.6703984000000002,
+        "isothermal_wall_ua_w_k": 0.33909714987254375,
+        "inside_nominal_gnielinski_re_pr_range": true,
+        "transition_sensitive": true,
+        "correlation_status": "nominal_range_but_geometry_unvalidated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.33909714987254375,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.39698570631268,
+            "ntu": 0.5058143782451504,
+            "effectiveness": 0.3969857063126817,
+            "heat_w": 0.2661385823348918,
+            "effective_inlet_to_wall_conductance_w_k": 0.2661385823348918,
+            "air_enthalpy_gain_w": 0.2661385823348908,
+            "energy_balance_residual_w": 9.992007221626409e-16,
+            "integrated_local_convection_w": 0.26613853904375817,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.6266387700172491e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.3590440410415169,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.414663372252466,
+            "ntu": 0.5355681652007475,
+            "effectiveness": 0.41466337225246513,
+            "heat_w": 0.2779896612966571,
+            "effective_inlet_to_wall_conductance_w_k": 0.2779896612966571,
+            "air_enthalpy_gain_w": 0.2779896612966578,
+            "energy_balance_residual_w": -7.216449660063518e-16,
+            "integrated_local_convection_w": 0.2779896106014473,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.82363651840015e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.3789909322104901,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.431822808564277,
+            "ntu": 0.5653219521563446,
+            "effectiveness": 0.43182280856427796,
+            "heat_w": 0.28949331994499833,
+            "effective_inlet_to_wall_conductance_w_k": 0.28949331994499833,
+            "air_enthalpy_gain_w": 0.28949331994499783,
+            "energy_balance_residual_w": 4.996003610813204e-16,
+            "integrated_local_convection_w": 0.28949326112310314,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 2.0318912781544404e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.8504921307063504,
+          "cross_thickness_biot": 0.00011814079109792205,
+          "effective_heated_area_m2": 0.0032462569066216713,
+          "ua_w_k": 0.3083463486805235,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.368681592060643,
+            "ntu": 0.45994493525122293,
+            "effectiveness": 0.3686815920606436,
+            "heat_w": 0.24716354942690824,
+            "effective_inlet_to_wall_conductance_w_k": 0.24716354942690824,
+            "air_enthalpy_gain_w": 0.24716354942690769,
+            "energy_balance_residual_w": 5.551115123125783e-16,
+            "integrated_local_convection_w": 0.24716351618354981,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.3449943773755456e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9179101614964106,
+          "cross_thickness_biot": 0.0002362815821958441,
+          "effective_heated_area_m2": 0.003486939276542186,
+          "ua_w_k": 0.33120761077145233,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.38984725076378,
+            "ntu": 0.49404594457780965,
+            "effectiveness": 0.38984725076378013,
+            "heat_w": 0.261352973156437,
+            "effective_inlet_to_wall_conductance_w_k": 0.261352973156437,
+            "air_enthalpy_gain_w": 0.26135297315643635,
+            "energy_balance_residual_w": 6.661338147750939e-16,
+            "integrated_local_convection_w": 0.26135293259896264,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.55182754912244e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9568330291392009,
+          "cross_thickness_biot": 0.0004725631643916882,
+          "effective_heated_area_m2": 0.0036258939140269473,
+          "ua_w_k": 0.34440624425398875,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.401742305546424,
+            "ntu": 0.5137336906740658,
+            "effectiveness": 0.4017423055464251,
+            "heat_w": 0.26932739885063456,
+            "effective_inlet_to_wall_conductance_w_k": 0.26932739885063456,
+            "air_enthalpy_gain_w": 0.269327398850634,
+            "energy_balance_residual_w": 5.551115123125783e-16,
+            "integrated_local_convection_w": 0.26932735365823424,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.6779726279179113e-07
+          }
+        }
+      ]
+    },
+    {
+      "transport": {
+        "velocity_m_s": 20.0,
+        "reynolds": 4900.201773014183,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.03886237565224815,
+        "nusselt": 16.323913535579027,
+        "h_w_m2_k": 117.22010263857705,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 279.337612638641,
+        "hydraulic_dissipation_w": 0.18994957659427594,
+        "mass_flow_kg_s": 0.0008330000000000002,
+        "air_capacity_w_k": 0.8379980000000002,
+        "isothermal_wall_ua_w_k": 0.41847576641972006,
+        "inside_nominal_gnielinski_re_pr_range": true,
+        "transition_sensitive": false,
+        "correlation_status": "nominal_range_but_geometry_unvalidated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.41847576641972006,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.393090513242633,
+            "ntu": 0.49937561476246956,
+            "effectiveness": 0.3930905132426326,
+            "heat_w": 0.32940906391629976,
+            "effective_inlet_to_wall_conductance_w_k": 0.32940906391629976,
+            "air_enthalpy_gain_w": 0.32940906391630026,
+            "energy_balance_residual_w": -4.996003610813204e-16,
+            "integrated_local_convection_w": 0.32940901168882986,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.5854897641092095e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.44309198797382127,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.410659197687018,
+            "ntu": 0.5287506509249678,
+            "effectiveness": 0.4106591976870188,
+            "heat_w": 0.34413158634332647,
+            "effective_inlet_to_wall_conductance_w_k": 0.34413158634332647,
+            "air_enthalpy_gain_w": 0.3441315863433256,
+            "energy_balance_residual_w": 8.881784197001252e-16,
+            "integrated_local_convection_w": 0.34413152517379697,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.7775040689281418e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.46770820952792247,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.42771930765722,
+            "ntu": 0.558125687087466,
+            "effectiveness": 0.42771930765721855,
+            "heat_w": 0.3584279243781339,
+            "effective_inlet_to_wall_conductance_w_k": 0.3584279243781339,
+            "air_enthalpy_gain_w": 0.3584279243781354,
+            "energy_balance_residual_w": -1.4988010832439613e-15,
+            "integrated_local_convection_w": 0.3584278533918198,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.9804906168453893e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.8228907507883344,
+          "cross_thickness_biot": 0.00014579614756041922,
+          "effective_heated_area_m2": 0.003147719980314354,
+          "ua_w_k": 0.3689760591699483,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.356161017117607,
+            "ntu": 0.44030661071977284,
+            "effectiveness": 0.35616101711760567,
+            "heat_w": 0.29846222002251943,
+            "effective_inlet_to_wall_conductance_w_k": 0.29846222002251943,
+            "air_enthalpy_gain_w": 0.29846222002252054,
+            "energy_balance_residual_w": -1.1102230246251565e-15,
+            "integrated_local_convection_w": 0.298462183234317,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.2325915965521543e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9009709630716463,
+          "cross_thickness_biot": 0.00029159229512083843,
+          "effective_heated_area_m2": 0.0034264663381657775,
+          "ua_w_k": 0.40165073584742167,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.38078204790756,
+            "ntu": 0.47929796472953584,
+            "effectiveness": 0.3807820479075576,
+            "heat_w": 0.31909459458243755,
+            "effective_inlet_to_wall_conductance_w_k": 0.31909459458243755,
+            "air_enthalpy_gain_w": 0.3190945945824385,
+            "energy_balance_residual_w": -9.43689570931383e-16,
+            "integrated_local_convection_w": 0.31909454797669834,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.4605618523034815e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9473654742553611,
+          "cross_thickness_biot": 0.0005831845902416769,
+          "effective_heated_area_m2": 0.0035920947430916395,
+          "ua_w_k": 0.42106571447269503,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.394963354840176,
+            "ntu": 0.5024662522735077,
+            "effectiveness": 0.3949633548401751,
+            "heat_w": 0.33097850142935714,
+            "effective_inlet_to_wall_conductance_w_k": 0.33097850142935714,
+            "air_enthalpy_gain_w": 0.3309785014293576,
+            "energy_balance_residual_w": -4.440892098500626e-16,
+            "integrated_local_convection_w": 0.33097844830149253,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.6051756950440124e-07
+          }
+        }
+      ]
+    },
+    {
+      "transport": {
+        "velocity_m_s": 24.0,
+        "reynolds": 5880.24212761702,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.03674600248462012,
+        "nusselt": 19.19152297686541,
+        "h_w_m2_k": 137.81206867063793,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 380.34057948183954,
+        "hydraulic_dissipation_w": 0.3103579128571811,
+        "mass_flow_kg_s": 0.0009996000000000002,
+        "air_capacity_w_k": 1.0055976000000002,
+        "isothermal_wall_ua_w_k": 0.49198908515417744,
+        "inside_nominal_gnielinski_re_pr_range": true,
+        "transition_sensitive": false,
+        "correlation_status": "nominal_range_but_geometry_unvalidated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.49198908515417744,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.386914243731617,
+            "ntu": 0.4892504567972093,
+            "effectiveness": 0.38691424373161537,
+            "heat_w": 0.38908003490232757,
+            "effective_inlet_to_wall_conductance_w_k": 0.38908003490232757,
+            "air_enthalpy_gain_w": 0.3890800349023293,
+            "energy_balance_residual_w": -1.7208456881689926e-15,
+            "integrated_local_convection_w": 0.38907997569026254,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.5218479417420151e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.5209296195750114,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.40430702986476,
+            "ntu": 0.5180298954323392,
+            "effectiveness": 0.4043070298647614,
+            "heat_w": 0.4065701788951325,
+            "effective_inlet_to_wall_conductance_w_k": 0.4065701788951325,
+            "air_enthalpy_gain_w": 0.4065701788951317,
+            "energy_balance_residual_w": 7.771561172376096e-16,
+            "integrated_local_convection_w": 0.4065701095279678,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.7061547619524634e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.5498701539958454,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.4212063956136,
+            "ntu": 0.5468093340674692,
+            "effectiveness": 0.42120639561359685,
+            "heat_w": 0.42356414053368363,
+            "effective_inlet_to_wall_conductance_w_k": 0.42356414053368363,
+            "air_enthalpy_gain_w": 0.4235641405336853,
+            "energy_balance_residual_w": -1.6653345369377348e-15,
+            "integrated_local_convection_w": 0.4235640600144201,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.9009933993236593e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.7992241974573472,
+          "cross_thickness_biot": 0.0001714080456102462,
+          "effective_heated_area_m2": 0.0030632303849227297,
+          "ua_w_k": 0.4221501161609559,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.34282191692955,
+            "ntu": 0.41980024232452007,
+            "effectiveness": 0.34282191692955055,
+            "heat_w": 0.34474089689175547,
+            "effective_inlet_to_wall_conductance_w_k": 0.34474089689175547,
+            "air_enthalpy_gain_w": 0.3447408968917566,
+            "energy_balance_residual_w": -1.1102230246251565e-15,
+            "integrated_local_convection_w": 0.3447408582651121,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.1204543392471524e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.8859474111212354,
+          "cross_thickness_biot": 0.0003428160912204924,
+          "effective_heated_area_m2": 0.003372832257702811,
+          "ua_w_k": 0.4648169907130825,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.370122305542125,
+            "ntu": 0.4622296142244994,
+            "effectiveness": 0.3701223055421249,
+            "heat_w": 0.37219410215962756,
+            "effective_inlet_to_wall_conductance_w_k": 0.37219410215962756,
+            "air_enthalpy_gain_w": 0.3721941021596279,
+            "energy_balance_residual_w": -3.3306690738754696e-16,
+            "integrated_local_convection_w": 0.37219405160117114,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.35838951042139e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9387971137274853,
+          "cross_thickness_biot": 0.0006856321824409848,
+          "effective_heated_area_m2": 0.003561505696007123,
+          "ua_w_k": 0.49081846754900177,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.38620013415807,
+            "ntu": 0.4880863553662038,
+            "effectiveness": 0.38620013415806875,
+            "heat_w": 0.388361928029032,
+            "effective_inlet_to_wall_conductance_w_k": 0.388361928029032,
+            "air_enthalpy_gain_w": 0.38836192802903335,
+            "energy_balance_residual_w": -1.3322676295501878e-15,
+            "integrated_local_convection_w": 0.3883618692071706,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.514614517848524e-07
+          }
+        }
+      ]
+    },
+    {
+      "transport": {
+        "velocity_m_s": 30.0,
+        "reynolds": 7350.302659521275,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.03438298651611843,
+        "nusselt": 23.19806204095241,
+        "h_w_m2_k": 166.58255433230974,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 556.0658018740518,
+        "hydraulic_dissipation_w": 0.5671871179115329,
+        "mass_flow_kg_s": 0.0012495000000000002,
+        "air_capacity_w_k": 1.2569970000000001,
+        "isothermal_wall_ua_w_k": 0.5946997189663458,
+        "inside_nominal_gnielinski_re_pr_range": true,
+        "transition_sensitive": false,
+        "correlation_status": "nominal_range_but_geometry_unvalidated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.5946997189663458,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.376939395426795,
+            "ntu": 0.473111486317267,
+            "effectiveness": 0.37693939542679616,
+            "heat_w": 0.47381168923329653,
+            "effective_inlet_to_wall_conductance_w_k": 0.47381168923329653,
+            "air_enthalpy_gain_w": 0.47381168923329564,
+            "energy_balance_residual_w": 8.881784197001252e-16,
+            "integrated_local_convection_w": 0.4738116218051007,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.4231011462325978e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.6296820553761309,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.394040164854836,
+            "ntu": 0.5009415737476945,
+            "effectiveness": 0.3940401648548376,
+            "heat_w": 0.49530730510203635,
+            "effective_inlet_to_wall_conductance_w_k": 0.49530730510203635,
+            "air_enthalpy_gain_w": 0.4953073051020343,
+            "energy_balance_residual_w": 2.0539125955565396e-15,
+            "integrated_local_convection_w": 0.4953072260782811,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.5954490161500553e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.664664391785916,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.410671579756393,
+            "ntu": 0.528771661178122,
+            "effectiveness": 0.4106715797563939,
+            "heat_w": 0.5162129437390479,
+            "effective_inlet_to_wall_conductance_w_k": 0.5162129437390479,
+            "air_enthalpy_gain_w": 0.5162129437390467,
+            "energy_balance_residual_w": 1.2212453270876722e-15,
+            "integrated_local_convection_w": 0.5162128519746949,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.7776453325735058e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.7688441881810747,
+          "cross_thickness_biot": 0.00020719223175660417,
+          "effective_heated_area_m2": 0.002954773751806437,
+          "ua_w_k": 0.4922137590499785,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.324011425052458,
+            "ntu": 0.39157910404716834,
+            "effectiveness": 0.3240114250524566,
+            "heat_w": 0.40728138925666285,
+            "effective_inlet_to_wall_conductance_w_k": 0.40728138925666285,
+            "air_enthalpy_gain_w": 0.40728138925666424,
+            "energy_balance_residual_w": -1.3877787807814457e-15,
+            "integrated_local_convection_w": 0.40728134955192064,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 9.748724902143966e-08
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.8659516679204041,
+          "cross_thickness_biot": 0.00041438446351320835,
+          "effective_heated_area_m2": 0.003301447454475843,
+          "ua_w_k": 0.5499635499604878,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.3543655279732,
+            "ntu": 0.4375217681191663,
+            "effectiveness": 0.3543655279732013,
+            "heat_w": 0.44543640556573016,
+            "effective_inlet_to_wall_conductance_w_k": 0.44543640556573016,
+            "air_enthalpy_gain_w": 0.4454364055657295,
+            "energy_balance_residual_w": 6.661338147750939e-16,
+            "integrated_local_convection_w": 0.4454363513539298,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.2170491613335467e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9271349360591444,
+          "cross_thickness_biot": 0.0008287689270264167,
+          "effective_heated_area_m2": 0.003519871721731146,
+          "ua_w_k": 0.5863492223280393,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.372786493165346,
+            "ntu": 0.4664682750460337,
+            "effectiveness": 0.3727864931653458,
+            "heat_w": 0.4685915035493602,
+            "effective_inlet_to_wall_conductance_w_k": 0.4685915035493602,
+            "air_enthalpy_gain_w": 0.46859150354936097,
+            "energy_balance_residual_w": -7.771561172376096e-16,
+            "integrated_local_convection_w": 0.4685914387236296,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.3834166874623168e-07
+          }
+        }
+      ]
+    },
+    {
+      "transport": {
+        "velocity_m_s": 40.0,
+        "reynolds": 9800.403546028367,
+        "prandtl": 0.7004421789883268,
+        "darcy_friction_factor": 0.03165848136813895,
+        "nusselt": 29.347654995198717,
+        "h_w_m2_k": 210.74205785522844,
+        "hydraulic_diameter_m": 0.0035789473684210526,
+        "heated_area_m2": 0.0035700000000000003,
+        "length_to_hydraulic_diameter": 29.338235294117645,
+        "friction_pressure_drop_pa": 910.227895924242,
+        "hydraulic_dissipation_w": 1.2379099384569694,
+        "mass_flow_kg_s": 0.0016660000000000004,
+        "air_capacity_w_k": 1.6759960000000005,
+        "isothermal_wall_ua_w_k": 0.7523491465431655,
+        "inside_nominal_gnielinski_re_pr_range": true,
+        "transition_sensitive": false,
+        "correlation_status": "nominal_range_but_geometry_unvalidated",
+        "actual_geometry_correlation_validated": false,
+        "pressure_is_friction_only": true
+      },
+      "heating_hypotheses": {
+        "two_long_side_walls": {
+          "heated_area_m2": 0.0035700000000000003,
+          "ua_w_k": 0.7523491465431655,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.36166799278932,
+            "ntu": 0.44889674351440295,
+            "effectiveness": 0.361667992789322,
+            "heat_w": 0.6061541092429327,
+            "effective_inlet_to_wall_conductance_w_k": 0.6061541092429327,
+            "air_enthalpy_gain_w": 0.606154109242932,
+            "energy_balance_residual_w": 6.661338147750939e-16,
+            "integrated_local_convection_w": 0.6061540315851919,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.2811550661676274e-07
+          }
+        },
+        "three_walls_two_sides_plus_base": {
+          "heated_area_m2": 0.0037800000000000004,
+          "ua_w_k": 0.7966049786927636,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.378302994474577,
+            "ntu": 0.4753024343093679,
+            "effectiveness": 0.37830299447457677,
+            "heat_w": 0.6340343055274129,
+            "effective_inlet_to_wall_conductance_w_k": 0.6340343055274129,
+            "air_enthalpy_gain_w": 0.6340343055274135,
+            "energy_balance_residual_w": -5.551115123125783e-16,
+            "integrated_local_convection_w": 0.6340342144602896,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.4363122388309406e-07
+          }
+        },
+        "all_four_walls": {
+          "heated_area_m2": 0.0039900000000000005,
+          "ua_w_k": 0.8408608108423615,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.39450448620272,
+            "ntu": 0.5017081251043327,
+            "effectiveness": 0.3945044862027205,
+            "heat_w": 0.661187940857815,
+            "effective_inlet_to_wall_conductance_w_k": 0.661187940857815,
+            "air_enthalpy_gain_w": 0.6611879408578145,
+            "energy_balance_residual_w": 4.440892098500626e-16,
+            "integrated_local_convection_w": 0.6611878350455596,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.6003355303908311e-07
+          }
+        }
+      },
+      "fin_thickness_sensitivity": [
+        {
+          "assumed_fin_thickness_m": 0.0005,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.7274175748514428,
+          "cross_thickness_biot": 0.00026211698738212496,
+          "effective_heated_area_m2": 0.002806880742219651,
+          "ua_w_k": 0.5915278237695802,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.297381403456896,
+            "ntu": 0.35294107132092206,
+            "effectiveness": 0.2973814034568975,
+            "heat_w": 0.49841004266814654,
+            "effective_inlet_to_wall_conductance_w_k": 0.49841004266814654,
+            "air_enthalpy_gain_w": 0.49841004266814404,
+            "energy_balance_residual_w": 2.4980018054066022e-15,
+            "integrated_local_convection_w": 0.49841000319515993,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 7.919781549796165e-08
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.001,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.8373191364670518,
+          "cross_thickness_biot": 0.0005242339747642499,
+          "effective_heated_area_m2": 0.0031992293171873754,
+          "ua_w_k": 0.6742121698548448,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.331203549463112,
+            "ntu": 0.4022755244373164,
+            "effectiveness": 0.33120354946311004,
+            "heat_w": 0.5550958240859747,
+            "effective_inlet_to_wall_conductance_w_k": 0.5550958240859747,
+            "air_enthalpy_gain_w": 0.5550958240859777,
+            "energy_balance_residual_w": -2.9976021664879227e-15,
+            "integrated_local_convection_w": 0.5550957669744209,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.0288593670026107e-07
+          }
+        },
+        {
+          "assumed_fin_thickness_m": 0.002,
+          "assumed_fin_height_m": 0.017,
+          "source_aluminum_conductivity_w_m_k": 201.0,
+          "fin_efficiency": 0.9099021592575935,
+          "cross_thickness_biot": 0.0010484679495284999,
+          "effective_heated_area_m2": 0.0034583507085496094,
+          "ua_w_k": 0.7288199451048321,
+          "unit_temperature_response": {
+            "inlet_c": 25.0,
+            "wall_or_fin_base_c": 26.0,
+            "outlet_c": 25.352643289874944,
+            "ntu": 0.4348578070024223,
+            "effectiveness": 0.35264328987494414,
+            "heat_w": 0.5910287432572471,
+            "effective_inlet_to_wall_conductance_w_k": 0.5910287432572471,
+            "air_enthalpy_gain_w": 0.591028743257247,
+            "energy_balance_residual_w": 1.1102230246251565e-16,
+            "integrated_local_convection_w": 0.5910286721994178,
+            "midpoint_quadrature_intervals": 256,
+            "quadrature_relative_error": 1.2022736643175888e-07
+          }
+        }
+      ]
+    }
+  ],
+  "materials": {
+    "source_location": "2019 paper Table1 and Eqs(6)-(7), p5",
+    "copper": {
+      "density_kg_m3": 8960.0,
+      "specific_heat_j_kg_k": 385.0,
+      "conductivity_w_m_k": 400.0
+    },
+    "epoxy": {
+      "density_kg_m3": 1225.0,
+      "specific_heat_j_kg_k": 1000.0,
+      "conductivity_w_m_k": 1.0
+    },
+    "copper_volume_fraction": 0.45,
+    "fraction_status": "0.45 is inferred from the printed density/conductivity, not measured packing",
+    "density_kg_m3": 4705.75,
+    "copper_mass_fraction": 0.8568240981777613,
+    "mass_consistent_specific_heat_j_kg_k": 473.0531796206768,
+    "volume_average_specific_heat_j_kg_k": 723.25,
+    "constituent_volumetric_capacity_j_m3_k": 2226070.0,
+    "series_conductivity_w_m_k": 1.814470401451576,
+    "parallel_conductivity_w_m_k": 180.55,
+    "radial_diffusivity_m2_s": 8.151003344241537e-07,
+    "axial_diffusivity_m2_s": 8.110706312020737e-05,
+    "printed_bulk": {
+      "density_kg_m3": 4705.75,
+      "specific_heat_j_kg_k": 723.25,
+      "radial_conductivity_w_m_k": 1.8145,
+      "axial_conductivity_w_m_k": 180.55,
+      "implied_volumetric_capacity_j_m3_k": 3403433.6875
+    },
+    "printed_capacity_excess_percent_of_constituent_value": 52.88978727084055,
+    "constituent_capacity_reduction_percent_of_printed_value": 34.59340758787738,
+    "interpretation": "Arithmetic consistency issue in the printed table; the actual NASA COMSOL material input and physical packing are not known.",
+    "slot_liner": {
+      "thickness_m": 0.00025,
+      "printed_conductivity_w_m_k": 139.0,
+      "manufacturer_nomex410_conductivity_at_150c_w_m_k": 0.139,
+      "manufacturer_original_units": "139 mW/(m K), 0.25 mm Nomex 410, Table IV",
+      "printed_areal_resistance_m2_k_w": 1.7985611510791368e-06,
+      "manufacturer_areal_resistance_m2_k_w": 0.0017985611510791366,
+      "resistance_ratio_manufacturer_to_printed": 1000.0,
+      "actual_grade_and_comsol_input_verified": false,
+      "interpretation": "Possible milli-unit transcription issue; grade, temperature dependence, contact and actual model input remain unverified."
+    }
+  },
+  "matched_condition_comparison": {
+    "purpose": "Hypothetical geometry scale comparison at equal flow area, bulk speed, properties, axial length and heated-side boundary; not a hardware upgrade or pressure-network solution.",
+    "boundary": {
+      "length_m": 0.105,
+      "heated_surface": "two long/straight side walls, isothermal; base and top unheated; fin efficiency omitted for both",
+      "wall_minus_inlet_k": 1.0,
+      "air": {
+        "density_kg_m3": 1.225,
+        "viscosity_pa_s": 1.7894e-05,
+        "conductivity_w_m_k": 0.0257,
+        "specific_heat_j_kg_k": 1006.0
+      }
+    },
+    "flux_equivalent_area_m2": 0.009697524890332999,
+    "flux_area_source": "2023 Table7 station2a_s; initial-climb mean-property area hypothesis only",
+    "source_data_sha256": "d53e544e728d483ef03b0f244350449a16b7b76bc82e353c126725ffa32b509a",
+    "current_geometry_source_sha256": "1aa07e99841b599918ba93774d23578cb8ef96856de022c196103e0859c44c39",
+    "equivalent_historical_channel_count": 285.2213203039117,
+    "equivalent_count_is_actual_geometry": false,
+    "equivalent_count_note": "Fractional A_equivalent/(a*b); never rounded, fitted, or interpreted as actual fin/channel count.",
+    "current_rom_actual_parameter_slot_count": 24,
+    "current_rom_native_length_m": 0.133,
+    "current_rom_native_flow_area_m2": 0.006153857280000002,
+    "current_rom_native_heated_area_m2": 0.3140928000000001,
+    "current_rom_native_hydraulic_diameter_m": 0.009424854994155659,
+    "rows": [
+      {
+        "velocity_m_s": 12.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 2940.12106380851,
+          "h_w_m2_k": 70.22150892229483,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 71.50235721412295,
+          "effective_inlet_conductance_w_k": 56.30434677002938,
+          "friction_pressure_drop_pa": 118.69589683588156,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.14255361588789506,
+          "correlation_status": "extrapolation_not_validated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 7742.559987374997,
+          "h_w_m2_k": 66.04656857246832,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 25.808298978633303,
+          "effective_inlet_conductance_w_k": 23.619288781346924,
+          "friction_pressure_drop_pa": 33.27642833229095,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.14255361588789509,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 2.7705180133460083,
+        "narrow_to_broad_friction_drop_ratio": 3.566966251624452
+      },
+      {
+        "velocity_m_s": 16.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 3920.1614184113473,
+          "h_w_m2_k": 94.98519604272933,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 96.71773679794035,
+          "effective_inlet_conductance_w_k": 75.90839783736915,
+          "friction_pressure_drop_pa": 191.88070430323026,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.1900714878505268,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 10323.413316499997,
+          "h_w_m2_k": 83.43344844653481,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 32.60238084835428,
+          "effective_inlet_conductance_w_k": 29.974420919936893,
+          "friction_pressure_drop_pa": 54.50372442401372,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.1900714878505268,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 2.9665850861570595,
+        "narrow_to_broad_friction_drop_ratio": 3.520506283396109
+      },
+      {
+        "velocity_m_s": 20.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 4900.201773014183,
+          "h_w_m2_k": 117.22010263857705,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 119.3582106134239,
+          "effective_inlet_conductance_w_k": 93.95448813028264,
+          "friction_pressure_drop_pa": 279.337612638641,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.23758935981315848,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 12904.266645624995,
+          "h_w_m2_k": 99.5868099503566,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 38.914454165882546,
+          "effective_inlet_conductance_w_k": 35.91173344924755,
+          "friction_pressure_drop_pa": 80.09629228274679,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.23758935981315848,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 3.0671947781826727,
+        "narrow_to_broad_friction_drop_ratio": 3.4875223893330203
+      },
+      {
+        "velocity_m_s": 24.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 5880.24212761702,
+          "h_w_m2_k": 137.81206867063793,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 140.3257764427881,
+          "effective_inlet_conductance_w_k": 110.97392125873388,
+          "friction_pressure_drop_pa": 380.34057948183954,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.2851072317757901,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 15485.119974749994,
+          "h_w_m2_k": 114.87501243366057,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 44.88845870636169,
+          "effective_inlet_conductance_w_k": 41.55211982264058,
+          "friction_pressure_drop_pa": 109.85096732820439,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.28510723177579017,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 3.1260992354567265,
+        "narrow_to_broad_friction_drop_ratio": 3.4623325468358126
+      },
+      {
+        "velocity_m_s": 30.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 7350.302659521275,
+          "h_w_m2_k": 166.58255433230974,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 169.62103902794638,
+          "effective_inlet_conductance_w_k": 135.14119557854755,
+          "friction_pressure_drop_pa": 556.0658018740518,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.3563840397197377,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 19356.39996843749,
+          "h_w_m2_k": 136.62355703478428,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 53.38690084420076,
+          "effective_inlet_conductance_w_k": 49.60219400252688,
+          "friction_pressure_drop_pa": 161.9555572218732,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.35638403971973776,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 3.1772033278903424,
+        "narrow_to_broad_friction_drop_ratio": 3.433446875257648
+      },
+      {
+        "velocity_m_s": 40.0,
+        "historical_narrow": {
+          "hydraulic_diameter_m": 0.0035789473684210526,
+          "reynolds": 9800.403546028367,
+          "h_w_m2_k": 210.74205785522844,
+          "heated_area_at_equivalent_flow_area_m2": 1.0182401134849648,
+          "ua_at_equivalent_flow_area_w_k": 214.5860169065628,
+          "effective_inlet_conductance_w_k": 172.88807534591078,
+          "friction_pressure_drop_pa": 910.227895924242,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.47517871962631697,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "current_broad_slot": {
+          "hydraulic_diameter_m": 0.009424854994155659,
+          "reynolds": 25808.53329124999,
+          "h_w_m2_k": 170.62925430021735,
+          "heated_area_at_equivalent_flow_area_m2": 0.39075911945850217,
+          "ua_at_equivalent_flow_area_w_k": 66.67493716421377,
+          "effective_inlet_conductance_w_k": 62.233925680896185,
+          "friction_pressure_drop_pa": 267.7897168103357,
+          "mass_flow_at_equivalent_flow_area_kg_s": 0.47517871962631697,
+          "correlation_status": "nominal_range_but_geometry_unvalidated"
+        },
+        "narrow_to_broad_ua_ratio": 3.218390988176842,
+        "narrow_to_broad_friction_drop_ratio": 3.3990397643570405
+      }
+    ]
+  },
+  "verification": {
+    "scope": "Equation/algebra/numerical verification only; does not validate source geometry, material grade or physical temperatures",
+    "maximum_energy_balance_residual_w": 2.9976021664879227e-15,
+    "maximum_independent_midpoint_quadrature_relative_error": 2.0318912781544404e-07,
+    "test_coverage": [
+      "independent geometry units",
+      "independent f/Re/Pr/Nu/pressure arithmetic",
+      "fin ODE finite-volume refinement",
+      "differential air-energy integral",
+      "constituent mass/energy mixing",
+      "matched flow/length/boundary",
+      "input rejection",
+      "reproducible JSON"
+    ]
+  }
+}

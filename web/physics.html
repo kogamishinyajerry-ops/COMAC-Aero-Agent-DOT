@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="从公开流量证据、历史散热通道和有限体积子问题，诊断飞机热模型的物理差距。">
+  <title>物理证据 · 航空电热实验室</title>
+  <link rel="stylesheet" href="/physics.css">
+  <script src="/physics.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">航空电热实验室<span>POWER / THERMAL LAB</span></a>
+    <nav aria-label="工作空间"><a href="/">系统与控制</a><a href="/nacelle">飞机装配</a><a href="/physics" aria-current="page">物理证据</a></nav>
+    <span class="research-tag">PUBLIC-SOURCE RESEARCH</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">ENGINEERING EVIDENCE / 05</p><h1>先把物理<span>说清楚。</span></h1><p class="lead">温度不对时，先找错在哪里，再讨论怎样改。</p></div>
+      <aside class="scope"><strong>整机满负荷仍未验证</strong><p>流量对照、历史部件假设、数值子问题各有证据边界。局部通过不能替代飞机验证。</p></aside>
+    </section>
+    <div class="toolbar"><span id="run-state" role="status" aria-live="polite">正在计算并检查证据版本…</span><div><button id="refresh" disabled>重新计算</button><button id="cancel" hidden>取消等待</button><button id="export" disabled>导出本次证据 ↗</button></div></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <nav class="tabs" role="tablist" aria-label="物理诊断步骤">
+      <button id="tab-flow" role="tab" aria-selected="true" aria-controls="panel-flow" data-tab="flow"><span>01</span>气流分到哪里</button>
+      <button id="tab-channel" role="tab" aria-selected="false" aria-controls="panel-channel" data-tab="channel" tabindex="-1"><span>02</span>通道到底是什么</button>
+      <button id="tab-coupling" role="tab" aria-selected="false" aria-controls="panel-coupling" data-tab="coupling" tabindex="-1"><span>03</span>热量怎样耦合</button>
+    </nav>
+
+    <section id="panel-flow" class="panel" role="tabpanel" aria-labelledby="tab-flow">
+      <div class="section-heading"><div><p class="eyebrow">SOURCE → GEOMETRY HYPOTHESIS</p><h2>总流量接近，分流也可能是错的</h2><p>把公开质量流量、静压、温度和轴向速度放在一起，得到可核查的等效流通面积。</p></div><span class="badge amber">CFD 来源对照 · 非实测</span></div>
+      <div class="two-column">
+        <article class="card"><div class="card-heading"><h3>四个关键截面</h3><span>mm²</span></div><div class="legend"><span><i class="swatch blue"></i>当前重建</span><span><i class="swatch ochre"></i>初始爬升推定</span></div><div id="area-chart" class="area-chart" aria-label="当前重建与来源等效流通面积对比">等待本次计算</div><p class="footnote">等效面积 = 质量流量 ÷（理想气体密度代理 × 轴向速度）。来源是截面平均值，未说明各变量的加权方式；这不是恢复出的原始 CAD 尺寸。</p></article>
+        <article class="card insight"><p class="eyebrow">A FALSIFIABLE CHECK</p><h3>只拟合一个工况，能否预测另外两个？</h3><p>用初始爬升固定等效参数 A/√K，再做跨工况对照。面积与阻力系数不能分别识别。</p><div id="pressure-check" class="pressure-check">等待本次计算</div><p class="footnote">这是回顾性条件对照：输入了来源下游压力，不能称为独立网络预测。区间只覆盖表格舍入，不是统计置信区间。</p></article>
+      </div>
+      <div class="takeaway"><span>本步结论</span><p>先核对间隙、散热槽和旁通截面，不能用总流量相近来证明局部冷却正确。</p></div>
+      <details><summary>查看来源、推定和适用范围</summary><div id="source-details" class="details-content"></div></details>
+    </section>
+
+    <section id="panel-channel" class="panel" role="tabpanel" aria-labelledby="tab-channel" hidden>
+      <div class="section-heading"><div><p class="eyebrow">HISTORICAL COMPONENT → MATCHED COMPARISON</p><h2>绕组间隙，未必就是散热器通道</h2><p>更早的电机热分析给出一组窄通道尺寸。把它作为独立历史子算例，检验换热尺度。</p></div><span class="badge amber">历史构型 · 非 2023 定版尺寸</span></div>
+      <div class="two-column">
+        <article class="card"><div class="card-heading"><h3>比较的物理对象</h3><span>等流通面积 / 等长度 / 等速度</span></div><div id="channel-sketch" class="channel-sketch"></div><p class="footnote">左侧是现有宽通道几何代理；右侧是早期论文的 2 × 17 mm 单元。并联单元数只作等面积假设，不能当作实际鳍片数量。</p><div id="channel-comparison" class="metric-grid"></div></article>
+        <article class="card"><div class="card-heading"><h3>材料输入也需要守恒</h3><span>铜 / 环氧混合物</span></div><div id="material-chart" class="material-chart"></div><div id="material-summary"></div><p class="footnote">这是公开表格内部的混合律核查，不证明原 COMSOL 模型使用了错误输入。定版材料、浸渍空隙和方向性导热仍需独立确认。</p></article>
+      </div>
+      <div class="takeaway"><span>本步结论</span><p>先区分散热鳍片、绕组和固体传热路径。窄通道可能改变换热面积与阻力，但不能直接换成整机温度结论。</p></div>
+      <details><summary>查看历史单元、公式和边界</summary><div id="historical-details" class="details-content"></div></details>
+    </section>
+
+    <section id="panel-coupling" class="panel" role="tabpanel" aria-labelledby="tab-coupling" hidden>
+      <div class="section-heading"><div><p class="eyebrow">FINITE VOLUME → ANALYTICAL VERIFICATION</p><h2>两面都加热，一面仍能比平均空气更冷</h2><p>用可独立核查的层流平板子问题，看见原降阶模型遗漏的壁面耦合。</p></div><span class="badge teal">二维数值子问题 · 非电机 CFD</span></div>
+      <div class="case-controls" role="group" aria-label="选择热边界子算例">
+        <button data-case="asymmetric" aria-pressed="true">不均匀加热 20 / 200</button><button data-case="equal" aria-pressed="false">两面相同 200 / 200</button><button data-case="one_wall" aria-pressed="false">一面绝热 0 / 200</button><button data-case="balanced" aria-pressed="false">一冷一热 −200 / 200</button><button data-case="reversed" aria-pressed="false">反向气流</button><button data-case="zero_flow" aria-pressed="false">零流量</button>
+      </div>
+      <p class="small">壁面热流单位 W/m²，均为明确选定的合成边界，不是 X-57 热负荷。</p>
+      <div class="two-column thermal-columns">
+        <article class="card"><div class="card-heading"><h3>实际求解的温度截面</h3><span id="grid-label">等待计算</span></div><div id="heat-map" class="heat-map" role="img" aria-label="沿流向与平板间隙的计算温度场"></div><div id="heat-scale" class="heat-scale"></div><p class="footnote">有限体积流体单元的采样显示；横轴为实际物理位置。无限宽平行板，无旋转、湍流或三维结构。固体温升为局部一维厚度导热。</p></article>
+        <article class="card"><div class="card-heading"><h3>出口处，谁比谁更热？</h3><span>°C</span></div><div id="wall-comparison" class="wall-comparison"></div><div id="coupling-answer" class="coupling-answer"></div><div id="balance-metrics" class="metric-grid"></div></article>
+      </div>
+      <article class="card verification-card"><div class="card-heading"><h3>数值可信度，单独验收</h3><span class="badge teal">解析解 / 网格收敛 / 守恒</span></div><div id="verification-grid" class="verification-grid"></div><p class="footnote">此处是代码与方程验证。它没有验证飞机、旋转环隙或湍流冷却；也没有将任何系数转移到短舱模型。</p></article>
+      <details><summary>查看计算输入、版本和模型限制</summary><div id="duct-details" class="details-content"></div></details>
+    </section>
+    <section class="next-evidence"><div><p class="eyebrow">WHAT WOULD CLOSE THE GAP?</p><h2>下一步需要哪些证据？</h2></div><ol><li><strong>定版散热通道</strong><span>尺寸、散热面、槽数与流场平均定义</span></li><li><strong>真实固体路径</strong><span>绕组方向性、浸渍空隙、接触与器件节点</span></li><li><strong>成套试验边界</strong><span>同一转速、热负荷下的压差、流量和温度</span></li></ol></section>
+  </main>
+  <footer><span>公开来源 / 原创建模 / 明确合成边界</span><a href="/nacelle">返回装配与设计取舍 →</a></footer>
+</body>
+</html>

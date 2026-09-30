@@ -68,6 +68,10 @@ class Handler(BaseHTTPRequestHandler):
                   "/nacelle.js": ("nacelle.js", "text/javascript; charset=utf-8"),
                   "/nacelle_story.js": ("nacelle_story.js", "text/javascript; charset=utf-8"),
                   "/nacelle.css": ("nacelle.css", "text/css; charset=utf-8"),
+                  "/physics": ("physics.html", "text/html; charset=utf-8"),
+                  "/physics.html": ("physics.html", "text/html; charset=utf-8"),
+                  "/physics.js": ("physics.js", "text/javascript; charset=utf-8"),
+                  "/physics.css": ("physics.css", "text/css; charset=utf-8"),
                   "/styles.css": ("styles.css", "text/css; charset=utf-8")}
         if path not in routes:
             return self.send_json(404, {"error": "Not found"})
@@ -84,7 +88,7 @@ class Handler(BaseHTTPRequestHandler):
         if origin and origin not in (f"http://{host}", f"https://{host}"):
             return self.send_json(403, {"error": "Cross-origin requests are disabled"})
         path = urlparse(self.path).path
-        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step", "/api/nacelle/geometry", "/api/nacelle/evaluate", "/api/nacelle/compare", "/api/nacelle/step", "/api/nacelle/story"):
+        if path not in ("/api/run", "/api/compare", "/api/sweep", "/api/cad/evaluate", "/api/cad/compare", "/api/cad/step", "/api/nacelle/geometry", "/api/nacelle/evaluate", "/api/nacelle/compare", "/api/nacelle/step", "/api/nacelle/story", "/api/physics/evaluate"):
             return self.send_json(404, {"error": "Unknown operation"})
         try:
             size = int(self.headers.get("Content-Length", "0"))
@@ -96,11 +100,16 @@ class Handler(BaseHTTPRequestHandler):
                 allowed = {"geometry"}
             if path == "/api/nacelle/story":
                 allowed = set()
+            if path == "/api/physics/evaluate":
+                allowed = {"case"}
             if not isinstance(body, dict) or set(body) - allowed:
                 raise ValueError("Invalid or unknown request fields")
             if not COMPUTE_LOCK.acquire(blocking=False):
                 return self.send_json(429, {"error": "A calculation is in progress; try again when it completes"})
             try:
+                if path == "/api/physics/evaluate":
+                    from .physics_lab import physics_evidence
+                    return self.send_json(200, physics_evidence(**body))
                 if path == "/api/nacelle/story":
                     from .nacelle_story import engineering_story
                     return self.send_json(200, engineering_story())
