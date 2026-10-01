@@ -50,6 +50,7 @@ jobs:
       - run: python tests/ui_physics_smoke.py
       - run: python tests/ui_tradeoff_smoke.py
       - run: python tests/ui_experiments_smoke.py
+      - run: python tests/ui_agent_smoke.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

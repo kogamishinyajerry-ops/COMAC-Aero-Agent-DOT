@@ -27,13 +27,13 @@ def replay_bytes():
 class Handler(BaseHTTPRequestHandler):
     server_version = "AeroLab/0.1"
 
-    def send_bytes(self, code, data, mime="application/json; charset=utf-8"):
+    def send_bytes(self, code, data, mime="application/json; charset=utf-8", csp=None):
         self.send_response(code)
         self.send_header("Content-Type", mime)
         self.send_header("Content-Length", str(len(data)))
         self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Cache-Control", "no-store")
-        self.send_header("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'")
+        self.send_header("Content-Security-Policy", csp or "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'")
         self.end_headers()
         self.wfile.write(data)
 
@@ -43,6 +43,21 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path
+        if path == "/api/agent/replay" or path.startswith("/agent/evidence/"):
+            if parsed.query or parsed.params or parsed.fragment:
+                return self.send_json(400, {"error": "Saved agent evidence accepts no parameters"})
+            try:
+                from .agent_replay import read_agent_replay, read_agent_evidence
+                if path == "/api/agent/replay":
+                    return self.send_json(200, read_agent_replay())
+                data, mime, csp = read_agent_evidence(path)
+                return self.send_bytes(200, data, mime, csp)
+            except ValueError:
+                return self.send_json(404, {"error": "Unknown evidence file"})
+            except RuntimeError as exc:
+                return self.send_json(503, {"error": str(exc)})
+        if path in ("/agent", "/agent.html", "/agent.js", "/agent.css") and (parsed.query or parsed.params or parsed.fragment):
+            return self.send_json(400, {"error": "Agent replay pages accept no parameters"})
         if path == "/api/physics/tradeoff":
             try:
                 from .pressure_fin_replay import read_pressure_fin_replay
@@ -95,6 +110,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(503, {"error": str(exc)})
         routes = {"/": ("index.html", "text/html; charset=utf-8"),
                   "/index.html": ("index.html", "text/html; charset=utf-8"),
+                  "/agent": ("agent.html", "text/html; charset=utf-8"),
+                  "/agent.html": ("agent.html", "text/html; charset=utf-8"),
+                  "/agent.js": ("agent.js", "text/javascript; charset=utf-8"),
+                  "/agent.css": ("agent.css", "text/css; charset=utf-8"),
                   "/app.js": ("app.js", "text/javascript; charset=utf-8"),
                   "/cad.js": ("cad.js", "text/javascript; charset=utf-8"),
                   "/nacelle": ("nacelle.html", "text/html; charset=utf-8"),
@@ -187,7 +206,7 @@ def serve(host="127.0.0.1", port=8765):
     if host not in ("127.0.0.1", "localhost", "::1"):
         raise ValueError("This development server only binds to loopback")
     httpd = ThreadingHTTPServer((host, port), Handler)
-    print(f"Synthetic mission lab: http://{host}:{httpd.server_port}", flush=True)
+    print(f"Aviation engineering demo: http://{host}:{httpd.server_port}/agent", flush=True)
     print("Local development only. Not an operational aircraft-control service.", flush=True)
     try:
         httpd.serve_forever()
