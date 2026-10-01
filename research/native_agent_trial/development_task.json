@@ -1,0 +1,12 @@
+{
+  "task_id": "development_50w_mass30",
+  "brief": "Choose an existing plate-fin candidate to reject 50 W at nominal supply and after a pressure loss plus sealed first interior channel, below 85 C uniform-base temperature and 30 g fin-only aluminum. Preserve each constraint and reject any candidate outside the declared Reynolds scope. Produce a verified component CAD artifact and evidence.",
+  "inlet_temperature_C": 25,
+  "max_base_temperature_C": 85,
+  "max_fin_mass_g": 30,
+  "cases": [
+    {"case_id": "nominal", "pressure_Pa": 25, "blocked_channels": [], "heat_load_W": 50},
+    {"case_id": "combined_fault", "pressure_Pa": 18, "blocked_channels": [1], "heat_load_W": 50}
+  ],
+  "objective": "minimize_fin_mass_among_evaluated"
+}

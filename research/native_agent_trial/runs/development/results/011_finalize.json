@@ -1,0 +1,72 @@
+{
+  "all_candidate_infeasibility_established": false,
+  "analytic_rejected_candidate_ids": [
+    "n12_t1200",
+    "n12_t600",
+    "n12_t860",
+    "n16_t1200",
+    "n16_t860",
+    "n20_t1200",
+    "n20_t600",
+    "n20_t860"
+  ],
+  "cad_calls": 1,
+  "cad_pass": true,
+  "case_verification": [
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 0.0001124483812218191,
+      "case_id": "nominal",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 67.53809716281786,
+      "spatial_G_relative": 0.00041763629707591843,
+      "worst_mesh_temperature_C": 67.55587003879971
+    },
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 0.00013610077180015168,
+      "case_id": "combined_fault",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 77.3364592639501,
+      "spatial_G_relative": 0.00038384057192464294,
+      "worst_mesh_temperature_C": 77.35655583428554
+    }
+  ],
+  "completed_solver_calls": 7,
+  "conditional_acceptance_pass": true,
+  "errors": 0,
+  "evaluate_requests": 7,
+  "evaluated_candidate_ids": [
+    "n16_t600",
+    "n16_t860"
+  ],
+  "global_optimum_established": false,
+  "human_interventions_during_execution": 0,
+  "interpretation": "Conditional component screening only; immutable requirements, model-validity limits and rejected cases retained. No aircraft, manufacturing or broad generalization claim.",
+  "lighter_primary_feasible_candidates": [],
+  "objective_pass": true,
+  "outcome": "conditionally_feasible",
+  "physical_validation_pass": null,
+  "primary_feasible_candidate_ids": [
+    "n16_t600"
+  ],
+  "rejected_evaluations": [
+    {
+      "case_id": "combined_fault",
+      "design_id": "n16_t860",
+      "failed_gates": [
+        "fin_mass"
+      ],
+      "mesh_id": "primary"
+    }
+  ],
+  "rejection_retention_pass": true,
+  "selected_design_id": "n16_t600",
+  "solver_calls": 7,
+  "task_id": "development_50w_mass30",
+  "tool_calls_including_this": 11,
+  "wall_budget_pass": true,
+  "wall_seconds": 424.715883
+}

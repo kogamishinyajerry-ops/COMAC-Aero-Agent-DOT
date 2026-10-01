@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  },
+  "scope": "Observed installed versions used by both native trial sessions; no dependency installation or provider-model API configuration performed."
+}

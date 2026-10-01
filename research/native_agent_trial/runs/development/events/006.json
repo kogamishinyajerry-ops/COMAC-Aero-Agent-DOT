@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Both required cases pass on the primary mesh. Refine the cross-section for the limiting fault before accepting its 7.66 C margin.",
+  "elapsed_seconds": 36.399847705994034,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "b06816a62e3b2321ba87047b360ba29657239416fb9b6c6ba7ba50fce0762dfe",
+  "request": {
+    "case_id": "combined_fault",
+    "design": "n16_t600",
+    "mesh": "spatial"
+  },
+  "result_file": "results/006_evaluate.json",
+  "result_sha256": "1130afe6f3b0a906708a13f2ff0cd05f8ef578fa3ffc2829130ece98fedbb987",
+  "sequence": 6,
+  "status": "ok",
+  "utc": "2026-10-01T04:38:25.593673+00:00"
+}

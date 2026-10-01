@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "All four primary cases pass. Refine the limiting 11 Pa combined fault first; acceptance depends on margin surviving the prescribed finer cross-section.",
+  "elapsed_seconds": 26.916473132994724,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "6a15f49309f70e33e3debfc08cc2e7419f8310becf3865417cbdb08e04b409be",
+  "request": {
+    "case_id": "combined_11Pa",
+    "design": "n12_t600",
+    "mesh": "spatial"
+  },
+  "result_file": "results/008_evaluate.json",
+  "result_sha256": "66de02986faaa649866b740b9f277b99a7347d3cc5aafc1a1ccdbb3dbf92f0f5",
+  "sequence": 8,
+  "status": "ok",
+  "utc": "2026-10-01T04:47:16.516238+00:00"
+}

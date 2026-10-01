@@ -64,3 +64,13 @@ python scripts/generate_nacelle_credibility.py --check
 ```
 
 研究重算只能使用各包注明的安全入口，并写入新的输出目录。不要直接运行历史清单生成脚本覆盖接受的证据。浏览器截图和交付记录说明具体发布提交上实际检查过的内容，不代表用户设备或真实飞机已经验收。
+
+## 新增：原生助手实际工程闭环
+
+本工程现在另有两次真实执行记录：开发任务与独立释放的新要求任务。助手实际检查候选、计算失败方案、改选几何、调用PDE、逐工况细化网格，并生成/回读真实CAD；没有外部模型API密钥。
+
+- 下载完整工程后，双击 [精简中文过程报告](research/native_agent_trial/report/native-agent-evidence.html)，其中可直接下载两种选定部件的STEP/STL
+- [开发任务结果](research/native_agent_trial/DEVELOPMENT_RESULT.md)与[留出任务执行结果](research/native_agent_trial/HELDOUT_RESULT.md)保留要求、失败、工具次数和验证边界
+- 用标准库复核保存的证据：`python -S scripts/verify_native_agent_trial.py --session research/native_agent_trial/runs/heldout`
+
+这是原生助手现场编排的部件级闭环证据。单动作工具CLI并不是可脱离助手自主运行的模型产品；留出任务仍属于熟悉的有限几何家族，也不改变原60 W组合故障失败的结论。

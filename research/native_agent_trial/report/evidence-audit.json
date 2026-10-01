@@ -1,0 +1,52 @@
+{
+  "schema": "native_trial_report_audit_v1",
+  "source_scope": "Explicit completed runs only; no evaluator-private reads",
+  "report_type": "local static evidence view; no solver calls",
+  "runs": [
+    {
+      "run": "development",
+      "events": 11,
+      "event_chain_and_result_hashes_pass": true,
+      "last_event_sha256": "a919f334d1fbfdcdacc389958dc10efcd180d0de75afb1b747daa6b09b469755"
+    },
+    {
+      "run": "heldout",
+      "events": 17,
+      "event_chain_and_result_hashes_pass": true,
+      "last_event_sha256": "c5a72facb1a75007a8c8b2b17c8e0fc1b491c08e61dca78f65032154b41d01d7"
+    }
+  ],
+  "development_final_result_sha256": "fb0f06e6fe293750b184b4319aeb966be57d568d05203eab53410f19ce4790ea",
+  "html_sha256": "5c47d48cb792e3e984094c421e6ea84920738c1ed8268596b087e5981d9c7c97",
+  "cad_restored": {
+    "step": {
+      "file": "n16_t600.step",
+      "sha256": "a3b268270af85cbe4ba18c9201d614972120315f664e293ee594de9e2f1da506"
+    },
+    "stl": {
+      "file": "n16_t600.stl",
+      "sha256": "3ac693c1eac015103fafc4aa803aae81f14031b15033875fac5148adcaec9ddf"
+    }
+  },
+  "independent_grade_sha256": "58b45e464e3f4a536d06e7959c3d4421f03034e442b321535e8be064698b20ee",
+  "independent_grade_pass_count": 23,
+  "heldout_cad_restored": {
+    "step": {
+      "file": "n12_t600.step",
+      "sha256": "744a20c0f736aae2f0dc66d99a00bc4ac5944b4304b80ebe08760be64a1b9ed7"
+    },
+    "stl": {
+      "file": "n12_t600.stl",
+      "sha256": "bb2829647761d3b8aa7deb3682961b60320aaea5a182d05f6480e0ae99583ea8"
+    }
+  },
+  "visual": {
+    "file": "native-agent-trace.png",
+    "bytes": 100113,
+    "sha256": "008b516b2a703f19b7f378f795929d769ed5a8cb911fce98a95c0b8d8ace2c15",
+    "renderer": "Inkscape SVG export, palette-compressed PNG; visually inspected; not a browser screenshot",
+    "browser_preview_status": "Cloud localhost blocked by client; local headless Chromium could not start under sandbox; no bypass attempted"
+  },
+  "local_source_and_CAD_links_verified": 29,
+  "all_binary_outputs_below_250000_bytes": true
+}

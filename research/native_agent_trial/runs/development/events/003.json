@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The baseline already exceeds 30 g. Compute its combined-fault thermal response to retain an actual rejected engineering result before changing geometry.",
+  "elapsed_seconds": 19.76811538200127,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "f594f492322ff31b73be67d4780751a2eeb56ce6a4033849018dfb4bfce1bff0",
+  "request": {
+    "case_id": "combined_fault",
+    "design": "n16_t860",
+    "mesh": "primary"
+  },
+  "result_file": "results/003_evaluate.json",
+  "result_sha256": "18f746d3ab1b2351e17aa03a98fdfda489a6b12ba82f507df4caeba014ec67ac",
+  "sequence": 3,
+  "status": "ok",
+  "utc": "2026-10-01T04:35:24.583196+00:00"
+}

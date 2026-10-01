@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The baseline is 7.78 g overweight and has only 0.10 C thermal margin. Thin the 16 fins to 0.60 mm; hydraulic screening stays laminar and mass drops below 30 g. Test the limiting combined fault first.",
+  "elapsed_seconds": 19.489625318994513,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "d62ca02699779d16137d3b15f721f7f127395b33ee80e01969294cbc7a7eac81",
+  "request": {
+    "case_id": "combined_fault",
+    "design": "n16_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/004_evaluate.json",
+  "result_sha256": "24690a41e1b4f21ac6714f902abb3eef31714fea3629d6d52606aff189e363b6",
+  "sequence": 4,
+  "status": "ok",
+  "utc": "2026-10-01T04:36:22.705821+00:00"
+}

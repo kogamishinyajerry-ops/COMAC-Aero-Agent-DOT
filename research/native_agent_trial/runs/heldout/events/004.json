@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The former winner fails mass despite a passing temperature. Only 12 fins at 0.60 mm meet 25 g, and the new 17 Pa maximum keeps its analytic Re below 2300. Test that candidate at the 11 Pa combined fault first.",
+  "elapsed_seconds": 14.688826276003965,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "f3bcaa69c077c46ec92f21069ff4eac9cd65ae2fdd6ed4949b309714d0100dcc",
+  "request": {
+    "case_id": "combined_11Pa",
+    "design": "n12_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/004_evaluate.json",
+  "result_sha256": "fe706b654f430f4909f5e35e811ee00b699c4d7b56b9d2db228a83e4fe8b791f",
+  "sequence": 4,
+  "status": "ok",
+  "utc": "2026-10-01T04:44:55.694189+00:00"
+}

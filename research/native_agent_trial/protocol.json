@@ -1,0 +1,27 @@
+{
+  "schema": "native_engineering_agent_protocol_v1",
+  "execution": "Current native assistant chooses individual tools and inputs after observing results. No model API, autonomous product, scripted optimizer, or known exact model identity is asserted.",
+  "task_family": {
+    "candidate_ids": ["n12_t600", "n12_t860", "n12_t1200", "n16_t600", "n16_t860", "n16_t1200", "n20_t600", "n20_t860", "n20_t1200"],
+    "geometry_m": {"base_width": 0.0415, "duct_width": 0.0452, "length": 0.09, "fin_height": 0.0113},
+    "task_schema": {"task_id": "safe identifier", "brief": "engineering requirement in prose", "inlet_temperature_C": 25, "max_base_temperature_C": "number 40..130", "max_fin_mass_g": "number 15..80", "cases": [{"case_id": "safe identifier", "pressure_Pa": "number 5..25", "blocked_channels": "[] or [1]", "heat_load_W": "number 10..80"}], "objective": "find_feasible or minimize_fin_mass_among_evaluated"},
+    "case_count": "2..4",
+    "physics": "Frozen constant-property pressure-driven transverse conjugate-fin PDE, fully developed no-slip momentum and thermally developing flow; ideal fixed common pressure; zero-throughflow branch closure.",
+    "boundaries": ["Synthetic component task, not aircraft requirements or validation", "Measured benchmark supports a bounded comparison, not validation of every new operating point", "Uniform base temperature, not hotspot", "Fin-only mass excludes the illustrative CAD base", "Pressure is straight-channel friction, not installed-system or fan requirement", "No new constants, fitted correlations, property changes, or relaxed requirements"]
+  },
+  "tools": ["inspect: verified model/candidate geometry and analytic hydraulic screening", "evaluate: one candidate, one task case, one allowed mesh; actual frozen PDE solve", "cad: create STEP/STL and independently round-trip check BRep/mesh for one candidate", "finalize: verify selected candidate evidence, immutable task, convergence and CAD, then emit result"],
+  "meshes": {"primary": [48,144,800], "spatial": [64,192,800], "axial": [48,144,1600]},
+  "budgets": {"solver_calls_per_task": 24, "cad_calls_per_task": 3, "total_tool_calls_per_task": 40, "wall_clock_minutes_per_task": 60},
+  "acceptance": {
+    "fixed_task": "Exact task JSON bytes hashed at initialization and checked on every action",
+    "live_model": "PDE source and inherited operator hashes pinned; no cached response substitutes for evaluate",
+    "final_feasible": "All cases evaluated on all three meshes, all numerical gates pass, each mesh Re<2300, fin mass <= fixed limit and temperature <= fixed limit",
+    "convergence": {"spatial_G_relative": 0.005, "axial_G_relative": 0.002},
+    "cad": "Actual kernel STEP roundtrip and closed STL; geometry dimensions and independent fin volume match thermal parameters; base thickness 3 mm is illustrative and excluded from fin mass",
+    "failure_retention": "Retain all errors, failed or out-of-scope evaluations and at least one rejected design where task permits. Infeasible outcomes are legitimate; untested candidates prohibit all-design infeasibility claims.",
+    "no_optimum_claim": "Objective is bounded feasibility or minimum among evaluated candidates only",
+    "trace": "Public chronological tool inputs, results, source/result hashes, concise decision summaries, errors, elapsed time and explicit human intervention count. No private chain of thought.",
+    "heldout": "Independent setter commits task hash after protocol freeze. Executor receives task only after freeze; report contamination/exposure and all amendments honestly. Same task family, not broad generalization evidence."
+  },
+  "file_limits": {"json_bytes_less_than": 100000, "binary_chunk_bytes_at_most": 250000}
+}

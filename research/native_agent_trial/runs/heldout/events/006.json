@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Compute the pressure-loss-only case separately; the task requires all four actual scenarios, not extrapolation from a successful combined fault.",
+  "elapsed_seconds": 13.970935810008086,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "1a8c7e91bd5c5daf2e78cdab25c626c00ea86f075c58db589e3037036faf4d0a",
+  "request": {
+    "case_id": "pressure_loss_11Pa",
+    "design": "n12_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/006_evaluate.json",
+  "result_sha256": "f5ae362b19a25994c9afcf9b574e83c5ff25ceff55240f827c781f24e4440629",
+  "sequence": 6,
+  "status": "ok",
+  "utc": "2026-10-01T04:45:50.602474+00:00"
+}

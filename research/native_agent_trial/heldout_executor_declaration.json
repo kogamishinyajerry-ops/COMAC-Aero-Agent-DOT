@@ -1,0 +1,7 @@
+{
+  "schema": "heldout_executor_declaration_v1",
+  "received_utc": "2026-10-01T04:54:19Z",
+  "source": "Native executor statement to independent evaluator after terminal result and grading",
+  "declaration": "Confirmed: I never read evaluator-private files at any point. Heldout content first read only from your public heldout_task.json after parent-authorized release; no private reference/grading results before terminal. No off-adapter heldout PDE solver calls; all 13 actual solves are logged. I did one separate read-only arithmetic check on already saved primary branch flows (closing one branch leaves other absolute flows unchanged), not a new solve. No externally supplied heldout candidate selection, no requirement/model/protocol/adapter change, and no execution-stage human interventions. I had prior public familiarity with the nine-point family and n16_t600\u2019s earlier results, disclosed in reports; the new n12_t600 choice followed heldout mass/Re inspection. Exact runtime model identity unverified.",
+  "interpretation": "Executor declaration, not instrumented identity or access attestation"
+}

@@ -1,0 +1,24 @@
+{
+  "final_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m unittest discover -s tests -v",
+  "final_status": "passed",
+  "final_test_count": 246,
+  "final_elapsed_seconds": 99.852,
+  "final_log_sha256": "19933dd80f16f5cf560fc0815305e2ecaeb7c10090877d2a3712abab5fcf1156",
+  "checked_after_heldout_terminal": true,
+  "previous_success": {
+    "utc": "2026-10-01T04:37:30Z",
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m unittest discover -s tests -v",
+    "status": "passed",
+    "test_count": 246,
+    "elapsed_seconds": 99.283,
+    "log_sha256": "2aef4f10ad5c36a9076ec4b2bccf1bb0c3a1e1674551aed62763dbec3d8743a0",
+    "scope": "Local unit and API regression suite, including nine new agent adapter tests. No new browser flows; UI files unchanged. Remote CI not run for this unpushed branch."
+  },
+  "saved_evidence_audits": {
+    "development": "passed",
+    "heldout": "passed",
+    "command_template": "python -S scripts/verify_native_agent_trial.py --session research/native_agent_trial/runs/{development|heldout}"
+  },
+  "independent_heldout_grade": "PASS 23/23 checks",
+  "scope": "Local unit/API regressions plus saved-evidence and independent heldout review. No changed UI/server code. No new remote CI or new browser test claim."
+}

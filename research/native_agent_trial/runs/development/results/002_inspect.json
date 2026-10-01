@@ -1,0 +1,250 @@
+{
+  "candidates": [
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 19.770479999999996,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 3284.1337034948197,
+          "case_id": "nominal",
+          "within_Re_scope": false
+        },
+        {
+          "analytic_max_Re_Dh": 2364.5762665162706,
+          "case_id": "combined_fault",
+          "within_Re_scope": false
+        }
+      ],
+      "interior_gap_m": 0.0031181818181818186,
+      "length_m": 0.09,
+      "mass_requirement_pass": true
+    },
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 28.337688,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 2564.6736749363777,
+          "case_id": "nominal",
+          "within_Re_scope": false
+        },
+        {
+          "analytic_max_Re_Dh": 1846.565045954192,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0028345454545454546,
+      "length_m": 0.09,
+      "mass_requirement_pass": true
+    },
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 39.54095999999999,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 1771.749076078784,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1275.6593347767246,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.002463636363636364,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 26.360639999999993,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 1193.7033458788148,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 859.4664090327468,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.002126666666666667,
+      "length_m": 0.09,
+      "mass_requirement_pass": true
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 37.783584,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 816.3819392533676,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 587.7949962624245,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0018493333333333335,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 52.721279999999986,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 816.3819392533676,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 587.7949962624245,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.001486666666666667,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 32.950799999999994,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 816.3819392533676,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 587.7949962624245,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0015526315789473686,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 47.22947999999999,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 816.3819392533676,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 587.7949962624245,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0012789473684210527,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 65.90159999999999,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 816.3819392533676,
+          "case_id": "nominal",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 587.7949962624245,
+          "case_id": "combined_fault",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0009210526315789477,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    }
+  ],
+  "source_model_sha256": [
+    "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+  ],
+  "task": {
+    "brief": "Choose an existing plate-fin candidate to reject 50 W at nominal supply and after a pressure loss plus sealed first interior channel, below 85 C uniform-base temperature and 30 g fin-only aluminum. Preserve each constraint and reject any candidate outside the declared Reynolds scope. Produce a verified component CAD artifact and evidence.",
+    "cases": [
+      {
+        "blocked_channels": [],
+        "case_id": "nominal",
+        "heat_load_W": 50,
+        "pressure_Pa": 25
+      },
+      {
+        "blocked_channels": [
+          1
+        ],
+        "case_id": "combined_fault",
+        "heat_load_W": 50,
+        "pressure_Pa": 18
+      }
+    ],
+    "inlet_temperature_C": 25,
+    "max_base_temperature_C": 85,
+    "max_fin_mass_g": 30,
+    "objective": "minimize_fin_mass_among_evaluated",
+    "task_id": "development_50w_mass30"
+  },
+  "thermal_results_computed": false,
+  "warning": "Analytic hydraulics and mass only. Selection requires live PDE, numerical and mesh checks plus CAD. Existing family results were visible during development; this is not an unseen-family test."
+}

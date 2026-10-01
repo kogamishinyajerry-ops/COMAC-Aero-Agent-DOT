@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Refine the pressure-loss-only case so its convergence is measured directly rather than inherited from the other pressure state.",
+  "elapsed_seconds": 27.38305956000113,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "3962967ec419af9cdd3ded4111e96f31be22805935795d44f2f65f42134f411a",
+  "request": {
+    "case_id": "pressure_loss_11Pa",
+    "design": "n12_t600",
+    "mesh": "spatial"
+  },
+  "result_file": "results/010_evaluate.json",
+  "result_sha256": "d3c65873253dd803be2544221661182c2ec693a69d746abd1c39b6f8383ae941",
+  "sequence": 10,
+  "status": "ok",
+  "utc": "2026-10-01T04:48:11.317288+00:00"
+}

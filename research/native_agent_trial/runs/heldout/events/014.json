@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Verify axial resolution for pressure loss without closure, retaining the original 36 W load and all fixed limits.",
+  "elapsed_seconds": 27.804727138005546,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "8b3cc10a7b6cc8378dbbdada9c5220637291e4a0dfe9bd89bb607cdc7728f665",
+  "request": {
+    "case_id": "pressure_loss_11Pa",
+    "design": "n12_t600",
+    "mesh": "axial"
+  },
+  "result_file": "results/014_evaluate.json",
+  "result_sha256": "b6f926ddb6a3301337755e48b9a5f20024414a7bc1e2ffd0ec4f1022ad5e43af",
+  "sequence": 14,
+  "status": "ok",
+  "utc": "2026-10-01T04:50:38.221047+00:00"
+}

@@ -1,0 +1,122 @@
+{
+  "artifacts": {
+    "step": {
+      "chunks": [
+        {
+          "bytes": 29240,
+          "file": "cad/016_n12_t600/n12_t600.step.gz.part000",
+          "sha256": "f5b0eddf229996edccffaad12e92c77e21002ec03784d2e1baed65e0bf032eb0"
+        }
+      ],
+      "gzip_sha256": "f5b0eddf229996edccffaad12e92c77e21002ec03784d2e1baed65e0bf032eb0",
+      "raw_bytes": 171922,
+      "raw_sha256": "744a20c0f736aae2f0dc66d99a00bc4ac5944b4304b80ebe08760be64a1b9ed7",
+      "restore": "Concatenate chunks in order, then gzip decompress"
+    },
+    "stl": {
+      "chunks": [
+        {
+          "bytes": 1458,
+          "file": "cad/016_n12_t600/n12_t600.stl.gz.part000",
+          "sha256": "86314c6df34a2f10d91f0be4ddc04af7c770acb6829553cab9ea9d843627e0ee"
+        }
+      ],
+      "gzip_sha256": "86314c6df34a2f10d91f0be4ddc04af7c770acb6829553cab9ea9d843627e0ee",
+      "raw_bytes": 9484,
+      "raw_sha256": "bb2829647761d3b8aa7deb3682961b60320aaea5a182d05f6480e0ae99583ea8",
+      "restore": "Concatenate chunks in order, then gzip decompress"
+    }
+  },
+  "brep": {
+    "bbox_mm": {
+      "x": 41.5,
+      "y": 90.0,
+      "z": 14.3
+    },
+    "closed_shells": true,
+    "edges": 144,
+    "euler_characteristic": 2,
+    "faces": 50,
+    "is_valid": true,
+    "mass_kg": 0.05002398000000004,
+    "max_bbox_error_mm": 0.0,
+    "method": "independent_OpenCascade_BRep_measurement",
+    "passed": true,
+    "relative_surface_area_error": 2.1136013051306036e-16,
+    "relative_volume_error": 5.890700487534752e-16,
+    "shell_count": 1,
+    "solid_count": 1,
+    "surface_area_m2": 0.03282972000000001,
+    "vertices": 96,
+    "volume_mm3": 18527.400000000012
+  },
+  "design_id": "n12_t600",
+  "geometry_source_sha256": "fa7cbddd588f23de942c492843e43147f80ca0d3ab88b624dcf395d549d97ee6",
+  "parameters": {
+    "base_thickness_mm": 3.0,
+    "fin_count": 12,
+    "fin_height_mm": 11.3,
+    "fin_thickness_mm": 0.6,
+    "length_mm": 90.0,
+    "width_mm": 41.5
+  },
+  "passed": true,
+  "preview_file": "cad/016_n12_t600/n12_t600.svg",
+  "preview_sha256": "4b3e4f2161a9de1377d22a8061cbf1c943632a9dd499d682b8ae925c30b5b558",
+  "software_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  },
+  "source": "Existing generic rectangular-fin CAD kernel; newly generated component dimensions, not original NASA CAD or whole-aircraft output",
+  "step_roundtrip": {
+    "bbox_mm": {
+      "x": 41.50000000000001,
+      "y": 90.0,
+      "z": 14.3
+    },
+    "closed_shells": true,
+    "edges": 144,
+    "euler_characteristic": 2,
+    "faces": 50,
+    "is_valid": true,
+    "mass_kg": 0.05002397999999997,
+    "max_bbox_error_mm": 7.105427357601002e-15,
+    "method": "independent_OpenCascade_BRep_measurement",
+    "passed": true,
+    "relative_surface_area_error": 0.0,
+    "relative_volume_error": 7.854267316713004e-16,
+    "shell_count": 1,
+    "solid_count": 1,
+    "surface_area_m2": 0.03282972,
+    "vertices": 96,
+    "volume_mm3": 18527.399999999987
+  },
+  "stl": {
+    "bbox_mm": {
+      "x": 41.5,
+      "y": 90.0,
+      "z": 14.300000190734863
+    },
+    "connected": true,
+    "consistent_orientation": true,
+    "degenerate_triangles": 0,
+    "edges": 282,
+    "euler_characteristic": 2,
+    "max_bbox_error_mm": 1.9073486257070726e-07,
+    "method": "independent_binary_STL_edge_and_signed_volume_check",
+    "passed": true,
+    "relative_volume_error": 2.1973748107314085e-07,
+    "triangles": 188,
+    "vertices": 96,
+    "volume_mm3": 18527.395928835795,
+    "watertight": true
+  },
+  "thermal_geometry_mapping": {
+    "base_scope": "Illustrative CAD support only; excluded from thermal fin-mass criterion; base spreading not solved",
+    "base_thickness_mm": 3,
+    "duct_scope": "45.2 mm wide adiabatic flow boundary is a mathematical boundary, not an exported duct solid",
+    "fin_mass_absolute_error_g": 3.907985046680551e-14,
+    "kernel_fin_only_mass_g": 19.770480000000035,
+    "thermal_fin_only_mass_g": 19.770479999999996
+  }
+}
