@@ -1,0 +1,18 @@
+{
+  "schema": "native_heldout_execution_declaration_v1",
+  "task_received_after_development_terminal": true,
+  "task_setter_independent_from_executor": true,
+  "family_previously_familiar": true,
+  "heldout_reference_seen_before_terminal": false,
+  "private_evaluator_directory_read": false,
+  "protocol_changed_after_release": false,
+  "adapter_changed_after_release": false,
+  "model_constants_or_requirements_changed": false,
+  "external_model_api_calls_declared": 0,
+  "exact_native_runtime_model_identity": "unverified",
+  "tool_budget_count_scope": "Logged engineering adapter actions only; excludes tool construction, unit tests, shell polling, report generation and coordination",
+  "source_versions_file": "environment_observed.json",
+  "nonfatal_CAD_cache_warning": true,
+  "task_sha256": "52d8222b71afa2fb1d4e9584286e92d060c51e4044a0b4df20f0b45e5712274d",
+  "terminal_result_sha256": "2d3cc9fb91bebc41472f2a7ddee3928d0d7f7412f48196692bd0bf80d88d1f09"
+}

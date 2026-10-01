@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The lighter candidate passes the combined fault at 75.64 C and 19.77 g. Now compute maximum-pressure nominal operation, where Reynolds applicability is closest to its cutoff.",
+  "elapsed_seconds": 14.153745873991284,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "00a33ef721b33d65ca22c71f091566442a66326f415df38b048165a190b626fe",
+  "request": {
+    "case_id": "nominal_17Pa",
+    "design": "n12_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/005_evaluate.json",
+  "result_sha256": "a691d1e91179c9add64484910af5581985c5aedc259448dc0c09493c2e31ca37",
+  "sequence": 5,
+  "status": "ok",
+  "utc": "2026-10-01T04:45:36.545691+00:00"
+}

@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The 0.60 mm fins pass the combined fault with 7.66 C margin. Check the nominal case explicitly; do not substitute the fault result for all-case verification.",
+  "elapsed_seconds": 18.30483307299437,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "ec24a540fecdcd1d35efee9de7a84547cb9c6e4c7486175f6e794bbbd061f200",
+  "request": {
+    "case_id": "nominal",
+    "design": "n16_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/005_evaluate.json",
+  "result_sha256": "abad0e036b60398a3b31932e7ed824ddf6adc3e628c01ee43700207caaaed1c1",
+  "sequence": 5,
+  "status": "ok",
+  "utc": "2026-10-01T04:37:18.290306+00:00"
+}

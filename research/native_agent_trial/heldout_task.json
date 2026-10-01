@@ -1,0 +1,14 @@
+{
+  "task_id": "heldout_compact_mass_fault_v1",
+  "brief": "Select one of the nine frozen straight plate-fin geometries for a synthetic lightweight component that must reject 36 W at each of four prescribed pressure and branch-closure conditions. The common inlet is 25 C, the required uniform-base temperature must not exceed 80 C, and fin-only aluminum mass must not exceed 25 g. Compute the new cases, retain a rejected alternative and explain its failure, verify the chosen geometry on every required mesh and with actual STEP/STL roundtrip evidence. Report only bounded model-conditional feasibility; if no design qualifies, state the searched scope and do not relax the task.",
+  "inlet_temperature_C": 25,
+  "max_base_temperature_C": 80,
+  "max_fin_mass_g": 25,
+  "cases": [
+    {"case_id": "nominal_17Pa", "pressure_Pa": 17, "blocked_channels": [], "heat_load_W": 36},
+    {"case_id": "pressure_loss_11Pa", "pressure_Pa": 11, "blocked_channels": [], "heat_load_W": 36},
+    {"case_id": "closure_17Pa", "pressure_Pa": 17, "blocked_channels": [1], "heat_load_W": 36},
+    {"case_id": "combined_11Pa", "pressure_Pa": 11, "blocked_channels": [1], "heat_load_W": 36}
+  ],
+  "objective": "find_feasible"
+}

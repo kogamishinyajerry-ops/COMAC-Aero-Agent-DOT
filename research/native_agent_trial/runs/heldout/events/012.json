@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "All spatial refinements pass; the limiting temperature moves to 75.661 C and maximum conductance change is 0.0587%, below 0.5%. Double axial steps for the combined fault.",
+  "elapsed_seconds": 27.72494433299289,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "32a730552ffe5d3aeb5b601332ade0ee9f723fe2b8e10ba92ee51cceecd9051c",
+  "request": {
+    "case_id": "combined_11Pa",
+    "design": "n12_t600",
+    "mesh": "axial"
+  },
+  "result_file": "results/012_evaluate.json",
+  "result_sha256": "6e09d12209dab718d028aff29b3f5c07687ce27803ba3aa9d71e9b5453c91e23",
+  "sequence": 12,
+  "status": "ok",
+  "utc": "2026-10-01T04:49:42.054615+00:00"
+}

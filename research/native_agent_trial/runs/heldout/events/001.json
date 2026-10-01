@@ -1,0 +1,18 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Receive the independently committed heldout requirement after development terminated. Initialize exact task bytes; preserve the frozen adapter, physics and acceptance protocol.",
+  "elapsed_seconds": 0.0003706909919856116,
+  "error": null,
+  "execution": {},
+  "operation": "init",
+  "previous_event_sha256": null,
+  "request": {
+    "task_id": "heldout_compact_mass_fault_v1",
+    "task_sha256": "52d8222b71afa2fb1d4e9584286e92d060c51e4044a0b4df20f0b45e5712274d"
+  },
+  "result_file": "results/001_init.json",
+  "result_sha256": "aefcc249ace5cc370d2c58987f1e466d701199553e4a4c2be2e898d7082217ac",
+  "sequence": 1,
+  "status": "ok",
+  "utc": "2026-10-01T04:43:18.818566+00:00"
+}

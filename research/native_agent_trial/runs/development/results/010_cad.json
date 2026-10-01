@@ -1,0 +1,122 @@
+{
+  "artifacts": {
+    "step": {
+      "chunks": [
+        {
+          "bytes": 38494,
+          "file": "cad/010_n16_t600/n16_t600.step.gz.part000",
+          "sha256": "54c04f5dac773edc1ad783306b301fb46c72cb85fc809608029cad4e7ffebd06"
+        }
+      ],
+      "gzip_sha256": "54c04f5dac773edc1ad783306b301fb46c72cb85fc809608029cad4e7ffebd06",
+      "raw_bytes": 228179,
+      "raw_sha256": "a3b268270af85cbe4ba18c9201d614972120315f664e293ee594de9e2f1da506",
+      "restore": "Concatenate chunks in order, then gzip decompress"
+    },
+    "stl": {
+      "chunks": [
+        {
+          "bytes": 1924,
+          "file": "cad/010_n16_t600/n16_t600.stl.gz.part000",
+          "sha256": "cbb12e38de5b924d417c6ae5325e28bda3b63e7629f6f66f4fd2c191cbf0cfd5"
+        }
+      ],
+      "gzip_sha256": "cbb12e38de5b924d417c6ae5325e28bda3b63e7629f6f66f4fd2c191cbf0cfd5",
+      "raw_bytes": 12684,
+      "raw_sha256": "3ac693c1eac015103fafc4aa803aae81f14031b15033875fac5148adcaec9ddf",
+      "restore": "Concatenate chunks in order, then gzip decompress"
+    }
+  },
+  "brep": {
+    "bbox_mm": {
+      "x": 41.5,
+      "y": 90.0,
+      "z": 14.3
+    },
+    "closed_shells": true,
+    "edges": 192,
+    "euler_characteristic": 2,
+    "faces": 66,
+    "is_valid": true,
+    "mass_kg": 0.05661413999999999,
+    "max_bbox_error_mm": 0.0,
+    "method": "independent_OpenCascade_BRep_measurement",
+    "passed": true,
+    "relative_surface_area_error": 0.0,
+    "relative_volume_error": 1.7349981434227605e-16,
+    "shell_count": 1,
+    "solid_count": 1,
+    "surface_area_m2": 0.041019959999999994,
+    "vertices": 128,
+    "volume_mm3": 20968.199999999997
+  },
+  "design_id": "n16_t600",
+  "geometry_source_sha256": "fa7cbddd588f23de942c492843e43147f80ca0d3ab88b624dcf395d549d97ee6",
+  "parameters": {
+    "base_thickness_mm": 3.0,
+    "fin_count": 16,
+    "fin_height_mm": 11.3,
+    "fin_thickness_mm": 0.6,
+    "length_mm": 90.0,
+    "width_mm": 41.5
+  },
+  "passed": true,
+  "preview_file": "cad/010_n16_t600/n16_t600.svg",
+  "preview_sha256": "22d766b8892e57eab658cdb915d1c53ed42d5aff1c56baa4e033992df1472ceb",
+  "software_versions": {
+    "cadquery": "2.7.0",
+    "cadquery-ocp": "7.8.1.1.post1"
+  },
+  "source": "Existing generic rectangular-fin CAD kernel; newly generated component dimensions, not original NASA CAD or whole-aircraft output",
+  "step_roundtrip": {
+    "bbox_mm": {
+      "x": 41.50000000000001,
+      "y": 90.0,
+      "z": 14.3
+    },
+    "closed_shells": true,
+    "edges": 192,
+    "euler_characteristic": 2,
+    "faces": 66,
+    "is_valid": true,
+    "mass_kg": 0.05661414000000003,
+    "max_bbox_error_mm": 7.105427357601002e-15,
+    "method": "independent_OpenCascade_BRep_measurement",
+    "passed": true,
+    "relative_surface_area_error": 0.0,
+    "relative_volume_error": 3.469996286845521e-16,
+    "shell_count": 1,
+    "solid_count": 1,
+    "surface_area_m2": 0.041019959999999994,
+    "vertices": 128,
+    "volume_mm3": 20968.200000000008
+  },
+  "stl": {
+    "bbox_mm": {
+      "x": 41.5,
+      "y": 90.0,
+      "z": 14.300000190734863
+    },
+    "connected": true,
+    "consistent_orientation": true,
+    "degenerate_triangles": 0,
+    "edges": 378,
+    "euler_characteristic": 2,
+    "max_bbox_error_mm": 1.9073486257070726e-07,
+    "method": "independent_binary_STL_edge_and_signed_volume_check",
+    "passed": true,
+    "relative_volume_error": 1.76004859661191e-07,
+    "triangles": 252,
+    "vertices": 128,
+    "volume_mm3": 20968.196309494902,
+    "watertight": true
+  },
+  "thermal_geometry_mapping": {
+    "base_scope": "Illustrative CAD support only; excluded from thermal fin-mass criterion; base spreading not solved",
+    "base_thickness_mm": 3,
+    "duct_scope": "45.2 mm wide adiabatic flow boundary is a mathematical boundary, not an exported duct solid",
+    "fin_mass_absolute_error_g": 0.0,
+    "kernel_fin_only_mass_g": 26.360639999999993,
+    "thermal_fin_only_mass_g": 26.360639999999993
+  }
+}

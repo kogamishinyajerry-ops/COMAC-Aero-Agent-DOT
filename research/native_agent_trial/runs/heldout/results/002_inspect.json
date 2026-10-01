@@ -1,0 +1,354 @@
+{
+  "candidates": [
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 19.770479999999996,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 2233.2109183764774,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1445.018829537721,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 2233.2109183764774,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1445.018829537721,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0031181818181818186,
+      "length_m": 0.09,
+      "mass_requirement_pass": true
+    },
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 28.337688,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 1743.978098956737,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1128.456416972006,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1743.978098956737,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1128.456416972006,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0028345454545454546,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 12,
+      "base_width_m": 0.0415,
+      "design_id": "n12_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 39.54095999999999,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 1204.789371733573,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 779.569593474665,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 1204.789371733573,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 779.569593474665,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.002463636363636364,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 26.360639999999993,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 811.7182751975942,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 525.2294721866785,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 811.7182751975942,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 525.2294721866785,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.002126666666666667,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 37.783584,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0018493333333333335,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 16,
+      "base_width_m": 0.0415,
+      "design_id": "n16_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 52.721279999999986,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.001486666666666667,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t600",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 32.950799999999994,
+      "fin_thickness_m": 0.0006,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0015526315789473686,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t860",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 47.22947999999999,
+      "fin_thickness_m": 0.00086,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0012789473684210527,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    },
+    {
+      "N_fins": 20,
+      "base_width_m": 0.0415,
+      "design_id": "n20_t1200",
+      "duct_width_m": 0.0452,
+      "fin_height_m": 0.0113,
+      "fin_only_mass_g": 65.90159999999999,
+      "fin_thickness_m": 0.0012,
+      "hydraulic_screen": [
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "nominal_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "pressure_loss_11Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 555.1397186922899,
+          "case_id": "closure_17Pa",
+          "within_Re_scope": true
+        },
+        {
+          "analytic_max_Re_Dh": 359.20805327148173,
+          "case_id": "combined_11Pa",
+          "within_Re_scope": true
+        }
+      ],
+      "interior_gap_m": 0.0009210526315789477,
+      "length_m": 0.09,
+      "mass_requirement_pass": false
+    }
+  ],
+  "source_model_sha256": [
+    "24e1603c895e1f268a8aadcbc58a520fef606c108738d98f73898d89f873c08c",
+    "bdf9998a7f20cdd5d75fef2f5f0e49c9344ebc1e6f31a5ac955bff366d6c9d4c"
+  ],
+  "task": {
+    "brief": "Select one of the nine frozen straight plate-fin geometries for a synthetic lightweight component that must reject 36 W at each of four prescribed pressure and branch-closure conditions. The common inlet is 25 C, the required uniform-base temperature must not exceed 80 C, and fin-only aluminum mass must not exceed 25 g. Compute the new cases, retain a rejected alternative and explain its failure, verify the chosen geometry on every required mesh and with actual STEP/STL roundtrip evidence. Report only bounded model-conditional feasibility; if no design qualifies, state the searched scope and do not relax the task.",
+    "cases": [
+      {
+        "blocked_channels": [],
+        "case_id": "nominal_17Pa",
+        "heat_load_W": 36,
+        "pressure_Pa": 17
+      },
+      {
+        "blocked_channels": [],
+        "case_id": "pressure_loss_11Pa",
+        "heat_load_W": 36,
+        "pressure_Pa": 11
+      },
+      {
+        "blocked_channels": [
+          1
+        ],
+        "case_id": "closure_17Pa",
+        "heat_load_W": 36,
+        "pressure_Pa": 17
+      },
+      {
+        "blocked_channels": [
+          1
+        ],
+        "case_id": "combined_11Pa",
+        "heat_load_W": 36,
+        "pressure_Pa": 11
+      }
+    ],
+    "inlet_temperature_C": 25,
+    "max_base_temperature_C": 80,
+    "max_fin_mass_g": 25,
+    "objective": "find_feasible",
+    "task_id": "heldout_compact_mass_fault_v1"
+  },
+  "thermal_results_computed": false,
+  "warning": "Analytic hydraulics and mass only. Selection requires live PDE, numerical and mesh checks plus CAD. Existing family results were visible during development; this is not an unseen-family test."
+}

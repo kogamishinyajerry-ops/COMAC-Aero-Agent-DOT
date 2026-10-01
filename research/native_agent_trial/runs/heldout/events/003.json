@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "The previous 16-fin design is now 1.36 g over the new 25 g limit. Recompute its new combined fault as the required rejected alternative; a prior successful selection must not carry over automatically.",
+  "elapsed_seconds": 18.967628564001643,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "e8a8c9c09547d167a0bd767485f60debe79c76e39345a0d4883e88dfd18af6ba",
+  "request": {
+    "case_id": "combined_11Pa",
+    "design": "n16_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/003_evaluate.json",
+  "result_sha256": "8762fe451417958a5fe9269caeefb601ef4b0828be391d195ff159e9817ae78d",
+  "sequence": 3,
+  "status": "ok",
+  "utc": "2026-10-01T04:44:22.751173+00:00"
+}

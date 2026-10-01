@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Compute branch closure at unchanged 17 Pa, preserving the ideal common-pressure semantics. Retain its absolute flow and temperature evidence separately from pressure loss.",
+  "elapsed_seconds": 13.87479713599896,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "b5b6dd29d025aaf08455f9516f04418d7fdf748b97d4e1c73081ca53844efa0a",
+  "request": {
+    "case_id": "closure_17Pa",
+    "design": "n12_t600",
+    "mesh": "primary"
+  },
+  "result_file": "results/007_evaluate.json",
+  "result_sha256": "a60af4d5d5dd19a91e753f23ccbcb6f27f78fd857d0363811ffb6e579aa591b0",
+  "sequence": 7,
+  "status": "ok",
+  "utc": "2026-10-01T04:46:04.557668+00:00"
+}

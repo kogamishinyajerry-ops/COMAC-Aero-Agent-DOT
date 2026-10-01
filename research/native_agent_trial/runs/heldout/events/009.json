@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Refine the maximum-pressure nominal case; its Re is about 2235 and must remain below the unchanged 2300 cutoff.",
+  "elapsed_seconds": 27.260846878998564,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "ebfd8389da88ce66da7ea46bd1bd651ebfaf243e70f8d983cc9ade857ed2242c",
+  "request": {
+    "case_id": "nominal_17Pa",
+    "design": "n12_t600",
+    "mesh": "spatial"
+  },
+  "result_file": "results/009_evaluate.json",
+  "result_sha256": "a8f0f7fed33a3321331cd8577954658367c70179deac173f4f8ad858804028ad",
+  "sequence": 9,
+  "status": "ok",
+  "utc": "2026-10-01T04:47:43.853164+00:00"
+}

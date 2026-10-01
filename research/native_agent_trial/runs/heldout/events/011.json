@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Refine closure-only flow and conjugate conduction, completing all four prescribed spatial checks before axial verification.",
+  "elapsed_seconds": 28.107778434001375,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "c9662e4d084c05596943254056eb5b1822ab1810c41e1d40d67ff7515557a6ac",
+  "request": {
+    "case_id": "closure_17Pa",
+    "design": "n12_t600",
+    "mesh": "spatial"
+  },
+  "result_file": "results/011_evaluate.json",
+  "result_sha256": "72537e193572dd04f16c8ba3ba48dc68d149f83d6745b9c160521553aed564f3",
+  "sequence": 11,
+  "status": "ok",
+  "utc": "2026-10-01T04:48:39.505439+00:00"
+}

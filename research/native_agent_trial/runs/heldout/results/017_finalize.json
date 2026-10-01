@@ -1,0 +1,92 @@
+{
+  "all_candidate_infeasibility_established": false,
+  "analytic_rejected_candidate_ids": [
+    "n12_t1200",
+    "n12_t860",
+    "n16_t1200",
+    "n16_t600",
+    "n16_t860",
+    "n20_t1200",
+    "n20_t600",
+    "n20_t860"
+  ],
+  "cad_calls": 1,
+  "cad_pass": true,
+  "case_verification": [
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 8.116278990066839e-05,
+      "case_id": "nominal_17Pa",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 64.34662908467332,
+      "spatial_G_relative": 0.0005864949125558017,
+      "worst_mesh_temperature_C": 64.36971922470737
+    },
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 8.881714059083556e-05,
+      "case_id": "pressure_loss_11Pa",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 71.35963003089947,
+      "spatial_G_relative": 0.0004935217964671113,
+      "worst_mesh_temperature_C": 71.38252081589718
+    },
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 8.130342605494612e-05,
+      "case_id": "closure_17Pa",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 67.96517220575375,
+      "spatial_G_relative": 0.0005847243668045676,
+      "worst_mesh_temperature_C": 67.99030968736443
+    },
+    {
+      "all_mesh_condition_gates_pass": true,
+      "all_meshes_present": true,
+      "axial_G_relative": 8.910928121785844e-05,
+      "case_id": "combined_11Pa",
+      "convergence_pass": true,
+      "primary_required_base_temperature_C": 75.63611735220559,
+      "spatial_G_relative": 0.0004923224237418644,
+      "worst_mesh_temperature_C": 75.66105892752611
+    }
+  ],
+  "completed_solver_calls": 13,
+  "conditional_acceptance_pass": true,
+  "errors": 0,
+  "evaluate_requests": 13,
+  "evaluated_candidate_ids": [
+    "n12_t600",
+    "n16_t600"
+  ],
+  "global_optimum_established": false,
+  "human_interventions_during_execution": 0,
+  "interpretation": "Conditional component screening only; immutable requirements, model-validity limits and rejected cases retained. No aircraft, manufacturing or broad generalization claim.",
+  "lighter_primary_feasible_candidates": [],
+  "objective_pass": true,
+  "outcome": "conditionally_feasible",
+  "physical_validation_pass": null,
+  "primary_feasible_candidate_ids": [
+    "n12_t600"
+  ],
+  "rejected_evaluations": [
+    {
+      "case_id": "combined_11Pa",
+      "design_id": "n16_t600",
+      "failed_gates": [
+        "fin_mass"
+      ],
+      "mesh_id": "primary"
+    }
+  ],
+  "rejection_retention_pass": true,
+  "selected_design_id": "n12_t600",
+  "solver_calls": 13,
+  "task_id": "heldout_compact_mass_fault_v1",
+  "tool_calls_including_this": 17,
+  "wall_budget_pass": true,
+  "wall_seconds": 518.641461
+}

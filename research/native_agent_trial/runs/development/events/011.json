@@ -1,0 +1,20 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Select 16 fins at 0.60 mm: both cases and both refinements pass, fin mass is 26.36 g, and genuine STEP/STL roundtrips match. Retain the overweight baseline and all analytic scope/mass rejections; make no aircraft or global-optimum claim.",
+  "elapsed_seconds": 0.0040739089890848845,
+  "error": null,
+  "execution": {
+    "solver_completed": false,
+    "solver_started": false
+  },
+  "operation": "finalize",
+  "previous_event_sha256": "9be41d471387ed9abeefa60440686c5b30ccb506dbdbe37f9da67d40ec2c3b64",
+  "request": {
+    "design": "n16_t600"
+  },
+  "result_file": "results/011_finalize.json",
+  "result_sha256": "fb0f06e6fe293750b184b4319aeb966be57d568d05203eab53410f19ce4790ea",
+  "sequence": 11,
+  "status": "ok",
+  "utc": "2026-10-01T04:41:50.773817+00:00"
+}

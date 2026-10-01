@@ -1,0 +1,180 @@
+{
+  "schema": "independent_heldout_evidence_grade_v1",
+  "graded_utc": "2026-10-01T04:52:14.774414+00:00",
+  "result": "PASS",
+  "task_sha256": "52d8222b71afa2fb1d4e9584286e92d060c51e4044a0b4df20f0b45e5712274d",
+  "protocol_sha256": "7637f775ae3f670589b8abc7ab4e96abfe8b44f809fbe17b8fcc9ee40604e8ae",
+  "adapter_sha256": "0898baa98b80b0217bf7a435a5f2aa0cf8f30f1f4ba6ec924564145a8ecec262",
+  "selected_design_id": "n12_t600",
+  "fin_only_mass_g": 19.770479999999996,
+  "checks": {
+    "task_matches_preregistration": true,
+    "protocol_matches_freeze": true,
+    "adapter_matches_freeze": true,
+    "cad_source_matches_freeze": true,
+    "session_metadata_matches_initial_result": true,
+    "model_source_identity": true,
+    "event_chain_and_result_hashes": true,
+    "chronological_events": true,
+    "reported_terminal_acceptance": true,
+    "mass_arithmetic_and_requirement": true,
+    "budgets": true,
+    "budget_counts_consistent": true,
+    "all_twelve_selected_solves": true,
+    "independent_task_arithmetic": true,
+    "independent_numeric_domain_constraint_and_convergence_gates": true,
+    "private_postfreeze_reference_match": true,
+    "independent_hydraulic_identities": true,
+    "actual_cad_byte_identity": true,
+    "independent_step_geometry_identity": true,
+    "independent_stl_topology_and_volume": true,
+    "rejected_alternative_retained": true,
+    "all_evidence_files_bounded": true,
+    "claim_scope_fields": true
+  },
+  "counts": {
+    "tool_calls": 17,
+    "actual_solver_calls": 13,
+    "cad_calls": 1,
+    "errors": 0,
+    "human_interventions_declared": 0,
+    "external_model_api_calls_declared": 0,
+    "wall_seconds": 518.641461
+  },
+  "case_verification": [
+    {
+      "case_id": "nominal_17Pa",
+      "meshes": [
+        {
+          "mesh": "primary",
+          "G_W_K": 0.9149449606605071,
+          "base_temperature_C": 64.34662908467332,
+          "max_Re_Dh": 2235.501926522875
+        },
+        {
+          "mesh": "spatial",
+          "G_W_K": 0.9144083500958111,
+          "base_temperature_C": 64.36971922470737,
+          "max_Re_Dh": 2234.499840564641
+        },
+        {
+          "mesh": "axial",
+          "G_W_K": 0.9150192201461198,
+          "base_temperature_C": 64.34343586165451,
+          "max_Re_Dh": 2235.501926522875
+        }
+      ],
+      "spatial_relative": 0.0005864949125558017,
+      "axial_relative": 8.116278990066839e-05
+    },
+    {
+      "case_id": "pressure_loss_11Pa",
+      "meshes": [
+        {
+          "mesh": "primary",
+          "G_W_K": 0.7765376897098921,
+          "base_temperature_C": 71.35963003089947,
+          "max_Re_Dh": 1446.5012465736245
+        },
+        {
+          "mesh": "spatial",
+          "G_W_K": 0.7761544514342421,
+          "base_temperature_C": 71.38252081589718,
+          "max_Re_Dh": 1445.8528380124146
+        },
+        {
+          "mesh": "axial",
+          "G_W_K": 0.7766066595670531,
+          "base_temperature_C": 71.355512866796,
+          "max_Re_Dh": 1446.5012465736245
+        }
+      ],
+      "spatial_relative": 0.0004935217964671113,
+      "axial_relative": 8.881714059083556e-05
+    },
+    {
+      "case_id": "closure_17Pa",
+      "meshes": [
+        {
+          "mesh": "primary",
+          "G_W_K": 0.8378879485831319,
+          "base_temperature_C": 67.96517220575375,
+          "max_Re_Dh": 2235.501926522875
+        },
+        {
+          "mesh": "spatial",
+          "G_W_K": 0.8373980150829434,
+          "base_temperature_C": 67.99030968736443,
+          "max_Re_Dh": 2234.499840564641
+        },
+        {
+          "mesh": "axial",
+          "G_W_K": 0.8379560717440018,
+          "base_temperature_C": 67.9616792740397,
+          "max_Re_Dh": 2235.501926522875
+        }
+      ],
+      "spatial_relative": 0.0005847243668045676,
+      "axial_relative": 8.130342605494612e-05
+    },
+    {
+      "case_id": "combined_11Pa",
+      "meshes": [
+        {
+          "mesh": "primary",
+          "G_W_K": 0.7109549839613035,
+          "base_temperature_C": 75.63611735220559,
+          "max_Re_Dh": 1446.5012465736245
+        },
+        {
+          "mesh": "spatial",
+          "G_W_K": 0.7106049648804283,
+          "base_temperature_C": 75.66105892752611,
+          "max_Re_Dh": 1445.8528380124146
+        },
+        {
+          "mesh": "axial",
+          "G_W_K": 0.7110183366489026,
+          "base_temperature_C": 75.6316056062231,
+          "max_Re_Dh": 1446.5012465736245
+        }
+      ],
+      "spatial_relative": 0.0004923224237418644,
+      "axial_relative": 8.910928121785844e-05
+    }
+  ],
+  "details": {
+    "independent_step_readback": {
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 18527.399999999987,
+      "expected_volume_mm3": 18527.4,
+      "bbox_mm": [
+        41.50000000000001,
+        90.0,
+        14.3
+      ],
+      "fin_and_gap_occupancy_probes": 23,
+      "all_occupancy_probes_pass": true,
+      "fin_only_mass_g": 19.770479999999967
+    },
+    "independent_stl_readback": {
+      "triangles": 188,
+      "vertices": 96,
+      "edges": 282,
+      "connected": true,
+      "watertight_and_oriented": true,
+      "signed_volume_mm3": 18527.395928835795,
+      "relative_volume_error": 2.1973748109971325e-07
+    }
+  },
+  "terminal_result_sha256": "2d3cc9fb91bebc41472f2a7ddee3928d0d7f7412f48196692bd0bf80d88d1f09",
+  "trace_head_sha256": "c5a72facb1a75007a8c8b2b17c8e0fc1b491c08e61dca78f65032154b41d01d7",
+  "limitations": [
+    "This checks saved public tool evidence and actual CAD bytes; it does not independently attest native runtime model identity, absence of all possible external APIs, or absence of all off-protocol file access.",
+    "Shared filesystem separation is logical, not an enforced information barrier. No task/reference values were sent to the executor before authorized release; the executor must separately declare exposure.",
+    "The nine-candidate family and inherited numerical results were already known. This is one withheld-configuration feasibility-transfer trial, not a blind benchmark or evidence of broad engineering generalization.",
+    "The tighter 25 g mass cap leaves one eligible design; this chiefly tests changed constraint/domain handling, live computation, verification and honest reporting rather than combinatorial optimization.",
+    "Private reference reruns use the same frozen solver; they are independent execution/arithmetic checks, not independent model-form or experimental validation."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "actor": "native_assistant",
+  "decision_summary": "Cross-section refinement changes conductance by only 0.0384% in the fault case, under the fixed 0.5% gate. Double axial marching steps to test the independent axial error.",
+  "elapsed_seconds": 37.717030947009334,
+  "error": null,
+  "execution": {
+    "solver_completed": true,
+    "solver_started": true
+  },
+  "operation": "evaluate",
+  "previous_event_sha256": "622f303eedce6658699471e1cc52000c15d4d51feeda5a7e0fb48628714509b2",
+  "request": {
+    "case_id": "combined_fault",
+    "design": "n16_t600",
+    "mesh": "axial"
+  },
+  "result_file": "results/008_evaluate.json",
+  "result_sha256": "886784b0cf9163a3214f203e3eb518a4f6fb959868bc9916cc784cf80cc8029f",
+  "sequence": 8,
+  "status": "ok",
+  "utc": "2026-10-01T04:40:26.610711+00:00"
+}
