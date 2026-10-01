@@ -137,6 +137,12 @@ def main():
             assert export['run']['final'] == expected['runs']['heldout']['final']
             results['flows'].append('export preserves selected trial, exact requirements and terminal evidence')
 
+            page.locator('.skip-link').focus()
+            page.locator('.skip-link').press('Enter')
+            assert_stage('heldout', 5)
+            expect(page.locator('#agent-stage')).to_be_focused()
+            results['flows'].append('keyboard skip link keeps the selected trial and stage')
+
             page.locator('#agent-reset').click()
             assert_stage('heldout', 0)
             page.locator('[data-step="2"]').click()

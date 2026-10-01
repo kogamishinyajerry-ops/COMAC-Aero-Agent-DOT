@@ -109,6 +109,11 @@
       $('agent-error').hidden=false;
     } finally {clearTimeout(timeout);loading=false;$('agent-loading').hidden=true;}
   }
+  document.querySelector('.skip-link').addEventListener('click', event => {
+    event.preventDefault();
+    $('agent-stage').focus({preventScroll:true});
+    $('agent-stage').scrollIntoView({block:'start'});
+  });
   document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>select(trial,Number(b.dataset.step))));
   document.querySelectorAll('[data-trial]').forEach(b=>b.addEventListener('click',()=>select(b.dataset.trial,0)));
   $('agent-prev').addEventListener('click',()=>{if(step>0) select(trial,step-1);});
