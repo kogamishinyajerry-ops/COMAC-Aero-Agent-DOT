@@ -1,0 +1,10 @@
+{
+  "startup_attempts": [
+    {"stage": "mesh setup", "outcome": "checkMesh failed because fvSchemes had not yet been written; no flow solve occurred", "resolution": "Write case dictionaries before mesh quality check"},
+    {"stage": "coarse flow", "outcome": "1500 iterations reached the overly strict1e-9 transverse residual stopping test while satisfying the preregistered1e-7 acceptance limit", "resolution": "Align stop with the existing1e-7 acceptance limit; no acceptance threshold changed; retain the strict-stop log"},
+    {"stage": "startup postprocessing", "outcome": "A reused attempt directory contained an older larger time index, and an omitted zeroGradient boundary value caused postprocessing to stop before emitting metrics", "resolution": "Use a fresh output root for all reported runs; refuse existing case directories; derive zeroGradient boundary temperatures from owner cells. No original-attempt fields appear in final reported runs"},
+    {"stage": "visual quality assurance", "outcome": "Unrounded coordinate sorting of nominally uniform mesh points produced display-only stripes", "resolution": "Group coordinates at1e-10m tolerance, assert grid cardinality and re-render; all numerical acceptance uses unrounded native cells and was unaffected"}
+  ],
+  "initial_scientific_result": "Original three-grid pressure-refinement gate failed at1.120839438% versus1%; permanently retained. Other original gates passed.",
+  "additional_refinement": "One separately registered1.25x grid, with explicit ratio-adjusted conditional diagnostic and unchanged absolute analytical/conservation requirements. Not an override of the original failure."
+}

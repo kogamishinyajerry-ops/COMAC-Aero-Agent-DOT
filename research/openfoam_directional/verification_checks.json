@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "suite": "application regression",
+      "tests": 265,
+      "expected": 265,
+      "passed": true,
+      "retained_log": "output/openfoam-directional-regression.log",
+      "compact_log": "research/openfoam_directional/evidence/test_logs/application.log"
+    },
+    {
+      "suite": "original3D evidence",
+      "tests": 8,
+      "expected": 8,
+      "passed": true,
+      "retained_log": "output/openfoam-directional-original-tests.log",
+      "compact_log": "research/openfoam_directional/evidence/test_logs/original_evidence.log"
+    },
+    {
+      "suite": "directional study",
+      "tests": 12,
+      "expected": 12,
+      "passed": true,
+      "retained_log": "output/openfoam-directional-tests.log",
+      "compact_log": "research/openfoam_directional/evidence/test_logs/directional.log"
+    }
+  ],
+  "scientific_status": "Original pressure-grid gate failed; new supplementary inlet case failed residual gate; test success does not override these failures."
+}

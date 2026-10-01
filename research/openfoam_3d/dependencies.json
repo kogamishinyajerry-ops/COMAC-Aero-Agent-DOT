@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "gmsh": "4.15.2",
+  "OpenFOAM": "Debian v1912 patch200626",
+  "installed_tool_lock_sha256": "ca42ab796bf03059563b71644cabca2831bcb63948b61d5295ab7845432d5514",
+  "mode": "Existing installed dependencies only, serial CPU, no network calls or new packages"
+}

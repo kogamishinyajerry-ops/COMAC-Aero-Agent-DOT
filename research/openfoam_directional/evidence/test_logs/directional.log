@@ -1,0 +1,17 @@
+test_expanding_differences_rejected (test_package.TestOrderDiagnostics.test_expanding_differences_rejected) ... ok
+test_missing_case_excluded (test_package.TestOrderDiagnostics.test_missing_case_excluded) ... ok
+test_noise_rejected (test_package.TestOrderDiagnostics.test_noise_rejected) ... ok
+test_nonmonotone_rejected (test_package.TestOrderDiagnostics.test_nonmonotone_rejected) ... ok
+test_positive_second_order (test_package.TestOrderDiagnostics.test_positive_second_order) ... ok
+test_discrete_convergence (test_study.TestDirectional.test_discrete_convergence) ... ok
+test_discrete_poisson_residual (test_study.TestDirectional.test_discrete_poisson_residual) ... ok
+test_exact_cell_average_matches_gauss (test_study.TestDirectional.test_exact_cell_average_matches_gauss) ... ok
+test_exact_cell_average_mean (test_study.TestDirectional.test_exact_cell_average_mean) ... ok
+test_frozen_original_gate (test_study.TestDirectional.test_frozen_original_gate) ... ok
+test_primary_ladder_is_equal_ratio (test_study.TestDirectional.test_primary_ladder_is_equal_ratio) ... ok
+test_supplement_not_primary (test_study.TestDirectional.test_supplement_not_primary) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.087s
+
+OK

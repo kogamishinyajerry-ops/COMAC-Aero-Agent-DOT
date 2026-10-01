@@ -1,0 +1,6 @@
+{
+  "registered_before_solver_utc": "2026-10-01T15:00:21.356605+00:00",
+  "plan_sha256": "59643f17df668e2be8c77949508c0da3c7265f7d2b4bc0eb8a26a423ecc94e12",
+  "study_sha256": "799f30fb4ed72b4e4c913054120ef24a1437f68f17e55915874dc71cb9ea435e",
+  "baseline_commit": "cbf54a20878c4904d3894bb8cd7226c8e4c43539"
+}

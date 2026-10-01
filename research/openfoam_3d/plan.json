@@ -1,0 +1,84 @@
+{
+  "schema": "aerolab-openfoam-3d-preregistered-v1",
+  "registered_utc": "2026-10-01T13:42:00Z",
+  "purpose": "Numerical verification of a synthetic three-dimensional laminar duct and its passive constant-property heat equation; no experimental or aircraft validation claim",
+  "baseline_tree": "71dd2af3c450a89736fef115663051c669125504",
+  "dimensions_m": {
+    "length": 0.03,
+    "width": 0.004,
+    "height": 0.002
+  },
+  "properties": {
+    "rho_kg_m3": 1.2,
+    "mu_Pa_s": 1.8e-05,
+    "k_W_m_K": 0.026,
+    "cp_J_kg_K": 1005
+  },
+  "conditions": {
+    "mean_inlet_velocity_m_s": 3.0,
+    "inlet_temperature_K": 300.0,
+    "wall_temperature_K": 310.0
+  },
+  "parameter_source": "Explicit synthetic choices matching the existing aspect-2 rectangular Graetz model; dimensions and temperatures are not recovered device geometry or measurements",
+  "grids": [
+    [
+      40,
+      16,
+      8
+    ],
+    [
+      80,
+      32,
+      16
+    ],
+    [
+      160,
+      64,
+      32
+    ]
+  ],
+  "mesh": "Gmsh 3D transfinite recombined hexahedra; all three directions resolved; four separate no-slip isothermal wall patches; no empty or symmetry patches",
+  "flow": "simpleFoam, incompressible constant-property Newtonian laminar, steady SIMPLEC; inlet analytical rectangular Poiseuille profile normalized by face quadrature to stipulated flow, pressure zeroGradient; outlet kinematic pressure 0, velocity zeroGradient; all four walls U=0 and pressure zeroGradient; initial internal velocity and pressure zero",
+  "thermal": "scalarTransportFoam, steadyState, scalar T has temperature dimensions, DT=k/(rho cp), solved frozen velocity/flux from converged flow, isotropic full 3D fluid diffusion, inlet T=300K, four walls T=310K, outlet zeroGradient; no solid, buoyancy, turbulence, radiation, viscous heating or temperature feedback",
+  "analytic_thermal_sentinel": "Same mesh with uniform prescribed slip/plug velocity (verification only), theta=sin(pi*y/W) sin(pi*z/H) exp(r*x), r=-2*alpha*lambda/(U+sqrt(U^2+4*alpha^2*lambda)), lambda=(pi/W)^2+(pi/H)^2. Exact nonuniform Dirichlet values at both x ends, theta=0 on four sides; checks full 3D convection-diffusion equation",
+  "references": [
+    "Analytical rectangular Poiseuille separated series",
+    "Analytical separable full-3D thermal sentinel",
+    "Frozen existing rectangular Graetz finite-volume code rerun at selected synthetic conditions without changing accepted evidence",
+    "Independent sine-Galerkin continuum Graetz reference; omits axial diffusion and is a model comparison, not exact same-PDE validation"
+  ],
+  "acceptance": {
+    "checkMesh_all_topology_geometry_pass": true,
+    "all_solution_directions": [
+      1,
+      1,
+      1
+    ],
+    "maximum_flow_final_initial_residual": 1e-07,
+    "maximum_scalar_final_initial_residual": 1e-09,
+    "relative_mass_imbalance_max": 1e-07,
+    "relative_total_thermal_flux_imbalance_max": 1e-06,
+    "fine_velocity_relative_L2_error_max": 0.01,
+    "fine_pressure_gradient_relative_error_max": 0.01,
+    "fine_analytic_scalar_relative_L2_error_max": 0.005,
+    "fine_analytic_scalar_L2_error_must_decrease": true,
+    "fine_to_medium_bulk_temperature_rise_relative_change_max": 0.01,
+    "fine_to_medium_pressure_gradient_relative_change_max": 0.01,
+    "main_temperature_range_slack_K": 0.001,
+    "graetz_bulk_attenuation_relative_difference_reporting_limit": 0.03
+  },
+  "interpretation": "Graetz comparison exceeding 3 percent flags discrepancy; it is not a same-PDE pass/fail. Report all failures without threshold relaxation. Three levels support observed trends, not automatically an asymptotic error bound. Heat balance includes inlet axial conduction and actual numerical convective flux. Inlet-wall Dirichlet discontinuity produces logarithmically mesh-sensitive wall heat and inlet conductive heat separately. Do not claim total wall-heat convergence or physical realism; only signed discrete closure and convergent mixed outlet temperature are assessed. Endpoint pressure drop is reported separately from interior gradient.",
+  "resource_budget": {
+    "serial_only": true,
+    "maximum_total_solver_wall_seconds": 2700,
+    "maximum_flow_iterations_per_grid": 1500,
+    "maximum_scalar_iterations_per_case": 200,
+    "maximum_working_storage_GB": 3,
+    "maximum_base_physical_geometries": 1
+  },
+  "publication": "Local new worktree only; preserve frozen evidence; parent review before publication or application integration",
+  "pre_run_review_amendment": "Before any solver execution, independent review identified inlet/wall corner heat-flux singularity and an insufficiently diffusion-sensitive high-Pe sentinel. Main corner retained with explicit exclusion; sentinel plug speed is now 0.05 m/s to make axial diffusion material.",
+  "discretization": "Main thermal div(phi,T): Gauss upwind (bounded first order); analytic smooth sentinel: Gauss linear (centered). Gradient/interpolation linear; Laplacian corrected; steadyState.",
+  "analytic_thermal_plug_velocity_m_s": 0.05,
+  "definitions": "Scalar exact relative L2 uses dimensionless theta with walls zero, not absolute 300 K temperature. Pressure-gradient least-squares fit uses x between 0.25L and 0.75L. Velocity L2 uses same interior range. Main heat uses converged SIMPLE phi unchanged. Main outlet zeroGradient."
+}

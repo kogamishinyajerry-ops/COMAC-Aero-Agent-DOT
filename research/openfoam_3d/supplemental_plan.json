@@ -1,0 +1,9 @@
+{
+  "schema": "aerolab-openfoam-3d-pre-sensitivity-plan-v1",
+  "recorded_utc": "2026-10-01T13:46:00Z",
+  "chronology": "Base 3-grid study already running; this specifies additional checks before their execution. No base acceptance threshold is changed.",
+  "heat_balance_definition": "Sum signed convective and conductive numerical boundary fluxes, with enthalpy datum 300K, divided by nominal rho*cp*U*W*H*(Tw-Tin)=0.28944 W. Upwind outlet uses owner-cell T; fixed inlet uses imposed T; orthogonal wall/inlet diffusion uses actual half-cell distance. Report raw signed watts. This normalization was selected before the first successful postprocessing, after a mesh-only setup attempt.",
+  "stationarity": {"extra_iterations": 20, "scope": "Continue each converged flow and main thermal result with convergence stop disabled; compare full fields and primary pressure/temperature QoIs before versus after. Keep the primary reported fields unchanged, label this a diagnostic continuation.", "relative_velocity_L2_change_reporting_threshold": 0.000001, "absolute_temperature_change_K_reporting_threshold": 0.000001},
+  "outlet_sensitivity": {"length_m": 0.045, "grid": [120,32,16], "velocity_m_s": 3.0, "comparison_plane_m": 0.03, "comparison": "Same mesh spacing/properties/inlet; compare numerical upwind flux-weighted temperature at the original 30mm plane with the original medium-grid outlet", "relative_temperature_rise_change_reporting_threshold": 0.002, "interpretation": "Measures medium-grid outlet-location sensitivity only; does not bound all boundary-condition/model error"},
+  "budget": "All additional CFD counted within original 2700-second solver wall-time and 3GB working-storage budget"
+}

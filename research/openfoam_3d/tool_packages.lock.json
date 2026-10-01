@@ -1,0 +1,54 @@
+{
+  "verified_date": "2026-10-01",
+  "platform": "Debian 13 x86_64",
+  "python": "3.12.14",
+  "packages": [
+    {
+      "package": "openfoam",
+      "filename": "openfoam_1912.200626-3+b1_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/o/openfoam/openfoam_1912.200626-3+b1_amd64.deb",
+      "sha256": "79959979587cae196dc92024e97501dc244768e1a36d75858776cb1fd49d386c"
+    },
+    {
+      "package": "libopenfoam",
+      "filename": "libopenfoam_1912.200626-3+b1_amd64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/o/openfoam/libopenfoam_1912.200626-3+b1_amd64.deb",
+      "sha256": "3ee623d08b2eb38caa06aa1bf608f7df83ef858d79fe010a70be70089a046ce6"
+    },
+    {
+      "package": "openfoam-examples",
+      "filename": "openfoam-examples_1912.200626-3_all.deb",
+      "url": "https://deb.debian.org/debian/pool/main/o/openfoam/openfoam-examples_1912.200626-3_all.deb",
+      "sha256": "2e08bfaaa3fdda84ee0d8e5562579a9cd3e8706bbba4f9d4207fb3fa930e44b5"
+    },
+    {
+      "package": "libscotch-7.0",
+      "source": "https://packages.debian.org/trixie/amd64/libscotch-7.0/download",
+      "url": "https://deb.debian.org/debian/pool/main/s/scotch/libscotch-7.0_7.0.7-1_amd64.deb",
+      "filename": "libscotch-7.0_7.0.7-1_amd64.deb",
+      "sha256": "583198da3cf00d222fc033204bfa3927dfe32048e64b178d03e1bb3fc9d622ae"
+    },
+    {
+      "package": "libptscotch-7.0",
+      "source": "https://packages.debian.org/trixie/amd64/libptscotch-7.0/download",
+      "url": "https://deb.debian.org/debian/pool/main/s/scotch/libptscotch-7.0_7.0.7-1_amd64.deb",
+      "filename": "libptscotch-7.0_7.0.7-1_amd64.deb",
+      "sha256": "65bde098d6c2a9c5a90063defc30427eec4d39d9ea8fa1059e949b3f83300b90"
+    },
+    {
+      "package": "libboost-system1.83.0",
+      "source": "https://packages.debian.org/trixie/amd64/libboost-system1.83.0/download",
+      "url": "https://deb.debian.org/debian/pool/main/b/boost1.83/libboost-system1.83.0_1.83.0-4.2_amd64.deb",
+      "filename": "libboost-system1.83.0_1.83.0-4.2_amd64.deb",
+      "sha256": "a453edc44ae53303495d6e123b3ea659431849dd52b075459518cfffc49ff179"
+    },
+    {
+      "package": "gmsh",
+      "version": "4.15.2",
+      "filename": "gmsh-4.15.2-py2.py3-none-manylinux_2_24_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/ab/d4/336becb1488ac4fbab205043987128839c8c62d54e2036b7e887bd009040/gmsh-4.15.2-py2.py3-none-manylinux_2_24_x86_64.whl",
+      "sha256": "4076a948ce22625330d1413d4982e22b5c69fc2f0f7951f5df64c778cf54108c",
+      "source": "https://gmsh.info/#Download"
+    }
+  ]
+}

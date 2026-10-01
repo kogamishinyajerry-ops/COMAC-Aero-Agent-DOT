@@ -1,0 +1,46 @@
+{
+  "repository_regression": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 265,
+    "passed": true,
+    "elapsed_seconds": 114.045
+  },
+  "research_evidence_tests": {
+    "command": "python -m unittest discover -s research/openfoam_3d -p test_*.py -v",
+    "tests": 8,
+    "passed": true
+  },
+  "source_compilation": {
+    "command": "python -m compileall -q research/openfoam_3d",
+    "passed": true
+  },
+  "existing_case_overwrite_guard": {
+    "passed": true,
+    "behavior": "Rejects existing generated case directory before writing"
+  },
+  "vtk_export": {
+    "command": "foamToVTK -case output/openfoam-3d-v2/grid_2/thermal -latestTime -fields (T)",
+    "passed": true,
+    "cells": 327680,
+    "format": "VTU internal mesh and six VTP boundary patches",
+    "elapsed_seconds": 1.79
+  },
+  "visual_qa": {
+    "actual_field_panels_inspected": true,
+    "actual_three_dimensional_slices_inspected": true,
+    "rendering_bug_fixed": "Coordinate grouping for display only; native numerical data unchanged"
+  },
+  "browser_flows": {
+    "rerun": false,
+    "reason": "No application or UI file changed; the work is a local research evidence package"
+  },
+  "remote_publication": false,
+  "application_integration": false,
+  "solver_resource_usage": {
+    "reported_runs_wall_seconds": 967.5837924929947,
+    "initial_attempt_solver_seconds_upper_estimate": 10,
+    "total_solver_budget_seconds": 2700,
+    "working_storage_bound_GB": 3,
+    "no_additional_refinement_planned": true
+  }
+}
