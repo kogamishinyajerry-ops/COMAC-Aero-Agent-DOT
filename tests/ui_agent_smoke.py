@@ -187,6 +187,12 @@ def main():
                 for index in range(6):
                     page.locator(f'[data-step="{index}"]').click()
                     assert_stage('development', index)
+                page.locator('#agent-next').scroll_into_view_if_needed()
+                page.locator('#agent-next').click()
+                assert_stage('heldout', 0)
+                assert page.locator('#agent-stage').bounding_box()['y'] >= -1
+                page.locator('[data-trial="development"]').click()
+                page.locator('[data-step="5"]').click()
                 screenshot(f"ui-agent-mobile-{size['width']}.jpg")
             results['flows'].append('real responsive pixels at 390 px and 768 px; six stages no horizontal overflow')
 

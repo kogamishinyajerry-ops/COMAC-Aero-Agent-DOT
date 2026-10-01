@@ -17,7 +17,11 @@
     const hash = `#${nextTrial}/${nextStep}`;
     if (location.hash !== hash) history.pushState(null, '', hash);
     trial = nextTrial; step = nextStep; render();
-    if (focus) $('agent-stage').focus({preventScroll:true});
+    if (focus) {
+      const stage = $('agent-stage');
+      stage.focus({preventScroll:true});
+      if (stage.getBoundingClientRect().top < 0) stage.scrollIntoView({block:'start'});
+    }
   }
   function context(id = trial) {
     const run = data.runs[id];
