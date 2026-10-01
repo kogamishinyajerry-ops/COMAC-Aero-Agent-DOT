@@ -1,0 +1,1085 @@
+{
+  "schema": "aerolab-directional-pressure-diagnosis-evidence-v1",
+  "created_utc": "2026-10-01T15:28:18.611682+00:00",
+  "purpose": "Momentum discretization and boundary diagnosis only; fully developed reference is not exact finite-duct truth.",
+  "original_validation": {
+    "status": "FAILED_RETAINED",
+    "pressure_relative_change": 0.011208394380264775,
+    "threshold": 0.01,
+    "no_retroactive_override": true
+  },
+  "run": {
+    "all_new_cases_completed": false,
+    "all_primary_directional_cases_completed": true,
+    "new_solver_wall_seconds": null,
+    "completed_case_subprocess_wall_seconds": 1276.9454873280047,
+    "failed_case_OpenFOAM_ClockTime_seconds": 57,
+    "new_solver_wall_seconds_accounted_upper_bound": 2476.9454873280047,
+    "budget_seconds": 2700,
+    "budget_accounting": "Five converged subprocess durations measured exactly; failed supplement charged its full preallocated1200s because exact subprocess duration was not persisted. Its solver log reports57s. This deliberately overcounts rather than inventing an exact aggregate.",
+    "historical_bytes_unchanged": true,
+    "new_working_bytes": 558414679,
+    "run_lock": {
+      "registered_before_solver_utc": "2026-10-01T15:00:21.356605+00:00",
+      "plan_sha256": "59643f17df668e2be8c77949508c0da3c7265f7d2b4bc0eb8a26a423ecc94e12",
+      "study_sha256": "799f30fb4ed72b4e4c913054120ef24a1437f68f17e55915874dc71cb9ea435e",
+      "baseline_commit": "cbf54a20878c4904d3894bb8cd7226c8e4c43539"
+    },
+    "failed_planned_cases": [
+      {
+        "case": "discrete_developed_inlet",
+        "status": "FAILED_FROZEN_RESIDUAL_GATE_AT_ITERATION_LIMIT",
+        "iterations": 1500,
+        "required_max_final_initial_residual": 1e-07,
+        "final_residuals": {
+          "Ux": {
+            "initial": 9.04450967676e-12,
+            "final": 9.04450967676e-12
+          },
+          "Uy": {
+            "initial": 1.587092135278e-07,
+            "final": 3.945168994548e-10
+          },
+          "Uz": {
+            "initial": 1.780510892114e-07,
+            "final": 5.709871528303e-10
+          },
+          "p": {
+            "initial": 3.80142345484e-11,
+            "final": 6.026995637489e-12
+          }
+        },
+        "OpenFOAM_ClockTime_seconds_integer": 57,
+        "OpenFOAM_ExecutionTime_seconds": 57.34,
+        "exact_subprocess_wall_seconds": "not persisted because the frozen driver aborted before writing flow_run.json",
+        "budget_charge_upper_bound_seconds": 1200,
+        "unconverged_fields_excluded_from_primary_evidence": true,
+        "provisional_not_accepted_diagnostic": {
+          "native_time_directory": "1500",
+          "middle_half_gradient_Pa_m": 233.87072618523536,
+          "maximum_transverse_velocity_m_s": 0.0021210271686935393,
+          "interpretation": "Pressure value is a failed-gate diagnostic only; it does not establish accepted causal attribution or validation."
+        }
+      }
+    ],
+    "completed_new_cases": [
+      "axial_coarse",
+      "axial_fine",
+      "transverse_coarse",
+      "transverse_extra_fine",
+      "transverse_fine"
+    ],
+    "unconverged_fields_excluded_from_evidence": true
+  },
+  "all_completed_case_execution_gates_passed": true,
+  "all_planned_cases_completed_and_execution_gates_passed": false,
+  "directional_attribution": {
+    "B_Pa_m": 232.64037074210717,
+    "A_axial_only_Pa_m": 232.59001318530554,
+    "T_transverse_only_Pa_m": 235.27091527967215,
+    "F_combined_Pa_m": 235.24789576615618,
+    "axial_change_Pa_m": -0.05035755680162879,
+    "transverse_change_Pa_m": 2.6305445375649867,
+    "combined_change_Pa_m": 2.6075250240490107,
+    "interaction_Pa_m": 0.027338043285652702,
+    "decomposition_closure_Pa_m": 0.0,
+    "axial_change_relative_B": -0.00021646095491075588,
+    "transverse_change_relative_B": 0.011307343300622013,
+    "interaction_relative_full_change": 0.010484287987081984,
+    "transverse_absolute_share_of_separate_changes": 0.9812161895402874,
+    "predeclared_transverse_dominance_supported": true
+  },
+  "operator_attribution": {
+    "predeclared_90_percent_explanation_supported": false,
+    "residual_to_total_bias_fraction_B": 0.3416348506301658,
+    "residual_to_total_bias_fraction_transverse_fine": 0.328166824287191,
+    "interpretation": "Discrete fully developed Poisson explains an algebraic portion; remaining primary-case bias includes inlet/end/axial/coupling effects. Supplement changes only inlet shape at fixed physical flow."
+  },
+  "supplementary_inlet": {
+    "pressure_change_from_B_Pa_m": null,
+    "pressure_change_relative_B": null,
+    "remaining_relative_error_to_discrete_target": null,
+    "removed_fraction_of_original_discrete_target_gap": null,
+    "not_in_primary_refinement_ladders": true,
+    "accepted_causal_conclusion": false,
+    "failure": [
+      {
+        "case": "discrete_developed_inlet",
+        "status": "FAILED_FROZEN_RESIDUAL_GATE_AT_ITERATION_LIMIT",
+        "iterations": 1500,
+        "required_max_final_initial_residual": 1e-07,
+        "final_residuals": {
+          "Ux": {
+            "initial": 9.04450967676e-12,
+            "final": 9.04450967676e-12
+          },
+          "Uy": {
+            "initial": 1.587092135278e-07,
+            "final": 3.945168994548e-10
+          },
+          "Uz": {
+            "initial": 1.780510892114e-07,
+            "final": 5.709871528303e-10
+          },
+          "p": {
+            "initial": 3.80142345484e-11,
+            "final": 6.026995637489e-12
+          }
+        },
+        "OpenFOAM_ClockTime_seconds_integer": 57,
+        "OpenFOAM_ExecutionTime_seconds": 57.34,
+        "exact_subprocess_wall_seconds": "not persisted because the frozen driver aborted before writing flow_run.json",
+        "budget_charge_upper_bound_seconds": 1200,
+        "unconverged_fields_excluded_from_primary_evidence": true,
+        "provisional_not_accepted_diagnostic": {
+          "native_time_directory": "1500",
+          "middle_half_gradient_Pa_m": 233.87072618523536,
+          "maximum_transverse_velocity_m_s": 0.0021210271686935393,
+          "interpretation": "Pressure value is a failed-gate diagnostic only; it does not establish accepted causal attribution or validation."
+        }
+      }
+    ]
+  },
+  "orders": {
+    "transverse_coarse_medium_fine": {
+      "cases": [
+        "transverse_coarse",
+        "B",
+        "transverse_fine"
+      ],
+      "gradients_Pa_m": [
+        222.2782756209063,
+        232.64037074210717,
+        235.27091527967215
+      ],
+      "successive_differences_Pa_m": [
+        10.362095121200866,
+        2.6305445375649867
+      ],
+      "relative_noise_floor": 3.253743940945242e-08,
+      "original_stationarity_max_relative": 3.253743940945242e-10,
+      "conditional_only": true,
+      "GCI_or_uncertainty_bound": false,
+      "eligible": true,
+      "observed_order": 1.9778823507469225,
+      "conditional_richardson_gradient_Pa_m": 236.16591874492258,
+      "conditional_extrapolation_error_to_fully_developed_target": 0.00012626624209532977
+    },
+    "transverse_medium_fine_extra": {
+      "cases": [
+        "B",
+        "transverse_fine",
+        "transverse_extra_fine"
+      ],
+      "gradients_Pa_m": [
+        232.64037074210717,
+        235.27091527967215,
+        235.926027911511
+      ],
+      "successive_differences_Pa_m": [
+        2.6305445375649867,
+        0.6551126318388469
+      ],
+      "relative_noise_floor": 3.253743940945242e-08,
+      "original_stationarity_max_relative": 3.253743940945242e-10,
+      "conditional_only": true,
+      "GCI_or_uncertainty_bound": false,
+      "eligible": true,
+      "observed_order": 2.0055466044928782,
+      "conditional_richardson_gradient_Pa_m": 236.14328296300167,
+      "conditional_extrapolation_error_to_fully_developed_target": 3.0407194454795672e-05
+    },
+    "axial_fixed_transverse": {
+      "cases": [
+        "axial_coarse",
+        "B",
+        "axial_fine"
+      ],
+      "gradients_Pa_m": [
+        232.761891761406,
+        232.64037074210717,
+        232.59001318530554
+      ],
+      "successive_differences_Pa_m": [
+        -0.1215210192988252,
+        -0.05035755680162879
+      ],
+      "relative_noise_floor": 3.253743940945242e-08,
+      "original_stationarity_max_relative": 3.253743940945242e-10,
+      "conditional_only": true,
+      "GCI_or_uncertainty_bound": false,
+      "eligible": true,
+      "observed_order": 1.2709256814884442,
+      "conditional_richardson_gradient_Pa_m": 232.55437855711233,
+      "conditional_extrapolation_error_to_fully_developed_target": -0.015168049815926454
+    }
+  },
+  "new_transverse_2x_change": {
+    "coarser": "transverse_fine",
+    "finer": "transverse_extra_fine",
+    "relative_change": 0.0027845032653530666,
+    "reporting_limit": 0.01,
+    "is_original_all_direction_gate": false
+  },
+  "rows": [
+    {
+      "name": "B",
+      "source_case": "output/openfoam-3d-v2/grid_1",
+      "reused_historical": true,
+      "grid": [
+        80,
+        32,
+        16
+      ],
+      "cells": 40960,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 232.64037074210717,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.014803886166226521,
+      "discrete_pressure_gradient_Pa_m": 233.83463461647528,
+      "discrete_pressure_relative_error": -0.005107301047712176,
+      "discrete_to_continuum_relative_error": -0.009746362727081737,
+      "operator_residual_to_total_bias_fraction": 0.3416348506301658,
+      "velocity_point_relative_L2": 0.005190844811663885,
+      "velocity_cell_average_relative_L2": 0.004584231547848197,
+      "velocity_discrete_relative_L2": 0.001205857301216163,
+      "velocity_equivalent_mean_relative_L2": 0.0032165944055979985,
+      "inlet_midpoint_quadrature_normalization": 1.0028458190588876,
+      "equivalent_continuous_mean_m_s": 2.991486769935707,
+      "discrete_poisson_residual_max": 6.039613253960852e-14,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 232.64037074210717,
+          "max_fit_departure_Pa": 0.001927138701877773
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 232.51729934985735,
+          "max_fit_departure_Pa": 0.007353152884485681
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 232.69123538224468,
+          "max_fit_departure_Pa": 0.00022332972896155212
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 233.1357677769155,
+          "max_fit_departure_Pa": 0.0002639586194557175
+        }
+      },
+      "pressure_window_spread_relative": 0.0026584742153103525,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 6.9371944910872525,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992276e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.3999999999611755e-05
+      },
+      "relative_mass_imbalance": 1.5855045051021744e-11,
+      "max_station_flux_departure_relative": 1.6177199915294132e-11,
+      "section_velocity_mean_min_m_s": 2.9871658675155555,
+      "section_velocity_mean_max_m_s": 3.001152694685264,
+      "maximum_transverse_velocity_m_s": 0.004292187908745968,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 2.253213152957e-11,
+          "final": 3.261158976336e-12
+        },
+        "Uy": {
+          "initial": 9.999820451138e-08,
+          "final": 3.375837790047e-10
+        },
+        "Uz": {
+          "initial": 2.923876920874e-08,
+          "final": 8.711152091373e-11
+        },
+        "p": {
+          "initial": 1.103277152658e-11,
+          "final": 2.936080767502e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 22.635502203003853,
+        "iterations": 479.0,
+        "final_time": "479",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "F",
+      "source_case": "output/openfoam-3d-v2/grid_2",
+      "reused_historical": true,
+      "grid": [
+        160,
+        64,
+        32
+      ],
+      "cells": 327680,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 235.24789576615618,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.0037614195804713813,
+      "discrete_pressure_gradient_Pa_m": 235.5548410965463,
+      "discrete_pressure_relative_error": -0.0013030737511539048,
+      "discrete_to_continuum_relative_error": -0.002461553414959572,
+      "operator_residual_to_total_bias_fraction": 0.34557861405849705,
+      "velocity_point_relative_L2": 0.0013249826438044045,
+      "velocity_cell_average_relative_L2": 0.0011751647939510774,
+      "velocity_discrete_relative_L2": 0.00030569654484538175,
+      "velocity_equivalent_mean_relative_L2": 0.000830441889394196,
+      "inlet_midpoint_quadrature_normalization": 1.0007116536133427,
+      "equivalent_continuous_mean_m_s": 2.997866557432084,
+      "discrete_poisson_residual_max": 2.1316282072803006e-13,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 235.24789576615618,
+          "max_fit_departure_Pa": 0.0005256909483630778
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 235.2155446166633,
+          "max_fit_departure_Pa": 0.002005246332911881
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 235.26118768335562,
+          "max_fit_departure_Pa": 6.462736467849339e-05
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 235.37622444322065,
+          "max_fit_departure_Pa": 7.322536260589985e-05
+        }
+      },
+      "pressure_window_spread_relative": 0.0006830234380377911,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 7.044858835471758,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992255e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.4000000000034607e-05
+      },
+      "relative_mass_imbalance": 1.764651973446459e-12,
+      "max_station_flux_departure_relative": 4.98930640364358e-12,
+      "section_velocity_mean_min_m_s": 2.993832476851927,
+      "section_velocity_mean_max_m_s": 3.0003999722647596,
+      "maximum_transverse_velocity_m_s": 0.0022778649805925595,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 5.953243312795e-12,
+          "final": 5.953243312795e-12
+        },
+        "Uy": {
+          "initial": 9.773579751131e-08,
+          "final": 9.490845875725e-10
+        },
+        "Uz": {
+          "initial": 4.65248016806e-08,
+          "final": 6.954794762529e-11
+        },
+        "p": {
+          "initial": 1.244648089029e-11,
+          "final": 3.306960815983e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 253.28539814299438,
+        "iterations": 649.0,
+        "final_time": "649",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "axial_coarse",
+      "source_case": "output/openfoam-directional-v1/axial_coarse",
+      "reused_historical": false,
+      "grid": [
+        40,
+        32,
+        16
+      ],
+      "cells": 20480,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 232.761891761406,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.014289263379216544,
+      "discrete_pressure_gradient_Pa_m": 233.83463461647528,
+      "discrete_pressure_relative_error": -0.004587613194378837,
+      "discrete_to_continuum_relative_error": -0.009746362727081737,
+      "operator_residual_to_total_bias_fraction": 0.3179240616939293,
+      "velocity_point_relative_L2": 0.005239525333809978,
+      "velocity_cell_average_relative_L2": 0.004639497346891365,
+      "velocity_discrete_relative_L2": 0.0011272060906593038,
+      "velocity_equivalent_mean_relative_L2": 0.003266133888508707,
+      "inlet_midpoint_quadrature_normalization": 1.0028458190588876,
+      "equivalent_continuous_mean_m_s": 2.991486769935707,
+      "discrete_poisson_residual_max": 6.039613253960852e-14,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 232.761891761406,
+          "max_fit_departure_Pa": 0.0014490939867028985
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 232.67590637377512,
+          "max_fit_departure_Pa": 0.004953453641339145
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 232.80118692746646,
+          "max_fit_departure_Pa": 0.00015031168587675836
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 233.1906238481188,
+          "max_fit_departure_Pa": 0.00020277416879954657
+        }
+      },
+      "pressure_window_spread_relative": 0.0022113477015013173,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 6.936849963237337,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992276e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.399999999967329e-05
+      },
+      "relative_mass_imbalance": 1.3291076319682977e-11,
+      "max_station_flux_departure_relative": 1.3613090011797488e-11,
+      "section_velocity_mean_min_m_s": 2.9772670266514254,
+      "section_velocity_mean_max_m_s": 3.0012432082002336,
+      "maximum_transverse_velocity_m_s": 0.003865190874075595,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 3.500614711203e-11,
+          "final": 3.541287155161e-12
+        },
+        "Uy": {
+          "initial": 9.820912670452e-08,
+          "final": 1.227554575942e-10
+        },
+        "Uz": {
+          "initial": 3.24008463189e-08,
+          "final": 4.910123636191e-11
+        },
+        "p": {
+          "initial": 6.248904320525e-11,
+          "final": 3.767302119702e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 7.038591684002313,
+        "iterations": 295.0,
+        "final_time": "295",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "axial_fine",
+      "source_case": "output/openfoam-directional-v1/axial_fine",
+      "reused_historical": false,
+      "grid": [
+        160,
+        32,
+        16
+      ],
+      "cells": 81920,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 232.59001318530554,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.015017142657801297,
+      "discrete_pressure_gradient_Pa_m": 233.83463461647528,
+      "discrete_pressure_relative_error": -0.005322656471361098,
+      "discrete_to_continuum_relative_error": -0.009746362727081737,
+      "operator_residual_to_total_bias_fraction": 0.35098420856922813,
+      "velocity_point_relative_L2": 0.005171486094887275,
+      "velocity_cell_average_relative_L2": 0.004562217171612936,
+      "velocity_discrete_relative_L2": 0.0012368911356145274,
+      "velocity_equivalent_mean_relative_L2": 0.0031969303891926865,
+      "inlet_midpoint_quadrature_normalization": 1.0028458190588876,
+      "equivalent_continuous_mean_m_s": 2.991486769935707,
+      "discrete_poisson_residual_max": 6.039613253960852e-14,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 232.59001318530554,
+          "max_fit_departure_Pa": 0.0021737211957413294
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 232.4509161131394,
+          "max_fit_departure_Pa": 0.008524574812317276
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 232.6459507550002,
+          "max_fit_departure_Pa": 0.0002649379310968314
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 233.11375713853445,
+          "max_fit_departure_Pa": 0.0002963140271061704
+        }
+      },
+      "pressure_window_spread_relative": 0.002849825821485081,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 6.936959457326627,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992276e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.4000000000056955e-05
+      },
+      "relative_mass_imbalance": 2.694976493847432e-12,
+      "max_station_flux_departure_relative": 1.448539277531154e-11,
+      "section_velocity_mean_min_m_s": 2.993318465297401,
+      "section_velocity_mean_max_m_s": 3.0007656390130903,
+      "maximum_transverse_velocity_m_s": 0.004622603685096663,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 1.654217743325e-11,
+          "final": 3.23209759044e-12
+        },
+        "Uy": {
+          "initial": 9.693963900472e-08,
+          "final": 7.457358925933e-10
+        },
+        "Uz": {
+          "initial": 3.908264173767e-08,
+          "final": 3.088726072551e-10
+        },
+        "p": {
+          "initial": 2.14116667726e-11,
+          "final": 2.411808480858e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 49.572478260000935,
+        "iterations": 587.0,
+        "final_time": "587",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "historical_coarse",
+      "source_case": "output/openfoam-3d-v2/grid_0",
+      "reused_historical": true,
+      "grid": [
+        40,
+        16,
+        8
+      ],
+      "cells": 5120,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 222.4808319597329,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.05782796704612769,
+      "discrete_pressure_gradient_Pa_m": 227.2710825595994,
+      "discrete_pressure_relative_error": -0.021077255169980935,
+      "discrete_to_continuum_relative_error": -0.037541994064637096,
+      "operator_residual_to_total_bias_fraction": 0.35079865362220214,
+      "velocity_point_relative_L2": 0.019048327693337676,
+      "velocity_cell_average_relative_L2": 0.01646611776561617,
+      "velocity_discrete_relative_L2": 0.0049179837441410724,
+      "velocity_equivalent_mean_relative_L2": 0.011186624009751274,
+      "inlet_midpoint_quadrature_normalization": 1.011372512866841,
+      "equivalent_continuous_mean_m_s": 2.966266100604402,
+      "discrete_poisson_residual_max": 1.0658141036401503e-14,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 222.4808319597329,
+          "max_fit_departure_Pa": 0.007266052163015679
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 221.93085435799227,
+          "max_fit_departure_Pa": 0.028882394673023448
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 222.70386090605328,
+          "max_fit_departure_Pa": 0.0007134577433354217
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 224.47400430689584,
+          "max_fit_departure_Pa": 0.000897760529230851
+        }
+      },
+      "pressure_window_spread_relative": 0.011430872163242583,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 6.555804381512756,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992045e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.3999999998799328e-05
+      },
+      "relative_mass_imbalance": 4.96965523926728e-11,
+      "max_station_flux_departure_relative": 5.0027742275049234e-11,
+      "section_velocity_mean_min_m_s": 2.9743661783568958,
+      "section_velocity_mean_max_m_s": 3.0024814138805302,
+      "maximum_transverse_velocity_m_s": 0.007324949869280496,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 1.386242204921e-10,
+          "final": 5.348812300618e-12
+        },
+        "Uy": {
+          "initial": 9.463005875779e-08,
+          "final": 7.171490729391e-10
+        },
+        "Uz": {
+          "initial": 3.804713461604e-08,
+          "final": 3.085597719323e-10
+        },
+        "p": {
+          "initial": 1.093497510497e-10,
+          "final": 9.859365748427e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 1.8695940730103757,
+        "iterations": 267.0,
+        "final_time": "267",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "historical_extra",
+      "source_case": "output/openfoam-3d-v2/grid_3",
+      "reused_historical": true,
+      "grid": [
+        200,
+        80,
+        40
+      ],
+      "cells": 640000,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 235.566717628596,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.002411258132228422,
+      "discrete_pressure_gradient_Pa_m": 235.7636187730466,
+      "discrete_pressure_relative_error": -0.000835163395757621,
+      "discrete_to_continuum_relative_error": -0.0015774121333445024,
+      "operator_residual_to_total_bias_fraction": 0.345813659574159,
+      "velocity_point_relative_L2": 0.000850421819599116,
+      "velocity_cell_average_relative_L2": 0.0007547134594617258,
+      "velocity_discrete_relative_L2": 0.00019560493350660168,
+      "velocity_equivalent_mean_relative_L2": 0.0005338359710203376,
+      "inlet_midpoint_quadrature_normalization": 1.0004554753767896,
+      "equivalent_continuous_mean_m_s": 2.998634195959741,
+      "discrete_poisson_residual_max": 3.126388037344441e-13,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 235.566717628596,
+          "max_fit_departure_Pa": 0.0003419540607838556
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 235.54573619698826,
+          "max_fit_departure_Pa": 0.001308378740533911
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 235.57530852128775,
+          "max_fit_departure_Pa": 4.246906509397519e-05
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 235.64921480817586,
+          "max_fit_departure_Pa": 4.766336869321819e-05
+        }
+      },
+      "pressure_window_spread_relative": 0.00043927517532738194,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 7.058298241772211,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992205e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.400000000000302e-05
+      },
+      "relative_mass_imbalance": 4.506215279392878e-13,
+      "max_station_flux_departure_relative": 8.081400177595404e-12,
+      "section_velocity_mean_min_m_s": 2.995232068351782,
+      "section_velocity_mean_max_m_s": 3.000514609517493,
+      "maximum_transverse_velocity_m_s": 0.0017946939778093673,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 5.678727994704e-12,
+          "final": 5.678727994704e-12
+        },
+        "Uy": {
+          "initial": 9.302946618278e-08,
+          "final": 6.970689013419e-10
+        },
+        "Uz": {
+          "initial": 4.207088698297e-08,
+          "final": 3.539634406374e-10
+        },
+        "p": {
+          "initial": 9.523192626108e-12,
+          "final": 9.523192626108e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 585.2686057859974,
+        "iterations": 625.0,
+        "final_time": "625",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "transverse_coarse",
+      "source_case": "output/openfoam-directional-v1/transverse_coarse",
+      "reused_historical": false,
+      "grid": [
+        80,
+        16,
+        8
+      ],
+      "cells": 10240,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 222.2782756209063,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.05868576192157349,
+      "discrete_pressure_gradient_Pa_m": 227.2710825595994,
+      "discrete_pressure_relative_error": -0.021968509510591927,
+      "discrete_to_continuum_relative_error": -0.037541994064637096,
+      "operator_residual_to_total_bias_fraction": 0.3602878648008786,
+      "velocity_point_relative_L2": 0.018961094729124477,
+      "velocity_cell_average_relative_L2": 0.016363690626659884,
+      "velocity_discrete_relative_L2": 0.0050476944495494,
+      "velocity_equivalent_mean_relative_L2": 0.011093817171775832,
+      "inlet_midpoint_quadrature_normalization": 1.011372512866841,
+      "equivalent_continuous_mean_m_s": 2.966266100604402,
+      "discrete_poisson_residual_max": 1.0658141036401503e-14,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 222.2782756209063,
+          "max_fit_departure_Pa": 0.00865478131402675
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 221.65356964520615,
+          "max_fit_departure_Pa": 0.035074051889285585
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 222.5244842018128,
+          "max_fit_departure_Pa": 0.0009644199356260152
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 224.3873298836664,
+          "max_fit_departure_Pa": 0.0010890429271639412
+        }
+      },
+      "pressure_window_spread_relative": 0.012298818815396373,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 6.55670371773029,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992045e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.400000000000786e-05
+      },
+      "relative_mass_imbalance": 6.589916329638457e-13,
+      "max_station_flux_departure_relative": 1.07940231911773e-12,
+      "section_velocity_mean_min_m_s": 2.986469910233465,
+      "section_velocity_mean_max_m_s": 3.0015778856459345,
+      "maximum_transverse_velocity_m_s": 0.006227508780064568,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 2.117361423611e-10,
+          "final": 9.511894097652e-12
+        },
+        "Uy": {
+          "initial": 9.516682617593e-08,
+          "final": 2.355055080688e-10
+        },
+        "Uz": {
+          "initial": 8.717823796616e-08,
+          "final": 2.08937497826e-10
+        },
+        "p": {
+          "initial": 2.643432509978e-10,
+          "final": 7.479171402872e-13
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 4.677550159001839,
+        "iterations": 391.0,
+        "final_time": "391",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "transverse_extra_fine",
+      "source_case": "output/openfoam-directional-v1/transverse_extra_fine",
+      "reused_historical": false,
+      "grid": [
+        80,
+        128,
+        64
+      ],
+      "cells": 655360,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 235.926027911511,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.0008896344636485365,
+      "discrete_pressure_gradient_Pa_m": 235.99039418186604,
+      "discrete_pressure_relative_error": -0.00027274953532829826,
+      "discrete_to_continuum_relative_error": -0.0006170532293018338,
+      "operator_residual_to_total_bias_fraction": 0.306396891627597,
+      "velocity_point_relative_L2": 0.0003372147630866997,
+      "velocity_cell_average_relative_L2": 0.0003003958024527378,
+      "velocity_discrete_relative_L2": 7.281749538449852e-05,
+      "velocity_equivalent_mean_relative_L2": 0.0002139015176657615,
+      "inlet_midpoint_quadrature_normalization": 1.0001779277485159,
+      "equivalent_continuous_mean_m_s": 2.999466311712408,
+      "discrete_poisson_residual_max": 1.1368683772161603e-12,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 235.926027911511,
+          "max_fit_departure_Pa": 7.924566325723248e-05
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 235.92483510345767,
+          "max_fit_departure_Pa": 0.0008969443171107372
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 235.92781000188273,
+          "max_fit_departure_Pa": 1.0402891367000677e-05
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 235.95017380156668,
+          "max_fit_departure_Pa": 1.3885910945532487e-05
+        }
+      },
+      "pressure_window_spread_relative": 0.00010740102876022669,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 7.07294948165814,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992313e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.399999999998754e-05
+      },
+      "relative_mass_imbalance": 1.9891157044688485e-13,
+      "max_station_flux_departure_relative": 2.243931449434517e-12,
+      "section_velocity_mean_min_m_s": 2.9897459111765112,
+      "section_velocity_mean_max_m_s": 3.0064664673577184,
+      "maximum_transverse_velocity_m_s": 0.0010307538258816514,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 1.06356325101e-11,
+          "final": 4.241426085026e-12
+        },
+        "Uy": {
+          "initial": 9.931357305944e-08,
+          "final": 7.442957621253e-10
+        },
+        "Uz": {
+          "initial": 7.849727040964e-08,
+          "final": 5.564280913792e-10
+        },
+        "p": {
+          "initial": 2.857650736364e-10,
+          "final": 8.630291086442e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 1110.8364006519987,
+        "iterations": 555.0,
+        "final_time": "555",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    },
+    {
+      "name": "transverse_fine",
+      "source_case": "output/openfoam-directional-v1/transverse_fine",
+      "reused_historical": false,
+      "grid": [
+        80,
+        64,
+        32
+      ],
+      "cells": 163840,
+      "inlet_kind": "continuum_midpoint_normalized",
+      "pressure_gradient_Pa_m": 235.27091527967215,
+      "continuum_pressure_gradient_Pa_m": 236.13610272660824,
+      "continuum_pressure_relative_error": -0.00366393548866939,
+      "discrete_pressure_gradient_Pa_m": 235.5548410965463,
+      "discrete_pressure_relative_error": -0.0012053491049152099,
+      "discrete_to_continuum_relative_error": -0.002461553414959572,
+      "operator_residual_to_total_bias_fraction": 0.328166824287191,
+      "velocity_point_relative_L2": 0.0013330345950052411,
+      "velocity_cell_average_relative_L2": 0.0011842439313457258,
+      "velocity_discrete_relative_L2": 0.00029387059085848763,
+      "velocity_equivalent_mean_relative_L2": 0.0008387145530898688,
+      "inlet_midpoint_quadrature_normalization": 1.0007116536133427,
+      "equivalent_continuous_mean_m_s": 2.997866557432084,
+      "discrete_poisson_residual_max": 2.1316282072803006e-13,
+      "pressure_fit_windows": {
+        "0.25_0.75": {
+          "gradient_Pa_m": 235.27091527967215,
+          "max_fit_departure_Pa": 0.0004303774911935676
+        },
+        "0.10_0.90": {
+          "gradient_Pa_m": 235.24643663112028,
+          "max_fit_departure_Pa": 0.00152610266329134
+        },
+        "0.40_0.60": {
+          "gradient_Pa_m": 235.28166821346582,
+          "max_fit_departure_Pa": 5.1026227350980946e-05
+        },
+        "0.60_0.90": {
+          "gradient_Pa_m": 235.38559609947245,
+          "max_fit_departure_Pa": 6.258823383431533e-05
+        }
+      },
+      "pressure_window_spread_relative": 0.0005914860669741255,
+      "inlet_owner_to_outlet_pressure_drop_Pa": 7.044840576302491,
+      "nominal_continuum_drop_Pa": 7.084083081798247,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992255e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.3999999999993523e-05
+      },
+      "relative_mass_imbalance": 5.279838704551805e-14,
+      "max_station_flux_departure_relative": 1.4588730794876566e-12,
+      "section_velocity_mean_min_m_s": 2.9881398532131276,
+      "section_velocity_mean_max_m_s": 3.003120828199576,
+      "maximum_transverse_velocity_m_s": 0.0022295225236461974,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 1.402537939768e-11,
+          "final": 1.698833433602e-12
+        },
+        "Uy": {
+          "initial": 9.892910394718e-08,
+          "final": 3.902992511798e-10
+        },
+        "Uz": {
+          "initial": 5.838258538852e-08,
+          "final": 3.184120151217e-10
+        },
+        "p": {
+          "initial": 1.152338056277e-10,
+          "final": 2.42781580166e-12
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 104.82046657300089,
+        "iterations": 483.0,
+        "final_time": "483",
+        "solver": "simpleFoam"
+      },
+      "execution_gates": {
+        "mesh_ok_3d": true,
+        "residuals": true,
+        "mass": true,
+        "station_flux": true
+      }
+    }
+  ],
+  "limitations": [
+    "No new thermal or solid-fluid conjugate calculation.",
+    "Prescribed pressure-zeroGradient inlet and a mesh-dependent sampled continuum velocity profile are not an exact finite-duct Poiseuille boundary problem.",
+    "Conditional Richardson estimates assume leading single-power error and do not establish GCI or physical uncertainty.",
+    "Fixed axial resolution in the transverse ladder cannot pass the original all-direction grid gate.",
+    "No actual aircraft, installation, experimental validation, device hotspot or converged total wall-heat claim.",
+    "Original discontinuous inlet/wall thermal corner remains singular; no new thermal evidence is asserted.",
+    "Saved pressure exhibits near-inlet mesh-scale oscillations; the cause among discretization, BC and pressure-velocity coupling is unresolved. Interior-fit accuracy does not establish globally smooth pressure.",
+    "The separately registered inlet-isolation control failed its frozen residual gate at1500iterations. Its final field is provisional only, excluded from accepted comparisons and causal conclusions."
+  ],
+  "entrance_pressure_diagnostic": {
+    "exploratory_not_preregistered_acceptance_gate": true,
+    "case": "transverse_extra_fine",
+    "near_inlet_x_over_L": [
+      0.05,
+      0.25
+    ],
+    "near_inlet_local_gradient_range_Pa_m": [
+      228.34116422478837,
+      240.5709628926743
+    ],
+    "interior_x_over_L": [
+      0.25,
+      0.75
+    ],
+    "interior_local_gradient_range_Pa_m": [
+      235.87916973984375,
+      235.95009137566922
+    ],
+    "interpretation": "Saved pressure exhibits near-inlet mesh-scale oscillations; the cause among discretization, BC and pressure-velocity coupling is unresolved. Interior-fit accuracy does not establish globally smooth pressure."
+  }
+}

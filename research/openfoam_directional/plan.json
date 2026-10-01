@@ -1,0 +1,131 @@
+{
+  "schema": "aerolab-directional-pressure-diagnosis-preregistered-v1",
+  "registered_utc": "2026-10-01T14:56:18.097247+00:00",
+  "baseline_commit": "cbf54a20878c4904d3894bb8cd7226c8e4c43539",
+  "purpose": "Separate axial discretization, transverse viscous operator, inlet representation and pressure-station effects in the prior synthetic 3D duct pressure discrepancy. Diagnostic study only; no replacement of original validation.",
+  "immutable_original_pressure_grid_gate": {
+    "relative_change": 0.011208394380264775,
+    "maximum": 0.01,
+    "status": "FAILED; retained regardless of new results"
+  },
+  "geometry_properties_physics": "Exactly original research/openfoam_3d/plan.json and study.py. 30 x 4 x 2 mm, rho=1.2 kg/m3, mu=1.8e-5 Pa s, constant-property steady incompressible laminar. Momentum only; no new thermal solve, no CHT, no aircraft/experimental claim.",
+  "base_script_sha256": "634b00af4c18a37b5d4d361f844d8181455514210d45343e95e181aa9035fd50",
+  "reuse": {
+    "B": [
+      80,
+      32,
+      16
+    ],
+    "F": [
+      160,
+      64,
+      32
+    ],
+    "historical_other": [
+      [
+        40,
+        16,
+        8
+      ],
+      [
+        200,
+        80,
+        40
+      ]
+    ],
+    "root": "output/openfoam-3d-v2",
+    "require_existing_hash_audit": true
+  },
+  "new_primary_cases": [
+    {
+      "name": "axial_coarse",
+      "grid": [
+        40,
+        32,
+        16
+      ]
+    },
+    {
+      "name": "axial_fine",
+      "grid": [
+        160,
+        32,
+        16
+      ]
+    },
+    {
+      "name": "transverse_coarse",
+      "grid": [
+        80,
+        16,
+        8
+      ]
+    },
+    {
+      "name": "transverse_fine",
+      "grid": [
+        80,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "transverse_extra_fine",
+      "grid": [
+        80,
+        128,
+        64
+      ]
+    }
+  ],
+  "new_supplementary_cases": [
+    {
+      "name": "discrete_developed_inlet",
+      "grid": [
+        80,
+        32,
+        16
+      ],
+      "inlet": "Fully developed solution of independent cell-centered transverse finite-volume Poisson operator, scaled to 3 m/s face-area mean. Only this supplementary case changes inlet shape; excludes it from matched-BC ladders."
+    }
+  ],
+  "physical_flow_condition": "Every primary inlet uses original analytical face-midpoint profile rescaled to area-integrated flow Q=3*W*H=2.4e-5 m3/s. This fixes physical flow rate; midpoint normalization changes the equivalent continuous-profile amplitude and is reported separately, never used to silently redefine truth. Supplementary discrete inlet also has same Q.",
+  "numerical_operators": "Original Gmsh setup, simpleFoam, fvSchemes, fvSolution, velocity pressure outlet/wall conditions and stopping criteria reused byte-for-byte except generated mesh/inlet arrays; no thermal solves. zero initial flow. Supplemental inlet is explicitly distinct.",
+  "reference_truth": {
+    "pressure": "Fully developed continuum rectangular Poiseuille target at fixed physical Umean=3 m/s, G=mu Umean/(H^2 exact_mean). This is not exact truth for the finite-duct mesh-dependent inlet profile plus inlet-pressure zeroGradient closure.",
+    "velocity": "Report analytical point-value and exact cross-sectional cell-average L2 at fixed Umean=3 m/s separately. Analytical equivalent-mean reference is diagnostic only.",
+    "discrete_operator": "Independent scipy sparse solution -laplacian_perp(v)=1 on uniform cell centers, internal coefficient 1/d^2, Dirichlet wall contribution 2/d^2 at half-cell wall distance. G_discrete=mu*Umean/mean(v). Stencil residual and analytical convergence tested; this is same-operator diagnostic, not independent full-3D PDE validation. The remaining difference is combined inlet/end/axial/coupling influence until the supplementary inlet case supports further attribution."
+  },
+  "measurements": [
+    "Primary pressure-gradient least-squares fit of section means on x/L=0.25..0.75, same original definition. Also report 0.10..0.90 and 0.40..0.60 windows and downstream asymmetric 0.60..0.90 window, sectional p and -dp/dx, inlet-owner to outlet drop separately.",
+    "Pressure-corrected phi integrated on every streamwise mesh face; section velocity means, inlet and outlet volume flux; relative mass imbalance and maximum station flux departure from prescribed Q.",
+    "Axial ladder (40,32,16),(80,32,16),(160,32,16); transverse ladder (80,16,8),(80,32,16),(80,64,32),(80,128,64). Existing F provides interaction cross-check: F-B=(A-B)+(T-B)+(F-A-T+B).",
+    "Exact inlet quadrature normalization; Gdiscrete vs Gcontinuum; observed G vs Gdiscrete; difference caused by discrete-developed inlet at B.",
+    "Observed order from signed monotonically converging equal-ratio three-grid differences only when finite, same sign, contracting differences and positive observed order, |difference| exceeds 100 times saved original stationarity level (1e-8 relative floor). Richardson estimate then marked conditional, no GCI/uncertainty bound. Also known-truth error ratios. Axial ladder with dominant transverse offset is not extrapolated to continuum truth."
+  ],
+  "predeclared_interpretation": {
+    "execution_acceptance": {
+      "mesh_ok_and_3_directions": true,
+      "maximum_final_initial_residual": 1e-07,
+      "relative_mass_imbalance_max": 1e-07,
+      "maximum_station_flux_departure_relative": 1e-07
+    },
+    "directional_attribution_support": "Call transverse refinement dominant only if |T-B|/(|T-B|+|A-B|) >=0.90 and |interaction| <=0.10*|F-B|; otherwise report coupled/unresolved.",
+    "operator_attribution_support": "Call fully developed transverse operator an adequate explanation only if |Gobserved-Gdiscrete| <=0.10*|Gobserved-Gcontinuum| at B and transverse_fine; otherwise residual inlet/axial influence remains material.",
+    "station_robustness_reporting_limit": 0.001,
+    "new_directional_change_reporting_limit": 0.01,
+    "no_threshold_rewrite": "All limits defined before new runs. Original failure remains. New fixed-axial transverse refinement cannot certify original all-direction gate. No automatic CHT advancement."
+  },
+  "budget": {
+    "serial": true,
+    "maximum_new_solver_wall_seconds": 2700,
+    "maximum_single_solver_wall_seconds": 1200,
+    "maximum_iterations_per_case": 1500,
+    "maximum_new_mesh_cells": 655360,
+    "maximum_new_working_storage_GB": 2,
+    "maximum_new_cases": 6
+  },
+  "reproducibility": "Fresh output namespace only; register plan/source SHA before first solver; preserve prior scripts and original full artifacts; hash new native dictionaries mesh fields logs, save actual comparison plots and compact source-backed package <10 MB. Audit and independent review before parent delivery.",
+  "publication": "Local only; no remote push, merge, deployment, application integration or broad physics upgrade.",
+  "pre_run_review": "Independent reviewer audited all 26 original compact hashes and 220 full-source hashes. Before new solver runs, added asymmetric downstream station fit, contracting positive-order requirement and finite-duct versus fully-developed reference distinction. No new solver results existed when plan was frozen."
+}

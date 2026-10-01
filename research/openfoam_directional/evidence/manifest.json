@@ -1,0 +1,251 @@
+{
+  "schema": "aerolab-directional-package-v1",
+  "publication_storage": "storage.py resolves archived logical artifacts to the original bytes",
+  "files": [
+    {
+      "path": "research/openfoam_directional/README.md",
+      "bytes": 7471,
+      "sha256": "aa59327905e9e247cb3545475a706b74e2ba0b2fc0b2e7422405d8ac95b11604"
+    },
+    {
+      "path": "research/openfoam_directional/REPORT_ZH.md",
+      "bytes": 4709,
+      "sha256": "11e80641930723a7e9d353a61e098826e24158f59c54db28a73dcc7466aff127"
+    },
+    {
+      "path": "research/openfoam_directional/REVIEW.md",
+      "bytes": 5510,
+      "sha256": "56731aec6ac14f16b4180690307076bdb82acf50b726f29470af9265c05a8ea5"
+    },
+    {
+      "path": "research/openfoam_directional/audit_package.py",
+      "bytes": 2578,
+      "sha256": "35fc86360786f390f06cc2112bc9e2777f28ca0e6135a133faa8c8c3a304efa1"
+    },
+    {
+      "path": "research/openfoam_directional/continue_planned.py",
+      "bytes": 3508,
+      "sha256": "dd4c7114446b6bdf0888d9f089e949dbcc8690d06329b012f808cbc9b25f5173"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/B_profiles.json",
+      "bytes": 75641,
+      "sha256": "52f4e4172dc864529ca07b34d75572c70da7f150107b7a70eb796ee974776893"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/F_profiles.json",
+      "bytes": 276329,
+      "sha256": "281dd1c2462182548ffe567b9b49f397408b858fd068dc79f856cd23b576f48b",
+      "storage": "exact-byte-gzip-parts"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/actual_velocity_difference.png",
+      "bytes": 126468,
+      "sha256": "c01b6c421656f3bc0ef4dfcbcdf43aa095b5b683b909c4c6d539242fec058801"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/F_profiles.json.gz.part000",
+      "bytes": 52100,
+      "sha256": "165cf5e9b5440520163ee9175cfab5b42d71301d4d0740d928a230dfe81c4791"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/directional_comparison.png.gz.part000",
+      "bytes": 60000,
+      "sha256": "8e6b816a4187a3d62d59a15d57ee9912b20076d175880225210879309e4a553c"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/directional_comparison.png.gz.part001",
+      "bytes": 60000,
+      "sha256": "34d2c53c64e7f735daca6ec5deea2c0059046f34cd9ad7674c3561bedeb75e85"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/directional_comparison.png.gz.part002",
+      "bytes": 60000,
+      "sha256": "61fde4cd2db6ab9ba7ee20075895b27bff688ff4b57f98a60452a204a5f3504d"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/directional_comparison.png.gz.part003",
+      "bytes": 60000,
+      "sha256": "130f8271091042a04c2f03d66456c7dbb58e1416886e694be20cb1a143d80bd2"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/directional_comparison.png.gz.part004",
+      "bytes": 6971,
+      "sha256": "6b9043fc5cfbc50e22293f47b734bf63d68980f1c20572b7636ade1884990cc3"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/historical_extra_profiles.json.gz.part000",
+      "bytes": 60000,
+      "sha256": "e1dad972c6daf9bac24b0d890917d4d6ca502f2b3eb0aeb21c8500988b7d8253"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/historical_extra_profiles.json.gz.part001",
+      "bytes": 33646,
+      "sha256": "c40b2bf66a33bee866e60b23b75cbb9f8e545a342060fe378f7c6866eb8aa589"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/transverse_extra_fine_profiles.json.gz.part000",
+      "bytes": 60000,
+      "sha256": "95c9eea392b9a8364f534d3dbfe85cf5afb881f531b4a0cbab8d65f8aaa76c6d"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/transverse_extra_fine_profiles.json.gz.part001",
+      "bytes": 60000,
+      "sha256": "ababfe68b89249285db303bf39748bfb5a01b8e863e6259d1bd4831bd62c9a5a"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/transverse_extra_fine_profiles.json.gz.part002",
+      "bytes": 60000,
+      "sha256": "0c7477e0aa72a8368abd2cb34b1df00292f8fb21f18e0d60b4ba1d5755408dd6"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/transverse_extra_fine_profiles.json.gz.part003",
+      "bytes": 50645,
+      "sha256": "1abb6d70db2279b76df0b2ad3442480462b9906e6e7a90224e52f20642abe9e9"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/archive/transverse_fine_profiles.json.gz.part000",
+      "bytes": 53623,
+      "sha256": "238113309fb39f51e41f35035e6bcd751a23a7df214893079f8bd25e8ef7c60d"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/axial_coarse_profiles.json",
+      "bytes": 70311,
+      "sha256": "02931305488bd8d608db749673102c11ea75d2686ea837bb23a8982ebec2fe79"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/axial_fine_profiles.json",
+      "bytes": 86405,
+      "sha256": "36383a8e155efe3b0b93e29aa4feff944d041996ef0ebd2d235670f315a4e118"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/directional_comparison.png",
+      "bytes": 279811,
+      "sha256": "60765a140ac3e24713b294a6804cc37e7c4c88b3896c65c60bcff8bb9f9585b6",
+      "storage": "exact-byte-gzip-parts"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/historical_coarse_profiles.json",
+      "bytes": 22362,
+      "sha256": "defd40e787be0455ab1f3ad8b29dc46f96108d9313598b12c106dd3d6e820d8d"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/historical_extra_profiles.json",
+      "bytes": 424467,
+      "sha256": "409523d65d7ded7ec590395439f556459a9ef90202fdcb8a92b3c09fb69fe986",
+      "storage": "exact-byte-gzip-parts"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/report.json",
+      "bytes": 40171,
+      "sha256": "35a97d25fda6b193bb1fc8f91bfcc9d62065733ed317e0e9052611a63f693e38"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/run_lock.json",
+      "bytes": 309,
+      "sha256": "7cb1eeaa05fff8213e16fb5884a3a643cc5f0a23bfd6d48aa2ee7e14db5c8448"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/run_summary.json",
+      "bytes": 2598,
+      "sha256": "12215d99fc01122aa6212e5d61fb6d8c597cdaa16f2756abdbb0027633b872af"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/solver_log_extracts.json",
+      "bytes": 49619,
+      "sha256": "597f0e7ed9422f139d7793f9307dcfd6a08705e372150e83f4108f6cd44fa31b"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/source_artifacts.json",
+      "bytes": 37955,
+      "sha256": "1aa6929cfdfcae26eb663a900bfaa5d61605ee67a6b344ae6bc4daa47ca268e4"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/storage.json",
+      "bytes": 4369,
+      "sha256": "0f86200296279ae372f462819e28048955561ec0b5919f20ddacbf4e03a7db11"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/test_logs/application.log",
+      "bytes": 46086,
+      "sha256": "2ff127304e4bdd7142218131382c30f58b1538e489f82490a5307fd7d8b76615"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/test_logs/directional.log",
+      "bytes": 1264,
+      "sha256": "7a6e729527c53fc2c3af3c0948a016ee3fb78034af22a644ce22740c3157633f"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/test_logs/original_evidence.log",
+      "bytes": 1010,
+      "sha256": "988cee5cd81b71012b07da3e87705f738c9d0d6a1d371cbf0ae2e99111887321"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/transverse_coarse_profiles.json",
+      "bytes": 27713,
+      "sha256": "67ef7de9432205398087b75c4f90464cf0282c4ff6d103af64ed5057cd86aa3d"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/transverse_extra_fine_profiles.json",
+      "bytes": 1021826,
+      "sha256": "789a864bde61dd406ea8dc813774fba134e8d4268b9dc5f5b5b17c56d4c2672d",
+      "storage": "exact-byte-gzip-parts"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/transverse_fine_profiles.json",
+      "bytes": 265602,
+      "sha256": "e8e16ee2f604b5c2dac951f2b8bee4d5a82de92d0ab5bf65c996a86b78de105a",
+      "storage": "exact-byte-gzip-parts"
+    },
+    {
+      "path": "research/openfoam_directional/finalize_partial.py",
+      "bytes": 3714,
+      "sha256": "f32edae0936a3dbb27ba254d8ef4cb46a313fddb0469e0fd00784e52cd49c58b"
+    },
+    {
+      "path": "research/openfoam_directional/package_results.py",
+      "bytes": 13506,
+      "sha256": "d45627fa603d133d81144a20080c8d49f83e5cf654a9ff1b4833e2e2dc712756"
+    },
+    {
+      "path": "research/openfoam_directional/plan.json",
+      "bytes": 7170,
+      "sha256": "59643f17df668e2be8c77949508c0da3c7265f7d2b4bc0eb8a26a423ecc94e12"
+    },
+    {
+      "path": "research/openfoam_directional/reproduce.sh",
+      "bytes": 563,
+      "sha256": "c0103890cd4aecf3dae8284ef32b23276204a1dd9e226456bf64cb7403fd3b55"
+    },
+    {
+      "path": "research/openfoam_directional/storage.py",
+      "bytes": 2298,
+      "sha256": "ae2497de0ad6519d7f8363c49076483cc04073be022930aaabdd9b893a656b01"
+    },
+    {
+      "path": "research/openfoam_directional/study.py",
+      "bytes": 10761,
+      "sha256": "799f30fb4ed72b4e4c913054120ef24a1437f68f17e55915874dc71cb9ea435e"
+    },
+    {
+      "path": "research/openfoam_directional/test_package.py",
+      "bytes": 950,
+      "sha256": "0fe473927e27527baac4662aa9e361a72268b0bac1a071d74e9b74eb1879906f"
+    },
+    {
+      "path": "research/openfoam_directional/test_storage.py",
+      "bytes": 1364,
+      "sha256": "7b11ea4c0adc686d404ca7e1874e08ca94939f8c384f767c3b790c6eeab7cf48"
+    },
+    {
+      "path": "research/openfoam_directional/test_study.py",
+      "bytes": 2146,
+      "sha256": "dc6edf248d119119f997d40c1f6b29d96db9e16b8fd7bc280e16d58ba021448b"
+    },
+    {
+      "path": "research/openfoam_directional/verification_checks.json",
+      "bytes": 997,
+      "sha256": "b5ad2903fcfaf995e4fd883d3df3b458da4411dcd27bc62122ccf161c97a4852"
+    }
+  ]
+}

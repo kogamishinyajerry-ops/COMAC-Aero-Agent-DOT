@@ -22,6 +22,8 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m unittest discover -s tests -v
+      - run: python -S research/openfoam_3d/audit_package.py
+      - run: python -S research/openfoam_directional/audit_package.py
       - run: python -m aerolab benchmark --output output/benchmark.json
       - run: python scripts/generate_nacelle_evidence.py --check
       - run: python scripts/generate_nacelle_credibility.py --check
@@ -88,3 +90,15 @@ jobs:
             output/nacelle-baseline.step
             output/nacelle-redesign.step
             examples/cad_thermal_evidence.json
+
+  cooling-research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8
+      - run: python -m unittest discover -s research/openfoam_3d -p 'test_*.py' -v
+      - run: python -m unittest discover -s research/openfoam_directional -p 'test_*.py' -v
+      - run: python -S research/openfoam_directional/storage.py --extract-to output/directional-evidence

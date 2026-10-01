@@ -1,0 +1,116 @@
+{
+  "schema": "aerolab-exact-byte-storage-v1",
+  "purpose": "Lossless transport only. Logical artifact bytes and original SHA-256 identities are unchanged. No scientific values or image pixels have been altered.",
+  "artifacts": [
+    {
+      "path": "evidence/F_profiles.json",
+      "bytes": 276329,
+      "sha256": "281dd1c2462182548ffe567b9b49f397408b858fd068dc79f856cd23b576f48b",
+      "codec": "gzip-concatenated-parts",
+      "compressed_bytes": 52100,
+      "parts": [
+        {
+          "path": "evidence/archive/F_profiles.json.gz.part000",
+          "bytes": 52100,
+          "sha256": "165cf5e9b5440520163ee9175cfab5b42d71301d4d0740d928a230dfe81c4791"
+        }
+      ]
+    },
+    {
+      "path": "evidence/directional_comparison.png",
+      "bytes": 279811,
+      "sha256": "60765a140ac3e24713b294a6804cc37e7c4c88b3896c65c60bcff8bb9f9585b6",
+      "codec": "gzip-concatenated-parts",
+      "compressed_bytes": 246971,
+      "parts": [
+        {
+          "path": "evidence/archive/directional_comparison.png.gz.part000",
+          "bytes": 60000,
+          "sha256": "8e6b816a4187a3d62d59a15d57ee9912b20076d175880225210879309e4a553c"
+        },
+        {
+          "path": "evidence/archive/directional_comparison.png.gz.part001",
+          "bytes": 60000,
+          "sha256": "34d2c53c64e7f735daca6ec5deea2c0059046f34cd9ad7674c3561bedeb75e85"
+        },
+        {
+          "path": "evidence/archive/directional_comparison.png.gz.part002",
+          "bytes": 60000,
+          "sha256": "61fde4cd2db6ab9ba7ee20075895b27bff688ff4b57f98a60452a204a5f3504d"
+        },
+        {
+          "path": "evidence/archive/directional_comparison.png.gz.part003",
+          "bytes": 60000,
+          "sha256": "130f8271091042a04c2f03d66456c7dbb58e1416886e694be20cb1a143d80bd2"
+        },
+        {
+          "path": "evidence/archive/directional_comparison.png.gz.part004",
+          "bytes": 6971,
+          "sha256": "6b9043fc5cfbc50e22293f47b734bf63d68980f1c20572b7636ade1884990cc3"
+        }
+      ]
+    },
+    {
+      "path": "evidence/historical_extra_profiles.json",
+      "bytes": 424467,
+      "sha256": "409523d65d7ded7ec590395439f556459a9ef90202fdcb8a92b3c09fb69fe986",
+      "codec": "gzip-concatenated-parts",
+      "compressed_bytes": 93646,
+      "parts": [
+        {
+          "path": "evidence/archive/historical_extra_profiles.json.gz.part000",
+          "bytes": 60000,
+          "sha256": "e1dad972c6daf9bac24b0d890917d4d6ca502f2b3eb0aeb21c8500988b7d8253"
+        },
+        {
+          "path": "evidence/archive/historical_extra_profiles.json.gz.part001",
+          "bytes": 33646,
+          "sha256": "c40b2bf66a33bee866e60b23b75cbb9f8e545a342060fe378f7c6866eb8aa589"
+        }
+      ]
+    },
+    {
+      "path": "evidence/transverse_extra_fine_profiles.json",
+      "bytes": 1021826,
+      "sha256": "789a864bde61dd406ea8dc813774fba134e8d4268b9dc5f5b5b17c56d4c2672d",
+      "codec": "gzip-concatenated-parts",
+      "compressed_bytes": 230645,
+      "parts": [
+        {
+          "path": "evidence/archive/transverse_extra_fine_profiles.json.gz.part000",
+          "bytes": 60000,
+          "sha256": "95c9eea392b9a8364f534d3dbfe85cf5afb881f531b4a0cbab8d65f8aaa76c6d"
+        },
+        {
+          "path": "evidence/archive/transverse_extra_fine_profiles.json.gz.part001",
+          "bytes": 60000,
+          "sha256": "ababfe68b89249285db303bf39748bfb5a01b8e863e6259d1bd4831bd62c9a5a"
+        },
+        {
+          "path": "evidence/archive/transverse_extra_fine_profiles.json.gz.part002",
+          "bytes": 60000,
+          "sha256": "0c7477e0aa72a8368abd2cb34b1df00292f8fb21f18e0d60b4ba1d5755408dd6"
+        },
+        {
+          "path": "evidence/archive/transverse_extra_fine_profiles.json.gz.part003",
+          "bytes": 50645,
+          "sha256": "1abb6d70db2279b76df0b2ad3442480462b9906e6e7a90224e52f20642abe9e9"
+        }
+      ]
+    },
+    {
+      "path": "evidence/transverse_fine_profiles.json",
+      "bytes": 265602,
+      "sha256": "e8e16ee2f604b5c2dac951f2b8bee4d5a82de92d0ab5bf65c996a86b78de105a",
+      "codec": "gzip-concatenated-parts",
+      "compressed_bytes": 53623,
+      "parts": [
+        {
+          "path": "evidence/archive/transverse_fine_profiles.json.gz.part000",
+          "bytes": 53623,
+          "sha256": "238113309fb39f51e41f35035e6bcd751a23a7df214893079f8bd25e8ef7c60d"
+        }
+      ]
+    }
+  ]
+}

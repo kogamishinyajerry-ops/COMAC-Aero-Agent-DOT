@@ -1,0 +1,13 @@
+test_analytic_pressure_independently_recomputed (test_evidence.TestEvidence.test_analytic_pressure_independently_recomputed) ... ok
+test_honest_status_and_balances (test_evidence.TestEvidence.test_honest_status_and_balances) ... ok
+test_low_speed_sentinel_has_material_axial_diffusion (test_evidence.TestEvidence.test_low_speed_sentinel_has_material_axial_diffusion) ... ok
+test_no_physical_or_conjugate_claim (test_evidence.TestEvidence.test_no_physical_or_conjugate_claim) ... ok
+test_reject_changed_energy_normalization (test_evidence.TestEvidence.test_reject_changed_energy_normalization) ... ok
+test_reject_false_overall_pass (test_evidence.TestEvidence.test_reject_false_overall_pass) ... ok
+test_reject_hidden_pressure_failure (test_evidence.TestEvidence.test_reject_hidden_pressure_failure) ... ok
+test_three_dimensional_cell_counts (test_evidence.TestEvidence.test_three_dimensional_cell_counts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+OK

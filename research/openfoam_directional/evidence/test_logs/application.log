@@ -1,0 +1,375 @@
+test_api_and_raw_grade (test_agent_replay.AgentReplayHTTPTests.test_api_and_raw_grade) ... ok
+test_http_private_files_and_traversal_rejected (test_agent_replay.AgentReplayHTTPTests.test_http_private_files_and_traversal_rejected) ... ok
+test_new_routes_and_original_home (test_agent_replay.AgentReplayHTTPTests.test_new_routes_and_original_home) ... ok
+test_report_csp_is_specific_to_verified_report (test_agent_replay.AgentReplayHTTPTests.test_report_csp_is_specific_to_verified_report) ... ok
+test_unknown_parameters_and_mutations_rejected (test_agent_replay.AgentReplayHTTPTests.test_unknown_parameters_and_mutations_rejected) ... ok
+test_verification_failure_is_503_without_partial_evidence (test_agent_replay.AgentReplayHTTPTests.test_verification_failure_is_503_without_partial_evidence) ... ok
+test_both_fixed_tasks_and_recorded_actions (test_agent_replay.AgentReplayTests.test_both_fixed_tasks_and_recorded_actions) ... ok
+test_cad_downloads_and_previews_match_frozen_bytes (test_agent_replay.AgentReplayTests.test_cad_downloads_and_previews_match_frozen_bytes) ... ok
+test_candidates_and_rejected_evaluations_remain_visible (test_agent_replay.AgentReplayTests.test_candidates_and_rejected_evaluations_remain_visible) ... ok
+test_exact_allowlist_rejects_private_code_and_traversal_without_reads (test_agent_replay.AgentReplayTests.test_exact_allowlist_rejects_private_code_and_traversal_without_reads) ... ok
+test_numbers_come_from_saved_results (test_agent_replay.AgentReplayTests.test_numbers_come_from_saved_results) ... ok
+test_optimized_python_fails_closed (test_agent_replay.AgentReplayTests.test_optimized_python_fails_closed) ... ok
+test_record_path_injection_rejected_before_existing_verifier (test_agent_replay.AgentReplayTests.test_record_path_injection_rejected_before_existing_verifier) ... ok
+test_replay_never_invokes_live_tools_or_changes_saved_files (test_agent_replay.AgentReplayTests.test_replay_never_invokes_live_tools_or_changes_saved_files) ... ok
+test_report_links_are_allowlisted_and_csp_approves_only_exact_style (test_agent_replay.AgentReplayTests.test_report_links_are_allowlisted_and_csp_approves_only_exact_style) ... ok
+test_runs_under_stdlib_only_and_does_not_load_numeric_dependencies (test_agent_replay.AgentReplayTests.test_runs_under_stdlib_only_and_does_not_load_numeric_dependencies) ... ok
+test_symlinked_evidence_is_not_read (test_agent_replay.AgentReplayTests.test_symlinked_evidence_is_not_read) ... ok
+test_tampered_evidence_fails_without_stale_cached_pass (test_agent_replay.AgentReplayTests.test_tampered_evidence_fails_without_stale_cached_pass) ... ok
+test_truthful_execution_and_independent_grade (test_agent_replay.AgentReplayTests.test_truthful_execution_and_independent_grade) ... ok
+test_append_only_json_and_size (test_agent_trial.AgentTrialTests.test_append_only_json_and_size) ... ok
+test_geometry_hydraulic_screen (test_agent_trial.AgentTrialTests.test_geometry_hydraulic_screen) ... ok
+test_incomplete_finalization_cannot_pass (test_agent_trial.AgentTrialTests.test_incomplete_finalization_cannot_pass) ... ok
+test_metadata_tamper_detected (test_agent_trial.AgentTrialTests.test_metadata_tamper_detected) ... ok
+test_objective_and_counts_are_checked (test_agent_trial.AgentTrialTests.test_objective_and_counts_are_checked) ... ok
+test_protocol_hash_and_frozen_sources (test_agent_trial.AgentTrialTests.test_protocol_hash_and_frozen_sources) ... ok
+test_result_tamper_detected (test_agent_trial.AgentTrialTests.test_result_tamper_detected) ... ok
+test_session_initialization_and_task_tamper (test_agent_trial.AgentTrialTests.test_session_initialization_and_task_tamper) ... ok
+test_task_schema_validation (test_agent_trial.AgentTrialTests.test_task_schema_validation) ... ok
+test_catalog_and_evaluation (test_cad_api.CadApiTests.test_catalog_and_evaluation) ... Cannot create cache home directory: '/home/agent/.cache/ezdxf', cache files will not be saved.
+See also issue https://github.com/mozman/ezdxf/issues/923.
+127.0.0.1 - - [01/Oct/2026 08:04:51] "GET /api/cad/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:04:51] "POST /api/cad/evaluate HTTP/1.1" 200 -
+ok
+test_comparison_and_step_identity (test_cad_api.CadApiTests.test_comparison_and_step_identity) ... 127.0.0.1 - - [01/Oct/2026 08:04:51] "POST /api/cad/compare HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/step HTTP/1.1" 200 -
+ok
+test_linked_mission_and_invalid_geometry (test_cad_api.CadApiTests.test_linked_mission_and_invalid_geometry) ... 127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/run HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/evaluate HTTP/1.1" 400 -
+ok
+test_no_unbounded_generic_exports (test_cad_api.CadApiTests.test_no_unbounded_generic_exports) ... 127.0.0.1 - - [01/Oct/2026 08:04:52] "POST /api/cad/step HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:04:52] "GET /cad/manifest.json HTTP/1.1" 404 -
+ok
+test_closed_form_node_zero_flow_and_subdivision (test_cad_thermal.CoupledMissionTests.test_closed_form_node_zero_flow_and_subdivision) ... ok
+test_legacy_is_separate_and_invalid_cad_rejected (test_cad_thermal.CoupledMissionTests.test_legacy_is_separate_and_invalid_cad_rejected) ... ok
+test_limited_hv_clips_flow_with_power (test_cad_thermal.CoupledMissionTests.test_limited_hv_clips_flow_with_power) ... ok
+test_no_hv_has_no_powered_flow (test_cad_thermal.CoupledMissionTests.test_no_hv_has_no_powered_flow) ... ok
+test_reference_and_variant_change_mission_fixed_hardware (test_cad_thermal.CoupledMissionTests.test_reference_and_variant_change_mission_fixed_hardware) ... ok
+test_split_losses_and_thermal_energy (test_cad_thermal.CoupledMissionTests.test_split_losses_and_thermal_energy) ... ok
+test_split_model_faults_and_timestep (test_cad_thermal.CoupledMissionTests.test_split_model_faults_and_timestep) ... ok
+test_capacity_bound_and_fin_efficiency_once (test_cad_thermal.ThermalGeometryTests.test_capacity_bound_and_fin_efficiency_once) ... ok
+test_evidence_input_and_model_identity (test_cad_thermal.ThermalGeometryTests.test_evidence_input_and_model_identity) ... ok
+test_geometry_tradeoff_is_real_and_not_monotone_claim (test_cad_thermal.ThermalGeometryTests.test_geometry_tradeoff_is_real_and_not_monotone_claim) ... ok
+test_invalid_and_outside_physics_domain (test_cad_thermal.ThermalGeometryTests.test_invalid_and_outside_physics_domain) ... ok
+test_large_pressure_fraction_rejected_for_mission (test_cad_thermal.ThermalGeometryTests.test_large_pressure_fraction_rejected_for_mission) ... ok
+test_low_flow_energy_balance (test_cad_thermal.ThermalGeometryTests.test_low_flow_energy_balance) ... ok
+test_pressure_power_and_flow_sensitivity (test_cad_thermal.ThermalGeometryTests.test_pressure_power_and_flow_sensitivity) ... ok
+test_reference_geometry_and_units (test_cad_thermal.ThermalGeometryTests.test_reference_geometry_and_units) ... ok
+test_transition_endpoints_continuous_and_explicit (test_cad_thermal.ThermalGeometryTests.test_transition_endpoints_continuous_and_explicit) ... ok
+test_zero_flow_and_zero_heat (test_cad_thermal.ThermalGeometryTests.test_zero_flow_and_zero_heat) ... ok
+test_absolute_temperature_diagnostics_cover_every_marched_state (test_duct_finite_volume.DuctFiniteVolumeTests.test_absolute_temperature_diagnostics_cover_every_marched_state) ... ok
+test_absolute_zero_guard_checks_fully_developed_inlet (test_duct_finite_volume.DuctFiniteVolumeTests.test_absolute_zero_guard_checks_fully_developed_inlet) ... ok
+test_absolute_zero_guard_checks_solid_even_when_fluid_is_admissible (test_duct_finite_volume.DuctFiniteVolumeTests.test_absolute_zero_guard_checks_solid_even_when_fluid_is_admissible) ... ok
+test_absolute_zero_guard_checks_unsampled_interior_axial_states (test_duct_finite_volume.DuctFiniteVolumeTests.test_absolute_zero_guard_checks_unsampled_interior_axial_states) ... ok
+test_compact_samples_have_locations_and_grid_indices (test_duct_finite_volume.DuctFiniteVolumeTests.test_compact_samples_have_locations_and_grid_indices) ... ok
+test_continuum_reference_domain_and_cross_wall_limit (test_duct_finite_volume.DuctFiniteVolumeTests.test_continuum_reference_domain_and_cross_wall_limit) ... ok
+test_cooling_is_signed_and_conservative (test_duct_finite_volume.DuctFiniteVolumeTests.test_cooling_is_signed_and_conservative) ... ok
+test_energy_at_every_sample (test_duct_finite_volume.DuctFiniteVolumeTests.test_energy_at_every_sample) ... ok
+test_equal_flux_exact_quartic_profile_and_nusselt (test_duct_finite_volume.DuctFiniteVolumeTests.test_equal_flux_exact_quartic_profile_and_nusselt) ... ok
+test_extreme_cooling_rejects_absolute_zero_violation (test_duct_finite_volume.DuctFiniteVolumeTests.test_extreme_cooling_rejects_absolute_zero_violation) ... ok
+test_independent_developing_reference_truncation (test_duct_finite_volume.DuctFiniteVolumeTests.test_independent_developing_reference_truncation) ... ok
+test_inlet_corner_is_labeled_without_fabricated_infinite_nu (test_duct_finite_volume.DuctFiniteVolumeTests.test_inlet_corner_is_labeled_without_fabricated_infinite_nu) ... ok
+test_local_solid_conduction_interface (test_duct_finite_volume.DuctFiniteVolumeTests.test_local_solid_conduction_interface) ... ok
+test_one_wall_heated_exact_limit (test_duct_finite_volume.DuctFiniteVolumeTests.test_one_wall_heated_exact_limit) ... ok
+test_poisson_velocity_pressure_and_shear (test_duct_finite_volume.DuctFiniteVolumeTests.test_poisson_velocity_pressure_and_shear) ... ok
+test_reject_invalid_and_unbounded_inputs (test_duct_finite_volume.DuctFiniteVolumeTests.test_reject_invalid_and_unbounded_inputs) ... ok
+test_reversed_flow_preserves_heat_and_maps_physical_coordinates (test_duct_finite_volume.DuctFiniteVolumeTests.test_reversed_flow_preserves_heat_and_maps_physical_coordinates) ... ok
+test_saved_evidence_reproduces_and_all_gates_pass (test_duct_finite_volume.DuctFiniteVolumeTests.test_saved_evidence_reproduces_and_all_gates_pass) ... ok
+test_source_identity_input_identity_and_no_mutation (test_duct_finite_volume.DuctFiniteVolumeTests.test_source_identity_input_identity_and_no_mutation) ... ok
+test_transverse_second_order_grid_convergence (test_duct_finite_volume.DuctFiniteVolumeTests.test_transverse_second_order_grid_convergence) ... ok
+test_unequal_flux_superposition (test_duct_finite_volume.DuctFiniteVolumeTests.test_unequal_flux_superposition) ... ok
+test_unequal_wall_can_be_below_bulk (test_duct_finite_volume.DuctFiniteVolumeTests.test_unequal_wall_can_be_below_bulk) ... ok
+test_wall_swap_mirrors_temperature (test_duct_finite_volume.DuctFiniteVolumeTests.test_wall_swap_mirrors_temperature) ... ok
+test_zero_flow_no_artificial_temperature (test_duct_finite_volume.DuctFiniteVolumeTests.test_zero_flow_no_artificial_temperature) ... ok
+test_zero_heat_has_no_fictitious_nusselt (test_duct_finite_volume.DuctFiniteVolumeTests.test_zero_heat_has_no_fictitious_nusselt) ... ok
+test_cannot_tune_replay_from_request (test_experimental_evidence.ExperimentalApiTests.test_cannot_tune_replay_from_request) ... 127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /api/physics/experiment?heat_factor=2 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:00] "POST /api/physics/experiment HTTP/1.1" 404 -
+ok
+test_get_replay_and_ui (test_experimental_evidence.ExperimentalApiTests.test_get_replay_and_ui) ... 127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /api/physics/experiment HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /experiments HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /experiments.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /experiments.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /physics HTTP/1.1" 200 -
+ok
+test_stale_package_gives_visible_server_error (test_experimental_evidence.ExperimentalApiTests.test_stale_package_gives_visible_server_error) ... 127.0.0.1 - - [01/Oct/2026 08:05:00] "GET /api/physics/experiment HTTP/1.1" 503 -
+ok
+test_arithmetic_is_independently_checked (test_experimental_evidence.ExperimentalEvidenceTests.test_arithmetic_is_independently_checked) ... ok
+test_artifact_change_or_missing_file_is_rejected (test_experimental_evidence.ExperimentalEvidenceTests.test_artifact_change_or_missing_file_is_rejected) ... ok
+test_complete_read_only_replay_has_qualified_scope (test_experimental_evidence.ExperimentalEvidenceTests.test_complete_read_only_replay_has_qualified_scope) ... ok
+test_manifest_change_is_not_silently_accepted (test_experimental_evidence.ExperimentalEvidenceTests.test_manifest_change_is_not_silently_accepted) ... ok
+test_missing_source_values_are_not_filled (test_experimental_evidence.ExperimentalEvidenceTests.test_missing_source_values_are_not_filled) ... ok
+test_no_optional_research_dependency_required (test_experimental_evidence.ExperimentalEvidenceTests.test_no_optional_research_dependency_required) ... ok
+test_nonfinite_json_rejected (test_experimental_evidence.ExperimentalEvidenceTests.test_nonfinite_json_rejected) ... ok
+test_paths_cannot_leave_research_package (test_experimental_evidence.ExperimentalEvidenceTests.test_paths_cannot_leave_research_package) ... ok
+test_complete_get_and_script (test_fin_experimental_evidence.FinExperimentalApiTests.test_complete_get_and_script) ... 127.0.0.1 - - [01/Oct/2026 08:05:01] "GET /api/physics/fin-experiment HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:01] "GET /fin_experiment.js HTTP/1.1" 200 -
+ok
+test_saved_replay_cannot_be_tuned (test_fin_experimental_evidence.FinExperimentalApiTests.test_saved_replay_cannot_be_tuned) ... 127.0.0.1 - - [01/Oct/2026 08:05:01] "GET /api/physics/fin-experiment?ks=1000 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:01] "POST /api/physics/fin-experiment HTTP/1.1" 404 -
+ok
+test_stale_evidence_http_error (test_fin_experimental_evidence.FinExperimentalApiTests.test_stale_evidence_http_error) ... 127.0.0.1 - - [01/Oct/2026 08:05:01] "GET /api/physics/fin-experiment HTTP/1.1" 503 -
+ok
+test_all_nonfinite_json_forms_fail (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_all_nonfinite_json_forms_fail) ... ok
+test_all_points_models_and_scope_remain (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_all_points_models_and_scope_remain) ... ok
+test_arithmetic_and_uncertainty_are_separate (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_arithmetic_and_uncertainty_are_separate) ... ok
+test_artifact_tamper_and_missing_fail (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_artifact_tamper_and_missing_fail) ... ok
+test_audited_snapshot_not_reread (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_audited_snapshot_not_reread) ... ok
+test_invalid_paths_and_oversized_manifest_fail (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_invalid_paths_and_oversized_manifest_fail) ... ok
+test_no_scientific_runtime_dependency (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_no_scientific_runtime_dependency) ... ok
+test_pin_mismatch_rejected (test_fin_experimental_evidence.FinExperimentalEvidenceTests.test_pin_mismatch_rejected) ... ok
+test_all_preset_evidence_contains_independent_validations (test_geometry.BundledCADTests.test_all_preset_evidence_contains_independent_validations) ... ok
+test_artifact_tamper_cannot_claim_brep_verification (test_geometry.BundledCADTests.test_artifact_tamper_cannot_claim_brep_verification) ... ok
+test_compressed_files_match_manifest_and_parameter_fingerprints (test_geometry.BundledCADTests.test_compressed_files_match_manifest_and_parameter_fingerprints) ... ok
+test_custom_geometry_never_borrows_reference_verification (test_geometry.BundledCADTests.test_custom_geometry_never_borrows_reference_verification) ... ok
+test_mesh_validator_detects_open_surface (test_geometry.BundledCADTests.test_mesh_validator_detects_open_surface) ... ok
+test_preset_exports_and_metrics_work_without_kernel (test_geometry.BundledCADTests.test_preset_exports_and_metrics_work_without_kernel) ... ok
+test_stdlib_only_process_can_export_checked_preset (test_geometry.BundledCADTests.test_stdlib_only_process_can_export_checked_preset) ... ok
+test_fingerprint_is_canonical_and_changes_each_dimension (test_geometry.GeometryContractTests.test_fingerprint_is_canonical_and_changes_each_dimension) ... ok
+test_heated_area_and_geometrical_wetted_perimeter_are_distinct (test_geometry.GeometryContractTests.test_heated_area_and_geometrical_wetted_perimeter_are_distinct) ... ok
+test_invalid_dimensions_are_rejected_at_constructor_and_parser (test_geometry.GeometryContractTests.test_invalid_dimensions_are_rejected_at_constructor_and_parser) ... ok
+test_preview_has_same_fingerprint_and_actual_fin_count (test_geometry.GeometryContractTests.test_preview_has_same_fingerprint_and_actual_fin_count) ... ok
+test_reference_source_dimensions_and_exact_si_metrics (test_geometry.GeometryContractTests.test_reference_source_dimensions_and_exact_si_metrics) ... ok
+test_three_meaningful_variants_are_geometrically_different (test_geometry.GeometryContractTests.test_three_meaningful_variants_are_geometrically_different) ... ok
+test_validation_includes_density (test_geometry.GeometryContractTests.test_validation_includes_density) ... ok
+test_all_preset_step_files_reimport_as_single_valid_solid (test_geometry.IndependentKernelTests.test_all_preset_step_files_reimport_as_single_valid_solid) ... ok
+test_custom_parameter_export_is_real_new_brep (test_geometry.IndependentKernelTests.test_custom_parameter_export_is_real_new_brep) ... ok
+test_air_energy_equation_integral_and_limits (test_historical_motor.HistoricalMotorTests.test_air_energy_equation_integral_and_limits) ... ok
+test_fin_limits_and_sensitivity (test_historical_motor.HistoricalMotorTests.test_fin_limits_and_sensitivity) ... ok
+test_fin_solution_against_independent_finite_volume_refinement (test_historical_motor.HistoricalMotorTests.test_fin_solution_against_independent_finite_volume_refinement) ... ok
+test_invalid_inputs_fail_before_numeric_results (test_historical_motor.HistoricalMotorTests.test_invalid_inputs_fail_before_numeric_results) ... ok
+test_liner_units_and_area_normalized_resistance (test_historical_motor.HistoricalMotorTests.test_liner_units_and_area_normalized_resistance) ... ok
+test_mass_heat_capacity_and_conductivity_rederived (test_historical_motor.HistoricalMotorTests.test_mass_heat_capacity_and_conductivity_rederived) ... ok
+test_matched_comparison_preserves_boundary_and_hypothesis (test_historical_motor.HistoricalMotorTests.test_matched_comparison_preserves_boundary_and_hypothesis) ... ok
+test_pressure_scales_with_length_without_fake_minor_loss (test_historical_motor.HistoricalMotorTests.test_pressure_scales_with_length_without_fake_minor_loss) ... ok
+test_report_never_claims_calibration_or_actual_full_motor (test_historical_motor.HistoricalMotorTests.test_report_never_claims_calibration_or_actual_full_motor) ... ok
+test_saved_evidence_is_bounded_and_reproducible (test_historical_motor.HistoricalMotorTests.test_saved_evidence_is_bounded_and_reproducible) ... ok
+test_source_dimensions_and_unit_conversions (test_historical_motor.HistoricalMotorTests.test_source_dimensions_and_unit_conversions) ... ok
+test_transition_and_domain_extrapolation_are_not_hidden (test_historical_motor.HistoricalMotorTests.test_transition_and_domain_extrapolation_are_not_hidden) ... ok
+test_transport_against_independent_gnielinski_arithmetic (test_historical_motor.HistoricalMotorTests.test_transport_against_independent_gnielinski_arithmetic) ... ok
+test_a_or_b_can_feed_both_channels (test_model.ComponentTests.test_a_or_b_can_feed_both_channels) ... ok
+test_actions_cannot_change_hardware (test_model.ComponentTests.test_actions_cannot_change_hardware) ... ok
+test_depletion_cap_respects_chemical_energy (test_model.ComponentTests.test_depletion_cap_respects_chemical_energy) ... ok
+test_empty_or_isolated_pack_cannot_supply (test_model.ComponentTests.test_empty_or_isolated_pack_cannot_supply) ... ok
+test_future_fault_does_not_leak (test_model.ComponentTests.test_future_fault_does_not_leak) ... ok
+test_lv_backup_covers_healthy_converter_without_hv (test_model.ComponentTests.test_lv_backup_covers_healthy_converter_without_hv) ... ok
+test_lv_depletion_removes_command_even_with_hv (test_model.ComponentTests.test_lv_depletion_removes_command_even_with_hv) ... ok
+test_motor_fault_blocks_channel (test_model.ComponentTests.test_motor_fault_blocks_channel) ... ok
+test_protection_caps_shaft_instead_of_overheating (test_model.ComponentTests.test_protection_caps_shaft_instead_of_overheating) ... ok
+test_redistribution_is_not_rigid_equal_split (test_model.ComponentTests.test_redistribution_is_not_rigid_equal_split) ... ok
+test_thermal_exact_subdivision (test_model.ComponentTests.test_thermal_exact_subdivision) ... ok
+test_thermal_zero_heat_relaxes_to_ambient (test_model.ComponentTests.test_thermal_zero_heat_relaxes_to_ambient) ... ok
+test_all_scenarios_have_valid_accounting_and_safe_bounds (test_model.MissionTests.test_all_scenarios_have_valid_accounting_and_safe_bounds) ... ok
+test_backups_can_expire_with_stranded_traction_energy (test_model.MissionTests.test_backups_can_expire_with_stranded_traction_energy) ... ok
+test_compared_external_inputs_identical (test_model.MissionTests.test_compared_external_inputs_identical) ... ok
+test_controllers_do_not_use_future_faults (test_model.MissionTests.test_controllers_do_not_use_future_faults) ... ok
+test_events_and_phase_boundaries_split_nondividing_dt (test_model.MissionTests.test_events_and_phase_boundaries_split_nondividing_dt) ... ok
+test_exported_reference_is_reproducible (test_model.MissionTests.test_exported_reference_is_reproducible) ... ok
+test_invalid_inputs_rejected (test_model.MissionTests.test_invalid_inputs_rejected) ... ok
+test_nominal_and_hot_day_are_feasible_for_both (test_model.MissionTests.test_nominal_and_hot_day_are_feasible_for_both) ... ok
+test_parameter_variants_are_configuration_only (test_model.MissionTests.test_parameter_variants_are_configuration_only) ... ok
+test_protected_infeasible_distinct_from_invalid_solver (test_model.MissionTests.test_protected_infeasible_distinct_from_invalid_solver) ... ok
+test_repeatability_identical_full_run (test_model.MissionTests.test_repeatability_identical_full_run) ... ok
+test_timestep_sensitivity_small_for_nominal_energy (test_model.MissionTests.test_timestep_sensitivity_small_for_nominal_energy) ... ok
+test_bounded_live_story_has_no_user_supplied_targets (test_nacelle_api.NacelleApiTests.test_bounded_live_story_has_no_user_supplied_targets) ... 127.0.0.1 - - [01/Oct/2026 08:05:13] "POST /api/nacelle/story HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:13] "POST /api/nacelle/story HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:13] "POST /api/nacelle/story HTTP/1.1" 400 -
+ok
+test_catalog_geometry_and_shared_fingerprint (test_nacelle_api.NacelleApiTests.test_catalog_geometry_and_shared_fingerprint) ... 127.0.0.1 - - [01/Oct/2026 08:05:13] "GET /api/nacelle/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:13] "GET /api/nacelle/geometry HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:13] "POST /api/nacelle/geometry HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:13] "POST /api/nacelle/evaluate HTTP/1.1" 200 -
+ok
+test_comparison_consistent_boundaries (test_nacelle_api.NacelleApiTests.test_comparison_consistent_boundaries) ... 127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/compare HTTP/1.1" 200 -
+ok
+test_invalid_input_and_cross_origin (test_nacelle_api.NacelleApiTests.test_invalid_input_and_cross_origin) ... 127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/evaluate HTTP/1.1" 403 -
+ok
+test_named_default_step_without_arbitrary_files (test_nacelle_api.NacelleApiTests.test_named_default_step_without_arbitrary_files) ... 127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/step HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/step HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/step HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "POST /api/nacelle/step HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /cad/nacelle/manifest.json HTTP/1.1" 404 -
+ok
+test_separate_ui_and_old_model_access (test_nacelle_api.NacelleApiTests.test_separate_ui_and_old_model_access) ... 127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /nacelle HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /nacelle.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /nacelle.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /nacelle_story.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /api/cad/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:14] "GET /api/catalog HTTP/1.1" 200 -
+ok
+test_duplicate_and_traversal_names_rejected (test_nacelle_evidence.NacelleEvidenceStorageTests.test_duplicate_and_traversal_names_rejected) ... ok
+test_exact_roundtrip_and_complete_bounded_cases (test_nacelle_evidence.NacelleEvidenceStorageTests.test_exact_roundtrip_and_complete_bounded_cases) ... ok
+test_growth_is_bounded_and_rejected (test_nacelle_evidence.NacelleEvidenceStorageTests.test_growth_is_bounded_and_rejected) ... ok
+test_metadata_or_full_identity_change_rejected (test_nacelle_evidence.NacelleEvidenceStorageTests.test_metadata_or_full_identity_change_rejected) ... ok
+test_missing_case_rejected (test_nacelle_evidence.NacelleEvidenceStorageTests.test_missing_case_rejected) ... ok
+test_numeric_reproduction_keeps_strict_tolerance (test_nacelle_evidence.NacelleEvidenceStorageTests.test_numeric_reproduction_keeps_strict_tolerance) ... ok
+test_same_size_corruption_rejected (test_nacelle_evidence.NacelleEvidenceStorageTests.test_same_size_corruption_rejected) ... ok
+test_writer_rejects_oversize_before_replacing_index (test_nacelle_evidence.NacelleEvidenceStorageTests.test_writer_rejects_oversize_before_replacing_index) ... ok
+test_chunk_metadata_and_expansion_bounds_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_chunk_metadata_and_expansion_bounds_rejected) ... ok
+test_combined_and_uncompressed_hashes_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_combined_and_uncompressed_hashes_rejected) ... ok
+test_concurrent_chunk_growth_is_read_with_a_hard_bound (test_nacelle_geometry.ChunkedStepIntegrityTests.test_concurrent_chunk_growth_is_read_with_a_hard_bound) ... ok
+test_corrupted_chunk_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_corrupted_chunk_rejected) ... ok
+test_duplicate_and_escaping_filenames_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_duplicate_and_escaping_filenames_rejected) ... ok
+test_exact_reassembly_and_bounded_parts (test_nacelle_geometry.ChunkedStepIntegrityTests.test_exact_reassembly_and_bounded_parts) ... ok
+test_legacy_single_file_fallback_is_not_accepted (test_nacelle_geometry.ChunkedStepIntegrityTests.test_legacy_single_file_fallback_is_not_accepted) ... ok
+test_missing_chunk_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_missing_chunk_rejected) ... ok
+test_reordered_chunks_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_reordered_chunks_rejected) ... ok
+test_truncated_chunk_rejected (test_nacelle_geometry.ChunkedStepIntegrityTests.test_truncated_chunk_rejected) ... ok
+test_failed_candidate_does_not_replace_verified_cache (test_nacelle_geometry.NacelleGenerationSafetyTests.test_failed_candidate_does_not_replace_verified_cache) ... Built 0 named components in 0.0s
+BRep audit: passed=False, unexpected intersections=1
+ok
+test_baseline_anchors_and_inference (test_nacelle_geometry.NacelleGeometryTests.test_baseline_anchors_and_inference) ... ok
+test_bundled_step_manifest_matches_parameters (test_nacelle_geometry.NacelleGeometryTests.test_bundled_step_manifest_matches_parameters) ... ok
+test_channels_are_consistent_and_slots_parallel (test_nacelle_geometry.NacelleGeometryTests.test_channels_are_consistent_and_slots_parallel) ... ok
+test_checked_in_step_download_needs_no_cad_kernel (test_nacelle_geometry.NacelleGeometryTests.test_checked_in_step_download_needs_no_cad_kernel) ... ok
+test_component_ids_stable_and_mesh_closed (test_nacelle_geometry.NacelleGeometryTests.test_component_ids_stable_and_mesh_closed) ... ok
+test_construction_source_identity_invalidates_cached_artifacts (test_nacelle_geometry.NacelleGeometryTests.test_construction_source_identity_invalidates_cached_artifacts) ... ok
+test_cowling_refinement_has_shared_seams_and_bounded_sampling (test_nacelle_geometry.NacelleGeometryTests.test_cowling_refinement_has_shared_seams_and_bounded_sampling) ... ok
+test_every_parameter_changes_fingerprint (test_nacelle_geometry.NacelleGeometryTests.test_every_parameter_changes_fingerprint) ... ok
+test_failed_or_incomplete_artifact_is_not_served (test_nacelle_geometry.NacelleGeometryTests.test_failed_or_incomplete_artifact_is_not_served) ... ok
+test_half_moon_inlets_match_actual_section_polygons (test_nacelle_geometry.NacelleGeometryTests.test_half_moon_inlets_match_actual_section_polygons) ... ok
+test_hollow_supports_have_real_empty_cores (test_nacelle_geometry.NacelleGeometryTests.test_hollow_supports_have_real_empty_cores) ... ok
+test_invalid_params (test_nacelle_geometry.NacelleGeometryTests.test_invalid_params) ... ok
+test_knobs_change_own_physical_sections (test_nacelle_geometry.NacelleGeometryTests.test_knobs_change_own_physical_sections) ... ok
+test_mass_excludes_host_wing_and_no_air_solids (test_nacelle_geometry.NacelleGeometryTests.test_mass_excludes_host_wing_and_no_air_solids) ... ok
+test_refined_aperture_area_tracks_ruled_cowling (test_nacelle_geometry.NacelleGeometryTests.test_refined_aperture_area_tracks_ruled_cowling) ... ok
+test_returns_do_not_mutate_cached_geometry (test_nacelle_geometry.NacelleGeometryTests.test_returns_do_not_mutate_cached_geometry) ... ok
+test_tapered_bypass_lengths_and_forward_fit_guards (test_nacelle_geometry.NacelleGeometryTests.test_tapered_bypass_lengths_and_forward_fit_guards) ... ok
+test_audit_does_not_claim_physical_or_blind_validation (test_nacelle_source_audit.SourceStationAuditTests.test_audit_does_not_claim_physical_or_blind_validation) ... ok
+test_calibration_matches_itself_but_whole_motor_check_fails (test_nacelle_source_audit.SourceStationAuditTests.test_calibration_matches_itself_but_whole_motor_check_fails) ... ok
+test_exact_printed_transcription_sentinels (test_nacelle_source_audit.SourceStationAuditTests.test_exact_printed_transcription_sentinels) ... ok
+test_invalid_or_unresolved_station_rejected (test_nacelle_source_audit.SourceStationAuditTests.test_invalid_or_unresolved_station_rejected) ... ok
+test_isentropic_energy_inversion_and_static_stream_are_distinct (test_nacelle_source_audit.SourceStationAuditTests.test_isentropic_energy_inversion_and_static_stream_are_distinct) ... ok
+test_only_inference_case_affects_fitted_conductance (test_nacelle_source_audit.SourceStationAuditTests.test_only_inference_case_affects_fitted_conductance) ... ok
+test_rounding_intervals_cover_all_independent_corner_combinations (test_nacelle_source_audit.SourceStationAuditTests.test_rounding_intervals_cover_all_independent_corner_combinations) ... ok
+test_saved_evidence_reproduces_current_code_and_source (test_nacelle_source_audit.SourceStationAuditTests.test_saved_evidence_reproduces_current_code_and_source) ... ok
+test_source_copy_cannot_mutate_fixture (test_nacelle_source_audit.SourceStationAuditTests.test_source_copy_cannot_mutate_fixture) ... ok
+test_unit_conversion_against_independent_mass_equation (test_nacelle_source_audit.SourceStationAuditTests.test_unit_conversion_against_independent_mass_equation) ... ok
+test_actual_solver_evidence_supports_every_summary (test_nacelle_story.NacelleStoryTests.test_actual_solver_evidence_supports_every_summary) ... ok
+test_candidates_have_identical_boundaries_and_declared_geometry_changes (test_nacelle_story.NacelleStoryTests.test_candidates_have_identical_boundaries_and_declared_geometry_changes) ... ok
+test_full_source_heat_shown_before_explicit_teaching_cases (test_nacelle_story.NacelleStoryTests.test_full_source_heat_shown_before_explicit_teaching_cases) ... ok
+test_hot_perturbation_changes_only_ambient (test_nacelle_story.NacelleStoryTests.test_hot_perturbation_changes_only_ambient) ... ok
+test_inputs_are_not_mutated_and_identity_is_deterministic (test_nacelle_story.NacelleStoryTests.test_inputs_are_not_mutated_and_identity_is_deterministic) ... ok
+test_real_local_versus_system_tradeoff_is_retained (test_nacelle_story.NacelleStoryTests.test_real_local_versus_system_tradeoff_is_retained) ... ok
+test_exact_circular_uniform_flux_laminar_limit (test_nacelle_thermal.AnalyticalThermalBenchmarks.test_exact_circular_uniform_flux_laminar_limit) ... ok
+test_gnielinski_hand_calculated_equation_case (test_nacelle_thermal.AnalyticalThermalBenchmarks.test_gnielinski_hand_calculated_equation_case) ... ok
+test_uniform_flux_two_wall_closed_form_and_independent_march (test_nacelle_thermal.AnalyticalThermalBenchmarks.test_uniform_flux_two_wall_closed_form_and_independent_march) ... ok
+test_contracted_serial_section_is_in_mach_and_reynolds_guards (test_nacelle_thermal.NacelleBoundaryTests.test_contracted_serial_section_is_in_mach_and_reynolds_guards) ... ok
+test_missing_channel_and_invalid_metric_rejected (test_nacelle_thermal.NacelleBoundaryTests.test_missing_channel_and_invalid_metric_rejected) ... ok
+test_partial_defaults_explicit_invalid_and_unknown (test_nacelle_thermal.NacelleBoundaryTests.test_partial_defaults_explicit_invalid_and_unknown) ... ok
+test_airspeed_sensitivity_and_lv_is_separately_cooled (test_nacelle_thermal.NacelleNetworkTests.test_airspeed_sensitivity_and_lv_is_separately_cooled) ... ok
+test_geometry_intake_fin_and_bypass_sensitivity (test_nacelle_thermal.NacelleNetworkTests.test_geometry_intake_fin_and_bypass_sensitivity) ... ok
+test_heat_capacity_and_heat_energy_mixing (test_nacelle_thermal.NacelleNetworkTests.test_heat_capacity_and_heat_energy_mixing) ... ok
+test_identity_uses_imported_source_snapshots (test_nacelle_thermal.NacelleNetworkTests.test_identity_uses_imported_source_snapshots) ... ok
+test_magnet_conduction_uses_each_heated_patch_area (test_nacelle_thermal.NacelleNetworkTests.test_magnet_conduction_uses_each_heated_patch_area) ... ok
+test_motor_axial_coordinate_follows_reversed_flow (test_nacelle_thermal.NacelleNetworkTests.test_motor_axial_coordinate_follows_reversed_flow) ... ok
+test_motor_slots_and_multiwall_energy_are_distinct (test_nacelle_thermal.NacelleNetworkTests.test_motor_slots_and_multiwall_energy_are_distinct) ... ok
+test_near_reversal_pressure_corner_retains_precision (test_nacelle_thermal.NacelleNetworkTests.test_near_reversal_pressure_corner_retains_precision) ... ok
+test_patch_resistance_budget_and_required_ua_are_algebraic_only (test_nacelle_thermal.NacelleNetworkTests.test_patch_resistance_budget_and_required_ua_are_algebraic_only) ... ok
+test_pressure_equations_and_internal_mass_balance (test_nacelle_thermal.NacelleNetworkTests.test_pressure_equations_and_internal_mass_balance) ... ok
+test_pressure_monotonic_inverse_and_no_fan (test_nacelle_thermal.NacelleNetworkTests.test_pressure_monotonic_inverse_and_no_fan) ... ok
+test_real_lv_transition_speed_exceeds_inlet_and_exchange (test_nacelle_thermal.NacelleNetworkTests.test_real_lv_transition_speed_exceeds_inlet_and_exchange) ... ok
+test_reduced_load_is_optional_heat_fraction_not_power_claim (test_nacelle_thermal.NacelleNetworkTests.test_reduced_load_is_optional_heat_fraction_not_power_claim) ... ok
+test_reverse_flow_is_signed_and_conserves (test_nacelle_thermal.NacelleNetworkTests.test_reverse_flow_is_signed_and_conserves) ... ok
+test_source_diagnostic_is_not_a_fitted_boundary (test_nacelle_thermal.NacelleNetworkTests.test_source_diagnostic_is_not_a_fitted_boundary) ... ok
+test_source_loads_and_matching_cad_ids (test_nacelle_thermal.NacelleNetworkTests.test_source_loads_and_matching_cad_ids) ... ok
+test_source_pressure_preset_has_separate_feeds_and_no_double_count (test_nacelle_thermal.NacelleNetworkTests.test_source_pressure_preset_has_separate_feeds_and_no_double_count) ... ok
+test_thermal_guard_is_a_fixed_property_heat_scale_not_a_power_limit (test_nacelle_thermal.NacelleNetworkTests.test_thermal_guard_is_a_fixed_property_heat_scale_not_a_power_limit) ... ok
+test_three_source_cases_are_unfitted_context_and_boundary_modes (test_nacelle_thermal.NacelleNetworkTests.test_three_source_cases_are_unfitted_context_and_boundary_modes) ... ok
+test_uncertainty_and_compare_identity_are_honest (test_nacelle_thermal.NacelleNetworkTests.test_uncertainty_and_compare_identity_are_honest) ... ok
+test_zero_flow_never_fabricates_equilibrium (test_nacelle_thermal.NacelleNetworkTests.test_zero_flow_never_fabricates_equilibrium) ... ok
+test_live_evidence_and_static_page (test_physics_api.PhysicsApiTests.test_live_evidence_and_static_page) ... 127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "GET /physics HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "GET /physics.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "GET /physics.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "GET /nacelle HTTP/1.1" 200 -
+ok
+test_server_discloses_stale_evidence (test_physics_api.PhysicsApiTests.test_server_discloses_stale_evidence) ... 127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 503 -
+ok
+test_strict_fields_and_cross_origin (test_physics_api.PhysicsApiTests.test_strict_fields_and_cross_origin) ... 127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "POST /api/physics/evaluate HTTP/1.1" 403 -
+127.0.0.1 - - [01/Oct/2026 08:05:30] "GET /api/physics/evaluate HTTP/1.1" 404 -
+ok
+test_asymmetric_wall_below_bulk_is_actual_computed_result (test_physics_api.PhysicsEvidenceTests.test_asymmetric_wall_below_bulk_is_actual_computed_result) ... ok
+test_presets_preserve_three_distinct_scopes (test_physics_api.PhysicsEvidenceTests.test_presets_preserve_three_distinct_scopes) ... ok
+test_stale_verification_is_not_claimed_as_valid (test_physics_api.PhysicsEvidenceTests.test_stale_verification_is_not_claimed_as_valid) ... ok
+test_unknown_case_rejected (test_physics_api.PhysicsEvidenceTests.test_unknown_case_rejected) ... ok
+test_consolidated_page_assets_and_distinct_replay_controls (test_pressure_fin_replay.PressureFinReplayApiTests.test_consolidated_page_assets_and_distinct_replay_controls) ... 127.0.0.1 - - [01/Oct/2026 08:05:31] "GET /physics HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:31] "GET /tradeoff.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:31] "GET /tradeoff.css HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:31] "GET /physics HTTP/1.1" 200 -
+ok
+test_default_get_accepts_empty_query_on_supported_python_versions (test_pressure_fin_replay.PressureFinReplayApiTests.test_default_get_accepts_empty_query_on_supported_python_versions) ... 127.0.0.1 - - [01/Oct/2026 08:05:31] "GET /api/physics/tradeoff HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff? HTTP/1.1" 200 -
+ok
+test_get_selection_matches_saved_record_and_live_post_is_unsupported (test_pressure_fin_replay.PressureFinReplayApiTests.test_get_selection_matches_saved_record_and_live_post_is_unsupported) ... 127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?design_id=n16_t600&case_id=combined_fault&heat_load_W=40 HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "POST /api/physics/tradeoff HTTP/1.1" 404 -
+ok
+test_stale_package_returns_503_without_unverified_payload (test_pressure_fin_replay.PressureFinReplayApiTests.test_stale_package_returns_503_without_unverified_payload) ... 127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff HTTP/1.1" 503 -
+ok
+test_unknown_duplicate_blank_and_nonpreset_queries_are_rejected (test_pressure_fin_replay.PressureFinReplayApiTests.test_unknown_duplicate_blank_and_nonpreset_queries_are_rejected) ... 127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?bogus=x HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?design_id=n16_t600&design_id=n16_t860 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W=60.0 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W=61 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W= HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?case_id= HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?design_id=..%2F..%2F HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W=60&case_id=nominal&design_id=n16_t600&extra=1 HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:05:32] "GET /api/physics/tradeoff?heat_load_W=NaN HTTP/1.1" 400 -
+ok
+test_accepted_counterexample_is_prominent_and_load_does_not_redefine_it (test_pressure_fin_replay.PressureFinReplayTests.test_accepted_counterexample_is_prominent_and_load_does_not_redefine_it) ... ok
+test_all_saved_selections_keep_fixed_requirement_and_fit_bound (test_pressure_fin_replay.PressureFinReplayTests.test_all_saved_selections_keep_fixed_requirement_and_fit_bound) ... ok
+test_branch_network_and_fin_mass_remain_physically_interpretable (test_pressure_fin_replay.PressureFinReplayTests.test_branch_network_and_fin_mass_remain_physically_interpretable) ... ok
+test_reader_uses_verified_bytes_without_reopening_payload_files (test_pressure_fin_replay.PressureFinReplayTests.test_reader_uses_verified_bytes_without_reopening_payload_files) ... ok
+test_selection_identity_covers_request_package_reader_and_candidate (test_pressure_fin_replay.PressureFinReplayTests.test_selection_identity_covers_request_package_reader_and_candidate) ... ok
+test_stale_manifest_and_failed_snapshot_are_never_successful (test_pressure_fin_replay.PressureFinReplayTests.test_stale_manifest_and_failed_snapshot_are_never_successful) ... ok
+test_stdlib_runtime_has_no_optional_solver_import (test_pressure_fin_replay.PressureFinReplayTests.test_stdlib_runtime_has_no_optional_solver_import) ... ok
+test_strict_bounded_discrete_inputs (test_pressure_fin_replay.PressureFinReplayTests.test_strict_bounded_discrete_inputs) ... ok
+test_rectangular_default_output_is_fresh_and_separate (test_research_replay_paths.ResearchReplayPathTests.test_rectangular_default_output_is_fresh_and_separate) ... ok
+test_rectangular_fresh_requested_output_gets_readme (test_research_replay_paths.ResearchReplayPathTests.test_rectangular_fresh_requested_output_gets_readme) ... ok
+test_rectangular_refuses_accepted_or_code_output (test_research_replay_paths.ResearchReplayPathTests.test_rectangular_refuses_accepted_or_code_output) ... ok
+test_arbitrary_files_not_exposed (test_server.ServerTests.test_arbitrary_files_not_exposed) ... 127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /aerolab/model.py HTTP/1.1" 404 -
+127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /../README.md HTTP/1.1" 404 -
+127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /.git/config HTTP/1.1" 404 -
+127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /%2e%2e/README.md HTTP/1.1" 404 -
+ok
+test_catalog_and_replay (test_server.ServerTests.test_catalog_and_replay) ... 127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /api/catalog HTTP/1.1" 200 -
+127.0.0.1 - - [01/Oct/2026 08:06:33] "GET /api/replay HTTP/1.1" 200 -
+ok
+test_comparison_uses_same_scenario_and_design (test_server.ServerTests.test_comparison_uses_same_scenario_and_design) ... 127.0.0.1 - - [01/Oct/2026 08:06:34] "POST /api/compare HTTP/1.1" 200 -
+ok
+test_cross_origin_blocked (test_server.ServerTests.test_cross_origin_blocked) ... 127.0.0.1 - - [01/Oct/2026 08:06:34] "POST /api/run HTTP/1.1" 403 -
+ok
+test_live_compute (test_server.ServerTests.test_live_compute) ... 127.0.0.1 - - [01/Oct/2026 08:06:34] "POST /api/run HTTP/1.1" 200 -
+ok
+test_security_headers (test_server.ServerTests.test_security_headers) ... 127.0.0.1 - - [01/Oct/2026 08:06:34] "GET /api/catalog HTTP/1.1" 200 -
+ok
+test_sweep_returns_independent_fixed_designs (test_server.ServerTests.test_sweep_returns_independent_fixed_designs) ... 127.0.0.1 - - [01/Oct/2026 08:06:37] "POST /api/sweep HTTP/1.1" 200 -
+ok
+test_unknown_fields_and_invalid_numbers (test_server.ServerTests.test_unknown_fields_and_invalid_numbers) ... 127.0.0.1 - - [01/Oct/2026 08:06:37] "POST /api/run HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:06:37] "POST /api/run HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:06:37] "POST /api/run HTTP/1.1" 400 -
+127.0.0.1 - - [01/Oct/2026 08:06:37] "POST /api/run HTTP/1.1" 400 -
+ok
+
+----------------------------------------------------------------------
+Ran 265 tests in 110.930s
+
+OK

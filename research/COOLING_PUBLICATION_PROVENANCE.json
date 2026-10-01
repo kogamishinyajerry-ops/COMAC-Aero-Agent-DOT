@@ -1,0 +1,100 @@
+{
+  "schema": "aerolab-cooling-publication-provenance-v1",
+  "created_utc": "2026-10-01T16:14:57.710939+00:00",
+  "scope": "The original compact hashes were unchanged during the numerical study. This publication separately changes presentation wording and archival readers. Solver plans, scripts, reports and native source identities listed below are unchanged. Local hashes are consistency checks, not independently trusted timestamps or signatures.",
+  "publication_only_changes": [
+    {
+      "path": "research/openfoam_3d/REVIEW.md",
+      "study_sha256": "5222d7f5552cc339850d2cc6fd85c03b43db5f0721d32a0721febac36826cc5a",
+      "publication_sha256": "249978970a3446019274dcdcbe28e0d67b462de14f4c8f30a10d48e9b74b0097",
+      "reason": "Publication wording or exact-byte storage support; no solver or numeric evidence change"
+    },
+    {
+      "path": "research/openfoam_3d/package_results.py",
+      "study_sha256": "1b2cfec85f00c394dd258d87d61a31b5d4b86b36afe4fa48926f24bfc5efe799",
+      "publication_sha256": "965d4d5451fd6d9a06dbc6116dde7de1aaa1aec25e17fc35cd6715142dd2bad8",
+      "reason": "Publication wording or exact-byte storage support; no solver or numeric evidence change"
+    },
+    {
+      "path": "research/openfoam_directional/README.md",
+      "study_sha256": "c255dc4a532f76e93a2d85f1b4cffc7616971f4071b8c579d78407147b9b085a",
+      "publication_sha256": "aa59327905e9e247cb3545475a706b74e2ba0b2fc0b2e7422405d8ac95b11604",
+      "reason": "Publication wording or exact-byte storage support; no solver or numeric evidence change"
+    },
+    {
+      "path": "research/openfoam_directional/audit_package.py",
+      "study_sha256": "ee71466d8430b8587839e0f925a4c3bef6143327b95249fcfa233887fb01df43",
+      "publication_sha256": "35fc86360786f390f06cc2112bc9e2777f28ca0e6135a133faa8c8c3a304efa1",
+      "reason": "Publication wording or exact-byte storage support; no solver or numeric evidence change"
+    },
+    {
+      "path": "research/openfoam_directional/package_results.py",
+      "study_sha256": "b286a600987845cd97c5eba2cea2cb93e9666d3ba84a559b973cfbdc3176d1dd",
+      "publication_sha256": "d45627fa603d133d81144a20080c8d49f83e5cf654a9ff1b4833e2e2dc712756",
+      "reason": "Publication wording or exact-byte storage support; no solver or numeric evidence change"
+    }
+  ],
+  "selected_unchanged_scientific_artifacts": [
+    {
+      "path": "research/openfoam_3d/evidence/report.json",
+      "bytes": 30091,
+      "sha256": "e3bcbebc0f424af2ffb8fba8bd35cb91b146343686b80e55de144a89ee0e78c1"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/solver_log_extracts.json",
+      "bytes": 28301,
+      "sha256": "fd9860aacaa3dfeaaa724cb5161858a386dbedd70acdeded91d0226762787081"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/source_artifacts.json",
+      "bytes": 36345,
+      "sha256": "2af981643ea8ffb2ecbd912798d1734cdd555add1bb677025ad05a8951ba0b3c"
+    },
+    {
+      "path": "research/openfoam_3d/plan.json",
+      "bytes": 5316,
+      "sha256": "0c450827346a6bd4ad2468c59ec5c3accb5a82f5248a802855011521c33747a6"
+    },
+    {
+      "path": "research/openfoam_3d/study.py",
+      "bytes": 16030,
+      "sha256": "634b00af4c18a37b5d4d361f844d8181455514210d45343e95e181aa9035fd50"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/report.json",
+      "bytes": 40171,
+      "sha256": "35a97d25fda6b193bb1fc8f91bfcc9d62065733ed317e0e9052611a63f693e38"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/run_lock.json",
+      "bytes": 309,
+      "sha256": "7cb1eeaa05fff8213e16fb5884a3a643cc5f0a23bfd6d48aa2ee7e14db5c8448"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/run_summary.json",
+      "bytes": 2598,
+      "sha256": "12215d99fc01122aa6212e5d61fb6d8c597cdaa16f2756abdbb0027633b872af"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/solver_log_extracts.json",
+      "bytes": 49619,
+      "sha256": "597f0e7ed9422f139d7793f9307dcfd6a08705e372150e83f4108f6cd44fa31b"
+    },
+    {
+      "path": "research/openfoam_directional/evidence/source_artifacts.json",
+      "bytes": 37955,
+      "sha256": "1aa6929cfdfcae26eb663a900bfaa5d61605ee67a6b344ae6bc4daa47ca268e4"
+    },
+    {
+      "path": "research/openfoam_directional/plan.json",
+      "bytes": 7170,
+      "sha256": "59643f17df668e2be8c77949508c0da3c7265f7d2b4bc0eb8a26a423ecc94e12"
+    },
+    {
+      "path": "research/openfoam_directional/study.py",
+      "bytes": 10761,
+      "sha256": "799f30fb4ed72b4e4c913054120ef24a1437f68f17e55915874dc71cb9ea435e"
+    }
+  ],
+  "archived_originals": "openfoam_directional/evidence/storage.json"
+}

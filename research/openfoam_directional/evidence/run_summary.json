@@ -1,0 +1,63 @@
+{
+  "all_new_cases_completed": false,
+  "all_primary_directional_cases_completed": true,
+  "new_solver_wall_seconds": null,
+  "completed_case_subprocess_wall_seconds": 1276.9454873280047,
+  "failed_case_OpenFOAM_ClockTime_seconds": 57,
+  "new_solver_wall_seconds_accounted_upper_bound": 2476.9454873280047,
+  "budget_seconds": 2700,
+  "budget_accounting": "Five converged subprocess durations measured exactly; failed supplement charged its full preallocated1200s because exact subprocess duration was not persisted. Its solver log reports57s. This deliberately overcounts rather than inventing an exact aggregate.",
+  "historical_bytes_unchanged": true,
+  "new_working_bytes": 558414679,
+  "run_lock": {
+    "registered_before_solver_utc": "2026-10-01T15:00:21.356605+00:00",
+    "plan_sha256": "59643f17df668e2be8c77949508c0da3c7265f7d2b4bc0eb8a26a423ecc94e12",
+    "study_sha256": "799f30fb4ed72b4e4c913054120ef24a1437f68f17e55915874dc71cb9ea435e",
+    "baseline_commit": "cbf54a20878c4904d3894bb8cd7226c8e4c43539"
+  },
+  "failed_planned_cases": [
+    {
+      "case": "discrete_developed_inlet",
+      "status": "FAILED_FROZEN_RESIDUAL_GATE_AT_ITERATION_LIMIT",
+      "iterations": 1500,
+      "required_max_final_initial_residual": 1e-07,
+      "final_residuals": {
+        "Ux": {
+          "initial": 9.04450967676e-12,
+          "final": 9.04450967676e-12
+        },
+        "Uy": {
+          "initial": 1.587092135278e-07,
+          "final": 3.945168994548e-10
+        },
+        "Uz": {
+          "initial": 1.780510892114e-07,
+          "final": 5.709871528303e-10
+        },
+        "p": {
+          "initial": 3.80142345484e-11,
+          "final": 6.026995637489e-12
+        }
+      },
+      "OpenFOAM_ClockTime_seconds_integer": 57,
+      "OpenFOAM_ExecutionTime_seconds": 57.34,
+      "exact_subprocess_wall_seconds": "not persisted because the frozen driver aborted before writing flow_run.json",
+      "budget_charge_upper_bound_seconds": 1200,
+      "unconverged_fields_excluded_from_primary_evidence": true,
+      "provisional_not_accepted_diagnostic": {
+        "native_time_directory": "1500",
+        "middle_half_gradient_Pa_m": 233.87072618523536,
+        "maximum_transverse_velocity_m_s": 0.0021210271686935393,
+        "interpretation": "Pressure value is a failed-gate diagnostic only; it does not establish accepted causal attribution or validation."
+      }
+    }
+  ],
+  "completed_new_cases": [
+    "axial_coarse",
+    "axial_fine",
+    "transverse_coarse",
+    "transverse_extra_fine",
+    "transverse_fine"
+  ],
+  "unconverged_fields_excluded_from_evidence": true
+}

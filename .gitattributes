@@ -2,3 +2,6 @@
 
 # Cached STEP fragments are byte-exact binary transport pieces.
 cad/nacelle/*.part-* binary
+
+# Research evidence archive chunks must retain exact bytes on every platform.
+research/openfoam_directional/evidence/archive/*.gz.part* binary

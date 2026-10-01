@@ -1,0 +1,136 @@
+{
+  "schema": "aerolab-openfoam-3d-package-v1",
+  "publication": "Numerical research evidence; application integration is not included. See ../COOLING_RESEARCH_PUBLICATION.md for publication scope.",
+  "files": [
+    {
+      "path": "research/openfoam_3d/README.md",
+      "bytes": 8870,
+      "sha256": "262d1d5a1bb5290f9aa9e5a8b924e72ba6cce2b19601148485dcc38ab774c667"
+    },
+    {
+      "path": "research/openfoam_3d/REPORT_ZH.md",
+      "bytes": 1657,
+      "sha256": "7ea8916a266d07204f4a44e812cbdd6ea74d98ae2f06c8544588df31e64a48e1"
+    },
+    {
+      "path": "research/openfoam_3d/REVIEW.md",
+      "bytes": 2793,
+      "sha256": "249978970a3446019274dcdcbe28e0d67b462de14f4c8f30a10d48e9b74b0097"
+    },
+    {
+      "path": "research/openfoam_3d/additional_refinement.py",
+      "bytes": 613,
+      "sha256": "968914efd7b9f802f735454117ccdec54ef92aba34f18cb867b915822e452bb2"
+    },
+    {
+      "path": "research/openfoam_3d/additional_refinement_plan.json",
+      "bytes": 1651,
+      "sha256": "445ef7af31245dccb787b751646e68ec8d5cd347187ea59464d2553b1520a981"
+    },
+    {
+      "path": "research/openfoam_3d/attempt_history.json",
+      "bytes": 1663,
+      "sha256": "75b98e45791857f223c1a1784c8764de44e79126247ea20a9ffc4cce424c17d3"
+    },
+    {
+      "path": "research/openfoam_3d/audit_package.py",
+      "bytes": 3209,
+      "sha256": "9939a9db33f8641d6f07ecf99c8f453fc4086f7d2c985a38786f5221a39e0624"
+    },
+    {
+      "path": "research/openfoam_3d/dependencies.json",
+      "bytes": 351,
+      "sha256": "e8168dbd90a5175a7697c108e21fbb4d5018127c001341f0eda12995bfc0928e"
+    },
+    {
+      "path": "research/openfoam_3d/diagnostics.py",
+      "bytes": 4343,
+      "sha256": "30d40fb9182a164c52a0230f2256de7c75d357dc8a4475e92bd275da1f692ccd"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/actual_fields.png",
+      "bytes": 143657,
+      "sha256": "37fa7e2a931a34aeeb3f8a7ebb5d4cdb01e0d47b83dadbcb1297dd044e5f1529"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/actual_three_dimensional_slices.png",
+      "bytes": 171252,
+      "sha256": "6fe0c49916cc9a2662001b1212c252a077707f3634bd3249b5bb7acfeeab3f4f"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/convergence.png",
+      "bytes": 126681,
+      "sha256": "fe2e65d34e8c27b4b137078759f88b2c96f02c3eef3618f95d2b648e68e0c0b9"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/display_fields.json",
+      "bytes": 53521,
+      "sha256": "dca48e461cd85e08c544ad2ab75447b9d132d3f90ca33909fae272d302146c80"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/report.json",
+      "bytes": 30091,
+      "sha256": "e3bcbebc0f424af2ffb8fba8bd35cb91b146343686b80e55de144a89ee0e78c1"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/solver_log_extracts.json",
+      "bytes": 28301,
+      "sha256": "fd9860aacaa3dfeaaa724cb5161858a386dbedd70acdeded91d0226762787081"
+    },
+    {
+      "path": "research/openfoam_3d/evidence/source_artifacts.json",
+      "bytes": 36345,
+      "sha256": "2af981643ea8ffb2ecbd912798d1734cdd555add1bb677025ad05a8951ba0b3c"
+    },
+    {
+      "path": "research/openfoam_3d/gmsh_requirements.lock.txt",
+      "bytes": 92,
+      "sha256": "b88104196c8e2f9f91748ec0fed2943c61d2b2f7d899ee8d821827eda9f8e925"
+    },
+    {
+      "path": "research/openfoam_3d/package_results.py",
+      "bytes": 16557,
+      "sha256": "965d4d5451fd6d9a06dbc6116dde7de1aaa1aec25e17fc35cd6715142dd2bad8"
+    },
+    {
+      "path": "research/openfoam_3d/plan.json",
+      "bytes": 5316,
+      "sha256": "0c450827346a6bd4ad2468c59ec5c3accb5a82f5248a802855011521c33747a6"
+    },
+    {
+      "path": "research/openfoam_3d/references.py",
+      "bytes": 3045,
+      "sha256": "c6a9a4eb3ffd00c95e8edf2ed74bfedf0d3969a4dd3ea7a3015a832cc7378dd0"
+    },
+    {
+      "path": "research/openfoam_3d/reproduce.sh",
+      "bytes": 1014,
+      "sha256": "ac08095e754cf8f1a202d8c82153248eeee82aac8042cf961ae74a4797161d5c"
+    },
+    {
+      "path": "research/openfoam_3d/study.py",
+      "bytes": 16030,
+      "sha256": "634b00af4c18a37b5d4d361f844d8181455514210d45343e95e181aa9035fd50"
+    },
+    {
+      "path": "research/openfoam_3d/supplemental_plan.json",
+      "bytes": 1705,
+      "sha256": "5bc99ad124702483f8820a3e85e3183362262d9da1ec9c73eac87630662fea4f"
+    },
+    {
+      "path": "research/openfoam_3d/test_evidence.py",
+      "bytes": 2009,
+      "sha256": "69b1ce207e7b3773caeef3f770f5905aebb5ec808daba89ed141b24f6655003e"
+    },
+    {
+      "path": "research/openfoam_3d/tool_packages.lock.json",
+      "bytes": 2573,
+      "sha256": "ca42ab796bf03059563b71644cabca2831bcb63948b61d5295ab7845432d5514"
+    },
+    {
+      "path": "research/openfoam_3d/verification_checks.json",
+      "bytes": 1516,
+      "sha256": "d63d3f7321c9fafbf9506e7c6afdce88d539c564f4a17d91cf7fd1831fc24c74"
+    }
+  ]
+}

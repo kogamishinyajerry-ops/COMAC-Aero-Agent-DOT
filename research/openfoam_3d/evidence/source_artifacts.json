@@ -1,0 +1,1106 @@
+{
+  "purpose": "Integrity records for retained full-resolution inputs, generated mesh, solved fields and complete logs; these large artifacts are not distributed in the compact package",
+  "source_root_relative_to_repository": "output/openfoam-3d-v2",
+  "files": [
+    {
+      "path": "grid_0/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_0/0/U",
+      "bytes": 3407,
+      "sha256": "a3ef5e3bd8ce91a6aaf22f897578d0b43a622d5380b41793b285a01066d04710"
+    },
+    {
+      "path": "grid_0/0/p",
+      "bytes": 345,
+      "sha256": "6ea865db37239625e0b1cfa8e55101cabe1eac6237b04cab836cbbf99cef5092"
+    },
+    {
+      "path": "grid_0/analytic/0/T",
+      "bytes": 27511,
+      "sha256": "0966a6f611311eae3719fc561519f363354d98ce59c6ac827a52fc576af6a233"
+    },
+    {
+      "path": "grid_0/analytic/0/U",
+      "bytes": 483,
+      "sha256": "24b591cd2404ab4cc9f246b6b450f3ea0b02aaf4696f937b008c069bc0c90b86"
+    },
+    {
+      "path": "grid_0/analytic/2/T",
+      "bytes": 119073,
+      "sha256": "93e1d613679ee6737af6890113129fea90b3fe9bb560a2d40fbd13cfbafd6ee6"
+    },
+    {
+      "path": "grid_0/analytic/constant/polyMesh/boundary",
+      "bytes": 1754,
+      "sha256": "3cd812ea1d7f70fda296ed0a119599211b67a7bbf31ee3b34b99ed4f7271fd9e"
+    },
+    {
+      "path": "grid_0/analytic/constant/polyMesh/faces",
+      "bytes": 371435,
+      "sha256": "ec7179911afae5852dc91746c92d2e8105d37ff8117b40171f455d1292dff5c0"
+    },
+    {
+      "path": "grid_0/analytic/constant/polyMesh/neighbour",
+      "bytes": 69662,
+      "sha256": "d9aa1c88106ff514eea16039bd1ce6790ab78c44da5a6c30d766887d6108cc02"
+    },
+    {
+      "path": "grid_0/analytic/constant/polyMesh/owner",
+      "bytes": 79200,
+      "sha256": "aa72e25fa6c21795cb3f3a287bf694127801e3bb9eb6a88d65eab6195c19119e"
+    },
+    {
+      "path": "grid_0/analytic/constant/polyMesh/points",
+      "bytes": 234536,
+      "sha256": "d84506f98a23177242575c7118621ef797bf41e4b48055a2b210ebff25b12d0a"
+    },
+    {
+      "path": "grid_0/analytic/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_0/analytic/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_0/analytic/log.scalarTransportFoam",
+      "bytes": 2066,
+      "sha256": "16d7fb67eab53bbb1e4f402afd709b277b822ff5a377da5a7b7935523600021d"
+    },
+    {
+      "path": "grid_0/analytic/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_0/analytic/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "937ae681730c87b433ce72eea26aabc82c7db6f3597aaccb40bf3adab5991143"
+    },
+    {
+      "path": "grid_0/analytic/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_0/constant/polyMesh/boundary",
+      "bytes": 1754,
+      "sha256": "3cd812ea1d7f70fda296ed0a119599211b67a7bbf31ee3b34b99ed4f7271fd9e"
+    },
+    {
+      "path": "grid_0/constant/polyMesh/faces",
+      "bytes": 371435,
+      "sha256": "ec7179911afae5852dc91746c92d2e8105d37ff8117b40171f455d1292dff5c0"
+    },
+    {
+      "path": "grid_0/constant/polyMesh/neighbour",
+      "bytes": 69662,
+      "sha256": "d9aa1c88106ff514eea16039bd1ce6790ab78c44da5a6c30d766887d6108cc02"
+    },
+    {
+      "path": "grid_0/constant/polyMesh/owner",
+      "bytes": 79200,
+      "sha256": "aa72e25fa6c21795cb3f3a287bf694127801e3bb9eb6a88d65eab6195c19119e"
+    },
+    {
+      "path": "grid_0/constant/polyMesh/points",
+      "bytes": 234536,
+      "sha256": "d84506f98a23177242575c7118621ef797bf41e4b48055a2b210ebff25b12d0a"
+    },
+    {
+      "path": "grid_0/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_0/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_0/duct.geo",
+      "bytes": 670,
+      "sha256": "8f00db23b2f0995cc38cdea7c13befba5df0882fae7c1f44309fa56d12d27269"
+    },
+    {
+      "path": "grid_0/duct.msh",
+      "bytes": 644697,
+      "sha256": "e1c68a77d28577919fea3b1e12daa7fbc6a49091b5dd6e9f2c2a2f37836fd857"
+    },
+    {
+      "path": "grid_0/fields.npz",
+      "bytes": 226301,
+      "sha256": "0cf9ee5fab6eaf377f477dfe019f324939ddb583a82f30d6760e33549f4ff79b"
+    },
+    {
+      "path": "grid_0/flow_final/U",
+      "bytes": 289032,
+      "sha256": "c65a6753f03dd9d3fb79655ae0fab3c192148be4fbed4ee16c4fc33d56c6567e"
+    },
+    {
+      "path": "grid_0/flow_final/p",
+      "bytes": 78642,
+      "sha256": "781830dc2f333caa4d4ac9052a84ddc7f73398f8f9a5184eb8fab9d887cf7c10"
+    },
+    {
+      "path": "grid_0/flow_final/phi",
+      "bytes": 280773,
+      "sha256": "bc4eac2e60d2077951ecdbf202b5275bc01428588edab418b4df0588e2ea74f4"
+    },
+    {
+      "path": "grid_0/flow_run.json",
+      "bytes": 113,
+      "sha256": "80770d61940a3d6f942148133dd7c0b53b7c5da1fc5fdee3e8f3d98a1840daeb"
+    },
+    {
+      "path": "grid_0/log.checkMesh",
+      "bytes": 4622,
+      "sha256": "1098cf3c73733fec140c7ca2a6426f6ee57f8d636743e6a855cf9c89025e1659"
+    },
+    {
+      "path": "grid_0/log.gmsh",
+      "bytes": 1802,
+      "sha256": "c200d858066c820c6fdd63a836ce14829f4085ebf3c1ed24ea0f7178be3ac156"
+    },
+    {
+      "path": "grid_0/log.gmshToFoam",
+      "bytes": 2948,
+      "sha256": "9eeaa8b71b7fd1f2fda79b4933be87bde57b4974ab51a5d3bc0a16f6406edc0d"
+    },
+    {
+      "path": "grid_0/log.simpleFoam",
+      "bytes": 176088,
+      "sha256": "ac5c7fa0525a9c9cb4539492cea8684a1f98f9ada330e50ddb8d3b8b4fa9c3c5"
+    },
+    {
+      "path": "grid_0/metrics.json",
+      "bytes": 3485,
+      "sha256": "457dbb9c313433b280b8d6ef6034e7b7a19b99a465fd23740c04c2b18b9dbb19"
+    },
+    {
+      "path": "grid_0/setup.json",
+      "bytes": 304,
+      "sha256": "923e48732d152ed3b9e616ccad315569a1dc37e0c4b0c00bc92304e79fd8256a"
+    },
+    {
+      "path": "grid_0/system/controlDict",
+      "bytes": 357,
+      "sha256": "dcec83e4c1ebf1722c41f47d17f7c6519b36c6e44de0f2158e5bd4cce6e4739e"
+    },
+    {
+      "path": "grid_0/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_0/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_0/thermal/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_0/thermal/0/U",
+      "bytes": 289032,
+      "sha256": "c65a6753f03dd9d3fb79655ae0fab3c192148be4fbed4ee16c4fc33d56c6567e"
+    },
+    {
+      "path": "grid_0/thermal/0/phi",
+      "bytes": 280773,
+      "sha256": "bc4eac2e60d2077951ecdbf202b5275bc01428588edab418b4df0588e2ea74f4"
+    },
+    {
+      "path": "grid_0/thermal/2/T",
+      "bytes": 77709,
+      "sha256": "6038e91ba78e2845af812abee8b1c30b9864ece75a55d2ec720ca61194611cae"
+    },
+    {
+      "path": "grid_0/thermal/constant/polyMesh/boundary",
+      "bytes": 1754,
+      "sha256": "3cd812ea1d7f70fda296ed0a119599211b67a7bbf31ee3b34b99ed4f7271fd9e"
+    },
+    {
+      "path": "grid_0/thermal/constant/polyMesh/faces",
+      "bytes": 371435,
+      "sha256": "ec7179911afae5852dc91746c92d2e8105d37ff8117b40171f455d1292dff5c0"
+    },
+    {
+      "path": "grid_0/thermal/constant/polyMesh/neighbour",
+      "bytes": 69662,
+      "sha256": "d9aa1c88106ff514eea16039bd1ce6790ab78c44da5a6c30d766887d6108cc02"
+    },
+    {
+      "path": "grid_0/thermal/constant/polyMesh/owner",
+      "bytes": 79200,
+      "sha256": "aa72e25fa6c21795cb3f3a287bf694127801e3bb9eb6a88d65eab6195c19119e"
+    },
+    {
+      "path": "grid_0/thermal/constant/polyMesh/points",
+      "bytes": 234536,
+      "sha256": "d84506f98a23177242575c7118621ef797bf41e4b48055a2b210ebff25b12d0a"
+    },
+    {
+      "path": "grid_0/thermal/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_0/thermal/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_0/thermal/log.scalarTransportFoam",
+      "bytes": 2078,
+      "sha256": "912a9c27b3e41d43f7ad4b970eb4b335314cffa840e90dbfd0b442f539e9f110"
+    },
+    {
+      "path": "grid_0/thermal/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_0/thermal/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_0/thermal/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_1/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_1/0/U",
+      "bytes": 12269,
+      "sha256": "7ae8a16e82ae019cc755b5129565c3d50d45d93f973e3abb19963213ea622780"
+    },
+    {
+      "path": "grid_1/0/p",
+      "bytes": 345,
+      "sha256": "6ea865db37239625e0b1cfa8e55101cabe1eac6237b04cab836cbbf99cef5092"
+    },
+    {
+      "path": "grid_1/analytic/0/T",
+      "bytes": 108407,
+      "sha256": "d53d3a60015aafb9ee245a76bcc4afe9148e139e435dc7545c618bee63eb0ee6"
+    },
+    {
+      "path": "grid_1/analytic/0/U",
+      "bytes": 483,
+      "sha256": "24b591cd2404ab4cc9f246b6b450f3ea0b02aaf4696f937b008c069bc0c90b86"
+    },
+    {
+      "path": "grid_1/analytic/2/T",
+      "bytes": 851185,
+      "sha256": "273ac95c1b01a945220106faf251076e7c58f8b5582f98e185b65b6d4d104da6"
+    },
+    {
+      "path": "grid_1/analytic/constant/polyMesh/boundary",
+      "bytes": 1764,
+      "sha256": "915105f1068233dd49af2d1ed9da5b30fa2d7a25b277debd44510ee9346502eb"
+    },
+    {
+      "path": "grid_1/analytic/constant/polyMesh/faces",
+      "bytes": 3345528,
+      "sha256": "25c8309b510f56077d2a30bd7ee1e1c38a5ce074e0abf73a9a83f9780a0283ad"
+    },
+    {
+      "path": "grid_1/analytic/constant/polyMesh/neighbour",
+      "bytes": 682147,
+      "sha256": "b63d189a1fd5bb5ef2bc1235cdb49cf79a2fea224e310e5957109aef9b0ed486"
+    },
+    {
+      "path": "grid_1/analytic/constant/polyMesh/owner",
+      "bytes": 727685,
+      "sha256": "9b4d0d533df7700c134619bf59ecffc63bf67d6c157669161d33b78c2a9bcd0e"
+    },
+    {
+      "path": "grid_1/analytic/constant/polyMesh/points",
+      "bytes": 1821581,
+      "sha256": "beadd2739627c6bb149cd8434f856323d4b6f5fbbbb30fe56d44dd30622fe09a"
+    },
+    {
+      "path": "grid_1/analytic/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_1/analytic/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_1/analytic/log.scalarTransportFoam",
+      "bytes": 2067,
+      "sha256": "ff5a71f3a3bebd75e6385b1615b68ef1de1af51ab7956c52dd172d3154017a01"
+    },
+    {
+      "path": "grid_1/analytic/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_1/analytic/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "937ae681730c87b433ce72eea26aabc82c7db6f3597aaccb40bf3adab5991143"
+    },
+    {
+      "path": "grid_1/analytic/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_1/constant/polyMesh/boundary",
+      "bytes": 1764,
+      "sha256": "915105f1068233dd49af2d1ed9da5b30fa2d7a25b277debd44510ee9346502eb"
+    },
+    {
+      "path": "grid_1/constant/polyMesh/faces",
+      "bytes": 3345528,
+      "sha256": "25c8309b510f56077d2a30bd7ee1e1c38a5ce074e0abf73a9a83f9780a0283ad"
+    },
+    {
+      "path": "grid_1/constant/polyMesh/neighbour",
+      "bytes": 682147,
+      "sha256": "b63d189a1fd5bb5ef2bc1235cdb49cf79a2fea224e310e5957109aef9b0ed486"
+    },
+    {
+      "path": "grid_1/constant/polyMesh/owner",
+      "bytes": 727685,
+      "sha256": "9b4d0d533df7700c134619bf59ecffc63bf67d6c157669161d33b78c2a9bcd0e"
+    },
+    {
+      "path": "grid_1/constant/polyMesh/points",
+      "bytes": 1821581,
+      "sha256": "beadd2739627c6bb149cd8434f856323d4b6f5fbbbb30fe56d44dd30622fe09a"
+    },
+    {
+      "path": "grid_1/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_1/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_1/duct.geo",
+      "bytes": 671,
+      "sha256": "575b986f8dc3d805ae4fd5f8ff4605e6cddbe2d9346a4d655af495d4a4936fc6"
+    },
+    {
+      "path": "grid_1/duct.msh",
+      "bytes": 5228278,
+      "sha256": "533c8ca6470f2d2393f486f765eb4488fbba8feb9d8a1575955ab8a1efcb0cd5"
+    },
+    {
+      "path": "grid_1/fields.npz",
+      "bytes": 1849524,
+      "sha256": "f4c5d69b0d1ea9b7d04695fb54b747ee7f53ca9971741b5a5d3187288b1074e9"
+    },
+    {
+      "path": "grid_1/flow_final/U",
+      "bytes": 2300133,
+      "sha256": "2b3c6e31b20fad9ecffa5b88744440b53d0c1607a864bc7dd617d2e6e1235fdf"
+    },
+    {
+      "path": "grid_1/flow_final/p",
+      "bytes": 618890,
+      "sha256": "f19176e3d7ae16da261fe62e6cb911215d922e15236666a133101ce1ebe131c0"
+    },
+    {
+      "path": "grid_1/flow_final/phi",
+      "bytes": 2299270,
+      "sha256": "778ce06ca158c8f90dff93f3c4dc6ce80b684fa0eab995a578e5403431e0f21b"
+    },
+    {
+      "path": "grid_1/flow_run.json",
+      "bytes": 113,
+      "sha256": "a1acfecde889a24ccde04aea7c3a6a11c670efaaad62ae31224b16a6a94ea15d"
+    },
+    {
+      "path": "grid_1/log.checkMesh",
+      "bytes": 4628,
+      "sha256": "e3ee4e95b71e378da6bb175dc3ec19b3a24919287e04ec7ddd6bcfaab2cd42f4"
+    },
+    {
+      "path": "grid_1/log.gmsh",
+      "bytes": 1803,
+      "sha256": "1b6abe1fe7875d1a62544d66b720d516fce4c9272ae2801d8cefac88647f43ea"
+    },
+    {
+      "path": "grid_1/log.gmshToFoam",
+      "bytes": 2955,
+      "sha256": "8e6ecc673f9c0dfc918a6e9d1c4f4155d24e3bb849c4719142825c60b2e119c1"
+    },
+    {
+      "path": "grid_1/log.simpleFoam",
+      "bytes": 315133,
+      "sha256": "4ba8d93c8a269ad49156f77107dae317ed714138550f1619b24c756ed953a0f9"
+    },
+    {
+      "path": "grid_1/metrics.json",
+      "bytes": 3497,
+      "sha256": "f36b3b2a2e717abb4e4fa668404c735806982d9bd680607fbec9c8fe77c85e52"
+    },
+    {
+      "path": "grid_1/setup.json",
+      "bytes": 307,
+      "sha256": "c0853a97bbb098a38a7cb9cccfb9386a4e85325ebe37bd703a751db8ec64b0dd"
+    },
+    {
+      "path": "grid_1/system/controlDict",
+      "bytes": 357,
+      "sha256": "dcec83e4c1ebf1722c41f47d17f7c6519b36c6e44de0f2158e5bd4cce6e4739e"
+    },
+    {
+      "path": "grid_1/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_1/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_1/thermal/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_1/thermal/0/U",
+      "bytes": 2300133,
+      "sha256": "2b3c6e31b20fad9ecffa5b88744440b53d0c1607a864bc7dd617d2e6e1235fdf"
+    },
+    {
+      "path": "grid_1/thermal/0/phi",
+      "bytes": 2299270,
+      "sha256": "778ce06ca158c8f90dff93f3c4dc6ce80b684fa0eab995a578e5403431e0f21b"
+    },
+    {
+      "path": "grid_1/thermal/2/T",
+      "bytes": 611306,
+      "sha256": "a3181b7c3d714260d01467f8f8a70572a0dc41f69346a17764e7e01eb05d3592"
+    },
+    {
+      "path": "grid_1/thermal/constant/polyMesh/boundary",
+      "bytes": 1764,
+      "sha256": "915105f1068233dd49af2d1ed9da5b30fa2d7a25b277debd44510ee9346502eb"
+    },
+    {
+      "path": "grid_1/thermal/constant/polyMesh/faces",
+      "bytes": 3345528,
+      "sha256": "25c8309b510f56077d2a30bd7ee1e1c38a5ce074e0abf73a9a83f9780a0283ad"
+    },
+    {
+      "path": "grid_1/thermal/constant/polyMesh/neighbour",
+      "bytes": 682147,
+      "sha256": "b63d189a1fd5bb5ef2bc1235cdb49cf79a2fea224e310e5957109aef9b0ed486"
+    },
+    {
+      "path": "grid_1/thermal/constant/polyMesh/owner",
+      "bytes": 727685,
+      "sha256": "9b4d0d533df7700c134619bf59ecffc63bf67d6c157669161d33b78c2a9bcd0e"
+    },
+    {
+      "path": "grid_1/thermal/constant/polyMesh/points",
+      "bytes": 1821581,
+      "sha256": "beadd2739627c6bb149cd8434f856323d4b6f5fbbbb30fe56d44dd30622fe09a"
+    },
+    {
+      "path": "grid_1/thermal/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_1/thermal/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_1/thermal/log.scalarTransportFoam",
+      "bytes": 2078,
+      "sha256": "83289c5af863d6e00533f58bf44371b60aa90c8af1c87f9ed687adc71ddc2126"
+    },
+    {
+      "path": "grid_1/thermal/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_1/thermal/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_1/thermal/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_2/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_2/0/U",
+      "bytes": 47689,
+      "sha256": "74dd111fd0ebdad1d6d60a87a8322f8a41012e9fdb73be3e5a646896d791e9ee"
+    },
+    {
+      "path": "grid_2/0/p",
+      "bytes": 345,
+      "sha256": "6ea865db37239625e0b1cfa8e55101cabe1eac6237b04cab836cbbf99cef5092"
+    },
+    {
+      "path": "grid_2/analytic/0/T",
+      "bytes": 431990,
+      "sha256": "81ec31a97dbe4c5721221175a4f99a3a49c9808d69eed1796fc02d74f023a3dc"
+    },
+    {
+      "path": "grid_2/analytic/0/U",
+      "bytes": 483,
+      "sha256": "24b591cd2404ab4cc9f246b6b450f3ea0b02aaf4696f937b008c069bc0c90b86"
+    },
+    {
+      "path": "grid_2/analytic/2/T",
+      "bytes": 6437448,
+      "sha256": "f05385c9c214bfabb4904c773b2d1a5ca4e1bf47c2d89218ec6d8b77d9de4a55"
+    },
+    {
+      "path": "grid_2/analytic/constant/polyMesh/boundary",
+      "bytes": 1768,
+      "sha256": "f45ca8a7c931ac6668cfd6069a36f46bb6a49edbede90d45cb5b0a94d8d40d5a"
+    },
+    {
+      "path": "grid_2/analytic/constant/polyMesh/faces",
+      "bytes": 29874689,
+      "sha256": "1fb86748e580f6fcf87665277260ba5dafbfacd85d34b7f50301c8bb4c80f9af"
+    },
+    {
+      "path": "grid_2/analytic/constant/polyMesh/neighbour",
+      "bytes": 6442902,
+      "sha256": "e71ea48c4a5ef035edf9983faf7bbb0ea5aff8c76a1499f539e401c8c21db6c0"
+    },
+    {
+      "path": "grid_2/analytic/constant/polyMesh/owner",
+      "bytes": 6654937,
+      "sha256": "37cf670efaaa28122b4812c6fe56e0dba64f93fb192ba7781c52782e544b82eb"
+    },
+    {
+      "path": "grid_2/analytic/constant/polyMesh/points",
+      "bytes": 14572774,
+      "sha256": "e6dd0f7c8caf4e24f3b6af5772c4ad4524d05baf8154c5f629e486740e252483"
+    },
+    {
+      "path": "grid_2/analytic/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_2/analytic/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_2/analytic/log.scalarTransportFoam",
+      "bytes": 2068,
+      "sha256": "13f44c4cd0a522290e7f121c0b3005ee6602fdc866870cfa71908d1d5d302bd1"
+    },
+    {
+      "path": "grid_2/analytic/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_2/analytic/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "937ae681730c87b433ce72eea26aabc82c7db6f3597aaccb40bf3adab5991143"
+    },
+    {
+      "path": "grid_2/analytic/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_2/constant/polyMesh/boundary",
+      "bytes": 1768,
+      "sha256": "f45ca8a7c931ac6668cfd6069a36f46bb6a49edbede90d45cb5b0a94d8d40d5a"
+    },
+    {
+      "path": "grid_2/constant/polyMesh/faces",
+      "bytes": 29874689,
+      "sha256": "1fb86748e580f6fcf87665277260ba5dafbfacd85d34b7f50301c8bb4c80f9af"
+    },
+    {
+      "path": "grid_2/constant/polyMesh/neighbour",
+      "bytes": 6442902,
+      "sha256": "e71ea48c4a5ef035edf9983faf7bbb0ea5aff8c76a1499f539e401c8c21db6c0"
+    },
+    {
+      "path": "grid_2/constant/polyMesh/owner",
+      "bytes": 6654937,
+      "sha256": "37cf670efaaa28122b4812c6fe56e0dba64f93fb192ba7781c52782e544b82eb"
+    },
+    {
+      "path": "grid_2/constant/polyMesh/points",
+      "bytes": 14572774,
+      "sha256": "e6dd0f7c8caf4e24f3b6af5772c4ad4524d05baf8154c5f629e486740e252483"
+    },
+    {
+      "path": "grid_2/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_2/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_2/duct.geo",
+      "bytes": 672,
+      "sha256": "f520dded85e95036f49361f180edbc9c62d8727197424c3459e5d17334172e4e"
+    },
+    {
+      "path": "grid_2/duct.msh",
+      "bytes": 43613908,
+      "sha256": "acb5f50b31b829ee3de8a867f0f3bf3fcb362cf9d4febbf4390d35f8fb80999b"
+    },
+    {
+      "path": "grid_2/fields.npz",
+      "bytes": 15069087,
+      "sha256": "639d88e6d91d9873fe888ea97fca2e20132dcf44af4c10b9aa0c08d9f1cacf89"
+    },
+    {
+      "path": "grid_2/flow_final/U",
+      "bytes": 18342370,
+      "sha256": "9e3d6990492a790bd70dbe9812de82f73151b97224e8e953e29e60e182fe2fb7"
+    },
+    {
+      "path": "grid_2/flow_final/p",
+      "bytes": 4942015,
+      "sha256": "011671fea8355d13d9050f5c196eb3675e9b7f4a3e66b3f7a49f9c3448479519"
+    },
+    {
+      "path": "grid_2/flow_final/phi",
+      "bytes": 18640017,
+      "sha256": "3afc38e9091b26407cec5c088af314e7160129942b24b5980ec612819e101aa1"
+    },
+    {
+      "path": "grid_2/flow_run.json",
+      "bytes": 113,
+      "sha256": "2190e49f93164b07e31463c72928cd0ed0168f53835199017faa495bf44918ac"
+    },
+    {
+      "path": "grid_2/log.checkMesh",
+      "bytes": 4638,
+      "sha256": "3095b65daa22643f5851a88931d81e47485ac07d13509f2fc6f7944c694d611d"
+    },
+    {
+      "path": "grid_2/log.gmsh",
+      "bytes": 1798,
+      "sha256": "f02b21a04aa36825bf84c781a6890627047f47438713dd8702f63f023e4330d3"
+    },
+    {
+      "path": "grid_2/log.gmshToFoam",
+      "bytes": 2963,
+      "sha256": "41e2a161ec1d3786362d295aee3a01ee9a9340a3047b26a7db348dc46090f985"
+    },
+    {
+      "path": "grid_2/log.simpleFoam",
+      "bytes": 426826,
+      "sha256": "59d3169305ca8fa5621efc60ef6475ef4fcd2d97a413b6f9c8a242a51d8364ac"
+    },
+    {
+      "path": "grid_2/metrics.json",
+      "bytes": 3487,
+      "sha256": "a8a2fb09acbe1e9c56477565eeb671bc262b5885aef8e2bbf2ab5923ce0091da"
+    },
+    {
+      "path": "grid_2/setup.json",
+      "bytes": 309,
+      "sha256": "c42f3beb0ecefd7300ba557589c14421210600322914b56cf3c863f3512cc163"
+    },
+    {
+      "path": "grid_2/system/controlDict",
+      "bytes": 357,
+      "sha256": "dcec83e4c1ebf1722c41f47d17f7c6519b36c6e44de0f2158e5bd4cce6e4739e"
+    },
+    {
+      "path": "grid_2/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_2/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_2/thermal/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_2/thermal/0/U",
+      "bytes": 18342370,
+      "sha256": "9e3d6990492a790bd70dbe9812de82f73151b97224e8e953e29e60e182fe2fb7"
+    },
+    {
+      "path": "grid_2/thermal/0/phi",
+      "bytes": 18640017,
+      "sha256": "3afc38e9091b26407cec5c088af314e7160129942b24b5980ec612819e101aa1"
+    },
+    {
+      "path": "grid_2/thermal/2/T",
+      "bytes": 4880664,
+      "sha256": "14f7ffeb0e57b603e15903a8e72a7ab3cadba8c75055bbeefe5e247a2d8e86d2"
+    },
+    {
+      "path": "grid_2/thermal/constant/polyMesh/boundary",
+      "bytes": 1768,
+      "sha256": "f45ca8a7c931ac6668cfd6069a36f46bb6a49edbede90d45cb5b0a94d8d40d5a"
+    },
+    {
+      "path": "grid_2/thermal/constant/polyMesh/faces",
+      "bytes": 29874689,
+      "sha256": "1fb86748e580f6fcf87665277260ba5dafbfacd85d34b7f50301c8bb4c80f9af"
+    },
+    {
+      "path": "grid_2/thermal/constant/polyMesh/neighbour",
+      "bytes": 6442902,
+      "sha256": "e71ea48c4a5ef035edf9983faf7bbb0ea5aff8c76a1499f539e401c8c21db6c0"
+    },
+    {
+      "path": "grid_2/thermal/constant/polyMesh/owner",
+      "bytes": 6654937,
+      "sha256": "37cf670efaaa28122b4812c6fe56e0dba64f93fb192ba7781c52782e544b82eb"
+    },
+    {
+      "path": "grid_2/thermal/constant/polyMesh/points",
+      "bytes": 14572774,
+      "sha256": "e6dd0f7c8caf4e24f3b6af5772c4ad4524d05baf8154c5f629e486740e252483"
+    },
+    {
+      "path": "grid_2/thermal/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_2/thermal/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_2/thermal/log.scalarTransportFoam",
+      "bytes": 2079,
+      "sha256": "88439de36519ce89862ff385a70f1f9179f45c45a441c43583522353ef3d2310"
+    },
+    {
+      "path": "grid_2/thermal/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_2/thermal/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_2/thermal/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_3/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_3/0/U",
+      "bytes": 74304,
+      "sha256": "4eab4a94abe6aa2edda2d2740a18a12bbf04551ee4fcfe7f19b7e9a2aa3fce6e"
+    },
+    {
+      "path": "grid_3/0/p",
+      "bytes": 345,
+      "sha256": "6ea865db37239625e0b1cfa8e55101cabe1eac6237b04cab836cbbf99cef5092"
+    },
+    {
+      "path": "grid_3/analytic/0/T",
+      "bytes": 674696,
+      "sha256": "bda165265e6a71bfa32f1d57da37d94a18eab96352bd158349271d1487305382"
+    },
+    {
+      "path": "grid_3/analytic/0/U",
+      "bytes": 483,
+      "sha256": "24b591cd2404ab4cc9f246b6b450f3ea0b02aaf4696f937b008c069bc0c90b86"
+    },
+    {
+      "path": "grid_3/analytic/2/T",
+      "bytes": 12429973,
+      "sha256": "cac04d6efc0739f94388dd7dbfda5f6666907e4c48939d47c9d73fea9db4827e"
+    },
+    {
+      "path": "grid_3/analytic/constant/polyMesh/boundary",
+      "bytes": 1774,
+      "sha256": "0b69f585463b004835594714b8a29abc4c83c0d7086a5e6d5eebdd693ab2067d"
+    },
+    {
+      "path": "grid_3/analytic/constant/polyMesh/faces",
+      "bytes": 59303873,
+      "sha256": "3bcdf7900dd2b2f22d7bb16ecd38364fbef8f812f41416ba82a2e2feab7788b2"
+    },
+    {
+      "path": "grid_3/analytic/constant/polyMesh/neighbour",
+      "bytes": 12938220,
+      "sha256": "35acbffdd1c2d12602a22c28525f095112497601abe76407ccbb634b8c3938d6"
+    },
+    {
+      "path": "grid_3/analytic/constant/polyMesh/owner",
+      "bytes": 13277062,
+      "sha256": "34f975fa63d2eff5d262eda21dc7bd3c43f6f635232350340173e83b41d617b8"
+    },
+    {
+      "path": "grid_3/analytic/constant/polyMesh/points",
+      "bytes": 26670543,
+      "sha256": "d9893b9e60c8071f6bfbe07b74233152a735490ff39cf7fec698dd2d037f4457"
+    },
+    {
+      "path": "grid_3/analytic/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_3/analytic/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_3/analytic/log.scalarTransportFoam",
+      "bytes": 2067,
+      "sha256": "a82323fb2169739f0d3e97c61fb2c538c8a7f4f5d32b447a16f2119982841f9b"
+    },
+    {
+      "path": "grid_3/analytic/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_3/analytic/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "937ae681730c87b433ce72eea26aabc82c7db6f3597aaccb40bf3adab5991143"
+    },
+    {
+      "path": "grid_3/analytic/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_3/constant/polyMesh/boundary",
+      "bytes": 1774,
+      "sha256": "0b69f585463b004835594714b8a29abc4c83c0d7086a5e6d5eebdd693ab2067d"
+    },
+    {
+      "path": "grid_3/constant/polyMesh/faces",
+      "bytes": 59303873,
+      "sha256": "3bcdf7900dd2b2f22d7bb16ecd38364fbef8f812f41416ba82a2e2feab7788b2"
+    },
+    {
+      "path": "grid_3/constant/polyMesh/neighbour",
+      "bytes": 12938220,
+      "sha256": "35acbffdd1c2d12602a22c28525f095112497601abe76407ccbb634b8c3938d6"
+    },
+    {
+      "path": "grid_3/constant/polyMesh/owner",
+      "bytes": 13277062,
+      "sha256": "34f975fa63d2eff5d262eda21dc7bd3c43f6f635232350340173e83b41d617b8"
+    },
+    {
+      "path": "grid_3/constant/polyMesh/points",
+      "bytes": 26670543,
+      "sha256": "d9893b9e60c8071f6bfbe07b74233152a735490ff39cf7fec698dd2d037f4457"
+    },
+    {
+      "path": "grid_3/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_3/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_3/duct.geo",
+      "bytes": 672,
+      "sha256": "c9cf18baf719e3283d0f13663f1f209e02373e05602ff0f8eb73eb27b7279798"
+    },
+    {
+      "path": "grid_3/duct.msh",
+      "bytes": 84602565,
+      "sha256": "dc7846b271e5620590e7f5487735377f02b0c9b5df3e861903e36c9eefcdd82c"
+    },
+    {
+      "path": "grid_3/fields.npz",
+      "bytes": 31515664,
+      "sha256": "13e5b6707dba6b7780cf094d85127a502e6dceff2716b4b96f74a6288ec46f76"
+    },
+    {
+      "path": "grid_3/flow_final/U",
+      "bytes": 35814568,
+      "sha256": "d2eb19b945711e3c080f6a88c3bcbbd94d5b414d2b972f24c0953ad507e9f2e2"
+    },
+    {
+      "path": "grid_3/flow_final/p",
+      "bytes": 9648450,
+      "sha256": "95011d605bd4a73b7655a91809df5f58c4fb5c39e5063687f188a9e6d614b852"
+    },
+    {
+      "path": "grid_3/flow_final/phi",
+      "bytes": 36512098,
+      "sha256": "ab1bc6dec4c4c331a9a20edf3965ab6aaabe7b1df3a3bb10dfd6f7d62be5114e"
+    },
+    {
+      "path": "grid_3/flow_run.json",
+      "bytes": 112,
+      "sha256": "ebd8b54689be9ee1ef056ba72851f5aaf23b0f32828d9c6b0c33a2ea2077ed89"
+    },
+    {
+      "path": "grid_3/log.checkMesh",
+      "bytes": 4632,
+      "sha256": "ca607598dcba8164974c8047c8300f9c3afdaaacc5c2a9b25a061be868d77414"
+    },
+    {
+      "path": "grid_3/log.gmsh",
+      "bytes": 1797,
+      "sha256": "cab8c33139f9b4946cf0365449b0e6e315b3e0c670b663db4608e1327471d635"
+    },
+    {
+      "path": "grid_3/log.gmshToFoam",
+      "bytes": 2963,
+      "sha256": "c4deb2308230f23970ddafe3bda3da7c8fae68b0a3ab4972fc065ff15fe3f072"
+    },
+    {
+      "path": "grid_3/log.simpleFoam",
+      "bytes": 412138,
+      "sha256": "9fbe3baaaa1bdeb2e324ba9403770f6c61983d191e1b4b3335761c7aea4e429f"
+    },
+    {
+      "path": "grid_3/metrics.json",
+      "bytes": 3497,
+      "sha256": "923d3abad85ae6a259b82d09e0a179efd60b12e521c316151a6aa7d2c1dd3358"
+    },
+    {
+      "path": "grid_3/setup.json",
+      "bytes": 309,
+      "sha256": "6a79cb2b137c15eb462645c5c1dd5bc515209920db1ba72e9b8fcb3d1c0095d0"
+    },
+    {
+      "path": "grid_3/system/controlDict",
+      "bytes": 357,
+      "sha256": "dcec83e4c1ebf1722c41f47d17f7c6519b36c6e44de0f2158e5bd4cce6e4739e"
+    },
+    {
+      "path": "grid_3/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_3/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    },
+    {
+      "path": "grid_3/thermal/0/T",
+      "bytes": 428,
+      "sha256": "ea9af106f0affc6b7f83d9e0b42c690f814ab6dba2b09d2db471309a79dfab3f"
+    },
+    {
+      "path": "grid_3/thermal/0/U",
+      "bytes": 35814568,
+      "sha256": "d2eb19b945711e3c080f6a88c3bcbbd94d5b414d2b972f24c0953ad507e9f2e2"
+    },
+    {
+      "path": "grid_3/thermal/0/phi",
+      "bytes": 36512098,
+      "sha256": "ab1bc6dec4c4c331a9a20edf3965ab6aaabe7b1df3a3bb10dfd6f7d62be5114e"
+    },
+    {
+      "path": "grid_3/thermal/2/T",
+      "bytes": 9528244,
+      "sha256": "3a695d7322af2d99b3f5f40825e2dd25e506637257360564ce5381ba8d4b5da8"
+    },
+    {
+      "path": "grid_3/thermal/constant/polyMesh/boundary",
+      "bytes": 1774,
+      "sha256": "0b69f585463b004835594714b8a29abc4c83c0d7086a5e6d5eebdd693ab2067d"
+    },
+    {
+      "path": "grid_3/thermal/constant/polyMesh/faces",
+      "bytes": 59303873,
+      "sha256": "3bcdf7900dd2b2f22d7bb16ecd38364fbef8f812f41416ba82a2e2feab7788b2"
+    },
+    {
+      "path": "grid_3/thermal/constant/polyMesh/neighbour",
+      "bytes": 12938220,
+      "sha256": "35acbffdd1c2d12602a22c28525f095112497601abe76407ccbb634b8c3938d6"
+    },
+    {
+      "path": "grid_3/thermal/constant/polyMesh/owner",
+      "bytes": 13277062,
+      "sha256": "34f975fa63d2eff5d262eda21dc7bd3c43f6f635232350340173e83b41d617b8"
+    },
+    {
+      "path": "grid_3/thermal/constant/polyMesh/points",
+      "bytes": 26670543,
+      "sha256": "d9893b9e60c8071f6bfbe07b74233152a735490ff39cf7fec698dd2d037f4457"
+    },
+    {
+      "path": "grid_3/thermal/constant/transportProperties",
+      "bytes": 184,
+      "sha256": "72e03dfd4a96f17cada1d4b30d0a5777ebbc7d252289da2764996d3a6b1be758"
+    },
+    {
+      "path": "grid_3/thermal/constant/turbulenceProperties",
+      "bytes": 111,
+      "sha256": "efd5d12e5c059b80d573addbe53df239b8b95dd943893e3c89732c4e20ecbd12"
+    },
+    {
+      "path": "grid_3/thermal/log.scalarTransportFoam",
+      "bytes": 2078,
+      "sha256": "39dfe7b0c5897149fc459716585af592c55e9ffe8bd43505c43b5acc94a38a06"
+    },
+    {
+      "path": "grid_3/thermal/system/controlDict",
+      "bytes": 364,
+      "sha256": "311cc0eb58d743ec1af9a02b03adcde5cb36a67bc96446b9c19bb5a5f57e3106"
+    },
+    {
+      "path": "grid_3/thermal/system/fvSchemes",
+      "bytes": 445,
+      "sha256": "7ba59d3ccf18e70792acfe44c8ea5b8a3691aafeb5fd3591d82e11cb7bb586f3"
+    },
+    {
+      "path": "grid_3/thermal/system/fvSolution",
+      "bytes": 463,
+      "sha256": "08c2bb085db9aa9cd2dd31d3a23913f70d988a136b1a8e38141feca2026557b7"
+    }
+  ]
+}

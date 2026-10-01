@@ -1,0 +1,20 @@
+{
+  "schema": "aerolab-openfoam-3d-additional-refinement-v1",
+  "registered_utc": "2026-10-01T13:50:30Z",
+  "chronology": "Registered after initial three-grid results. The original medium-to-fine pressure-gradient change was 1.120839438%, above the frozen 1% gate. That initial failure is retained permanently.",
+  "grid": [200,80,40],
+  "cells": 640000,
+  "uniform_refinement_ratio_from_previous_fine": 1.25,
+  "reason": "One bounded extra refinement to probe the remaining pressure-grid dependence and further reduce analytical errors without changing geometry, physics, numerical scheme, boundary conditions, or absolute accuracy gates",
+  "no_retroactive_pass": "A 1.25x refinement has a less demanding adjacent-change test than 2x. Passing raw1% does not repair the original failure. Report the original study as failed and this new grid as separate evidence.",
+  "diagnostics": {
+    "same_absolute_analytic_accuracy_gates": true,
+    "analytic_errors_must_decrease": true,
+    "adjacent_pressure_change_reporting_threshold": 0.01,
+    "second_order_equivalent_doubling_pressure_change_factor": 5.333333333333333,
+    "second_order_equivalent_doubling_pressure_change_reporting_threshold": 0.01,
+    "formula": "abs(G_new/G_previous-1)*(2^2-1)/(1.25^2-1)",
+    "interpretation": "Conditional diagnostic assuming leading second-order pressure error; not a measured2x change, a GCI, an uncertainty bound, or a retrospective pass. Report actual observed analytic-error orders separately."
+  },
+  "limits": "Exactly one additional grid; same original2700-second serial solver wall-time and3GB storage budget. No further refinement automatically."
+}

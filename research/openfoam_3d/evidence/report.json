@@ -1,0 +1,869 @@
+{
+  "schema": "aerolab-real-3d-cooling-evidence-v1",
+  "status": "initial_preregistered_pressure_refinement_gate_failed_supplemental_evidence_separate",
+  "initial_all_passed": false,
+  "physical_experimental_validation": null,
+  "aircraft_applicability": "not_established",
+  "conjugate_solid_fluid": "not_solved",
+  "case_kind": "synthetic_true_3d_laminar_flow_with_passive_constant_property_heat",
+  "initial_gates": {
+    "all_meshes_quality_and_3d": true,
+    "flow_residuals": true,
+    "scalar_residuals": true,
+    "mass_conservation": true,
+    "energy_conservation": true,
+    "fine_nominal_and_quadrature_velocity_error": true,
+    "fine_nominal_and_quadrature_pressure_error": true,
+    "analytic_thermal_error": true,
+    "analytic_thermal_error_decreases": true,
+    "medium_to_fine_temperature_rise_change": true,
+    "medium_to_fine_pressure_gradient_change": false,
+    "maximum_principle": true
+  },
+  "initial_pressure_refinement_relative_change": 0.011208394380264775,
+  "initial_temperature_rise_refinement_relative_change": 0.003565939705610366,
+  "additional_refinement": {
+    "grid": [
+      200,
+      80,
+      40
+    ],
+    "pressure_relative_change_from_previous_fine": 0.0013552591465348929,
+    "second_order_equivalent_doubling_relative_change": 0.007228048781519429,
+    "conditional_diagnostic_below_1_percent": true,
+    "nominal_pressure_error_order_last_pair": 1.9926534899902388,
+    "nominal_velocity_error_order_last_pair": 1.9871609638627932,
+    "thermal_sentinel_error_order_last_pair": 1.9709686364861705,
+    "note": "Separate post-result evidence. Conditional second-order diagnostic is not a measured2x test, GCI, uncertainty bound or override of original failure.",
+    "gates": {
+      "mesh_quality_and_3d": true,
+      "flow_residuals": true,
+      "scalar_residuals": true,
+      "mass_conservation": true,
+      "energy_conservation": true,
+      "nominal_and_quadrature_velocity_accuracy": true,
+      "nominal_and_quadrature_pressure_accuracy": true,
+      "analytic_thermal_accuracy": true,
+      "all_analytic_errors_decreased": true,
+      "temperature_range": true,
+      "conditional_second_order_pressure_diagnostic": true
+    },
+    "all_supplemental_gates_passed": true
+  },
+  "meshes": [
+    {
+      "grid": [
+        40,
+        16,
+        8
+      ],
+      "cells": 5120,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "maximum_nonorthogonality": 0.0,
+      "analytic_equivalent_mean_velocity_m_s": 2.966266100604402,
+      "analytic_pressure_gradient_Pa_m": 233.48083888225895,
+      "solved_pressure_gradient_Pa_m": 222.4808319597329,
+      "pressure_gradient_relative_error": -0.04711310347858222,
+      "velocity_relative_L2_error_middle_half": 0.011186624009769072,
+      "nominal_mean_analytic_pressure_gradient_Pa_m": 236.13610272660824,
+      "nominal_mean_pressure_gradient_relative_error": -0.05782796704612769,
+      "nominal_mean_velocity_relative_L2_error_middle_half": 0.01904832769348364,
+      "inlet_outlet_pressure_drop_Pa": 6.555804381512756,
+      "max_transverse_velocity_m_s": 0.007324949869280496,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992045e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.3999999998799328e-05
+      },
+      "relative_mass_imbalance": 4.969655239268928e-11,
+      "outlet_mixed_temperature_K": 304.62344389805963,
+      "outlet_bulk_theta": 0.5376556101940366,
+      "temperature_min_K": 300.0002920862,
+      "temperature_max_K": 309.8132427655,
+      "boundary_heat_fluxes": {
+        "inlet": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": 0.0006388323206170549,
+          "total_outward_W": 0.0006388323206170549
+        },
+        "floor": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04955100323356132,
+          "total_outward_W": -0.04955100323356132
+        },
+        "side_right": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.01767889279845708,
+          "total_outward_W": -0.01767889279845708
+        },
+        "ceiling": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04955100325206593,
+          "total_outward_W": -0.04955100325206593
+        },
+        "side_left": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.01767889278425124,
+          "total_outward_W": -0.01767889278425124
+        },
+        "outlet": {
+          "convective_outward_W_reference_300K": 0.13382096017874334,
+          "conductive_outward_W": -0.0,
+          "total_outward_W": 0.13382096017874334
+        }
+      },
+      "energy_imbalance_W": 4.310248326875113e-10,
+      "relative_energy_imbalance": 1.4891681615792954e-09,
+      "analytic_thermal_relative_L2_error": 0.033977752503451863,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 1.386242204921e-10,
+          "final": 5.348812300618e-12
+        },
+        "Uy": {
+          "initial": 9.463005875779e-08,
+          "final": 7.171490729391e-10
+        },
+        "Uz": {
+          "initial": 3.804713461604e-08,
+          "final": 3.085597719323e-10
+        },
+        "p": {
+          "initial": 1.093497510497e-10,
+          "final": 9.859365748427e-12
+        }
+      },
+      "thermal_residuals": {
+        "T": {
+          "initial": 6.481387439934e-12,
+          "final": 5.087125563577e-13
+        }
+      },
+      "analytic_residuals": {
+        "T": {
+          "initial": 4.175069413696e-13,
+          "final": 4.175069413696e-13
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 1.8695940730103757,
+        "iterations": 267.0,
+        "final_time": "267",
+        "solver": "simpleFoam"
+      },
+      "thermal_runtime": {
+        "wall_seconds": 0.3147371499944711,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      },
+      "analytic_runtime": {
+        "wall_seconds": 0.2645912629959639,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      }
+    },
+    {
+      "grid": [
+        80,
+        32,
+        16
+      ],
+      "cells": 40960,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "maximum_nonorthogonality": 0.0,
+      "analytic_equivalent_mean_velocity_m_s": 2.991486769935707,
+      "analytic_pressure_gradient_Pa_m": 235.46600907027585,
+      "solved_pressure_gradient_Pa_m": 232.64037074210717,
+      "pressure_gradient_relative_error": -0.012000196288736276,
+      "velocity_relative_L2_error_middle_half": 0.0032165944056381643,
+      "nominal_mean_analytic_pressure_gradient_Pa_m": 236.13610272660824,
+      "nominal_mean_pressure_gradient_relative_error": -0.014803886166226521,
+      "nominal_mean_velocity_relative_L2_error_middle_half": 0.005190844811817601,
+      "inlet_outlet_pressure_drop_Pa": 6.9371944910872525,
+      "max_transverse_velocity_m_s": 0.004292187908745968,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992276e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.3999999999611755e-05
+      },
+      "relative_mass_imbalance": 1.585504505102685e-11,
+      "outlet_mixed_temperature_K": 304.5582728865597,
+      "outlet_bulk_theta": 0.5441727113440322,
+      "temperature_min_K": 300.0000004753,
+      "temperature_max_K": 309.9531194716,
+      "boundary_heat_fluxes": {
+        "inlet": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": 0.0012672691396583735,
+          "total_outward_W": 0.0012672691396583735
+        },
+        "floor": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.049125022317112334,
+          "total_outward_W": -0.049125022317112334
+        },
+        "side_right": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.017475937396655167,
+          "total_outward_W": -0.017475937396655167
+        },
+        "ceiling": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04912502232138609,
+          "total_outward_W": -0.04912502232138609
+        },
+        "side_left": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.017475937394267935,
+          "total_outward_W": -0.017475937394267935
+        },
+        "outlet": {
+          "convective_outward_W_reference_300K": 0.1319346504264453,
+          "conductive_outward_W": -0.0,
+          "total_outward_W": 0.1319346504264453
+        }
+      },
+      "energy_imbalance_W": 1.3668215908049786e-10,
+      "relative_energy_imbalance": 4.722296817319577e-10,
+      "analytic_thermal_relative_L2_error": 0.010338265291608513,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 2.253213152957e-11,
+          "final": 3.261158976336e-12
+        },
+        "Uy": {
+          "initial": 9.999820451138e-08,
+          "final": 3.375837790047e-10
+        },
+        "Uz": {
+          "initial": 2.923876920874e-08,
+          "final": 8.711152091373e-11
+        },
+        "p": {
+          "initial": 1.103277152658e-11,
+          "final": 2.936080767502e-12
+        }
+      },
+      "thermal_residuals": {
+        "T": {
+          "initial": 2.671586171281e-12,
+          "final": 8.204760240583e-13
+        }
+      },
+      "analytic_residuals": {
+        "T": {
+          "initial": 6.754236883533e-13,
+          "final": 6.754236883533e-13
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 22.635502203003853,
+        "iterations": 479.0,
+        "final_time": "479",
+        "solver": "simpleFoam"
+      },
+      "thermal_runtime": {
+        "wall_seconds": 0.5153575000003912,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      },
+      "analytic_runtime": {
+        "wall_seconds": 0.46534225399955176,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      }
+    },
+    {
+      "grid": [
+        160,
+        64,
+        32
+      ],
+      "cells": 327680,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "maximum_nonorthogonality": 0.0,
+      "analytic_equivalent_mean_velocity_m_s": 2.997866557432084,
+      "analytic_pressure_gradient_Pa_m": 235.9681751221487,
+      "solved_pressure_gradient_Pa_m": 235.2478957661557,
+      "pressure_gradient_relative_error": -0.0030524427949665256,
+      "velocity_relative_L2_error_middle_half": 0.0008304418894425121,
+      "nominal_mean_analytic_pressure_gradient_Pa_m": 236.13610272660824,
+      "nominal_mean_pressure_gradient_relative_error": -0.0037614195804733797,
+      "nominal_mean_velocity_relative_L2_error_middle_half": 0.0013249826439629422,
+      "inlet_outlet_pressure_drop_Pa": 7.044858835471758,
+      "max_transverse_velocity_m_s": 0.0022778649805925595,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992255e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.4000000000034607e-05
+      },
+      "relative_mass_imbalance": 1.7646519734470285e-12,
+      "outlet_mixed_temperature_K": 304.5420183602845,
+      "outlet_bulk_theta": 0.5457981639715512,
+      "temperature_min_K": 300.0,
+      "temperature_max_K": 309.9882812001,
+      "boundary_heat_fluxes": {
+        "inlet": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": 0.002095186193744838,
+          "total_outward_W": 0.002095186193744838
+        },
+        "floor": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.049239461789403936,
+          "total_outward_W": -0.049239461789403936
+        },
+        "side_right": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.017540221025665843,
+          "total_outward_W": -0.017540221025665843
+        },
+        "ceiling": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04923946179166277,
+          "total_outward_W": -0.04923946179166277
+        },
+        "side_left": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.01754022102489267,
+          "total_outward_W": -0.01754022102489267
+        },
+        "outlet": {
+          "convective_outward_W_reference_300K": 0.13146417942026403,
+          "conductive_outward_W": -0.0,
+          "total_outward_W": 0.13146417942026403
+        }
+      },
+      "energy_imbalance_W": -1.7616346315724174e-11,
+      "relative_energy_imbalance": 6.086355139484581e-11,
+      "analytic_thermal_relative_L2_error": 0.00272521488049125,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 5.953243312795e-12,
+          "final": 5.953243312795e-12
+        },
+        "Uy": {
+          "initial": 9.773579751131e-08,
+          "final": 9.490845875725e-10
+        },
+        "Uz": {
+          "initial": 4.65248016806e-08,
+          "final": 6.954794762529e-11
+        },
+        "p": {
+          "initial": 1.244648089029e-11,
+          "final": 3.306960815983e-12
+        }
+      },
+      "thermal_residuals": {
+        "T": {
+          "initial": 2.643561468835e-12,
+          "final": 7.581721599466e-13
+        }
+      },
+      "analytic_residuals": {
+        "T": {
+          "initial": 8.288860725693e-13,
+          "final": 8.288860725693e-13
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 253.28539814299438,
+        "iterations": 649.0,
+        "final_time": "649",
+        "solver": "simpleFoam"
+      },
+      "thermal_runtime": {
+        "wall_seconds": 3.2252865789923817,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      },
+      "analytic_runtime": {
+        "wall_seconds": 3.224767425999744,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      }
+    },
+    {
+      "grid": [
+        200,
+        80,
+        40
+      ],
+      "cells": 640000,
+      "mesh_ok": true,
+      "three_dimensions": true,
+      "maximum_nonorthogonality": 0.0,
+      "analytic_equivalent_mean_velocity_m_s": 2.998634195959741,
+      "analytic_pressure_gradient_Pa_m": 236.02859751222326,
+      "solved_pressure_gradient_Pa_m": 235.56671762859588,
+      "pressure_gradient_relative_error": -0.001956881024145596,
+      "velocity_relative_L2_error_middle_half": 0.000533835971071574,
+      "nominal_mean_analytic_pressure_gradient_Pa_m": 236.13610272660824,
+      "nominal_mean_pressure_gradient_relative_error": -0.002411258132228866,
+      "nominal_mean_velocity_relative_L2_error_middle_half": 0.0008504218197594345,
+      "inlet_outlet_pressure_drop_Pa": 7.058298241772211,
+      "max_transverse_velocity_m_s": 0.0017946939778093673,
+      "volume_flux_by_patch_m3_s": {
+        "inlet": -2.3999999999992205e-05,
+        "floor": 0.0,
+        "side_right": 0.0,
+        "ceiling": 0.0,
+        "side_left": 0.0,
+        "outlet": 2.400000000000302e-05
+      },
+      "relative_mass_imbalance": 4.5062152793943414e-13,
+      "outlet_mixed_temperature_K": 304.54032999850887,
+      "outlet_bulk_theta": 0.5459670001491134,
+      "temperature_min_K": 299.9999999999,
+      "temperature_max_K": 309.9925015797,
+      "boundary_heat_fluxes": {
+        "inlet": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": 0.0024038916766320776,
+          "total_outward_W": 0.0024038916766320776
+        },
+        "floor": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04932476133999566,
+          "total_outward_W": -0.04932476133999566
+        },
+        "side_right": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.017584840245768223,
+          "total_outward_W": -0.017584840245768223
+        },
+        "ceiling": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.04932476133608628,
+          "total_outward_W": -0.04932476133608628
+        },
+        "side_left": {
+          "convective_outward_W_reference_300K": 0.0,
+          "conductive_outward_W": -0.017584840238124743,
+          "total_outward_W": -0.017584840238124743
+        },
+        "outlet": {
+          "convective_outward_W_reference_300K": 0.1314153114768572,
+          "conductive_outward_W": -0.0,
+          "total_outward_W": 0.1314153114768572
+        }
+      },
+      "energy_imbalance_W": -6.4856254047840345e-12,
+      "relative_energy_imbalance": 2.2407495179602106e-11,
+      "analytic_thermal_relative_L2_error": 0.0017554730050618594,
+      "flow_residuals": {
+        "Ux": {
+          "initial": 5.678727994704e-12,
+          "final": 5.678727994704e-12
+        },
+        "Uy": {
+          "initial": 9.302946618278e-08,
+          "final": 6.970689013419e-10
+        },
+        "Uz": {
+          "initial": 4.207088698297e-08,
+          "final": 3.539634406374e-10
+        },
+        "p": {
+          "initial": 9.523192626108e-12,
+          "final": 9.523192626108e-12
+        }
+      },
+      "thermal_residuals": {
+        "T": {
+          "initial": 3.321114290974e-12,
+          "final": 9.531348257853e-13
+        }
+      },
+      "analytic_residuals": {
+        "T": {
+          "initial": 8.477809143217e-13,
+          "final": 8.477809143217e-13
+        }
+      },
+      "flow_runtime": {
+        "wall_seconds": 585.2686057859974,
+        "iterations": 625.0,
+        "final_time": "625",
+        "solver": "simpleFoam"
+      },
+      "thermal_runtime": {
+        "wall_seconds": 6.584675762991537,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      },
+      "analytic_runtime": {
+        "wall_seconds": 7.194193041999824,
+        "iterations": 2.0,
+        "final_time": "2",
+        "solver": "scalarTransportFoam"
+      }
+    }
+  ],
+  "references": {
+    "tau": 0.0538971807628524,
+    "Gz_Dh": 32.98461538461538,
+    "existing_solver_sha256": "46cd4aac4b70bde9967c58b3d8c3db8a2d9c0ea88c22cb435f63ececacc14b89",
+    "existing_independent_galerkin_source_sha256": "5c6bc80da5e84414be37c0cd553a3acbe27fa2e6e72de6353cc2ea06647050a1",
+    "execution": "New synthetic model-to-model comparison; existing frozen evidence untouched; no experimental data used",
+    "model_difference": "Both Graetz references omit axial fluid diffusion; OpenFOAM retains it and uses a finite zero-gradient outlet",
+    "finite_volume": [
+      {
+        "ny": 64,
+        "nx": 128,
+        "axial_steps": 1024,
+        "bulk_theta": 0.5455371730305829,
+        "checks": {
+          "inlet_bulk_theta": 1.0,
+          "minimum_field": 0.00029166066852825804,
+          "maximum_field": 1.0000000000000033,
+          "maximum_cellwise_axial_increase": 1.1102230246251565e-15,
+          "maximum_sampled_linear_relative_residual": 2.0491595955494724e-15,
+          "maximum_step_energy_balance_abs": 3.252606517456513e-17,
+          "global_energy_closure_abs": 1.6708856520608606e-14
+        },
+        "momentum": {
+          "aspect": 2.0,
+          "nx": 128,
+          "ny": 64,
+          "mean_velocity": 0.05720571825307454,
+          "exact_series_mean_velocity": 0.05717041927989267,
+          "relative_mean_error": 0.0006174342190681248,
+          "darcy_f_re": 62.15384867341405,
+          "exact_darcy_f_re": 62.1922245864318,
+          "forcing_residual_inf": 1.2505552149377763e-12,
+          "normalized_mass_flux": 1.0,
+          "integrated_momentum_wall_balance_error": -6.661338147750939e-15,
+          "minimum_velocity": 0.00361132129783988,
+          "maximum_velocity": 1.9904452692803285
+        }
+      },
+      {
+        "ny": 128,
+        "nx": 256,
+        "axial_steps": 2048,
+        "bulk_theta": 0.5456501824453763,
+        "checks": {
+          "inlet_bulk_theta": 1.0,
+          "minimum_field": 7.291042138815723e-05,
+          "maximum_field": 1.000000000000004,
+          "maximum_cellwise_axial_increase": 1.5543122344752192e-15,
+          "maximum_sampled_linear_relative_residual": 2.3414683627457172e-15,
+          "maximum_step_energy_balance_abs": 4.0766001685454967e-17,
+          "global_energy_closure_abs": 4.157785227221211e-14
+        },
+        "momentum": {
+          "aspect": 2.0,
+          "nx": 256,
+          "ny": 128,
+          "mean_velocity": 0.057179246215678554,
+          "exact_series_mean_velocity": 0.05717041927989267,
+          "relative_mean_error": 0.00015439690485163915,
+          "darcy_f_re": 62.182623781784336,
+          "exact_darcy_f_re": 62.1922245864318,
+          "forcing_residual_inf": 8.640199666842818e-12,
+          "normalized_mass_flux": 1.0,
+          "integrated_momentum_wall_balance_error": -1.3988810110276972e-14,
+          "minimum_velocity": 0.0010210107115144335,
+          "maximum_velocity": 1.9914583419601177
+        }
+      }
+    ],
+    "galerkin": [
+      {
+        "odd_modes_per_direction": 16,
+        "quadrature_order": 100,
+        "bulk_theta": 0.545664213105022,
+        "fundamental_eigenvalue": 7.632655145501949,
+        "mean_raw_velocity": 0.05717041927989297,
+        "captured_inlet_norm": 0.9985713306201874
+      },
+      {
+        "odd_modes_per_direction": 24,
+        "quadrature_order": 100,
+        "bulk_theta": 0.5456642122970053,
+        "fundamental_eigenvalue": 7.63265514380022,
+        "mean_raw_velocity": 0.05717041927989297,
+        "captured_inlet_norm": 0.9993481506876887
+      }
+    ],
+    "elapsed_seconds": 13.527599811553955
+  },
+  "finest_to_galerkin_bulk_attenuation_relative_difference": 0.0005548977654836751,
+  "finest_to_existing_fvm_bulk_attenuation_relative_difference": 0.0005806242056352051,
+  "outlet_sensitivity": {
+    "grid": [
+      120,
+      32,
+      16
+    ],
+    "length_m": 0.045,
+    "comparison_plane_m": 0.03,
+    "comparison_faces": 512,
+    "numerical_flux_weighted_temperature_at_plane_K": 304.5587144874859,
+    "original_medium_outlet_temperature_K": 304.5582728865597,
+    "relative_temperature_rise_change": 9.687900158338072e-05,
+    "reporting_threshold": 0.002,
+    "below_reporting_threshold": true,
+    "flow_runtime": {
+      "wall_seconds": 45.43835883900465,
+      "iterations": 554.0,
+      "final_time": "554",
+      "solver": "simpleFoam"
+    },
+    "thermal_runtime": {
+      "wall_seconds": 0.7658798080083216,
+      "iterations": 2.0,
+      "final_time": "2",
+      "solver": "scalarTransportFoam"
+    },
+    "note": "Medium-grid outlet-location diagnostic only; full upstream velocity re-solved; face temperature is actual upwind numerical flux value, not an interpolated physical temperature"
+  },
+  "stationarity": [
+    {
+      "grid_level": 0,
+      "extra_iterations": 20,
+      "flow": {
+        "wall_seconds": 0.3650733800022863,
+        "metrics": {
+          "U": {
+            "relative_L2_change": 4.589437825130293e-10,
+            "maximum_absolute_change": 6.860999768321108e-09
+          },
+          "p": {
+            "relative_L2_change": 6.093214094207902e-10,
+            "maximum_absolute_change": 4.077100101973485e-09
+          },
+          "pressure_gradient_relative_change": 3.253743940945242e-10
+        },
+        "final_residuals": {
+          "Ux": {
+            "initial": 3.516289975536e-11,
+            "final": 6.48079331064e-12
+          },
+          "Uy": {
+            "initial": 1.869812145326e-08,
+            "final": 1.477516891788e-10
+          },
+          "Uz": {
+            "initial": 1.009308337323e-08,
+            "final": 7.068909342701e-11
+          },
+          "p": {
+            "initial": 3.368898592386e-11,
+            "final": 5.704895644788e-12
+          }
+        }
+      },
+      "thermal": {
+        "wall_seconds": 0.26467037000111304,
+        "metrics": {
+          "T": {
+            "relative_L2_change": 4.678694956487567e-14,
+            "maximum_absolute_change": 1.000444171950221e-10
+          },
+          "outlet_mixed_temperature_change_K": 1.4551915228366852e-11
+        },
+        "final_residuals": {
+          "T": {
+            "initial": 2.345375006795e-13,
+            "final": 2.345375006795e-13
+          }
+        }
+      }
+    },
+    {
+      "grid_level": 1,
+      "extra_iterations": 20,
+      "flow": {
+        "wall_seconds": 1.2176223169954028,
+        "metrics": {
+          "U": {
+            "relative_L2_change": 1.8250600485210182e-10,
+            "maximum_absolute_change": 2.968000067937737e-09
+          },
+          "p": {
+            "relative_L2_change": 2.0300482232086106e-10,
+            "maximum_absolute_change": 2.0054000127167626e-09
+          },
+          "pressure_gradient_relative_change": 1.7696133447486773e-10
+        },
+        "final_residuals": {
+          "Ux": {
+            "initial": 1.047638123696e-11,
+            "final": 1.530671522432e-12
+          },
+          "Uy": {
+            "initial": 4.991572691009e-08,
+            "final": 1.615840979966e-10
+          },
+          "Uz": {
+            "initial": 1.534028545001e-08,
+            "final": 4.835481912696e-11
+          },
+          "p": {
+            "initial": 8.135811340833e-12,
+            "final": 8.135811340833e-12
+          }
+        }
+      },
+      "thermal": {
+        "wall_seconds": 0.5658253739966312,
+        "metrics": {
+          "T": {
+            "relative_L2_change": 5.860732192102137e-14,
+            "maximum_absolute_change": 1.000444171950221e-10
+          },
+          "outlet_mixed_temperature_change_K": 4.774847184307873e-12
+        },
+        "final_residuals": {
+          "T": {
+            "initial": 6.520081721903e-13,
+            "final": 6.520081721903e-13
+          }
+        }
+      }
+    },
+    {
+      "grid_level": 2,
+      "extra_iterations": 20,
+      "flow": {
+        "wall_seconds": 8.344182964006905,
+        "metrics": {
+          "U": {
+            "relative_L2_change": 1.1372752106072988e-10,
+            "maximum_absolute_change": 4.576999890204547e-09
+          },
+          "p": {
+            "relative_L2_change": 6.189375229177237e-10,
+            "maximum_absolute_change": 4.019600097215914e-09
+          },
+          "pressure_gradient_relative_change": 1.9595192135568595e-10
+        },
+        "final_residuals": {
+          "Ux": {
+            "initial": 3.134058955807e-12,
+            "final": 3.134058955807e-12
+          },
+          "Uy": {
+            "initial": 4.515627283686e-08,
+            "final": 4.375118361338e-10
+          },
+          "Uz": {
+            "initial": 2.488721262879e-08,
+            "final": 3.57113908661e-11
+          },
+          "p": {
+            "initial": 1.405189569141e-11,
+            "final": 5.95843260234e-12
+          }
+        }
+      },
+      "thermal": {
+        "wall_seconds": 3.274646785997902,
+        "metrics": {
+          "T": {
+            "relative_L2_change": 5.969228762671627e-14,
+            "maximum_absolute_change": 1.000444171950221e-10
+          },
+          "outlet_mixed_temperature_change_K": 1.3017142919125035e-11
+        },
+        "final_residuals": {
+          "T": {
+            "initial": 6.588016434028e-13,
+            "final": 6.588016434028e-13
+          }
+        }
+      }
+    },
+    {
+      "grid_level": 3,
+      "extra_iterations": 20,
+      "flow": {
+        "wall_seconds": 16.56596560199978,
+        "metrics": {
+          "U": {
+            "relative_L2_change": 1.145363242254776e-10,
+            "maximum_absolute_change": 4.090000338408117e-09
+          },
+          "p": {
+            "relative_L2_change": 2.6438118916275684e-10,
+            "maximum_absolute_change": 1.8930999823307815e-09
+          },
+          "pressure_gradient_relative_change": -2.302207313675808e-10
+        },
+        "final_residuals": {
+          "Ux": {
+            "initial": 3.540070701471e-12,
+            "final": 3.540070701471e-12
+          },
+          "Uy": {
+            "initial": 6.640652466136e-08,
+            "final": 5.468729720059e-10
+          },
+          "Uz": {
+            "initial": 2.745508240167e-08,
+            "final": 2.458919175647e-10
+          },
+          "p": {
+            "initial": 6.847232048501e-12,
+            "final": 6.847232048501e-12
+          }
+        }
+      },
+      "thermal": {
+        "wall_seconds": 5.933515871001873,
+        "metrics": {
+          "T": {
+            "relative_L2_change": 6.408704147217242e-14,
+            "maximum_absolute_change": 1.000444171950221e-10
+          },
+          "outlet_mixed_temperature_change_K": 1.0800249583553523e-11
+        },
+        "final_residuals": {
+          "T": {
+            "initial": 8.707471683595e-13,
+            "final": 8.707471683595e-13
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Synthetic boundary-value problem, no experimental validation or aircraft prediction",
+    "Passive fluid temperature only; no conjugate solid or thermal feedback",
+    "Singular hot-wall/cold-inlet edges: total wall heat is not a converged physical quantity",
+    "Main Graetz references omit axial diffusion; agreement is not a same-PDE exact verification",
+    "Original pressure refinement criterion failed and is never relabeled as passed",
+    "Supplemental1.25x diagnostic assumes second-order pressure error; not a GCI or uncertainty bound"
+  ],
+  "provenance": {
+    "baseline_tree": "71dd2af3c450a89736fef115663051c669125504",
+    "plan_sha256": "0c450827346a6bd4ad2468c59ec5c3accb5a82f5248a802855011521c33747a6",
+    "supplemental_plan_sha256": "5bc99ad124702483f8820a3e85e3183362262d9da1ec9c73eac87630662fea4f",
+    "additional_refinement_plan_sha256": "445ef7af31245dccb787b751646e68ec8d5cd347187ea59464d2553b1520a981",
+    "solver_script_sha256": "634b00af4c18a37b5d4d361f844d8181455514210d45343e95e181aa9035fd50",
+    "reference_script_sha256": "c6a9a4eb3ffd00c95e8edf2ed74bfedf0d3969a4dd3ea7a3015a832cc7378dd0",
+    "tools_lock_sha256": "ca42ab796bf03059563b71644cabca2831bcb63948b61d5295ab7845432d5514"
+  }
+}
